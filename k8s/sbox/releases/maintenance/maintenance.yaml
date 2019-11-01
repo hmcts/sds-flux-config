@@ -10,7 +10,7 @@ metadata:
 spec:
   releaseName: maintenance
   chart:
-    git: git@github.com:hmcts/pet-azure-flux
+    git: git@github.com:hmcts/shared-services-flux
     path: k8s/sbox/charts/maintenance
     ref: master
   values:
@@ -20,4 +20,4 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik-sbox
       hosts:
-      - 'maintenance-sbox.infra.internal'
+      - 'maintenance.aks-ss.core-compute-sbox.internal'
