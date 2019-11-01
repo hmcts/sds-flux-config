@@ -1,0 +1,30 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: ctsc-work-allocation
+  namespace: ctsc
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.java: glob:v*
+spec:
+  releaseName: ctsc-work-allocation
+  rollback:
+    enable: true
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/sbox/charts/ctsc-work-allocation
+    ref: master
+  values:
+    java:
+      replicas: 2
+      useInterpodAntiAffinity: true
+      image: hmctspublic.azurecr.io/ctsc/work-allocation:prod-6a6c3572
+      ingress:
+        annotations:
+          kubernetes.io/ingress.class: traefik-sbox
+        hosts:
+        - 'ctsc-work-allocation-sbox.aks-ss.core-compute-sbox.internal'
+    global:
+      environment: sbox
+      enableKeyVaults: true

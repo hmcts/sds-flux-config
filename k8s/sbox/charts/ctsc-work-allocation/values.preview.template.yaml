@@ -1,0 +1,19 @@
+java:
+  environment:
+    RUN_DB_MIGRATION_ON_STARTUP: true
+    SPRING_CLOUD_PROPERTIESVOLUME_ENABLED: true
+
+    SPRING_DATASOURCE_URL: "jdbc:postgresql://{{ .Release.Name }}-postgresql:5432/{{ .Values.postgresql.postgresqlDatabase}}"
+    SPRING_DATASOURCE_USERNAME: "{{ .Values.postgresql.postgresqlUsername}}"
+    SPRING_DATASOURCE_PASSWORD: "{{ .Values.postgresql.postgresqlPassword}}"
+
+    SPRING_LIQUIBASE_ENABLED: true
+    SERVICE_BUS_QUEUE_NAME: ctsc-work-allocation-queue-preview
+    DEEPLINK_BASE_URL: https://www-ccd.aat.platform.hmcts.net/case/
+    TEST_ENDPOINTS_ENABLED: true
+  # Don't modify below here
+  image: ${IMAGE_NAME}
+  ingressHost: ${SERVICE_FQDN}
+  aadIdentityName:
+postgresql:
+  enabled: true
