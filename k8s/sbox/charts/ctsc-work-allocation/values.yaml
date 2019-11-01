@@ -1,0 +1,43 @@
+java:
+  applicationPort: 8080
+  ingressHost: ctsc-work-allocation-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+  aadIdentityName: ctsc
+  keyVaults:
+    "ctsc":
+      resourceGroup: ctsc
+      secrets:
+        - AppInsightsInstrumentationKey
+        - CTSC-IDAM-CLIENT-SECRET
+        - CTSC-SERVICE-USER-EMAIL
+        - CTSC-SERVICE-USER-PASSWORD
+        - CTSC-SERVICEBUS-CONNECTION-STRING
+        - wa-service-email-address
+        - workallocation-POSTGRES-PASS
+        - CTSC-WA-SMTP-USER
+        - CTSC-WA-SMTP-PASSWORD
+        - CTSC-S2S-SECRET
+  environment:
+    SPRING_DATASOURCE_URL: jdbc:postgresql://ctsc-postgres-db-{{ .Values.global.environment }}.postgres.database.azure.com:5432/workallocation
+    SPRING_DATASOURCE_USERNAME: workallocation@ctsc-postgres-db-{{.Values.global.environment }}
+    SPRING_LIQUIBASE_ENABLED: false
+
+    S2S_AUTH_URL: http://rpe-service-auth-provider-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    IDAM_CLIENT_BASE_URL: https://idam-api.{{ .Values.global.environment }}.platform.hmcts.net
+    PAYMENT_API_URL: http://payment-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    SERVER_URL: https://ctsc-work-allocation-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    CCD_API_URL: http://ccd-data-store-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    SERVICE_BUS_QUEUE_NAME: ctsc-work-allocation-queue-{{ .Values.global.environment }}
+    DEEPLINK_BASE_URL: https://www-ccd.{{ .Values.global.environment }}.platform.hmcts.net/case/
+
+    LOGBACK_REQUIRE_ALERT_LEVEL: false
+    LOGBACK_REQUIRE_ERROR_CODE: false
+    IDAM_CLIENT_ID: ctsc_work_allocation
+    S2S_MICROSERVICE_NAME: ctsc_work_allocation
+    TEST_ENDPOINTS_ENABLED: false
+    MINUS_TIME_FROM_CURRENT: 0
+
+    SMTP_ENABLED: false
+    SMTP_HOST: smtp.office365.com
+    SMTP_PORT: 587
+
+
