@@ -1,0 +1,35 @@
+job:
+  image: ${IMAGE_NAME}
+  keyVaults:
+    "mi-vault":
+      resourceGroup: data-extractor
+      secrets:
+        - aat-ccdro-user
+        - aat-ccdro-password
+  memoryLimits: '2048Mi'
+  cpuLimits: '2000m'
+  aadIdentityName: mi
+  labels:
+    app.kubernetes.io/instance : data-extractor-job-001
+    app.kubernetes.io/name: data-extractor-job
+  environment:
+    ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.environment }}.postgres.database.azure.com:5432/ccd_data_store
+    ETL_DB_USER_FILE: data-extractor/{{ .Values.global.environment }}-ccdro-user
+    ETL_DB_PASSWORD_FILE: data-extractor/{{ .Values.global.environment }}-ccdro-password
+    ETL_SQL: >
+      SELECT id, created_date, event_id, summary, description, user_id, case_data_id,
+      case_type_id, case_type_version, state_id, user_first_name, user_last_name,
+      event_name, state_name, security_classification
+      FROM case_event
+      WHERE created_date >= (current_date-1 + time '00:00')
+      AND created_date < (current_date + time '00:00')
+      ORDER BY created_date ASC;
+    ETL_ACCOUNT: midatastg
+    ETL_CONTAINER: probate
+    ETL_FILE_TYPE: jsonlines
+    ETL_FILE_PREFIX: test01
+    ETL_MSI_CLIENT_ID: 037aa142-e850-45a6-b40b-d01af91d4d12
+global:
+  job:
+    kind: Job
+    
