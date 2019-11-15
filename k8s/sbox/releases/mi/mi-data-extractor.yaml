@@ -10,14 +10,14 @@ metadata:
 spec:
   releaseName: data-extractor-job
   chart:
-    repository: https://hmcts.azurecr.io/helm/v1/repo/
+    repository: https://hmctspublic.azurecr.io/helm/v1/repo/
     name: data-extractor-job
     version: 0.0.3
   valueFileSecrets:
   - name: "data-extractor-values"
   values:
     job:
-      image: hmcts.azurecr.io/hmcts/data-extractor-job:latest
+      image: hmctspublic.azurecr.io/hmcts/data-extractor-job:latest
       suspend: true
       aadIdentityName: mi
       keyVaults:
