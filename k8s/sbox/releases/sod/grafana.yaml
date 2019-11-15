@@ -1,0 +1,20 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: sod
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: grafana
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: grafana
+    version: 4.0.3
+  values:
+    ingress:
+      annotations:
+        kubernetes.io/ingress.class: traefik-sbox
+      hosts:
+      - 'grafana.aks-ss.core-compute-sbox.internal'
