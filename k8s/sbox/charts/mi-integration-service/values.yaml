@@ -8,7 +8,7 @@ job:
     app.kubernetes.io/name: mi-integration-service
   environment:
     SECRETS_PATH: /kvmnt/
-    POSTCODEINFO_API_TOKEN: <azure-secret:aat-ccdro-user>
+    ETL_DB_USER_FILE: <azure-secret:aat-ccdro-user>
 volumes:
   - name: azurekeyvaultcf
     flexVolume:
