@@ -18,8 +18,8 @@ spec:
       image: ssprivatesbox.azurecr.io/mi-integration-service:pipeline-test
       suspend: true
       labels:
-        app.kubernetes.io/instance: data-extractor-job-test
-        app.kubernetes.io/name: data-extractor-job
+        app.kubernetes.io/instance: mi-integration-service-job
+        app.kubernetes.io/name: mi-integration-service-job
       environment:
         SECRETS_PATH: /kvmnt/
         ETL_DB_USER_FILE: <azure-secret:aat-ccdro-user>
