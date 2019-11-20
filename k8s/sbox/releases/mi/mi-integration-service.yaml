@@ -1,0 +1,30 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: mi-integration-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.job: glob:prod-*
+spec:
+  releaseName: mi-integration-service-job
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/sbox/charts/mi-integration-service
+    ref: master
+  values:
+    job:
+      image: ssprivatesbox.azurecr.io/mi-integration-service:pipeline-test
+      suspend: true
+      labels:
+        app.kubernetes.io/instance: data-extractor-job-test
+        app.kubernetes.io/name: data-extractor-job
+      environment:
+        SECRETS_PATH: /kvmnt/
+        ETL_DB_USER_FILE: <azure-secret:aat-ccdro-user>
+    global:
+      job:
+        kind: Job
+      subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
