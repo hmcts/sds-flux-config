@@ -11,13 +11,13 @@ spec:
   releaseName: maintenance
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/test/charts/maintenance
+    path: k8s/stg/charts/maintenance
     ref: master
   values:
-    image: ssprivatetest.azurecr.io/maintenance:v0.1
+    image: ssprivatestg.azurecr.io/maintenance:v0.1
     replicaCount: 1
     ingress:
       annotations:
-        kubernetes.io/ingress.class: traefik-test
+        kubernetes.io/ingress.class: traefik-stg
       hosts:
-      - 'maintenance.aks-ss.core-compute-test.internal'
+      - 'maintenance.aks-ss.core-compute-stg.internal'
