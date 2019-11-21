@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: ssprivatetest.azurecr.io/maintenance:v0.1
+  repository: ssprivatestg.azurecr.io/maintenance:v0.1
   pullPolicy: Always
 
 nameOverride: ""
@@ -18,7 +18,7 @@ service:
 ingress:
   enabled: true
   annotations:
-    kubernetes.io/ingress.class: traefik-test
+    kubernetes.io/ingress.class: traefik-stg
   paths:
     - /
   tls: []
