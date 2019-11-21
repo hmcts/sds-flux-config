@@ -1,0 +1,23 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: ctsc-web-forms-ui
+  namespace: ctsc
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: ctsc-web-forms-ui
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/sbox/charts/ctsc-web-forms-ui
+    ref: master
+  values:
+    image: ssprivatesbox.azurecr.io/ctsc-web-forms-ui:master
+    replicaCount: 1
+    ingress:
+      annotationsk
+        kubernetes.io/ingress.class: traefik-sbox
+      hosts:
+      - 'ctsc-web-forms-ui-sbox.aks-ss.core-compute-sbox.internal'
