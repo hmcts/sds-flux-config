@@ -17,7 +17,7 @@ spec:
     image: ssprivatesbox.azurecr.io/ctsc-web-forms-ui:master
     replicaCount: 1
     ingress:
-      annotationsk
+      annotations:
         kubernetes.io/ingress.class: traefik-sbox
       hosts:
       - 'ctsc-web-forms-ui-sbox.aks-ss.core-compute-sbox.internal'
