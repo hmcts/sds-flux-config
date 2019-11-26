@@ -24,10 +24,10 @@ spec:
     env:
       SECRETS_PATH: /kvmnt/
       SERVICE_EMAIL_ADDRESSES: <azure-secret:service-email-addresses>
-      SMTP_HOST: <azure-secret:smtp_host>
-      SMTP_PORT: <azure-secret:smtp_port>
-      SMTP_IS_SECURE: <azure-secret:smtp_is_secure>
-      SMTP_USER: <azure-secret:smtp_user>
-      SMTP_PASSWORD: <azure-secret:smtp_password>
-      SMTP_FROM: <azure-secret:smtp_from>
-      SMTP_IS_SPOOFED: <azure-secret:smtp_is_spoofed>
+      SMTP_HOST: <azure-secret:smtp-host>
+      SMTP_PORT: <azure-secret:smtp-port>
+      SMTP_IS_SECURE: <azure-secret:smtp-is-secure>
+      SMTP_USER: <azure-secret:smtp-user>
+      SMTP_PASSWORD: <azure-secret:smtp-password>
+      SMTP_FROM: <azure-secret:smtp-from>
+      SMTP_IS_SPOOFED: <azure-secret:smtp-is-spoofed>
