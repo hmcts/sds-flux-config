@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "ctsc-web-forms-ui.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "ctsc-web-forms-ui.name" . }}
+    helm.sh/chart: {{ include "ctsc-web-forms-ui.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "ctsc-web-forms-ui.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "ctsc-web-forms-ui.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image }}"
+          imagePullPolicy: {{ .Values.imagePullPolicy }}
+          volumeMounts:
+            - name: azurekvcwfgui
+              mountPath: /kvmnt
+              readOnly: true
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 1337
+            initialDelaySeconds: 35
+            timeoutSeconds: 2
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 1337
+            initialDelaySeconds: 30
+            timeoutSeconds: 2
+            periodSeconds: 5
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            {{- range $key, $value := $.Values.env }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+      volumes:
+        - name: azurekvcwfgui
+          flexVolume:
+            driver: "azure/kv"
+            secretRef:
+              name: kvcreds
+            options:
+              usepodidentity: "false"
+              keyvaultname: "ctsc-vault-stg"
+              keyvaultobjectnames: "service-email-addresses;smtp-host;smtp-port;smtp-is-secure;smtp-user;smtp-password;smtp-from;smtp-is-spoofed"
+              keyvaultobjecttypes: secret;secret;secret;secret;secret;secret;secret;secret
+              resourcegroup: "ctsc-stg-rg"
+              subscriptionid: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+              tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

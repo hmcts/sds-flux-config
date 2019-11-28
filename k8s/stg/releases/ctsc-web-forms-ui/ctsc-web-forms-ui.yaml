@@ -1,0 +1,33 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: ctsc-web-forms-ui
+  namespace: ctsc
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: ctsc-web-forms-ui
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/stg/charts/ctsc-web-forms-ui
+    ref: master
+  values:
+    image: ssprivatestg.azurecr.io/ctsc-web-forms-ui:master
+    replicaCount: 1
+    ingress:
+      annotations:
+        kubernetes.io/ingress.class: traefik-stg
+      hosts:
+      - 'ctsc-web-forms-ui-stg.aks-ss.core-compute-stg.internal'
+    env:
+      SECRETS_PATH: /kvmnt/
+      SERVICE_EMAIL_ADDRESSES: <azure-secret:service-email-addresses>
+      SMTP_HOST: ctscmail.sandbox.platform.hmcts.net
+      SMTP_PORT: 25
+      SMTP_IS_SECURE: FALSE
+      SMTP_USER: <azure-secret:smtp-user>
+      SMTP_PASSWORD: <azure-secret:smtp-password>
+      SMTP_FROM: <azure-secret:smtp-from>
+      SMTP_IS_SPOOFED: TRUE
