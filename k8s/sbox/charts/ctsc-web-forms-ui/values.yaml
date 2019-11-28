@@ -9,7 +9,7 @@ fullnameOverride: ""
 
 service:
   type: ClusterIP
-  port: 80
+  port: 1337
 
 ingress:
   enabled: true
@@ -40,7 +40,3 @@ tolerations: []
 
 affinity: {}
 
-nodejs:
-  applicationPort: 1337
-  image: ${IMAGE_NAME}
-  ingressHost: ${SERVICE_FQDN}
