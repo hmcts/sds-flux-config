@@ -17,7 +17,7 @@ spec:
   - name: "data-extractor-values"
   values:
     job:
-      image: hmctspublic.azurecr.io/data-extractor/job:prod-484a4ea1
+      image: hmctspublic.azurecr.io/data-extractor/job:prod-92a47c6c
       suspend: true
       aadIdentityName: mi
       keyVaults:
