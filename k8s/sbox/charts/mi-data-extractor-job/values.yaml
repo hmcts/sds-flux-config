@@ -1,44 +1,33 @@
 job:
-  image: hmctspublic.azurecr.io/data-extractor/job:pr-31-1de0ec52
-  # keyVaults:
-  #   "mi-vault-sbox":
-  #     excludeEnvironmentSuffix: true
-  #     resourceGroup: genesis_resource_group
-  #     secrets:
-  #       - aat-ccdro-user
-  #       - aat-ccdro-password
+  image: hmctspublic.azurecr.io/data-extractor/job:pr-34-f1e69286
+  keyVaults:
+    "mi-vault-sbox":
+      excludeEnvironmentSuffix: true
+      resourceGroup: genesis_resource_group
+      secrets:
+        - aat-ccdro-user
+        - aat-ccdro-password
   memoryLimits: '2048Mi'
   usepodidentity: false
   cpuLimits: '2000m'
+  schedule: '0 2 * * *'
   labels:
     app.kubernetes.io/instance : mi-data-extractor-job-001
     app.kubernetes.io/name: mi-data-extractor-job
   environment:
     SECRETS_PATH: /kvmnt/
+    APPINSIGHTS_INSTRUMENTATIONKEY: 
     ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.environment }}.postgres.database.azure.com:5432/ccd_data_store
-    ETL_DB_USER: "ccdro_user@ccd-data-store-api-postgres-db-aat"
-    ETL_DB_PASSWORD: "WWjC9U8H4t+Pr4hk"
-    ETL_SQL: >
-      SELECT id, created_date, event_id, summary, description, user_id, case_data_id,
-      case_type_id, case_type_version, state_id, user_first_name, user_last_name,
-      event_name, state_name, security_classification, data
-      FROM case_event
-      WHERE created_date >= (current_date-1 + time '00:00')
-      AND created_date < (current_date + time '00:00')
-      ORDER BY created_date ASC;
     ETL_ACCOUNT: midatastgsbox
     ETL_CONTAINER: probate
     ETL_FILE_TYPE: jsonlines
     ETL_FILE_PREFIX: test01
-    ETL_MSI_CLIENT_ID: 8dbd1e5c-15b7-42ea-b32c-4a360c79210a
-    ETL_CONNECTION_STRING: "DefaultEndpointsProtocol=https;AccountName=midatastgsbox;AccountKey=9NjPuuZ8ol1qikuKNJTTlMQsJFAkxXsfoq2OW+HQMXq7TkaROcX2oXNAunE0z+93jPZGCeDm8CpWDrd0U/GvaQ==;EndpointSuffix=core.windows.net"
 global:
   job:
-    kind: Job
+    kind: CronJob
   resourcegroup: "genesis_resource_group"
   subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
   tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
   environment: "aat"
   enableKeyVaults: false
   usepodidentity: false
-
