@@ -28,17 +28,13 @@ spec:
           secrets:
           - aat-ccdro-user
           - aat-ccdro-password
+          - connection-string
       labels:
         app.kubernetes.io/instance: data-extractor-job-test
         app.kubernetes.io/name: data-extractor-job
       environment:
         ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-aat.postgres.database.azure.com:5432/ccd_data_store
-        ETL_DB_USER_FILE: aat-ccdro-user
-        ETL_DB_PASSWORD_FILE: aat-ccdro-password
         ETL_ACCOUNT: midatastg
-        ETL_CONTAINER: probate
-        ETL_FILE_TYPE: jsonlines
-        ETL_FILE_PREFIX: test01
         APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
     global:
       job:
