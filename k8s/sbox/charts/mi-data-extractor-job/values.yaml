@@ -1,5 +1,5 @@
 job:
-  image: hmctspublic.azurecr.io/data-extractor/job:pr-36-bbc902be
+  image: hmctspublic.azurecr.io/data-extractor/job:prod-*
   keyVaults:
     "mi-vault-sbox":
       excludeEnvironmentSuffix: true
