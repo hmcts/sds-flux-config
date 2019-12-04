@@ -1,5 +1,5 @@
 job:
-  image: hmctspublic.azurecr.io/data-extractor/job:pr-34-f1e69286
+  image: hmctspublic.azurecr.io/data-extractor/job:prod-*
   keyVaults:
     "mi-vault-sbox":
       excludeEnvironmentSuffix: true
@@ -7,6 +7,7 @@ job:
       secrets:
         - aat-ccdro-user
         - aat-ccdro-password
+        - connection-string
   memoryLimits: '2048Mi'
   usepodidentity: false
   cpuLimits: '2000m'
@@ -16,18 +17,15 @@ job:
     app.kubernetes.io/name: mi-data-extractor-job
   environment:
     SECRETS_PATH: /kvmnt/
-    APPINSIGHTS_INSTRUMENTATIONKEY: 
+    APPINSIGHTS_INSTRUMENTATIONKEY: c3043e63-3383-4add-a507-e0adf8588e4a
     ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.environment }}.postgres.database.azure.com:5432/ccd_data_store
     ETL_ACCOUNT: midatastgsbox
-    ETL_CONTAINER: probate
-    ETL_FILE_TYPE: jsonlines
-    ETL_FILE_PREFIX: test01
 global:
   job:
-    kind: CronJob
+    kind: Job
   resourcegroup: "genesis_resource_group"
   subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
   tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
   environment: "aat"
-  enableKeyVaults: false
+  enableKeyVaults: true
   usepodidentity: false
