@@ -11,16 +11,16 @@ spec:
   releaseName: ctsc-web-forms-ui
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/sbox/charts/ctsc-web-forms-ui
+    path: k8s/stg/charts/ctsc-web-forms-ui
     ref: master
   values:
     image: ssprivatesbox.azurecr.io/ctsc-web-forms-ui:master
     replicaCount: 1
     ingress:
       annotations:
-        kubernetes.io/ingress.class: traefik-sbox
+        kubernetes.io/ingress.class: traefik-stg
       hosts:
-      - 'ctsc-web-forms-ui-sbox.aks-ss.core-compute-sbox.internal'
+      - 'ctsc-web-forms-ui-stg.aks-ss.core-compute-stg.internal'
     env:
       SECRETS_PATH: /kvmnt/
       SERVICE_EMAIL_ADDRESSES: <azure-secret:service-email-addresses>
