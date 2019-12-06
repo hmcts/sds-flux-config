@@ -24,7 +24,7 @@ spec:
     env:
       SECRETS_PATH: /kvmnt/
       SERVICE_EMAIL_ADDRESSES: <azure-secret:service-email-addresses>
-      SMTP_HOST: ctscmail.sandbox.platform.hmcts.net
+      SMTP_HOST: ctscmail.ithc.platform.hmcts.net
       SMTP_PORT: 25
       SMTP_IS_SECURE: FALSE
       SMTP_USER: <azure-secret:smtp-user>
