@@ -61,8 +61,8 @@ spec:
             options:
               usepodidentity: "false"
               keyvaultname: "ctsc-vault-stg"
-              keyvaultobjectnames: "service-email-addresses;smtp-host;smtp-port;smtp-is-secure;smtp-user;smtp-password;smtp-from;smtp-is-spoofed"
-              keyvaultobjecttypes: secret;secret;secret;secret;secret;secret;secret;secret
+              keyvaultobjectnames: "service-email-addresses;smtp-user;smtp-password;smtp-from"
+              keyvaultobjecttypes: secret;secret;secret;secret
               resourcegroup: "ctsc-stg-rg"
               subscriptionid: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
               tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
