@@ -1,0 +1,30 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: mi-integration-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.job: glob:prod-*
+spec:
+  releaseName: mi-integration-service-job
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/sbox/charts/mi-integration-service
+    ref: master
+  values:
+    job:
+      image: ssprivatesbox.azurecr.io/mi-integration-service:test
+      suspend: true
+      labels:
+        app.kubernetes.io/instance: mi-integration-service-job
+        app.kubernetes.io/name: mi-integration-service-job
+        aadpodidbinding: mi-integration-service-sbox-mi
+      environment:
+        DATA_SOURCE: CoreCaseData
+    global:
+      job:
+        kind: Job
+      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
