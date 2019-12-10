@@ -6,7 +6,7 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.job: glob:prod-*
+    flux.weave.works/tag.job: glob:merge-*
 spec:
   releaseName: mi-integration-service-job
   chart:
@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatesbox.azurecr.io/mi-integration-service:pipeline-test
+      image: ssprivatesbox.azurecr.io/mi-integration-service:merge
       suspend: true
       labels:
         app.kubernetes.io/instance: mi-integration-service-job
