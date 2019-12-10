@@ -13,8 +13,6 @@ spec:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/sbox/charts/mi-data-extractor-job
     ref: master
-  valueFileSecrets:
-  - name: "data-extractor-values"
   values:
     job:
       image: hmctspublic.azurecr.io/data-extractor/job:pr-37-bd099b14
