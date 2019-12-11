@@ -8,7 +8,7 @@ metadata:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.job: glob:pr-*
 spec:
-  releaseName: data-extractor-job
+  releaseName: data-extractor
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/sbox/charts/mi-data-extractor-job
@@ -26,7 +26,7 @@ spec:
           secrets:
           - aat-ccdro-user
           - aat-ccdro-password
-          - mi-extraction-storage-connection-string
+          - data-extractor-connection-string
       labels:
         app.kubernetes.io/instance: data-extractor-job-test
         app.kubernetes.io/name: data-extractor-job
