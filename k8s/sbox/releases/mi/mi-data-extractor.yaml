@@ -17,7 +17,6 @@ spec:
     job:
       image: hmctspublic.azurecr.io/data-extractor/job:pr-37
       suspend: true
-      aadIdentityName: mi
       schedule: '0 2 * * *'
       keyVaults:
         "mi-vault":
