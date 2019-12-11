@@ -3,7 +3,8 @@ job:
   keyVaults:
     "mi-vault":
       excludeEnvironmentSuffix: false
-      resourceGroup: mi-sbox-rg
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      usepodidentity: false
       secrets:
         - aat-ccdro-user
         - aat-ccdro-password

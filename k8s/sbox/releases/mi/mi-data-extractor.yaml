@@ -23,6 +23,7 @@ spec:
         "mi-vault":
           excludeEnvironmentSuffix: false
           resourceGroup: mi-sbox-rg
+          usepodidentity: false
           secrets:
           - aat-ccdro-user
           - aat-ccdro-password
