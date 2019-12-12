@@ -1,0 +1,42 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: data-extractor-job
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.job: glob:pr-*
+spec:
+  releaseName: data-extractor
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/test/charts/mi-data-extractor-job
+    ref: master
+  values:
+    job:
+      image: hmctspublic.azurecr.io/data-extractor/job:pr-33
+      suspend: true
+      kind: CronJob
+      schedule: '0 2 * * *'
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-test-rg
+          usepodidentity: false
+          secrets:
+          - aat-ccdro-user
+          - aat-ccdro-password
+          - data-extractor-connection-string
+      labels:
+        app.kubernetes.io/instance: data-extractor-job-test
+        app.kubernetes.io/name: data-extractor-job
+      environment:
+        ETL_ACCOUNT: midatastgtest
+        APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+    global:
+      subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "test"
+      ccd_environment: "aat"
+      usepodidentity: false
