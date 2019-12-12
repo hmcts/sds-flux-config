@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatesbox.azurecr.io/mi-integration-service:merge-bc4884f
+      image: ssprivatesbox.azurecr.io/mi-integration-service:merge-4f38592
       suspend: true
       labels:
         app.kubernetes.io/instance: mi-integration-service-job
