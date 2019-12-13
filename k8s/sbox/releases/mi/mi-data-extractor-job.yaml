@@ -2,7 +2,7 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: data-extractor-job
+  name: data-extractor-job-test
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
