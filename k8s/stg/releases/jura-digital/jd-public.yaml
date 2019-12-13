@@ -1,0 +1,40 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: jd-public
+  namespace: jd
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:2.*
+spec:
+  releaseName: jd-public
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/jd-public
+    ref: master
+  values:
+    image: ssprivatestg.azurecr.io/juror_digital_public_portal:2.15.129
+    pullPolicy: Always
+    replicaCount: 1
+    service:
+      type: ClusterIP
+      port: 3000
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik-stg
+      paths:
+        - /
+      tls: []
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
+      hosts:
+      - 'jd-public.aks-ss.core-compute-stg.internal'
+    env:
+      API_ENDPOINT: http://*.*.*.100:80/api/v1/
+      PORT: 3000
+      USE_AUTH: false
+      NODE_ENV: production
+
