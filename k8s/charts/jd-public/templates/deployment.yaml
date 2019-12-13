@@ -25,7 +25,8 @@ spec:
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           volumeMounts:
           - name: secret-volume
-            mountPath: /app/server/config/environment
+            mountPath: /app/server/config/environment/secret.js
+            subPath: secret.js
           ports:
             - name: http
               containerPort: 3000
@@ -39,9 +40,8 @@ spec:
             {{- end }}
       volumes:
         - name: secret-volume
-          secret:
-            secretName: secret.js
-            defaultMode: 256
+          configMap:
+            name: secret-config
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
