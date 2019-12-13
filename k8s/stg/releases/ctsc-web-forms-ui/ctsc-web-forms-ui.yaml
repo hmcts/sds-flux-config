@@ -22,7 +22,7 @@ spec:
         ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
         traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32, 213.121.161.124/32"
       hosts:
-      - 'ctsc-web-forms-ui-stg.aks-ss.core-compute-stg.internal'
+      - 'ctsc-web-forms-ui-stg.sharedservices.platform.hmcts.net'
     env:
       SECRETS_PATH: /kvmnt/
       SERVICE_EMAIL_ADDRESSES: <azure-secret:service-email-addresses>
