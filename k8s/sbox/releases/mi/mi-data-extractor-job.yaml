@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatesbox.azurecr.io/data-extractor-job:merge-f65d87f
+      image: ssprivatesbox.azurecr.io/data-extractor-job:merge-2ecb029
       suspend: false
       kind: Job
       keyVaults:
