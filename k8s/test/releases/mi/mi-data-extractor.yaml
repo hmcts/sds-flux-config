@@ -18,7 +18,7 @@ spec:
       image: hmctspublic.azurecr.io/data-extractor/job:pr-38
       suspend: false
       kind: CronJob
-      schedule: '0 2 * * *'
+      schedule: '0 * * * *'
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false
