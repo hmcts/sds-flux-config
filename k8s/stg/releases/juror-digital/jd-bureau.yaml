@@ -7,6 +7,7 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: glob:2.*
+    traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32, 194.33.192.0/25, 194.33.196.0/25"
 spec:
   releaseName: jd-bureau
   chart:
@@ -31,7 +32,7 @@ spec:
       #    hosts:
       #      - chart-example.local
       hosts:
-      - 'jd-bureau.aks-ss.core-compute-stg.internal'
+      - 'jdbureau-nle.platform.hmcts.net'
     env:
       API_ENDPOINT: http://*.*.*.100:80/api/v1/
       PORT: 3000
