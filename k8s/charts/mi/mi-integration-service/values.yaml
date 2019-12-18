@@ -1,0 +1,29 @@
+job:
+  image: ssprivatesbox.azurecr.io/mi-integration-service:pipeline-test
+  memoryLimits: '512Mi'
+  cpuLimits: '2000m'
+  aadIdentityName: mi
+  labels:
+    app.kubernetes.io/instance : mi
+    app.kubernetes.io/name: mi-integration-service
+  environment:
+    SECRETS_PATH: /kvmnt/
+    ETL_DB_USER_FILE: <azure-secret:aat-ccdro-user>
+volumes:
+  - name: azurekeyvaultcf
+    flexVolume:
+      driver: "azure/kv"
+      secretRef:
+        name: kvcreds
+      options:
+        usepodidentity: "false"
+        keyvaultname: "mi-vault-sbox"
+        keyvaultobjectnames: "aat-ccdro-user"
+        keyvaultobjecttypes: secret
+        resourcegroup: "genesis_resource_group"
+        subscriptionid: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+        tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082" 
+global:
+  job:
+    kind: Job
+    
