@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: hmctspublic.azurecr.io/data-extractor/job:pr-38-f64295ab
+      image: hmctspublic.azurecr.io/data-extractor/job:pr-38-aaf67f9a
       suspend: false
       kind: CronJob
       schedule: '0 * * * *'
