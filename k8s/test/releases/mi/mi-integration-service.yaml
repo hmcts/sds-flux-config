@@ -6,7 +6,7 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.job: glob:merge-*
+    flux.weave.works/tag.job: glob:pr-*
 spec:
   releaseName: mi-integration-service-job
   chart:
@@ -15,13 +15,13 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatesbox.azurecr.io/mi-integration-service:merge-3db7a3f
+      image: ssprivatetest.azurecr.io/mi-integration-service:pr
       suspend: false
       kind: CronJob
       schedule: '15 * * * *'
       keyVaults:
         "mi-vault":
-          resourceGroup: mi-sbox-rg
+          resourceGroup: mi-test-rg
           secrets:
             - mi-extraction-storage-connection-string
             - mi-landing-storage-connection-string
@@ -30,12 +30,10 @@ spec:
         app.kubernetes.io/instance: mi-integration-service-job
         app.kubernetes.io/name: mi-integration-service-job
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
+        APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
 
     global:
-      job:
-        kind: Job
-      subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+      subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      environment: "sbox"
+      environment: "test"
       resourcegroup: "genesis_resource_group"
