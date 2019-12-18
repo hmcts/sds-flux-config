@@ -24,9 +24,9 @@ spec:
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           hostAliases:
-        - ip: "10.72.1.211"
-          hostnames:
-          - "moj-juror-nle-backend.cgi-odsc.com"
+          - ip: "10.72.1.211"
+            hostnames:
+            - "moj-juror-nle-backend.cgi-odsc.com"
           volumeMounts:
           - name: secret-volume
             mountPath: /app/server/config/environment/secret.js
