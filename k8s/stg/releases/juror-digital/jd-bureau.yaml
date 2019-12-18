@@ -35,7 +35,7 @@ spec:
       hosts:
       - 'jdbureau-nle.platform.hmcts.net'
     env:
-      API_ENDPOINT: http://*.*.*.100:80/api/v1/
+      API_ENDPOINT: http://10.72.1.211:80/api/v1/
       PORT: 3000
       USE_AUTH: false
       NODE_ENV: production
