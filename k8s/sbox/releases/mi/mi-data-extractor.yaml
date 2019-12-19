@@ -15,10 +15,11 @@ spec:
     ref: master
   values:
     job:
-      image: hmctspublic.azurecr.io/data-extractor/job:pr-38-48114aa3
+      image: ssprivatesbox.azurecr.io/data-extractor-job:pr-39
       suspend: false
       kind: CronJob
       schedule: '0 * * * *'
+      successfulJobsHistoryLimit: 5
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false
