@@ -19,7 +19,6 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '0 * * * *'
-      successfulJobsHistoryLimit: 5
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false
