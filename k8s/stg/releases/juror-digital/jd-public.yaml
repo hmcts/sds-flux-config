@@ -5,7 +5,7 @@ metadata:
   name: jd-public
   namespace: jd
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:2.*
 spec:
   releaseName: jd-public
@@ -14,9 +14,12 @@ spec:
     path: k8s/charts/jd-public
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/juror_digital_public_portal:2.15.129
+    image: ssprivatestg.azurecr.io/juror_digital_public_portal:certfix
     pullPolicy: Always
     replicaCount: 1
+    hostaliases:
+      ip: 10.72.1.211
+      hostname: juror-api-nle.dom1.infra.int
     service:
       type: ClusterIP
       port: 3000
@@ -35,7 +38,7 @@ spec:
       hosts:
       - 'jdfrontend-nle.platform.hmcts.net'
     env:
-      API_ENDPOINT: https://moj-juror-nle-backend.cgi-odsc.com/api/v1/
+      API_ENDPOINT: https://juror-api-nle.dom1.infra.int/api/v1/
       PORT: 3000
       USE_AUTH: false
       NODE_ENV: development

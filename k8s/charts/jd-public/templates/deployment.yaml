@@ -19,10 +19,12 @@ spec:
         app.kubernetes.io/name: {{ include "jd-public.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      {{- if .Values.hostaliases }}
       hostAliases:
-      - ip: "10.72.1.211"
+      - ip: {{ .Values.hostaliases.ip | quote }}
         hostnames:
-        - "moj-juror-nle-backend.cgi-odsc.com"
+        - {{ .Values.hostaliases.hostname | quote }}
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}"
