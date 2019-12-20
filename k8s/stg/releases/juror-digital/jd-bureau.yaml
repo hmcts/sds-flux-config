@@ -14,12 +14,12 @@ spec:
     path: k8s/charts/jd-bureau
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/juror_digital_bureau_portal:certfix
+    image: ssprivatestg.azurecr.io/juror_digital_bureau_portal:2.13.6
     pullPolicy: Always
     replicaCount: 1
     hostaliases:
       ip: 10.72.1.211
-      hostname: juror-api-nle.dom1.infra.int
+      hostname: moj-juror-nle-backend.cgi-odsc.com
     service:
       type: ClusterIP
       port: 3000
@@ -38,7 +38,7 @@ spec:
       hosts:
       - 'jdbureau-nle.platform.hmcts.net'
     env:
-      API_ENDPOINT: https://juror-api-nle.dom1.infra.int/api/v1/
+      API_ENDPOINT: https://moj-juror-nle-backend.cgi-odsc.com/api/v1/
       PORT: 3000
       USE_AUTH: false
       NODE_ENV: development
