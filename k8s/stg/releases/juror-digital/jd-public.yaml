@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/jd-public
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/juror_digital_public_portal:certfix1
+    image: ssprivatestg.azurecr.io/juror_digital_public_portal:certfix2
     pullPolicy: Always
     replicaCount: 1
     hostaliases:
