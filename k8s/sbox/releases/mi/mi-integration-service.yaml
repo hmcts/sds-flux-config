@@ -31,6 +31,7 @@ spec:
         app.kubernetes.io/name: mi-integration-service-job
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
+        DATA_SOURCE: CoreCaseData
 
     global:
       job:
