@@ -2,16 +2,16 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: jd-proxy
+  name: moj-nle-reverse-proxy
   namespace: jd
   annotations:
     flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:2.*
 spec:
-  releaseName: jd-proxy
+  releaseName: moj-nle-reverse-proxy
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/charts/jd-proxy
+    path: k8s/charts/moj-nle-reverse-proxy
     ref: master
   values:
     image: ssprivatestg.azurecr.io/juror-httpd:2.4.27

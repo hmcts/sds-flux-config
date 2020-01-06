@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "jd-proxy.fullname" . }}
+  name: {{ include "moj-nle-reverse-proxy.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "jd-proxy.name" . }}
-    helm.sh/chart: {{ include "jd-proxy.chart" . }}
+    app.kubernetes.io/name: {{ include "moj-nle-reverse-proxy.name" . }}
+    helm.sh/chart: {{ include "moj-nle-reverse-proxy.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "jd-proxy.name" . }}
+      app.kubernetes.io/name: {{ include "moj-nle-reverse-proxy.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "jd-proxy.name" . }}
+        app.kubernetes.io/name: {{ include "moj-nle-reverse-proxy.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       {{- if .Values.hostaliases }}

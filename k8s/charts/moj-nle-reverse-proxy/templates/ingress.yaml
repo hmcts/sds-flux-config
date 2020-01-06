@@ -1,13 +1,13 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "jd-proxy.fullname" . -}}
+{{- $fullName := include "moj-nle-reverse-proxy.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "jd-proxy.name" . }}
-    helm.sh/chart: {{ include "jd-proxy.chart" . }}
+    app.kubernetes.io/name: {{ include "moj-nle-reverse-proxy.name" . }}
+    helm.sh/chart: {{ include "moj-nle-reverse-proxy.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   {{- with .Values.ingress.annotations }}
