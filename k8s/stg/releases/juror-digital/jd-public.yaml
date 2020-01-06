@@ -35,7 +35,7 @@ spec:
       hosts:
       - 'jdfrontend-nle.platform.hmcts.net'
     env:
-      API_ENDPOINT: http://jd-proxy.jd:80
+      API_ENDPOINT: http://jd-proxy.jd
       PORT: 3000
       USE_AUTH: false
       NODE_ENV: development
