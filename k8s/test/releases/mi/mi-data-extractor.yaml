@@ -16,7 +16,7 @@ spec:
   values:
     job:
       image: hmctspublic.azurecr.io/data-extractor/job:pr-33
-      suspend: true
+      suspend: false
       kind: CronJob
       schedule: '0 * * * *'
       keyVaults:
