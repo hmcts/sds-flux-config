@@ -17,6 +17,9 @@ spec:
     image: ssprivatesbox.azurecr.io/rdo-sod-docker:latest
     pullPolicy: Always
     replicaCount: 1
+    service:
+      type: ClusterIP
+      port: 3000
     ingress:
       enabled: true
       annotations:
