@@ -16,7 +16,7 @@ spec:
   values:
     job:
       image: ssprivatetest.azurecr.io/mi-integration-service:pr
-      suspend: true
+      suspend: false
       kind: CronJob
       schedule: '15 * * * *'
       keyVaults:
