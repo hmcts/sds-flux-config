@@ -2,13 +2,13 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: maintenance
-  namespace: maintenance
+  name: sod
+  namespace: sod
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: glob:v*
 spec:
-  releaseName: maintenance
+  releaseName: sod
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/charts/sod
