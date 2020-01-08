@@ -2,19 +2,22 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: grafana
-  namespace: sod
+  name: maintenance
+  namespace: maintenance
   annotations:
-    flux.weave.works/automated: "false"
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
 spec:
-  releaseName: grafana
+  releaseName: maintenance
   chart:
-    repository: https://kubernetes-charts.storage.googleapis.com/
-    name: grafana
-    version: 4.0.3
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/sbox/charts/sod
+    ref: master
   values:
+    image: ssprivatesbox.azurecr.io/rdo-sod-docker:latest
+    replicaCount: 1
     ingress:
       annotations:
         kubernetes.io/ingress.class: traefik-sbox
       hosts:
-      - 'grafana.aks-ss.core-compute-sbox.internal'
+      - 'sod.aks-ss.core-compute-sbox.internal'
