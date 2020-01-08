@@ -11,13 +11,24 @@ spec:
   releaseName: maintenance
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/sbox/charts/sod
+    path: k8s/charts/sod
     ref: master
   values:
     image: ssprivatesbox.azurecr.io/rdo-sod-docker:latest
+    pullPolicy: Always
     replicaCount: 1
     ingress:
+      enabled: true
       annotations:
         kubernetes.io/ingress.class: traefik-sbox
+      paths:
+        - /
+      tls: []
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
       hosts:
       - 'sod.aks-ss.core-compute-sbox.internal'
+    env: []
+
+    
