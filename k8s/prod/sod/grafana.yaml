@@ -1,0 +1,37 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: sod
+  namespace: sod
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: prod-*
+spec:
+  releaseName: sod
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/sod
+    ref: master
+  values:
+    image: ssprivatesbox.azurecr.io/rdo-sod-docker:prod-master-a3365f4
+    pullPolicy: Always
+    replicaCount: 1
+    service:
+      type: ClusterIP
+      port: 3000
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik-sbox
+      paths:
+      - /
+      tls: []
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
+      hosts:
+      - 'sod-ss.platform.hmcts.net'
+    env: []
+
+    
