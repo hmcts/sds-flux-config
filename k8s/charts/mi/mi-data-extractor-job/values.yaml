@@ -14,6 +14,7 @@ job:
   cpuLimits: '2000m'
   kind: Job
   schedule: '0 2 * * *'
+  activeDeadlineSeconds: 600
   labels:
     app.kubernetes.io/instance : mi-data-extractor-job-001
     app.kubernetes.io/name: mi-data-extractor-job
