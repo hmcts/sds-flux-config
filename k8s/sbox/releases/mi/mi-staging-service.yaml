@@ -18,7 +18,10 @@ spec:
       image: ssprivatesbox.azurecr.io/mi-staging-service:pr-4-30d4967
       suspend: false
       kind: CronJob
-      schedule: '15 * * * *'
+      schedule: '30 * * * *'
+      labels:
+        app.kubernetes.io/instance : mi-staging-service
+        app.kubernetes.io/name: mi-staging-service
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
         CONTAINER_WHITELIST: testcontainer
