@@ -3,6 +3,7 @@ job:
   memoryLimits: '512Mi'
   cpuLimits: '2000m'
   schedule: '15 * * * *'
+  activeDeadlineSeconds: 600
   keyVaults:
     "mi-vault":
       excludeEnvironmentSuffix: false
