@@ -13,7 +13,7 @@ job:
         - mi-landing-storage-connection-string
         - mi-staging-storage-connection-string
   labels:
-    app.kubernetes.io/instance : mi
+    app.kubernetes.io/instance : mi-staging-service
     app.kubernetes.io/name: mi-staging-service
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
