@@ -1,0 +1,25 @@
+job:
+  image: ssprivatesbox.azurecr.io/mi-staging-service:master
+  memoryLimits: '512Mi'
+  cpuLimits: '2000m'
+  schedule: '30 * * * *'
+  activeDeadlineSeconds: 600
+  keyVaults:
+    "mi-vault":
+      excludeEnvironmentSuffix: false
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      usepodidentity: false
+      secrets:
+        - mi-landing-storage-connection-string
+        - mi-staging-storage-connection-string
+  labels:
+    app.kubernetes.io/instance : mi
+    app.kubernetes.io/name: mi-staging-service
+  environment:
+    APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+global:
+  enableKeyVaults: true
+  usepodidentity: false
+  environment: "sbox"
+  usepodidentity: false
+  tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
