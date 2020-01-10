@@ -1,5 +1,5 @@
 job:
-  image: hmctspublic.azurecr.io/data-extractor/job:pr-33-ded992fb
+  image: ssprivatesbox.azurecr.io/data-extractor-job-pr-40-f712853
   keyVaults:
     "mi-vault":
       excludeEnvironmentSuffix: false
@@ -14,7 +14,7 @@ job:
   cpuLimits: '2000m'
   kind: Job
   schedule: '0 2 * * *'
-  activeDeadlineSeconds: 600
+  activeDeadlineSeconds: 3600
   labels:
     app.kubernetes.io/instance : mi-data-extractor-job-001
     app.kubernetes.io/name: mi-data-extractor-job

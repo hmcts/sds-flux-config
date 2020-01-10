@@ -15,10 +15,10 @@ spec:
     ref: master
   values:
     job:
-      image: hmctspublic.azurecr.io/data-extractor/job:stg
-      suspend: true
+      image: ssprivatestg.azurecr.io/data-extractor-job:stg-8428e66
+      suspend: false
       kind: CronJob
-      schedule: '0 2 * * *'
+      schedule: '0 * * * *'
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false
