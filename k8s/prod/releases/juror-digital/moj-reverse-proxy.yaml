@@ -16,7 +16,7 @@ spec:
   values:
     image: ssprivateprod.azurecr.io/jd/juror-reverse-proxy-live:latest
     pullPolicy: Always
-    replicaCount: 1
+    replicaCount: 2
     hostaliases:
       ip: 10.100.197.186
       hostname: juror-api.dom1.infra.int
