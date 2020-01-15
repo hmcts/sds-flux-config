@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-integration-service:stg-77377bf
+      image: ssprivatestg.azurecr.io/mi-integration-service:stg-d787b77
       suspend: true
       kind: CronJob
       schedule: '15 * * * *'
@@ -23,8 +23,8 @@ spec:
         "mi-vault":
           resourceGroup: mi-stg-rg
           secrets:
-            - mi-extraction-storage-connection-string
-            - mi-landing-storage-connection-string
+          - mi-extraction-storage-connection-string
+          - mi-landing-storage-connection-string
 
       labels:
         app.kubernetes.io/instance: mi-integration-service-job
