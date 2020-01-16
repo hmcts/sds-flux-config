@@ -22,7 +22,7 @@ job:
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
-    ETL_ACCOUNT: midataextractor{{ .Values.global.ccd_environment }}
+    ETL_ACCOUNT: midataextractor{{ .Values.global.environment }}
 global:
   enableKeyVaults: true
   usepodidentity: true
