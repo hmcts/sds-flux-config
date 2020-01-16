@@ -10,7 +10,6 @@ job:
         - aat-ccdro-password
         - data-extractor-connection-string
   memoryLimits: '2048Mi'
-  usepodidentity: false
   cpuLimits: '2000m'
   kind: Job
   schedule: '0 2 * * *'
@@ -22,10 +21,10 @@ job:
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMY
     ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
-    ETL_ACCOUNT: dumyEtlAccount
+    ETL_ACCOUNT: midataextractor{{ .Values.global.environment }}
 global:
   enableKeyVaults: true
-  usepodidentity: false
+  usepodidentity: true
   environment: "sbox"
   ccd_environment: "aat"
   tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
