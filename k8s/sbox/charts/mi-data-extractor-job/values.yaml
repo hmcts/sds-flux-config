@@ -1,5 +1,5 @@
 job:
-  image: ssprivatesbox.azurecr.io/data-extractor-job:pr-39
+  image: ssprivatesbox.azurecr.io/data-extractor-job:pr-42-1af156f
   keyVaults:
     "mi-vault":
       excludeEnvironmentSuffix: false
@@ -13,19 +13,19 @@ job:
   usepodidentity: false
   cpuLimits: '2000m'
   kind: Job
+  aadIdentityName: mi-data-extractor-job
   schedule: '0 2 * * *'
   labels:
     app.kubernetes.io/instance : mi-data-extractor-job-001
     app.kubernetes.io/name: mi-data-extractor-job
   ttlSecondsAfterFinished: 20
   environment:
-    APPINSIGHTS_INSTRUMENTATIONKEY: DUMY
+    APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
-    ETL_ACCOUNT: dumyEtlAccount
+    ETL_ACCOUNT: midataextractor{{ .Values.global.ccd_environment }}
 global:
   enableKeyVaults: true
-  usepodidentity: false
+  usepodidentity: true
   environment: "sbox"
   ccd_environment: "aat"
-  usepodidentity: false
   tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
