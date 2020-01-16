@@ -37,7 +37,6 @@ spec:
       #      - chart-example.local
       hosts:
       - 'juror-bureau.justice.gov.uk'
-      - 'jdbureau.platform.hmcts.net'
     env:
       API_ENDPOINT: http://moj-reverse-proxy/api/v1/
       PORT: 3000
