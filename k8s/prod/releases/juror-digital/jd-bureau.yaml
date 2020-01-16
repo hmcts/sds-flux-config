@@ -36,11 +36,11 @@ spec:
       #    hosts:
       #      - chart-example.local
       hosts:
-      # - 'juror-bureau.justice.gov.uk'
+      - 'juror-bureau.justice.gov.uk'
       - 'jdbureau.platform.hmcts.net'
     env:
       API_ENDPOINT: http://moj-reverse-proxy/api/v1/
       PORT: 3000
       USE_AUTH: false
-      NODE_ENV: development
+      NODE_ENV: production
       TRACKING_CODE: UA-91917174-1
