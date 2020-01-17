@@ -16,7 +16,7 @@ spec:
   values:
     image: ssprivateprod.azurecr.io/jd/juror_digital_public_portal:2.15.129
     pullPolicy: Always
-    replicaCount: 2
+    replicaCount: 1
     service:
       type: ClusterIP
       port: 3000
