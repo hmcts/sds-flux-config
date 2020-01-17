@@ -20,6 +20,9 @@ spec:
     service:
       type: ClusterIP
       port: 3000
+      annotations:
+        traefik.ingress.kubernetes.io/affinity: "true"
+        traefik.ingress.kubernetes.io/load-balancer-method: "drr"
     ingress:
       enabled: true
       annotations:

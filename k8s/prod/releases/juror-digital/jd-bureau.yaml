@@ -16,10 +16,13 @@ spec:
   values:
     image: ssprivateprod.azurecr.io/jd/juror_digital_bureau_portal:2.13.6
     pullPolicy: Always
-    replicaCount: 1
+    replicaCount: 2
     service:
       type: ClusterIP
       port: 3000
+      annotations:
+        traefik.ingress.kubernetes.io/affinity: "true"
+        traefik.ingress.kubernetes.io/load-balancer-method: "drr"
     ingress:
       enabled: true
       annotations:
