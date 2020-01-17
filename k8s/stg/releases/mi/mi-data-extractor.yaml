@@ -16,27 +16,17 @@ spec:
   values:
     job:
       image: ssprivatestg.azurecr.io/data-extractor-job:stg-fda08fb
-      suspend: true
+      suspend: false
       kind: CronJob
       schedule: '0 * * * *'
-      keyVaults:
-        "mi-vault":
-          excludeEnvironmentSuffix: false
-          resourceGroup: mi-stg-rg
-          usepodidentity: false
-          secrets:
-          - aat-ccdro-user
-          - aat-ccdro-password
-          - data-extractor-connection-string
       labels:
-        app.kubernetes.io/instance: data-extractor-job-stg
+        app.kubernetes.io/instance: data-extractor-job
         app.kubernetes.io/name: data-extractor-job
       environment:
-        ETL_ACCOUNT: midatastgtest
+        ETL_MSICLIENTID: e7251f8f-268e-4d5f-98d1-8eb777ef71c3
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       environment: "stg"
       ccd_environment: "aat"
-      usepodidentity: false
