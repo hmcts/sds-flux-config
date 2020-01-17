@@ -22,6 +22,7 @@ spec:
       port: 3000
       annotations:
         traefik.ingress.kubernetes.io/affinity: "true"
+    ingress:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: traefik-stg
