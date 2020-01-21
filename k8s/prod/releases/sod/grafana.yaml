@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/sod
     ref: master
   values:
-    image: ssprivateprod.azurecr.io/rdo-sod-docker:prod-master-a3365f4
+    image: ssprivateprod.azurecr.io/rdo-sod-docker:prod-merge-818a98f
     pullPolicy: Always
     replicaCount: 1
     service:
@@ -25,7 +25,8 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik-sod
         ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
-        traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32, 62.31.239.155/32"
+        traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32,\
+          \ 62.31.239.155/32"
       paths:
       - /
       tls: []
