@@ -41,8 +41,8 @@ spec:
             mountPath: /opt/jboss/wildfly/standalone/configuration/cp-test.xml
             subPath: cp-test.xml
           - name: java-key-store-volume
-            mountPath: /etc/pki/java/cacerts
-            subPath: keystore
+            mountPath: /etc/pki/java
+            subPath: cacerts
           - name: sdrs-cache
             mountPath: {{ .Values.filestore.filesystem.path }}
           ports:
