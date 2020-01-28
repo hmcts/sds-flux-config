@@ -37,10 +37,9 @@ spec:
           command: [ {{ .Values.commandOverride.command | quote }} ]
           {{ end }}
           volumeMounts:
-          - name: configuration-volume
-            mountPath: /opt/jboss/wildfly/standalone/configuration/cp-test.xml
-            subPath: cp-test.xml
-          - name: java-key-store-volume
+          - name: configuration
+            mountPath: /opt/jboss/wildfly/standalone/configuration
+          - name: jks
             mountPath: /etc/pki/java
             subPath: cacerts
           - name: sdrs-cache
@@ -86,19 +85,19 @@ spec:
               value: {{ $value | quote }}
             {{- end }}
       volumes:
-        - name: configuration-volume
-          configMap:
-            name: cp-web-configs
-        - name: java-key-store-volume
+        - name: configuration
+          azureFile:
+            secretName: cp-storage-secret
+            shareName: wf1configuration
+            readOnly: false
+        - name: sdrs-cache
+          azureFile:
+            secretName: cp-storage-secret
+            shareName: sdrs-cache
+            readOnly: false
+        - name: jks
           secret:
             secretName: cp-web-secrets
-        - name: sdrs-cache
-        {{- if and (eq .Values.filestore.backend "filesystem") .Values.filestore.filesystem.persistence.enabled }}
-          persistentVolumeClaim:
-            claimName: {{ .Values.filestore.filesystem.persistence.existingClaim | default (include "cp-web.fullname" .) }}
-        {{- else }}
-          emptyDir: {}
-        {{ end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
