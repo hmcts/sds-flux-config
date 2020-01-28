@@ -38,7 +38,7 @@ spec:
           {{ end }}
           volumeMounts:
           - name: configuration
-            mountPath: /opt/jboss/wildfly/standalone/configuration
+            mountPath: /opt/jboss/wildfly/standalone
           - name: jks
             mountPath: /etc/pki/java
             subPath: cacerts
