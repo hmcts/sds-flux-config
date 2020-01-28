@@ -5,7 +5,7 @@ metadata:
   name: cp-web
   namespace: crimeportal
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:Release-*
 spec:
   releaseName: cp-web
