@@ -43,8 +43,8 @@ spec:
           - name: java-key-store-volume
             mountPath: /etc/pki/java/cacerts/keystore
             subPath: keystore
-          - mountPath: {{ .Values.filestore.filesystem.path }}
-          name: sdrs-cache
+          - name: sdrs-cache
+          mountPath: {{ .Values.filestore.filesystem.path }}
           ports:
             - name: http
               containerPort: 8080
