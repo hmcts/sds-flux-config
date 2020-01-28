@@ -1,29 +1,29 @@
 job:
-  image: ssprivatesbox.azurecr.io/mi-integration-service:pipeline-test
+  image: ssprivatesbox.azurecr.io/mi-integration-service:master
+  keyVaults:
+    "mi-vault":
+      excludeEnvironmentSuffix: false
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      usepodidentity: false
+      secrets:
+        - mi-extraction-storage-connection-string
+        - mi-landing-storage-connection-string
   memoryLimits: '512Mi'
   cpuLimits: '2000m'
-  aadIdentityName: mi
+  kind: Job
+  aadIdentityName: mi-integration-service
+  schedule: '15 * * * *'
+  activeDeadlineSeconds: 3600
   labels:
-    app.kubernetes.io/instance : mi
+    app.kubernetes.io/instance : mi-integration-service
     app.kubernetes.io/name: mi-integration-service
+  ttlSecondsAfterFinished: 20
   environment:
-    SECRETS_PATH: /kvmnt/
-    ETL_DB_USER_FILE: <azure-secret:aat-ccdro-user>
-volumes:
-  - name: azurekeyvaultcf
-    flexVolume:
-      driver: "azure/kv"
-      secretRef:
-        name: kvcreds
-      options:
-        usepodidentity: "false"
-        keyvaultname: "mi-vault-sbox"
-        keyvaultobjectnames: "aat-ccdro-user"
-        keyvaultobjecttypes: secret
-        resourcegroup: "genesis_resource_group"
-        subscriptionid: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
-        tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082" 
+    APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+    STORAGE_EXTRACTION_NAME: midataextractor{{ .Values.global.environment }}
+    STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
 global:
-  job:
-    kind: Job
-    
+  enableKeyVaults: true
+  usepodidentity: true
+  environment: "sbox"
+  tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

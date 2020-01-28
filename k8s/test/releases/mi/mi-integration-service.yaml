@@ -8,7 +8,7 @@ metadata:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.job: glob:pr-*
 spec:
-  releaseName: mi-integration-service-job
+  releaseName: mi-integration-service
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/charts/mi/mi-integration-service
@@ -19,21 +19,14 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '15 * * * *'
-      keyVaults:
-        "mi-vault":
-          resourceGroup: mi-test-rg
-          secrets:
-          - mi-extraction-storage-connection-string
-          - mi-landing-storage-connection-string
-
       labels:
         app.kubernetes.io/instance: mi-integration-service-job
         app.kubernetes.io/name: mi-integration-service-job
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         DATA_SOURCE: CoreCaseData
+        MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       environment: "test"
-      resourcegroup: "genesis_resource_group"

@@ -1,10 +1,5 @@
 job:
   image: ssprivatesbox.azurecr.io/mi-integration-service:master
-  memoryLimits: '512Mi'
-  cpuLimits: '2000m'
-  schedule: '15 * * * *'
-  activeDeadlineSeconds: 3600
-  aadIdentityName: mi-integration-service
   keyVaults:
     "mi-vault":
       excludeEnvironmentSuffix: false
@@ -13,11 +8,20 @@ job:
       secrets:
         - mi-extraction-storage-connection-string
         - mi-landing-storage-connection-string
+  memoryLimits: '512Mi'
+  cpuLimits: '2000m'
+  kind: Job
+  aadIdentityName: mi-integration-service
+  schedule: '15 * * * *'
+  activeDeadlineSeconds: 3600
   labels:
-    app.kubernetes.io/instance : mi
+    app.kubernetes.io/instance : mi-integration-service
     app.kubernetes.io/name: mi-integration-service
+  ttlSecondsAfterFinished: 20
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+    STORAGE_EXTRACTION_NAME: midataextractor{{ .Values.global.environment }}
+    STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
 global:
   enableKeyVaults: true
   usepodidentity: true
