@@ -19,9 +19,9 @@ spec:
     replicaCount: 1
     hostaliases:
       ip: 10.0.0.76
-      hostname: cp_ldap
+      hostname: cp_ldap.internal
       ip1: 10.0.0.23
-      hostname2: cp_db
+      hostname2: cp_db.internal
     service:
       type: ClusterIP
       port: 8080
