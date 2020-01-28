@@ -38,7 +38,7 @@ spec:
           {{ end }}
           volumeMounts:
           - name: configuration
-            mountPath: /opt/jboss/wildfly/standalone
+            mountPath: /opt/jboss/wildfly/standalone/configuration
           - name: jks
             mountPath: /etc/pki/java
             subPath: cacerts
@@ -88,7 +88,7 @@ spec:
         - name: configuration
           azureFile:
             secretName: cp-storage-secret
-            shareName: wf1configuration
+            shareName: wf1configuration/configuration
             readOnly: false
         - name: sdrs-cache
           azureFile:
