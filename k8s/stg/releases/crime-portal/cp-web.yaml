@@ -19,9 +19,9 @@ spec:
     replicaCount: 1
     hostaliases:
       ip: 10.0.0.76
-      hostname: cp_ldap.internal
+      hostname: cp-ldap
       ip1: 10.0.0.23
-      hostname2: cp_db.internal
+      hostname2: cp-db
     service:
       type: ClusterIP
       port: 8080
@@ -42,10 +42,10 @@ spec:
       - 'cp-web-nle.platform.hmcts.net'
     env:
       WF10_HOST: localhost
-      WF10_CP_DS_URL: jdbc:postgresql://cp_db:5432/AAAAAAAA
-      WF10_MGW_DS_URL: jdbc:postgresql://cp_db:5432/AAAAAAAA
-      WF10_SUBSCH_DS_URL: jdbc:postgresql://cp_db:5432/AAAAAAAA
-      WF10_SDRS_DS_URL: jdbc:postgresql://cp_db:5432/AAAAAAAA
+      WF10_CP_DS_URL: jdbc:postgresql://cp-db:5432/AAAAAAAA
+      WF10_MGW_DS_URL: jdbc:postgresql://cp-db:5432/AAAAAAAA
+      WF10_SUBSCH_DS_URL: jdbc:postgresql://cp-db:5432/AAAAAAAA
+      WF10_SDRS_DS_URL: jdbc:postgresql://cp-db:5432/AAAAAAAA
       APACHEDSPW_UIM: AAAAAAAA
       http_proxy_full: http://10.0.0.77:8080
       https_proxy_full: http://10.0.0.77:8080
