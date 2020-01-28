@@ -70,8 +70,8 @@ livenessProbe:
   failureThreshold: 6
   timeoutSeconds: 5
 
-commandOverride:
-  command: bash
+# commandOverride:
+#   command: bash
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
