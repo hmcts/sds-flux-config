@@ -20,8 +20,8 @@ spec:
       kind: CronJob
       schedule: '45 * * * *'
       labels:
-        app.kubernetes.io/instance: mi-house-keeping-service-job
-        app.kubernetes.io/name: mi-house-keeping-service-job
+        app.kubernetes.io/instance: mi-house-keeping-service
+        app.kubernetes.io/name: mi-house-keeping-service
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
         MI_CLIENT_ID: "43d00756-e6a0-483a-a0fb-70bfda2c9c20"
