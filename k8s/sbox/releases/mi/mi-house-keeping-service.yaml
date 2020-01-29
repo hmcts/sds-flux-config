@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatesbox.azurecr.io/mi-house-keeping-service:sbox-d60c59a
+      image: ssprivatesbox.azurecr.io/mi-house-keeping-service:sbox-6148ea0
       suspend: false
       kind: CronJob
       schedule: '45 * * * *'
