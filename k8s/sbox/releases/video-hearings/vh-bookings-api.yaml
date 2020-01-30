@@ -11,11 +11,11 @@ spec:
   releaseName: vh-bookings-api
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/sbox/charts/video-hearings
+    path: k8s/charts/video-hearings
     ref: master
   values:
     image:
-      repository: sspublicsbox.azurecr.io/vh-bookings-api:unknown
+      repository: sspublicsbox.azurecr.io/vh-bookings-api:master-initial
     pullPolicy: Always
     replicaCount: 1
     service:
@@ -33,6 +33,20 @@ spec:
       #      - chart-example.local
       hosts:
       - 'vh-bookings-api.aks-ss.core-compute-sbox.internal'
+    volumes:
+    - name: azurekvvh
+      flexVolume:
+        driver: "azure/kv"
+        secretRef:
+          name: kvcreds
+        options:
+          usepodidentity: "false"
+          keyvaultname: "vhcoreinfrahtsandbox"
+          keyvaultobjectnames: "TenantId,vh-bookings-api-identifieruris,AzureServiceBusConnectionStringSend"
+          keyvaultobjecttypes: secret;secret;secret
+          resourcegroup: "vh-core-infra-sandbox"
+          subscriptionid: "705b2731-0e0b-4df7-8630-95f157f0a347"
+          tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     env:
       SECRETS_PATH: /kvmnt/
       AzureAd_VhBookingsApiResourceId: <azure-secret:vh-bookings-api-identifieruris>
