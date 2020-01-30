@@ -1,0 +1,20 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: vh-core-infra-sandbox-sqluser
+  namespace: video-hearings
+spec:
+  type: 0
+  ResourceID: /subscriptions/705b2731-0e0b-4df7-8630-95f157f0a347/resourceGroups/vh-core-infra-sandbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-core-infra-sandbox-sqluser
+  ClientID: 69be0cda-e86d-41ce-8b70-8a3e1d693cfc
+
+---
+
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: vh-bookings-api-sqluser-binding
+  namespace: video-hearings
+spec:
+  AzureIdentity: vh-core-infra-sandbox-sqluser
+  Selector: vh-bookings-api
