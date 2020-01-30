@@ -34,7 +34,7 @@ spec:
       hosts:
       - 'vh-bookings-api.aks-ss.core-compute-sbox.internal'
     volumes:
-    - name: azurekvvh
+    - name: azurekvvhbookingsapi
       flexVolume:
         driver: "azure/kv"
         secretRef:

@@ -34,7 +34,7 @@ spec:
       hosts:
       - 'vh-video-api.aks-ss.core-compute-sbox.internal'
     volumes:
-    - name: azurekvvh
+    - name: azurekvvhvideoapi
       flexVolume:
         driver: "azure/kv"
         secretRef:
