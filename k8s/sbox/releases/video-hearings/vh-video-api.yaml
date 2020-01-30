@@ -42,7 +42,7 @@ spec:
         options:
           usepodidentity: "false"
           keyvaultname: "vhcoreinfrahtsandbox"
-          keyvaultobjectnames: "vh-core-infra-AppInsightsKey,VhVideoDatabaseConnectionString,AzureServiceBusConnectionStringSend,vh-admin-web-appid,vh-admin-web-key,tenantid,vh-video-api-identifieruris,vh-video-web-appid,vh-video-api-appid,vh-video-api-key,vh-user-api-identifieruris,VhVideoThirdPartySecretKey,VhVideoSecretKey"
+          keyvaultobjectnames: "vh-core-infra-AppInsightsKey;VhVideoDatabaseConnectionString;AzureServiceBusConnectionStringSend;vh-admin-web-appid;vh-admin-web-key;tenantid;vh-video-api-identifieruris;vh-video-web-appid;vh-video-api-appid;vh-video-api-key;vh-user-api-identifieruris;VhVideoThirdPartySecretKey;VhVideoSecretKey"
           keyvaultobjecttypes: secret;secret;secret;secret;secret;secret;secret;secret;secret;secret;secret;secret;secret
           resourcegroup: "vh-core-infra-sandbox"
           subscriptionid: "705b2731-0e0b-4df7-8630-95f157f0a347"

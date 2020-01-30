@@ -42,7 +42,7 @@ spec:
         options:
           usepodidentity: "false"
           keyvaultname: "vhcoreinfrahtsandbox"
-          keyvaultobjectnames: "TenantId,vh-user-api-key,vh-user-api-appid,vh-user-api-identifieruris,vh-core-infra-AppInsightsKey"
+          keyvaultobjectnames: "TenantId;vh-user-api-key;vh-user-api-appid;vh-user-api-identifieruris;vh-core-infra-AppInsightsKey"
           keyvaultobjecttypes: secret;secret;secret;secret;secret
           resourcegroup: "vh-core-infra-sandbox"
           subscriptionid: "705b2731-0e0b-4df7-8630-95f157f0a347"
