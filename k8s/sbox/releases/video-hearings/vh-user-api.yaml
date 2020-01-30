@@ -42,15 +42,16 @@ spec:
         options:
           usepodidentity: "false"
           keyvaultname: "vhcoreinfrahtsandbox"
-          keyvaultobjectnames: "TenantId,vh-user-api-key,vh-user-api-appid,vh-user-api-identifieruris"
-          keyvaultobjecttypes: secret;secret;secret;secret
+          keyvaultobjectnames: "TenantId,vh-user-api-key,vh-user-api-appid,vh-user-api-identifieruris,vh-core-infra-AppInsightsKey"
+          keyvaultobjecttypes: secret;secret;secret;secret;secret
           resourcegroup: "vh-core-infra-sandbox"
           subscriptionid: "705b2731-0e0b-4df7-8630-95f157f0a347"
           tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     env:
       SECRETS_PATH: /kvmnt/
+      ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_ClientSecret: <azure-secret:vh-user-api-key>
       AzureAd_ClientId: <azure-secret:vh-user-api-appid>
       AzureAd_TenantId: <azure-secret:TenantId>
-      AzureAd_VhUserApiResourceId: <azure-secret:vh-user-api-appid>
+      AzureAd_VhUserApiResourceId: <azure-secret:vh-user-api-identifieruris>
       DefaultPassword: <azure-secret:vh-user-api-key>

@@ -1,0 +1,67 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: vh-video-api
+  namespace: video-hearings
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: master-*
+spec:
+  releaseName: vh-video-api
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/video-hearings
+    ref: master
+  values:
+    image:
+      repository: sspublicsbox.azurecr.io/vh-video-api:master-initial
+    pullPolicy: Always
+    replicaCount: 1
+    service:
+      type: ClusterIP
+      port: 80
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik-sbox
+      paths:
+      - /
+      tls: []
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
+      hosts:
+      - 'vh-video-api.aks-ss.core-compute-sbox.internal'
+    volumes:
+    - name: azurekvvh
+      flexVolume:
+        driver: "azure/kv"
+        secretRef:
+          name: kvcreds
+        options:
+          usepodidentity: "false"
+          keyvaultname: "vhcoreinfrahtsandbox"
+          keyvaultobjectnames: "vh-core-infra-AppInsightsKey,VhVideoDatabaseConnectionString,AzureServiceBusConnectionStringSend,vh-admin-web-appid,vh-admin-web-key,tenantid,vh-video-api-identifieruris,vh-video-web-appid,vh-video-api-appid,vh-video-api-key,vh-user-api-identifieruris,VhVideoThirdPartySecretKey,VhVideoSecretKey"
+          keyvaultobjecttypes: secret;secret;secret;secret;secret;secret;secret;secret;secret;secret;secret;secret
+          resourcegroup: "vh-core-infra-sandbox"
+          subscriptionid: "705b2731-0e0b-4df7-8630-95f157f0a347"
+          tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    env:
+      SECRETS_PATH: /kvmnt/
+      ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
+      AzureAd_TenantId: <azure-secret:TenantId>
+      AzureAd_VhvideoApiResourceId: <azure-secret:vh-video-api-identifieruris>
+      AzureAd_ClientId: <azure-secret:vh-video-api-appid>
+      AzureAd_ClientSecret: <azure-secret:vh-video-api-key>
+      AzureAd_VhVideoWebClientId: <azure-secret:vh-video-web-appid>
+      ServiceBusQueue_ConnectionString: <azure-secret:AzureServiceBusConnectionStringSend>
+      Services_KinlyApiUrl: https://dev.hearings.hmcts.net/virtual-court/api/v1
+      Services_KinlySelfTestApiUrl: https://dev.self-test.hearings.hmcts.net/api/v1
+      Services_CallbackUri: https://vh-video-web-sandbox.hearings.reform.hmcts.net/callback
+      Services_PexipSelfTestNode: sip.dev.self-test.hearings.hmcts.net
+      Services_UserApiUrl: http://vh-user-api.aks-ss.core-compute-sbox.internal/
+      Services_UserApiResourceId: <azure-secret:vh-user-api-identifieruris>
+      CustomToken_Secret: <azure-secret:VhVideoSecretKey>
+      CustomToken_ThirdPartySecret: <azure-secret:VhVideoThirdPartySecretKey>
+      SQLAZURECONNSTR_VhVideoApi: <azure-secret:VhVideoDatabaseConnectionString>

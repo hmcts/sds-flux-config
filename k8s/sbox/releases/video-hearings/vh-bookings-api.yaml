@@ -42,14 +42,16 @@ spec:
         options:
           usepodidentity: "false"
           keyvaultname: "vhcoreinfrahtsandbox"
-          keyvaultobjectnames: "TenantId,vh-bookings-api-identifieruris,AzureServiceBusConnectionStringSend"
+          keyvaultobjectnames: "TenantId,vh-bookings-api-identifieruris,vh-core-infra-AppInsightsKey,AzureServiceBusConnectionStringSend,VhBookingsDatabaseConnectionString"
           keyvaultobjecttypes: secret;secret;secret
           resourcegroup: "vh-core-infra-sandbox"
           subscriptionid: "705b2731-0e0b-4df7-8630-95f157f0a347"
           tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     env:
       SECRETS_PATH: /kvmnt/
+      ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_VhBookingsApiResourceId: <azure-secret:vh-bookings-api-identifieruris>
       AzureAd_TenantId: <azure-secret:TenantId>
       ServiceBusQueue_ConnectionString: <azure-secret:AzureServiceBusConnectionStringSend>
+      SQLAZURECONNSTR_VhBookings: <azure-secret:VhBookingsDatabaseConnectionString>
       UseServiceBusFake: false
