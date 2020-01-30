@@ -29,6 +29,16 @@ spec:
         hostnames:
         - {{ .Values.hostaliases.hostname2 | quote }}
       {{- end }}
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      initContainers:
+      - image: bitnami/kubectl:latest
+        name: secrets
+        command: ['sh', '-c', 'VAR=""; for f in /kvmnt/*; do VAR="$VAR --from-literal=$(basename $f)=$(cat $f)"; done;  
+        kubectl create secret generic app-secrets ${VAR} --dry-run -o yaml | kubectl apply -f - ']
+        volumeMounts:
+        - mountPath: /kvmnt
+          name: flexvolcpweb
+          readOnly: true
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}"
@@ -80,6 +90,21 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
+            - name: APACHEDSPW_UIM
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: stg-apachedspw-uim
+            - name: WF10_POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: stg-wf10-postgres-user
+            - name: WF10_POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: stg-wf10-postgres-password
             {{- range $key, $value := $.Values.env }}
             - name: {{ $key }}
               value: {{ $value | quote }}
@@ -98,6 +123,19 @@ spec:
         - name: jks
           secret:
             secretName: cp-web-secrets
+        - name: flexvolcpweb
+          flexVolume:
+            driver: "azure/kv"
+            secretRef:
+              name: kvcreds
+            options:
+              usepodidentity: "false"
+              keyvaultname: "cp-vault-stg"
+              keyvaultobjectnames: "stg-apachedspw-uim;stg-wf10-postgres-user;stg-wf10-postgres-password"
+              keyvaultobjecttypes: secret;secret;secret
+              resourcegroup: "crime-portal-stg-rg"
+              subscriptionid: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+              tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
