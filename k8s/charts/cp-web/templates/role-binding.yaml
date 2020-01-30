@@ -1,0 +1,19 @@
+{{ if .Values.rbac.create }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+  name: {{ .Values.serviceAccount.name }}
+  labels:
+    app: {{ template "cp-web.fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+    helm.sh/chart: {{ include "cp-web.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ template "cp-web.fullname" . }}
+subjects:
+- kind: ServiceAccount
+  name: {{ .Values.serviceAccount.name }}
+  namespace: {{ .Release.Namespace }}
+{{ end }}
