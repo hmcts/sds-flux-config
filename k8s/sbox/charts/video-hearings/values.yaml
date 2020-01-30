@@ -1,0 +1,65 @@
+# Default values for sod.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# replicaCount: 1
+
+# image:
+#   repository: ssprivatesbox.azurecr.io/rdo-sod-docker:latest
+#   pullPolicy: Always
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+probes:
+  enabled: false
+  path: /
+
+ingress:
+  enabled: true
+  annotations:
+    # kubernetes.io/tls-acme: "true"
+  path: /
+  # hosts:
+  #   - chart-example.local
+  tls: []
+    # - secretName: chart-example-tls
+    #   hosts:
+    #     - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+volumes:
+  - name: azurekvvh
+    flexVolume:
+      driver: "azure/kv"
+      secretRef:
+        name: kvcreds
+      options:
+        usepodidentity: "false"
+        keyvaultname: "vhcoreinfrahtsandbox"
+        keyvaultobjectnames: "TenantId,vh-user-api-key,vh-user-api-appid,vh-user-api-identifieruris,vh-admin-web-appid,vh-admin-web-key,VhBookingsDatabaseConnectionString,AzureServiceBusConnectionStringSend"
+        keyvaultobjecttypes: secret;secret;secret;secret;secret;secret;secret
+        resourcegroup: "vh-core-infra-sandbox"
+        subscriptionid: "705b2731-0e0b-4df7-8630-95f157f0a347"
+        tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

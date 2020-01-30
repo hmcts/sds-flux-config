@@ -1,0 +1,41 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: vh-bookings-api
+  namespace: video-hearings
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: master-*
+spec:
+  releaseName: vh-bookings-api
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/sbox/charts/video-hearings
+    ref: master
+  values:
+    image:
+      repository: sspublicsbox.azurecr.io/vh-bookings-api:unknown
+    pullPolicy: Always
+    replicaCount: 1
+    service:
+      type: ClusterIP
+      port: 80
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik-sbox
+      paths:
+      - /
+      tls: []
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
+      hosts:
+      - 'vh-bookings-api.aks-ss.core-compute-sbox.internal'
+    env:
+      SECRETS_PATH: /kvmnt/
+      AzureAd_VhBookingsApiResourceId: <azure-secret:vh-bookings-api-identifieruris>
+      AzureAd_TenantId: <azure-secret:TenantId>
+      ServiceBusQueue_ConnectionString: <azure-secret:AzureServiceBusConnectionStringSend>
+      UseServiceBusFake: false
