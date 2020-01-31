@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/video-hearings
     ref: master
   values:
-    image: sspublicsbox.azurecr.io/vh-bookings-api:master-initial
+    image: sspublicsbox.azurecr.io/vh-bookings-api:master-nohttps
     pullPolicy: Always
     replicaCount: 1
     service:
@@ -39,11 +39,11 @@ spec:
       tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
       secretref: kvcreds
       secrets:
-        - TenantId
-        - vh-bookings-api-identifieruris
-        - vh-core-infra-AppInsightsKey
-        - AzureServiceBusConnectionStringSend
-        - VhBookingsDatabaseConnectionString
+      - TenantId
+      - vh-bookings-api-identifieruris
+      - vh-core-infra-AppInsightsKey
+      - AzureServiceBusConnectionStringSend
+      - VhBookingsDatabaseConnectionString
     env:
       ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_VhBookingsApiResourceId: <azure-secret:vh-bookings-api-identifieruris>
