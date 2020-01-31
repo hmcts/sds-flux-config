@@ -48,8 +48,49 @@ spec:
             - name: {{ $key }}
               value: {{ $value | quote }}
             {{- end }}
-      {{- with .Values.volumes }}
+          volumeMounts:
+          - name: appsettings
+            mountPath: /app/appsettings.json
+            subPath: appsettings.json
+      initContainers:
+      {{- with $.Values.keyvaults }}
+      - name: init-envvars
+        image: mcr.microsoft.com/powershell:latest
+        command: ['sh', '-c', '$settings = @{};gci env:\CONFIGITEM_* | %% {$cname = "$($_.name -ireplace "CONFIGITEM_")"; if ($_.value -imatch '^<azure-secret:(.+)>$') {$settings += @{$cname = "$(gc /secrets/*/$($matches[1]))" }} else {$settings += @{$cname = $_.value }}}; $settings | convertto-json | set-content /config/appsettings.json -Force']
+        env:
+            {{- range $key, $value := $.Values.env }}
+            - name: {{- printf "CONFIGITEM_%s" $key -}}
+              value: {{ $value | quote }}
+            {{- end }}
+        volumeMounts:
+        - name: appsettings
+          mountPath: /config
+        {{- range $.Values.keyvaults}}
+        - name: {{ .name }}
+          mountPath: "{{- printf "/secrets/%s" .name }}"
+        {{- end }}
+        {{- end }}
+
       volumes:
+      - name: appsettings
+        emptyDir: {}
+      {{- range $.Values.keyvaults}}
+      - name: {{ .name }}
+        flexVolume:
+          driver: "azure/kv"
+          secretRef:
+            name: {{ .secretref }}
+          options:
+            usepodidentity: "false"
+            keyvaultname: {{ .name }}
+            keyvaultobjectnames: {{ join ";" .secrets | quote }}
+            keyvaultobjecttypes: {{ repeat (len .secrets) "secret;" | trimSuffix ";" | quote }}
+            resourcegroup: {{ .resourcegroup }}
+            subscriptionid: {{ .subscriptionid }}
+            tenantid: {{ .tenantid }}
+
+      {{- end }}
+      {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.nodeSelector }}

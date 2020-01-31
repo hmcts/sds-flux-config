@@ -32,22 +32,25 @@ spec:
       #      - chart-example.local
       hosts:
       - 'vh-video-api.aks-ss.core-compute-sbox.internal'
-    volumes:
-    - name: azurekvvhvideoapi
-      flexVolume:
-        driver: "azure/kv"
-        secretRef:
-          name: kvcreds
-        options:
-          usepodidentity: "false"
-          keyvaultname: "vhcoreinfrahtsandbox"
-          keyvaultobjectnames: "vh-core-infra-AppInsightsKey;VhVideoDatabaseConnectionString;AzureServiceBusConnectionStringSend;vh-admin-web-appid;vh-admin-web-key;tenantid;vh-video-api-identifieruris;vh-video-web-appid;vh-video-api-appid;vh-video-api-key;vh-user-api-identifieruris;VhVideoThirdPartySecretKey;VhVideoSecretKey"
-          keyvaultobjecttypes: secret;secret;secret;secret;secret;secret;secret;secret;secret;secret;secret;secret;secret
-          resourcegroup: "vh-core-infra-sandbox"
-          subscriptionid: "705b2731-0e0b-4df7-8630-95f157f0a347"
-          tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    keyvaults:
+    - name: vhcoreinfrahtsandbox
+      resourcegroup: vh-core-infra-sandbox
+      subscriptionid: 705b2731-0e0b-4df7-8630-95f157f0a347
+      tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
+      secretref: kvcreds
+      secrets:
+        - vh-core-infra-AppInsightsKey
+        - TenantId
+        - vh-video-api-identifieruris
+        - vh-video-api-appid
+        - vh-video-api-key
+        - vh-video-web-appid
+        - AzureServiceBusConnectionStringSend
+        - vh-user-api-identifieruris
+        - VhVideoSecretKey
+        - VhVideoThirdPartySecretKey
+        - VhVideoDatabaseConnectionString
     env:
-      SECRETS_PATH: /kvmnt/
       ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_TenantId: <azure-secret:TenantId>
       AzureAd_VhvideoApiResourceId: <azure-secret:vh-video-api-identifieruris>
@@ -63,4 +66,4 @@ spec:
       Services_UserApiResourceId: <azure-secret:vh-user-api-identifieruris>
       CustomToken_Secret: <azure-secret:VhVideoSecretKey>
       CustomToken_ThirdPartySecret: <azure-secret:VhVideoThirdPartySecretKey>
-      SQLAZURECONNSTR_VhVideoApi: <azure-secret:VhVideoDatabaseConnectionString>
+      ConnectionStrings_VhVideoApi: <azure-secret:VhVideoDatabaseConnectionString>

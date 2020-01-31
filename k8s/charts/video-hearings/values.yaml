@@ -17,7 +17,7 @@ service:
 
 probes:
   enabled: false
-  path: /
+  path: /HealthCheck/health
 
 ingress:
   enabled: true
