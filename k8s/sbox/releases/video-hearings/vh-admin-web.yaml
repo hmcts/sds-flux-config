@@ -48,8 +48,8 @@ spec:
       - vh-user-api-identifieruris
     env:
       ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
-      AzureAd_TenantId: <azure-secret:Authority>
-      AzureAd_Authority: <azure-secret:TenantId>
+      AzureAd_TenantId: <azure-secret:TenantId>
+      AzureAd_Authority: <azure-secret:Authority>
       AzureAd_ClientId: <azure-secret:vh-admin-web-appid>
       AzureAd_ClientSecret: <azure-secret:vh-admin-web-key>
       AzureAd_RedirectUri: http://localhost/home
