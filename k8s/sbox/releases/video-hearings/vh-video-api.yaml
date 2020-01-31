@@ -62,7 +62,7 @@ spec:
       Services_KinlySelfTestApiUrl: https://dev.self-test.hearings.hmcts.net/api/v1
       Services_CallbackUri: https://vh-video-web-sandbox.hearings.reform.hmcts.net/callback
       Services_PexipSelfTestNode: sip.dev.self-test.hearings.hmcts.net
-      Services_UserApiUrl: http://vh-user-api.aks-ss.core-compute-sbox.internal/
+      Services_UserApiUrl: http://vh-user-api-video-hearings/
       Services_UserApiResourceId: <azure-secret:vh-user-api-identifieruris>
       CustomToken_Secret: <azure-secret:VhVideoSecretKey>
       CustomToken_ThirdPartySecret: <azure-secret:VhVideoThirdPartySecretKey>

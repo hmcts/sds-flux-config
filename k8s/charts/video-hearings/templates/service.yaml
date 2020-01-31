@@ -15,5 +15,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: {{ template "video-hearings.name" . }}
-    release: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ template "video-hearings.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
