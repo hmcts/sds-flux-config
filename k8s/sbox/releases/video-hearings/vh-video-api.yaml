@@ -20,18 +20,6 @@ spec:
     service:
       type: ClusterIP
       port: 80
-    ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: traefik-sbox
-      paths:
-      - /
-      tls: []
-      #  - secretName: chart-example-tls
-      #    hosts:
-      #      - chart-example.local
-      hosts:
-      - 'vh-video-api.aks-ss.core-compute-sbox.internal'
     keyvaults:
     - name: vhcoreinfrahtsandbox
       resourcegroup: vh-core-infra-sandbox

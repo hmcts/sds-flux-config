@@ -18,6 +18,7 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "video-hearings.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+        aadpodidbinding: {{ .Release.Name }}
     spec:
       containers:
         - name: {{ .Chart.Name }}

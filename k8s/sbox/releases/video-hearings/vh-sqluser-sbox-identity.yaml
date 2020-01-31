@@ -18,3 +18,14 @@ metadata:
 spec:
   AzureIdentity: vh-core-infra-sandbox-sqluser
   Selector: vh-bookings-api
+
+---
+
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: vh-video-api-sqluser-binding
+  namespace: video-hearings
+spec:
+  AzureIdentity: vh-core-infra-sandbox-sqluser
+  Selector: vh-video-api
