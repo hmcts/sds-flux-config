@@ -38,7 +38,7 @@ spec:
       - VhVideoSecretKey
       - VhVideoThirdPartySecretKey
       - VhVideoDatabaseConnectionString
-    env:
+    appsettings:
       ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_TenantId: <azure-secret:TenantId>
       AzureAd_VhvideoApiResourceId: <azure-secret:vh-video-api-identifieruris>

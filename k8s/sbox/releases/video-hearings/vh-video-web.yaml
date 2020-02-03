@@ -2,19 +2,19 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: vh-admin-web
+  name: vh-video-web
   namespace: video-hearings
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: master-*
 spec:
-  releaseName: vh-admin-web
+  releaseName: vh-video-web
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/charts/video-hearings
     ref: master
   values:
-    image: sspublicsbox.azurecr.io/vh-admin-web:master-nohttps
+    image: sspublicsbox.azurecr.io/vh-video-web:master-nohttps
     pullPolicy: Always
     replicaCount: 1
     service:
@@ -31,7 +31,7 @@ spec:
       #    hosts:
       #      - chart-example.local
       hosts:
-      - 'vh-admin-web.aks-ss.core-compute-sbox.internal'
+      - 'vh-video-web.aks-ss.core-compute-sbox.internal'
     keyvaults:
     - name: vhcoreinfrahtsandbox
       resourcegroup: vh-core-infra-sandbox
@@ -42,20 +42,31 @@ spec:
       - vh-core-infra-AppInsightsKey
       - Authority
       - TenantId
-      - vh-admin-web-appid
-      - vh-admin-web-key
+      - vh-video-web-appid
+      - vh-video-web-key
+      - vh-video-web-identifieruris
       - vh-bookings-api-identifieruris
       - vh-user-api-identifieruris
+      - vh-video-api-identifieruris
+      - VhVideoThirdPartySecretKey
+      - VhVideoSecretKey
+      - signalr-connection-str
     appsettings:
       ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_TenantId: <azure-secret:TenantId>
       AzureAd_Authority: <azure-secret:Authority>
-      AzureAd_ClientId: <azure-secret:vh-admin-web-appid>
-      AzureAd_ClientSecret: <azure-secret:vh-admin-web-key>
+      AzureAd_ClientId: <azure-secret:vh-video-web-appid>
+      AzureAd_ClientSecret: <azure-secret:vh-video-web-key>
       AzureAd_RedirectUri: http://localhost/home
       AzureAd_PostLogoutRedirectUri: http://localhost/logout
+      AzureAd_VhVideoWebResourceId: <azure-secret:vh-video-web-identifieruris>
+      ConnectionStrings_SignalR: <azure-secret:signalr-connection-str>
+      CustomToken_Secret: <azure-secret:VhVideoSecretKey>
+      CustomToken_ThirdPartySecret: <azure-secret:VhVideoThirdPartySecretKey>
       VhServices_BookingsApiUrl: http://vh-bookings-api-video-hearings/
       VhServices_BookingsApiResourceId: <azure-secret:vh-bookings-api-identifieruris>
       VhServices_UserApiUrl: http://vh-user-api-video-hearings/
       VhServices_UserApiResourceId: <azure-secret:vh-user-api-identifieruris>
+      VhServices_VideoApiUrl: http://vh-video-api-video-hearings/
+      VhServices_VideoApiResourceId: <azure-secret:vh-video-api-identifieruris>
       IsLive: false

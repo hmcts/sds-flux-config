@@ -64,8 +64,12 @@ spec:
         - "$settings = @{};gci env:\\CONFIGITEM_* | % {$cname = \"$($_.name -ireplace \"CONFIGITEM_\")\".replace('_',':');if ($_.value -imatch '^<azure-secret:(.+)>$') {$settings += @{$cname = \"$((gc \"/secrets/*/$($matches[1])\"))\"}}else{$settings += @{$cname = $_.value}}};$settings | convertto-json | set-content /config/appsettings.json -Force"
 
         env:
-            {{- range $key, $value := $.Values.env }}
+            {{- range $key, $value := $.Values.appsettings }}
             - name: {{- printf " CONFIGITEM_%s" $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+            {{- range $key, $value := $.Values.env }}
+            - name: {{ $key }}
               value: {{ $value | quote }}
             {{- end }}
         volumeMounts:

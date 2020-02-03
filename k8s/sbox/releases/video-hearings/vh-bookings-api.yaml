@@ -32,7 +32,7 @@ spec:
       - vh-core-infra-AppInsightsKey
       - AzureServiceBusConnectionStringSend
       - VhBookingsDatabaseConnectionString
-    env:
+    appsettings:
       ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_VhBookingsApiResourceId: <azure-secret:vh-bookings-api-identifieruris>
       AzureAd_TenantId: <azure-secret:TenantId>

@@ -32,7 +32,7 @@ spec:
       - vh-user-api-appid
       - vh-user-api-identifieruris
       - vh-core-infra-AppInsightsKey
-    env:
+    appsettings:
       ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_ClientSecret: <azure-secret:vh-user-api-key>
       AzureAd_ClientId: <azure-secret:vh-user-api-appid>
