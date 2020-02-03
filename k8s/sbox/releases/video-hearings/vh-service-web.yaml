@@ -2,19 +2,19 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: vh-admin-web
+  name: vh-service-web
   namespace: video-hearings
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: master-*
 spec:
-  releaseName: vh-admin-web
+  releaseName: vh-service-web
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/charts/video-hearings
     ref: master
   values:
-    image: sspublicsbox.azurecr.io/vh-admin-web:master-nohttps
+    image: sspublicsbox.azurecr.io/vh-service-web:master-nohttps
     pullPolicy: Always
     replicaCount: 1
     service:
@@ -31,7 +31,7 @@ spec:
       #    hosts:
       #      - chart-example.local
       hosts:
-      - 'vh-admin-web.aks-ss.core-compute-sbox.internal'
+      - 'vh-service-web.aks-ss.core-compute-sbox.internal'
     keyvaults:
     - name: vhcoreinfrahtsandbox
       resourcegroup: vh-core-infra-sandbox
@@ -42,20 +42,38 @@ spec:
       - vh-core-infra-AppInsightsKey
       - Authority
       - TenantId
-      - vh-admin-web-appid
-      - vh-admin-web-key
+      - vh-video-web-appid
+      - vh-video-web-key
+      - vh-video-web-identifieruris
       - vh-bookings-api-identifieruris
+      - vh-user-api-appid
+      - vh-user-api-key
       - vh-user-api-identifieruris
+      - vh-video-api-identifieruris
+      - VhVideoThirdPartySecretKey
+      - VhVideoSecretKey
     appsettings:
       ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
+      AzureAd_AppInsightsKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_TenantId: <azure-secret:TenantId>
       AzureAd_Authority: <azure-secret:Authority>
-      AzureAd_ClientId: <azure-secret:vh-admin-web-appid>
-      AzureAd_ClientSecret: <azure-secret:vh-admin-web-key>
+      AzureAd_ClientId: <azure-secret:vh-video-web-appid>
+      AzureAd_ClientSecret: <azure-secret:vh-video-web-key>
       AzureAd_RedirectUri: http://localhost/home
       AzureAd_PostLogoutRedirectUri: http://localhost/logout
+      AzureAd_BaseVideoUrl: https://vhcoreinfrasandbox.blob.core.windows.net/video
+      AzureAd_UserApiClientId: <azure-secret:vh-user-api-appid>
+      AzureAd_UserApiClientSecret: <azure-secret:vh-user-api-key>
+      CustomToken_Secret: <azure-secret:VhVideoSecretKey>
+      CustomToken_ThirdPartySecret: <azure-secret:VhVideoThirdPartySecretKey>
       VhServices_BookingsApiUrl: http://vh-bookings-api-video-hearings/
       VhServices_BookingsApiResourceId: <azure-secret:vh-bookings-api-identifieruris>
       VhServices_UserApiUrl: http://vh-user-api-video-hearings/
       VhServices_UserApiResourceId: <azure-secret:vh-user-api-identifieruris>
+      VhServices_VideoApiUrl: http://vh-video-api-video-hearings/
+      VhServices_VideoApiResourceId: <azure-secret:vh-video-api-identifieruris>
+      VhServices_VideoWebUrl: http://vh-video-web-video-hearings/
+      VhServices_ServiceWebUrl: http://vh-service-web-video-hearings/
+      VhServices_KinlySelfTestScoreEndpointUrl: https://preprod.self-test.hearings.hmcts.net/api/v1/testcall
+      VhServices_PexipSelfTestNodeUri: sip.preprod.self-test.hearings.hmcts.net
       IsLive: false
