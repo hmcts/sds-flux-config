@@ -33,8 +33,8 @@ spec:
       hosts:
       - 'vh-admin-web.aks-ss.core-compute-sbox.internal'
     keyvaults:
-    - name: vhcoreinfrahtsandbox
-      resourcegroup: vh-core-infra-sandbox
+    - name: vhcoreinfrahttest2
+      resourcegroup: vh-core-infra-test2
       subscriptionid: 705b2731-0e0b-4df7-8630-95f157f0a347
       tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
       secretref: kvcreds
@@ -52,8 +52,8 @@ spec:
       AzureAd_Authority: <azure-secret:Authority>
       AzureAd_ClientId: <azure-secret:vh-admin-web-appid>
       AzureAd_ClientSecret: <azure-secret:vh-admin-web-key>
-      AzureAd_RedirectUri: http://localhost/home
-      AzureAd_PostLogoutRedirectUri: http://localhost/logout
+      AzureAd_RedirectUri: https://vh-admin-web.aks-ss.core-compute-sbox.internal/home
+      AzureAd_PostLogoutRedirectUri: https://vh-admin-web.aks-ss.core-compute-sbox.internal/logout
       VhServices_BookingsApiUrl: http://vh-bookings-api-video-hearings/
       VhServices_BookingsApiResourceId: <azure-secret:vh-bookings-api-identifieruris>
       VhServices_UserApiUrl: http://vh-user-api-video-hearings/

@@ -1,11 +1,11 @@
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
-  name: vh-core-infra-sandbox-sqluser
+  name: vh-core-infra-test2-sqluser
   namespace: video-hearings
 spec:
   type: 0
-  ResourceID: /subscriptions/705b2731-0e0b-4df7-8630-95f157f0a347/resourceGroups/vh-core-infra-sandbox/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-core-infra-sandbox-sqluser
+  ResourceID: /subscriptions/705b2731-0e0b-4df7-8630-95f157f0a347/resourceGroups/vh-core-infra-test2/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-core-infra-test2-sqluser
   ClientID: 69be0cda-e86d-41ce-8b70-8a3e1d693cfc
 
 ---
@@ -16,7 +16,7 @@ metadata:
   name: vh-bookings-api-sqluser-binding
   namespace: video-hearings
 spec:
-  AzureIdentity: vh-core-infra-sandbox-sqluser
+  AzureIdentity: vh-core-infra-test2-sqluser
   Selector: vh-bookings-api
 
 ---
@@ -27,5 +27,5 @@ metadata:
   name: vh-video-api-sqluser-binding
   namespace: video-hearings
 spec:
-  AzureIdentity: vh-core-infra-sandbox-sqluser
+  AzureIdentity: vh-core-infra-test2-sqluser
   Selector: vh-video-api

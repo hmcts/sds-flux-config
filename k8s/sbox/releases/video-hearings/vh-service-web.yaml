@@ -33,8 +33,8 @@ spec:
       hosts:
       - 'vh-service-web.aks-ss.core-compute-sbox.internal'
     keyvaults:
-    - name: vhcoreinfrahtsandbox
-      resourcegroup: vh-core-infra-sandbox
+    - name: vhcoreinfrahttest2
+      resourcegroup: vh-core-infra-test2
       subscriptionid: 705b2731-0e0b-4df7-8630-95f157f0a347
       tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
       secretref: kvcreds
@@ -42,9 +42,8 @@ spec:
       - vh-core-infra-AppInsightsKey
       - Authority
       - TenantId
-      - vh-video-web-appid
-      - vh-video-web-key
-      - vh-video-web-identifieruris
+      - vh-service-web-appid
+      - vh-service-web-key
       - vh-bookings-api-identifieruris
       - vh-user-api-appid
       - vh-user-api-key
@@ -57,11 +56,11 @@ spec:
       AzureAd_AppInsightsKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_TenantId: <azure-secret:TenantId>
       AzureAd_Authority: <azure-secret:Authority>
-      AzureAd_ClientId: <azure-secret:vh-video-web-appid>
-      AzureAd_ClientSecret: <azure-secret:vh-video-web-key>
-      AzureAd_RedirectUri: http://localhost/home
-      AzureAd_PostLogoutRedirectUri: http://localhost/logout
-      AzureAd_BaseVideoUrl: https://vhcoreinfrasandbox.blob.core.windows.net/video
+      AzureAd_ClientId: <azure-secret:vh-service-web-appid>
+      AzureAd_ClientSecret: <azure-secret:vh-service-web-key>
+      AzureAd_RedirectUri: https://vh-service-web.aks-ss.core-compute-sbox.internal/home
+      AzureAd_PostLogoutRedirectUri: https://vh-service-web.aks-ss.core-compute-sbox.internal/logout
+      AzureAd_BaseVideoUrl: https://vhcoreinfratest2.blob.core.windows.net/video
       AzureAd_UserApiClientId: <azure-secret:vh-user-api-appid>
       AzureAd_UserApiClientSecret: <azure-secret:vh-user-api-key>
       CustomToken_Secret: <azure-secret:VhVideoSecretKey>
