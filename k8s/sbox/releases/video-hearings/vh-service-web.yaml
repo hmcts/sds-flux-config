@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/video-hearings
     ref: master
   values:
-    image: sspublicsbox.azurecr.io/vh-service-web:master-nohttps
+    image: sspublicsbox.azurecr.io/vh-service-web:master-httpsconfigenv
     pullPolicy: Always
     replicaCount: 1
     service:
