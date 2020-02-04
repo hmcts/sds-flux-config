@@ -16,7 +16,7 @@ spec:
   values:
     job:
       image: ssprivatetest.azurecr.io/mi-house-keeping-service:pr-15-1114abd
-      suspend: true
+      suspend: false
       kind: CronJob
       schedule: '45 * * * *'
       labels:
