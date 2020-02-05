@@ -10,10 +10,10 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+    - name: http
       protocol: TCP
-      name: http
+      port: {{ .Values.service.port }}
+      targetPort: http
   selector:
     app.kubernetes.io/name: {{ template "video-hearings.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

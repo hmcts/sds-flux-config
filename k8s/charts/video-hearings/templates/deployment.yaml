@@ -26,19 +26,19 @@ spec:
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           {{- if .Values.probes.enabled }}
           livenessProbe:
             httpGet:
               path: {{ .Values.probes.path }}
-              port: 80
+              port: http
             initialDelaySeconds: 15
             periodSeconds: 5
           readinessProbe:
             httpGet:
               path: {{ .Values.probes.path }}
-              port: 80
+              port: http
             initialDelaySeconds: 20
             periodSeconds: 5
           {{- end }}
