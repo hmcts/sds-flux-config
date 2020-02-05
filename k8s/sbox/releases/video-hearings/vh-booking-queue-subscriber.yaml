@@ -11,7 +11,7 @@ spec:
   releaseName: vh-booking-queue-subscriber
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/charts/video-hearings
+    path: k8s/charts/video-hearings-func
     ref: master
   values:
     image: sspublicsbox.azurecr.io/vh-booking-queue-subscriber:master-initial
