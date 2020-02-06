@@ -26,7 +26,7 @@ spec:
         kubernetes.io/ingress.class: traefik-sod
         ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
         traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32,\
-          \ 62.31.239.155/32, 81.109.71.47/32"
+          \ 62.31.239.155/32, 81.109.71.47/32, 213.121.161.124/32"
       paths:
       - /
       tls: []
@@ -36,5 +36,3 @@ spec:
       hosts:
       - 'sod-ss.platform.hmcts.net'
     env: []
-
-    
