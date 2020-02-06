@@ -4,10 +4,11 @@ apiVersion: v1
 metadata:
   name: {{ template "cp-web.fullname" . }}
   labels:
-    app: {{ template "cp-web.fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    app.kubernetes.io/name: {{ include "cp-web.name" . }}
+    app: {{ include "cp-web.name" . }}
+    helm.sh/chart: {{ include "cp-web.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   accessModes:
     - {{ .Values.filestore.filesystem.persistence.accessMode | quote }}
