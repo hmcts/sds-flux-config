@@ -5,7 +5,7 @@ metadata:
   name: jd-public
   namespace: jd
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:2.*
 spec:
   releaseName: jd-public
