@@ -21,7 +21,12 @@ spec:
       type: ClusterIP
       port: 80
     ingress:
-      enabled: false
+      enabled: true
+      paths:
+      - /
+      tls: []
+      hosts:
+      - 'vh-user-api.aks-ss.core-compute-sbox.internal'
     keyvaults:
     - name: vhcoreinfrahttest2
       resourcegroup: vh-core-infra-test2
