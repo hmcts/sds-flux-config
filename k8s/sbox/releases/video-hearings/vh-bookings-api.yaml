@@ -20,6 +20,8 @@ spec:
     service:
       type: ClusterIP
       port: 80
+    ingress:
+      enabled: false
     keyvaults:
     - name: vhcoreinfrahttest2
       resourcegroup: vh-core-infra-test2
