@@ -16,4 +16,6 @@ spec:
   values:
     pullPolicy: Always
     replicaCount: 1
-  apiUrl: "https://jqr44001.live.dynatrace.com/api"
+    oneagent:
+      name: "oneagent"
+      apiUrl: "https://jqr44001.live.dynatrace.com/api"
