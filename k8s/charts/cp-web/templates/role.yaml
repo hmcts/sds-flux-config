@@ -15,5 +15,11 @@ rules:
   - secrets
   - configmaps
   verbs:
-  - "*"
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - delete
+  - watch
 {{ end }}
