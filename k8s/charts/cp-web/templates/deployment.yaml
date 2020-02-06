@@ -35,7 +35,7 @@ spec:
         name: secrets
         command: ['sh', '-c', 'VAR=""; for f in /kvmnt/*; do VAR="$VAR --from-literal=$(basename $f)=$(cat $f)"; done;  
         kubectl create secret generic app-secrets ${VAR} --dry-run -o yaml | kubectl apply -f - ;
-        kubectl create secret generic cp-storage-secret --from-literal=azurestorageaccountname=$(/kvmnt1/cp-storage-name) --from-literal=azurestorageaccountkey=$(/kvmnt1/cp-storage-key) --dry-run -o yaml | kubectl apply -f - ']
+        kubectl create secret generic cp-storage-secret --from-literal=azurestorageaccountname=$(cat /kvmnt1/cp-storage-name) --from-literal=azurestorageaccountkey=$(cat /kvmnt1/cp-storage-key) --dry-run -o yaml | kubectl apply -f - ']
         volumeMounts:
         - mountPath: /kvmnt
           name: flexvolcpweb
