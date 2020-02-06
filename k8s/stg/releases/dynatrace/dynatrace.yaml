@@ -1,0 +1,19 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: dynatrace-oneagent-operator
+  namespace: dynatrace
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: glob:*
+spec:
+  releaseName: dynatrace
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/dynatrace-oneagent-operator
+    ref: master
+  values:
+    pullPolicy: Always
+    replicaCount: 1
+  apiUrl: "https://jqr44001.live.dynatrace.com/api"
