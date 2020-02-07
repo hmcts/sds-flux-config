@@ -6,7 +6,7 @@ metadata:
   namespace: video-hearings
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: master-*
+    flux.weave.works/tag.chart-image: pr-*
 spec:
   releaseName: vh-bookings-api
   chart:
@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/video-hearings
     ref: master
   values:
-    image: sspublicsbox.azurecr.io/vh-bookings-api:master-nohttps
+    image: sspublicsbox.azurecr.io/vh-bookings-api:pr-715968ffb6e4435b65a91928c925cb5e9f3963a3
     pullPolicy: Always
     replicaCount: 1
     service:

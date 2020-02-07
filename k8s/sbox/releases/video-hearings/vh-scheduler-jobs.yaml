@@ -6,7 +6,7 @@ metadata:
   namespace: video-hearings
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: master-*
+    flux.weave.works/tag.chart-image: pr-*
 spec:
   releaseName: vh-scheduler-jobs
   chart:
@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/video-hearings-func
     ref: master
   values:
-    image: sspublicsbox.azurecr.io/vh-scheduler-jobs:master-initial
+    image: sspublicsbox.azurecr.io/vh-scheduler-jobs:pr-6c350302694aceccd83193a01444b071613ca673
     pullPolicy: Always
     replicaCount: 1
     keyvaults:

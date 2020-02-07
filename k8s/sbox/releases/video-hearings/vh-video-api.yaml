@@ -6,7 +6,7 @@ metadata:
   namespace: video-hearings
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: master-*
+    flux.weave.works/tag.chart-image: pr-*
 spec:
   releaseName: vh-video-api
   chart:
@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/video-hearings
     ref: master
   values:
-    image: sspublicsbox.azurecr.io/vh-video-api:master-nohttps
+    image: sspublicsbox.azurecr.io/vh-video-api:pr-5696b199efb48cfe3d61225610a017a17806769b
     pullPolicy: Always
     replicaCount: 1
     service:
