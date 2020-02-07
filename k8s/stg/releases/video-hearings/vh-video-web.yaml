@@ -57,8 +57,8 @@ spec:
       AzureAd_Authority: <azure-secret:Authority>
       AzureAd_ClientId: <azure-secret:vh-video-web-appid>
       AzureAd_ClientSecret: <azure-secret:vh-video-web-key>
-      AzureAd_RedirectUri: https://vh-video-web.aks-ss.core-compute-sbox.internal/home
-      AzureAd_PostLogoutRedirectUri: https://vh-video-web.aks-ss.core-compute-sbox.internal/logout
+      AzureAd_RedirectUri: https://vh-video-web-test2.hearings.reform.hmcts.net/home
+      AzureAd_PostLogoutRedirectUri: https://vh-video-web-test2.hearings.reform.hmcts.net/logout
       AzureAd_VhVideoWebResourceId: <azure-secret:vh-video-web-identifieruris>
       ConnectionStrings_SignalR: <azure-secret:signalr-connection-str>
       CustomToken_Secret: <azure-secret:VhVideoSecretKey>

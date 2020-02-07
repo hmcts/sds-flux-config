@@ -58,8 +58,8 @@ spec:
       AzureAd_Authority: <azure-secret:Authority>
       AzureAd_ClientId: <azure-secret:vh-service-web-appid>
       AzureAd_ClientSecret: <azure-secret:vh-service-web-key>
-      AzureAd_RedirectUri: https://vh-service-web.aks-ss.core-compute-sbox.internal/home
-      AzureAd_PostLogoutRedirectUri: https://vh-service-web.aks-ss.core-compute-sbox.internal/logout
+      AzureAd_RedirectUri: https://vh-service-web-test2.hearings.reform.hmcts.net/home
+      AzureAd_PostLogoutRedirectUri: https://vh-service-web-test2.hearings.reform.hmcts.net/logout
       AzureAd_BaseVideoUrl: https://vhcoreinfratest2.blob.core.windows.net/video
       AzureAd_UserApiClientId: <azure-secret:vh-user-api-appid>
       AzureAd_UserApiClientSecret: <azure-secret:vh-user-api-key>

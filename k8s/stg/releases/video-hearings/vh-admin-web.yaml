@@ -52,8 +52,8 @@ spec:
       AzureAd_Authority: <azure-secret:Authority>
       AzureAd_ClientId: <azure-secret:vh-admin-web-appid>
       AzureAd_ClientSecret: <azure-secret:vh-admin-web-key>
-      AzureAd_RedirectUri: https://vh-admin-web.aks-ss.core-compute-sbox.internal/home
-      AzureAd_PostLogoutRedirectUri: https://vh-admin-web.aks-ss.core-compute-sbox.internal/logout
+      AzureAd_RedirectUri: https://vh-admin-web-test2.hearings.reform.hmcts.net/home
+      AzureAd_PostLogoutRedirectUri: https://vh-admin-web-test2.hearings.reform.hmcts.net/logout
       VhServices_BookingsApiUrl: http://vh-bookings-api-video-hearings/
       VhServices_BookingsApiResourceId: <azure-secret:vh-bookings-api-identifieruris>
       VhServices_UserApiUrl: http://vh-user-api-video-hearings/
