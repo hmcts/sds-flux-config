@@ -25,7 +25,7 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik-vh
         ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
-        traefik.ingress.kubernetes.io/whitelist-source-range: "51.140.226.40/32"
+        traefik.ingress.kubernetes.io/whitelist-source-range: "51.140.226.40/32,178.251.181.129/32"
       paths:
       - /
       tls: []
