@@ -33,7 +33,7 @@ spec:
             {{- end }}
           volumeMounts:
           - name: appsettings
-            mountPath: "home/site/wwwroot/bin/appsettings.json"
+            mountPath: "home/site/wwwroot/BookingQueueSubscriberFunction/appsettings.json"
             subPath: "appsettings.json"
 
       initContainers:
