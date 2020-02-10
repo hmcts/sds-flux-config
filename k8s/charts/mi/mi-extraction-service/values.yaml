@@ -1,10 +1,18 @@
 job:
   image: ssprivatesbox.azurecr.io/mi-extraction-service:master
+  keyVaults:
+    "mi-vault":
+      excludeEnvironmentSuffix: false
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      usepodidentity: false
+      secrets:
+        - gov-uk-notify-api-key
+        - archive-password
   memoryLimits: '512Mi'
   cpuLimits: '2000m'
   kind: Job
   aadIdentityName: mi-extraction-service
-  schedule: '45 0 * * *'
+  schedule: '40 0 * * *'
   activeDeadlineSeconds: 3600
   labels:
     app.kubernetes.io/instance : mi-extraction-service
@@ -14,6 +22,7 @@ job:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
     STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
+    EXPORT_STAGING_NAME: miexport{{ .Values.global.environment }}
 global:
   usepodidentity: true
   environment: "sbox"
