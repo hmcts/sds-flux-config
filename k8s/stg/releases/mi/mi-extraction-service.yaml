@@ -6,7 +6,7 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.job: glob:pr-*
+    flux.weave.works/tag.job: glob:stg-*
 spec:
   releaseName: mi-extraction-service
   chart:
@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatesbox.azurecr.io/mi-extraction-service:pr-1
+      image: ssprivatestg.azurecr.io/mi-extraction-service:stg-1
       suspend: false
       kind: CronJob
       schedule: '40 0 * * *'
@@ -23,9 +23,9 @@ spec:
         app.kubernetes.io/instance: mi-extraction-service
         app.kubernetes.io/name: mi-extraction-service
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
-        MI_CLIENT_ID: "e719c01d-0095-462c-93e8-78f29ca20cff"
+        APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+        MI_CLIENT_ID: "88d54b96-2be6-4fb5-b966-7d98111152d8"
     global:
-      subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      environment: "sbox"
+      environment: "stg"
