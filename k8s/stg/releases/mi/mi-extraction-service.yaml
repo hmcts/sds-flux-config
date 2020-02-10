@@ -6,7 +6,7 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.job: glob:pr-*
+    flux.weave.works/tag.job: glob:stg-*
 spec:
   releaseName: mi-extraction-service
   chart:
@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-extraction-service:pr-1
+      image: ssprivatestg.azurecr.io/mi-extraction-service:stg-1
       suspend: false
       kind: CronJob
       schedule: '40 0 * * *'
