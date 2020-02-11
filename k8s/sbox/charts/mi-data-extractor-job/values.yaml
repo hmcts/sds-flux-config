@@ -10,11 +10,11 @@ job:
         - aat-ccdro-password
         - data-extractor-connection-string
   memoryLimits: '2048Mi'
-  usepodidentity: false
   cpuLimits: '2000m'
   kind: Job
   aadIdentityName: mi-data-extractor-job
   schedule: '0 2 * * *'
+  activeDeadlineSeconds: 3600
   labels:
     app.kubernetes.io/instance : mi-data-extractor-job-001
     app.kubernetes.io/name: mi-data-extractor-job
