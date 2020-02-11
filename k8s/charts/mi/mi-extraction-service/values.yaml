@@ -25,6 +25,7 @@ job:
     STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
     EXPORT_STAGING_NAME: miexport{{ .Values.global.environment }}
 global:
+  enableKeyVaults: true
   usepodidentity: true
   environment: "sbox"
   tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
