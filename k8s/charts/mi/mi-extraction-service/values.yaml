@@ -23,7 +23,7 @@ job:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
     STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
-    EXPORT_STAGING_NAME: miexport{{ .Values.global.environment }}
+    STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
 global:
   enableKeyVaults: true
   usepodidentity: true
