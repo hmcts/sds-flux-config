@@ -42,3 +42,5 @@ spec:
       VhServices_EnableVideoApiStub: false
       ServiceBusConnection: <azure-secret:AzureServiceBusConnectionStringListen>
       queueName: booking
+    env:
+      ServiceBusConnection: Endpoint=sb://vh-core-infra-test2.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKeyListen;SharedAccessKey=dHlfB9WXbSs8V153mZ++WHwpsl8WoN3Ow9cp0r+yEnY=
