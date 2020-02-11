@@ -27,7 +27,7 @@ spec:
       - vh-core-infra-AppInsightsKey
       - Authority
       - TenantId
-      - vh-booking-queue-subscriber-identifieruris
+      - vh-video-api-identifieruris
       - vh-booking-queue-subscriber-appid
       - vh-booking-queue-subscriber-key
       - AzureServiceBusConnectionStringListen
@@ -35,10 +35,14 @@ spec:
       ApplicationInsights_InstrumentationKey: <azure-secret:vh-core-infra-AppInsightsKey>
       AzureAd_Authority: <azure-secret:Authority>
       AzureAd_TenantId: <azure-secret:TenantId>
-      AzureAd_VhvideoApiResourceId: <azure-secret:vh-booking-queue-subscriber-identifieruris>
+      AzureAd_VhvideoApiResourceId: <azure-secret:vh-video-api-identifieruris>
       AzureAd_ClientId: <azure-secret:vh-booking-queue-subscriber-appid>
       AzureAd_ClientSecret: <azure-secret:vh-booking-queue-subscriber-key>
       VhServices_VideoApiUrl: http://vh-video-api-video-hearings/
       VhServices_EnableVideoApiStub: false
       ServiceBusConnection: <azure-secret:AzureServiceBusConnectionStringListen>
       queueName: booking
+    env:
+      ServiceBusConnection: Endpoint=sb://vh-core-infra-test2.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKeyListen;SharedAccessKey=dHlfB9WXbSs8V153mZ++WHwpsl8WoN3Ow9cp0r+yEnY=
+      queueName: booking
+      APPINSIGHTS_INSTRUMENTATIONKEY: 65a15a5b-1c79-4ec8-9840-212000cd323c
