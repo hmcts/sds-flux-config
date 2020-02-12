@@ -18,13 +18,16 @@ spec:
     pullPolicy: Always
     replicaCount: 1
     hostaliases:
-      ip: 10.0.0.76
-      hostname: cp-ldap
-      ip1: 10.0.0.23
-      hostname2: cp-db
+    - ip: 192.173.0.4
+      hostname: cpldap
+    - ip: 192.173.0.5
+      hostname: cpdb
     service:
       type: ClusterIP
       port: 8080
+      https: 8443
+      jmx1: 9990
+      jmx2: 9993
     ingress:
       enabled: true
       annotations:
@@ -40,13 +43,59 @@ spec:
       #      - chart-example.local
       hosts:
       - 'cp-web-nle.platform.hmcts.net'
+    readinessProbe:
+      enabled: false
+      path: "/"
+      initialDelaySeconds: 60
+      periodSeconds: 30
+      failureThreshold: 6
+      timeoutSeconds: 5
+    livenessProbe:
+      enabled: false
+      path: "/"
+      initialDelaySeconds: 60
+      periodSeconds: 30
+      failureThreshold: 6
+      timeoutSeconds: 5
+    volumes:
+    - name: configuration
+      mountPath: /opt/jboss/wildfly/standalone/configuration
+      secretName: cp-storage-secret
+      shareName: wf1-configuration/configuration
+    - name: sdrs-cache
+      mountPath: /opt/jboss/wildfly/standalone/sdrs_cache
+      secretName: cp-storage-secret
+      shareName: sdrs-cache
+    - name: jks
+      mountPath: /etc/pki/java
+      secretName: cp-storage-secret
+      shareName: wf1-configuration/jks
+    keyvaults:
+    - name: cpweb
+      kvname: cp-valut-stg
+      resourcegroup: crime-portal-stg-rg
+      subscriptionid: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
+      tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
+      secretref: kvcreds
+      secrets:
+      - apachedspw-uim
+      - wf10-postgres-user
+      - wf10-postgres-password
+    - name: cpwebshare
+      kvname: cp-valut-stg
+      resourcegroup: crime-portal-stg-rg
+      subscriptionid: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
+      tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
+      secretref: kvcreds
+      secrets:
+      - cp-storage-key
+      - cp-storage-name
     env:
       WF10_HOST: localhost
-      WF10_CP_DS_URL: jdbc:postgresql://cp-db:5432/AAAAAAAA
-      WF10_MGW_DS_URL: jdbc:postgresql://cp-db:5432/AAAAAAAA
-      WF10_SUBSCH_DS_URL: jdbc:postgresql://cp-db:5432/AAAAAAAA
-      WF10_SDRS_DS_URL: jdbc:postgresql://cp-db:5432/AAAAAAAA
-      APACHEDSPW_UIM: AAAAAAAA
+      WF10_CP_DS_URL: jdbc:postgresql://cpdb:5432/crime_portal_db
+      WF10_MGW_DS_URL: jdbc:postgresql://cpdb:5432/cp_mirror_gateway_db
+      WF10_SUBSCH_DS_URL: jdbc:postgresql://cpdb:5432/cp_subscriptionscheduler_db
+      WF10_SDRS_DS_URL: jdbc:postgresql://cpdb:5432/cp_sdrs_db
       http_proxy_full: http://10.0.0.77:8080
       https_proxy_full: http://10.0.0.77:8080
       http_proxy: http://10.0.0.77:8080
@@ -56,5 +105,3 @@ spec:
       http_proxy_ip: 10.0.0.77
       https_proxy_ip: 10.0.0.77
       no_proxy: "172.0.0.3,172.1.0.3,localhost,wildfly2,10.0.4.7"
-      WF10_POSTGRES_USER: AAAAAAAAA
-      WF10_POSTGRES_PASSWORD: AAAAAAA
