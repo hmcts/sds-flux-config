@@ -22,9 +22,10 @@ spec:
     spec:
     {{- if .Values.hostaliases }}
       hostAliases:
-      {{- range $.Values.hostaliases}}
-      - ip: {{ .ip }}
-        hostnames: {{ .hostname }}
+      {{- range $.Values.hostaliases }}
+      - ip: {{ .ip | quote }}
+        hostnames: 
+        - {{ .hostname | quote }}
       {{- end }}
     {{- end }}
       serviceAccountName: {{ .Values.serviceAccount.name }}
