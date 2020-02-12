@@ -20,7 +20,6 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik-stg
         ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
-        traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32, 213.121.161.124/32, 147.243.0.0/16, 51.9.249.71/32"
       hosts:
       - 'ctsc-web-forms-ui-stg.platform.hmcts.net'
     env:
