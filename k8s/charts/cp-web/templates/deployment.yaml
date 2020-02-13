@@ -36,10 +36,9 @@ spec:
         - "bash"
         - "-c"
         - |
-          VAR=""
-          echo " VAR=\"\" "
-          for f in ${cpweb}/*; do VAR="$VAR --from-literal=$(basename $f)=$(cat $f)"; done;
-          echo " for f in ${cpweb}/*; do VAR=\"$VAR --from-literal=$(basename $f)=$(cat $f)\"; done; "
+          set -x
+          VAR=\"\"
+          for f in ${cpweb}/*; do VAR=\"$VAR --from-literal=$(basename $f)=$(cat $f)\"; done;
           kubectl create secret generic app-secrets ${VAR} --dry-run -o yaml | kubectl apply -f - 
           kubectl create secret generic cp-storage-secret --from-literal=azurestorageaccountname=$(cat ${cpwebshare}/cp-storage-name) --from-literal=azurestorageaccountkey=$(cat ${cpwebshare}/cp-storage-key) --dry-run -o yaml | kubectl apply -f - 
         volumeMounts:
