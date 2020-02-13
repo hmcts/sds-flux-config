@@ -29,7 +29,6 @@ spec:
       {{- end }}
     {{- end }}
       serviceAccountName: {{ .Values.serviceAccount.name }}
-      {{- if $.Values.keyvaults }}
       initContainers:
       - name: secrets
         image: bitnami/kubectl:latest
@@ -37,9 +36,9 @@ spec:
         - "bash"
         - "-c"
         - |
-          VAR=\"\"
+          VAR=""
           echo " VAR=\"\" "
-          for f in ${cpweb}/*; do VAR=\"$VAR --from-literal=$(basename $f)=$(cat $f)\"; done;
+          for f in ${cpweb}/*; do VAR="$VAR --from-literal=$(basename $f)=$(cat $f)"; done;
           echo " for f in ${cpweb}/*; do VAR=\"$VAR --from-literal=$(basename $f)=$(cat $f)\"; done; "
           kubectl create secret generic app-secrets ${VAR} --dry-run -o yaml | kubectl apply -f - 
           kubectl create secret generic cp-storage-secret --from-literal=azurestorageaccountname=$(cat ${cpwebshare}/cp-storage-name) --from-literal=azurestorageaccountkey=$(cat ${cpwebshare}/cp-storage-key) --dry-run -o yaml | kubectl apply -f - 
@@ -54,8 +53,6 @@ spec:
         - name: {{ .name }}
           value: "{{- printf "/kvmnt/%s" .name }}"
         {{- end }}
-
-      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}"
