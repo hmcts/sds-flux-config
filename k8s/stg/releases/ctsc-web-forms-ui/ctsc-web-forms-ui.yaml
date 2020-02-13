@@ -14,7 +14,7 @@ spec:
     path: k8s/stg/charts/ctsc-web-forms-ui
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/ctsc-web-forms-ui:master-master-623fda2
+    image: ssprivatestg.azurecr.io/ctsc-web-forms-ui:master-master-778e30c
     replicaCount: 1
     ingress:
       annotations:
