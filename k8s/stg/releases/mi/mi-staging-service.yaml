@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-staging-service:stg-3d1fb04
+      image: ssprivatestg.azurecr.io/mi-staging-service:stg-8ede344
       suspend: false
       kind: CronJob
       schedule: '30 * * * *'
