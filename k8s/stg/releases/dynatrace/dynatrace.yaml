@@ -14,8 +14,7 @@ spec:
     path: k8s/charts/dynatrace-oneagent-operator
     ref: master
   values:
-    pullPolicy: Always
-    replicaCount: 1
+    platform: "kubernetes"
     oneagent:
       name: "oneagent"
       apiUrl: "https://jqr44001.live.dynatrace.com/api"
