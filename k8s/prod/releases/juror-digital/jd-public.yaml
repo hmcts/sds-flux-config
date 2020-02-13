@@ -28,8 +28,8 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik-jd
         traefik.ingress.kubernetes.io/service-weights: |
-          jd-public: 0%
-          jd-public-maintenance: 100%
+          jd-public: 100%
+          jd-public-maintenance: 0%
       paths:
         - /
       tls: []
