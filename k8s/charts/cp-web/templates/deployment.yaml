@@ -33,9 +33,14 @@ spec:
       initContainers:
       - name: secrets
         image: bitnami/kubectl:latest
-        command: ['sh', '-c', 'VAR=\\"\\"; for f in ${cpweb}/*; do VAR=\\"$VAR --from-literal=$(basename $f)=$(cat $f)\\"; done;  
-        kubectl create secret generic app-secrets ${VAR} --dry-run -o yaml | kubectl apply -f - ;
-        kubectl create secret generic cp-storage-secret --from-literal=azurestorageaccountname=$(cat ${cpwebshare}/cp-storage-name) --from-literal=azurestorageaccountkey=$(cat ${cpwebshare}/cp-storage-key) --dry-run -o yaml | kubectl apply -f - ']
+        command: 
+        - "bash"
+        - "-c"
+        - |
+          VAR=""
+          for f in ${cpweb}/*; do VAR="$VAR --from-literal=$(basename $f)=$(cat $f)"; done;
+          kubectl create secret generic app-secrets ${VAR} --dry-run -o yaml | kubectl apply -f - 
+          kubectl create secret generic cp-storage-secret --from-literal=azurestorageaccountname=$(cat ${cpwebshare}/cp-storage-name) --from-literal=azurestorageaccountkey=$(cat ${cpwebshare}/cp-storage-key) --dry-run -o yaml | kubectl apply -f - 
         volumeMounts:
         {{- range $.Values.keyvaults}}
         - name: {{ .name }}
