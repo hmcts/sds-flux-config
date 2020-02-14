@@ -35,8 +35,12 @@ secrets:
   create: false
 
 configMap:
-  # Specifies whether Config Map resources should be created
+# Specifies whether Config Map resources should be created
   create: false
+
+# Optionally customize the pod dnsConfig.
+dnsConfig:
+  create: true
 
 # ingress:
 #   enabled: true

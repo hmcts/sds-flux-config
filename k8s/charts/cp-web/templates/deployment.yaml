@@ -36,18 +36,19 @@ spec:
         - "bash"
         - "-c"
         - |
-          set -x
-          VAR=\"\"
-          for f in /kvmnt/*; do VAR=\"$VAR --from-literal=$(basename $f)=$(cat $f)\"; done;
+          for f in ${cpweb}/*; do VAR="$VAR --from-literal=$(basename $f)=$(cat $f)"; done;
           kubectl create secret generic app-secrets ${VAR} --dry-run -o yaml | kubectl apply -f - 
-          kubectl create secret generic cp-storage-secret --from-literal=azurestorageaccountname=$(cat /kvmnt1/cp-storage-name) --from-literal=azurestorageaccountkey=$(cat /kvmnt1/cp-storage-key) --dry-run -o yaml | kubectl apply -f - 
         volumeMounts:
-        - mountPath: /kvmnt
-          name: flexvolcpweb
+        {{- range $.Values.keyvaults}}
+        - name: {{ .name }}
+          mountPath: "{{- printf "/kvmnt/%s" .name }}"
           readOnly: true
-        - mountPath: /kvmnt1
-          name: flexvolcpwebshare
-          readOnly: true
+        {{- end }}
+        env:
+        {{- range $.Values.keyvaults}}
+        - name: {{ .name }}
+          value: "{{- printf "/kvmnt/%s" .name }}"
+        {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}"
@@ -133,32 +134,21 @@ spec:
             secretName: cp-storage-secret
             shareName: wf1-configuration/jks
             readOnly: false
-        - name: flexvolcpweb
+      {{- range $.Values.keyvaults}}
+        - name: {{ .name }}
           flexVolume:
             driver: "azure/kv"
             secretRef:
-              name: kvcreds
+              name: {{ .secretref }}
             options:
               usepodidentity: "false"
-              keyvaultname: "cp-vault-stg"
-              keyvaultobjectnames: "apachedspw-uim;wf10-postgres-user;wf10-postgres-password"
-              keyvaultobjecttypes: secret;secret;secret
-              resourcegroup: "crime-portal-stg-rg"
-              subscriptionid: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
-              tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-        - name: flexvolcpwebshare
-          flexVolume:
-            driver: "azure/kv"
-            secretRef:
-              name: kvcreds
-            options:
-              usepodidentity: "false"
-              keyvaultname: "cp-vault-stg"
-              keyvaultobjectnames: "cp-storage-key;cp-storage-name"
-              keyvaultobjecttypes: secret;secret
-              resourcegroup: "crime-portal-stg-rg"
-              subscriptionid: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
-              tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+              keyvaultname: {{ .kvname }}
+              keyvaultobjectnames: {{ join ";" .secrets | quote }}
+              keyvaultobjecttypes: {{ repeat (len .secrets) "secret;" | trimSuffix ";" | quote }}
+              resourcegroup: {{ .resourcegroup }}
+              subscriptionid: {{ .subscriptionid }}
+              tenantid: {{ .tenantid }}
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -170,4 +160,9 @@ spec:
     {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- if .Values.dnsConfig }}
+      dnsConfig:
+        options:
+          - name: single-request-reopen
     {{- end }}
