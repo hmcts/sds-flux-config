@@ -71,13 +71,13 @@ spec:
       secretName: cp-storage-secret
       shareName: wf1-configuration/jks
     keyvaults:
-      name: cpweb
+    - name: cpweb
       kvname: cp-valut-stg
       resourcegroup: crime-portal-stg-rg
       subscriptionid: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
       tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
       secretref: kvcreds
-      kvsecrets:
+      secrets:
       - apachedspw-uim
       - wf10-postgres-user
       - wf10-postgres-password
