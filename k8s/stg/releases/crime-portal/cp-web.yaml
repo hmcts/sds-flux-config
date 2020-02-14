@@ -81,15 +81,6 @@ spec:
       - apachedspw-uim
       - wf10-postgres-user
       - wf10-postgres-password
-    - name: cpwebshare
-      kvname: cp-valut-stg
-      resourcegroup: crime-portal-stg-rg
-      subscriptionid: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
-      tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
-      secretref: kvcreds
-      secrets:
-      - cp-storage-key
-      - cp-storage-name
     env:
       WF10_HOST: localhost
       WF10_CP_DS_URL: jdbc:postgresql://cpdb:5432/crime_portal_db
