@@ -11,10 +11,10 @@ spec:
   releaseName: maintenance
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/prod/charts/maintenance
+    path: k8s/charts/maintenance
     ref: master
   values:
-    image: ssprivateprod.azurecr.io/maintenance:v0.2
+    image: ssprivateithc.azurecr.io/maintenance:v0.2
     replicaCount: 1
     ingress:
       annotations:
