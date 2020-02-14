@@ -2,19 +2,19 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: cp-web
+  name: cp-notify
   namespace: crimeportal
   annotations:
     flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:Release-*
 spec:
-  releaseName: cp-web
+  releaseName: cp-notify
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/charts/cp-web
+    path: k8s/charts/cp-notify
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/cp/wildfly1:Release-19
+    image: ssprivatestg.azurecr.io/cp/wildfly2:Release-19
     pullPolicy: Always
     replicaCount: 1
     hostaliases:
@@ -25,16 +25,12 @@ spec:
     service:
       type: ClusterIP
       port: 8080
-      https: 8443
-      jmx1: 9990
-      jmx2: 9993
+      https: 8445
+      jmx1: 9992
+      jmx2: 9995
     ingress:
-      enabled: true
+      enabled: false
       annotations:
-        kubernetes.io/ingress.class: traefik-stg
-        traefik.ingress.kubernetes.io/affinity: "true"
-        ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
-        traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32, 194.33.192.0/25, 194.33.196.0/25, 195.59.75.0/24, 158.234.251.0/24, 158.234.250.0/24, 213.121.161.124/32"
       paths:
         - /
       tls: []
@@ -42,7 +38,6 @@ spec:
       #    hosts:
       #      - chart-example.local
       hosts:
-      - 'cp-web-nle.platform.hmcts.net'
     readinessProbe:
       enabled: false
       path: "/"
@@ -59,10 +54,7 @@ spec:
       timeoutSeconds: 5
     env:
       WF10_HOST: localhost
-      WF10_CP_DS_URL: jdbc:postgresql://cpdb:5432/crime_portal_db
-      WF10_MGW_DS_URL: jdbc:postgresql://cpdb:5432/cp_mirror_gateway_db
-      WF10_SUBSCH_DS_URL: jdbc:postgresql://cpdb:5432/cp_subscriptionscheduler_db
-      WF10_SDRS_DS_URL: jdbc:postgresql://cpdb:5432/cp_sdrs_db
+      WF10_NOT_DS_URL: "jdbc:postgresql://cp_db:5432/cp_notify_db"
       http_proxy_full: http://10.0.0.77:8080
       https_proxy_full: http://10.0.0.77:8080
       http_proxy: http://10.0.0.77:8080
