@@ -36,19 +36,12 @@ spec:
         - "bash"
         - "-c"
         - |
-          for f in ${cpweb}/*; do VAR="$VAR --from-literal=$(basename $f)=$(cat $f)"; done;
+          for f in /kvmnt/*; do VAR="$VAR --from-literal=$(basename $f)=$(cat $f)"; done;
           kubectl create secret generic app-secrets ${VAR} --dry-run -o yaml | kubectl apply -f - 
         volumeMounts:
-        {{- range $.Values.keyvaults}}
-        - name: {{ .name }}
-          mountPath: "{{- printf "/kvmnt/%s" .name }}"
+        - name: cpweb
+          mountPath: "/kvmnt"
           readOnly: true
-        {{- end }}
-        env:
-        {{- range $.Values.keyvaults}}
-        - name: {{ .name }}
-          value: "{{- printf "/kvmnt/%s" .name }}"
-        {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}"
