@@ -1,0 +1,23 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: maintenance
+  namespace: maintenance
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: maintenance
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/prod/charts/maintenance
+    ref: master
+  values:
+    image: ssprivateprod.azurecr.io/maintenance:v0.2
+    replicaCount: 1
+    ingress:
+      annotations:
+        kubernetes.io/ingress.class: traefik-ithc
+      hosts:
+      - 'maintenance.aks-ss.core-compute-ithc.internal'
