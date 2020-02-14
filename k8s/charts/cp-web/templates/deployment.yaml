@@ -38,7 +38,6 @@ spec:
         - |
           for f in ${cpweb}/*; do VAR="$VAR --from-literal=$(basename $f)=$(cat $f)"; done;
           kubectl create secret generic app-secrets ${VAR} --dry-run -o yaml | kubectl apply -f - 
-          kubectl create secret generic cp-storage-secret --from-literal=azurestorageaccountname=$(cat ${cpwebshare}/cp-storage-name) --from-literal=azurestorageaccountkey=$(cat ${cpwebshare}/cp-storage-key) --dry-run -o yaml | kubectl apply -f - 
         volumeMounts:
         {{- range $.Values.keyvaults}}
         - name: {{ .name }}
@@ -145,19 +144,6 @@ spec:
               keyvaultname: "cp-vault-stg"
               keyvaultobjectnames: "apachedspw-uim;wf10-postgres-user;wf10-postgres-password"
               keyvaultobjecttypes: secret;secret;secret
-              resourcegroup: "crime-portal-stg-rg"
-              subscriptionid: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
-              tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-        - name: cpwebshare
-          flexVolume:
-            driver: "azure/kv"
-            secretRef:
-              name: kvcreds
-            options:
-              usepodidentity: "false"
-              keyvaultname: "cp-vault-stg"
-              keyvaultobjectnames: "cp-storage-key;cp-storage-name"
-              keyvaultobjecttypes: secret;secret
               resourcegroup: "crime-portal-stg-rg"
               subscriptionid: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
               tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
