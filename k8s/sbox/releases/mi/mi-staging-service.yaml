@@ -16,7 +16,7 @@ spec:
   values:
     job:
       image: ssprivatesbox.azurecr.io/mi-staging-service:pr-16-19db341
-      suspend: false
+      suspend: true
       kind: CronJob
       schedule: '30 * * * *'
       labels:
