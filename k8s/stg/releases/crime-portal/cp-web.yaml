@@ -20,7 +20,7 @@ spec:
     hostaliases:
     - ip: 192.173.128.4
       hostname: cpldap
-    - ip: 192.173.128.5
+    - ip: 192.173.128.4
       hostname: cpdb
     service:
       type: ClusterIP
@@ -28,6 +28,14 @@ spec:
       https: 8443
       jmx1: 9990
       jmx2: 9993
+    serviceVpn:
+      enabled: true
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+      type: LoadBalancer
+      port: 8080
+      https: 8443
+      ip: 192.173.100.250
     ingress:
       enabled: true
       annotations:

@@ -1,0 +1,33 @@
+{{- if .Values.serviceVpn.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "cp-web.fullname" . }}-vpn
+  labels:
+    app.kubernetes.io/name: {{ include "cp-web.name" . }}
+    app: {{ include "cp-web.name" . }}
+    helm.sh/chart: {{ include "cp-web.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  annotations:
+  {{- if .Values.serviceVpn }}
+  {{- range $key, $value := .Values.serviceVpn.annotations }}
+    {{ $key }}: {{ $value }}
+  {{- end }}
+  {{- end }}
+spec:
+  type: {{ .Values.serviceVpn.type }}
+  loadBalancerIP: {{ .Values.serviceVpn.ip }}
+  ports:
+    - port: {{ .Values.serviceVpn.port }}
+      targetPort: 8080
+      protocol: TCP
+      name: http
+    - port: {{ .Values.serviceVpn.https }}
+      targetPort: 8443
+      protocol: TCP
+      name: https
+  selector:
+    app.kubernetes.io/name: {{ include "cp-web.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
