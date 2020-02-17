@@ -16,7 +16,7 @@ spec:
   values:
     job:
       image: ssprivatesbox.azurecr.io/mi-extraction-service:pr-1
-      suspend: false
+      suspend: true
       kind: CronJob
       schedule: '40 0 * * *'
       labels:
