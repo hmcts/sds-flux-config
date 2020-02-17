@@ -20,13 +20,7 @@ spec:
   loadBalancerIP: {{ .Values.serviceVpn.ip }}
   ports:
     - port: {{ .Values.serviceVpn.port }}
-      targetPort: 8080
-      protocol: TCP
-      name: http
     - port: {{ .Values.serviceVpn.https }}
-      targetPort: 8443
-      protocol: TCP
-      name: https
   selector:
     app.kubernetes.io/name: {{ include "cp-web.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
