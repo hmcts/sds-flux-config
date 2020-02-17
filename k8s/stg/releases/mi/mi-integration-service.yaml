@@ -18,7 +18,7 @@ spec:
       image: ssprivatestg.azurecr.io/mi-integration-service:stg-306a9f7
       suspend: false
       kind: CronJob
-      schedule: '15 * * * *'
+      schedule: '15 0 * * *'
       labels:
         app.kubernetes.io/instance: mi-integration-service-job
         app.kubernetes.io/name: mi-integration-service-job
