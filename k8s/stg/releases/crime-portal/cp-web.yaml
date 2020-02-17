@@ -30,6 +30,8 @@ spec:
       jmx2: 9993
     serviceVpn:
       enabled: true
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       type: LoadBalancer
       port: 8080
       https: 8443

@@ -12,7 +12,7 @@ metadata:
   annotations:
   {{- if .Values.serviceVpn }}
   {{- range $key, $value := .Values.serviceVpn.annotations }}
-    {{ $key }}: {{ $value }}
+    {{ $key }}: {{ $value | quote }}
   {{- end }}
   {{- end }}
 spec:
@@ -20,7 +20,11 @@ spec:
   loadBalancerIP: {{ .Values.serviceVpn.ip }}
   ports:
     - port: {{ .Values.serviceVpn.port }}
+      protocol: TCP
+      name: http
     - port: {{ .Values.serviceVpn.https }}
+      protocol: TCP
+      name: https
   selector:
     app.kubernetes.io/name: {{ include "cp-web.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
