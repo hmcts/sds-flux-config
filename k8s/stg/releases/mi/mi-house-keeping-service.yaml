@@ -2,30 +2,29 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: mi-integration-service
+  name: mi-house-keeping-service
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.job: glob:stg-*
 spec:
-  releaseName: mi-integration-service
+  releaseName: mi-house-keeping-service-job
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/charts/mi/mi-integration-service
+    path: k8s/charts/mi/mi-house-keeping-service
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-integration-service:stg-306a9f7
+      image: ssprivatestg.azurecr.io/mi-house-keeping-service:stg-989f166
       suspend: false
       kind: CronJob
-      schedule: '15 * * * *'
+      schedule: '45 * * * *'
       labels:
-        app.kubernetes.io/instance: mi-integration-service-job
-        app.kubernetes.io/name: mi-integration-service-job
+        app.kubernetes.io/instance: mi-house-keeping-service
+        app.kubernetes.io/name: mi-house-keeping-service
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
-        DATA_SOURCE: CoreCaseData
-        MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
+        MI_CLIENT_ID: "c893b691-46f2-4703-8e2a-8a0dcf2e835d"
     global:
       subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
