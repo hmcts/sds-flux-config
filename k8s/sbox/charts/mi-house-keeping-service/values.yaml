@@ -9,7 +9,6 @@ job:
   labels:
     app.kubernetes.io/instance : mi-house-keeping-service
     app.kubernetes.io/name: mi-house-keeping-service
-  ttlSecondsAfterFinished: 20
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
@@ -17,7 +16,20 @@ job:
     STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
     STORAGE_DATA_EXTRACTOR_NAME: midataextractor{{ .Values.global.environment }}
     STORAGE_PERSISTENT_NAME: mipersistent{{ .Values.global.environment }}
-
+  smoketests:
+    image: sprivatesbox.azurecr.io/mi-house-keeping-service:master
+    enabled: true
+  testsConfig:
+    memoryLimits: '512Mi'
+    activeDeadlineSeconds: 3600
+    environment:
+      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+      MI_CLIENT_ID: DUMMY
+      STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
+      STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
+      STORAGE_DATA_EXTRACTOR_NAME: midataextractor{{ .Values.global.environment }}
+      STORAGE_PERSISTENT_NAME: mipersistent{{ .Values.global.environment }}
+      SMOKE_TEST_ENABLED : true
 global:
   enableKeyVaults: true
   usepodidentity: true
