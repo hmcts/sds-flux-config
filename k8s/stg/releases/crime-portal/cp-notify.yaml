@@ -20,7 +20,7 @@ spec:
     hostaliases:
     - ip: 192.173.128.4
       hostname: cpldap
-    - ip: 192.173.128.5
+    - ip: 192.173.128.4
       hostname: cpdb
     service:
       type: ClusterIP
@@ -54,7 +54,7 @@ spec:
       timeoutSeconds: 5
     env:
       WF10_HOST: localhost
-      WF10_NOT_DS_URL: "jdbc:postgresql://cp_db:5432/cp_notify_db"
+      WF10_NOT_DS_URL: "jdbc:postgresql://cpdb:5432/cp_notify_db"
       http_proxy_full: http://10.0.0.77:8080
       https_proxy_full: http://10.0.0.77:8080
       http_proxy: http://10.0.0.77:8080
