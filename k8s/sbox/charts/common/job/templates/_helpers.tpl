@@ -66,75 +66,99 @@ kind: Job
     "helm.sh/hook-delete-policy": before-hook-creation 
 {{- end -}}
 
-{{- define "java.tests.spec" -}}
-{{- if and .Values.testsConfig.keyVaults .Values.global.enableKeyVaults }}
-volumes:
-  {{- $globals := .Values.global }}
-  {{- $aadIdentityName := .Values.aadIdentityName }}
-  {{- range $key, $value := .Values.testsConfig.keyVaults }}
-  - name: vault-{{ $key }}
-    flexVolume:
-      driver: "azure/kv"
-      {{- if not $aadIdentityName }}
-      secretRef:
-        name: {{ default "kvcreds" $value.secretRef }}
-      {{- end }}
-      options:
-        usepodidentity: "{{ if $aadIdentityName }}true{{ else }}false{{ end}}"
-        tenantid: {{ $globals.tenantId }}
-        keyvaultname: {{if $value.excludeEnvironmentSuffix }}{{ $key | quote }}{{else}}{{ printf "%s-%s" $key $globals.environment }}{{ end }}
-        keyvaultobjectnames: {{ $value.secrets | join ";" | quote }}  #"some-username;some-password"
-        keyvaultobjecttypes: {{ trimSuffix ";" (repeat (len $value.secrets) "secret;") | quote }} # OPTIONS: secret, key, cert
-  {{- end }}
+
+
+
+
+
+
+{{- define "job.tests.spec" -}}
+{{- if .Values.testsConfig.backoffLimit }}
+backoffLimit: {{ .Values.testsConfig.backoffLimit }}
 {{- end }}
-securityContext:
-  runAsUser: 1000
-  fsGroup: 1000
-restartPolicy: Never
-serviceAccountName: {{ .Values.testsConfig.serviceAccountName }}
-containers:
-  - name: tests
-    image: {{ .Values.tests.image }}
+{{- if .Values.testsConfig.activeDeadlineSeconds }}
+activeDeadlineSeconds: {{ .Values.testsConfig.activeDeadlineSeconds }}
+{{- end }}
+{{- if .Values.testsConfig.ttlSecondsAfterFinished }}
+ttlSecondsAfterFinished: {{ .Values.testsConfig.ttlSecondsAfterFinished }}
+{{- end }}
+template:
+  metadata:
+    labels:
+      app.kubernetes.io/name: {{ include "hmcts.releaseName" . }}
+      {{- include "job.labels" . | indent 6}}
+      {{- if .Values.aadIdentityName }}
+      aadpodidbinding: {{ .Values.aadIdentityName }}
+      {{- end }}
+    
+  spec:
     {{- if and .Values.testsConfig.keyVaults .Values.global.enableKeyVaults }}
-    {{ $args := list }}
-    {{- range $key, $value := .Values.testsConfig.keyVaults -}}{{- range $secret, $var := $value.secrets -}} {{ $args = append $args (printf "%s=/mnt/secrets/%s/%s" $var $key $secret | quote) }} {{- end -}}{{- end -}}
-    args: [{{ $args | join "," }}]
-    {{- end }}
-    securityContext:
-      allowPrivilegeEscalation: false
-    {{- if or .Values.tests.environment .Values.testsConfig.environment }}
-    {{- $envMap := dict "TEST_URL" "" -}}
-    {{- if .Values.testsConfig.environment -}}{{- range $key, $value := .Values.testsConfig.environment -}}{{- $_ := set $envMap $key $value -}}{{- end -}}{{- end -}}
-    {{- if .Values.tests.environment -}}{{- range $key, $value := .Values.tests.environment -}}{{- $_ := set $envMap $key $value -}}{{- end -}}{{- end }}
-    env:
-      - name: TASK
-        value: {{ .Values.task | quote }}
-      - name: TASK_TYPE
-        value: {{ .Values.type | quote }}
-      - name: SLACK_WEBHOOK
-        valueFrom:
-          secretKeyRef:
-            name: tests-values
-            key: slack-webhook
-    {{- range $key, $val := $envMap }}
-      - name: {{ $key }}
-        value: {{ $val | quote }}
-    {{- end }}
-    {{- end }}
-    {{- if and .Values.testsConfig.keyVaults .Values.global.enableKeyVaults }}
-    volumeMounts:
+    volumes:
+      {{- $globals := .Values.global }}
+      {{- $aadIdentityName := .Values.aadIdentityName }}
       {{- range $key, $value := .Values.testsConfig.keyVaults }}
       - name: vault-{{ $key }}
-        mountPath: /mnt/secrets/{{ $key }}
-        readOnly: true
+        flexVolume:
+          driver: "azure/kv"
+          {{- if not $aadIdentityName }}
+          secretRef:
+            name: {{ default "kvcreds" $value.secretRef }}
+          {{- end }}
+          options:
+            usepodidentity: "{{ if $aadIdentityName }}true{{ else }}false{{ end}}"
+            tenantid: {{ $globals.tenantId }}
+            keyvaultname: {{if $value.excludeEnvironmentSuffix }}{{ $key | quote }}{{else}}{{ printf "%s-%s" $key $globals.environment }}{{ end }}
+            keyvaultobjectnames: {{ $value.secrets | join ";" | quote }}  #"some-username;some-password"
+            keyvaultobjecttypes: {{ trimSuffix ";" (repeat (len $value.secrets) "secret;") | quote }} # OPTIONS: secret, key, cert
       {{- end }}
     {{- end }}
-    resources:
-      requests:
-        memory: "{{ if .Values.tests.memoryRequests }}{{ .Values.tests.memoryRequests }}{{ else }}{{ .Values.testsConfig.memoryRequests }}{{ end }}"
-        cpu: "{{ if .Values.tests.cpuRequests }}{{ .Values.tests.cpuRequests }}{{ else }}{{ .Values.testsConfig.cpuRequests }}{{ end }}"
-      limits:
-        memory: "{{ if .Values.tests.memoryLimits }}{{ .Values.tests.memoryLimits }}{{ else }}{{ .Values.testsConfig.memoryLimits }}{{ end }}"
-        cpu: "{{ if .Values.tests.cpuLimits }}{{ .Values.tests.cpuLimits }}{{ else }}{{ .Values.testsConfig.cpuLimits }}{{ end }}"
-{{- end -}}
+    securityContext:
+      runAsUser: 1000
+      fsGroup: 1000
+    restartPolicy: Never
+    containers:
+      - name: tests
+        image: {{ .Values.tests.image }}
+        {{- if and .Values.testsConfig.keyVaults .Values.global.enableKeyVaults }}
+        {{ $args := list }}
+        {{- range $key, $value := .Values.testsConfig.keyVaults -}}{{- range $secret, $var := $value.secrets -}} {{ $args = append $args (printf "%s=/mnt/secrets/%s/%s" $var $key $secret | quote) }} {{- end -}}{{- end -}}
+        args: [{{ $args | join "," }}]
+        {{- end }}
+        securityContext:
+          allowPrivilegeEscalation: false
+        {{- if or .Values.tests.environment .Values.testsConfig.environment }}
+        {{- $envMap := dict "TEST_URL" "" -}}
+        {{- if .Values.testsConfig.environment -}}{{- range $key, $value := .Values.testsConfig.environment -}}{{- $_ := set $envMap $key $value -}}{{- end -}}{{- end -}}
+        {{- if .Values.tests.environment -}}{{- range $key, $value := .Values.tests.environment -}}{{- $_ := set $envMap $key $value -}}{{- end -}}{{- end }}
+        env:
+          - name: TASK
+            value: {{ .Values.task | quote }}
+          - name: TASK_TYPE
+            value: {{ .Values.type | quote }}
+          # - name: SLACK_WEBHOOK
+          #   valueFrom:
+          #     secretKeyRef:
+          #       name: tests-values
+          #       key: slack-webhook
+        {{- range $key, $val := $envMap }}
+          - name: {{ $key }}
+            value: {{ tpl ($val | quote) $ }}
+        {{- end }}
+        {{- end }}
+        {{- if and .Values.testsConfig.keyVaults .Values.global.enableKeyVaults }}
+        volumeMounts:
+          {{- range $key, $value := .Values.testsConfig.keyVaults }}
+          - name: vault-{{ $key }}
+            mountPath: /mnt/secrets/{{ $key }}
+            readOnly: true
+          {{- end }}
+        {{- end }}
+        resources:
+          requests:
+            memory: "{{ if .Values.tests.memoryRequests }}{{ .Values.tests.memoryRequests }}{{ else }}{{ .Values.testsConfig.memoryRequests }}{{ end }}"
+            cpu: "{{ if .Values.tests.cpuRequests }}{{ .Values.tests.cpuRequests }}{{ else }}{{ .Values.testsConfig.cpuRequests }}{{ end }}"
+          limits:
+            memory: "{{ if .Values.tests.memoryLimits }}{{ .Values.tests.memoryLimits }}{{ else }}{{ .Values.testsConfig.memoryLimits }}{{ end }}"
+            cpu: "{{ if .Values.tests.cpuLimits }}{{ .Values.tests.cpuLimits }}{{ else }}{{ .Values.testsConfig.cpuLimits }}{{ end }}"
+    {{- end -}}
 

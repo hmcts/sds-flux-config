@@ -6,5 +6,5 @@
 {{- include "java.tests.header" $smokedata }}
 spec:
 {{ $_ := set $smokedata.Values "tests" .Values.smoketests }}
-{{- include "java.tests.spec" $smokedata | indent 2 }}
+{{- include "job.tests.spec" $smokedata | indent 2 }}
 {{- end }}
