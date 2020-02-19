@@ -20,7 +20,6 @@ testsConfig:
   cpuRequests: '100m'
   memoryLimits: '2048Mi'
   cpuLimits: '1000m'
-  serviceAccountName: tests-service-account
 
 smoketests:
   enabled: false
