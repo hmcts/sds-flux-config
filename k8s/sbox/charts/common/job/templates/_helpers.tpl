@@ -118,7 +118,7 @@ template:
     restartPolicy: Never
     containers:
       - name: tests
-        image: {{ .Values.tests.image }}
+        image: {{ .Values.smoketests.image }}
         {{- if and .Values.testsConfig.keyVaults .Values.global.enableKeyVaults }}
         {{ $args := list }}
         {{- range $key, $value := .Values.testsConfig.keyVaults -}}{{- range $secret, $var := $value.secrets -}} {{ $args = append $args (printf "%s=/mnt/secrets/%s/%s" $var $key $secret | quote) }} {{- end -}}{{- end -}}
