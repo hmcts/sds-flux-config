@@ -44,6 +44,9 @@ spec:
           mountPath: "/kvmnt"
           readOnly: true
     {{- end }}
+      securityContext:
+        runAsUser: 3001
+        fsGroup: 3001
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}"
@@ -106,10 +109,8 @@ spec:
             {{- end }}
       volumes:
         - name: configuration
-          azureFile:
-            secretName: cp-storage-secret
-            shareName: wf2-configuration/configuration
-            readOnly: false
+          persistentVolumeClaim:
+            claimName: wf2-configuration
         - name: cpweb
           flexVolume:
             driver: "azure/kv"
