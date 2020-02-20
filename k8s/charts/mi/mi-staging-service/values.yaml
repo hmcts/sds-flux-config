@@ -8,6 +8,8 @@ job:
       secrets:
         - mi-landing-storage-connection-string
         - mi-staging-storage-connection-string
+  memoryRequests: '1024Mi'
+  cpuRequests: '200m'
   memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job

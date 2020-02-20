@@ -9,6 +9,8 @@ job:
         - gov-uk-notify-api-key
         - mailing-targets
         - archive-password
+  memoryRequests: '1024Mi'
+  cpuRequests: '200m'
   memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job
