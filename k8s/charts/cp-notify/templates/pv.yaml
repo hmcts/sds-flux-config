@@ -2,11 +2,11 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: {{ template "cp-web.name" . }}-config
+  name: {{ template "cp-notify.name" . }}-config
   labels:
-    app.kubernetes.io/name: {{ include "cp-web.name" . }}
-    app: {{ include "cp-web.name" . }}
-    helm.sh/chart: {{ include "cp-web.chart" . }}
+    app.kubernetes.io/name: {{ include "cp-notify.name" . }}
+    app: {{ include "cp-notify.name" . }}
+    helm.sh/chart: {{ include "cp-notify.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
