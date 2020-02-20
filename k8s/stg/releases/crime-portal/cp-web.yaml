@@ -74,8 +74,8 @@ spec:
       WF10_MGW_DS_URL: jdbc:postgresql://cpdb:5432/cp_mirror_gateway_db
       WF10_SUBSCH_DS_URL: jdbc:postgresql://cpdb:5432/cp_subscriptionscheduler_db
       WF10_SDRS_DS_URL: jdbc:postgresql://cpdb:5432/cp_sdrs_db
-      WF10_SB_DS_URL: jdbc:postgresql://cp_db:5432/cp_schedulerbaseline_db
-      WF10_PS_DS_URL: jdbc:postgresql://cp_db:5432/cp_print_service_db
+      WF10_SB_DS_URL: jdbc:postgresql://cpdb:5432/cp_schedulerbaseline_db
+      WF10_PS_DS_URL: jdbc:postgresql://cpdb:5432/cp_print_service_db
       http_proxy_full: http://10.0.0.77:8080
       https_proxy_full: http://10.0.0.77:8080
       http_proxy: http://10.0.0.77:8080

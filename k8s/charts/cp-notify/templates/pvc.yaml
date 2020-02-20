@@ -4,7 +4,7 @@ apiVersion: v1
 metadata:
   name: {{ template "cp-notify.name" . }}-config
   labels:
-    app.kubernetes.io/name: {{ include "cp-web.name" . }}
+    app.kubernetes.io/name: {{ include "cp-notify.name" . }}
     app: {{ include "cp-notify.name" . }}
     helm.sh/chart: {{ include "cp-notify.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
