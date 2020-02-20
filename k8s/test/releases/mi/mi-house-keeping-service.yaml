@@ -1,12 +1,12 @@
 ---
-apiVersion: helm.fluxcd.io/v1
+apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: mi-house-keeping-service
   namespace: mi
   annotations:
-    fluxcd.io/automated: "true"
-    repository.fluxcd.io/job: job.image
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: java.image
     filter.fluxcd.io/job: glob:prod-*
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:pr-*
