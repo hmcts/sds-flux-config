@@ -2,7 +2,7 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: {{ template "cp-web.name" . }}-config
+  name: cp-web-config
   labels:
     app.kubernetes.io/name: {{ include "cp-web.name" . }}
     app: {{ include "cp-web.name" . }}
@@ -38,7 +38,7 @@ spec:
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: {{ template "cp-web.name" . }}-jks
+  name: cp-web-jks
   labels:
     app.kubernetes.io/name: {{ include "cp-web.name" . }}
     app: {{ include "cp-web.name" . }}
@@ -74,7 +74,7 @@ spec:
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: {{ template "cp-web.name" . }}-sdrs-cache
+  name: cp-web-sdrs-cache
   labels:
     app.kubernetes.io/name: {{ include "cp-web.name" . }}
     app: {{ include "cp-web.name" . }}

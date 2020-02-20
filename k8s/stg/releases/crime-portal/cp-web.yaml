@@ -24,14 +24,14 @@ spec:
       hostname: cpdb
     service:
       type: ClusterIP
-      http: 8080
+      port: 8080
       https: 8443
       mgmnt: 9990
       mgmnts: 9993
     serviceVpn:
       enabled: true
       type: LoadBalancer
-      http: 8080
+      port: 8080
       https: 8443
       ip: 192.173.100.250
     persistence:

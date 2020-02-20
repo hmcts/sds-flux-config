@@ -24,7 +24,7 @@ spec:
       hostname: cpdb
     service:
       type: ClusterIP
-      http: 8080
+      port: 8080
       https: 8445
       mgmnt: 9992
       mgmnts: 9995

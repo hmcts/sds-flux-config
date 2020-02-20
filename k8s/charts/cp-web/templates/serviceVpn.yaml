@@ -19,7 +19,7 @@ spec:
   type: {{ .Values.serviceVpn.type }}
   loadBalancerIP: {{ .Values.serviceVpn.ip }}
   ports:
-    - port: {{ .Values.serviceVpn.http }}
+    - port: {{ .Values.serviceVpn.port }}
       protocol: TCP
       name: http
     - port: {{ .Values.serviceVpn.https }}
