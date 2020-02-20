@@ -66,10 +66,10 @@ spec:
             - name: https
               containerPort: 8443
               protocol: TCP
-            - name: jmx1
+            - name: mgmnt
               containerPort: 9990
               protocol: TCP
-            - name: jmx2
+            - name: mgmnts
               containerPort: 9993
               protocol: TCP
         {{- if eq .Values.livenessProbe.enabled true }}
@@ -117,13 +117,13 @@ spec:
       volumes:
         - name: configuration
           persistentVolumeClaim:
-            claimName: wf1-configuration
+            claimName: cp-web-config
         - name: sdrs-cache
           persistentVolumeClaim:
-            claimName: sdrs-cache
+            claimName: cp-web-sdrs-cache
         - name: jks
           persistentVolumeClaim:
-            claimName: jks
+            claimName: cp-web-jks
         - name: cpweb
           flexVolume:
             driver: "azure/kv"

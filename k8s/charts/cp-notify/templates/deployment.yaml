@@ -64,10 +64,10 @@ spec:
             - name: https
               containerPort: 8445
               protocol: TCP
-            - name: jmx1
+            - name: mgmnt
               containerPort: 9992
               protocol: TCP
-            - name: jmx2
+            - name: mgmnts
               containerPort: 9995
               protocol: TCP
         {{- if eq .Values.livenessProbe.enabled true }}
@@ -110,7 +110,7 @@ spec:
       volumes:
         - name: configuration
           persistentVolumeClaim:
-            claimName: wf2-configuration
+            claimName: cp-notify-config
         - name: cpweb
           flexVolume:
             driver: "azure/kv"

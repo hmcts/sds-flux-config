@@ -17,7 +17,7 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.service.http }}
       targetPort: 8080
       protocol: TCP
       name: http
@@ -25,14 +25,14 @@ spec:
       targetPort: 8445
       protocol: TCP
       name: https
-    - port: {{ .Values.service.jmx1 }}
+    - port: {{ .Values.service.mgmnt }}
       targetPort: 9992
       protocol: TCP
-      name: jmx1
-    - port: {{ .Values.service.jmx2 }}
+      name: mgmnt
+    - port: {{ .Values.service.mgmnts }}
       targetPort: 9995
       protocol: TCP
-      name: jmx2
+      name: mgmnts
   selector:
     app.kubernetes.io/name: {{ include "cp-notify.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

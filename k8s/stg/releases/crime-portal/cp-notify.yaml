@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/cp-notify
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/cp/wildfly2:Release-19
+    image: ssprivatestg.azurecr.io/cp/wildfly2:Release-22
     pullPolicy: Always
     replicaCount: 1
     hostaliases:
@@ -24,20 +24,17 @@ spec:
       hostname: cpdb
     service:
       type: ClusterIP
-      port: 8080
+      http: 8080
       https: 8445
-      jmx1: 9992
-      jmx2: 9995
+      mgmnt: 9992
+      mgmnts: 9995
+    persistence:
+      enabled: true
+      storageClass: azurefile
+      accessMode: ReadWriteMany
+      size: 1Gi
     ingress:
       enabled: false
-      annotations:
-      paths:
-        - /
-      tls: []
-      #  - secretName: chart-example-tls
-      #    hosts:
-      #      - chart-example.local
-      hosts:
     readinessProbe:
       enabled: false
       path: "/"
@@ -63,4 +60,4 @@ spec:
       https_proxy_port: 8080
       http_proxy_ip: 10.0.0.77
       https_proxy_ip: 10.0.0.77
-      no_proxy: "172.0.0.3,172.1.0.3,localhost,wildfly2,10.0.4.7"
+      no_proxy: "172.0.0.3,172.1.0.3,localhost,10.0.4.7,cp-notify"

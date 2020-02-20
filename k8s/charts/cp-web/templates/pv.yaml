@@ -1,0 +1,110 @@
+{{- if and .Values.persistence.enabled -}}
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ template "cp-web.name" . }}-config
+  labels:
+    app.kubernetes.io/name: {{ include "cp-web.name" . }}
+    app: {{ include "cp-web.name" . }}
+    helm.sh/chart: {{ include "cp-web.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  capacity:
+    storage: {{ .Values.persistence.size | quote }}
+  accessModes:
+    - {{ .Values.persistence.accessMode | quote }}
+{{- if .Values.persistence.storageClass }}
+{{- if (eq "-" .Values.persistence.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistence.storageClass }}"
+{{- end }}
+{{- end }}
+{{- if (eq "azurefile" .Values.persistence.storageClass) }}
+  azureFile:
+    secretName: cp-storage-secret
+    shareName: wf1-configuration/configuration
+    readOnly: false
+  mountOptions:
+  - dir_mode=0755
+  - file_mode=0755
+  - uid=3001
+  - gid=3001
+  - mfsymlinks
+  - nobrl
+{{- end }}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ template "cp-web.name" . }}-jks
+  labels:
+    app.kubernetes.io/name: {{ include "cp-web.name" . }}
+    app: {{ include "cp-web.name" . }}
+    helm.sh/chart: {{ include "cp-web.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  capacity:
+    storage: {{ .Values.persistence.size | quote }}
+  accessModes:
+    - {{ .Values.persistence.accessMode | quote }}
+{{- if .Values.persistence.storageClass }}
+{{- if (eq "-" .Values.persistence.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistence.storageClass }}"
+{{- end }}
+{{- end }}
+{{- if (eq "azurefile" .Values.persistence.storageClass) }}
+  azureFile:
+    secretName: cp-storage-secret
+    shareName: wf1-configuration/jks
+    readOnly: false
+  mountOptions:
+  - dir_mode=0755
+  - file_mode=0755
+  - uid=3001
+  - gid=3001
+  - mfsymlinks
+  - nobrl
+{{- end }}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ template "cp-web.name" . }}-sdrs-cache
+  labels:
+    app.kubernetes.io/name: {{ include "cp-web.name" . }}
+    app: {{ include "cp-web.name" . }}
+    helm.sh/chart: {{ include "cp-web.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  capacity:
+    storage: {{ .Values.persistence.size | quote }}
+  accessModes:
+    - {{ .Values.persistence.accessMode | quote }}
+{{- if .Values.persistence.storageClass }}
+{{- if (eq "-" .Values.persistence.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistence.storageClass }}"
+{{- end }}
+{{- end }}
+{{- if (eq "azurefile" .Values.persistence.storageClass) }}
+  azureFile:
+    secretName: cp-storage-secret
+    shareName: sdrs-cache
+    readOnly: false
+  mountOptions:
+  - dir_mode=0755
+  - file_mode=0755
+  - uid=3001
+  - gid=3001
+  - mfsymlinks
+  - nobrl
+{{- end }}
+
+{{- end }}
