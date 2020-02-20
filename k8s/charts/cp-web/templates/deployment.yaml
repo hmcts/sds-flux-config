@@ -116,20 +116,14 @@ spec:
             {{- end }}
       volumes:
         - name: configuration
-          azureFile:
-            secretName: cp-storage-secret
-            shareName: wf1-configuration/configuration
-            readOnly: false
+          persistentVolumeClaim:
+            claimName: wf1-configuration
         - name: sdrs-cache
-          azureFile:
-            secretName: cp-storage-secret
-            shareName: sdrs-cache
-            readOnly: false
+          persistentVolumeClaim:
+            claimName: sdrs-cache
         - name: jks
-          azureFile:
-            secretName: cp-storage-secret
-            shareName: wf1-configuration/jks
-            readOnly: false
+          persistentVolumeClaim:
+            claimName: jks
         - name: cpweb
           flexVolume:
             driver: "azure/kv"
