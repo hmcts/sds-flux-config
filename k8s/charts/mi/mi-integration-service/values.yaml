@@ -8,7 +8,7 @@ job:
       secrets:
         - mi-extraction-storage-connection-string
         - mi-landing-storage-connection-string
-  memoryLimits: '512Mi'
+  memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job
   aadIdentityName: mi-integration-service
