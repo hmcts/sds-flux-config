@@ -6,7 +6,8 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.job: glob:pr-*
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:pr-*
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:pr-*
 spec:
