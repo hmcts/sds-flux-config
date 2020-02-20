@@ -7,7 +7,8 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.job: glob:pr-*
-    flux.weave.works/tag.tests: glob:pr-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:pr-*
 spec:
   releaseName: mi-house-keeping-service-job
   chart:
