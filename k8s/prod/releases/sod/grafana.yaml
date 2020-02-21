@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/sod
     ref: master
   values:
-    image: ssprivateprod.azurecr.io/rdo-sod-docker:prod-grafana-oauth-55ba352
+    image: ssprivateprod.azurecr.io/rdo-sod-docker:prod-merge-25e42e5
     pullPolicy: Always
     replicaCount: 1
     service:
