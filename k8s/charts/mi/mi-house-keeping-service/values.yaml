@@ -17,7 +17,19 @@ job:
     STORAGE_DATA_EXTRACTOR_NAME: midataextractor{{ .Values.global.environment }}
     STORAGE_PERSISTENT_NAME: mipersistent{{ .Values.global.environment }}
     STORAGE_AUDIT_NAME: miaudit{{ .Values.global.environment }}
-    
+  smoketests:
+    image: ssprivatesbox.azurecr.io/mi-house-keeping-service:master
+    enabled: false
+  testsConfig:
+    memoryLimits: '512Mi'
+    activeDeadlineSeconds: 3600
+    environment:
+      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+      MI_CLIENT_ID: DUMMY
+      STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
+      STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
+      STORAGE_DATA_EXTRACTOR_NAME: midataextractor{{ .Values.global.environment }}
+      STORAGE_PERSISTENT_NAME: mipersistent{{ .Values.global.environment }} 
 global:
   enableKeyVaults: true
   usepodidentity: true
