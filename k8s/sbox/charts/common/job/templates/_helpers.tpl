@@ -132,6 +132,8 @@ containers:
         value: {{ .Values.task | quote }}
       - name: TASK_TYPE
         value: {{ .Values.type | quote }}
+      - SMOKE_TEST_ENABLED 
+        value: {{ .Values.taskEnabled | quote }}
       # - name: SLACK_WEBHOOK
       #   valueFrom:
       #     secretKeyRef:
