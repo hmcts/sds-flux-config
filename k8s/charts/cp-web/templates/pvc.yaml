@@ -22,7 +22,7 @@ spec:
   storageClassName: "{{ .Values.persistence.storageClass }}"
 {{- end }}
 {{- end }}
-  volumeName: {{ template "cp-notify.name" . }}-config
+  volumeName: {{ template "cp-web.name" . }}-config
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -47,7 +47,7 @@ spec:
   storageClassName: "{{ .Values.persistence.storageClass }}"
 {{- end }}
 {{- end }}
-  volumeName: {{ template "cp-notify.name" . }}-jks
+  volumeName: {{ template "cp-web.name" . }}-jks
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
@@ -72,5 +72,5 @@ spec:
   storageClassName: "{{ .Values.persistence.storageClass }}"
 {{- end }}
 {{- end }}
-  volumeName: {{ template "cp-notify.name" . }}-sdrs-cache
+  volumeName: {{ template "cp-web.name" . }}-sdrs-cache
 {{- end }}

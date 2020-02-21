@@ -28,7 +28,9 @@ spec:
         - {{ .hostname | quote }}
       {{- end }}
     {{- end }}
+    {{ if .Values.serviceAccount.create }}
       serviceAccountName: {{ .Values.serviceAccount.name }}
+    {{- end }}
     {{ if .Values.initContainers.create }}
       initContainers:
       - name: secrets
@@ -58,7 +60,7 @@ spec:
           - name: configuration
             mountPath: /opt/jboss/wildfly/standalone/configuration
           ports:
-            - name: http
+            - name: port
               containerPort: 8080
               protocol: TCP
             - name: https
