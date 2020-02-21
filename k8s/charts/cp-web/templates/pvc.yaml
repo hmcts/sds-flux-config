@@ -2,7 +2,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: cp-web-config
+  name: {{ template "cp-web.name" . }}-config
   labels:
     app.kubernetes.io/name: {{ include "cp-web.name" . }}
     app: {{ include "cp-web.name" . }}
@@ -22,11 +22,12 @@ spec:
   storageClassName: "{{ .Values.persistence.storageClass }}"
 {{- end }}
 {{- end }}
+  volumeName: {{ template "cp-notify.name" . }}-config
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: cp-web-jks
+  name: {{ template "cp-web.name" . }}-jks
   labels:
     app.kubernetes.io/name: {{ include "cp-web.name" . }}
     app: {{ include "cp-web.name" . }}
@@ -46,11 +47,12 @@ spec:
   storageClassName: "{{ .Values.persistence.storageClass }}"
 {{- end }}
 {{- end }}
+  volumeName: {{ template "cp-notify.name" . }}-jks
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: cp-web-sdrs-cache
+  name: {{ template "cp-web.name" . }}-sdrs-cache
   labels:
     app.kubernetes.io/name: {{ include "cp-web.name" . }}
     app: {{ include "cp-web.name" . }}
@@ -70,4 +72,5 @@ spec:
   storageClassName: "{{ .Values.persistence.storageClass }}"
 {{- end }}
 {{- end }}
+  volumeName: {{ template "cp-notify.name" . }}-sdrs-cache
 {{- end }}

@@ -2,7 +2,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: cp-notify-config
+  name: {{ template "cp-notify.name" . }}-config
   labels:
     app.kubernetes.io/name: {{ include "cp-notify.name" . }}
     app: {{ include "cp-notify.name" . }}
@@ -22,4 +22,5 @@ spec:
   storageClassName: "{{ .Values.persistence.storageClass }}"
 {{- end }}
 {{- end }}
+  volumeName: {{ template "cp-notify.name" . }}-config
 {{- end }}
