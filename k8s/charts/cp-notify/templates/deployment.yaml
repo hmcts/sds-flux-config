@@ -60,7 +60,7 @@ spec:
           - name: configuration
             mountPath: /opt/jboss/wildfly/standalone/configuration
           ports:
-            - name: port
+            - name: http
               containerPort: 8080
               protocol: TCP
             - name: https
@@ -112,7 +112,8 @@ spec:
       volumes:
         - name: configuration
           persistentVolumeClaim:
-            claimName: cp-notify-config
+            claimName: {{ template "cp-notify.name" . }}-config
+      {{ if .Values.initContainers.create }}
         - name: cpweb
           flexVolume:
             driver: "azure/kv"
@@ -126,6 +127,7 @@ spec:
               resourcegroup: "crime-portal-stg-rg"
               subscriptionid: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
               tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
