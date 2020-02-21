@@ -117,13 +117,13 @@ spec:
       volumes:
         - name: configuration
           persistentVolumeClaim:
-            claimName: cp-web-config
+            claimName: {{ template "cp-web.name" . }}-config
         - name: sdrs-cache
           persistentVolumeClaim:
-            claimName: cp-web-sdrs-cache
+            claimName: {{ template "cp-web.name" . }}-sdrs-cache
         - name: jks
           persistentVolumeClaim:
-            claimName: cp-web-jks
+            claimName: {{ template "cp-web.name" . }}-jks
         - name: cpweb
           flexVolume:
             driver: "azure/kv"

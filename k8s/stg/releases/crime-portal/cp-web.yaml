@@ -24,14 +24,16 @@ spec:
       hostname: cpdb
     service:
       type: ClusterIP
-      port: 8080
+      http: 8080
       https: 8443
       mgmnt: 9990
       mgmnts: 9993
     serviceVpn:
       enabled: true
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       type: LoadBalancer
-      port: 8080
+      http: 8080
       https: 8443
       ip: 192.173.100.250
     persistence:
