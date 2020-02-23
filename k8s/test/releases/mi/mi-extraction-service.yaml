@@ -6,7 +6,10 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.job: glob:pr-*
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:pr-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:pr-*
 spec:
   releaseName: mi-extraction-service
   chart:
@@ -22,6 +25,13 @@ spec:
       labels:
         app.kubernetes.io/instance: mi-extraction-service
         app.kubernetes.io/name: mi-extraction-service
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+        MI_CLIENT_ID: "58ed3fc0-18be-4a6f-8ceb-14768c8e796a"
+    smoketests:
+      image: ssprivatetest.azurecr.io/mi-extraction-service:pr-16-d968776
+      enabled: true
+    testsConfig:
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         MI_CLIENT_ID: "58ed3fc0-18be-4a6f-8ceb-14768c8e796a"

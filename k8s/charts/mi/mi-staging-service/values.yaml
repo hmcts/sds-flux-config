@@ -22,8 +22,20 @@ job:
   ttlSecondsAfterFinished: 20
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+    MI_CLIENT_ID: DUMMY
     STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
     STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
+  smoketests:
+    image: ssprivatesbox.azurecr.io/mi-staging-service:master
+    enabled: false
+  testsConfig:
+    memoryLimits: '512Mi'
+    activeDeadlineSeconds: 3600
+    environment:
+      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+      MI_CLIENT_ID: DUMMY
+      STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
+      STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
 global:
   enableKeyVaults: true
   usepodidentity: true
