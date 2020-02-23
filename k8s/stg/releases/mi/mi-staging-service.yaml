@@ -6,7 +6,10 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.job: glob:stg-*
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:stg-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:stg-*
 spec:
   releaseName: mi-staging-service
   chart:
@@ -19,12 +22,20 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '30 0 * * *'
+      activeDeadlineSeconds: 82800 #23 hours
       labels:
         app.kubernetes.io/instance: mi-staging-service
         app.kubernetes.io/name: mi-staging-service
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
         MI_CLIENT_ID: 358e8b10-d68b-4aee-9585-9968ae2264d2
+      smoketests:
+        image: ssprivatestg.azurecr.io/mi-staging-service:stg-8ede344
+        enabled: true
+      testsConfig:
+        environment:
+          MI_CLIENT_ID: 358e8b10-d68b-4aee-9585-9968ae2264d2
+          APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c" 
     global:
       subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
