@@ -29,7 +29,7 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         MI_CLIENT_ID: 9e2bb09f-5a1c-47d2-b81f-f14266a7ef5e
       smoketests:
-        image: ssprivatetest.azurecr.io/mi-staging-service:pr-25-a6b590a
+        image: ssprivatetest.azurecr.io/mi-staging-service:pr-26-2d511f2
         enabled: true
       testsConfig:
         environment:
