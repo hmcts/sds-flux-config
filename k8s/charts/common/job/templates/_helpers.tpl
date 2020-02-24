@@ -93,16 +93,17 @@ kind: Pod
 volumes:
   {{- $globals := .Values.global }}
   {{- $aadIdentityName := .Values.aadIdentityName }}
+  {{- $useKeyVaultpodidentity := .Values.keyVaults.usepodidentity }}
   {{- range $key, $value := .Values.testsConfig.keyVaults }}
   - name: vault-{{ $key }}
     flexVolume:
       driver: "azure/kv"
-      {{- if not $aadIdentityName }}
+      {{- if not $useKeyVaultpodidentity }}
       secretRef:
         name: {{ default "kvcreds" $value.secretRef }}
       {{- end }}
       options:
-        usepodidentity: "{{ if $aadIdentityName }}true{{ else }}false{{ end}}"
+        usepodidentity: "{{ if $useKeyVaultpodidentity }}true{{ else }}false{{ end}}"
         tenantid: {{ $globals.tenantId }}
         keyvaultname: {{if $value.excludeEnvironmentSuffix }}{{ $key | quote }}{{else}}{{ printf "%s-%s" $key $globals.environment }}{{ end }}
         keyvaultobjectnames: {{ $value.secrets | join ";" | quote }}  #"some-username;some-password"
@@ -116,18 +117,13 @@ restartPolicy: Never
 containers:
   - name: tests
     image: {{ .Values.smoketests.image }}
-    {{- if and .Values.testsConfig.keyVaults .Values.global.enableKeyVaults }}
-    {{ $args := list }}
-    {{- range $key, $value := .Values.testsConfig.keyVaults -}}{{- range $secret, $var := $value.secrets -}} {{ $args = append $args (printf "%s=/mnt/secrets/%s/%s" $var $key $secret | quote) }} {{- end -}}{{- end -}}
-    args: [{{ $args | join "," }}]
-    {{- end }}
     securityContext:
       allowPrivilegeEscalation: false
     {{- if or .Values.tests.environment .Values.testsConfig.environment }}
     {{- $envMap := dict "TEST_URL" "" -}}
     {{- if .Values.testsConfig.environment -}}{{- range $key, $value := .Values.testsConfig.environment -}}{{- $_ := set $envMap $key $value -}}{{- end -}}{{- end -}}
     {{- if .Values.tests.environment -}}{{- range $key, $value := .Values.tests.environment -}}{{- $_ := set $envMap $key $value -}}{{- end -}}{{- end }}
-    env:
+    env: 
       - name: TASK
         value: {{ .Values.task | quote }}
       - name: TASK_TYPE

@@ -30,6 +30,15 @@ job:
   testsConfig:
     memoryLimits: '512Mi'
     activeDeadlineSeconds: 3600
+    keyVaults:
+      "mi-vault":
+        excludeEnvironmentSuffix: false
+        resourceGroup: mi-{{ .Values.global.environment }}-rg
+        usepodidentity: false
+        secrets:
+          - aat-ccdro-user
+          - aat-ccdro-password
+          - data-extractor-connection-string
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       ETL_MSICLIENTID: DUMMY
