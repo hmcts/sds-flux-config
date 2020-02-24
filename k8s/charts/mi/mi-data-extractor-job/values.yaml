@@ -1,5 +1,5 @@
 job:
-  image: ssprivatesbox.azurecr.io/data-extractor-job-pr-40-f712853
+  image: ssprivatesbox.azurecr.io/data-extractor:master
   keyVaults:
     "mi-vault":
       excludeEnvironmentSuffix: false
@@ -21,8 +21,20 @@ job:
   ttlSecondsAfterFinished: 20
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+    ETL_MSICLIENTID: DUMMY
     ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
     ETL_ACCOUNT: midataextractor{{ .Values.global.environment }}
+  smoketests:
+    image: ssprivatesbox.azurecr.io/data-extractor:master
+    enabled: false
+  testsConfig:
+    memoryLimits: '512Mi'
+    activeDeadlineSeconds: 3600
+    environment:
+      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+      ETL_MSICLIENTID: DUMMY
+      ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
+      ETL_ACCOUNT: midataextractor{{ .Values.global.environment }}
 global:
   enableKeyVaults: true
   usepodidentity: true

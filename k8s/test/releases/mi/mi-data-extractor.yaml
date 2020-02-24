@@ -6,7 +6,10 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.job: glob:pr-*
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:pr-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:pr-*
 spec:
   releaseName: data-extractor
   chart:
@@ -25,6 +28,13 @@ spec:
       environment:
         ETL_MSICLIENTID: 905cc792-3ecc-4c1e-ae18-40ed86ca6a8d
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+      smoketests:
+        image: ssprivatetest.azurecr.io/data-extractor-job:pr-46-737c629
+        enabled: true
+      testsConfig:
+        environment:
+          APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+          MI_CLIENT_ID: 905cc792-3ecc-4c1e-ae18-40ed86ca6a8d
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
