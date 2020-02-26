@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/sod
     ref: master
   values:
-    image: ssprivateprod.azurecr.io/rdo-sod-docker:prod-master-e242cbd
+    image: ssprivateprod.azurecr.io/rdo-sod-docker:prod-master-0a7a610
     pullPolicy: Always
     replicaCount: 1
     service:
