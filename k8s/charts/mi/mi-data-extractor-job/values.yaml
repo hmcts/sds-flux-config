@@ -6,9 +6,10 @@ job:
       resourceGroup: mi-{{ .Values.global.environment }}-rg
       usepodidentity: false
       secrets:
-        - aat-ccdro-user
-        - aat-ccdro-password
+        - ccdro-user
+        - ccdro-password
         - data-extractor-connection-string
+        - appinsights-instrumentationkey
   memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job
@@ -36,9 +37,10 @@ job:
         resourceGroup: mi-{{ .Values.global.environment }}-rg
         usepodidentity: false
         secrets:
-          - aat-ccdro-user
-          - aat-ccdro-password
+          - ccdro-user
+          - ccdro-password
           - data-extractor-connection-string
+          - appinsights-instrumentationkey
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       ETL_MSICLIENTID: DUMMY
