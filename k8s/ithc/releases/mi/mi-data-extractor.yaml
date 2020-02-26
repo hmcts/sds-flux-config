@@ -29,7 +29,7 @@ spec:
       environment:
         ETL_MSICLIENTID: ffe0d350-2f5d-4ecd-a783-95d3538a80a5
       smoketests:
-        image: ssprivatestg.azurecr.io/data-extractor-job:stg-86ff5f1
+        image: ssprivatestg.azurecr.io/data-extractor-job:prod-86ff5f1
         enabled: true
       testsConfig:
         environment:
