@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-staging-service:stg-f7f9510
+      image: ssprivatestg.azurecr.io/mi-staging-service:stg-8b31c09
       suspend: false
       kind: CronJob
       schedule: '30 0 * * *'
@@ -30,12 +30,12 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
         MI_CLIENT_ID: 358e8b10-d68b-4aee-9585-9968ae2264d2
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-staging-service:stg-f7f9510
+        image: ssprivatestg.azurecr.io/mi-staging-service:stg-8b31c09
         enabled: true
       testsConfig:
         environment:
           MI_CLIENT_ID: 358e8b10-d68b-4aee-9585-9968ae2264d2
-          APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c" 
+          APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
     global:
       subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
