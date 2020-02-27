@@ -28,7 +28,7 @@ spec:
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         MI_CLIENT_ID: "eb8d8ba4-b883-45c8-b42d-51184de82509"
-        STORAGE_DATA_EXTRACTOR_RETENTION: "7"
+        STORAGE_DATA_EXTRACTOR_RETENTION: "1"
       smoketests:
         image: ssprivatetest.azurecr.io/mi-house-keeping-service:pr-25-3ee5092
         enabled: true
