@@ -7,9 +7,9 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:prod-*
+    filter.fluxcd.io/job: glob:ithc-*
     repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:prod-*
+    filter.fluxcd.io/smoke: glob:ithc-*
 spec:
   releaseName: mi-house-keeping-service-job
   chart:
@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-house-keeping-service:prod-7a3b1d1
+      image: ssprivateithc.azurecr.io/mi-house-keeping-service:ithc-96d9299
       suspend: true
       kind: CronJob
       schedule: '45 * * * *'
@@ -30,7 +30,7 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
         MI_CLIENT_ID: "d40bc247-8602-4c47-8aed-60817cf14e76"
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-house-keeping-service:prod-7a3b1d1
+        image: ssprivateithc.azurecr.io/mi-house-keeping-service:ithc-96d9299
         enabled: true
       testsConfig:
         environment:
