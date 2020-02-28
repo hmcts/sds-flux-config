@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/video-hearings-func
     ref: master
   values:
-    image: sspublicstg.azurecr.io/vh-booking-queue-subscriber:master-6b57ca919bd1b5cd476095eb1425e05893969ea6
+    image: sspublicstg.azurecr.io/vh-booking-queue-subscriber:master-ea17707160e6c8e71fc4b9a719a7c0ad02da8500
     pullPolicy: Always
     replicaCount: 1
     keyvaults:
