@@ -21,7 +21,7 @@ spec:
       image: ssprivatetest.azurecr.io/mi-staging-service:pr-32-ee23b24
       suspend: false
       kind: CronJob
-      schedule: '30 * * * *'
+      schedule: '30 1 * * *'
       labels:
         app.kubernetes.io/instance: mi-staging-service
         app.kubernetes.io/name: mi-staging-service
