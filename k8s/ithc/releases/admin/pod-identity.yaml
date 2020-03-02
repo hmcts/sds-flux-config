@@ -235,6 +235,7 @@ spec:
           args:
             - "--cloudconfig=/etc/kubernetes/azure.json"
             - "--logtostderr"
+            - "--v=6"
           env:
           - name: FORCENAMESPACED
             value: "true"
