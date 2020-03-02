@@ -7,9 +7,9 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:prod-*
+    filter.fluxcd.io/job: glob:ithc-*
     repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:prod-*
+    filter.fluxcd.io/smoke: glob:ithc-*
 spec:
   releaseName: data-extractor
   chart:
@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/data-extractor-job:prod-86ff5f1
+      image: ssprivateithc.azurecr.io/data-extractor-job:ithc-284a499
       suspend: true
       kind: CronJob
       schedule: '0 0 * * *'
@@ -29,7 +29,7 @@ spec:
       environment:
         ETL_MSICLIENTID: ffe0d350-2f5d-4ecd-a783-95d3538a80a5
       smoketests:
-        image: ssprivatestg.azurecr.io/data-extractor-job:prod-86ff5f1
+        image: ssprivateithc.azurecr.io/data-extractor-job:ithc-284a499
         enabled: true
       testsConfig:
         environment:
