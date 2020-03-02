@@ -21,7 +21,7 @@ spec:
       image: ssprivatetest.azurecr.io/mi-house-keeping-service:pr-28-7ae9b45
       suspend: false
       kind: CronJob
-      schedule: '45 * * * *'
+      schedule: '45 1 * * *'
       labels:
         app.kubernetes.io/instance: mi-house-keeping-service
         app.kubernetes.io/name: mi-house-keeping-service

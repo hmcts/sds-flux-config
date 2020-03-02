@@ -21,7 +21,7 @@ spec:
       image: ssprivatetest.azurecr.io/mi-extraction-service:pr-22-c1baa6b
       suspend: false
       kind: CronJob
-      schedule: '40 * * * *'
+      schedule: '40 1 * * *'
       labels:
         app.kubernetes.io/instance: mi-extraction-service
         app.kubernetes.io/name: mi-extraction-service

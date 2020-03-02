@@ -21,7 +21,7 @@ spec:
       image: ssprivatetest.azurecr.io/data-extractor-job:pr-61-2bf6edf
       suspend: false
       kind: CronJob
-      schedule: '0 * * * *'
+      schedule: '0 1 * * *'
       labels:
         app.kubernetes.io/instance: data-extractor-job
         app.kubernetes.io/name: data-extractor-job
