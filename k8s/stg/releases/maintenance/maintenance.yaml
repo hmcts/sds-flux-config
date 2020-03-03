@@ -14,7 +14,7 @@ spec:
     path: k8s/stg/charts/maintenance
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/maintenance:v0.2
+    image: ssprivatestg.azurecr.io/maintenance:v0.3
     replicaCount: 1
     ingress:
       annotations:
