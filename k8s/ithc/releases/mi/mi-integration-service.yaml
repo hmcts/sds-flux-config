@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-integration-service:ithc-538e62d
+      image: ssprivateithc.azurecr.io/mi-integration-service:ithc-538e62d
       suspend: true
       kind: CronJob
       schedule: '15 0 * * *'
@@ -31,7 +31,7 @@ spec:
         DATA_SOURCE: CoreCaseData
         MI_CLIENT_ID: c0d45f3b-fb10-4542-b889-166e52ab2a5d
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-integration-service:ithc-538e62d
+        image: ssprivateithc.azurecr.io/mi-integration-service:ithc-538e62d
         enabled: true
       testsConfig:
         environment:
