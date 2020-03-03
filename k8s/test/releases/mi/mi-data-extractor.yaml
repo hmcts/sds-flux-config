@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatetest.azurecr.io/data-extractor-job:pr-61-2bf6edf
+      image: ssprivatetest.azurecr.io/data-extractor-job:pr-62-231c280
       suspend: false
       kind: CronJob
       schedule: '0 1 * * *'
@@ -28,7 +28,7 @@ spec:
       environment:
         ETL_MSICLIENTID: 905cc792-3ecc-4c1e-ae18-40ed86ca6a8d
       smoketests:
-        image: ssprivatetest.azurecr.io/data-extractor-job:pr-61-2bf6edf
+        image: ssprivatetest.azurecr.io/data-extractor-job:pr-62-231c280
         enabled: true
       testsConfig:
         environment:
