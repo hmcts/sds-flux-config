@@ -20,7 +20,7 @@ spec:
       suspend: true
       kind: CronJob
       schedule: '40 0 * * *'
-      activeDeadlineSeconds: 82800 #23 hours
+      activeDeadlineSeconds: 600 #10 mins
       labels:
         app.kubernetes.io/instance: mi-extraction-service-test
         app.kubernetes.io/name: mi-extraction-service-test
