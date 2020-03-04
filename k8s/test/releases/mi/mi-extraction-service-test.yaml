@@ -2,7 +2,7 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: mi-extraction-service
+  name: mi-extraction-service-test
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
