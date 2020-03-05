@@ -16,7 +16,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivateithc.azurecr.io/data-extractor-job:ithc-8db87de
+      image: ssprivateithc.azurecr.io/data-extractor-job:ithc-59524aa
       suspend: true
       kind: CronJob
       schedule: '0 0 * * *'
