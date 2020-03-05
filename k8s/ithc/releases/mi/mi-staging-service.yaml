@@ -19,9 +19,9 @@ spec:
   values:
     job:
       image: ssprivateithc.azurecr.io/mi-staging-service:ithc-7ae0083
-      suspend: true
+      suspend: false
       kind: CronJob
-      schedule: '30 0 * * *'
+      schedule: '30 1 * * *'
       activeDeadlineSeconds: 82800 #23 hours
       labels:
         app.kubernetes.io/instance: mi-staging-service
