@@ -16,7 +16,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivateithc.azurecr.io/mi-integration-service:ithc-60676ed
+      image: ssprivateithc.azurecr.io/mi-integration-service:ithc-9486fe6
       suspend: true
       kind: CronJob
       schedule: '15 0 * * *'
