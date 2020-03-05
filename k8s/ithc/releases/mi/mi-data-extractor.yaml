@@ -19,7 +19,7 @@ spec:
   values:
     job:
       image: ssprivateithc.azurecr.io/data-extractor-job:ithc-8db87de
-      suspend: true
+      suspend: false
       kind: CronJob
       schedule: '0 0 * * *'
       activeDeadlineSeconds: 82800 #23 hours
