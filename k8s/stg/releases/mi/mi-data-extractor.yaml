@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/data-extractor-job:stg-b8c78a7
+      image: ssprivatestg.azurecr.io/data-extractor-job:stg-d35d27e
       suspend: false
       kind: CronJob
       schedule: '0 0 * * *'
@@ -30,7 +30,7 @@ spec:
         ETL_MSICLIENTID: e7251f8f-268e-4d5f-98d1-8eb777ef71c3
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
       smoketests:
-        image: ssprivatestg.azurecr.io/data-extractor-job:stg-b8c78a7
+        image: ssprivatestg.azurecr.io/data-extractor-job:stg-d35d27e
         enabled: true
       testsConfig:
         environment:
