@@ -21,7 +21,7 @@ spec:
       image: ssprivateithc.azurecr.io/mi-extraction-service:ithc-24f4993
       suspend: false
       kind: CronJob
-      schedule: '0 16 * * *'
+      schedule: '40 1 * * *'
       activeDeadlineSeconds: 82800 #23 hours
       labels:
         app.kubernetes.io/instance: mi-extraction-service
@@ -29,7 +29,6 @@ spec:
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
         MI_CLIENT_ID: "cf0eec4d-6c1c-4a68-9f4a-8d1184f1d317"
-        RETRIEVE_FROM_DATE: "2019-06-01"
       smoketests:
         image: ssprivateithc.azurecr.io/mi-extraction-service:ithc-24f4993
         enabled: true
