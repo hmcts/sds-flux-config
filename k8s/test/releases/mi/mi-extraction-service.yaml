@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatetest.azurecr.io/mi-extraction-service:pr-21-df7beb6
+      image: ssprivatetest.azurecr.io/mi-extraction-service:pr-23-e544641
       suspend: false
       kind: CronJob
       schedule: '40 1 * * *'
@@ -29,7 +29,7 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         MI_CLIENT_ID: "58ed3fc0-18be-4a6f-8ceb-14768c8e796a"
       smoketests:
-        image: ssprivatetest.azurecr.io/mi-extraction-service:pr-21-df7beb6
+        image: ssprivatetest.azurecr.io/mi-extraction-service:pr-23-e544641
         enabled: true
       testsConfig:
         environment:
