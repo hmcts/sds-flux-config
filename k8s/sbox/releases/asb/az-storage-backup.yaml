@@ -17,3 +17,17 @@ spec:
     image: ssprivatesbox.azurecr.io/hmcts/rdo-storageaccountbackup-app:master-47213
     pullPolicy: Always
     replicaCount: 1
+    readinessProbe:
+      enabled: false
+      path: "/"
+      initialDelaySeconds: 60
+      periodSeconds: 30
+      failureThreshold: 6
+      timeoutSeconds: 5
+    livenessProbe:
+      enabled: false
+      path: "/"
+      initialDelaySeconds: 60
+      periodSeconds: 30
+      failureThreshold: 6
+      timeoutSeconds: 5
