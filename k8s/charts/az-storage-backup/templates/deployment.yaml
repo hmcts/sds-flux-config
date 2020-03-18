@@ -3,7 +3,11 @@ kind: Deployment
 metadata:
   name: {{ include "az-storage-backup.fullname" . }}
   labels:
-{{ include "az-storage-backup.labels" . | indent 4 }}
+    app.kubernetes.io/name: {{ include "az-storage-backup.name" . }}
+    app: {{ include "az-storage-backup.name" . }}
+    helm.sh/chart: {{ include "az-storage-backup.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
