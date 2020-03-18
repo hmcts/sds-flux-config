@@ -1,0 +1,19 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: az-storage-backup
+  namespace: asb
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: master-*
+spec:
+  releaseName: az-storage-backup
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/az-storage-backup
+    ref: master
+  values:
+    image: ssprivatesbox.azurecr.io/hmcts/rdo-storageaccountbackup-app:master-47213
+    pullPolicy: Always
+    replicaCount: 1
