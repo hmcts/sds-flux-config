@@ -16,7 +16,7 @@ spec:
   values:
     image: sspublicstg.azurecr.io/vh-video-web:master-23fd01caa2e31e45b02d3a2186503568f158ccc5
     pullPolicy: Always
-    replicaCount: 1
+    replicaCount: 0
     service:
       type: ClusterIP
       port: 80

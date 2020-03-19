@@ -16,7 +16,7 @@ spec:
   values:
     image: sspublicstg.azurecr.io/vh-scheduler-jobs:master-536c2dfe2055a8fd4899fc14cf0a660ae1616f22
     pullPolicy: Always
-    replicaCount: 1
+    replicaCount: 0
     keyvaults:
     - name: vhcoreinfrahttest2
       resourcegroup: vh-core-infra-test2

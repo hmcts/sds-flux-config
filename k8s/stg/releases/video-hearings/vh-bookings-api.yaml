@@ -16,7 +16,7 @@ spec:
   values:
     image: sspublicstg.azurecr.io/vh-bookings-api:master-6a4c570481d1c83441b9b531127dcaa215f4f879
     pullPolicy: Always
-    replicaCount: 1
+    replicaCount: 0
     service:
       type: ClusterIP
       port: 80

@@ -16,7 +16,7 @@ spec:
   values:
     image: sspublicstg.azurecr.io/vh-admin-web:master-d0ddd684114be9dde5ada247984df2b8a498f0f2
     pullPolicy: Always
-    replicaCount: 1
+    replicaCount: 0
     service:
       type: ClusterIP
       port: 80
