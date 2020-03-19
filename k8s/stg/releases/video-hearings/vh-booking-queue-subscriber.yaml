@@ -16,7 +16,7 @@ spec:
   values:
     image: sspublicstg.azurecr.io/vh-booking-queue-subscriber:master-ea17707160e6c8e71fc4b9a719a7c0ad02da8500
     pullPolicy: Always
-    replicaCount: 1
+    replicaCount: 0
     keyvaults:
     - name: vhcoreinfrahttest2
       resourcegroup: vh-core-infra-test2
