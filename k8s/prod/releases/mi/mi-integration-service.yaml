@@ -1,0 +1,44 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: mi-integration-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:prod-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:prod-*
+spec:
+  releaseName: mi-integration-service
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/mi/mi-integration-service
+    ref: master
+  values:
+    job:
+      image: ssprivateprod.azurecr.io/mi-integration-service:prod-dbf34c4
+      suspend: true
+      kind: CronJob
+      schedule: '15 1 * * *'
+      activeDeadlineSeconds: 82800 #23 hours
+      labels:
+        app.kubernetes.io/instance: mi-integration-service-job
+        app.kubernetes.io/name: mi-integration-service-job
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "TBC"
+        DATA_SOURCE: CoreCaseData
+        MI_CLIENT_ID: TBC
+      smoketests:
+        image: ssprivateprod.azurecr.io/mi-integration-service:prod-dbf34c4
+        enabled: true
+      testsConfig:
+        environment:
+          MI_CLIENT_ID: TBC
+          APPINSIGHTS_INSTRUMENTATIONKEY: "TBC"
+          DATA_SOURCE: CoreCaseData
+    global:
+      subscriptionId: "TBC"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "prod"
