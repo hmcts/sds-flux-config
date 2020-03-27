@@ -46,6 +46,10 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       restartPolicy: {{ .Values.restartPolicy }}
+      {{- if .Values.global.affinity }}
+      affinity:
+{{ toYaml .Values.global.affinity | indent 8 }}
+      {{- end }}
       containers:
       - image: {{ .Values.image }}
         name: {{ include "hmcts.releaseName" . }}
