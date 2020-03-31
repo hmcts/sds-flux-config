@@ -1,0 +1,20 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+ name: mi-staging-service
+ namespace: mi
+spec:
+ type: 0
+ ResourceID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/mi-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-staging-service-prod-mi
+ ClientID: 3af9f88d-f5fb-424b-bf01-211a631143e2
+
+---
+
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: mi-staging-service
+  namespace: mi
+spec:
+  AzureIdentity: mi-staging-service
+  Selector: mi-staging-service
