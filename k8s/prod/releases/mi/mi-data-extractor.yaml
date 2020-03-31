@@ -22,6 +22,9 @@ spec:
       suspend: true
       kind: CronJob
       schedule: '15 0 * * *'
+      memoryRequests: '2048Mi'
+      cpuRequests: '200m'
+      memoryLimits: '4096Mi'
       activeDeadlineSeconds: 82800 #23 hours
       labels:
         app.kubernetes.io/instance: data-extractor-job
