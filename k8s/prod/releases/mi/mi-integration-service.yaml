@@ -29,16 +29,16 @@ spec:
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "TBC"
         DATA_SOURCE: CoreCaseData
-        MI_CLIENT_ID: TBC
+        MI_CLIENT_ID: 60146a49-7399-4b18-b36c-576671c8f9bc
       smoketests:
         image: ssprivateprod.azurecr.io/mi-integration-service:prod-dbf34c4
         enabled: true
       testsConfig:
         environment:
-          MI_CLIENT_ID: TBC
+          MI_CLIENT_ID: 60146a49-7399-4b18-b36c-576671c8f9bc
           APPINSIGHTS_INSTRUMENTATIONKEY: "TBC"
           DATA_SOURCE: CoreCaseData
     global:
-      subscriptionId: "TBC"
+      subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       environment: "prod"
