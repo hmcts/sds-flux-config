@@ -113,6 +113,10 @@ securityContext:
   runAsUser: 1000
   fsGroup: 1000
 restartPolicy: Never
+{{- if .Values.global.affinity }}
+affinity:
+{{ toYaml .Values.global.affinity | indent 2 }}
+{{- end }}
 containers:
   - name: tests
     image: {{ .Values.smoketests.image }}
