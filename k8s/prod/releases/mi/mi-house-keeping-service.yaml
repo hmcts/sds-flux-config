@@ -27,14 +27,14 @@ spec:
         app.kubernetes.io/instance: mi-house-keeping-service
         app.kubernetes.io/name: mi-house-keeping-service
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "TBC"
+        APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
         MI_CLIENT_ID: "6d008449-d685-42f7-b273-00f61f42dda6"
       smoketests:
         image: ssprivateprod.azurecr.io/mi-house-keeping-service:prod-35b23f9
         enabled: true
       testsConfig:
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "TBC"
+          APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
           MI_CLIENT_ID: "6d008449-d685-42f7-b273-00f61f42dda6"
     global:
       subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"

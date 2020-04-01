@@ -27,7 +27,7 @@ spec:
         app.kubernetes.io/instance: mi-extraction-service
         app.kubernetes.io/name: mi-extraction-service
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "TBC"
+        APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
         MI_CLIENT_ID: eacf45b7-55e2-4f84-802f-024b2c5b9ca8
         GOV_UK_NOTIFY_BLOB_URL_TEMPLATE_ID: 393b8dd5-db7a-4cd7-b7b8-931876f3dea6
       smoketests:
@@ -35,7 +35,7 @@ spec:
         enabled: true
       testsConfig:
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "TBC"
+          APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
           MI_CLIENT_ID: eacf45b7-55e2-4f84-802f-024b2c5b9ca8
     global:
       subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
