@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivateprod.azurecr.io/data-extractor-job:prod-5b758b8
+      image: ssprivateprod.azurecr.io/data-extractor-job:prod-d113b01
       suspend: true
       kind: CronJob
       schedule: '15 0 * * *'
@@ -43,7 +43,7 @@ spec:
         EXTRACTION_SSCS_DISABLED: true
         APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
       smoketests:
-        image: ssprivateprod.azurecr.io/data-extractor-job:prod-5b758b8
+        image: ssprivateprod.azurecr.io/data-extractor-job:prod-d113b01
         enabled: true
       testsConfig:
         environment:
