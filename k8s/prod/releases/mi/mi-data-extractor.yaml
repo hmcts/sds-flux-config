@@ -41,14 +41,14 @@ spec:
         EXTRACTION_CMC_DISABLED: true
         EXTRACTION_ASYLUM_DISABLED: true
         EXTRACTION_SSCS_DISABLED: true
-        APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
+        APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
       smoketests:
         image: ssprivateprod.azurecr.io/data-extractor-job:prod-d113b01
         enabled: true
       testsConfig:
         environment:
           ETL_MSICLIENTID: e4249368-cf12-4a81-8a56-cef2c4473769
-          APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
+          APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
     global:
       subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
