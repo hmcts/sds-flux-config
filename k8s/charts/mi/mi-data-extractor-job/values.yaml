@@ -39,7 +39,6 @@ job:
         secrets:
           - ccdro-user
           - ccdro-password
-          - data-extractor-connection-string
           - appinsights-instrumentationkey
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
