@@ -20,7 +20,7 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik-sbox
       hosts:
-      - 'ctsc-web-forms-ui-sbox.aks-ss.core-compute-sbox.internal'
+      - 'ctsc-web-forms-ui-sbox.service.core-compute-sandbox.internal'
     env:
       SECRETS_PATH: /kvmnt/
       SERVICE_EMAIL_ADDRESSES: <azure-secret:service-email-addresses>
