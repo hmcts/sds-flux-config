@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatetest.azurecr.io/mi-extraction-service:pr-54-d909388
+      image: ssprivatetest.azurecr.io/mi-extraction-service:pr-55-52f3935
       suspend: false
       kind: CronJob
       schedule: '40 1 * * *'
@@ -32,7 +32,7 @@ spec:
         SASIPWHITELIST_RANGE_VPN: 10.99.0.0-10.99.10.255
         SASIPWHITELIST_RANGE_REFORM_PROXY: 51.145.0.0-51.145.10.255
       smoketests:
-        image: ssprivatetest.azurecr.io/mi-extraction-service:pr-54-d909388
+        image: ssprivatetest.azurecr.io/mi-extraction-service:pr-55-52f3935
         enabled: true
       testsConfig:
         environment:
