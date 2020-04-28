@@ -31,6 +31,7 @@ spec:
         app.kubernetes.io/name: data-extractor-job
       environment:
         ETL_MSICLIENTID: e4249368-cf12-4a81-8a56-cef2c4473769
+        ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-replica-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
         EXTRACTION_GRANT_REPRESENTATION_DISABLED: false
         EXTRACTION_CAVIAT_DISABLED: true
         EXTRACTION_WILLLODGEMENT_DISABLED: true
@@ -48,6 +49,7 @@ spec:
       testsConfig:
         environment:
           ETL_MSICLIENTID: e4249368-cf12-4a81-8a56-cef2c4473769
+          ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-replica-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
           APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
     global:
       subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
