@@ -1,13 +1,5 @@
 job:
   image: ssprivatesbox.azurecr.io/mi-staging-service:master
-  keyVaults:
-    "mi-vault":
-      excludeEnvironmentSuffix: false
-      resourceGroup: mi-{{ .Values.global.environment }}-rg
-      usepodidentity: false
-      secrets:
-        - mi-landing-storage-connection-string
-        - mi-staging-storage-connection-string
   memoryRequests: '1024Mi'
   cpuRequests: '200m'
   memoryLimits: '2048Mi'
