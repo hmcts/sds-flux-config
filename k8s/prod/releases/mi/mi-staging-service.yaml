@@ -19,9 +19,9 @@ spec:
   values:
     job:
       image: ssprivateprod.azurecr.io/mi-staging-service:prod-de675e4
-      suspend: true
+      suspend: false
       kind: CronJob
-      schedule: '30 1 * * *'
+      schedule: '30 6 * * *'
       activeDeadlineSeconds: 82800 #23 hours
       labels:
         app.kubernetes.io/instance: mi-staging-service
