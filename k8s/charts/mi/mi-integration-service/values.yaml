@@ -1,13 +1,5 @@
 job:
   image: ssprivatesbox.azurecr.io/mi-integration-service:master
-  keyVaults:
-    "mi-vault":
-      excludeEnvironmentSuffix: false
-      resourceGroup: mi-{{ .Values.global.environment }}-rg
-      usepodidentity: false
-      secrets:
-        - mi-extraction-storage-connection-string
-        - mi-landing-storage-connection-string
   memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job
