@@ -19,7 +19,7 @@ spec:
   values:
     job:
       image: ssprivateprod.azurecr.io/data-extractor-job:prod-bf502b3
-      suspend: false
+      suspend: true
       kind: CronJob
       schedule: '15 0 * * *'
       memoryRequests: '2048Mi'
@@ -37,11 +37,11 @@ spec:
         EXTRACTION_WILLLODGEMENT_DISABLED: true
         EXTRACTION_STANDINGSEARCH_DISABLED: true
         EXTRACTION_DIVORCE_DISABLED: true
-        EXTRACTION_FINREDMVP2_DISABLED: false
-        EXTRACTION_FINREDCONTESTED_DISABLED: false
-        EXTRACTION_ASYLUM_DISABLED: false
-        EXTRACTION_CMC_DISABLED: false
-        EXTRACTION_SSCS_DISABLED: true
+        EXTRACTION_FINREDMVP2_DISABLED: true
+        EXTRACTION_FINREDCONTESTED_DISABLED: true
+        EXTRACTION_ASYLUM_DISABLED: true
+        EXTRACTION_CMC_DISABLED: true
+        EXTRACTION_SSCS_DISABLED: false
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
       smoketests:
         image: ssprivateprod.azurecr.io/data-extractor-job:prod-bf502b3
