@@ -32,7 +32,7 @@ spec:
       environment:
         ETL_MSICLIENTID: e4249368-cf12-4a81-8a56-cef2c4473769
         ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-prod-replica.postgres.database.azure.com:5432/ccd_data_store
-        EXTRACTION_GRANT_REPRESENTATION_DISABLED: true
+        EXTRACTION_GRANT_REPRESENTATION_DISABLED: false
         EXTRACTION_CAVIAT_DISABLED: true
         EXTRACTION_WILLLODGEMENT_DISABLED: true
         EXTRACTION_STANDINGSEARCH_DISABLED: true
@@ -41,7 +41,7 @@ spec:
         EXTRACTION_FINREDCONTESTED_DISABLED: true
         EXTRACTION_ASYLUM_DISABLED: true
         EXTRACTION_CMC_DISABLED: true
-        EXTRACTION_SSCS_DISABLED: false
+        EXTRACTION_SSCS_DISABLED: true
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
       smoketests:
         image: ssprivateprod.azurecr.io/data-extractor-job:prod-bf502b3
