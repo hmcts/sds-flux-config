@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-staging-service:stg-de675e4
+      image: ssprivatestg.azurecr.io/mi-staging-service:stg-e36a69e
       suspend: false
       kind: CronJob
       schedule: '30 0 * * *'
@@ -30,7 +30,7 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
         MI_CLIENT_ID: 358e8b10-d68b-4aee-9585-9968ae2264d2
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-staging-service:stg-de675e4
+        image: ssprivatestg.azurecr.io/mi-staging-service:stg-e36a69e
         enabled: true
       testsConfig:
         environment:
@@ -41,12 +41,12 @@ spec:
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       environment: "stg"
       affinity:
-          nodeAffinity:
-            requiredDuringSchedulingIgnoredDuringExecution:
-              nodeSelectorTerms:
-              - matchExpressions:
-                - key: kubernetes.io/hostname
-                  operator: In
-                  values:
-                  - aks-ssstgpool-42844036-0
-                  - aks-ssstgpool-42844036-1
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - aks-ssstgpool-42844036-0
+                - aks-ssstgpool-42844036-1
