@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivateprod.azurecr.io/mi-integration-service:prod-692da6f
+      image: ssprivateprod.azurecr.io/mi-integration-service:prod-f40fc4e
       suspend: false
       kind: CronJob
       schedule: '15 1 * * *'
@@ -31,7 +31,7 @@ spec:
         DATA_SOURCE: CoreCaseData
         MI_CLIENT_ID: 60146a49-7399-4b18-b36c-576671c8f9bc
       smoketests:
-        image: ssprivateprod.azurecr.io/mi-integration-service:prod-692da6f
+        image: ssprivateprod.azurecr.io/mi-integration-service:prod-f40fc4e
         enabled: true
       testsConfig:
         environment:
