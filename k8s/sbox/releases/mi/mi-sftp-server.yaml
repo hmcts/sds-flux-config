@@ -17,7 +17,12 @@ spec:
         - name: mi-sftp-server
           image: atmoz/sftp:latest
           imagePullPolicy: Always
-          args: ["upload:upload:::upload"] 
+          env:
+          - name: SFTP_USERS
+            valueFrom:
+              secretKeyRef:
+                name: mi-secrets
+                key: SFTP_USERS
           ports:
             - containerPort: 22
           securityContext:
