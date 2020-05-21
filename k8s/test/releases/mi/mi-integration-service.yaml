@@ -27,15 +27,24 @@ spec:
         app.kubernetes.io/name: mi-integration-service-job
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
-        DATA_SOURCE: CoreCaseData
+        DATA_SOURCE_CCD: true
         MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
+      keyVaults:
+        "mi-vault":
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+            - notify-api-key-cmc
+            - notify-api-key-divorce
+            - notify-api-key-idam
+            - notify-api-key-probate
+            - notify-api-key-sscs
       smoketests:
         image: ssprivatetest.azurecr.io/mi-integration-service:pr-64-2912509
         enabled: true
       testsConfig:
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
-          DATA_SOURCE: CoreCaseData
+          DATA_SOURCE_CCD: true
           MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"

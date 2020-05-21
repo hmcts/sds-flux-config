@@ -15,15 +15,6 @@ job:
     MI_CLIENT_ID: DUMMY
     STORAGE_EXTRACTION_NAME: midataextractor{{ .Values.global.environment }}
     STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
-  keyVaults:
-    "mi-vault":
-      resourceGroup: mi-{{ .Values.global.environment }}-rg
-      secrets:
-        - notify-api-key-cmc
-        - notify-api-key-divorce
-        - notify-api-key-idam
-        - notify-api-key-probate
-        - notify-api-key-sscs
   smoketests:
     image: ssprivatesbox.azurecr.io/mi-integration-service:master
     enabled: false
