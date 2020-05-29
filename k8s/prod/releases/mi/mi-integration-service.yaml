@@ -28,7 +28,7 @@ spec:
         app.kubernetes.io/name: mi-integration-service-job
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
-        DATA_SOURCE: CoreCaseData
+        DATA_SOURCE_CCD: true
         MI_CLIENT_ID: 60146a49-7399-4b18-b36c-576671c8f9bc
       smoketests:
         image: ssprivateprod.azurecr.io/mi-integration-service:prod-7f7aa28
@@ -37,7 +37,7 @@ spec:
         environment:
           MI_CLIENT_ID: 60146a49-7399-4b18-b36c-576671c8f9bc
           APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
-          DATA_SOURCE: CoreCaseData
+          DATA_SOURCE_CCD: true
     global:
       subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
