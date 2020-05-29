@@ -29,6 +29,7 @@ spec:
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
         DATA_SOURCE_CCD: true
+        DATA_SOURCE_NOTIFY: true
         MI_CLIENT_ID: c0d45f3b-fb10-4542-b889-166e52ab2a5d
       smoketests:
         image: ssprivateithc.azurecr.io/mi-integration-service:ithc-9486fe6
@@ -38,6 +39,7 @@ spec:
           MI_CLIENT_ID: c0d45f3b-fb10-4542-b889-166e52ab2a5d
           APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
           DATA_SOURCE_CCD: true
+          DATA_SOURCE_NOTIFY: true
     global:
       subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

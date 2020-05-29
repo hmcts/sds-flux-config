@@ -28,6 +28,7 @@ spec:
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         DATA_SOURCE_CCD: true
+        DATA_SOURCE_NOTIFY: true
         MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
       keyVaults:
         "mi-vault":
@@ -45,6 +46,7 @@ spec:
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
           DATA_SOURCE_CCD: true
+          DATA_SOURCE_NOTIFY: true
           MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
