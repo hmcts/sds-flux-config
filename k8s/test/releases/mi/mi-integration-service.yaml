@@ -25,9 +25,26 @@ spec:
       labels:
         app.kubernetes.io/instance: mi-integration-service-job
         app.kubernetes.io/name: mi-integration-service-job
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          usepodidentity: false
+          secrets:
+            - notify-api-key-cmc
+            - notify-api-key-divorce
+            - notify-api-key-idam
+            - notify-api-key-probate
+            - notify-api-key-sscs
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
-        DATA_SOURCE: CoreCaseData
+        DATA_SOURCE_CCD: true
+        DATA_SOURCE_NOTIFY: true
+        GOV_UK_NOTIFY_ENABLED_CMC: true
+        GOV_UK_NOTIFY_ENABLED_DIVORCE: true
+        GOV_UK_NOTIFY_ENABLED_IDAM: true
+        GOV_UK_NOTIFY_ENABLED_PROBATE: true
+        GOV_UK_NOTIFY_ENABLED_SSCS: true
         MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
       smoketests:
         image: ssprivatetest.azurecr.io/mi-integration-service:pr-71-d511d40
@@ -35,7 +52,13 @@ spec:
       testsConfig:
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
-          DATA_SOURCE: CoreCaseData
+          DATA_SOURCE_CCD: true
+          DATA_SOURCE_NOTIFY: true
+          GOV_UK_NOTIFY_ENABLED_CMC: true
+          GOV_UK_NOTIFY_ENABLED_DIVORCE: true
+          GOV_UK_NOTIFY_ENABLED_IDAM: true
+          GOV_UK_NOTIFY_ENABLED_PROBATE: true
+          GOV_UK_NOTIFY_ENABLED_SSCS: true
           MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
