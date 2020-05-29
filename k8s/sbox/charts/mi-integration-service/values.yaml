@@ -1,14 +1,6 @@
 job:
   image: ssprivatesbox.azurecr.io/mi-integration-service:master
-  keyVaults:
-    "mi-vault":
-      excludeEnvironmentSuffix: false
-      resourceGroup: mi-{{ .Values.global.environment }}-rg
-      usepodidentity: false
-      secrets:
-        - mi-extraction-storage-connection-string
-        - mi-landing-storage-connection-string
-  memoryLimits: '512Mi'
+  memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job
   aadIdentityName: mi-integration-service
@@ -20,8 +12,20 @@ job:
   ttlSecondsAfterFinished: 20
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+    MI_CLIENT_ID: DUMMY
     STORAGE_EXTRACTION_NAME: midataextractor{{ .Values.global.environment }}
     STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
+  smoketests:
+    image: ssprivatesbox.azurecr.io/mi-integration-service:master
+    enabled: false
+  testsConfig:
+    memoryLimits: '512Mi'
+    activeDeadlineSeconds: 3600
+    environment:
+      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+      MI_CLIENT_ID: DUMMY
+      STORAGE_EXTRACTION_NAME: midataextractor{{ .Values.global.environment }}
+      STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
 global:
   enableKeyVaults: true
   usepodidentity: true
