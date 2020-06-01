@@ -50,6 +50,17 @@ spec:
         image: ssprivatetest.azurecr.io/mi-integration-service:pr-73-4bfa211
         enabled: true
       testsConfig:
+        keyVaults:
+          "mi-vault":
+            excludeEnvironmentSuffix: false
+            resourceGroup: mi-{{ .Values.global.environment }}-rg
+            usepodidentity: false
+            secrets:
+            - notify-api-key-cmc
+            - notify-api-key-divorce
+            - notify-api-key-idam
+            - notify-api-key-probate
+            - notify-api-key-sscs
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
           DATA_SOURCE_CCD: true
