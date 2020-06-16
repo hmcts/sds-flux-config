@@ -1,0 +1,33 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: netbox
+  namespace: netbox
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: glob:Release-*
+spec:
+  releaseName: netbox
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/netbox-chart
+    ref: master
+  values:
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik-prod
+        traefik.ingress.kubernetes.io/affinity: "true"
+        ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
+        traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32, 213.121.161.124/32, 51.143.166.203"
+      hosts:
+        - host: netbox.platform.hmcts.net
+          paths:
+            # NB: You may also want to set the basePath above
+            - /
+
+      tls: []
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
