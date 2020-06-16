@@ -200,7 +200,7 @@ postgresql:
 ## External database settings
 # These are used if postgresql.enabled is false, and are ignored otherwise
 externalDatabase:
-  host: netbox-stg-netboxazure.privatelink.postgres.database.azure.com
+  host: netbox@netbox-stg-netboxazure.privatelink.postgres.database.azure.com
   port: 5432
   database: netbox
   username: netbox
