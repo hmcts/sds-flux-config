@@ -237,8 +237,8 @@ cachingRedis:
   timeout: 300
   ssl: false
 
-  Used only when redis.enabled is false. host and port are not used if
-  sentinels are given.
+  #Used only when redis.enabled is false. host and port are not used if
+  #sentinels are given.
   host: netbox-stg-netboxazure-standard.redis.cache.windows.net
   port: 6379
   sentinels: []
