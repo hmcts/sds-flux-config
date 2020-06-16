@@ -205,7 +205,7 @@ externalDatabase:
   database: netbox
   username: netbox@netbox-stg-netboxazure
   password: ""
-  existingSecretName: ""
+  existingSecretName: netbox-postgresql
   existingSecretKey: postgresql-password
   sslMode: prefer
   connMaxAge: 300
