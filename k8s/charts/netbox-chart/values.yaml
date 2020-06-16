@@ -192,7 +192,7 @@ postgresql:
   ## Deploy PostgreSQL using bundled chart
   # To use an external database, set this to false and configure the settings
   # under externalDatabase
-  enabled: true
+  enabled: false
 
   postgresqlUsername: netbox
   postgresqlDatabase: netbox
@@ -200,7 +200,7 @@ postgresql:
 ## External database settings
 # These are used if postgresql.enabled is false, and are ignored otherwise
 externalDatabase:
-  host: localhost
+  host: netbox-stg-netboxazure.privatelink.postgres.database.azure.com
   port: 5432
   database: netbox
   username: netbox
