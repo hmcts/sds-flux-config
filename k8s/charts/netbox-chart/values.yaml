@@ -214,7 +214,7 @@ redis:
   ## Deploy Redis using bundled chart
   # To use an external Redis instance, set this to false and configure the
   # settings under *both* webhooksRedis *and* cachingRedis
-  enabled: true
+  enabled: false
 
 webhooksRedis:
   database: 0
@@ -223,13 +223,13 @@ webhooksRedis:
 
   # Used only when redis.enabled is false. host and port are not used if
   # sentinels are given.
-  host: netbox-redis
+  host: netbox-stg-netboxazure-standard.redis.cache.windows.net
   port: 6379
   sentinels: []
   #  - mysentinel:26379
   sentinelService: netbox-redis
   password: ""
-  existingSecretName: ""
+  existingSecretName: netbox-redis
   existingSecretKey: redis-password
 
 cachingRedis:
@@ -239,14 +239,14 @@ cachingRedis:
 
   # Used only when redis.enabled is false. host and port are not used if
   # sentinels are given.
-  host: netbox-redis
-  port: 6379
-  sentinels: []
-  #  - mysentinel:26379
-  sentinelService: netbox-redis
-  password: ""
-  existingSecretName: ""
-  existingSecretKey: redis-password
+  # host: netbox-redis
+  # port: 6379
+  # sentinels: []
+  # #  - mysentinel:26379
+  # sentinelService: netbox-redis
+  # password: ""
+  # existingSecretName: ""
+  # existingSecretKey: redis-password
 
 imagePullSecrets: []
 nameOverride: ""
