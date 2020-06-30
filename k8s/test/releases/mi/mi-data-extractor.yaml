@@ -22,6 +22,17 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '0 1 * * *'
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          usepodidentity: false
+      secrets:
+        - ccdro-user
+        - ccdro-password
+        - appinsights-instrumentationkey
+        - ccdro-clone-user
+        - ccdro-clone-password
       activeDeadlineSeconds: 82800 #23 hours
       labels:
         app.kubernetes.io/instance: data-extractor-job
@@ -29,13 +40,17 @@ spec:
       environment:
         ETL_MSICLIENTID: 905cc792-3ecc-4c1e-ae18-40ed86ca6a8d
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+        EXTRACTION_INITIALISE: true
+        ETL_DB_CLONE_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
       smoketests:
         image: ssprivatetest.azurecr.io/data-extractor-job:pr-113-95edf77
         enabled: true
       testsConfig:
         environment:
+          ETL_DB_CLONE_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
           ETL_MSICLIENTID: 905cc792-3ecc-4c1e-ae18-40ed86ca6a8d
           APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+          EXTRACTION_INITIALISE: true
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
