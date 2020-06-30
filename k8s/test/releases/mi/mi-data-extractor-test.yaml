@@ -34,8 +34,8 @@ spec:
         - ccdro-clone-user
         - ccdro-clone-password
       labels:
-        app.kubernetes.io/instance: data-extractor-job
-        app.kubernetes.io/name: data-extractor-job
+        app.kubernetes.io/instance: data-extractor-job-test
+        app.kubernetes.io/name: data-extractor-job-test
       environment:
         ETL_MSICLIENTID: 905cc792-3ecc-4c1e-ae18-40ed86ca6a8d
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
