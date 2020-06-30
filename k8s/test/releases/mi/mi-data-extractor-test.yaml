@@ -27,12 +27,12 @@ spec:
           excludeEnvironmentSuffix: false
           resourceGroup: mi-{{ .Values.global.environment }}-rg
           usepodidentity: false
-      secrets:
-      - ccdro-user
-      - ccdro-password
-      - appinsights-instrumentationkey
-      - ccdro-clone-user
-      - ccdro-clone-password
+          secrets:
+          - ccdro-user
+          - ccdro-password
+          - appinsights-instrumentationkey
+          - ccdro-clone-user
+          - ccdro-clone-password
       labels:
         app.kubernetes.io/instance: data-extractor-job-test
         app.kubernetes.io/name: data-extractor-job-test
