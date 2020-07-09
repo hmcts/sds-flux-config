@@ -34,9 +34,9 @@ spec:
         ETL_DB_CLONE_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-prod-replica.postgres.database.azure.com:5432/ccd_data_store
         EXTRACTION_INITIALISE: true
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+        EXTRACTION_CASETYPES: ""
         EXTRACTION_FILTER_IN: ""
         EXTRACTION_TODATE: "20200709"
-
       smoketests:
         image: ssprivateprod.azurecr.io/data-extractor-job:prod-ef34801
         enabled: true
