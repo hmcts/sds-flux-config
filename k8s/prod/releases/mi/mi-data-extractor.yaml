@@ -19,7 +19,7 @@ spec:
   values:
     job:
       image: ssprivateprod.azurecr.io/data-extractor-job:prod-ef34801
-      suspend: true
+      suspend: false
       kind: CronJob
       schedule: '15 0 * * *'
       memoryRequests: '2048Mi'
