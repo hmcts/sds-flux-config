@@ -35,7 +35,7 @@ spec:
         EXTRACTION_INITIALISE: true
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
         EXTRACTION_CASETYPES: ""
-        EXTRACTION_FILTER_IN: ""
+        EXTRACTION_FILTER_JURISDICTION_IN: ""
         EXTRACTION_TODATE: "20200709"
       smoketests:
         image: ssprivateprod.azurecr.io/data-extractor-job:prod-ef34801
