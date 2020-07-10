@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatetest.azurecr.io/data-extractor-job:pr-113-4f00610
+      image: ssprivatetest.azurecr.io/data-extractor-job:pr-115-b5c9e9d
       suspend: false
       kind: CronJob
       schedule: '0 1 * * *'
@@ -32,7 +32,7 @@ spec:
         EXTRACTION_CASETYPES: ""
         EXTRACTION_FILTER_JURISDICTION_IN: ""
       smoketests:
-        image: ssprivatetest.azurecr.io/data-extractor-job:pr-113-4f00610
+        image: ssprivatetest.azurecr.io/data-extractor-job:pr-115-b5c9e9d
         enabled: true
       testsConfig:
         environment:
