@@ -40,6 +40,8 @@ job:
         secrets:
           - ccdro-user
           - ccdro-password
+          - ccdro-clone-user
+          - ccdro-clone-password  
           - appinsights-instrumentationkey
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
