@@ -37,6 +37,7 @@ spec:
         EXTRACTION_CASETYPES: ""
         EXTRACTION_FILTER_JURISDICTION_IN: ""
         EXTRACTION_TODATE: "20200713"
+        TEST: DUMMY
       smoketests:
         image: ssprivateprod.azurecr.io/data-extractor-job:prod-9be1063
         enabled: true
