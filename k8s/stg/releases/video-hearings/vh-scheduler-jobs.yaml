@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/video-hearings-func
     ref: master
   values:
-    image: sspublicstg.azurecr.io/vh-scheduler-jobs:master-0199689d9d3fdc976676af0ac44e9ef414569d80
+    image: sspublicstg.azurecr.io/vh-scheduler-jobs:master-a2ce991809e02ce3606acd5391e053383386a2ac
     pullPolicy: Always
     replicaCount: 0
     keyvaults:
