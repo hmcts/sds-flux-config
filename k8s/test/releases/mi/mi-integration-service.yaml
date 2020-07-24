@@ -36,10 +36,13 @@ spec:
           - notify-api-key-idam
           - notify-api-key-probate
           - notify-api-key-sscs
+          - eightbyeight-api-user
+          - eightbyeight-api-password
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         DATA_SOURCE_CCD: true
         DATA_SOURCE_NOTIFY: true
+        DATA_SOURCE_EIGHTBYEIGHT: true
         GOV_UK_NOTIFY_ENABLED_CMC: true
         GOV_UK_NOTIFY_ENABLED_DIVORCE: true
         GOV_UK_NOTIFY_ENABLED_IDAM: true
