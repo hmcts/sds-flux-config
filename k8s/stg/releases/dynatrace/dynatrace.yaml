@@ -18,4 +18,7 @@ spec:
     replicaCount: 1
     oneagent:
       name: "oneagent"
-      apiUrl: "https://jqr44001.live.dynatrace.com/api"
+      apiUrl: "https://yrk32651.live.dynatrace.com/api"
+      args:
+        - --set-host-group=AAT_CFT
+        - --set-network-zone=azure.cft
