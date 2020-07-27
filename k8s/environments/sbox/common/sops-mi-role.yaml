@@ -1,0 +1,19 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: aks-pod-identity-mi
+  namespace: admin
+spec:
+  type: 0
+  resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/genesis_resource_group/providers/Microsoft.ManagedIdentity/userAssignedIdentities/flux-sbox-mi-sops
+  clientID: 3df1470f-4a85-4fae-b306-66ee5f1d3dfc
+
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: aks-pod-identity-mi-binding
+  namespace: admin
+spec:
+  azureIdentity: aks-pod-identity-mi
+  selector: aks-pod-identity-mi
