@@ -15,9 +15,6 @@ spec:
     autoscaling:
       minReplicas: 1
       maxReplicas: 2
-    service:
-      annotations:
-        service.beta.kubernetes.io/azure-load-balancer-resource-group: ss_sbox_kubernetes_resource_group
     ssl:
       generateTLS: true
       defaultCN: "*.ss-service.core-compute-sandbox.internal"
