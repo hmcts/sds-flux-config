@@ -16,4 +16,6 @@ spec:
     service:
       annotations:
         service.beta.kubernetes.io/azure-load-balancer-resource-group: aks-infra-sbox-rg
-
+    ssl:
+      generateTLS: true
+      defaultCN: "*.service.core-compute-sandbox.internal"
