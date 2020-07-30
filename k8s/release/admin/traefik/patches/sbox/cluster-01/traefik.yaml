@@ -17,7 +17,7 @@ spec:
       maxReplicas: 2
     service:
       annotations:
-        service.beta.kubernetes.io/azure-load-balancer-resource-group: aks-infra-sbox-rg
+        service.beta.kubernetes.io/azure-load-balancer-resource-group: ss_sbox_kubernetes_resource_group
     ssl:
       generateTLS: true
       defaultCN: "*.service.core-compute-sandbox.internal"
