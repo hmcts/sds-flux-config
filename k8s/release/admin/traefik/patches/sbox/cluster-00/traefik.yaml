@@ -7,7 +7,7 @@ spec:
   values:
     loadBalancerIP: 10.140.15.250
     dashboard:
-      domain: traefik00.service.core-compute-sandbox.internal
+      domain: traefik00.ss-service.core-compute-sandbox.internal
     accessLogs:
       enabled: true
     autoscaling:
@@ -18,4 +18,4 @@ spec:
         service.beta.kubernetes.io/azure-load-balancer-resource-group: ss_sbox_kubernetes_resource_group
     ssl:
       generateTLS: true
-      defaultCN: "*.service.core-compute-sandbox.internal"
+      defaultCN: "*.ss-service.core-compute-sandbox.internal"
