@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatesbox.azurecr.io/mi-integration-service:pr-17-a76875f
+      image: ssprivatesbox.azurecr.io/mi-integration-service:pr-91-ffaf83c
       suspend: true
       kind: CronJob
       schedule: '15 * * * *'
@@ -28,8 +28,8 @@ spec:
           resourceGroup: mi-{{ .Values.global.environment }}-rg
           usepodidentity: false
           secrets:
-            - notify-api-key-cmc
-            - notify-api-key-divorce
+          - notify-api-key-cmc
+          - notify-api-key-divorce
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
         DATA_SOURCE_CCD: true
