@@ -1,5 +1,5 @@
 ---
-apiVersion: flux.weave.works/v1beta1
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: maintenance
@@ -11,13 +11,13 @@ spec:
   releaseName: maintenance
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/releases/maintenance
+    path: k8s/release/maintenance
     ref: master
   values:
-    image: ssprivatesbox.azurecr.io/maintenance:v0.1
+    image: ssprivatesbox.azurecr.io/maintenance:v0.3
     replicaCount: 1
     ingress:
       annotations:
         kubernetes.io/ingress.class: traefik
       hosts:
-      - 'maintenance-sbox.aks-ss.core-compute-sbox.internal'
+      - 'maintenance.ss-service.core-compute-sandbox.internal'
