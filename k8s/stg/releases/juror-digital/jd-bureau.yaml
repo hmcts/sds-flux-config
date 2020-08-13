@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/jd-bureau
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/jd/juror_digital_bureau_portal:2.13.6
+    image: ssprivatestg.azurecr.io/jd/juror_digital_bureau_portal:2.19.61
     pullPolicy: Always
     replicaCount: 2
     service:
@@ -45,4 +45,8 @@ spec:
       PORT: 3000
       USE_AUTH: false
       NODE_ENV: development
-
+      SMARTSURVEY_API_ENDPOINT: https://api.smartsurvey.io/v1/surveys/
+      SMARTSURVEY_ID_V1: 301219
+      SMARTSURVEY_ID_V2: 652997
+      SMARTSURVEY_EXPORT_V1: "Dashboard Export"
+      SMARTSURVEY_EXPORT_V2: "Dashboard Export"
