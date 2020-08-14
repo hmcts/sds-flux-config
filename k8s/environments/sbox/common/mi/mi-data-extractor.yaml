@@ -8,7 +8,7 @@ metadata:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.job: glob:pr-*
 spec:
-  releaseName: data-extractor
+  releaseName: mi-data-extractor
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-data-extractor-job
