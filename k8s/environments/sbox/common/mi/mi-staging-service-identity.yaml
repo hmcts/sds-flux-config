@@ -5,8 +5,8 @@ metadata:
  namespace: mi
 spec:
  type: 0
- ResourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/mi-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-staging-service-sbox-mi
- ClientID: 9f896b6a-f175-44c0-9f35-8be0790782ec
+ resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/mi-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-staging-service-sbox-mi
+ clientID: 9f896b6a-f175-44c0-9f35-8be0790782ec
 
 ---
 
@@ -16,5 +16,5 @@ metadata:
   name: mi-staging-service
   namespace: mi
 spec:
-  AzureIdentity: mi-staging-service
-  Selector: mi-staging-service
+  azureIdentity: mi-staging-service
+  selector: mi-staging-service

@@ -5,8 +5,8 @@ metadata:
  namespace: mi
 spec:
  type: 0
- ResourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/mi-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-extraction-service-sbox-mi
- ClientID: e719c01d-0095-462c-93e8-78f29ca20cff
+ resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/mi-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-extraction-service-sbox-mi
+ clientID: e719c01d-0095-462c-93e8-78f29ca20cff
 
 ---
 
@@ -16,5 +16,5 @@ metadata:
   name: mi-extraction-service
   namespace: mi
 spec:
-  AzureIdentity: mi-extraction-service
-  Selector: mi-extraction-service
+  azureIdentity: mi-extraction-service
+  selector: mi-extraction-service

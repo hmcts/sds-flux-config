@@ -5,8 +5,8 @@ metadata:
  namespace: mi
 spec:
  type: 0
- ResourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/mi-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-data-extactor-sbox-mi
- ClientID: 8dbd1e5c-15b7-42ea-b32c-4a360c79210a
+ resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/mi-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-data-extactor-sbox-mi
+ clientID: 8dbd1e5c-15b7-42ea-b32c-4a360c79210a
 
 ---
 
@@ -16,5 +16,5 @@ metadata:
   name: mi-data-extractor-job
   namespace: mi
 spec:
-  AzureIdentity: mi-data-extractor-job
-  Selector: mi-data-extractor-job
+  azureIdentity: mi-data-extractor-job
+  selector: mi-data-extractor-job
