@@ -4,7 +4,7 @@ job:
     "mi-vault":
       excludeEnvironmentSuffix: false
       resourceGroup: mi-{{ .Values.global.environment }}-rg
-      usepodidentity: false
+      usepodidentity: true
       secrets:
         - aat-ccdro-user
         - aat-ccdro-password
