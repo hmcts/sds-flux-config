@@ -24,7 +24,7 @@ spec:
       {{- if and .Values.keyVaults .Values.global.enableKeyVaults }}
       volumes:
         {{- $globals := .Values.global }}
-         {{- $useKeyVaultpodidentity := .Values.keyVaults.usepodidentity }}
+         {{- $useKeyVaultpodidentity := .Values.global.usepodidentity }}
          {{- $aadIdentityName := .Values.aadIdentityName }}
         {{- range $key, $value := .Values.keyVaults }}
         - name: vault-{{ $key }}
