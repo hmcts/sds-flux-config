@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: data-extractor-job
+  name: mi-data-extractor-job
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -20,8 +20,8 @@ spec:
       kind: CronJob
       schedule: '0 * * * *'
       labels:
-        app.kubernetes.io/instance: data-extractor-job
-        app.kubernetes.io/name: data-extractor-job
+        app.kubernetes.io/instance: mi-data-extractor-job
+        app.kubernetes.io/name: mi-data-extractor-job
       environment:
         ETL_MSICLIENTID: 8dbd1e5c-15b7-42ea-b32c-4a360c79210a
         APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
