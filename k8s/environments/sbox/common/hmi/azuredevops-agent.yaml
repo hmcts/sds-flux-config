@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: az-devops-agent
+  namespace: hmi
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:master-*
+spec:
+  releaseName: az-devops-agent
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/az-devops-agent
+    ref: master
