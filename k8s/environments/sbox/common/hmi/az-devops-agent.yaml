@@ -13,3 +13,5 @@ spec:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/charts/az-devops-agent
     ref: master
+  valueFileSecrets:
+  - name: "azdevops-values"
