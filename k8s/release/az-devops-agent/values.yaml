@@ -29,6 +29,10 @@ volumes:
   hostPath:
     path: /var/run/docker.sock
 
+secrets:
+  # Specifies whether secrets resources should be created
+  create: false
+
 extraEnv: {}
 
 extraContainers: []
