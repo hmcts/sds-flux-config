@@ -22,12 +22,17 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
-          {{- with .Values }}
           - name: AZP_TOKEN
             valueFrom:
               secretKeyRef:
                 name: vsts-agent-secret
                 key: azpToken
+          - name: AZP_URL
+            value: {{ .vstsAccount | default "https://dev.azure.com/hmcts/Shared%20Services" }}
+          - name: AZP_POOL
+            value: {{ .vstsPool | default "hmi-pool" }}
+          - name: AZP_WORK
+            value: {{ .vstsWorkspace | default "_work" }}
           {{- range $key, $value := $.Values.env }}
           - name: {{ $key }}
             value: {{ $value | quote }}
