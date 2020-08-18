@@ -1,8 +1,8 @@
 replicas: 1
 
 image:
-  repository: ssprivateprod.azurecr.io/hmi/azure-devops-agent
-  tag: latest
+  repository: ssprivatesbox.azurecr.io/hmi/azure-devops-agent
+  tag: v1.0
   pullPolicy: Always
 
 resources: {}
