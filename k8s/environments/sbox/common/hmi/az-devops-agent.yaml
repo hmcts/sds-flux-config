@@ -1,0 +1,20 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: az-devops-agent
+  namespace: hmi
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: az-devops-agent
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/charts/az-devops-agent
+    ref: master
+  values:
+    env:
+      AZP_URL: "https://dev.azure.com/hmcts/Shared%20Services"
+      AZP_POOL: "hmi-pool"
+      AZP_WORK: "_work"
