@@ -6,7 +6,7 @@ metadata:
   namespace: hmi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:master-*
+    flux.weave.works/tag.chart-image: glob:v*
 spec:
   releaseName: az-devops-agent
   chart:
