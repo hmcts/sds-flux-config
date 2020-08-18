@@ -8,7 +8,7 @@ metadata:
     version: {{ .Chart.Version }}
 spec:
   replicas: {{ .Values.replicas }}
-  servicename: {{ .Chart.Name }}
+  serviceName: {{ .Chart.Name }}
   selector:
     matchLabels:
       app: {{ .Chart.Name }}
