@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  values.yaml: LS0tCmFwaVZlcnNpb246IHYxCmtpbmQ6IFNlY3JldAptZXRhZGF0YToKICBuYW1lOiB2c3RzLWFnZW50LXNlY3JldAp0eXBlOiBPcGFxdWUKZGF0YToKICBhenBUb2tlbjogbzc3bDc1azNodHdpNHc2NXk1aGVqc3hjM2hkN3NtN2Y3NHN0dmFtZHduZGRhMzZnemdoYQ==
+kind: Secret
+metadata:
+  creationTimestamp: "2020-08-18T16:02:41Z"
+  name: vsts-agent-secret
+  namespace: hmi
+  resourceVersion: "3474993"
+  selfLink: /api/v1/namespaces/hmi/secrets/vsts-agent-secret
+  uid: 947c0efd-7b33-4453-ab96-6412ffc60b2a
+type: Opaque
