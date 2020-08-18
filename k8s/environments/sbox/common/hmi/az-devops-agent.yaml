@@ -11,7 +11,7 @@ spec:
   releaseName: az-devops-agent
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/charts/az-devops-agent
+    path: k8s/release/charts/az-devops-agent
     ref: master
   values:
     env:
