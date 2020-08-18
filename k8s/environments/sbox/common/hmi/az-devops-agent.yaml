@@ -13,3 +13,8 @@ spec:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/charts/az-devops-agent
     ref: master
+  values:
+    env:
+      AZP_URL: https://dev.azure.com/hmcts/Shared%20Services
+      AZP_POOL: hmi-pool
+      AZP_WORK: _work
