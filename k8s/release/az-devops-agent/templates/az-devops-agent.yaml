@@ -22,33 +22,31 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
-          {{- range $key, $value := $.Values.env }}
-          - name: {{ $key }}
-            value: {{ $value | quote }}
-          {{- end }}
           - name: AZP_TOKEN
             valueFrom:
               secretKeyRef:
                 name: vsts-agent-secret
                 key: azpToken
+          {{- range $key, $value := $.Values.env }}
+          - name: {{ $key }}
+            value: {{ $value | quote }}
+          {{- end }}
          {{- range $key, $value := .Values.extraEnv }}
           - name: {{ $key }}
             value: {{ $value | quote }}
          {{- end }}
         volumeMounts:
-          {{- if .Values.volumeMounts }}
-          {{ toYaml .Values.volumeMounts | indent 10 }}
-          {{ end }}
+{{- if .Values.volumeMounts }}
+{{ toYaml .Values.volumeMounts | indent 10 }}
+{{ end }}
         resources:
-          {{- toYaml .Values.resources | nindent 12 }}
-          {{- if .Values.cleanRun }}
-     {{- end }}
-  {{ if .Values.extraContainers }}
-  {{ toYaml .Values.extraContainers | indent 6 }}
-  {{ end }}
+            {{- toYaml .Values.resources | nindent 12 }}
+{{ if .Values.extraContainers }}
+{{ toYaml .Values.extraContainers | indent 6 }}
+{{ end }}
       volumes:
-        {{ toYaml .Values.volumes | indent 8 }}
-        {{ if .Values.image.imagePullSecret }}
+{{ toYaml .Values.volumes | indent 8 }}
+{{ if .Values.image.imagePullSecret }}
       imagePullSecrets:
         - name: {{ .Values.image.imagePullSecret }}
 {{ end }}
