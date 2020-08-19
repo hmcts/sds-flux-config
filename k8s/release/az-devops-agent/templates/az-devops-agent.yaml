@@ -19,8 +19,8 @@ spec:
     spec:
       containers:
       - name: {{ .Chart.Name }}
-        image: "{{ .Values.image }}"
-        imagePullPolicy: {{ .Values.imagepullPolicy }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
           - name: AZP_TOKEN
             valueFrom:
