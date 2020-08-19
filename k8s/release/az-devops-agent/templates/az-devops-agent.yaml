@@ -31,10 +31,17 @@ spec:
           - name: {{ $key }}
             value: {{ $value | quote }}
           {{- end }}
+{{- if .Values.volumeMounts }}
         volumeMounts:
-        - mountPath: /var/run/docker.sock
-          name: docker-volume
+{{- range .Values.volumeMounts }}
+        - name: {{ .name }}
+          mountPath: {{ .mountPath }}
+{{- end }}
+{{- end }}
+{{- if .Values.volumes }}
       volumes:
-      - name: docker-volume
-        hostPath:
-          path: /var/run/docker.sock
+{{- range .Values.volumes }}
+      - name: {{ .name }}
+        hostPath: {{ .hostPath }}
+{{- end }}
+{{- end }}
