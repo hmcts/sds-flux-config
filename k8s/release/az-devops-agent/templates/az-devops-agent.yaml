@@ -20,7 +20,7 @@ spec:
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullPolicy: {{ .Values.imagepullPolicy }}
         env:
           - name: AZP_TOKEN
             valueFrom:
