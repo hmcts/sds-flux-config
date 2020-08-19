@@ -1,8 +1,7 @@
 replicas: 1
 
 image:
-  repository: ssprivatesbox.azurecr.io/hmi/azure-devops-agent
-  tag: v1.0
+  image: ssprivatesbox.azurecr.io/hmi/azure-devops-agent
   pullPolicy: Always
 
 resources: {}
@@ -32,7 +31,9 @@ volumes:
 secrets:
   # Specifies whether secrets resources should be created
   create: false
+
 env: {}
+
 extraEnv: {}
 
 extraContainers: []

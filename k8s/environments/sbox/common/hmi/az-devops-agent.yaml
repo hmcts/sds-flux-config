@@ -14,6 +14,7 @@ spec:
     path: k8s/release/az-devops-agent
     ref: master
   values:
+    image: ssprivatesbox.azurecr.io/azure-devops-agent:v0.1
     env:
       AZP_URL: "https://dev.azure.com/hmcts"
       AZP_POOL: "hmi-pool"
