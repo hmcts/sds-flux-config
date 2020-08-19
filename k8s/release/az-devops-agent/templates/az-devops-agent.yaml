@@ -31,3 +31,28 @@ spec:
           - name: {{ $key }}
             value: {{ $value | quote }}
           {{- end }}
+volumeMounts:
+{{- if .Values.volumeMounts }}
+{{ toYaml .Values.volumeMounts | indent 10 }}
+{{ end }}
+        resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+     {{- if .Values.cleanRun }}
+        livenessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - "! ls /vsts/agent/_diag | grep Worker || pgrep Agent.Worker"
+          initialDelaySeconds: 120
+          periodSeconds: 5
+     {{- end }}
+{{ if .Values.extraContainers }}
+{{ toYaml .Values.extraContainers | indent 6 }}
+{{ end }}
+      volumes:
+{{ toYaml .Values.volumes | indent 8 }}
+{{ if .Values.image.imagePullSecret }}
+      imagePullSecrets:
+        - name: {{ .Values.image.imagePullSecret }}
+{{ end }}
