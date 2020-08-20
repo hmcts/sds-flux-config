@@ -11,12 +11,13 @@ spec:
   releaseName: hmi-wiremock
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/release/hmi-wiremock
+    path: k8s/release/hmi/hmi-wiremock
     ref: master
   values:
     image:
       repository: "ssprivatesbox.azurecr.io/hmi/apim-tests-wiremock"
       tag: "v0.1"
+      pullPolicy: Always
     ingress:
       annotations:
         kubernetes.io/ingress.class: traefik
