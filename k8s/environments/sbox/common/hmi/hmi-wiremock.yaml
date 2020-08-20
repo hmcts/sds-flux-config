@@ -1,0 +1,24 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: hmi-wiremock
+  namespace: hmi
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: hmi-wiremock
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/hmi-wiremock
+    ref: master
+  values:
+    image:
+      repository: "ssprivatesbox.azurecr.io/hmi-wiremock"
+      tag: "v0.1"
+    ingress:
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      # hosts:
+      # - ???
