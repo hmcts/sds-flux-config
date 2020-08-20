@@ -1,9 +1,15 @@
 {{- if .Values.ingress.enabled -}}
+{{- $fullName := include "hmi.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ include "hmi.name" . }}
+    helm.sh/chart: {{ include "hmi.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -27,7 +33,7 @@ spec:
 	{{- range $ingressPaths }}
           - path: {{ . }}
             backend:
-              serviceName: {{ .Chart.Name }}
+              serviceName: {{ $fullName }}
               servicePort: http
 	{{- end }}
   {{- end }}

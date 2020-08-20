@@ -4,11 +4,17 @@ metadata:
   name: {{ .Chart.Name }}
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ .Chart.Name }}
+    app.kubernetes.io/name: {{ include "hmi.name" . }}
+    helm.sh/chart: {{ include "hmi.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   type: {{ .Values.service.type }}
-    ports:
-      - port: {{ .Values.service.port }}
-        targetPort: {{ .Values.service.port }}
-        protocol: TCP
-        name: http
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: {{ include "hmi.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
