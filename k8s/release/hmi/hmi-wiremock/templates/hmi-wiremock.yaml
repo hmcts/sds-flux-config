@@ -1,25 +1,24 @@
-
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "hmi.fullname" . }}
+  name: {{ include "hmi-wiremock.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "hmi.name" . }}
-    app: {{ include "hmi.name" . }}
-    helm.sh/chart: {{ include "hmi.chart" . }}
+    app.kubernetes.io/name: {{ include "hmi-wiremock.name" . }}
+    app: {{ include "hmi-wiremock.name" . }}
+    helm.sh/chart: {{ include "hmi-wiremock.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicas }}
-  serviceName: {{ .Chart.Name }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "hmi.name" . }}
+      app.kubernetes.io/name: {{ include "hmi-wiremock.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "hmi.name" . }}
+        app.kubernetes.io/name: {{ include "hmi-wiremock.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:
