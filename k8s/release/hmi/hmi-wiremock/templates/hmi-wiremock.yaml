@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}
-  namespace: {{ .Release.Namespace }}
+  name: {{ include "hmi.fullname" . }}
   labels:
     app.kubernetes.io/name: {{ include "hmi.name" . }}
+    app: {{ include "hmi.name" . }}
     helm.sh/chart: {{ include "hmi.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
