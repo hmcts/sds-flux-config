@@ -1,9 +1,9 @@
 # replicas: 1
 
-image:
- repository: ssprivatesbox.azurecr.io/hmi/apim-tests-wiremock
- tag: v0.1
- pullPolicy: Always
+# image:
+ # repository: ssprivatesbox.azurecr.io/hmi/apim-tests-wiremock
+ # tag: v0.1
+ # pullPolicy: Always
 
 nameOverride: ""
 fullnameOverride: ""
@@ -13,9 +13,9 @@ service:
   port: 8080
 
 ingress:
- enabled: true
- annotations:
-   kubernetes.io/ingress.class: traefik-sbox
+ # enabled: true
+ # annotations:
+ #   kubernetes.io/ingress.class: traefik-sbox
  paths:
    - /
  # tls: []
