@@ -1,9 +1,9 @@
-replicas: 1
+# replicas: 1
 
-image:
-  repository: ssprivatesbox.azurecr.io/hmi/apim-tests-wiremock
-  tag: v0.1
-  pullPolicy: Always
+# image:
+ # repository: ssprivatesbox.azurecr.io/hmi/apim-tests-wiremock
+ # tag: v0.1
+ # pullPolicy: Always
 
 nameOverride: ""
 fullnameOverride: ""
