@@ -1,13 +1,14 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "hmi.fullname" . -}}
+{{- $fullName := include "hmi-wiremock.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "hmi.name" . }}
-    helm.sh/chart: {{ include "hmi.chart" . }}
+    app.kubernetes.io/name: {{ include "hmi-wiremock.name" . }}
+    app: {{ include "hmi-wiremock.name" . }}
+    helm.sh/chart: {{ include "hmi-wiremock.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   {{- with .Values.ingress.annotations }}
