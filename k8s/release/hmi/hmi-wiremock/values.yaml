@@ -14,11 +14,11 @@ service:
 
 ingress:
   enabled: true
-  annotations:
-    kubernetes.io/ingress.class: traefik-sbox
-  paths:
-    - /
-  tls: []
+ # annotations:
+ #   kubernetes.io/ingress.class: traefik-sbox
+ # paths:
+ #   - /
+ # tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
