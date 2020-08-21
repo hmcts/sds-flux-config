@@ -23,5 +23,8 @@ spec:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: traefik
+      paths:
+        - /
+      tls: []
       hosts:
       - 'hmi.ss-service.core-compute-sandbox.internal'
