@@ -12,8 +12,8 @@ service:
   type: ClusterIP
   port: 8080
 
-ingress:
-  enabled: true
+# ingress:
+ # enabled: true
  # annotations:
  #   kubernetes.io/ingress.class: traefik-sbox
  # paths:
