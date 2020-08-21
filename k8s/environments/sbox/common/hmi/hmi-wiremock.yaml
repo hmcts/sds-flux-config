@@ -27,17 +27,3 @@ spec:
         - /
       hosts:
       - 'hmi.ss-service.core-compute-sandbox.internal'
-    # readinessProbe:
-    #   enabled: false
-    #   path: "/"
-    #   initialDelaySeconds: 60
-    #   periodSeconds: 30
-    #   failureThreshold: 6
-    #   timeoutSeconds: 5
-    # livenessProbe:
-    #   enabled: false
-    #   path: "/"
-    #   initialDelaySeconds: 60
-    #   periodSeconds: 30
-    #   failureThreshold: 6
-    #   timeoutSeconds: 5
