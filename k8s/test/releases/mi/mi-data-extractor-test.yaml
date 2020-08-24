@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatetest.azurecr.io/data-extractor-job:pr-128-44faec0
+      image: ssprivatetest.azurecr.io/data-extractor-job:pr-130-d5bdc77
       suspend: true
       kind: CronJob
       schedule: '0 4 * * *'
@@ -31,7 +31,7 @@ spec:
         EXTRACTION_INITIALISE: true
         ETL_DB_CLONE_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment}}.postgres.database.azure.com:5432/ccd_data_store
       smoketests:
-        image: ssprivatetest.azurecr.io/data-extractor-job:pr-128-44faec0
+        image: ssprivatetest.azurecr.io/data-extractor-job:pr-130-d5bdc77
         enabled: true
       testsConfig:
         environment:
