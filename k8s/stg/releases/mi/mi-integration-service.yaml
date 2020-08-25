@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-integration-service:stg-95f33ee
+      image: ssprivatestg.azurecr.io/mi-integration-service:stg-a9be4bb
       suspend: false
       kind: CronJob
       schedule: '15 0 * * *'
@@ -31,7 +31,7 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
         DATA_SOURCE_CCD: true
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-integration-service:stg-95f33ee
+        image: ssprivatestg.azurecr.io/mi-integration-service:stg-a9be4bb
         enabled: true
       testsConfig:
         environment:
