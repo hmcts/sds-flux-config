@@ -7,7 +7,7 @@ spec:
   # valueFileSecrets:
   #   - name: "traefik-values"
   values:
-    loadBalancerIP: 10.150.15.250
+    loadBalancerIP: 10.140.31.250
     dashboard:
       domain: traefik01.ss-service.core-compute-sandbox.internal
     accessLogs:
@@ -15,6 +15,9 @@ spec:
     autoscaling:
       minReplicas: 1
       maxReplicas: 2
+    service:
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-resource-group: aks-infra-sbox-rg
     ssl:
       generateTLS: true
       defaultCN: "*.ss-service.core-compute-sandbox.internal"
