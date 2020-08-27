@@ -1,10 +1,10 @@
-apiVersion: apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: docmosis
   namespace: docmosis
   annotations:
-    flux.weave.works/automated: "false"
+    flux.weave.works/autoqmated: "false"
     flux.weave.works/tag.chart-image: glob:v*
 spec:
   releaseName: docmosis
