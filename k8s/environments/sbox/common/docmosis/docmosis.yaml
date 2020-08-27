@@ -1,0 +1,49 @@
+apiVersion: apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: docmosis
+  namespace: docmosis
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: docmosis
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/docmosis
+    ref: master
+  values:
+    image: ssprivatesbox.azurecr.io/docmosis/docmosis:v0.1
+    pullPolicy: Always
+    replicaCount: 2
+    service:
+      type: ClusterIP
+      port: 3000
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      paths:
+        - /
+      tls: []
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
+      hosts:
+      # - 'docmosis-sbox.platform.hmcts.net'
+      - 'docmosis.ss-service.core-compute-sandbox.internal'
+    # env:
+    readinessProbe:
+      enabled: false
+      path: "/"
+      initialDelaySeconds: 60
+      periodSeconds: 30
+      failureThreshold: 6
+      timeoutSeconds: 5
+    livenessProbe:
+      enabled: false
+      path: "/"
+      initialDelaySeconds: 60
+      periodSeconds: 30
+      failureThreshold: 6
+      timeoutSeconds: 5

@@ -1,0 +1,43 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mi-integration-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.job: glob:pr-*
+spec:
+  releaseName: mi-integration-service
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/mi/mi-integration-service
+    ref: master
+  values:
+    job:
+      image: ssprivatesbox.azurecr.io/mi-integration-service:pr-99-fa40d18
+      suspend: true
+      kind: CronJob
+      schedule: '15 * * * *'
+      labels:
+        app.kubernetes.io/instance: mi-integration-service-job
+        app.kubernetes.io/name: mi-integration-service-job
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          usepodidentity: false
+          secrets:
+          - notify-api-key-cmc
+          - notify-api-key-divorce
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
+        DATA_SOURCE_CCD: true
+        DATA_SOURCE_NOTIFY: true
+        GOV_UK_NOTIFY_ENABLED_CMC: true
+        GOV_UK_NOTIFY_ENABLED_DIVORCE: true
+        MI_CLIENT_ID: c5de2886-5b81-4867-8e16-1af09f01bc5f
+    global:
+      subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "sbox"

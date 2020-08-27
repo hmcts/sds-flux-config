@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatetest.azurecr.io/mi-integration-service:pr-91-c1b2c3d
+      image: ssprivatetest.azurecr.io/mi-integration-service:pr-91-3e8cc94
       suspend: false
       kind: CronJob
       schedule: '15 1 * * *'
@@ -38,11 +38,24 @@ spec:
           - notify-api-key-sscs
           - eightbyeight-api-user
           - eightbyeight-api-password
+          - payment-db-host
+          - payment-db-user
+          - payment-db-password
+          - payment-bs-db-host
+          - payment-bs-db-user
+          - payment-bs-db-password
+          - payment-fees-db-host
+          - payment-fees-db-user
+          - payment-fees-db-password
+          - payment-bar-db-host
+          - payment-bar-db-user
+          - payment-bar-db-password
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         DATA_SOURCE_CCD: true
         DATA_SOURCE_NOTIFY: true
         DATA_SOURCE_EIGHTBYEIGHT: true
+        DATA_SOURCE_PAYMENT: true
         GOV_UK_NOTIFY_ENABLED_CMC: true
         GOV_UK_NOTIFY_ENABLED_DIVORCE: true
         GOV_UK_NOTIFY_ENABLED_IDAM: true
@@ -50,7 +63,7 @@ spec:
         GOV_UK_NOTIFY_ENABLED_SSCS: true
         MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
       smoketests:
-        image: ssprivatetest.azurecr.io/mi-integration-service:pr-91-c1b2c3d
+        image: ssprivatetest.azurecr.io/mi-integration-service:pr-91-3e8cc94
         enabled: true
       testsConfig:
         keyVaults:
