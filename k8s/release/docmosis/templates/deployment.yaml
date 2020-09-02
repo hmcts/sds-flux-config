@@ -32,7 +32,7 @@ spec:
           volumeMounts:
           ports:
             - name: http
-              containerPort: 3000
+              containerPort: 8080
               protocol: TCP
         {{- if eq .Values.livenessProbe.enabled true }}
           livenessProbe:
