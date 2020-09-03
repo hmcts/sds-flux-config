@@ -1,5 +1,5 @@
 ---
-apiVersion: flux.weave.works/v1beta1
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: mi-extraction-service
@@ -38,9 +38,6 @@ spec:
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         MI_CLIENT_ID: "58ed3fc0-18be-4a6f-8ceb-14768c8e796a"
-        SASIPWHITELIST_RANGE_PETTY_FRANCE: 213.121.155.0-213.121.165.255
-        SASIPWHITELIST_RANGE_VPN: 10.99.0.0-10.99.10.255
-        SASIPWHITELIST_RANGE_REFORM_PROXY: 51.145.0.0-51.145.10.255
         SFTP_REMOTE_FOLDER: /files/mi-platform-export-{{ .Values.global.environment
           }}/
         SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
