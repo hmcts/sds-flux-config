@@ -1,0 +1,43 @@
+job:
+  image: ssprivatesbox.azurecr.io/mi-extraction-service:master
+  keyVaults:
+    "mi-vault":
+      excludeEnvironmentSuffix: false
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      usepodidentity: false
+      secrets:
+        - gov-uk-notify-api-key
+        - mailing-targets
+  memoryRequests: '1024Mi'
+  cpuRequests: '200m'
+  memoryLimits: '2048Mi'
+  cpuLimits: '2000m'
+  kind: Job
+  aadIdentityName: mi-extraction-service
+  schedule: '40 0 * * *'
+  activeDeadlineSeconds: 3600
+  labels:
+    app.kubernetes.io/instance : mi-extraction-service
+    app.kubernetes.io/name: mi-extraction-service
+  ttlSecondsAfterFinished: 20
+  environment:
+    APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+    MI_CLIENT_ID: DUMMY
+    STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
+    STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
+  smoketests:
+    image: ssprivatesbox.azurecr.io/mi-extraction-service:master
+    enabled: false
+  testsConfig:
+    memoryLimits: '512Mi'
+    activeDeadlineSeconds: 3600
+    environment:
+      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+      MI_CLIENT_ID: DUMMY
+      STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
+      STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
+global:
+  enableKeyVaults: true
+  usepodidentity: true
+  environment: "sbox"
+  tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

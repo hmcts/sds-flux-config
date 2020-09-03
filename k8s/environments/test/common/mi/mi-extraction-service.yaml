@@ -14,7 +14,7 @@ spec:
   releaseName: mi-extraction-service
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/charts/mi/mi-extraction-service
+    path: k8s/release/mi/mi-extraction-service
     ref: master
   values:
     job:
@@ -29,7 +29,7 @@ spec:
         "mi-vault":
           excludeEnvironmentSuffix: false
           resourceGroup: mi-{{ .Values.global.environment }}-rg
-          usepodidentity: false
+          usepodidentity: true
           secrets:
           - gov-uk-notify-api-key
           - mailing-targets
@@ -50,7 +50,7 @@ spec:
           "mi-vault":
             excludeEnvironmentSuffix: false
             resourceGroup: mi-{{ .Values.global.environment }}-rg
-            usepodidentity: false
+            usepodidentity: true
             secrets:
             - gov-uk-notify-api-key
             - mailing-targets
@@ -67,3 +67,4 @@ spec:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       environment: "test"
+      usepodidentity: true
