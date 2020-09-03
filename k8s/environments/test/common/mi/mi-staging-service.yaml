@@ -1,0 +1,41 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: mi-staging-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:pr-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:pr-*
+spec:
+  releaseName: mi-staging-service
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/mi/mi-staging-service
+    ref: master
+  values:
+    job:
+      image: ssprivatetest.azurecr.io/mi-staging-service:pr-96-46840d5
+      suspend: false
+      kind: CronJob
+      schedule: '30 1 * * *'
+      labels:
+        app.kubernetes.io/instance: mi-staging-service
+        app.kubernetes.io/name: mi-staging-service
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+        MI_CLIENT_ID: 9e2bb09f-5a1c-47d2-b81f-f14266a7ef5e
+      smoketests:
+        image: ssprivatetest.azurecr.io/mi-staging-service:pr-96-46840d5
+        enabled: true
+      testsConfig:
+        environment:
+          APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+          MI_CLIENT_ID: 9e2bb09f-5a1c-47d2-b81f-f14266a7ef5e
+    global:
+      subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "test"

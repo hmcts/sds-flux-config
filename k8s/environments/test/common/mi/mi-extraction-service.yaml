@@ -1,0 +1,69 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: mi-extraction-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:pr-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:pr-*
+spec:
+  releaseName: mi-extraction-service
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/mi/mi-extraction-service
+    ref: master
+  values:
+    job:
+      image: ssprivatetest.azurecr.io/mi-extraction-service:pr-94-2d83912
+      suspend: false
+      kind: CronJob
+      schedule: '40 1 * * *'
+      labels:
+        app.kubernetes.io/instance: mi-extraction-service
+        app.kubernetes.io/name: mi-extraction-service
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          usepodidentity: false
+          secrets:
+          - gov-uk-notify-api-key
+          - mailing-targets
+          - sftp-remote-user
+          - sftp-remote-password
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+        MI_CLIENT_ID: "58ed3fc0-18be-4a6f-8ceb-14768c8e796a"
+        SFTP_REMOTE_FOLDER: /files/mi-platform-export-{{ .Values.global.environment
+          }}/
+        SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
+        SFTP_ENABLED: true
+      smoketests:
+        image: ssprivatetest.azurecr.io/mi-extraction-service:pr-94-2d83912
+        enabled: true
+      testsConfig:
+        keyVaults:
+          "mi-vault":
+            excludeEnvironmentSuffix: false
+            resourceGroup: mi-{{ .Values.global.environment }}-rg
+            usepodidentity: false
+            secrets:
+            - gov-uk-notify-api-key
+            - mailing-targets
+            - sftp-remote-user
+            - sftp-remote-password
+        environment:
+          APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+          MI_CLIENT_ID: "58ed3fc0-18be-4a6f-8ceb-14768c8e796a"
+          SFTP_REMOTE_FOLDER: /files/mi-platform-export-{{ .Values.global.environment
+            }}/
+          SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
+          SFTP_ENABLED: true
+    global:
+      subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "test"
