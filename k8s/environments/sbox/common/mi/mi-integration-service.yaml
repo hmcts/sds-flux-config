@@ -30,6 +30,8 @@ spec:
           secrets:
           - notify-api-key-cmc
           - notify-api-key-divorce
+          - eightbyeight-api-user
+          - eightbyeight-api-password
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
         DATA_SOURCE_CCD: true
