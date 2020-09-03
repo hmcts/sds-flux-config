@@ -93,7 +93,7 @@ kind: Pod
 volumes:
   {{- $globals := .Values.global }}
   {{- $aadIdentityName := .Values.aadIdentityName }}
-  {{- $useKeyVaultpodidentity := .Values.keyVaults.usepodidentity }}
+  {{- $useKeyVaultpodidentity := .Values.global.usepodidentity }}
   {{- range $key, $value := .Values.testsConfig.keyVaults }}
   - name: vault-{{ $key }}
     flexVolume:
