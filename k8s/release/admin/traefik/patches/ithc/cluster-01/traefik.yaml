@@ -1,0 +1,19 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: admin
+spec:
+  values:
+    loadBalancerIP: 10.143.31.250
+    dashboard:
+      domain: traefik01.ss-service.core-compute-ithc.internal
+    accessLogs:
+      enabled: true
+    autoscaling:
+      minReplicas: 1
+      maxReplicas: 2
+    ssl:
+      generateTLS: true
+      defaultCN: "*.ss-service.core-compute-ithc.internal"
+
