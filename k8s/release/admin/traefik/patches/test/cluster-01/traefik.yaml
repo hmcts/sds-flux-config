@@ -7,7 +7,7 @@ spec:
   valueFileSecrets:
     - name: "traefik-values"
   values:
-    loadBalancerIP: 10.145.31.250
+    loadBalancerIP: 10.141.31.250
     dashboard:
       domain: traefik01.ss-service.core-compute-test.internal
     accessLogs:

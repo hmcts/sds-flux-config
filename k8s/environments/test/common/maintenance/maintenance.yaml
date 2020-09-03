@@ -14,7 +14,7 @@ spec:
     path: k8s/release/maintenance
     ref: master
   values:
-    image: ssprivatesbox.azurecr.io/maintenance:v0.3
+    image: ssprivatetest.azurecr.io/maintenance:v0.3
     replicaCount: 1
     ingress:
       annotations:
