@@ -18,7 +18,8 @@ spec:
     replicaCount: 2
     service:
       type: ClusterIP
-      port: 3000
+      port: 8080
+      targetPort: 8080
     ingress:
       enabled: true
       annotations:
