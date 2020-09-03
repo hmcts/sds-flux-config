@@ -14,7 +14,7 @@ spec:
   releaseName: mi-integration-service
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/charts/mi/mi-integration-service
+    path: k8s/release/mi/mi-integration-service
     ref: master
   values:
     job:
@@ -29,7 +29,7 @@ spec:
         "mi-vault":
           excludeEnvironmentSuffix: false
           resourceGroup: mi-{{ .Values.global.environment }}-rg
-          usepodidentity: false
+          usepodidentity: true
           secrets:
           - notify-api-key-cmc
           - notify-api-key-divorce
@@ -70,7 +70,7 @@ spec:
           "mi-vault":
             excludeEnvironmentSuffix: false
             resourceGroup: mi-{{ .Values.global.environment }}-rg
-            usepodidentity: false
+            usepodidentity: true
             secrets:
             - notify-api-key-cmc
             - notify-api-key-divorce
@@ -79,6 +79,18 @@ spec:
             - notify-api-key-sscs
             - eightbyeight-api-user
             - eightbyeight-api-password
+            - payment-db-host
+            - payment-db-user
+            - payment-db-password
+            - payment-bs-db-host
+            - payment-bs-db-user
+            - payment-bs-db-password
+            - payment-fees-db-host
+            - payment-fees-db-user
+            - payment-fees-db-password
+            - payment-bar-db-host
+            - payment-bar-db-user
+            - payment-bar-db-password
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
           DATA_SOURCE_CCD: true
@@ -94,3 +106,5 @@ spec:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       environment: "test"
+      usepodidentity: true
+
