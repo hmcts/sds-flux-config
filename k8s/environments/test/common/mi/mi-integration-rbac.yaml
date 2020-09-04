@@ -5,7 +5,7 @@ metadata:
   name: mi-developer
 rules:
 - apiGroups: [""]
-  resources: ["pods", "pods/log", "pods/portforward", "pods/attach", "pods/exec", "jobs"]
+  resources: ["pods", "pods/log", "pods/portforward", "pods/attach", "pods/exec", "jobs", "batch"]
   verbs: ["get", "list", "create", "watch", "delete"]
 ---
 kind: RoleBinding
