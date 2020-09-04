@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/moj-nle-reverse-proxy
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/juror-httpd:2.4.27-2
+    image: ssprivatestg.azurecr.io/jd/juror-httpd:2.4.28
     pullPolicy: Always
     replicaCount: 1
     hostaliases:
