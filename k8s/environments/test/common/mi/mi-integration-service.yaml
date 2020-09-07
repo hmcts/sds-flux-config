@@ -30,6 +30,7 @@ spec:
           excludeEnvironmentSuffix: false
           resourceGroup: mi-{{ .Values.global.environment }}-rg
           secrets:
+          - appinsights-instrumentationkey
           - notify-api-key-cmc
           - notify-api-key-divorce
           - notify-api-key-idam
@@ -70,6 +71,7 @@ spec:
             excludeEnvironmentSuffix: false
             resourceGroup: mi-{{ .Values.global.environment }}-rg
             secrets:
+            - appinsights-instrumentationkey
             - notify-api-key-cmc
             - notify-api-key-divorce
             - notify-api-key-idam
@@ -104,5 +106,4 @@ spec:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       environment: "test"
-      usepodidentity: true
 
