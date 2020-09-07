@@ -29,7 +29,6 @@ spec:
         "mi-vault":
           excludeEnvironmentSuffix: false
           resourceGroup: mi-{{ .Values.global.environment }}-rg
-          usepodidentity: true
           secrets:
           - notify-api-key-cmc
           - notify-api-key-divorce
@@ -70,7 +69,6 @@ spec:
           "mi-vault":
             excludeEnvironmentSuffix: false
             resourceGroup: mi-{{ .Values.global.environment }}-rg
-            usepodidentity: true
             secrets:
             - notify-api-key-cmc
             - notify-api-key-divorce

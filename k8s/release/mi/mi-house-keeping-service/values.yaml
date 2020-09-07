@@ -16,9 +16,10 @@ job:
     STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
     STORAGE_DATA_EXTRACTOR_NAME: midataextractor{{ .Values.global.environment }}
     STORAGE_PERSISTENT_NAME: mipersistent{{ .Values.global.environment }}
+    STORAGE_AUDIT_NAME: miaudit{{ .Values.global.environment }}
   smoketests:
-    image: sprivatesbox.azurecr.io/mi-house-keeping-service:master
-    enabled: true
+    image: ssprivatesbox.azurecr.io/mi-house-keeping-service:master
+    enabled: false
   testsConfig:
     memoryLimits: '512Mi'
     activeDeadlineSeconds: 3600
@@ -28,8 +29,7 @@ job:
       STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
       STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
       STORAGE_DATA_EXTRACTOR_NAME: midataextractor{{ .Values.global.environment }}
-      STORAGE_PERSISTENT_NAME: mipersistent{{ .Values.global.environment }}
-      SMOKE_TEST_ENABLED : true
+      STORAGE_PERSISTENT_NAME: mipersistent{{ .Values.global.environment }} 
 global:
   enableKeyVaults: true
   usepodidentity: true

@@ -1,13 +1,5 @@
 job:
   image: ssprivatesbox.azurecr.io/mi-extraction-service:master
-  keyVaults:
-    "mi-vault":
-      excludeEnvironmentSuffix: false
-      resourceGroup: mi-{{ .Values.global.environment }}-rg
-      usepodidentity: false
-      secrets:
-        - gov-uk-notify-api-key
-        - mailing-targets
   memoryRequests: '1024Mi'
   cpuRequests: '200m'
   memoryLimits: '2048Mi'
@@ -20,6 +12,15 @@ job:
     app.kubernetes.io/instance : mi-extraction-service
     app.kubernetes.io/name: mi-extraction-service
   ttlSecondsAfterFinished: 20
+  keyVaults:
+    "mi-vault":
+      excludeEnvironmentSuffix: false
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      secrets:
+      - gov-uk-notify-api-key
+      - mailing-targets
+      - sftp-remote-user
+      - sftp-remote-password
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
@@ -31,6 +32,15 @@ job:
   testsConfig:
     memoryLimits: '512Mi'
     activeDeadlineSeconds: 3600
+    keyVaults:
+      "mi-vault":
+        excludeEnvironmentSuffix: false
+        resourceGroup: mi-{{ .Values.global.environment }}-rg
+        secrets:
+        - gov-uk-notify-api-key
+        - mailing-targets
+        - sftp-remote-user
+        - sftp-remote-password
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       MI_CLIENT_ID: DUMMY

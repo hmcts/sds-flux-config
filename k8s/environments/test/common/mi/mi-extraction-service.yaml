@@ -25,16 +25,6 @@ spec:
       labels:
         app.kubernetes.io/instance: mi-extraction-service
         app.kubernetes.io/name: mi-extraction-service
-      keyVaults:
-        "mi-vault":
-          excludeEnvironmentSuffix: false
-          resourceGroup: mi-{{ .Values.global.environment }}-rg
-          usepodidentity: true
-          secrets:
-          - gov-uk-notify-api-key
-          - mailing-targets
-          - sftp-remote-user
-          - sftp-remote-password
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         MI_CLIENT_ID: "58ed3fc0-18be-4a6f-8ceb-14768c8e796a"
@@ -46,16 +36,6 @@ spec:
         image: ssprivatetest.azurecr.io/mi-extraction-service:pr-98-d455fcc
         enabled: true
       testsConfig:
-        keyVaults:
-          "mi-vault":
-            excludeEnvironmentSuffix: false
-            resourceGroup: mi-{{ .Values.global.environment }}-rg
-            usepodidentity: true
-            secrets:
-            - gov-uk-notify-api-key
-            - mailing-targets
-            - sftp-remote-user
-            - sftp-remote-password
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
           MI_CLIENT_ID: "58ed3fc0-18be-4a6f-8ceb-14768c8e796a"
