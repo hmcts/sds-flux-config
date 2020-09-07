@@ -19,7 +19,7 @@ spec:
   values:
     job:
       image: ssprivateprod.azurecr.io/mi-house-keeping-service:prod-5fa9e34
-      suspend: true
+      suspend: false
       kind: CronJob
       schedule: '45 2 * * *'
       activeDeadlineSeconds: 82800 #23 hours
