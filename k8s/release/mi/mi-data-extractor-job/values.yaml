@@ -1,14 +1,5 @@
 job:
-  image: ssprivatesbox.azurecr.io/data-extractor-job:pr-42-1af156f
-  keyVaults:
-    "mi-vault":
-      excludeEnvironmentSuffix: false
-      resourceGroup: mi-{{ .Values.global.environment }}-rg
-      usepodidentity: true
-      secrets:
-        - aat-ccdro-user
-        - aat-ccdro-password
-        - data-extractor-connection-string
+  image: ssprivatesbox.azurecr.io/data-extractor:master
   memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job
@@ -19,10 +10,44 @@ job:
     app.kubernetes.io/instance : mi-data-extractor-job-001
     app.kubernetes.io/name: mi-data-extractor-job
   ttlSecondsAfterFinished: 20
+  keyVaults:
+    "mi-vault":
+      excludeEnvironmentSuffix: false
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      usepodidentity: false
+      secrets:
+        - ccdro-user
+        - ccdro-password
+        - ccdro-clone-user
+        - ccdro-clone-password
+        - appinsights-instrumentationkey
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+    ETL_MSICLIENTID: DUMMY
     ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
     ETL_ACCOUNT: midataextractor{{ .Values.global.environment }}
+  smoketests:
+    image: ssprivatesbox.azurecr.io/data-extractor:master
+    enabled: false
+  testsConfig:
+    memoryLimits: '512Mi'
+    activeDeadlineSeconds: 3600
+    keyVaults:
+      "mi-vault":
+        excludeEnvironmentSuffix: false
+        resourceGroup: mi-{{ .Values.global.environment }}-rg
+        usepodidentity: false
+        secrets:
+          - ccdro-user
+          - ccdro-password
+          - ccdro-clone-user
+          - ccdro-clone-password  
+          - appinsights-instrumentationkey
+    environment:
+      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+      ETL_MSICLIENTID: DUMMY
+      ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
+      ETL_ACCOUNT: midataextractor{{ .Values.global.environment }}
 global:
   enableKeyVaults: true
   usepodidentity: true

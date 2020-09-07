@@ -1,14 +1,8 @@
 job:
   image: ssprivatesbox.azurecr.io/mi-staging-service:master
-  keyVaults:
-    "mi-vault":
-      excludeEnvironmentSuffix: false
-      resourceGroup: mi-{{ .Values.global.environment }}-rg
-      usepodidentity: false
-      secrets:
-        - mi-landing-storage-connection-string
-        - mi-staging-storage-connection-string
-  memoryLimits: '512Mi'
+  memoryRequests: '1024Mi'
+  cpuRequests: '200m'
+  memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job
   aadIdentityName: mi-staging-service
@@ -18,10 +12,34 @@ job:
     app.kubernetes.io/instance: mi-staging-service
     app.kubernetes.io/name: mi-staging-service
   ttlSecondsAfterFinished: 20
+  keyVaults:
+    "mi-vault":
+      excludeEnvironmentSuffix: false
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      secrets:
+      - appinsights-instrumentationkey
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+    MI_CLIENT_ID: DUMMY
     STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
     STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
+  smoketests:
+    image: ssprivatesbox.azurecr.io/mi-staging-service:master
+    enabled: false
+  testsConfig:
+    memoryLimits: '512Mi'
+    activeDeadlineSeconds: 3600
+    keyVaults:
+      "mi-vault":
+        excludeEnvironmentSuffix: false
+        resourceGroup: mi-{{ .Values.global.environment }}-rg
+        secrets:
+        - appinsights-instrumentationkey
+    environment:
+      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
+      MI_CLIENT_ID: DUMMY
+      STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
+      STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
 global:
   enableKeyVaults: true
   usepodidentity: true
