@@ -60,6 +60,21 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
+            - name: DOCMOSISADMINTOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: docmosis
+                  key: docmosisAPIToken
+            - name: DOCMOSISAPITOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: docmosis
+                  key: docmosisAdminToken
+            - name: DOCMOSISLICENSEKEY
+              valueFrom:
+                secretKeyRef:
+                  name: docmosis
+                  key: docmosisLicenseKey
             {{- range $key, $value := $.Values.env }}
             - name: {{ $key }}
               value: {{ $value | quote }}
