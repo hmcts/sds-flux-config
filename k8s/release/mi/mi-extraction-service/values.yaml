@@ -17,10 +17,6 @@ job:
       excludeEnvironmentSuffix: false
       resourceGroup: mi-{{ .Values.global.environment }}-rg
       secrets:
-      - gov-uk-notify-api-key
-      - mailing-targets
-      - sftp-remote-user
-      - sftp-remote-password
       - appinsights-instrumentationkey
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
@@ -38,10 +34,6 @@ job:
         excludeEnvironmentSuffix: false
         resourceGroup: mi-{{ .Values.global.environment }}-rg
         secrets:
-        - gov-uk-notify-api-key
-        - mailing-targets
-        - sftp-remote-user
-        - sftp-remote-password
         - appinsights-instrumentationkey
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
