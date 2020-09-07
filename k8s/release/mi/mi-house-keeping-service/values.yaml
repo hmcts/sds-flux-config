@@ -9,6 +9,12 @@ job:
   labels:
     app.kubernetes.io/instance : mi-house-keeping-service
     app.kubernetes.io/name: mi-house-keeping-service
+  keyVaults:
+    "mi-vault":
+      excludeEnvironmentSuffix: false
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      secrets:
+      - appinsights-instrumentationkey
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
@@ -23,6 +29,12 @@ job:
   testsConfig:
     memoryLimits: '512Mi'
     activeDeadlineSeconds: 3600
+    keyVaults:
+      "mi-vault":
+        excludeEnvironmentSuffix: false
+        resourceGroup: mi-{{ .Values.global.environment }}-rg
+        secrets:
+        - appinsights-instrumentationkey
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       MI_CLIENT_ID: DUMMY

@@ -21,6 +21,7 @@ job:
       - mailing-targets
       - sftp-remote-user
       - sftp-remote-password
+      - appinsights-instrumentationkey
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
@@ -41,6 +42,7 @@ job:
         - mailing-targets
         - sftp-remote-user
         - sftp-remote-password
+        - appinsights-instrumentationkey
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       MI_CLIENT_ID: DUMMY

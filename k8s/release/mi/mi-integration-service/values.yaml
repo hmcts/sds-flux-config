@@ -10,6 +10,12 @@ job:
     app.kubernetes.io/instance : mi-integration-service
     app.kubernetes.io/name: mi-integration-service
   ttlSecondsAfterFinished: 20
+  keyVaults:
+    "mi-vault":
+      excludeEnvironmentSuffix: false
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      secrets:
+      - appinsights-instrumentationkey
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
@@ -21,6 +27,12 @@ job:
   testsConfig:
     memoryLimits: '512Mi'
     activeDeadlineSeconds: 3600
+    keyVaults:
+      "mi-vault":
+        excludeEnvironmentSuffix: false
+        resourceGroup: mi-{{ .Values.global.environment }}-rg
+        secrets:
+        - appinsights-instrumentationkey
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       MI_CLIENT_ID: DUMMY
