@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatetest.azurecr.io/mi-extraction-service:pr-103-73c6fe2
+      image: ssprivatetest.azurecr.io/mi-extraction-service:pr-95-0cbc809
       suspend: false
       kind: CronJob
       schedule: '40 1 * * *'
@@ -43,7 +43,7 @@ spec:
         SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
         SFTP_ENABLED: true
       smoketests:
-        image: ssprivatetest.azurecr.io/mi-extraction-service:pr-103-73c6fe2
+        image: ssprivatetest.azurecr.io/mi-extraction-service:pr-95-0cbc809
         enabled: true
       testsConfig:
         keyVaults:
