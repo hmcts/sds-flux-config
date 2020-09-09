@@ -18,7 +18,6 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "docmosis.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
-        aadpodidbinding: {{ .Values.aadIdentityName }}
     spec:
       {{- if .Values.hostaliases }}
       hostAliases:

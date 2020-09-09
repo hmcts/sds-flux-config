@@ -5,7 +5,7 @@ metadata:
   namespace: docmosis
   annotations:
     flux.weave.works/automated: "false"
-    flux.weave.works/tag.chart-image: glob:v*
+    flux.weave.works/tag.chart-image: glob:*
 spec:
   releaseName: docmosis
   chart:
@@ -13,9 +13,9 @@ spec:
     path: k8s/release/docmosis
     ref: master
   values:
-    image: ssprivatesbox.azurecr.io/docmosis/docmosis:v0.1
+    image: ssprivatesbox.azurecr.io/docmosis-sbox:79807
     pullPolicy: Always
-    replicaCount: 2
+    replicaCount: 1
     service:
       type: ClusterIP
       port: 8080
@@ -47,7 +47,6 @@ spec:
       periodSeconds: 30
       failureThreshold: 6
       timeoutSeconds: 5
-    aadpodidbinding: docmosis-mi
     env:
       DOCMOSIS_PORT: 8080
       DOCMOSIS_RENDER_USEURL: https://localhost/
