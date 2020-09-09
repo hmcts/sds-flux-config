@@ -33,7 +33,6 @@ spec:
       hosts:
       # - 'docmosis-sbox.platform.hmcts.net'
       - 'docmosis.ss-service.core-compute-sandbox.internal'
-    # env:
     readinessProbe:
       enabled: false
       path: "/"
@@ -48,3 +47,8 @@ spec:
       periodSeconds: 30
       failureThreshold: 6
       timeoutSeconds: 5
+    aadpodidbinding: docmosis-mi
+    env:
+      DOCMOSIS_PORT: 8080
+      DOCMOSIS_RENDER_USEURL: https://localhost/
+      DOCMOSIS_SITE: "Licensed To: Ministry Of Justice.  For use with single project: Reform Document Generation"

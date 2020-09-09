@@ -18,6 +18,7 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "docmosis.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+        aadpodidbinding: {{ .Values.aadIdentityName }}
     spec:
       {{- if .Values.hostaliases }}
       hostAliases:
@@ -60,6 +61,21 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
+            - name: DOCMOSIS_ACCESSKEY
+              valueFrom:
+                secretKeyRef:
+                  name: docmosis
+                  key: docmosisAPIToken
+            - name: DOCMOSIS_ADMINPW
+              valueFrom:
+                secretKeyRef:
+                  name: docmosis
+                  key: docmosisAdminToken
+            - name: DOCMOSIS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: docmosis
+                  key: docmosisLicenseKey
             {{- range $key, $value := $.Values.env }}
             - name: {{ $key }}
               value: {{ $value | quote }}
