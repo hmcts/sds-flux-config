@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivateprod.azurecr.io/data-extractor-job:prod-d51f36c
+      image: ssprivateprod.azurecr.io/data-extractor-job:prod-cceddaa
       suspend: true
       kind: CronJob
       schedule: '15 0 * * *'
@@ -39,7 +39,7 @@ spec:
         EXTRACTION_TODATE: "20200713"
         TEST: DUMMY
       smoketests:
-        image: ssprivateprod.azurecr.io/data-extractor-job:prod-d51f36c
+        image: ssprivateprod.azurecr.io/data-extractor-job:prod-cceddaa
         enabled: true
       testsConfig:
         environment:
