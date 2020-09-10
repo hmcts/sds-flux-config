@@ -1,0 +1,13 @@
+apiVersion: v2
+name: mi-staging-service
+home: https://github.com/hmcts/mi-staging-service
+version: 0.0.5
+appVersion: "1.0.0"
+description: MI staging service
+type: application
+maintainers:
+  - name: HMCTS MI platform
+dependencies:
+   - name: job
+     version: ~0.5.7
+     repository: 'file://../common/job'
