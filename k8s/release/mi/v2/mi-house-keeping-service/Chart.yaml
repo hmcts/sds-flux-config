@@ -1,0 +1,13 @@
+apiVersion: v2
+name: mi-house-keeping-service
+home: https://github.com/hmcts/mi-house-keeping-service
+version: 0.0.6
+appVersion: "1.0.0"
+type: application
+description: MI House Keeping Service
+maintainers:
+  - name: HMCTS MI platform
+dependencies:
+   - name: job
+     version: ~0.5.7
+     repository: 'file://../../common/job'

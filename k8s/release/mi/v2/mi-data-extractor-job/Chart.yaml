@@ -1,0 +1,13 @@
+apiVersion: v2
+name: mi-data-extractor-job
+home: https://github.com/hmcts/data-extractor
+version: 0.0.11
+appVersion: "1.0.0"
+type: application
+description: MI data extractor
+maintainers:
+  - name: HMCTS MI platform
+dependencies:
+  - name: job
+    version: ~0.5.7
+    repository: 'file://../../common/job'
