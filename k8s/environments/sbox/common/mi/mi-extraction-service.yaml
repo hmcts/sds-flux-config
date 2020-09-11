@@ -11,7 +11,7 @@ spec:
   releaseName: mi-extraction-service
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/release/mi/v2/mi-extraction-service
+    path: k8s/release/mi/mi-extraction-service
     ref: master
   values:
     job:
