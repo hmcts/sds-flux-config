@@ -5,6 +5,7 @@ bases:
 - ../../../release/admin/traefik
 - ../../../release/admin/kured
 - ../../../release/admin/keyvault-flexvol
+- ../../../release/admin/secrets-csi-driver
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -18,6 +19,9 @@ patchesStrategicMerge:
 
 #kured patch
 - ../../../release/admin/kured/patches/sbox/cluster-00/kured.yaml
+
+#secrets-csi-driver patch
+- ../../../release/admin/secrets-csi-driver/patches/sbox/cluster-00/secrets-csi-driver.yaml
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/sbox/cluster-00/env-injector.yaml
