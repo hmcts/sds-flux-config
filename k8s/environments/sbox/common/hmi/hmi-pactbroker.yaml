@@ -1,0 +1,54 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: hmi-pact-broker
+  namespace: hmi
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: hmi-pact-broker
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/hmi/hmi-pact
+    ref: master
+  values:
+    replicas: 1
+    image:
+      repository: "ssprivatesbox.azurecr.io/hmi/apim-tests-pact"
+      tag: "v0.1"
+      pullPolicy: Always
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      paths:
+        - /
+      tls: []
+      hosts:
+      - 'hmi-pact.ss-service.core-compute-sandbox.internal'
+    readinessProbe:
+      enabled: false
+    #   path: "/"
+    #   initialDelaySeconds: 60
+    #   periodSeconds: 30
+    #   failureThreshold: 6
+    #   timeoutSeconds: 5
+    livenessProbe:
+      enabled: false
+    #   path: "/"
+    #   initialDelaySeconds: 60
+    #   periodSeconds: 30
+    #   failureThreshold: 6
+    #   timeoutSeconds: 5
+    env:
+      PACT_BROKER_DATABASE_USERNAME: postgres
+      PACT_BROKER_DATABASE_PASSWORD: password
+      PACT_BROKER_DATABASE_HOST: postgres
+      PACT_BROKER_DATABASE_NAME: postgres
+      PACT_BROKER_DATABASE_PORT: 5432
+      PACT_BROKER_DISABLE_SSL_VERIFICATION: true
+      PACT_BROKER_WEBHOOK_SCHEME_WHITELIST: http
+      PACT_BROKER_PUBLIC_HEARTBEAT: true
+      PACT_BROKER_LOG_LEVEL: INFO
