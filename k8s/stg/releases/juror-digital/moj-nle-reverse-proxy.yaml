@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/moj-nle-reverse-proxy
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/jd/juror-httpd:2.4.28
+    image: ssprivatestg.azurecr.io/jd/juror-httpd:2.4.29
     pullPolicy: Always
     replicaCount: 1
     hostaliases:
@@ -28,7 +28,7 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik-stg
       paths:
-        - /
+      - /
       tls: []
       #  - secretName: chart-example-tls
       #    hosts:
