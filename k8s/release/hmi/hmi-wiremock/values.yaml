@@ -17,11 +17,11 @@ ingress:
  annotations:
    kubernetes.io/ingress.class: traefik-sbox
  paths:
-   - /
- # tls: []
+   - /product/p0001
+ tls: []
   #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+ hosts:
+ - 'hmi-wiremock.ss-service.core-compute-sandbox.internal'
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

@@ -1,14 +1,14 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "hmi-pact-broker.fullname" . -}}
+{{- $fullName := include "hmi-pactbroker.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "hmi-pact-broker.name" . }}
-    app: {{ include "hmi-pact-broker.name" . }}
-    helm.sh/chart: {{ include "hmi-pact-broker.chart" . }}
+    app.kubernetes.io/name: {{ include "hmi-pactbroker.name" . }}
+    app: {{ include "hmi-pactbroker.name" . }}
+    helm.sh/chart: {{ include "hmi-pactbroker.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   {{- with .Values.ingress.annotations }}

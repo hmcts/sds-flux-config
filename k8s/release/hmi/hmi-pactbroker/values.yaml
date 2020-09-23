@@ -1,4 +1,4 @@
-replicas: 1
+# replicas: 1
 
 image:
   repository: ssprivatesbox.azurecr.io/hmi/apim-tests-pact
@@ -12,31 +12,15 @@ service:
   type: ClusterIP
   port: 80
 
-ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: traefik-sbox
-  paths:
-    - /
-  tls: []
-  hosts:
-  - 'hmi-pact.ss-service.core-compute-sandbox.internal'
-
-databaseType: external
-postgresqlServerName: "pact-broker-mgmt-sandbox"
-
-volumeMounts:
-- name: kvcreds
-  mountPath: /kvmnt
-  readOnly: true
-
-volumes:
-- name: kvcreds
-
-vaultName: kvcreds
-resourceGroup: placeholder
-subscriptionId: 1234abc-abc-12345
-tenantId: 1234abc-abc-12345
+# ingress:
+#   enabled: true
+#   annotations:
+#     kubernetes.io/ingress.class: traefik-sbox
+#   paths:
+#     - /
+#   tls: []
+#   hosts:
+#   - 'hmi-pact.ss-service.core-compute-sandbox.internal'
 
 env: {}
 
