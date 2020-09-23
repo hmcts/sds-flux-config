@@ -28,6 +28,7 @@ spec:
       tls: []
       hosts:
       - 'hmi-pact.ss-service.core-compute-sandbox.internal'
+    aadIdentityName: aks-pod-identity-mi
     postgresql:
       enabled: true
       postgresqlServerName: "hmi-pactbroker-sbox"
