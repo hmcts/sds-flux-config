@@ -32,7 +32,7 @@ spec:
       #      - chart-example.local
       hosts:
       # - 'docmosis-sbox.platform.hmcts.net'
-      - 'docmosis.ss-service.core-compute-sandbox.internal'
+      - 'docmosis-aks.ss-service.core-compute-sandbox.internal'
     readinessProbe:
       enabled: false
       path: "/"
