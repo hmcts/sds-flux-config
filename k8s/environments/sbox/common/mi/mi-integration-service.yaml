@@ -12,7 +12,7 @@ spec:
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-integration-service
-    ref: master
+    ref: mi-csi-vault
   values:
     job:
       image: ssprivatesbox.azurecr.io/mi-integration-service:pr-99-93286cf
@@ -27,11 +27,6 @@ spec:
           excludeEnvironmentSuffix: false
           resourceGroup: mi-{{ .Values.global.environment }}-rg
           usepodidentity: true
-          secrets:
-          - notify-api-key-cmc
-          - notify-api-key-divorce
-          - eightbyeight-api-user
-          - eightbyeight-api-password
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
         DATA_SOURCE_CCD: true

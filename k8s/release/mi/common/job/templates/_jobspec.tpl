@@ -24,22 +24,13 @@ spec:
       {{- if and .Values.keyVaults .Values.global.enableKeyVaults }}
       volumes:
         {{- $globals := .Values.global }}
-         {{- $useKeyVaultpodidentity := .Values.global.usepodidentity }}
-         {{- $aadIdentityName := .Values.aadIdentityName }}
         {{- range $key, $value := .Values.keyVaults }}
         - name: vault-{{ $key }}
-          flexVolume:
-            driver: "azure/kv"
-            {{- if not $useKeyVaultpodidentity }}
-            secretRef:
-              name: {{ default "kvcreds" $value.secretRef }}
-             {{- end }}
-            options:
-              usepodidentity: "{{ if $useKeyVaultpodidentity }}true{{ else }}false{{ end}}"
-              tenantid: {{ $globals.tenantId }}
-              keyvaultname: {{if $value.excludeEnvironmentSuffix }}{{ $key | quote }}{{else}}{{ printf "%s-%s" $key $globals.environment }}{{ end }}
-              keyvaultobjectnames: {{ $value.secrets | join ";" | quote }}  #"some-username;some-password"
-              keyvaultobjecttypes: {{ trimSuffix ";" (repeat (len $value.secrets) "secret;") | quote }} # OPTIONS: secret, key, cert
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: {{$key }}-{{$globals.environment }}-secret              #secretprovider name should match here
         {{- end }}
       {{- end }}
       securityContext:
