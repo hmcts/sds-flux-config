@@ -1,27 +1,28 @@
 # replicas: 1
 
 image:
- repository: ssprivatesbox.azurecr.io/hmi/apim-tests-wiremock
- tag: v0.1
- pullPolicy: Always
+  repository: ssprivatesbox.azurecr.io/hmi/apim-tests-pact
+  tag: v0.1
+  pullPolicy: Always
 
 nameOverride: ""
 fullnameOverride: ""
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 80
 
-ingress:
- enabled: true
- annotations:
-   kubernetes.io/ingress.class: traefik-sbox
- paths:
-   - /product/p0001
- tls: []
-  #  - secretName: chart-example-tls
- hosts:
- - 'hmi-wiremock.ss-service.core-compute-sandbox.internal'
+# ingress:
+#   enabled: true
+#   annotations:
+#     kubernetes.io/ingress.class: traefik-sbox
+#   paths:
+#     - /
+#   tls: []
+#   hosts:
+#   - 'hmi-pact.ss-service.core-compute-sandbox.internal'
+
+env: {}
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
