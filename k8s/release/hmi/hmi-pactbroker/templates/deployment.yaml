@@ -9,7 +9,7 @@ metadata:
     helm.sh/chart: {{ include "hmi-pactbroker.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
-
+    aadpodidbinding: aks-pod-identity-mi
 spec:
   replicas: {{ .Values.replicas }}
   selector:
@@ -30,7 +30,7 @@ spec:
           secretRef:
             name: {{ .secretref }}
           options:
-            usepodidentity: "false"
+            usepodidentity: "true"
             keyvaultname: {{ .name }}
             keyvaultobjectnames: {{ join ";" .secrets | quote }}
             keyvaultobjecttypes: {{ repeat (len .secrets) "secret;" | trimSuffix ";" | quote }}
