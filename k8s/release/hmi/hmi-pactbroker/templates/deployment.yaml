@@ -44,7 +44,9 @@ spec:
           command:
             - "/bin/sh"
             - "-c"
-            - "export PACT_BROKER_DATABASE_USERNAME=$(cat /kvmnt/pact-db-user)@{{- required "postgresql.postgresqlHost " .Values.postgresql.postgresqlHost -}}; export PACT_BROKER_DATABASE_PASSWORD=$(cat /kvmnt/pact-db-password); /sbin/my_init"
+            - |
+              START=$(date +%s); for i in {1..10}; do if [[ -f /kvmnt/pact-db-user && -f /kvmnt/pact-db-password ]]; then break; elif [ $i -gt 11 ]; then exit 2; else sleep 6; fi; done; END=$(date +%s) && DIFF=$(( $END - $START )) && echo "$(date) Finished with status $? after $DIFF seconds" > secrets.log
+              export PACT_BROKER_DATABASE_USERNAME=$(cat /kvmnt/pact-db-user)@{{- required "postgresql.postgresqlHost " .Values.postgresql.postgresqlHost -}}; export PACT_BROKER_DATABASE_PASSWORD=$(cat /kvmnt/pact-db-password); sleep 180; /sbin/my_init"
           volumeMounts:
           {{- range $.Values.keyvaults}}
           - name: {{ .name }}
