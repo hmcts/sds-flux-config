@@ -28,7 +28,7 @@ spec:
       tls: []
       hosts:
       - 'hmi-pact.ss-service.core-compute-sandbox.internal'
-    aadIdentityName: aks-pod-identity-mi
+    aadIdentityName: "hmi-sharedinfra-mi-sbox"
     postgresql:
       enabled: true
       postgresqlServerName: "hmi-pactbroker-sbox"
@@ -41,10 +41,7 @@ spec:
       resourcegroup: hmi-sharedinfra-sbox-rg
       subscriptionid: a8140a9e-f1b0-481f-a4de-09e2ee23f7ab
       tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
-      secretref: kvcreds
-      secrets:
-      - pact-db-user
-      - pact-db-password
+
     readinessProbe:
       enabled: false
     #   path: "/diagnostic/status/heartbeat"

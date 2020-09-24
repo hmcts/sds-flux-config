@@ -28,18 +28,11 @@ spec:
       volumes:
       {{- range $.Values.keyvaults}}
       - name: {{ .name }}
-        flexVolume:
-          driver: "azure/kv"
-          secretRef:
-            name: {{ .secretref }}
-          options:
-            usepodidentity: "{{ if $aadIdentityName }}true{{ else }}false{{ end}}"
-            keyvaultname: {{ .name }}
-            keyvaultobjectnames: {{ join ";" .secrets | quote }}
-            keyvaultobjecttypes: {{ repeat (len .secrets) "secret;" | trimSuffix ";" | quote }}
-            resourcegroup: {{ .resourcegroup }}
-            subscriptionid: {{ .subscriptionid }}
-            tenantid: {{ .tenantid }}
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "azure-kvname-podid"
       {{- end }}
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
@@ -55,7 +48,8 @@ spec:
           volumeMounts:
           {{- range $.Values.keyvaults}}
           - name: {{ .name }}
-            mountPath: "{{- printf "/secrets/%s" .name }}"
+            mountPath: "/kvmnt"
+            readOnly: true
           {{- end }}
           ports:
             - name: http
