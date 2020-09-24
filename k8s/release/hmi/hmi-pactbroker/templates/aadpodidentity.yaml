@@ -5,8 +5,8 @@ metadata:
   namespace: hmi
 spec:
   type: 0
-  resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/hmi-sharedinfra-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{{ .Values.aadIdentityName }}
-  clientID: b3715a37-28ac-4abd-aa19-b0232bcc735a
+  resourceID: {{ .Values.aadResourceId }}
+  clientID: {{ .Values.aadClientId }}
 
 ---
 

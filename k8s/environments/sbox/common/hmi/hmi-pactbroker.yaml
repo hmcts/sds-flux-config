@@ -29,6 +29,8 @@ spec:
       hosts:
       - 'hmi-pact.ss-service.core-compute-sandbox.internal'
     aadIdentityName: "hmi-sharedinfra-mi-sbox"
+    aadResourceId: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/hmi-sharedinfra-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/hmi-sharedinfra-mi-sbox
+    aadClientId: b3715a37-28ac-4abd-aa19-b0232bcc735a
     postgresql:
       enabled: true
       postgresqlServerName: "hmi-pactbroker-sbox"
