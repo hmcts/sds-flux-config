@@ -32,7 +32,7 @@ spec:
           driver: secrets-store.csi.k8s.io
           readOnly: true
           volumeAttributes:
-            secretProviderClass: "azure-kvname-podid"
+            secretProviderClass: {{ $aadIdentityName }}-podid
       {{- end }}
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
