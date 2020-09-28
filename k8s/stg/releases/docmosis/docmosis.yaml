@@ -31,7 +31,7 @@ spec:
       #    hosts:
       #      - chart-example.local
       hosts:
-      - 'docmosis.aks-ss.core-compute-stg.internal'
+      - 'docmosis-stg.platform.hmcts.net'
     readinessProbe:
       enabled: false
       path: "/"
