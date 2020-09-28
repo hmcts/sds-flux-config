@@ -1,5 +1,5 @@
 kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 metadata:
   name: mi-sftp-server
   namespace: mi
@@ -8,27 +8,55 @@ metadata:
 spec:
   replicas: 1
   minReadySeconds: 10
+  selector:
+    matchLabels:
+      app: mi-sftp-server
   template:
     metadata:
       labels:
         app: mi-sftp-server
+        aadpodidbinding: mi-data-extractor-job
     spec:
+      initContainers:
+      - name: install
+        image: busybox
+        command: ["/bin/sh", "-c", "printf '%s:%s:1000'  $(cat /kvmnt/sftp-remote-user) $(cat /kvmnt/sftp-remote-password) > /sftp-config/users.conf"]
+        volumeMounts:
+        - name: test
+          mountPath: /kvmnt
+          readOnly: true
+        - name: config-cache
+          mountPath: /sftp-config
       containers:
         - name: mi-sftp-server
           image: atmoz/sftp:latest
           imagePullPolicy: Always
-          env:
-          - name: SFTP_USERS
-            valueFrom:
-              secretKeyRef:
-                name: mi-secrets
-                key: SFTP_USERS
+          volumeMounts:
+          - name: test
+            mountPath: /kvmnt
+            readOnly: true
+          - name: config-cache
+            mountPath: /etc/sftp
           ports:
             - containerPort: 22
           securityContext:
             capabilities:
               add: ["SYS_ADMIN"]
           resources: {}
+      volumes:
+      - name: test
+        flexVolume:
+          driver: "azure/kv"
+          options:
+            usepodidentity: "true"                   
+            keyvaultname: "mi-vault-test" 
+            keyvaultobjectnames: "sftp-remote-password;sftp-remote-user"         
+            keyvaultobjecttypes: "secret;secret"               
+            resourcegroup: "mi-test-rg"        
+            subscriptionid: "DTS-SHAREDSERVICES-TEST"
+            tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      - name: config-cache
+        emptyDir: {}
 
 ---
 kind: Service
