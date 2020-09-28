@@ -2,7 +2,7 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: mi-integration-service
+  name: mi-integration-service-payment-perf
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -24,8 +24,8 @@ spec:
       schedule: '15 0 * * *'
       activeDeadlineSeconds: 82800 #23 hours
       labels:
-        app.kubernetes.io/instance: mi-integration-service-payment-perf
-        app.kubernetes.io/name: mi-integration-service-payment-perf
+        app.kubernetes.io/instance: mi-integration-service-job-payment-perf
+        app.kubernetes.io/name: mi-integration-service-job-payment-perf
       environment:
         MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
@@ -42,13 +42,3 @@ spec:
       subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       environment: "stg"
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
-                values:
-                - aks-ssstgpool-42844036-0
-                - aks-ssstgpool-42844036-1
