@@ -26,6 +26,24 @@ spec:
       labels:
         app.kubernetes.io/instance: mi-integration-service-job-payment-perf
         app.kubernetes.io/name: mi-integration-service-job-payment-perf
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          usepodidentity: false
+          secrets:
+          - payment-db-host
+          - payment-db-user
+          - payment-db-password
+          - payment-bs-db-host
+          - payment-bs-db-user
+          - payment-bs-db-password
+          - payment-fees-db-host
+          - payment-fees-db-user
+          - payment-fees-db-password
+          - payment-bar-db-host
+          - payment-bar-db-user
+          - payment-bar-db-password
       environment:
         MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
