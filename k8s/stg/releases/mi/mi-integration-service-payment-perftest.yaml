@@ -24,8 +24,8 @@ spec:
       schedule: '15 0 * * *'
       activeDeadlineSeconds: 82800 #23 hours
       labels:
-        app.kubernetes.io/instance: mi-integration-service-job
-        app.kubernetes.io/name: mi-integration-service-job
+        app.kubernetes.io/instance: mi-integration-service-payment-perf
+        app.kubernetes.io/name: mi-integration-service-payment-perf
       environment:
         MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
