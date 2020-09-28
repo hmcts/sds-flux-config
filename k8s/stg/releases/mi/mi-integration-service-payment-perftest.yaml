@@ -1,0 +1,54 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: mi-integration-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:stg-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:stg-*
+spec:
+  releaseName: mi-integration-service-payment-perf
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/mi/mi-integration-service
+    ref: master
+  values:
+    job:
+      image: ssprivatestg.azurecr.io/mi-integration-service:stg-6116dcb
+      suspend: false
+      kind: Job
+      schedule: '15 0 * * *'
+      activeDeadlineSeconds: 82800 #23 hours
+      labels:
+        app.kubernetes.io/instance: mi-integration-service-job
+        app.kubernetes.io/name: mi-integration-service-job
+      environment:
+        MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
+        APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+        DATA_SOURCE_PAYMENT: true
+      smoketests:
+        image: ssprivatestg.azurecr.io/mi-integration-service:stg-6116dcb
+        enabled: true
+      testsConfig:
+        environment:
+          MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
+          APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+          DATA_SOURCE_PAYMENT: true
+    global:
+      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "stg"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - aks-ssstgpool-42844036-0
+                - aks-ssstgpool-42844036-1
