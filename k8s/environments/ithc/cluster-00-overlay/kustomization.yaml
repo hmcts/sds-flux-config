@@ -4,6 +4,7 @@ bases:
 - ../../../release/admin/kube-slack
 - ../../../release/admin/traefik
 - ../../../release/admin/kured
+- ../../../release/admin/secrets-csi-driver
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -17,6 +18,9 @@ patchesStrategicMerge:
 
 #kured patch
 - ../../../release/admin/kured/patches/ithc/cluster-00/kured.yaml
+
+#secrets-csi-driver patch
+- ../../../release/admin/secrets-csi-driver/patches/ithc/cluster-00/secrets-csi-driver.yaml
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/ithc/cluster-00/env-injector.yaml
