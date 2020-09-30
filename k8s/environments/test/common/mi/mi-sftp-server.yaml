@@ -20,7 +20,7 @@ spec:
       initContainers:
       - name: install
         image: busybox
-        command: ["/bin/sh", "-c", "printf '%s:%s:1000'  $(cat /kvmnt/sftp-remote-user) $(cat /kvmnt/sftp-remote-password) > /sftp-config/users.conf"]
+        command: ["/bin/sh", "-c", "printf '%s:%s:1000::/files/mi-platform-export/'  $(cat /kvmnt/sftp-remote-user) $(cat /kvmnt/sftp-remote-password) > /sftp-config/users.conf"]
         volumeMounts:
         - name: test
           mountPath: /kvmnt
