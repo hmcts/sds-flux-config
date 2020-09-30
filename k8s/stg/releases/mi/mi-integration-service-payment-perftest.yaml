@@ -2,7 +2,7 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: mi-integration-service-payment-perftest
+  name: mi-integration-service-payment-perftest-job
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -11,21 +11,21 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:stg-*
 spec:
-  releaseName: mi-integration-service-payment-perftest
+  releaseName: mi-integration-service-payment-perftest-job
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/charts/mi/mi-integration-service
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-integration-service:stg-6116dcb
+      image: ssprivatestg.azurecr.io/mi-integration-service:stg-7a70bae
       suspend: false
       kind: Job
       schedule: '15 0 * * *'
       activeDeadlineSeconds: 82800 #23 hours
       labels:
-        app.kubernetes.io/instance: mi-integration-service-job-payment-perftest
-        app.kubernetes.io/name: mi-integration-service-job-payment-perftest
+        app.kubernetes.io/instance: mi-integration-service-job-payment-perftest-job
+        app.kubernetes.io/name: mi-integration-service-job-payment-perftest-job
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false
@@ -49,7 +49,7 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
         DATA_SOURCE_PAYMENT: true
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-integration-service:stg-6116dcb
+        image: ssprivatestg.azurecr.io/mi-integration-service:stg-7a70bae
         enabled: false
       testsConfig:
         environment:
