@@ -39,6 +39,7 @@ spec:
         environment:
           ETL_MSICLIENTID: e4249368-cf12-4a81-8a56-cef2c4473769
           APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+          TASK_VALIDATE_BLOB: true
     global:
       subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
