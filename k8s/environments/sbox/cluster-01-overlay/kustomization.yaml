@@ -4,6 +4,7 @@ bases:
 - ../../../release/admin/kube-slack
 - ../../../release/admin/traefik
 - ../../../release/admin/kured
+- ../../../release/admin/keyvault-flexvol
 - ../../../release/admin/secrets-csi-driver
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
@@ -11,13 +12,13 @@ bases:
 patchesStrategicMerge:
 
 #kube-slack patch
-- ../../../release/admin/kube-slack/patches/dev/cluster-01/kube-slack.yaml
+- ../../../release/admin/kube-slack/patches/sbox/cluster-01/kube-slack.yaml
 
 #traefik patch
-- ../../../release/admin/traefik/patches/dev/cluster-01/traefik.yaml
+- ../../../release/admin/traefik/patches/sbox/cluster-01/traefik.yaml
 
 #kured patch
-- ../../../release/admin/kured/patches/dev/cluster-01/kured.yaml
+- ../../../release/admin/kured/patches/sbox/cluster-01/kured.yaml
 
 # env-injector
-# - ../../../release/admin/env-injector/patches/dev/cluster-00/env-injector.yaml
+# - ../../../release/admin/env-injector/patches/sbox/cluster-00/env-injector.yaml
