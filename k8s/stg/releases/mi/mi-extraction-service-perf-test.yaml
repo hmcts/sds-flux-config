@@ -1,0 +1,43 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: mi-extraction-service-perf-test
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:stg-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:stg-*
+spec:
+  releaseName: mi-extraction-service-perf-test
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/mi/mi-extraction-service
+    ref: master
+  values:
+    job:
+      image: ssprivatestg.azurecr.io/mi-extraction-service:stg-8d9e916
+      suspend: false
+      kind: CronJob
+      schedule: '40 0 * * *'
+      activeDeadlineSeconds: 82800 #23 hours
+      labels:
+        app.kubernetes.io/instance: mi-extraction-service-perf-test
+        app.kubernetes.io/name: mi-extraction-service-perf-test
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+        MI_CLIENT_ID: "88d54b96-2be6-4fb5-b966-7d98111152d8"
+        RETRIEVE_FROM_DATE: 2017-01-01
+      smoketests:
+        image: ssprivatestg.azurecr.io/mi-extraction-service:stg-8d9e916
+        enabled: true
+      testsConfig:
+        environment:
+          APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+          MI_CLIENT_ID: "88d54b96-2be6-4fb5-b966-7d98111152d8"
+    global:
+      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "stg"
