@@ -21,3 +21,19 @@ spec:
     ssl:
       generateTLS: true
       defaultCN: "*.ss-service.core-compute-sandbox.internal"
+    metrics:
+      prometheus:
+        enabled: true
+        buckets: [0.1,0.3,1.2,5]
+        service:
+          # Set a custom service name
+          name:
+            traefik-metrics
+          annotations:
+            prometheus.io/scrape: "true"
+          port: 9100
+          type: ClusterIP
+    deployment:
+      podAnnotations:
+        prometheus.io/port: "9100"
+        prometheus.io/scrape: "true"
