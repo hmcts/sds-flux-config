@@ -2,7 +2,7 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: mi-extraction-service-perf-test
+  name: mi-extraction-service-perf-test-2
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -11,7 +11,7 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:stg-*
 spec:
-  releaseName: mi-extraction-service-perf-test
+  releaseName: mi-extraction-service-perf-test-2
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/charts/mi/mi-extraction-service
@@ -20,16 +20,46 @@ spec:
     job:
       image: ssprivatestg.azurecr.io/mi-extraction-service:stg-8d9e916
       suspend: false
-      kind: CronJob
+      kind: Job
       schedule: '40 0 * * *'
       activeDeadlineSeconds: 82800 #23 hours
       labels:
-        app.kubernetes.io/instance: mi-extraction-service-perf-test
-        app.kubernetes.io/name: mi-extraction-service-perf-test
+        app.kubernetes.io/instance: mi-extraction-service-perf-test-2
+        app.kubernetes.io/name: mi-extraction-service-perf-test-2
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
         MI_CLIENT_ID: "88d54b96-2be6-4fb5-b966-7d98111152d8"
         RETRIEVE_FROM_DATE: 2017-01-01
+        EXPORT_SOURCES_CCD_ENABLED: false
+        EXPORT_SOURCES_NOTIFY_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTAGENTSACTIVITIES_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTAGENTSINTERACTIONS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTAGENTSOUTBOUNDCALLS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTAGENTSSKILLS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTAGENTSSTATISTICS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTAGENTSSTATUSES_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTINTERACTIONS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTALLINTERACTIONS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTCAMPAIGNSINTERACTIONS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTCHANNELSINTERACTIONS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTCHANNELSONLINESLAS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTCHANNELSSTATISTICS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTGROUPS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTGROUPSACTIVITIES_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTGROUPSAGENTS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTGROUPSINTERACTIONS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTGROUPSOUTBOUNDCALLS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTGROUPSSTATUSES_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTQUEUESINTERACTIONS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTQUEUESOFFLINESLAS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTQUEUESONLINESLAS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTQUEUESSKILLS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTQUEUESSTATISTICS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTSCLS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTTCLS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTQUEUES_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTCHANNELS_ENABLED: false
+        EXPORT_SOURCES_EIGHTBYEIGHTAGENTS_ENABLED: false
       smoketests:
         image: ssprivatestg.azurecr.io/mi-extraction-service:stg-8d9e916
         enabled: true
