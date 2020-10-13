@@ -1,0 +1,44 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: hmi-casehqemulator
+  namespace: hmi
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: hmi-casehqemulator
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/hmi/hmi-casehqemulator
+    ref: master
+  values:
+    replicas: 1
+    image:
+      repository: "ssprivatesbox.azurecr.io/hmi/case-hq-emulator"
+      tag: "v0.1"
+      pullPolicy: Always
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      paths:
+        - /
+      tls: []
+      hosts:
+      - 'hmi-casehqemulator.ss-service.core-compute-sandbox.internal'
+    readinessProbe:
+      enabled: false
+    #   path: "/"
+    #   initialDelaySeconds: 60
+    #   periodSeconds: 30
+    #   failureThreshold: 6
+    #   timeoutSeconds: 5
+    livenessProbe:
+      enabled: false
+    #   path: "/"
+    #   initialDelaySeconds: 60
+    #   periodSeconds: 30
+    #   failureThreshold: 6
+    #   timeoutSeconds: 5
