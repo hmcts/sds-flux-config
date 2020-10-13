@@ -1,0 +1,74 @@
+# replicas: 1
+
+image:
+  repository: ssprivatesbox.azurecr.io/hmi/case-hq-emulator
+  tag: v0.1
+  pullPolicy: Always
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 4550
+
+ingress:
+  # enabled: true
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  paths:
+    - /
+  tls: []
+  hosts:
+  - 'hmi-casehqemulator.ss-service.core-compute-sandbox.internal'
+
+volumeMounts:
+- name: azureshare
+  mountPath: /opt/app/
+  readOnly: false
+
+volumes:
+- name: azureshare
+  azureFile:
+    secretName: storage-secret
+    shareName: casehq-mock
+    readOnly: false
+
+readinessProbe:
+  enabled: false
+#   path: "/diagnostic/status/heartbeat"
+#   initialDelaySeconds: 60
+#   periodSeconds: 10
+#   failureThreshold: 6
+#   timeoutSeconds: 5
+livenessProbe:
+  enabled: false
+#   path: "/diagnostic/status/heartbeat"
+#   initialDelaySeconds: 60
+#   periodSeconds: 10
+#   failureThreshold: 6
+#   timeoutSeconds: 5
+
+env: {}
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+secrets:
+  # Specifies whether secrets resources should be created
+  create: false
