@@ -24,7 +24,7 @@ ingress:
 
 volumeMounts:
 - name: azureshare
-  mountPath: /opt/app/
+  mountPath: /opt/app/data/
   readOnly: false
 
 volumes:
