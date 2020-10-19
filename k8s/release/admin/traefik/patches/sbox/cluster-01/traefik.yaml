@@ -9,17 +9,14 @@ spec:
   values:
     loadBalancerIP: 10.140.31.250
     dashboard:
-      domain: traefik01.ss-service.core-compute-sandbox.internal
+      domain: traefik-ss-01.sandbox.platform.hmcts.net
     accessLogs:
       enabled: true
     autoscaling:
       minReplicas: 1
       maxReplicas: 2
-    service:
-      annotations:
-        service.beta.kubernetes.io/azure-load-balancer-resource-group: aks-infra-sbox-rg
     ssl:
-      generateTLS: true
+      generateTLS: false
       defaultCN: "*.ss-service.core-compute-sandbox.internal"
     metrics:
       prometheus:
