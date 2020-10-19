@@ -13,9 +13,6 @@ spec:
     autoscaling:
       minReplicas: 1
       maxReplicas: 2
-    ssl:
-      generateTLS: false
-      defaultCN: "*.ss-service.core-compute-sandbox.internal"
     metrics:
       prometheus:
         enabled: true
