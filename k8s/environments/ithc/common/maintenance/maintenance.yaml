@@ -1,5 +1,5 @@
 ---
-apiVersion: flux.weave.works/v1beta1
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: maintenance
@@ -11,7 +11,7 @@ spec:
   releaseName: maintenance
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/releases/maintenance
+    path: k8s/release/maintenance
     ref: master
   values:
     image: ssprivateithc.azurecr.io/maintenance:v0.3
