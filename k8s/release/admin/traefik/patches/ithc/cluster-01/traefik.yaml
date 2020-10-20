@@ -7,15 +7,12 @@ spec:
   values:
     loadBalancerIP: 10.143.31.250
     dashboard:
-      domain: traefik01.ss-service.core-compute-ithc.internal
+      domain: traefik-ss-01.ithc.platform.hmcts.net
     accessLogs:
       enabled: true
     autoscaling:
       minReplicas: 1
       maxReplicas: 2
-    ssl:
-      generateTLS: true
-      defaultCN: "*.ss-service.core-compute-ithc.internal"
     metrics:
       prometheus:
         enabled: true

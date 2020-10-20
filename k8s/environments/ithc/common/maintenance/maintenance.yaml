@@ -14,10 +14,10 @@ spec:
     path: k8s/releases/maintenance
     ref: master
   values:
-    image: ssprivateithc.azurecr.io/maintenance:v0.1
+    image: ssprivateithc.azurecr.io/maintenance:v0.3
     replicaCount: 1
     ingress:
       annotations:
         kubernetes.io/ingress.class: traefik
       hosts:
-      - 'maintenance-ithc.aks-ss.core-compute-ithc.internal'
+      - 'maintenance.ithc.platform.hmcts.net'
