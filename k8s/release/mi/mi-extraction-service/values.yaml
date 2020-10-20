@@ -18,6 +18,9 @@ job:
       resourceGroup: mi-{{ .Values.global.environment }}-rg
       secrets:
       - appinsights-instrumentationkey
+      - sftp-remote-user
+      - sftp-remote-password
+      - encryption-publicKey
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
@@ -35,6 +38,9 @@ job:
         resourceGroup: mi-{{ .Values.global.environment }}-rg
         secrets:
         - appinsights-instrumentationkey
+        - sftp-remote-user
+        - sftp-remote-password
+        - encryption-publicKey
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       MI_CLIENT_ID: DUMMY

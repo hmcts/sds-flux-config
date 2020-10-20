@@ -35,13 +35,15 @@ spec:
           - mailing-targets
           - sftp-remote-user
           - sftp-remote-password
+          - encryption-publicKey
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         MI_CLIENT_ID: "58ed3fc0-18be-4a6f-8ceb-14768c8e796a"
-        SFTP_REMOTE_FOLDER: /files/mi-platform-export-{{ .Values.global.environment
-          }}/
-        SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
         SFTP_ENABLED: true
+        SFTP_REMOTE_HOST: mi-sftp-server-svc
+        SFTP_REMOTE_PORT: 2000
+        SFTP_REMOTE_FOLDER: files/mi-platform-export/
+        SFTP_FILE_ENCRYPTION_ENABLED: true
       smoketests:
         image: ssprivatetest.azurecr.io/mi-extraction-service:pr-112-112fc08
         enabled: true
@@ -56,13 +58,15 @@ spec:
             - mailing-targets
             - sftp-remote-user
             - sftp-remote-password
+            - encryption-publicKey
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
           MI_CLIENT_ID: "58ed3fc0-18be-4a6f-8ceb-14768c8e796a"
-          SFTP_REMOTE_FOLDER: /files/mi-platform-export-{{ .Values.global.environment
-            }}/
-          SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
           SFTP_ENABLED: true
+          SFTP_REMOTE_HOST: mi-sftp-server-svc
+          SFTP_REMOTE_PORT: 2000
+          SFTP_REMOTE_FOLDER: files/mi-platform-export/
+          SFTP_FILE_ENCRYPTION_ENABLED: true
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
