@@ -27,10 +27,10 @@ spec:
         - /
       tls: []
       hosts:
-      - 'hmi-pact.ss-service.core-compute-sandbox.internal'
-    aadIdentityName: "hmi-sharedinfra-mi-sbox"
-    aadResourceId: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/hmi-sharedinfra-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/hmi-sharedinfra-mi-sbox
-    aadClientId: b3715a37-28ac-4abd-aa19-b0232bcc735a
+      - 'hmi-pact.sandbox.platform.hmcts.net'
+    aadIdentityName: "flux-sbox-mi-sops"
+    aadResourceId: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/flux-sbox-mi-sops
+    aadClientId: 728277b4-285c-447a-935f-6b7d4e145d8d
     postgresql:
       enabled: true
       postgresqlServerName: "hmi-pact-broker-sbox"

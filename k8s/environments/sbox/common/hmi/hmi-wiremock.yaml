@@ -27,7 +27,7 @@ spec:
         - /
       tls: []
       hosts:
-      - 'hmi-wiremock.ss-service.core-compute-sandbox.internal'
+      - 'hmi-wiremock.sandbox.platform.hmcts.net'
     readinessProbe:
       enabled: false
     #   path: "/"
