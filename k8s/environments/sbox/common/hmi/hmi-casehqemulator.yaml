@@ -27,7 +27,7 @@ spec:
         - /
       tls: []
       hosts:
-      - 'hmi-casehqemulator.ss-service.core-compute-sandbox.internal'
+      - 'hmi-casehqemulator.sandbox.platform.hmcts.net'
     readinessProbe:
       enabled: false
     #   path: "/"
