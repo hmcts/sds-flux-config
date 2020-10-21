@@ -4,10 +4,12 @@ metadata:
   name: traefik
   namespace: admin
 spec:
+  # valueFileSecrets:
+  #   - name: "traefik-values"
   values:
-    loadBalancerIP: 10.141.15.250
+    loadBalancerIP: 10.142.31.250
     dashboard:
-      domain: traefik-ss-00.test.platform.hmcts.net
+      domain: traefik-ss-01.staging.platform.hmcts.net
     accessLogs:
       enabled: true
     autoscaling:
@@ -29,4 +31,3 @@ spec:
       podAnnotations:
         prometheus.io/port: "9100"
         prometheus.io/scrape: "true"
-

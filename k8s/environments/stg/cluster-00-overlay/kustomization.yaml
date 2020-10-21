@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../../release/admin/kube-slack
+- ../../../release/admin/traefik
+- ../../../release/admin/kured
+- ../../../release/admin/keyvault-flexvol
+- ../../../release/admin/secrets-csi-driver
+# - ../../../release/admin/env-injector
+# - ../../../release/kube-system/nodelocaldns
+
+patchesStrategicMerge:
+
+#kube-slack patch
+- ../../../release/admin/kube-slack/patches/stg/cluster-00/kube-slack.yaml
+
+#traefik patch
+- ../../../release/admin/traefik/patches/stg/cluster-00/traefik.yaml
+
+#kured patch
+- ../../../release/admin/kured/patches/stg/cluster-00/kured.yaml
+
+# env-injector
+# - ../../../release/admin/env-injector/patches/stg/cluster-00/env-injector.yaml
