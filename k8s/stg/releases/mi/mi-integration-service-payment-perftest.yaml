@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-integration-service:stg-e552253
+      image: ssprivatestg.azurecr.io/mi-integration-service:stg-7d30964
       suspend: false
       kind: Job
       schedule: '15 0 * * *'
@@ -49,7 +49,7 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
         DATA_SOURCE_PAYMENT: true
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-integration-service:stg-e552253
+        image: ssprivatestg.azurecr.io/mi-integration-service:stg-7d30964
         enabled: false
       testsConfig:
         environment:
