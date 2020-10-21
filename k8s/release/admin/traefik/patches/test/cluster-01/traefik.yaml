@@ -4,20 +4,17 @@ metadata:
   name: traefik
   namespace: admin
 spec:
-  valueFileSecrets:
-    - name: "traefik-values"
+  # valueFileSecrets:
+  #   - name: "traefik-values"
   values:
     loadBalancerIP: 10.141.31.250
     dashboard:
-      domain: traefik01.ss-service.core-compute-test.internal
+      domain: traefik-ss-01.test.platform.hmcts.net
     accessLogs:
       enabled: true
     autoscaling:
       minReplicas: 1
       maxReplicas: 2
-    ssl:
-      generateTLS: true
-      defaultCN: "*.ss-service.core-compute-test.internal"
     metrics:
       prometheus:
         enabled: true
