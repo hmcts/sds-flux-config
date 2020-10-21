@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivateprod.azurecr.io/mi-integration-service:prod-e552253
+      image: ssprivateprod.azurecr.io/mi-integration-service:prod-7d30964
       suspend: false
       kind: CronJob
       schedule: '15 1 * * *'
@@ -32,7 +32,7 @@ spec:
         MI_CLIENT_ID: 60146a49-7399-4b18-b36c-576671c8f9bc
         MI_VALIDATE_ALL_LANDING_BLOBS: true
       smoketests:
-        image: ssprivateprod.azurecr.io/mi-integration-service:prod-e552253
+        image: ssprivateprod.azurecr.io/mi-integration-service:prod-7d30964
         enabled: true
       testsConfig:
         environment:
