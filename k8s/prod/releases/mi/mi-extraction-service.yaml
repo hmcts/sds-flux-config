@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivateprod.azurecr.io/mi-extraction-service:prod-00ffd89
+      image: ssprivateprod.azurecr.io/mi-extraction-service:prod-ceae1ef
       suspend: false
       kind: CronJob
       schedule: '40 1 * * *'
@@ -31,7 +31,7 @@ spec:
         MI_CLIENT_ID: eacf45b7-55e2-4f84-802f-024b2c5b9ca8
         GOV_UK_NOTIFY_BLOB_URL_TEMPLATE_ID: 393b8dd5-db7a-4cd7-b7b8-931876f3dea6
       smoketests:
-        image: ssprivateprod.azurecr.io/mi-extraction-service:prod-00ffd89
+        image: ssprivateprod.azurecr.io/mi-extraction-service:prod-ceae1ef
         enabled: true
       testsConfig:
         environment:
