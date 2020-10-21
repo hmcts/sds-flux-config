@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-extraction-service:stg-00ffd89
+      image: ssprivatestg.azurecr.io/mi-extraction-service:stg-ceae1ef
       suspend: false
       kind: Job
       schedule: '40 0 * * *'
@@ -61,7 +61,7 @@ spec:
         EXPORT_SOURCES_EIGHTBYEIGHTCHANNELS_ENABLED: false
         EXPORT_SOURCES_EIGHTBYEIGHTAGENTS_ENABLED: false
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-extraction-service:stg-00ffd89
+        image: ssprivatestg.azurecr.io/mi-extraction-service:stg-ceae1ef
         enabled: true
       testsConfig:
         environment:
