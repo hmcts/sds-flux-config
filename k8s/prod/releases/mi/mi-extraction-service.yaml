@@ -26,17 +26,42 @@ spec:
       labels:
         app.kubernetes.io/instance: mi-extraction-service
         app.kubernetes.io/name: mi-extraction-service
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+          - appinsights-instrumentationkey
+          - sftp-remote-user
+          - sftp-remote-password
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
         MI_CLIENT_ID: eacf45b7-55e2-4f84-802f-024b2c5b9ca8
         GOV_UK_NOTIFY_BLOB_URL_TEMPLATE_ID: 393b8dd5-db7a-4cd7-b7b8-931876f3dea6
+        SFTP_ENABLED: false
+        SFTP_FORCECHECK: true
+        SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
+        SFTP_REMOTE_PORT: 22
+        SFTP_REMOTE_FOLDER: files/mi-platform-export/
       smoketests:
         image: ssprivateprod.azurecr.io/mi-extraction-service:prod-ceae1ef
         enabled: true
       testsConfig:
+        keyVaults:
+          "mi-vault":
+            excludeEnvironmentSuffix: false
+            resourceGroup: mi-{{ .Values.global.environment }}-rg
+            secrets:
+            - appinsights-instrumentationkey
+            - sftp-remote-user
+            - sftp-remote-password
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
           MI_CLIENT_ID: eacf45b7-55e2-4f84-802f-024b2c5b9ca8
+          SFTP_ENABLED: false
+          SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
+          SFTP_REMOTE_PORT: 22
+          SFTP_REMOTE_FOLDER: files/mi-platform-export/
     global:
       subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
