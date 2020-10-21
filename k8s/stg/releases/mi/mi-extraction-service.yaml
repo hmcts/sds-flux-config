@@ -26,6 +26,14 @@ spec:
       labels:
         app.kubernetes.io/instance: mi-extraction-service
         app.kubernetes.io/name: mi-extraction-service
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+          - appinsights-instrumentationkey
+          - sftp-remote-user
+          - sftp-remote-password
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
         MI_CLIENT_ID: "88d54b96-2be6-4fb5-b966-7d98111152d8"
@@ -33,9 +41,21 @@ spec:
         image: ssprivatestg.azurecr.io/mi-extraction-service:stg-8d9e916
         enabled: true
       testsConfig:
+        keyVaults:
+          "mi-vault":
+            excludeEnvironmentSuffix: false
+            resourceGroup: mi-{{ .Values.global.environment }}-rg
+            secrets:
+            - appinsights-instrumentationkey
+            - sftp-remote-user
+            - sftp-remote-password
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
           MI_CLIENT_ID: "88d54b96-2be6-4fb5-b966-7d98111152d8"
+          SFTP_ENABLED: true
+          SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
+          SFTP_REMOTE_PORT: 22
+          SFTP_REMOTE_FOLDER: files/mi-platform-export/
     global:
       subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
