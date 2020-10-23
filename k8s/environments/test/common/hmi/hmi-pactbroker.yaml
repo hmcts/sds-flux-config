@@ -1,0 +1,63 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: hmi-pactbroker
+  namespace: hmi
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: hmi-pactbroker
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/hmi/hmi-pactbroker
+    ref: master
+  values:
+    replicas: 1
+    image:
+      repository: "ssprivatetest.azurecr.io/hmi/apim-tests-pact"
+      tag: "v0.1"
+      pullPolicy: Always
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      paths:
+        - /
+      tls: []
+      hosts:
+      - 'hmi-pact.test.platform.hmcts.net'
+    aadIdentityName: "flux-test-mi-sops"
+    aadResourceId: /subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/flux-test-mi-sops
+    aadClientId: cd61da07-5b1c-4ec3-990c-964518d1d1dd
+    postgresql:
+      enabled: true
+      postgresqlServerName: "hmi-pact-broker-test"
+      postgresqlHost: "hmi-pact-broker-test.postgres.database.azure.com"
+      postgresqlDatabase: "hmi-pactbroker"
+      postgresqlPort: "5432"
+      postgresqlDisableSsl: "true"
+    keyvaults:
+    - name: hmi-shared-kv-test
+      resourcegroup: hmi-sharedservices-test-rg
+      subscriptionid: 3eec5bde-7feb-4566-bfb6-805df6e10b90
+      tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
+      secrets:
+      - pact-db-user
+      - pact-db-password
+
+    readinessProbe:
+      enabled: false
+    #   path: "/diagnostic/status/heartbeat"
+    #   initialDelaySeconds: 60
+    #   periodSeconds: 10
+    #   failureThreshold: 6
+    #   timeoutSeconds: 5
+    livenessProbe:
+      enabled: false
+    #   path: "/diagnostic/status/heartbeat"
+    #   initialDelaySeconds: 60
+    #   periodSeconds: 10
+    #   failureThreshold: 6
+    #   timeoutSeconds: 5
