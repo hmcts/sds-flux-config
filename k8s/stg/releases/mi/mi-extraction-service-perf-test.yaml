@@ -19,7 +19,7 @@ spec:
   values:
     job:
       image: ssprivatestg.azurecr.io/mi-extraction-service:stg-4a741a3
-      suspend: false
+      suspend: true
       kind: Job
       schedule: '40 0 * * *'
       activeDeadlineSeconds: 82800 #23 hours
