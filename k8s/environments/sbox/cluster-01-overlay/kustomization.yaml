@@ -6,6 +6,7 @@ bases:
 - ../../../release/admin/kured
 - ../../../release/admin/keyvault-flexvol
 - ../../../release/admin/secrets-csi-driver
+- ../../../namespaces/azure-devops
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -19,6 +20,9 @@ patchesStrategicMerge:
 
 #kured patch
 - ../../../release/admin/kured/patches/sbox/cluster-01/kured.yaml
+
+#azure-devops-agent patch
+- ../../../namespaces/azure-devops/kube-slack/patches/sandbox/cluster-00/kube-slack.yaml
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/sbox/cluster-00/env-injector.yaml
