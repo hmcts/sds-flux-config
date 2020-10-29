@@ -20,3 +20,11 @@ spec:
       AZP_URL: "https://dev.azure.com/hmcts"
       AZP_POOL: "hmcts-ss-sandbox"
       AZP_WORK: "_work"
+    volumeMounts:
+    - name: docker-socket
+      mountPath: /var/run/docker.sock
+      readOnly: false
+    volumes:
+    - name: docker-socket
+      hostPath:
+        path: /var/run/docker.sock
