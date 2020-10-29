@@ -39,7 +39,7 @@ spec:
             - mi-historical-storage-connection-string
       smoketests:
         image: ssprivatestg.azurecr.io/mi-integration-service:stg-f73f6ea
-        enabled: true
+        enabled: false
       testsConfig:
         environment:
           MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
