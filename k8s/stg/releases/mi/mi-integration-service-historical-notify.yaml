@@ -31,6 +31,12 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
         DATA_SOURCE_HISTORICAL_NOTIFY: true
         HISTORICAL_NOTIFY_CONTAINER: historical
+      keyVaultsUsepodidentity: false
+      keyVaults:
+        "mi-vault":
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+            - mi-historical-storage-connection-string
       smoketests:
         image: ssprivatestg.azurecr.io/mi-integration-service:stg-f73f6ea
         enabled: true
