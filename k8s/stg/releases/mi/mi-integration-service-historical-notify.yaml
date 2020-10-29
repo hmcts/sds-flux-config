@@ -34,7 +34,9 @@ spec:
       keyVaultsUsepodidentity: false
       keyVaults:
         "mi-vault":
+          excludeEnvironmentSuffix: false
           resourceGroup: mi-{{ .Values.global.environment }}-rg
+          usepodidentity: false
           secrets:
             - mi-historical-storage-connection-string
       smoketests:
