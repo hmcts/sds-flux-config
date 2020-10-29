@@ -1,0 +1,22 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: azure-devops-agent
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: azure-devops-agent
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/azure-devops-agent
+    ref: master
+  values:
+    image:
+      repository: "hmctspublic.azurecr.io/hmcts/vsts-agent"
+      tag: "db7emv"
+    env:
+      AZP_URL: "https://dev.azure.com/hmcts"
+      AZP_POOL: "hmcts-ss-sandbox"
+      AZP_WORK: "_work"
