@@ -28,20 +28,20 @@ spec:
       tls: []
       hosts:
       - 'hmi-pact.sandbox.platform.hmcts.net'
-    aadIdentityName: "flux-sbox-mi-sops"
-    aadResourceId: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/flux-sbox-mi-sops
-    aadClientId: 728277b4-285c-447a-935f-6b7d4e145d8d
+    aadIdentityName: "flux-dev-mi-sops"
+    aadResourceId: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/flux-dev-mi-sops
+    aadClientId: 52ec38e7-1e5a-42c2-8ec1-f8d467568fd8
     postgresql:
       enabled: true
-      postgresqlServerName: "hmi-pact-broker-sbox"
-      postgresqlHost: "hmi-pact-broker-sbox.postgres.database.azure.com"
+      postgresqlServerName: "hmi-pact-broker-dev"
+      postgresqlHost: "hmi-pact-broker-dev.postgres.database.azure.com"
       postgresqlDatabase: "hmi-pactbroker"
       postgresqlPort: "5432"
       postgresqlDisableSsl: "true"
     keyvaults:
-    - name: hmi-shared-kv-sbox
-      resourcegroup: hmi-sharedservices-sbox-rg
-      subscriptionid: a8140a9e-f1b0-481f-a4de-09e2ee23f7ab
+    - name: hmi-shared-kv-dev
+      resourcegroup: hmi-sharedservices-dev-rg
+      subscriptionid: 867a878b-cb68-4de5-9741-361ac9e178b6
       tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
       secrets:
       - pact-db-user
