@@ -1,21 +1,50 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ include "azure-devops-agent.name" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    chart: {{ .Chart.Name }}
-    version: {{ .Chart.Version }}
+    app.kubernetes.io/name: {{ include "azure-devops-agent.name" . }}
+    app: {{ include "azure-devops-agent.name" . }}
+    helm.sh/chart: {{ include "azure-devops-agent.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    {{- if .Values.aadIdentityName }}
+    aadpodidbinding: {{ .Values.aadIdentityName }}
+    {{- end }}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
-      app: {{ .Chart.Name }}
+      app: {{ include "azure-devops-agent.name" . }}
+      app.kubernetes.io/name: {{ include "azure-devops-agent.name" . }}
+      {{- if .Values.aadIdentityName }}
+      aadpodidbinding: {{ .Values.aadIdentityName }}
+      {{- end }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}
+        app: {{ include "azure-devops-agent.name" . }}
+        app.kubernetes.io/name: {{ include "azure-devops-agent.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        {{- if .Values.aadIdentityName }}
+        aadpodidbinding: {{ .Values.aadIdentityName }}
+        {{- end }}
     spec:
+      {{- $aadIdentityName := .Values.aadIdentityName }}
+      volumes:
+      {{- range $.Values.keyvaults}}
+      - name: {{ .name }}
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: {{ $aadIdentityName }}-podid
+      {{- end }}
+      {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
