@@ -24,7 +24,25 @@ spec:
     - name: docker-socket
       mountPath: /var/run/docker.sock
       readOnly: false
+    - name: ss-vault-sbox
+      readOnly: true
+      mountPath: /kvmnt
     volumes:
     - name: docker-socket
       hostPath:
         path: /var/run/docker.sock
+    - name: ss-vault-kv-sbox
+      csi:
+        driver: secrets-store.csi.k8s.io
+        readOnly: true
+        volumeAttributes:
+          secretProviderClass: azure-devops-agent-sbox-podid
+    replicas: 1
+    keyvaults:
+    - name: ss-vault-kv-sbox
+      resourcegroup: infra-resource-group
+      subscriptionid: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+      tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      secrets:
+      - azure-devops-agent-secret
+    
