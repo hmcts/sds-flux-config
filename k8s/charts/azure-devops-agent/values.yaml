@@ -19,6 +19,8 @@ resources: {}
 
 cleanRun: false
 
+aadIdentityName: azure-devops-agent
+
 volumeMounts:
 - name: docker-socket
   mountPath: /var/run/docker.sock
