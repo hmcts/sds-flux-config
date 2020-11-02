@@ -5,4 +5,5 @@ bases:
 - namespace.yaml
 - azure-devops-agent/azure-devops-agent.yaml
 - azure-devops-agent/secret-store.yaml
+- azure-devops-agent/pod-identity.yaml
 # Warning : Adding a file here, adds to all environments to which you add your kustomization.

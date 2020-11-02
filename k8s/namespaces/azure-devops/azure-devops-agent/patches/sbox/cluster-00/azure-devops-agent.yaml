@@ -6,3 +6,5 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: glob:v*
+  labels:
+    aadIdentityName: aks-pod-identity-mi
