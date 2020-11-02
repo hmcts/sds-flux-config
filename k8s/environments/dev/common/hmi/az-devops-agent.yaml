@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: az-devops-agent
+  name: hmi-devops-agent
   namespace: hmi
   annotations:
     flux.weave.works/automated: "true"
