@@ -9,8 +9,8 @@ metadata:
 spec:
   releaseName: azure-devops-agent
   chart:
-    git: git@github.com:hmcts/shared-services-flux
-    path: k8s/charts/azure-devops-agent
+    git: git@github.com:hmcts/sds-helm-charts
+    path: stable/azure-devops-agent
     ref: master
   values:
     image:
