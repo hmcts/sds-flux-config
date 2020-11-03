@@ -21,16 +21,10 @@ spec:
       AZP_POOL: "hmcts-ss-sandbox"
       AZP_WORK: "_work"
     volumeMounts:
-    - name: docker-socket
-      mountPath: /var/run/docker.sock
-      readOnly: false
     - name: ss-vault-sbox
       readOnly: true
       mountPath: /kvmnt
     volumes:
-    - name: docker-socket
-      hostPath:
-        path: /var/run/docker.sock
     - name: ss-vault-sbox
       csi:
         driver: secrets-store.csi.k8s.io

@@ -21,16 +21,6 @@ cleanRun: false
 
 aadIdentityName: azure-devops-agent
 
-volumeMounts:
-- name: docker-socket
-  mountPath: /var/run/docker.sock
-  readOnly: false
-
-volumes:
-- name: docker-socket
-  hostPath:
-    path: /var/run/docker.sock
-
 secrets:
   # Specifies whether secrets resources should be created
   create: false
