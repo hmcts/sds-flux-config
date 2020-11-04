@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/moj-reverse-proxy
     ref: master
   values:
-    image: ssprivateprod.azurecr.io/jd/juror-reverse-proxy-live:latest
+    image: ssprivateprod.azurecr.io/jd/juror-reverse-proxy-prod:2.4.33
     pullPolicy: Always
     replicaCount: 1
     hostaliases:
