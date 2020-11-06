@@ -28,9 +28,9 @@ spec:
       tls: []
       hosts:
       - 'hmi-pact.test.platform.hmcts.net'
-    aadIdentityName: "flux-test-mi-sops"
-    aadResourceId: /subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/flux-test-mi-sops
-    aadClientId: cd61da07-5b1c-4ec3-990c-964518d1d1dd
+    aadIdentityName: "aks-test-mi"
+    aadResourceId: /subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-test-mi
+    aadClientId: d477322e-1f41-4bec-9fbb-fceecd4edcc2
     postgresql:
       enabled: true
       postgresqlServerName: "hmi-pact-broker-test"
