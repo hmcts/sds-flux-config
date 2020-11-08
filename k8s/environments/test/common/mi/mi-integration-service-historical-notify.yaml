@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatetest.azurecr.io/mi-integration-service:pr-141-4fed1f2
+      image: ssprivatetest.azurecr.io/mi-integration-service:pr-142-a0b9c5b
       suspend: false
       kind: Job
       schedule: '15 1 * * *'
@@ -38,7 +38,7 @@ spec:
         HISTORICAL_NOTIFY_CONTAINER: historical
         MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
       smoketests:
-        image: ssprivatetest.azurecr.io/mi-integration-service:pr-141-4fed1f2
+        image: ssprivatetest.azurecr.io/mi-integration-service:pr-142-a0b9c5b
         enabled: false
       testsConfig:
         environment:
