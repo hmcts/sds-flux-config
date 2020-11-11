@@ -15,7 +15,7 @@ spec:
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-integration-service
-    ref: master
+    ref: hardcode-integration-cronjob-run
   values:
     job:
       image: sdshmctspublic.azurecr.io/mi-integration-service:pr-145-e07761e
@@ -29,9 +29,6 @@ spec:
         "mi-vault":
           excludeEnvironmentSuffix: false
           resourceGroup: mi-{{ .Values.global.environment }}-rg
-          secrets:
-          - appinsights-instrumentationkey
-          - notify-api-key-cmc
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
         DATA_SOURCE_NOTIFY: true
@@ -45,9 +42,6 @@ spec:
           "mi-vault":
             excludeEnvironmentSuffix: false
             resourceGroup: mi-{{ .Values.global.environment }}-rg
-            secrets:
-            - appinsights-instrumentationkey
-            - notify-api-key-cmc
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
           DATA_SOURCE_NOTIFY: true
