@@ -9,9 +9,9 @@ metadata:
 spec:
   releaseName: kube-slack
   chart:
-    repository: https://kubernetes-charts.storage.googleapis.com/
-    name: kube-slack
-    version: 1.3.2
+    git: https://github.com/hmcts/charts
+    ref: master
+    path: stable/kube-slack
   valueFileSecrets:
     - name: "kube-slack-values"
   values:
