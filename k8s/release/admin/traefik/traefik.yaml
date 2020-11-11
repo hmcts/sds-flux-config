@@ -19,7 +19,7 @@ spec:
     gzip:
       enabled: false
     resources:
-      requests: 
+      requests:
         cpu: 100m
         memory: 20Mi
       limits:
@@ -63,4 +63,3 @@ spec:
                   values:
                     - traefik
             topologyKey: "kubernetes.io/hostname"
-
