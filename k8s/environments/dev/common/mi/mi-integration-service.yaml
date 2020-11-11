@@ -1,0 +1,60 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mi-integration-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:pr-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:pr-*
+spec:
+  releaseName: mi-integration-service
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-integration-service
+    ref: master
+  values:
+    job:
+      image: sdshmctspublic.azurecr.io/mi-integration-service:pr-145-e07761e
+      suspend: true
+      kind: CronJob
+      schedule: '15 1 * * *'
+      labels:
+        app.kubernetes.io/instance: mi-integration-service-job
+        app.kubernetes.io/name: mi-integration-service-job
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+          - appinsights-instrumentationkey
+          - notify-api-key-cmc
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
+        DATA_SOURCE_NOTIFY: true
+        GOV_UK_NOTIFY_ENABLED_CMC: true
+        MI_CLIENT_ID: 02094f84-fca9-4ed5-9b1a-ba093d080c7f
+      smoketests:
+        image: sdshmctspublic.azurecr.io/mi-integration-service:pr-145-e07761e
+        enabled: false
+      testsConfig:
+        keyVaults:
+          "mi-vault":
+            excludeEnvironmentSuffix: false
+            resourceGroup: mi-{{ .Values.global.environment }}-rg
+            secrets:
+            - appinsights-instrumentationkey
+            - notify-api-key-cmc
+        environment:
+          APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
+          DATA_SOURCE_NOTIFY: true
+          GOV_UK_NOTIFY_ENABLED_CMC: true
+          MI_CLIENT_ID: 02094f84-fca9-4ed5-9b1a-ba093d080c7f
+    global:
+      subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "dev"
+
