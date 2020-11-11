@@ -6,12 +6,7 @@ metadata:
 spec:
   # valueFileSecrets:
   #   - name: "traefik-values"
-  chart:
-    git: https://github.com/hmcts/charts
-    ref: master
-    path: stable/traefik
   values:
-    imageTag: 1.7.26
     loadBalancerIP: 10.140.31.250
     dashboard:
       domain: traefik-ss-01.sandbox.platform.hmcts.net

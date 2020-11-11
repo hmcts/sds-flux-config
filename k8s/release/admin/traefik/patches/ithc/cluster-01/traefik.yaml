@@ -4,12 +4,7 @@ metadata:
   name: traefik
   namespace: admin
 spec:
-  chart:
-    git: https://github.com/hmcts/charts
-    ref: master
-    path: stable/traefik
   values:
-    imageTag: 1.7.26
     loadBalancerIP: 10.143.31.250
     dashboard:
       domain: traefik-ss-01.ithc.platform.hmcts.net
