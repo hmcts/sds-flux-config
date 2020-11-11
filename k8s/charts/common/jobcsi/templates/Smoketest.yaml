@@ -1,0 +1,12 @@
+{{ if .Values.smoketests.enabled }}
+---
+{{ $smokedata := dict "Values" .Values "Release" .Release "Chart" .Chart "Template" .Template "Files" .Files }}
+{{ $_ := set $smokedata.Values "task" "smoke" }}
+{{ $_ := set $smokedata.Values "type" "tests" }}
+{{ $_ := set $smokedata.Values "taskEnabled" "true" }}
+
+{{- include "java.tests.header" $smokedata }}
+spec:
+{{ $_ := set $smokedata.Values "tests" .Values.smoketests }}
+{{- include "java.tests.spec" $smokedata | indent 2 }}
+{{- end }}
