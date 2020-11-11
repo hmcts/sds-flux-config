@@ -5,6 +5,10 @@ metadata:
   name: kube-slack
   namespace: admin
 spec:
+  chart:
+    git: https://github.com/hmcts/charts
+    ref: master
+    path: stable/kube-slack
   values:
     envVars:
       SLACK_USERNAME: sbox-00-aks
