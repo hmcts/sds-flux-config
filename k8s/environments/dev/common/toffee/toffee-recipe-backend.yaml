@@ -1,0 +1,35 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: sds
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.java: glob:prod-*
+spec:
+  releaseName: plum-recipe-backend
+  chart:
+    repository: https://hmctspublic.azurecr.io/helm/v1/repo/
+    name: plum-recipe-backend
+    version: 0.7.2
+  values:
+    java:
+      image: hmctspublic.azurecr.io/plum/recipe-backend:prod-3426c591
+      ingressHost: toffee-recipe-backend.dev.platform.hmcts.net
+      aadIdentityName: aks-pod-identity-mi
+      environment:
+        POSTGRES_SSL_MODE: require
+      keyVaults:
+        "toffee-vault-dev":
+          resourceGroup: toffee-dev-rg
+          secrets:
+          - recipe-backend-POSTGRES-DATABASE
+          - recipe-backend-POSTGRES-HOST
+          - recipe-backend-POSTGRES-USER
+          - recipe-backend-POSTGRES-PASS
+    global:
+      environment: dev
+      subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      enableKeyVaults: true
