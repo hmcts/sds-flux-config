@@ -15,7 +15,7 @@ spec:
     version: 0.7.2
   values:
     java:
-      image: hmctspublic.azurecr.io/plum/recipe-backend:prod-3426c591
+      image: hmctspublic.azurecr.io/plum/recipe-backend:prod-d46d23a5
       ingressHost: toffee-recipe-backend.dev.platform.hmcts.net
       aadIdentityName: aks-pod-identity-mi
       environment:
