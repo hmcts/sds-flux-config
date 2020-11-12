@@ -30,7 +30,7 @@ spec:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: {{ $key }}-{{ $globals.environment }}-secret-store
+              secretProviderClass: {{ $key }}-{{ $globals.environment }}-secret
         {{- end }}
       {{- end }}
       securityContext:
