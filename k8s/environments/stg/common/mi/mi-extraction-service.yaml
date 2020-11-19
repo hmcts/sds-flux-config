@@ -1,5 +1,5 @@
 ---
-apiVersion: flux.weave.works/v1beta1
+apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: mi-extraction-service
@@ -41,7 +41,6 @@ spec:
         SFTP_FORCECHECK: true
         SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
         SFTP_REMOTE_PORT: 22
-        DUMMY: dummy
         SFTP_REMOTE_FOLDER: files/mi-platform-export/
       smoketests:
         image: ssprivatestg.azurecr.io/mi-extraction-service:stg-4e34a11
