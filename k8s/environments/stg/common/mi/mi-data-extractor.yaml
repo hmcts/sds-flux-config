@@ -1,0 +1,54 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: data-extractor-job
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:stg-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:stg-*
+spec:
+  releaseName: data-extractor
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/mi/mi-data-extractor-job
+    ref: master
+  values:
+    job:
+      image: ssprivatestg.azurecr.io/data-extractor-job:stg-c41c647
+      suspend: false
+      kind: CronJob
+      schedule: '0 0 * * *'
+      activeDeadlineSeconds: 82800 #23 hours
+      labels:
+        app.kubernetes.io/instance: data-extractor-job
+        app.kubernetes.io/name: data-extractor-job
+      environment:
+        ETL_MSICLIENTID: e7251f8f-268e-4d5f-98d1-8eb777ef71c3
+        APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+      smoketests:
+        image: ssprivatestg.azurecr.io/data-extractor-job:stg-c41c647
+        enabled: true
+      testsConfig:
+        environment:
+          ETL_MSICLIENTID: e7251f8f-268e-4d5f-98d1-8eb777ef71c3
+          APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+    global:
+      subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "stg"
+      ccd_environment: "aat"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - aks-ssstgpool-42844036-0
+                - aks-ssstgpool-42844036-3
+
