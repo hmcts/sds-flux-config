@@ -98,7 +98,7 @@ volumes:
       driver: secrets-store.csi.k8s.io
       readOnly: true
       volumeAttributes:
-        secretProviderClass: "{{ $key }}-{{ $globals.environment }}-secret"
+        secretProviderClass: "{{ .Values.aadIdentityName }}-{{ $globals.environment }}-secret-provider"
   {{- end }}
 {{- end }}
 securityContext:
