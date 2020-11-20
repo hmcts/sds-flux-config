@@ -92,14 +92,13 @@ kind: Pod
 {{- if and .Values.testsConfig.keyVaults .Values.global.enableKeyVaults }}
 volumes:
   {{- $globals := .Values.global }}
-  {{- $aadIdentityName := .Values.aadIdentityName }}
   {{- range $key, $value := .Values.testsConfig.keyVaults }}
   - name: vault-{{ $key }}
     csi:
       driver: secrets-store.csi.k8s.io
       readOnly: true
       volumeAttributes:
-        secretProviderClass: "{{ $aadIdentityName }}-vault-{{ $globals.environment }}-secret-provider"
+        secretProviderClass: "{{ include "hmcts.releaseName" . }}-vault-{{ $globals.environment }}-secret-provider"
   {{- end }}
 {{- end }}
 securityContext:
