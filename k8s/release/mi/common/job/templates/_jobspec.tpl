@@ -31,7 +31,7 @@ spec:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: "{{ $aadIdentityName }}-{{ $globals.environment }}-secret-provider"
+              secretProviderClass: "{{ $aadIdentityName }}-vault-{{ $globals.environment }}-secret-provider"
         {{- end }}
       {{- end }}
       securityContext:
