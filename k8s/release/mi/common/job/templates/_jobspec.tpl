@@ -24,13 +24,14 @@ spec:
       {{- if and .Values.keyVaults .Values.global.enableKeyVaults }}
       volumes:
         {{- $globals := .Values.global }}
+        {{- $releaseName := include "hmcts.releaseName" . }}
         {{- range $key, $value := .Values.keyVaults }}
         - name: vault-{{ $key }}
           csi:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: "{{ $key }}-{{ $globals.environment }}-secret"
+              secretProviderClass: "{{ $releaseName }}-vault-{{ $globals.environment }}-secret-provider"
         {{- end }}
       {{- end }}
       securityContext:
