@@ -1,0 +1,42 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: mi-house-keeping-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:stg-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:stg-*
+spec:
+  releaseName: mi-house-keeping-service-job
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-house-keeping-service
+    ref: master
+  values:
+    job:
+      image: ssprivatestg.azurecr.io/mi-house-keeping-service:stg-508dd0a
+      suspend: false
+      kind: CronJob
+      schedule: '45 * * * *'
+      activeDeadlineSeconds: 82800 #23 hours
+      labels:
+        app.kubernetes.io/instance: mi-house-keeping-service
+        app.kubernetes.io/name: mi-house-keeping-service
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+        MI_CLIENT_ID: "c893b691-46f2-4703-8e2a-8a0dcf2e835d"
+      smoketests:
+        image: ssprivatestg.azurecr.io/mi-house-keeping-service:stg-508dd0a
+        enabled: true
+      testsConfig:
+        environment:
+          APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+          MI_CLIENT_ID: "c893b691-46f2-4703-8e2a-8a0dcf2e835d"
+    global:
+      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "stg"
