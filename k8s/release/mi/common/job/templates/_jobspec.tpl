@@ -21,7 +21,7 @@ spec:
         aadpodidbinding: {{ .Values.aadIdentityName }}
         {{- end }}
     spec:
-      {{- if and .Values.keyVaults .Values.global.enableKeyVaults }}
+      {{- if and .Values.keyVaults .Values.global.enableKeyVaults .Values.aadIdentityName }}
       volumes:
         {{- $globals := .Values.global }}
         {{- range $key, $value := .Values.keyVaults }}

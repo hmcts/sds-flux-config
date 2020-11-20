@@ -89,7 +89,7 @@ kind: Pod
 {{- end -}}
 
 {{- define "java.tests.spec" -}}
-{{- if and .Values.testsConfig.keyVaults .Values.global.enableKeyVaults }}
+{{- if and .Values.testsConfig.keyVaults .Values.global.enableKeyVaults .Values.aadIdentityName }}
 volumes:
   {{- $globals := .Values.global }}
   {{- range $key, $value := .Values.testsConfig.keyVaults }}
