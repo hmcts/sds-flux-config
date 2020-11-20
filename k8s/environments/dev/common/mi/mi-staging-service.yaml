@@ -15,7 +15,7 @@ spec:
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-staging-service
-    ref: hardcode-integration-cronjob-run
+    ref: master
   values:
     job:
       image: sdshmctspublic.azurecr.io/mi-staging-service:pr-124-98da0bb
