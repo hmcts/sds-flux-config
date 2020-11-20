@@ -14,7 +14,7 @@ spec:
   releaseName: data-extractor
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/charts/mi/mi-data-extractor-job
+    path: k8s/release/mi/mi-data-extractor-job
     ref: master
   values:
     job:
