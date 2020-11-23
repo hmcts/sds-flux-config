@@ -17,7 +17,7 @@ patches:
     - op: replace
       path: /spec/values/java/keyVaults
       value:
-        "toffee-vault-test":
+        "toffee-vault-sbox":
           secrets:
           - recipe-backend-POSTGRES-DATABASE
           - recipe-backend-POSTGRES-HOST

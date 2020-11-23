@@ -14,13 +14,5 @@ spec:
     java:
       ingressHost: toffee-recipe-backend.sbox.platform.hmcts.net
       aadIdentityName: aks-sbox-mi
-      keyVaults:
-        "toffee-vault-sbox2":
-          secrets:
-          - recipe-backend-POSTGRES-DATABASE
-          - recipe-backend-POSTGRES-HOST
-          - recipe-backend-POSTGRES-USER
-          - recipe-backend-POSTGRES-PASS
     global:
-      environment: test
-      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: sbox
