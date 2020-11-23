@@ -1,0 +1,26 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: toffee
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/java: glob:prod-*
+spec:
+  chart:
+    version: 0.8.1
+  values:
+    java:
+      ingressHost: toffee-recipe-backend.sbox.platform.hmcts.net
+      aadIdentityName: aks-sbox-mi
+      keyVaults:
+        "toffee-vault-sbox2":
+          secrets:
+          - recipe-backend-POSTGRES-DATABASE
+          - recipe-backend-POSTGRES-HOST
+          - recipe-backend-POSTGRES-USER
+          - recipe-backend-POSTGRES-PASS
+    global:
+      environment: test
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

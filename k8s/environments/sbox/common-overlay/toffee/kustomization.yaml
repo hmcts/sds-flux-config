@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../../../namespaces/toffee
+
+patches:
+- path: patches/toffee-backend.yaml
+  target:
+    kind: HelmRelease
+    name: toffee-recipe-backend
+- target:
+    group: helm.fluxcd.io
+    version: v1
+    kind: HelmRelease
+    name: toffee-recipe-backend
+  patch: |-
+    - op: replace
+      path: /spec/values/java/keyVaults
+      value:
+        "toffee-vault-test":
+          secrets:
+          - recipe-backend-POSTGRES-DATABASE
+          - recipe-backend-POSTGRES-HOST
+          - recipe-backend-POSTGRES-USER
+          - recipe-backend-POSTGRES-PASS
