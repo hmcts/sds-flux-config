@@ -1,9 +1,0 @@
----
-apiVersion: "aadpodIdentity.k8s.io/v1"
-kind: AzureIdentityBinding
-metadata:
-  name: azure-devops-agent
-  namespace: azure-devops
-spec:
-  azureIdentity: aks-pod-identity-mi  # binding to existing admin-namespaced identity
-  selector: aks-pod-identity-mi
