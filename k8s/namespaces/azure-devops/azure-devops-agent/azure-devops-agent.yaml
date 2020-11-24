@@ -28,8 +28,6 @@ spec:
     replicas: 1
     keyVaults:
     - name: dtssharedservicessboxkv
-      resourceGroup: genesis-rg
-      subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       secrets:
       - azure-devops-agent-token
