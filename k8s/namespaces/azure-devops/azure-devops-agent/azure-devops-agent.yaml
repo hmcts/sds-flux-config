@@ -11,11 +11,11 @@ spec:
   chart:
     repository: https://hmctspublic.azurecr.io/helm/v1/repo/
     name: azure-devops-agent
-    version: 0.1.0
+    version: 0.2.1
   values:
     image:
       repository: "hmctspublic.azurecr.io/hmcts/vsts-agent"
-      tag: "db7stq"
+      tag: "db87ga"
     aadIdentity:
       name: azure-devops-agent
       type: 0
