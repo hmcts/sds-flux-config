@@ -6,3 +6,16 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: azure-devops-agent
+  values:
+    aadIdentity:
+      resourceId: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourcegroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-sbox-mi
+      clientId: 09d99cb4-e1e7-49c2-a8e6-b5b1740e9c3b
+    azureDevOps:
+      pool: hmcts-ss-sandbox
+    keyVaults:
+    - name: dtssharedservicessboxkv
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      secrets:
+      - azure-devops-agent-token    
