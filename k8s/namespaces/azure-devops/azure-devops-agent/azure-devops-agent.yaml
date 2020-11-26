@@ -24,12 +24,9 @@ spec:
     azureDevOps:
       url: https://dev.azure.com/hmcts
       pool: hmcts-ss-sandbox
-      agentName: shared-services-aks-agent
     replicas: 1
     keyVaults:
     - name: dtssharedservicessboxkv
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       secrets:
-      - azure-devops-agent-token
-
-    
+      - azure-devops-agent-token    
