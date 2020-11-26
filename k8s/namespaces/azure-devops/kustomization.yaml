@@ -3,5 +3,5 @@ kind: Kustomization
 namespace: azure-devops
 bases:
 - namespace.yaml
-- azure-devops-agent
+- azure-devops-agent/azure-devops-agent.yaml
 # Warning : Adding a file here, adds to all environments to which you add your kustomization.
