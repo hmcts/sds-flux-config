@@ -16,18 +16,19 @@ spec:
   values:
     java:
       image: hmctspublic.azurecr.io/plum/recipe-backend:prod-28676739
-      ingressHost: toffee-recipe-backend.sandbox.platform.hmcts.net
-      aadIdentityName: aks-sbox-mi
-      environment:
-        POSTGRES_SSL_MODE: require
+      ingressHost: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
+      aadIdentityName: aks-{{ .Values.global.environment }}-mi
+      # Making this default in helm chart, will remove this once it is done.
+      # environment:
+      #   POSTGRES_SSL_MODE: require
       keyVaults:
-        "toffee-vault-sbox":
+        "toffee-{{ .Values.global.environment }}":
           secrets:
           - recipe-backend-POSTGRES-DATABASE
           - recipe-backend-POSTGRES-HOST
           - recipe-backend-POSTGRES-USER
           - recipe-backend-POSTGRES-PASS
     global:
-      environment: sbox
+      environment: replace
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       enableKeyVaults: true

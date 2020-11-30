@@ -4,10 +4,10 @@ bases:
 - ../../../../namespaces/toffee
 
 patches:
-- path: patches/toffee-backend.yaml
-  target:
-    kind: HelmRelease
-    name: toffee-recipe-backend
+# - path: patches/toffee-backend.yaml
+#   target:
+#     kind: HelmRelease
+#     name: toffee-recipe-backend
 - target:
     group: helm.fluxcd.io
     version: v1
@@ -15,11 +15,15 @@ patches:
     name: toffee-recipe-backend
   patch: |-
     - op: replace
-      path: /spec/values/java/keyVaults
-      value:
-        "toffee-vault-sbox":
-          secrets:
-          - recipe-backend-POSTGRES-DATABASE
-          - recipe-backend-POSTGRES-HOST
-          - recipe-backend-POSTGRES-USER
-          - recipe-backend-POSTGRES-PASS
+      path: /spec/values/global/environment
+      value: sbox
+  # patch: |-
+  #   - op: replace
+  #     path: /spec/values/java/keyVaults
+  #     value:
+  #       "toffee-sbox":
+  #         secrets:
+  #         - recipe-backend-POSTGRES-DATABASE
+  #         - recipe-backend-POSTGRES-HOST
+  #         - recipe-backend-POSTGRES-USER
+  #         - recipe-backend-POSTGRES-PASS
