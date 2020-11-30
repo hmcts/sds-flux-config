@@ -17,7 +17,7 @@ spec:
     java:
       image: hmctspublic.azurecr.io/plum/recipe-backend:prod-28676739
       ingressHost: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
-      aadIdentityName: toffee-{{ .Values.global.environment }}-mi
+      aadIdentityName: toffee
       keyVaults:
         toffee:
           secrets:
