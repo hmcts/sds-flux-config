@@ -21,9 +21,6 @@ spec:
       keyVaults:
         "toffee-{{ .Values.global.environment }}":
           secrets:
-          - recipe-backend-POSTGRES-DATABASE
-          - recipe-backend-POSTGRES-HOST
-          - recipe-backend-POSTGRES-USER
           - recipe-backend-POSTGRES-PASS
     global:
       environment: replace
