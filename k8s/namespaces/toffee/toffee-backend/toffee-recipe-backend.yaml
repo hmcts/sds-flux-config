@@ -18,9 +18,6 @@ spec:
       image: hmctspublic.azurecr.io/plum/recipe-backend:prod-28676739
       ingressHost: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
       aadIdentityName: toffee-{{ .Values.global.environment }}-mi
-      # Making this default in helm chart, will remove this once it is done.
-      # environment:
-      #   POSTGRES_SSL_MODE: require
       keyVaults:
         "toffee-{{ .Values.global.environment }}":
           secrets:
