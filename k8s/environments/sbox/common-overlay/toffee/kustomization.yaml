@@ -14,17 +14,3 @@ patches:
       path: /spec/values/global/environment
       value: sbox
 
-# - path: patches/toffee-backend.yaml
-#   target:
-#     kind: HelmRelease
-#     name: toffee-recipe-backend
-# patch: |-
-#   - op: replace
-#     path: /spec/values/java/keyVaults
-#     value:
-#       "toffee-sbox":
-#         secrets:
-#         - recipe-backend-POSTGRES-DATABASE
-#         - recipe-backend-POSTGRES-HOST
-#         - recipe-backend-POSTGRES-USER
-#         - recipe-backend-POSTGRES-PASS
