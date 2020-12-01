@@ -1,0 +1,110 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mi-integration-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:stg-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:stg-*
+spec:
+  releaseName: mi-integration-service
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-integration-service
+    ref: master
+  values:
+    job:
+      image: ssprivatestg.azurecr.io/mi-integration-service:stg-74a364a
+      suspend: false
+      kind: CronJob
+      schedule: '15 0 * * *'
+      activeDeadlineSeconds: 82800 #23 hours
+      labels:
+        app.kubernetes.io/instance: mi-integration-service-job
+        app.kubernetes.io/name: mi-integration-service-job
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+          - appinsights-instrumentationkey
+          - notify-api-key-cmc
+          - notify-api-key-divorce
+          - notify-api-key-idam
+          - notify-api-key-probate
+          - notify-api-key-sscs
+          - eightbyeight-api-user
+          - eightbyeight-api-password
+          - payment-db-host
+          - payment-db-user
+          - payment-db-password
+          - payment-bs-db-host
+          - payment-bs-db-user
+          - payment-bs-db-password
+          - payment-fees-db-host
+          - payment-fees-db-user
+          - payment-fees-db-password
+          - payment-bar-db-host
+          - payment-bar-db-user
+          - payment-bar-db-password
+      environment:
+        MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
+        APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+        DATA_SOURCE_CCD: true
+        DATA_SOURCE_NOTIFY: true
+        DATA_SOURCE_EIGHTBYEIGHT: true
+        DATA_SOURCE_PAYMENT: true
+        GOV_UK_NOTIFY_ENABLED_CMC: true
+        GOV_UK_NOTIFY_ENABLED_DIVORCE: true
+        GOV_UK_NOTIFY_ENABLED_IDAM: true
+        GOV_UK_NOTIFY_ENABLED_PROBATE: true
+        GOV_UK_NOTIFY_ENABLED_SSCS: true
+      smoketests:
+        image: ssprivatestg.azurecr.io/mi-integration-service:stg-74a364a
+        enabled: true
+      testsConfig:
+        keyVaults:
+          "mi-vault":
+            excludeEnvironmentSuffix: false
+            resourceGroup: mi-{{ .Values.global.environment }}-rg
+            secrets:
+            - appinsights-instrumentationkey
+            - notify-api-key-cmc
+            - notify-api-key-divorce
+            - notify-api-key-idam
+            - notify-api-key-probate
+            - notify-api-key-sscs
+            - eightbyeight-api-user
+            - eightbyeight-api-password
+            - payment-db-host
+            - payment-db-user
+            - payment-db-password
+            - payment-bs-db-host
+            - payment-bs-db-user
+            - payment-bs-db-password
+            - payment-fees-db-host
+            - payment-fees-db-user
+            - payment-fees-db-password
+            - payment-bar-db-host
+            - payment-bar-db-user
+            - payment-bar-db-password
+        environment:
+          MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
+          APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+          DATA_SOURCE_CCD: true
+          DATA_SOURCE_NOTIFY: true
+          DATA_SOURCE_EIGHTBYEIGHT: true
+          DATA_SOURCE_PAYMENT: true
+          GOV_UK_NOTIFY_ENABLED_CMC: true
+          GOV_UK_NOTIFY_ENABLED_DIVORCE: true
+          GOV_UK_NOTIFY_ENABLED_IDAM: true
+          GOV_UK_NOTIFY_ENABLED_PROBATE: true
+          GOV_UK_NOTIFY_ENABLED_SSCS: true
+    global:
+      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "stg"
