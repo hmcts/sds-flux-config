@@ -9,10 +9,7 @@ patches:
     version: v1
     kind: HelmRelease
     name: toffee-recipe-backend
-  patch: |-
-    - op: replace
-      path: /spec/values/global/environment
-      value: sbox
+  path: backend-patch.yaml
 - target:
     group: aadpodidentity.k8s.io
     version: v1
