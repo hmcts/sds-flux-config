@@ -14,6 +14,15 @@ patches:
       path: /spec/values/global/environment
       value: sbox
 - target:
+    group: helm.fluxcd.io
+    version: v1
+    kind: HelmRelease
+    name: toffee-recipe-backend
+  patch: |-
+    - op: replace
+      path: /spec/values/global/ingressHost
+      value: toffee-backend.staging.platform.hmcts.net
+- target:
     group: aadpodidentity.k8s.io
     version: v1
     kind: AzureIdentity
