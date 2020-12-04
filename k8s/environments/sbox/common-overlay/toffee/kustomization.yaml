@@ -20,7 +20,7 @@ patches:
     name: toffee-recipe-backend
   patch: |-
     - op: replace
-      path: /spec/values/global/ingressHost
+      path: /spec/values/java/ingressHost
       value: toffee-backend.staging.platform.hmcts.net
 - target:
     group: aadpodidentity.k8s.io
