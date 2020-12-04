@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/jd-public
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/jd/juror_digital_public_portal:2.19.341
+    image: ssprivatestg.azurecr.io/jd/juror_digital_public_portal:2.20.417
     pullPolicy: Always
     replicaCount: 2
     service:
