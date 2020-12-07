@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/jd-bureau
     ref: master
   values:
-    image: ssprivatestg.azurecr.io/jd/juror_digital_bureau_portal:2.19.67
+    image: ssprivatestg.azurecr.io/jd/juror_digital_bureau_portal:2.20.91
     pullPolicy: Always
     replicaCount: 2
     service:
