@@ -1,0 +1,10 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-frontend
+  namespace: toffee
+spec:
+  values:
+    nodejs:
+      ingressHost: toffee.sandbox.platform.hmcts.net
