@@ -2,7 +2,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
   name: vh-infra-core-dev-kvuser
-  namespace: video-hearings
+  namespace: vh
 spec:
   type: 0
   ResourceID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/vh-infra-core-dev/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-infra-core-dev-kvuser
@@ -14,7 +14,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
   name: vh-admin-web-kvuser-binding
-  namespace: video-hearings
+  namespace: vh
 spec:
   AzureIdentity: vh-infra-core-dev-kvuser
   Selector: vh-admin-web
@@ -25,7 +25,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
   name: vh-bookings-api-kvuser-binding
-  namespace: video-hearings
+  namespace: vh
 spec:
   AzureIdentity: vh-infra-core-dev-kvuser
   Selector: vh-bookings-api
@@ -36,7 +36,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
   name: vh-booking-queue-subscriber-kvuser-binding
-  namespace: video-hearings
+  namespace: vh
 spec:
   AzureIdentity: vh-infra-core-dev-kvuser
   Selector: vh-booking-queue-subscriber
@@ -47,7 +47,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
   name: vh-service-web-kvuser-binding
-  namespace: video-hearings
+  namespace: vh
 spec:
   AzureIdentity: vh-infra-core-dev-kvuser
   Selector: vh-service-web
@@ -58,7 +58,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
   name: vh-scheduler-jobs-kvuser-binding
-  namespace: video-hearings
+  namespace: vh
 spec:
   AzureIdentity: vh-infra-core-dev-kvuser
   Selector: vh-scheduler-jobs
@@ -69,7 +69,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
   name: vh-video-api-kvuser-binding
-  namespace: video-hearings
+  namespace: vh
 spec:
   AzureIdentity: vh-infra-core-dev-kvuser
   Selector: vh-video-api
@@ -80,7 +80,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
   name: vh-video-web-kvuser-binding
-  namespace: video-hearings
+  namespace: vh
 spec:
   AzureIdentity: vh-infra-core-dev-kvuser
   Selector: vh-video-web
@@ -91,7 +91,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
   name: vh-user-api-kvuser-binding
-  namespace: video-hearings
+  namespace: vh
 spec:
   AzureIdentity: vh-infra-core-dev-kvuser
   Selector: vh-user-api
