@@ -11,7 +11,7 @@ spec:
   releaseName: vh-user-api
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/charts/vh/vh-user-api
+    path: k8s/release/vh/vh-user-api
     ref: master
   values:
     replicas: 1
