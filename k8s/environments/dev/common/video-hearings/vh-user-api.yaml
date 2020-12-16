@@ -1,0 +1,50 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-user-api-dev
+  namespace: vh
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: master-*
+spec:
+  releaseName: vh-user-api
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/video-hearings
+    ref: master
+  values:
+    replicas: 1
+    image:
+      repository: "sdshmctspublic.azurecr.io/vh/vh-user-api"
+      tag: "v0.1"
+      pullPolicy: Always
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      paths:
+      - /
+      tls: []
+      hosts:
+      - 'vh-user-api-dev.hearings.reform.hmcts.net'
+    keyvaults:
+    - name: vhinfracorehtdev
+      resourcegroup: vh-infra-core-dev
+      subscriptionid: 867a878b-cb68-4de5-9741-361ac9e178b6
+      tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
+      secretref: kvcreds
+      secrets:
+      - TenantId
+      - vh-user-api-key
+      - vh-user-api-appid
+      - vh-user-api-identifieruris
+      - vh-infra-core-AppInsightsKey
+    appsettings:
+      ApplicationInsights_InstrumentationKey: <azure-secret:vh-infra-core-AppInsightsKey>
+      AzureAd_ClientSecret: <azure-secret:vh-user-api-key>
+      AzureAd_ClientId: <azure-secret:vh-user-api-appid>
+      AzureAd_TenantId: <azure-secret:TenantId>
+      AzureAd_VhUserApiResourceId: <azure-secret:vh-user-api-identifieruris>
+      DefaultPassword: Password123!
+
