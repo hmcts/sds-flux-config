@@ -1,8 +1,7 @@
-# replicas: 1
+replicaCount: 1
 
 image:
  repository: sdshmctspublic.azurecr.io/vh/vh-user-api
- tag: v0.1
  pullPolicy: Always
 
 nameOverride: ""
@@ -17,11 +16,9 @@ ingress:
  annotations:
    kubernetes.io/ingress.class: traefik-dev
  paths:
-   - /product/p0001
+   - /
  tls: []
   #  - secretName: chart-example-tls
- hosts:
- - 'vh-user-api.hearings.platform.hmcts.net'
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
