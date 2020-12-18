@@ -14,11 +14,12 @@ spec:
     path: k8s/release/vh/vh-user-api
     ref: master
   values:
-    replicas: 1
-    image:
-      repository: "sdshmctspublic.azurecr.io/vh/vh-user-api"
-      tag: "v0.1"
-      pullPolicy: Always
+    replicas: 2
+    image: sdshmctspublic.azurecr.io/vh/vh-user-api:v0.1
+    pullPolicy: Always
+    service:
+      type: ClusterIP
+      port: 80
     ingress:
       enabled: true
       annotations:
@@ -47,4 +48,3 @@ spec:
       AzureAd_TenantId: <azure-secret:TenantId>
       AzureAd_VhUserApiResourceId: <azure-secret:vh-user-api-identifieruris>
       DefaultPassword: Password123!
-
