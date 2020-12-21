@@ -1,4 +1,4 @@
-replicaCount: 1
+#replicaCount: 1
 
 image:
  repository: sdshmctspublic.azurecr.io/vh/vh-user-api
@@ -11,14 +11,16 @@ service:
   type: ClusterIP
   port: 80
 
-ingress:
- enabled: true
- annotations:
-   kubernetes.io/ingress.class: traefik-dev
- paths:
-   - /
- tls: []
-  #  - secretName: chart-example-tls
+# ingress:
+#  enabled: true
+#  annotations:
+#    kubernetes.io/ingress.class: traefik-dev
+#  paths:
+#    - /
+#  tls: []
+#   #  - secretName: chart-example-tls
+
+env: {}
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
