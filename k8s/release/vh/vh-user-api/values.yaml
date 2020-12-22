@@ -12,14 +12,14 @@ service:
   type: ClusterIP
   port: 80
 
-# ingress:
-#  enabled: true
-#  annotations:
-#    kubernetes.io/ingress.class: traefik-dev
-#  paths:
-#    - /
-#  tls: []
-#   #  - secretName: chart-example-tls
+ingress:
+ enabled: true
+ annotations:
+   kubernetes.io/ingress.class: traefik-dev
+ paths:
+   - /
+ tls: []
+  #  - secretName: chart-example-tls
 
 env: {}
 
