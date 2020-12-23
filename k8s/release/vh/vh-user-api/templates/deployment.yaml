@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: "{{ .Values.repository }}:{{ .Values.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         volumeMounts:
 {{- if .Values.volumeMounts }}
@@ -54,5 +54,5 @@ spec:
     {{- end }}
 
 
-image: "{{ required "Repository required" .Values.image.repository }}:{{ required "Image tag required" .Values.image.tag }}"
+image: "{{ required "Repository required" .Values.repository }}:{{ required "Image tag required" .Values.tag }}"
        
