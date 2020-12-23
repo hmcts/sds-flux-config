@@ -15,7 +15,8 @@ spec:
     ref: master
   values:
     replicas: 2
-    image: sdshmctspublic.azurecr.io/vh/vh-user-api:v0.1
+    image: sdshmctspublic.azurecr.io/vh/vh-user-api
+    tag: "v0.1"
     pullPolicy: Always
     service:
       type: ClusterIP
