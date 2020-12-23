@@ -1,9 +1,9 @@
 #replicaCount: 1
 
-image:
-  repository: sdshmctspublic.azurecr.io/vh/vh-user-api
-  tag: v0.1
-  pullPolicy: Always
+
+repository: sdshmctspublic.azurecr.io/vh/vh-user-api
+tag: v0.1
+pullPolicy: Always
 
 nameOverride: ""
 fullnameOverride: ""
