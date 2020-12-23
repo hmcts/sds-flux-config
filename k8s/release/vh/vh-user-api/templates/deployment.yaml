@@ -24,7 +24,7 @@ spec:
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.repository }}:{{ .Values.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullPolicy: {{ .Values.pullPolicy }}
         volumeMounts:
 {{- if .Values.volumeMounts }}
 {{ toYaml .Values.volumeMounts | indent 10 }}
