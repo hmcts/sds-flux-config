@@ -25,7 +25,7 @@ spec:
     ingress:
       enabled: true
       annotations:
-        kubernetes.io/ingress.class: traefik
+        kubernetes.io/ingress.class: traefik-dev
       paths:
       - /
       tls: []
@@ -43,7 +43,7 @@ spec:
       - vh-user-api-appid
       - vh-user-api-identifieruris
       - vh-infra-core-AppInsightsKey
-    appsettings:
+    env:
       AdGroup:Administrator: VirtualRoomAdministrator
       AdGroup:CaseType: CaseType
       AdGroup:External: External
