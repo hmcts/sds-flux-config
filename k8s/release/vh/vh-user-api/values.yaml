@@ -23,6 +23,7 @@ ingress:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
+  paths: []
   hosts:
     - host: 'vh-user-api-dev.platform.hmcts.net'
       # paths: []
