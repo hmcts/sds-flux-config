@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatesbox.azurecr.io/mi-integration-service:pr-144-99182be
+      image: ssprivatesbox.azurecr.io/mi-integration-service:pr-151
       suspend: true
       kind: CronJob
       schedule: '15 * * * *'
@@ -39,7 +39,7 @@ spec:
         GOV_UK_NOTIFY_ENABLED_CMC: true
         GOV_UK_NOTIFY_ENABLED_DIVORCE: true
         DATA_SOURCE_EIGHTBYEIGHT: true
-        MI_CLIENT_ID: c5de2886-5b81-4867-8e16-1af09f01bc5f
+        MI_CLIENT_ID: 9278a876-6f8a-489d-9053-01c996a7b6f6
     global:
       subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
