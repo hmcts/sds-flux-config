@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-staging-service:stg-5852b60
+      image: ssprivatestg.azurecr.io/mi-staging-service:stg-595f2a0
       suspend: false
       kind: CronJob
       schedule: '30 0 * * *'
@@ -28,13 +28,13 @@ spec:
         app.kubernetes.io/name: mi-staging-service
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
-        MI_CLIENT_ID: 358e8b10-d68b-4aee-9585-9968ae2264d2
+        MI_CLIENT_ID: e40d289d-0a27-40f8-bfef-63feae41f523
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-staging-service:stg-5852b60
+        image: ssprivatestg.azurecr.io/mi-staging-service:stg-595f2a0
         enabled: true
       testsConfig:
         environment:
-          MI_CLIENT_ID: 358e8b10-d68b-4aee-9585-9968ae2264d2
+          MI_CLIENT_ID: e40d289d-0a27-40f8-bfef-63feae41f523
           APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
     global:
       subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"

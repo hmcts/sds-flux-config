@@ -1,0 +1,70 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mi-extraction-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:ithc-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:ithc-*
+spec:
+  releaseName: mi-extraction-service
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-extraction-service
+    ref: master
+  values:
+    job:
+      image: ssprivateithc.azurecr.io/mi-extraction-service:ithc-54d9093
+      suspend: false
+      kind: CronJob
+      schedule: '40 0 * * *'
+      activeDeadlineSeconds: 82800 #23 hours
+      labels:
+        app.kubernetes.io/instance: mi-extraction-service
+        app.kubernetes.io/name: mi-extraction-service
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+          - appinsights-instrumentationkey
+          - sftp-remote-user
+          - sftp-remote-password
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
+        MI_CLIENT_ID: 87982a0b-6fac-46e0-99a2-94f20642b2e1
+        SFTP_ENABLED: false
+        SFTP_FORCECHECK: true
+        SFTP_REMOTE_HOST: 10.24.254.130
+        SFTP_REMOTE_PORT: 22
+        SFTP_REMOTE_FOLDER: files/mi-platform-export/
+      smoketests:
+        image: ssprivateithc.azurecr.io/mi-extraction-service:ithc-54d9093
+        enabled: true
+      testsConfig:
+        keyVaults:
+          "mi-vault":
+            excludeEnvironmentSuffix: false
+            resourceGroup: mi-{{ .Values.global.environment }}-rg
+            secrets:
+            - appinsights-instrumentationkey
+            - sftp-remote-user
+            - sftp-remote-password
+        environment:
+          APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
+          MI_CLIENT_ID: 87982a0b-6fac-46e0-99a2-94f20642b2e1
+          SFTP_ENABLED: false
+          SFTP_REMOTE_HOST: 10.24.254.130
+          SFTP_REMOTE_PORT: 22
+          SFTP_REMOTE_FOLDER: files/mi-platform-export/
+          SFTP_FORCECHECK: true
+          DUMMY: false
+
+    global:
+      subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "ithc"
