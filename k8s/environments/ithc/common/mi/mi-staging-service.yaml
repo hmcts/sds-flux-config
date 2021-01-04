@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivateithc.azurecr.io/mi-staging-service:ithc-7ae0083
+      image: ssprivateithc.azurecr.io/mi-staging-service:ithc-595f2a0
       suspend: false
       kind: CronJob
       schedule: '30 0 * * *'
@@ -30,7 +30,7 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
         MI_CLIENT_ID: 8767d854-17da-449e-b7ac-8d08fa2609d7
       smoketests:
-        image: ssprivateithc.azurecr.io/mi-staging-service:ithc-7ae0083
+        image: ssprivateithc.azurecr.io/mi-staging-service:ithc-595f2a0
         enabled: true
       testsConfig:
         environment:
