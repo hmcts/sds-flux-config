@@ -1,0 +1,21 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: azure-devops-agent
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: azure-devops-agent
+  values:
+    aadIdentity:
+      resourceId: /subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-test-mi
+      clientId: d477322e-1f41-4bec-9fbb-fceecd4edcc2
+    azureDevOps:
+      pool: hmcts-ss-test
+    keyVaults:
+    - name: dtssharedservicestestkv
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      secrets:
+      - azure-devops-agent-token    
