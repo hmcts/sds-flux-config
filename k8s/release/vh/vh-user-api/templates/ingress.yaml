@@ -1,10 +1,8 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "vh-user-api.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
-
-
-
-apiVersion: networking.k8s.io/v1beta1
+{{- $ingressPaths := .Values.ingress.paths -}}
+apiVersion: extensions/v1beta1
 
 kind: Ingress
 metadata:
@@ -31,7 +29,7 @@ spec:
     - host: {{ . | quote }}
       http:
         paths:
-  {{- range .paths }}
+  {{- range $ingressPaths }}
           - path: {{ . }}
             backend:
               serviceName: {{ $fullName }}
