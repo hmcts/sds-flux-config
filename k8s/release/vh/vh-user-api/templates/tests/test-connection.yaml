@@ -3,10 +3,7 @@ kind: Pod
 metadata:
   name: "{{ include "vh-user-api.fullname" . }}-test-connection"
   labels:
-    app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
-    helm.sh/chart: {{ include "vh-user-api.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{- include "vh-user-api.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test-success
 spec:
@@ -14,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args:  ['{{ include "vh-user-api.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "vh-user-api.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never

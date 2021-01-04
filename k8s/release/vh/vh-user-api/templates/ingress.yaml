@@ -1,16 +1,16 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "vh-user-api.fullname" . -}}
-{{- $ingressPaths := .Values.ingress.paths -}}
-apiVersion: extensions/v1beta1
+{{- $svcPort := .Values.service.port -}}
+
+
+
+apiVersion: networking.k8s.io/v1beta1
+
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
-    app: {{ include "vh-user-api.name" . }}
-    helm.sh/chart: {{ include "vh-user-api.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{- include "vh-user-api.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -31,11 +31,11 @@ spec:
     - host: {{ . | quote }}
       http:
         paths:
-    {{- range $ingressPaths }}
+  {{- range .paths }}
           - path: {{ . }}
             backend:
               serviceName: {{ $fullName }}
-              servicePort: http
-    {{- end }}
+              servicePort: {{ $svcPort }}
+  {{- end }}
   {{- end }}
 {{- end }}

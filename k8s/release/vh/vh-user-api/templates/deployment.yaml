@@ -1,64 +1,37 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "vh-user-api.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
-    app: {{ include "vh-user-api.name" . }}
-    helm.sh/chart: {{ include "vh-user-api.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{- include "vh-user-api.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
-      app.kubernetes.io/instance: {{ .Release.Name }}
+      {{- include "vh-user-api.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
-        app.kubernetes.io/instance: {{ .Release.Name }}
+       {{- include "vh-user-api.selectorLabels" . | nindent 8 }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"          
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          volumeMounts:
-{{- if .Values.volumeMounts }}
-{{ toYaml .Values.volumeMounts | indent 10 }}
-{{- end }}
           ports:
             - name: http
-              containerPort: {{ .Values.service.port }}
+              containerPort: 80
               protocol: TCP
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
-          {{- if eq .Values.livenessProbe.enabled true }}
           livenessProbe:
             httpGet:
-              path: {{ .Values.livenessProbe.path }}
-              port: {{ .Values.service.port }}
-            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
-            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
-            failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
-            timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
-          {{ end }}
-          {{- if eq .Values.readinessProbe.enabled true }}
+              path: /
+              port: http
           readinessProbe:
             httpGet:
-              path: {{ .Values.readinessProbe.path }}
-              port: {{ .Values.service.port }}
-            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
-            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
-            failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
-            timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
-          {{ end }}
-      volumes:
-{{- if .Values.volumeMounts }}
-{{ toYaml .Values.volumes | indent 8 }}
-{{ end }}
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
