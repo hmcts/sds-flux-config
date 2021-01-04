@@ -1,0 +1,20 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+ name: mi-integration-service
+ namespace: mi
+spec:
+ type: 0
+ resourceID: /subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourceGroups/managed-identities-ithc-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-integration-service-ithc-mi
+ clientID: 9106f8ad-3189-4053-925d-0d4579c4e0d9
+
+---
+
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: mi-integration-service
+  namespace: mi
+spec:
+  azureIdentity: mi-integration-service
+  selector: mi-integration-service

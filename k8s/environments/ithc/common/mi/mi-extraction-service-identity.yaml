@@ -1,0 +1,20 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+ name: mi-extraction-service
+ namespace: mi
+spec:
+ type: 0
+ resourceID: /subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourceGroups/managed-identities-ithc-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-extraction-service-ithc-mi
+ clientID: 87982a0b-6fac-46e0-99a2-94f20642b2e1
+
+---
+
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: mi-extraction-service
+  namespace: mi
+spec:
+  azureIdentity: mi-extraction-service
+  selector: mi-extraction-service
