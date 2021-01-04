@@ -25,7 +25,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: 'vh-user-api-dev.platform.hmcts.net'
-      paths: []
+      # paths: []
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
