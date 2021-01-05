@@ -19,6 +19,10 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ $imagerepo }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            {{- if .Values.volumeMounts }}
+                {{ toYaml .Values.volumeMounts | indent 10 }}
+            {{- end }}
           env:          
               {{- range .Values.env }}
             - name: {{ .name | quote }}

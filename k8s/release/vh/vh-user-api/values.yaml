@@ -18,6 +18,11 @@ service:
   type: ClusterIP
   port: 80
 
+volumeMounts:
+- name: azureshare
+  mountPath: /opt/app/data/
+  readOnly: false
+
 ingress:
   enabled: false
   annotations: {}
