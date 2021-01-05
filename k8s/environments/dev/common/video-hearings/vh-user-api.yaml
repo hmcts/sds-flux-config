@@ -44,86 +44,86 @@ spec:
       - vh-user-api-identifieruris
       - vh-infra-core-AppInsightsKey
     env:
-      - name: AdGroup:Administrator
-        value: VirtualRoomAdministrator
-      - name: AdGroup:CaseType 
-        value: CaseType
-      - name: AdGroup:External
-        value: External
-      - name: AdGroup:Judge 
-        value: VirtualRoomJudge
-      - name: AdGroup:JudgesTestGroup 
-        value: TestAccount
-      - name: AdGroup:ProfessionalUser 
-        value: VirtualRoomProfessionalUser
-      - name: APPINSIGHTS_PROFILERFEATURE_VERSION 
-        value: disabled
-      - name: APPINSIGHTS_SNAPSHOTFEATURE_VERSION 
-        value: disabled
-      - name: ApplicationInsights_InstrumentationKey 
-        value: <azure-secret:vh-infra-core-AppInsightsKey>
-      - name: APPLICATIONINSIGHTS_CONNECTION_STRING 
-        value: InstrumentationKey=<azure-secret:vh-infra-core-AppInsightsKey>
-      - name: ApplicationInsightsAgent_EXTENSION_VERSION 
-        value: ~2
-      - name: AzureAd_ClientSecret 
-        value: <azure-secret:vh-user-api-key>
-      - name: AzureAd_ClientId 
-        value: <azure-secret:vh-user-api-appid>
-      - name: AzureAd_TenantId 
-        value: <azure-secret:TenantId>
-      - name: AzureAd_VhUserApiResourceId 
-        value: <azure-secret:vh-user-api-identifieruris>
-      - name: ConnectionStrings:RedisCache 
-        value: <azure-secret:redis-connection-str>
-      - name: DefaultPassword 
-        value: <azure-secret:defaultpassword>
-      - name: DiagnosticServices_EXTENSION_VERSION 
-        value: disabled
-      - name: InstrumentationEngine_EXTENSION_VERSION 
-        value: disabled
-      - name: IsLive 
-        value: False
-      - name: MSDEPLOY_RENAME_LOCKED_FILES 
-        value: 1
-      - name: ReformEmail 
-        value: hearings.reform.hmcts.net
-      - name: SnapshotDebugger_EXTENSION_VERSION 
-        value: disabled
-      - name: TestDefaultPassword 
-        value: <azure-secret:testdefaultpassword>
-      - name: Testing:ExistingEmail 
-        value: UserApiTestUser@a.com
-      - name: Testing:ExistingGroups:0:Displayname 
-        value: External
-      - name: Testing:ExistingGroups:0:GroupId 
-        value: 121fa058-1796-4531-a9ee-63be1d4dc630
-      - name: Testing:ExistingGroups:1:Displayname 
-        value: UserApiTestGroup
-      - name: Testing:ExistingGroups:1:GroupId 
-        value: 371ac75b-22b1-48d8-a3d8-f0587604d01f
-      - name: Testing:ExistingUserDisplayname 
-        value: User Api Test User
-      - name: Testing:ExistingUserFirstname 
-        value: User
-      - name: Testing:ExistingUserId 
-        value: 948cb183-00cf-4251-8b13-6c39a1b0c25d
-      - name: Testing:ExistingUserLastname 
-        value: Api
-      - name: Testing:ExistingUserPrincipal 
-        value: UserApiTestUser@hearings.reform.hmcts.net
-      - name: Testing:NewGroups:0:Displayname 
-        value: NewUserApiTestGroup
-      - name: Testing:NewGroups:0:GroupId 
-        value: 7d62cf17-c548-4a69-8f8f-4bc7fee90fbe
-      - name: VhServices:UserApiResourceId 
-        value: https://vh-user-api-dev.azurewebsites.net
-      - name: VhServices:UserApiUrl 
-        value: https://vh-user-api-dev-staging.azurewebsites.net/
-      - name: XDT_MicrosoftApplicationInsights_BaseExtensions 
-        value: disabled
-      - name: XDT_MicrosoftApplicationInsights_Mode 
-        value: default
-      - name: ZapConfiguration:BuildConfigMode 
-        value: Release
+      - name: "AdGroup:Administrator"
+        value: "VirtualRoomAdministrator"
+      - name: "AdGroup:CaseType"
+        value: "CaseType"
+      - name: "AdGroup:External"
+        value: "External"
+      - name: "AdGroup:Judge"
+        value: "VirtualRoomJudge"
+      - name: "AdGroup:JudgesTestGroup"
+        value: "TestAccount"
+      - name: "AdGroup:ProfessionalUser"
+        value: "VirtualRoomProfessionalUser"
+      - name: "APPINSIGHTS_PROFILERFEATURE_VERSION"
+        value: "disabled"
+      - name: "APPINSIGHTS_SNAPSHOTFEATURE_VERSION"
+        value: "disabled"
+      - name: "ApplicationInsights_InstrumentationKey"
+        value: "<azure-secret:vh-infra-core-AppInsightsKey>"
+      - name: "APPLICATIONINSIGHTS_CONNECTION_STRING"
+        value: "InstrumentationKey=<azure-secret:vh-infra-core-AppInsightsKey>"
+      - name: "ApplicationInsightsAgent_EXTENSION_VERSION"
+        value: "~2"
+      - name: "AzureAd_ClientSecret"
+        value: "<azure-secret:vh-user-api-key>"
+      - name: "AzureAd_ClientId"
+        value: "<azure-secret:vh-user-api-appid>"
+      - name: "AzureAd_TenantId"
+        value: "<azure-secret:TenantId>"
+      - name: "AzureAd_VhUserApiResourceId"
+        value: "<azure-secret:vh-user-api-identifieruris>"
+      - name: "ConnectionStrings:RedisCache"
+        value: "<azure-secret:redis-connection-str>"
+      - name: "DefaultPassword"
+        value: "<azure-secret:defaultpassword"
+      - name: "DiagnosticServices_EXTENSION_VERSION" 
+        value: "disabled"
+      - name: "InstrumentationEngine_EXTENSION_VERSION"
+        value: "disabled"
+      - name: "IsLive"
+        value: "False"
+      - name: "MSDEPLOY_RENAME_LOCKED_FILES" 
+        value: "1"
+      - name: "ReformEmail"
+        value: "hearings.reform.hmcts.net"
+      - name: "SnapshotDebugger_EXTENSION_VERSION"
+        value: "disabled"
+      - name: "TestDefaultPassword"
+        value: "<azure-secret:testdefaultpassword>"
+      - name: "Testing:ExistingEmail"
+        value: "UserApiTestUser@a.com"
+      - name: "Testing:ExistingGroups:0:Displayname"
+        value: "External"
+      - name: "Testing:ExistingGroups:0:GroupId"
+        value: "121fa058-1796-4531-a9ee-63be1d4dc630"
+      - name: "Testing:ExistingGroups:1:Displayname"
+        value: "UserApiTestGroup"
+      - name: "Testing:ExistingGroups:1:GroupId"
+        value: "371ac75b-22b1-48d8-a3d8-f0587604d01f"
+      - name: "Testing:ExistingUserDisplayname"
+        value: "User Api Test User"
+      - name: "Testing:ExistingUserFirstname" 
+        value: "User"
+      - name: "Testing:ExistingUserId" 
+        value: "948cb183-00cf-4251-8b13-6c39a1b0c25d"
+      - name: "Testing:ExistingUserLastname"
+        value: "Api"
+      - name: "Testing:ExistingUserPrincipal"
+        value: "UserApiTestUser@hearings.reform.hmcts.net"
+      - name: "Testing:NewGroups:0:Displayname" 
+        value: "NewUserApiTestGroup"
+      - name: "Testing:NewGroups:0:GroupId"
+        value: "7d62cf17-c548-4a69-8f8f-4bc7fee90fbe"
+      - name: "VhServices:UserApiResourceId"
+        value: "https://vh-user-api-dev.azurewebsites.net"
+      - name: "VhServices:UserApiUrl" 
+        value: "https://vh-user-api-dev-staging.azurewebsites.net/"
+      - name: "XDT_MicrosoftApplicationInsights_BaseExtensions"
+        value: "disabled"
+      - name: "XDT_MicrosoftApplicationInsights_Mode"
+        value: "default"
+      - name: "ZapConfiguration:BuildConfigMode"
+        value: "Release"
 
