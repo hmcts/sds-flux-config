@@ -1,0 +1,42 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mi-house-keeping-service
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:ithc-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:ithc-*
+spec:
+  releaseName: mi-house-keeping-service-job
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-house-keeping-service
+    ref: master
+  values:
+    job:
+      image: ssprivateithc.azurecr.io/mi-house-keeping-service:ithc-e9b803e
+      suspend: false
+      kind: CronJob
+      schedule: '45 * * * *'
+      activeDeadlineSeconds: 82800 #23 hours
+      labels:
+        app.kubernetes.io/instance: mi-house-keeping-service
+        app.kubernetes.io/name: mi-house-keeping-service
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
+        MI_CLIENT_ID: baf8db11-a87e-4212-8c85-d72622dc26c9
+      smoketests:
+        image: ssprivateithc.azurecr.io/mi-house-keeping-service:ithc-e9b803e
+        enabled: true
+      testsConfig:
+        environment:
+          APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
+          MI_CLIENT_ID: baf8db11-a87e-4212-8c85-d72622dc26c9
+    global:
+      subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "ithc"
