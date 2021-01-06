@@ -5,6 +5,11 @@ metadata:
   name: {{ include "vh-user-api.fullname" . }}
   labels:
     {{- include "vh-user-api.labels" . | nindent 4 }}
+    app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
+    app: {{ include "vh-user-api.name" . }}
+    helm.sh/chart: {{ include "vh-user-api.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicas }}
   selector:
