@@ -15,10 +15,14 @@ spec:
   selector:
     matchLabels:
       {{- include "vh-user-api.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
        {{- include "vh-user-api.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
