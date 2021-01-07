@@ -1,0 +1,21 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: azure-devops-agent
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: azure-devops-agent
+  values:
+    aadIdentity:
+      resourceId: /subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-stg-mi
+      clientId: fa0102b9-d3d3-4134-ad45-85a529ce9a9e
+    azureDevOps:
+      pool: hmcts-ss-stg
+    keyVaults:
+    - name: dtssharedservicesstgkv
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      secrets:
+      - azure-devops-agent-token    

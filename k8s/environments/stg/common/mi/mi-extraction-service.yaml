@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-extraction-service:stg-99b02a9
+      image: ssprivatestg.azurecr.io/mi-extraction-service:stg-9b2a5d9
       suspend: false
       kind: CronJob
       schedule: '40 0 * * *'
@@ -35,15 +35,15 @@ spec:
           - sftp-remote-user
           - sftp-remote-password
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
-        MI_CLIENT_ID: "88d54b96-2be6-4fb5-b966-7d98111152d8"
+        APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
+        MI_CLIENT_ID: 6844ae4d-1934-4eaa-9fe7-ca50cb32e1bd
         SFTP_ENABLED: false
         SFTP_FORCECHECK: true
         SFTP_REMOTE_HOST: 10.24.254.130
         SFTP_REMOTE_PORT: 22
         SFTP_REMOTE_FOLDER: files/mi-platform-export/
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-extraction-service:stg-99b02a9
+        image: ssprivatestg.azurecr.io/mi-extraction-service:stg-9b2a5d9
         enabled: true
       testsConfig:
         keyVaults:
@@ -55,8 +55,8 @@ spec:
             - sftp-remote-user
             - sftp-remote-password
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
-          MI_CLIENT_ID: "88d54b96-2be6-4fb5-b966-7d98111152d8"
+          APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
+          MI_CLIENT_ID: 6844ae4d-1934-4eaa-9fe7-ca50cb32e1bd
           SFTP_ENABLED: false
           SFTP_REMOTE_HOST: 10.24.254.130
           SFTP_REMOTE_PORT: 22

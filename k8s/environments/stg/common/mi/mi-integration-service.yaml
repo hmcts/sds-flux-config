@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-integration-service:stg-8448e55
+      image: ssprivatestg.azurecr.io/mi-integration-service:stg-0c90d42
       suspend: false
       kind: CronJob
       schedule: '15 0 * * *'
@@ -52,8 +52,8 @@ spec:
           - payment-bar-db-user
           - payment-bar-db-password
       environment:
-        MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
-        APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+        MI_CLIENT_ID: d9b95365-310e-475a-9ab9-0edadd7fd742
+        APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
         DATA_SOURCE_CCD: true
         DATA_SOURCE_NOTIFY: true
         DATA_SOURCE_EIGHTBYEIGHT: true
@@ -64,7 +64,7 @@ spec:
         GOV_UK_NOTIFY_ENABLED_PROBATE: true
         GOV_UK_NOTIFY_ENABLED_SSCS: true
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-integration-service:stg-8448e55
+        image: ssprivatestg.azurecr.io/mi-integration-service:stg-0c90d42
         enabled: true
       testsConfig:
         keyVaults:
@@ -93,8 +93,8 @@ spec:
             - payment-bar-db-user
             - payment-bar-db-password
         environment:
-          MI_CLIENT_ID: 18265856-b6ac-400d-92ef-ab0c7b7bf47b
-          APPINSIGHTS_INSTRUMENTATIONKEY: "482eb1b8-a656-41e6-b2e8-8351d7986b2c"
+          MI_CLIENT_ID: d9b95365-310e-475a-9ab9-0edadd7fd742
+          APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
           DATA_SOURCE_CCD: true
           DATA_SOURCE_NOTIFY: true
           DATA_SOURCE_EIGHTBYEIGHT: true

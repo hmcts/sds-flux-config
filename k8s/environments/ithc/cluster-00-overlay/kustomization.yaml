@@ -5,6 +5,7 @@ bases:
 - ../../../release/admin/traefik
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
+- ../../../namespaces/azure-devops
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -18,6 +19,9 @@ patchesStrategicMerge:
 
 #kured patch
 - ../../../release/admin/kured/patches/ithc/cluster-00/kured.yaml
+
+#azure-devops-agent patch
+- ../../../namespaces/azure-devops/azure-devops-agent/patches/ithc/cluster-00/azure-devops-agent.yaml
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/ithc/cluster-00/env-injector.yaml
