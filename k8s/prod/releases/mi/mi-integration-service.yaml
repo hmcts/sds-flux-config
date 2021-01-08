@@ -14,7 +14,7 @@ spec:
   releaseName: mi-integration-service
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/release/mi/mi-integration-service
+    path: k8s/charts/mi/mi-integration-service
     ref: master
   values:
     job:
