@@ -14,7 +14,7 @@ spec:
   releaseName: mi-staging-service
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/release/mi/mi-staging-service
+    path: k8s/charts/mi/mi-staging-service
     ref: master
   values:
     job:

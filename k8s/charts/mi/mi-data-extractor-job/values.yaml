@@ -1,16 +1,5 @@
 job:
   image: ssprivatesbox.azurecr.io/data-extractor:master
-  keyVaults:
-    "mi-vault":
-      excludeEnvironmentSuffix: false
-      resourceGroup: mi-{{ .Values.global.environment }}-rg
-      usepodidentity: false
-      secrets:
-        - ccdro-user
-        - ccdro-password
-        - ccdro-clone-user
-        - ccdro-clone-password
-        - appinsights-instrumentationkey
   memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job
@@ -21,6 +10,17 @@ job:
     app.kubernetes.io/instance : mi-data-extractor-job-001
     app.kubernetes.io/name: mi-data-extractor-job
   ttlSecondsAfterFinished: 20
+  keyVaults:
+    "mi-vault":
+      excludeEnvironmentSuffix: false
+      resourceGroup: mi-{{ .Values.global.environment }}-rg
+      usepodidentity: false
+      secrets:
+      - ccdro-user
+      - ccdro-password
+      - ccdro-clone-user
+      - ccdro-clone-password
+      - appinsights-instrumentationkey
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     ETL_MSICLIENTID: DUMMY

@@ -14,7 +14,7 @@ spec:
   releaseName: mi-house-keeping-service-job
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/release/mi/mi-house-keeping-service
+    path: k8s/charts/mi/mi-house-keeping-service
     ref: master
   values:
     job:
