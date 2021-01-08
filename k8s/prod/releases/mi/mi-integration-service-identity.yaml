@@ -5,8 +5,8 @@ metadata:
  namespace: mi
 spec:
  type: 0
- ResourceID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/mi-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-integration-service-prod-mi
- ClientID: 60146a49-7399-4b18-b36c-576671c8f9bc
+ resourceID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/mi-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-integration-service-prod-mi
+ clientID: 60146a49-7399-4b18-b36c-576671c8f9bc # Subject to change from IaC
 
 ---
 
@@ -16,5 +16,5 @@ metadata:
   name: mi-integration-service
   namespace: mi
 spec:
-  AzureIdentity: mi-integration-service
-  Selector: mi-integration-service
+  azureIdentity: mi-integration-service
+  selector: mi-integration-service
