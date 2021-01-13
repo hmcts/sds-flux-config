@@ -31,8 +31,6 @@ spec:
           resourceGroup: mi-{{ .Values.global.environment }}-rg
           secrets:
           - appinsights-instrumentationkey
-          - gov-uk-notify-api-key
-          - mailing-targets
           - sftp-remote-user
           - sftp-remote-password
           - encryption-publicKey
@@ -54,8 +52,6 @@ spec:
             resourceGroup: mi-{{ .Values.global.environment }}-rg
             secrets:
             - appinsights-instrumentationkey
-            - gov-uk-notify-api-key
-            - mailing-targets
             - sftp-remote-user
             - sftp-remote-password
             - encryption-publicKey
