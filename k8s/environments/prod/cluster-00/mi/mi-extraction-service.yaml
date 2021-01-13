@@ -36,7 +36,7 @@ spec:
           - sftp-remote-password
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
-        MI_CLIENT_ID: eacf45b7-55e2-4f84-802f-024b2c5b9ca8
+        MI_CLIENT_ID: e8a52cff-ef0c-4447-baf2-665c3480d0de
         SFTP_ENABLED: true
         SFTP_FORCECHECK: true
         SFTP_REMOTE_HOST: 10.24.254.130
@@ -56,7 +56,7 @@ spec:
             - sftp-remote-password
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
-          MI_CLIENT_ID: eacf45b7-55e2-4f84-802f-024b2c5b9ca8
+          MI_CLIENT_ID: e8a52cff-ef0c-4447-baf2-665c3480d0de
           SFTP_ENABLED: false
           SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
           SFTP_REMOTE_PORT: 22
