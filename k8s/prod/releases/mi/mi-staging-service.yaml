@@ -19,7 +19,7 @@ spec:
   values:
     job:
       image: ssprivateprod.azurecr.io/mi-staging-service:prod-d2ac116
-      suspend: false
+      suspend: true
       kind: CronJob
       schedule: '30 1 * * *'
       activeDeadlineSeconds: 82800 #23 hours

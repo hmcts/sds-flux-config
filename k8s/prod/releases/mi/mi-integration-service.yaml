@@ -19,7 +19,7 @@ spec:
   values:
     job:
       image: ssprivateprod.azurecr.io/mi-integration-service:prod-0c90d42
-      suspend: false
+      suspend: true
       kind: CronJob
       schedule: '15 1 * * *'
       activeDeadlineSeconds: 82800 #23 hours

@@ -19,7 +19,7 @@ spec:
   values:
     job:
       image: ssprivateprod.azurecr.io/mi-extraction-service:prod-9b2a5d9
-      suspend: false
+      suspend: true
       kind: CronJob
       schedule: '40 1 * * *'
       activeDeadlineSeconds: 82800 #23 hours
