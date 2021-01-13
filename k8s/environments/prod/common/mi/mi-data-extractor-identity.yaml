@@ -1,0 +1,20 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+ name: data-extractor-job
+ namespace: mi
+spec:
+ type: 0
+ ResourceID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/mi-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-data-extactor-prod-mi
+ ClientID: e4249368-cf12-4a81-8a56-cef2c4473769
+
+---
+
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: data-extractor-job
+  namespace: mi
+spec:
+  AzureIdentity: data-extractor-job
+  Selector: mi-data-extractor-job
