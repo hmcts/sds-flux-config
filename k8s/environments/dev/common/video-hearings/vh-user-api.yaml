@@ -27,7 +27,7 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik-dev
       paths:
-      - /
+        - /
       tls: []
       hosts:
         - 'vh-user-api.dev.platform.hmcts.net'
@@ -49,4 +49,5 @@ spec:
           - vh-user-api-identifieruris
           - vh-infra-core-AppInsightsKey
     env:
-      AdGroup:Administrator: VirtualRoomAdministrator
+      - name: AdGroup__Administrator
+        value: "VirtualRoomAdministrator"
