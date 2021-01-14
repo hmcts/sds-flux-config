@@ -51,9 +51,9 @@ spec:
             - name: "APPINSIGHTS_SNAPSHOTFEATURE_VERSION"
               value: {{ .Values.env.APPINSIGHTS_SNAPSHOTFEATURE_VERSION | quote }}
             - name: "ApplicationInsights_InstrumentationKey"
-              value: {{ .Values.env.ApplicationInsights_InstrumentationKey | quote }}
+              value: {{ .Values.env.ApplicationInsights_InstrumentationKey }}
             - name: "APPLICATIONINSIGHTS_CONNECTION_STRING"
-              value: {{ .Values.env.APPLICATIONINSIGHTS_CONNECTION_STRING | quote }}
+              value: {{ .Values.env.APPLICATIONINSIGHTS_CONNECTION_STRING }}
             - name: "ApplicationInsightsAgent_EXTENSION_VERSION"
               value: {{ .Values.env.ApplicationInsightsAgent_EXTENSION_VERSION | quote }}
             - name: "AzureAd__ClientSecret"
