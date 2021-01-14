@@ -60,11 +60,11 @@ spec:
       ApplicationInsights_InstrumentationKey: "<azure-secret:vh-infra-core-AppInsightsKey>"
       APPLICATIONINSIGHTS_CONNECTION_STRING: "InstrumentationKey=<azure-secret:vh-infra-core-AppInsightsKey>"
       ApplicationInsightsAgent_EXTENSION_VERSION: "~2"
-      AzureAd_ClientSecret: "<azure-secret:vh-user-api-key>"
-      AzureAd_ClientId: "<azure-secret:vh-user-api-appid>"
-      AzureAd_TenantId: "<azure-secret:TenantId>"
-      AzureAd_VhUserApiResourceId: "<azure-secret:vh-user-api-identifieruris>"
-      ConnectionStrings__RedisCache: "<azure-secret:redis-connection-str>"
+      AzureAd__ClientSecret: <azure-secret:vh-user-api-key>
+      AzureAd__ClientId: <azure-secret:vh-user-api-appid>
+      AzureAd__TenantId: <azure-secret:TenantId>
+      AzureAd__VhUserApiResourceId: <azure-secret:vh-user-api-identifieruris>
+      ConnectionStrings__RedisCache: <azure-secret:redis-connection-str>
       DefaultPassword: <azure-secret:defaultpassword>
       DiagnosticServices_EXTENSION_VERSION: "disabled"
       DisableHttpsRedirection: "true"

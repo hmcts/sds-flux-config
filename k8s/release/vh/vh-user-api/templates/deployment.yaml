@@ -57,15 +57,15 @@ spec:
             - name: "ApplicationInsightsAgent_EXTENSION_VERSION"
               value: {{ .Values.env.ApplicationInsightsAgent_EXTENSION_VERSION | quote }}
             - name: "AzureAd__ClientSecret"
-              value: {{ .Values.env.AzureAd_ClientSecret | quote }}
+              value: {{ .Values.env.AzureAd_ClientSecret }}
             - name: "AzureAd__ClientId"
-              value: {{ .Values.env.AzureAd__ClientId | quote }}
+              value: {{ .Values.env.AzureAd__ClientId }}
             - name: "AzureAd__TenantId"
-              value: {{ .Values.env.AzureAd__TenantId | quote }}
-            - name: "AzureAd_VhUserApiResourceId"
-              value: {{ .Values.env.AzureAd_VhUserApiResourceId | quote }}
+              value: {{ .Values.env.AzureAd__TenantId }}
+            - name: "AzureAd__VhUserApiResourceId"
+              value: {{ .Values.env.AzureAd_VhUserApiResourceId }}
             - name: "ConnectionStrings__RedisCache"
-              value: {{ .Values.env.ConnectionStrings__RedisCache | quote }}
+              value: {{ .Values.env.ConnectionStrings__RedisCache }}
             - name: "DefaultPassword"
               value: {{ .Values.env.DefaultPassword }}
             - name: DiagnosticServices_EXTENSION_VERSION
@@ -93,7 +93,7 @@ spec:
             - name: "Testing__ExistingGroups__1__Displayname"
               value: {{ .Values.env.Testing__ExistingGroups__1__Displayname | quote }}
             - name: "Testing__ExistingGroups__1__GroupId"
-              value: {{ .Values.env.Testing_ExistingGroups__1__GroupId | quote }}
+              value: {{ .Values.env.Testing__ExistingGroups__1__GroupId | quote }}
             - name: "Testing__ExistingUserDisplayname"
               value: {{ .Values.env.Testing__ExistingUserDisplayname | quote }}
             - name: "Testing__ExistingUserFirstname"
