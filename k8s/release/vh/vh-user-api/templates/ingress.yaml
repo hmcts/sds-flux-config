@@ -8,7 +8,6 @@ kind: Ingress
 metadata:
   name: {{$fullName}}
   labels:
-<<<<<<< HEAD
   {{- include "vh-user-api.labels" . | nindent 4 }}
     app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
     app: {{ include "vh-user-api.name" . }}
