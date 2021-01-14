@@ -51,23 +51,23 @@ spec:
             - name: "APPINSIGHTS_SNAPSHOTFEATURE_VERSION"
               value: {{ .Values.env.APPINSIGHTS_SNAPSHOTFEATURE_VERSION | quote }}
             - name: "ApplicationInsights_InstrumentationKey"
-              value: {{ .Values.env.ApplicationInsights_InstrumentationKey }}
+              value: {{ .Values.env.ApplicationInsights_InstrumentationKey | quote }}
             - name: "APPLICATIONINSIGHTS_CONNECTION_STRING"
-              value: {{ .Values.env.APPLICATIONINSIGHTS_CONNECTION_STRING }}
+              value: {{ .Values.env.APPLICATIONINSIGHTS_CONNECTION_STRING | quote }}
             - name: "ApplicationInsightsAgent_EXTENSION_VERSION"
               value: {{ .Values.env.ApplicationInsightsAgent_EXTENSION_VERSION | quote }}
             - name: "AzureAd__ClientSecret"
-              value: {{ .Values.env.AzureAd_ClientSecret }}
+              value: {{ .Values.env.AzureAd_ClientSecret | quote }}
             - name: "AzureAd__ClientId"
-              value: {{ .Values.env.AzureAd__ClientId }}
+              value: {{ .Values.env.AzureAd__ClientId | quote }}
             - name: "AzureAd__TenantId"
-              value: {{ .Values.env.AzureAd__TenantId }}
+              value: {{ .Values.env.AzureAd__TenantId | quote }}
             - name: "AzureAd__VhUserApiResourceId"
-              value: {{ .Values.env.AzureAd_VhUserApiResourceId }}
+              value: {{ .Values.env.AzureAd_VhUserApiResourceId | quote }}
             - name: "ConnectionStrings__RedisCache"
-              value: {{ .Values.env.ConnectionStrings__RedisCache }}
+              value: {{ .Values.env.ConnectionStrings__RedisCache | quote }}
             - name: "DefaultPassword"
-              value: {{ .Values.env.DefaultPassword }}
+              value: {{ .Values.env.DefaultPassword | quote }}
             - name: DiagnosticServices_EXTENSION_VERSION
               value: {{ .Values.env.DiagnosticServices_EXTENSION_VERSION | quote }}
             - name: "DisableHttpsRedirection"
