@@ -35,7 +35,7 @@ spec:
             {{- end}}
           env:
             - name: "AdGroup__Administrator"
-              value: {{ .Values.env.AdGroupAdministrator | quote }}
+              value: {{ .Values.env.AdGroup__Administrator | quote }}
           ports:
             - name: http
               containerPort: 80
