@@ -49,4 +49,5 @@ spec:
           - vh-user-api-identifieruris
           - vh-infra-core-AppInsightsKey
     env:
-      AdGroup:Administrator: VirtualRoomAdministrator
+      - name: AdGroup__Administrator 
+        value: "VirtualRoomAdministrator"
