@@ -4,9 +4,10 @@ bases:
 - ../../../release/admin/kube-slack
 - ../../../release/admin/traefik
 - ../../../release/admin/kured
-- ../../../release/admin/keyvault-flexvol
 - ../../../release/admin/secrets-csi-driver
 - ../../../namespaces/azure-devops
+- ../../../namespaces/admin/aad-pod-identity
+- ../../../namespaces/kube-system/aad-pod-identity
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
