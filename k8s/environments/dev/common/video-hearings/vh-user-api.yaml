@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     replicas: 2
-    image: 
+    image:
       repository: sdshmctspublic.azurecr.io/vh/vh-user-api
       tag: "v0.1"
       pullPolicy: Always
@@ -27,27 +27,27 @@ spec:
       annotations:
         kubernetes.io/ingress.class: traefik-dev
       paths:
-      - /
+        - /
       tls: []
       hosts:
-      - 'vh-user-api.dev.platform.hmcts.net'
+        - 'vh-user-api.dev.platform.hmcts.net'
 
     readinessProbe:
       enabled: false
     livenessProbe:
       enabled: false
     keyvaults:
-    - name: vhinfracorehtdev
-      resourcegroup: vh-infra-core-dev
-      subscriptionid: 867a878b-cb68-4de5-9741-361ac9e178b6
-      tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
-      secretref: kvcreds
-      secrets:
-      - TenantId
-      - vh-user-api-key
-      - vh-user-api-appid
-      - vh-user-api-identifieruris
-      - vh-infra-core-AppInsightsKey
+      - name: vhinfracorehtdev
+        resourcegroup: vh-infra-core-dev
+        subscriptionid: 867a878b-cb68-4de5-9741-361ac9e178b6
+        tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
+        secretref: kvcreds
+        secrets:
+          - TenantId
+          - vh-user-api-key
+          - vh-user-api-appid
+          - vh-user-api-identifieruris
+          - vh-infra-core-AppInsightsKey
     env:
       - name: "AdGroup__Administrator"
         value: "VirtualRoomAdministrator"
@@ -133,4 +133,3 @@ spec:
         value: "default"
       - name: "ZapConfiguration:BuildConfigMode"
         value: "Release"
-
