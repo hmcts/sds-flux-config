@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatetest.azurecr.io/mi-extraction-service:pr-132-16a33ce
+      image: ssprivatetest.azurecr.io/mi-extraction-service:pr-134-438620b
       suspend: false
       kind: CronJob
       schedule: '40 1 * * *'
@@ -45,7 +45,7 @@ spec:
         SFTP_REMOTE_FOLDER: files/mi-platform-export/
         SFTP_FILE_ENCRYPTION_ENABLED: true
       smoketests:
-        image: ssprivatetest.azurecr.io/mi-extraction-service:pr-132-16a33ce
+        image: ssprivatetest.azurecr.io/mi-extraction-service:pr-134-438620b
         enabled: true
       testsConfig:
         keyVaults:
