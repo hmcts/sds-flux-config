@@ -34,10 +34,10 @@ spec:
                 {{toYaml .Values.volumeMounts | indent 10}}
             {{- end}}
           env:
-            {{- range .Values.env}}
-        - name: {{.name  | quote}}
-          value: {{.value | quote}}
-          {{- end}}
+            {{- range $key, $value := $.Values.env }}
+        - name: {{ $key | quote }}
+          value: {{ $value | quote }}
+            {{- end }}
           ports:
             - name: http
               containerPort: 80
