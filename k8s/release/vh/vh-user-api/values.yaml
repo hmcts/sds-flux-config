@@ -19,6 +19,8 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: traefik
 
+env:
+  AdGroup__Administrator:
 
   paths: []
   hosts:
