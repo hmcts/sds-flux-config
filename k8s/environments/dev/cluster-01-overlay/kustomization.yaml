@@ -6,6 +6,8 @@ bases:
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
 - ../../../namespaces/azure-devops
+- ../../../namespaces/admin/aad-pod-identity
+- ../../../namespaces/kube-system/aad-pod-identity
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 

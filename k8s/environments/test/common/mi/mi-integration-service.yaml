@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatetest.azurecr.io/mi-integration-service:pr-150-b8ee03e
+      image: ssprivatetest.azurecr.io/mi-integration-service:pr-160-2e3d9b6
       suspend: false
       kind: CronJob
       schedule: '15 1 * * *'
@@ -61,9 +61,9 @@ spec:
         GOV_UK_NOTIFY_ENABLED_IDAM: true
         GOV_UK_NOTIFY_ENABLED_PROBATE: true
         GOV_UK_NOTIFY_ENABLED_SSCS: true
-        MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
+        MI_CLIENT_ID: 4b4479ac-2998-4353-b202-675df08389f5
       smoketests:
-        image: ssprivatetest.azurecr.io/mi-integration-service:pr-150-b8ee03e
+        image: ssprivatetest.azurecr.io/mi-integration-service:pr-160-2e3d9b6
         enabled: true
       testsConfig:
         keyVaults:
@@ -101,7 +101,7 @@ spec:
           GOV_UK_NOTIFY_ENABLED_IDAM: true
           GOV_UK_NOTIFY_ENABLED_PROBATE: true
           GOV_UK_NOTIFY_ENABLED_SSCS: true
-          MI_CLIENT_ID: 3fafeddd-d882-42b6-806c-00a7f6eccaca
+          MI_CLIENT_ID: 4b4479ac-2998-4353-b202-675df08389f5
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

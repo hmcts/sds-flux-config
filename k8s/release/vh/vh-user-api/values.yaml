@@ -18,15 +18,20 @@ service:
   type: ClusterIP
   port: 80
 
+volumeMounts:
+- name: azureshare
+  mountPath: /opt/app/data/
+  readOnly: false
+
 ingress:
   enabled: false
   annotations: 
-     kubernetes.io/ingress.class: traefik-dev
+     kubernetes.io/ingress.class: traefik
 
   paths: []
   hosts:
     - host: 'vh-user-api.dev.platform.hmcts.net'
-      # paths: []
+    
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
