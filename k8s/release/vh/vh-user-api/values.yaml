@@ -8,7 +8,7 @@ image:
   repository: sdshmctspublic.azurecr.io/vh/vh-user-api
   pullPolicy: Always
   # Overrides the image tag whose default is the chart version.
-  tag: "v0.1"
+  tag: "v0.2"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -18,19 +18,14 @@ service:
   type: ClusterIP
   port: 80
 
-volumeMounts:
-- name: azureshare
-  mountPath: /opt/app/data/
-  readOnly: false
-
 ingress:
   enabled: false
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  annotations: 
+     kubernetes.io/ingress.class: traefik-dev
+
   paths: []
   hosts:
-    - host: 'vh-user-api-dev.hearings.reform.hmcts.net'
+    - host: 'vh-user-api.dev.platform.hmcts.net'
       # paths: []
   tls: []
   #  - secretName: chart-example-tls

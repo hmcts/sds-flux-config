@@ -34,7 +34,7 @@ spec:
             {{- end }}
           env:          
               {{- range .Values.env }}
-            - name: {{ .name  }}
+            - name: {{ .name  | quote }}
               value: {{ .value | quote }}
           {{- end }}
           ports:
@@ -43,11 +43,11 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
+              path: /HealthCheck/health
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /HealthCheck/health
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
