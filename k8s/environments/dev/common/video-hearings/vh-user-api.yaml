@@ -68,7 +68,7 @@ spec:
       AzureAd__TenantId: <azure-secret:TenantId>
       AzureAd__VhUserApiResourceId: <azure-secret:vh-user-api-identifieruris>
       ConnectionStrings__RedisCache: "<azure-secret:redis-connection-str>"
-      DefaultPassword: "<azure-secret:defaultpassword>""
+      DefaultPassword: "<azure-secret:defaultpassword>"
       DiagnosticServices_EXTENSION_VERSION: "disabled"
       DisableHttpsRedirection: "true"
       InstrumentationEngine_EXTENSION_VERSION: "disabled"
