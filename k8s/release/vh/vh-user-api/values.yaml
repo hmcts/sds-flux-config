@@ -19,53 +19,6 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: traefik
 
-env:
-  AdGroup__Administrator:
-  AdGroup__CaseType:
-  AdGroup__External:
-  AdGroup__Judge:
-  AdGroup__JudgesTestGroup:
-  AdGroup__ProfessionalUser:
-  APPINSIGHTS_PROFILERFEATURE_VERSION:
-  APPINSIGHTS_SNAPSHOTFEATURE_VERSION:
-  ApplicationInsights_InstrumentationKey:
-  APPLICATIONINSIGHTS_CONNECTION_STRING:
-  ApplicationInsightsAgent_EXTENSION_VERSION:
-  AzureAd_ClientSecret:
-  AzureAd_ClientId:
-  AzureAd_TenantId:
-  AzureAd_VhUserApiResourceId:
-  ConnectionStrings:RedisCache:
-  DefaultPassword:
-  iagnosticServices_EXTENSION_VERSION:
-  DisableHttpsRedirection:
-  InstrumentationEngine_EXTENSION_VERSION:
-  IsLive:
-  MSDEPLOY_RENAME_LOCKED_FILES:
-  ReformEmail:
-  SnapshotDebugger_EXTENSION_VERSION:
-  TestDefaultPassword:
-  Testing_ExistingEmail:
-  Testing_ExistingGroups_0_Displayname:
-  Testing_ExistingGroups_0_GroupId:
-  Testing_ExistingGroups_1_Displayname:
-  Testing_ExistingUserDisplayname:
-  Testing_ExistingUserFirstname:
-  Testing_ExistingUserId:
-  Testing_ExistingUserLastname:
-  Testing:ExistingUserPrincipal:
-  Testing__NewGroups__0__Displayname:
-  Testing__NewGroups__0__GroupId:
-  VhServices__UserApiResourceId:
-  VhServices__UserApiUrl:
-  XDT_MicrosoftApplicationInsights_BaseExtensions:
-  XDT_MicrosoftApplicationInsights_Mode:
-  ZapConfiguration:BuildConfigMode:
-
-
-
-
-
   paths: []
   hosts:
     - host: 'vh-user-api.dev.platform.hmcts.net'
