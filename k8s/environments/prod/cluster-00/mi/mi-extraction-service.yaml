@@ -7,9 +7,9 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:stg-*
+    filter.fluxcd.io/job: glob:prod-*
     repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:stg-*
+    filter.fluxcd.io/smoke: glob:prod-*
 spec:
   releaseName: mi-extraction-service
   chart:
@@ -18,10 +18,10 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivatestg.azurecr.io/mi-extraction-service:stg-9b2a5d9
+      image: ssprivateprod.azurecr.io/mi-extraction-service:prod-9b2a5d9
       suspend: false
       kind: CronJob
-      schedule: '40 0 * * *'
+      schedule: '0 3 * * *'
       activeDeadlineSeconds: 82800 #23 hours
       labels:
         app.kubernetes.io/instance: mi-extraction-service
@@ -36,15 +36,15 @@ spec:
           - sftp-remote-password
           - encryption-publicKey
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
-        MI_CLIENT_ID: 6844ae4d-1934-4eaa-9fe7-ca50cb32e1bd
+        APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+        MI_CLIENT_ID: e8a52cff-ef0c-4447-baf2-665c3480d0de
         SFTP_ENABLED: false
         SFTP_FORCECHECK: true
         SFTP_REMOTE_HOST: 10.24.254.130
         SFTP_REMOTE_PORT: 22
         SFTP_REMOTE_FOLDER: files/mi-platform-export/
       smoketests:
-        image: ssprivatestg.azurecr.io/mi-extraction-service:stg-9b2a5d9
+        image: ssprivateprod.azurecr.io/mi-extraction-service:prod-9b2a5d9
         enabled: true
       testsConfig:
         keyVaults:
@@ -57,16 +57,15 @@ spec:
             - sftp-remote-password
             - encryption-publicKey
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
-          MI_CLIENT_ID: 6844ae4d-1934-4eaa-9fe7-ca50cb32e1bd
+          APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+          MI_CLIENT_ID: e8a52cff-ef0c-4447-baf2-665c3480d0de
           SFTP_ENABLED: false
-          SFTP_REMOTE_HOST: 10.24.254.130
+          SFTP_REMOTE_HOST: staging.hmcts.cloudgateway.co.uk
           SFTP_REMOTE_PORT: 22
           SFTP_REMOTE_FOLDER: files/mi-platform-export/
           SFTP_FORCECHECK: true
           DUMMY: false
-
     global:
-      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+      subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      environment: "stg"
+      environment: "prod"
