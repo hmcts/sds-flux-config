@@ -35,7 +35,7 @@ spec:
             {{- end}}
           env:
             {{- range .Values.env}}
-        - name: {{.name }}
+        - name: {{.name}}
           value: {{.value | quote}}
           {{- end}}
           ports:
