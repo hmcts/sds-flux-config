@@ -34,8 +34,8 @@ spec:
             {{- end }}
           env:          
               {{- range .Values.env }}
-            - name: {{ .name  | quote }}
-              value: {{ .value | quote }}
+              - name: {{ .name  | quote }}
+                value: {{ .value | quote }}
           {{- end }}
           ports:
             - name: http
