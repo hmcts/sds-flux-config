@@ -63,12 +63,12 @@ spec:
       ApplicationInsights_InstrumentationKey: "<azure-secret:vh-infra-core-AppInsightsKey>"
       APPLICATIONINSIGHTS_CONNECTION_STRING: "<InstrumentationKey=<azure-secret:vh-infra-core-AppInsightsKey>"
       ApplicationInsightsAgent_EXTENSION_VERSION: "~2"
-      AzureAd__ClientSecret: <azure-secret:vh-user-api-key>
-      AzureAd__ClientId: <azure-secret:vh-user-api-appid>
-      AzureAd__TenantId: <azure-secret:TenantId>
-      AzureAd__VhUserApiResourceId: <azure-secret:vh-user-api-identifieruris>
+      AzureAd__ClientSecret: "<azure-secret:vh-user-api-key>"
+      AzureAd__ClientId: "<azure-secret:vh-user-api-appid>"
+      AzureAd__TenantId: "<azure-secret:TenantId>"
+      AzureAd__VhUserApiResourceId: "<azure-secret:vh-user-api-identifieruris>"
       ConnectionStrings__RedisCache: "<azure-secret:redis-connection-str>"
-      DefaultPassword: <azure-secret:defaultpassword>
+      DefaultPassword: "<azure-secret:defaultpassword>"
       DiagnosticServices_EXTENSION_VERSION: "disabled"
       DisableHttpsRedirection: "true"
       InstrumentationEngine_EXTENSION_VERSION: "disabled"
@@ -76,7 +76,7 @@ spec:
       MSDEPLOY_RENAME_LOCKED_FILES: "1"
       ReformEmail: "hearings.reform.hmcts.net"
       SnapshotDebugger_EXTENSION_VERSION: "disabled"
-      TestDefaultPassword: <azure-secret:testdefaultpassword>
+      TestDefaultPassword: "<azure-secret:testdefaultpassword>"
       Testing__ExistingEmail: "UserApiTestUser@a.com"
       Testing__ExistingGroups__0__Displayname: "External"
       Testing__ExistingGroups__0__GroupId: "121fa058-1796-4531-a9ee-63be1d4dc630"
@@ -94,4 +94,3 @@ spec:
       XDT_MicrosoftApplicationInsights_BaseExtensions: "disabled"
       XDT_MicrosoftApplicationInsights_Mode: "default"
       ZapConfiguration__BuildConfigMode: "Release"
-      
