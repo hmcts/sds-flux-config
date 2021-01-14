@@ -34,9 +34,9 @@ spec:
             {{- end }}
           env:          
               {{- range .Values.env }}
-            - name: {{ .name  | quote }}
-              value: {{ .value | quote }}
-          {{- end }}
+              - name: {{ .name  | quote }}
+                value: {{ .value | quote }}
+              {{- end }}
           ports:
             - name: http
               containerPort: 80
