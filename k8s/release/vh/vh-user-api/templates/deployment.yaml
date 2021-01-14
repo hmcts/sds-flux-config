@@ -43,9 +43,9 @@ spec:
             - name: "AdGroup__Judge"
               value: {{ .Values.env.AdGroup__Judge | quote }}
             - name: "AdGroup__JudgesTestGroup"
-              value: {{ .Values.env.AdGroup__JudgesTestGroup | quote }}  
+              value: {{ .Values.env.AdGroup__JudgesTestGroup | quote }}
             - name: "AdGroup__ProfessionalUser"
-              value: {{ .Values.env.AdGroup__JudgesTestGroup | quote }}  
+              value: {{ .Values.env.AdGroup__JudgesTestGroup | quote }}
             - name: "APPINSIGHTS_PROFILERFEATURE_VERSION"
               value: {{ .Values.env.APPINSIGHTS_PROFILERFEATURE_VERSION | quote }}
             - name: "APPINSIGHTS_SNAPSHOTFEATURE_VERSION"
@@ -103,27 +103,21 @@ spec:
             - name: "Testing__ExistingUserLastname"
               value: {{ .Values.env.Testing__ExistingUserLastname | quote }}
             - name: "Testing__ExistingUserPrincipal"
-            value: {{ .Values.env.Testing__ExistingUserPrincipal | quote }}
+              value: {{ .Values.env.Testing__ExistingUserPrincipal | quote }}
             - name: "Testing__NewGroups__0__Displayname"
-            value: {{ .Values.env.Testing__NewGroups__0__Displayname | quote }}
+              value: {{ .Values.env.Testing__NewGroups__0__Displayname | quote }}
             - name: "Testing__NewGroups__0__GroupId"
-            value: {{ .Values.env.Testing__NewGroups__0__GroupId | quote }}
+              value: {{ .Values.env.Testing__NewGroups__0__GroupId | quote }}
             - name: "VhServices__UserApiResourceId"
-            value: {{ .Values.env.VhServices__UserApiResourceId | quote }}
+              value: {{ .Values.env.VhServices__UserApiResourceId | quote }}
             - name: "VhServices__UserApiUrl"
-            value: {{ .Values.env.VhServices__UserApiUrl | quote }}
+              value: {{ .Values.env.VhServices__UserApiUrl | quote }}
             - name: "XDT_MicrosoftApplicationInsights_BaseExtensions"
-            value: {{ .Values.env.XDT_MicrosoftApplicationInsights_BaseExtensions | quote }}
+              value: {{ .Values.env.XDT_MicrosoftApplicationInsights_BaseExtensions | quote }}
             - name: "XDT_MicrosoftApplicationInsights_Mode"
-            value: {{ .Values.env.XDT_MicrosoftApplicationInsights_Mode | quote }}
+              value: {{ .Values.env.XDT_MicrosoftApplicationInsights_Mode | quote }}
             - name: "ZapConfiguration__BuildConfigMode"
-            value: {{ .Values.env.ZapConfiguration__BuildConfigMode | quote }}
-
-
-
-
-
-
+              value: {{ .Values.env.ZapConfiguration__BuildConfigMode | quote }}
           ports:
             - name: http
               containerPort: 80
