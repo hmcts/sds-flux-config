@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{include "vh-user-api.fullname" .}}
+  name: {{ include "vh-user-api.fullname" .}}
   labels:
   {{- include "vh-user-api.labels" . | nindent 4}}
     app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
