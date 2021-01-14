@@ -4,16 +4,12 @@
 {{- $svcPort := .Values.service.port -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
 apiVersion: extensions/v1beta1
-
 kind: Ingress
 metadata:
   name: {{$fullName}}
   labels:
 <<<<<<< HEAD
   {{- include "vh-user-api.labels" . | nindent 4 }}
-=======
-    {{- include "vh-user-api.labels" . | nindent 4 }}
->>>>>>> master
     app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
     app: {{ include "vh-user-api.name" . }}
     helm.sh/chart: {{ include "vh-user-api.chart" . }}
