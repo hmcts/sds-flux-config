@@ -48,6 +48,9 @@ spec:
           - vh-user-api-appid
           - vh-user-api-identifieruris
           - vh-infra-core-AppInsightsKey
+          - defaultpassword
+          - redis-connection-str
+          - testdefaultpassword
     env:
       AdGroup__Administrator: "VirtualRoomAdministrator"
       AdGroup__CaseType: "CaseType"
@@ -91,3 +94,4 @@ spec:
       XDT_MicrosoftApplicationInsights_BaseExtensions: "disabled"
       XDT_MicrosoftApplicationInsights_Mode: "default"
       ZapConfiguration__BuildConfigMode: "Release"
+      
