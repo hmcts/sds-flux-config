@@ -18,8 +18,8 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivateprod.azurecr.io/data-extractor-job:prod-c41c647
-      suspend: false
+      image: ssprivateprod.azurecr.io/data-extractor-job:prod-f86aea9
+      suspend: true
       kind: CronJob
       schedule: '15 0 * * *'
       memoryRequests: '2048Mi'
@@ -30,14 +30,14 @@ spec:
         app.kubernetes.io/instance: data-extractor-job
         app.kubernetes.io/name: data-extractor-job
       environment:
-        ETL_MSICLIENTID: e4249368-cf12-4a81-8a56-cef2c4473769
+        ETL_MSICLIENTID: 7fc8466f-2673-4c70-a6d0-5036f15b3e95
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
       smoketests:
-        image: ssprivateprod.azurecr.io/data-extractor-job:prod-c41c647
+        image: ssprivateprod.azurecr.io/data-extractor-job:prod-f86aea9
         enabled: true
       testsConfig:
         environment:
-          ETL_MSICLIENTID: e4249368-cf12-4a81-8a56-cef2c4473769
+          ETL_MSICLIENTID: 7fc8466f-2673-4c70-a6d0-5036f15b3e95
           APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
     global:
       subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
