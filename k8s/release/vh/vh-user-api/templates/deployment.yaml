@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "vh-user-api.fullname" .}}
+  name: {{include "vh-user-api.fullname" .}}
   labels:
   {{- include "vh-user-api.labels" . | nindent 4}}
     app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
@@ -34,10 +34,8 @@ spec:
                 {{toYaml .Values.volumeMounts | indent 10}}
             {{- end}}
           env:
-            {{- range .Values.env}}
-        - name: {{.name}}
-          value: {{.value | quote}}
-          {{- end}}
+            - name: AdGroup__Administrator
+              value: {{ .Values.env.AdGroup__Administrator | quote }}
           ports:
             - name: http
               containerPort: 80
