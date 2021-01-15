@@ -21,6 +21,7 @@ spec:
       image: ssprivateprod.azurecr.io/mi-integration-service:prod-0c90d42
       suspend: true
       kind: CronJob
+      schedule: '15 1 * * *'
       activeDeadlineSeconds: 82800 #23 hours
       labels:
         app.kubernetes.io/instance: mi-integration-service-historical-notify-job
