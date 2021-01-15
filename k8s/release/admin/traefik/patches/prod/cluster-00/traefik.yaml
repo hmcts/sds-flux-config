@@ -7,7 +7,7 @@ spec:
   values:
     loadBalancerIP: 10.144.15.250
     dashboard:
-      domain: traefik-ss-00.prod.platform.hmcts.net
+      domain: traefik-ss-00.platform.hmcts.net
     accessLogs:
       enabled: true
     autoscaling:
@@ -29,4 +29,3 @@ spec:
       podAnnotations:
         prometheus.io/port: "9100"
         prometheus.io/scrape: "true"
-
