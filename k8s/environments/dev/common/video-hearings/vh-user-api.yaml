@@ -31,7 +31,9 @@ spec:
       tls: []
       hosts:
         - 'vh-user-api.dev.platform.hmcts.net'
-
+    aadIdentityName: "aks-dev-mi"
+    aadResourceId: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-dev-mi
+    aadClientId: b86d64c4-ec90-451a-ab22-77cea15aeb68
     readinessProbe:
       enabled: false
     livenessProbe:
@@ -61,7 +63,7 @@ spec:
       APPINSIGHTS_PROFILERFEATURE_VERSION: "disabled"
       APPINSIGHTS_SNAPSHOTFEATURE_VERSION: "disabled"
       ApplicationInsights_InstrumentationKey: "<azure-secret:vh-infra-core-AppInsightsKey>"
-      APPLICATIONINSIGHTS_CONNECTION_STRING: "<InstrumentationKey=<azure-secret:vh-infra-core-AppInsightsKey>"
+      APPLICATIONINSIGHTS_CONNECTION_STRING: "InstrumentationKey=<azure-secret:vh-infra-core-AppInsightsKey>"
       ApplicationInsightsAgent_EXTENSION_VERSION: "~2"
       AzureAd__ClientSecret: "<azure-secret:vh-user-api-key>"
       AzureAd__ClientId: "<azure-secret:vh-user-api-appid>"
