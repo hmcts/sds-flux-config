@@ -26,7 +26,6 @@ spec:
         app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name}}
         aadpodidbinding: "vh-aad-identity"
-        {{- end }}
     spec:
       containers:
         - name: {{ .Chart.Name}}
