@@ -58,7 +58,7 @@ spec:
       AdGroup__ProfessionalUser: "VirtualRoomProfessionalUser"
       APPINSIGHTS_PROFILERFEATURE_VERSION: "disabled"
       APPINSIGHTS_SNAPSHOTFEATURE_VERSION: "disabled"
-      ApplicationInsights_InstrumentationKey: "<azure-secret:vh-infra-core-AppInsightsKey>"
+      ApplicationInsights_InstrumentationKey: <azure-secret:vh-infra-core-AppInsightsKey>
       APPLICATIONINSIGHTS_CONNECTION_STRING: "InstrumentationKey=<azure-secret:vh-infra-core-AppInsightsKey>"
       ApplicationInsightsAgent_EXTENSION_VERSION: "~2"
       AzureAd__ClientSecret: "<azure-secret:vh-user-api-key>"
