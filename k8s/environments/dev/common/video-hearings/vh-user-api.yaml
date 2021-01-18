@@ -31,7 +31,6 @@ spec:
       tls: []
       hosts:
         - 'vh-user-api.dev.platform.hmcts.net'
-    aadIdentityName: "vh-infra-core-dev-kvuser"
     readinessProbe:
       enabled: false
     livenessProbe:

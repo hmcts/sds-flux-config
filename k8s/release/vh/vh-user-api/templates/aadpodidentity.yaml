@@ -2,20 +2,20 @@
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
-  name: {{ .Values.aadIdentityName }}
-  namespace: vh
+ name: vh-aad-identity
+ namespace: vh
 spec:
-  type: 0
-  resourceID: {{ .Values.aadResourceId }}
-  clientID: {{ .Values.aadClientId }}
+ type: 0
+ resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/managed-identities-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-integration-service-sbox-mi
+ clientID: 9278a876-6f8a-489d-9053-01c996a7b6f6
 
 ---
 
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
-  name: {{ .Values.aadIdentityName }}-binding
+  name: vh-aad-identity
   namespace: vh
 spec:
-  azureIdentity: {{ .Values.aadIdentityName }}
-  selector: {{ .Values.aadIdentityName }}
+  azureIdentity: vh-aad-identity
+  selector: vh-aad-identity
