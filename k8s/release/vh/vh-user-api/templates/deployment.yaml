@@ -11,8 +11,7 @@ metadata:
     helm.sh/chart: {{ include "vh-user-api.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name}}
     app.kubernetes.io/managed-by: {{ .Release.Service}}
-    {{- if .Values.aadIdentityName }}
-    aadpodidbinding: {{ .Values.aadIdentityName }}
+    aadpodidbinding: "vh-aad-identity"
     {{- end }}
 spec:
   replicas: {{ .Values.replicas}}
@@ -27,11 +26,9 @@ spec:
        {{- include "vh-user-api.selectorLabels" . | nindent 8}}
         app.kubernetes.io/name: {{ include "vh-user-api.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name}}
-        {{- if .Values.aadIdentityName }}
-        aadpodidbinding: {{ .Values.aadIdentityName }}
+        aadpodidbinding: "vh-aad-identity"
         {{- end }}
     spec:
-      {{- $aadIdentityName := .Values.aadIdentityName }}
       containers:
         - name: {{ .Chart.Name}}
           image: "{{ $imagerepo }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
