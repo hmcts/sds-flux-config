@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: ssprivateprod.azurecr.io/mi-integration-service:prod-0c90d42
+      image: ssprivateprod.azurecr.io/mi-integration-service:prod-51aa146
       suspend: true
       kind: CronJob
       schedule: '15 1 * * *'
@@ -65,7 +65,7 @@ spec:
         GOV_UK_NOTIFY_ENABLED_SSCS: true
         MI_VALIDATE_ALL_LANDING_BLOBS: true
       smoketests:
-        image: ssprivateprod.azurecr.io/mi-integration-service:prod-0c90d42
+        image: ssprivateprod.azurecr.io/mi-integration-service:prod-51aa146
         enabled: true
       testsConfig:
         keyVaults:
