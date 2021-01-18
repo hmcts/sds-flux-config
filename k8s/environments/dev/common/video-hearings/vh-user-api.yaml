@@ -39,20 +39,19 @@ spec:
     livenessProbe:
       enabled: false
     keyvaults:
-    - name: vhinfracorehtdev
-      resourcegroup: vh-infra-core-dev
-      subscriptionid: 867a878b-cb68-4de5-9741-361ac9e178b6
-      tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
-      secretref: kvcreds
-      secrets:
-        - TenantId
-        - vh-user-api-key
-        - vh-user-api-appid
-        - vh-user-api-identifieruris
-        - vh-infra-core-AppInsightsKey
-        - defaultpassword
-        - redis-connection-str
-        - testdefaultpassword
+      - name: vhinfracorehtdev
+        resourcegroup: vh-infra-core-dev
+        subscriptionid: 867a878b-cb68-4de5-9741-361ac9e178b6
+        tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
+        secrets:
+          - TenantId
+          - vh-user-api-key
+          - vh-user-api-appid
+          - vh-user-api-identifieruris
+          - vh-infra-core-AppInsightsKey
+          - defaultpassword
+          - redis-connection-str
+          - testdefaultpassword
     env:
       AdGroup__Administrator: "VirtualRoomAdministrator"
       AdGroup__CaseType: "CaseType"
