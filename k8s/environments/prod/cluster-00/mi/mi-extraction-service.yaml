@@ -40,9 +40,10 @@ spec:
         MI_CLIENT_ID: e8a52cff-ef0c-4447-baf2-665c3480d0de
         SFTP_ENABLED: true
         SFTP_FORCECHECK: true
+        SFTP_FILE_ENCRYPTION_ENABLED: true
         SFTP_REMOTE_HOST: 10.24.254.130
         SFTP_REMOTE_PORT: 22
-        SFTP_REMOTE_FOLDER: files/mi-platform-export/
+        SFTP_REMOTE_FOLDER: /files/mi-platform-export/
       smoketests:
         image: ssprivateprod.azurecr.io/mi-extraction-service:prod-9b2a5d9
         enabled: true
@@ -62,7 +63,7 @@ spec:
           SFTP_ENABLED: false
           SFTP_REMOTE_HOST: 10.24.254.130
           SFTP_REMOTE_PORT: 22
-          SFTP_REMOTE_FOLDER: files/mi-platform-export/
+          SFTP_REMOTE_FOLDER: /files/mi-platform-export/
           SFTP_FORCECHECK: true
     global:
       subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
