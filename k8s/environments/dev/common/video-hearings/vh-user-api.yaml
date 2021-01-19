@@ -14,3 +14,5 @@ spec:
       replicas: 2
       useInterpodAntiAffinity: true
       image: sdshmctspublic.azurecr.io/vh/vh-user-api:latest
+global:
+  environment: "dev"
