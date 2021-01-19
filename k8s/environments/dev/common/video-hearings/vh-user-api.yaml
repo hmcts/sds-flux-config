@@ -16,3 +16,4 @@ spec:
       image: sdshmctspublic.azurecr.io/vh/vh-user-api:latest
     global:
       environment: "dev"
+      enableKeyVaults: true
