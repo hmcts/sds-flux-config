@@ -8,7 +8,7 @@ spec:
   chart:
     git: git@github.com:hmcts/vh-user-api
     path: charts/vh-user-api
-    ref: master
+    ref: helm_chart_setup
   values:
     java:
       replicas: 2
