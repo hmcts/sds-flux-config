@@ -3,3 +3,4 @@ version: 1
 patchUpdated:
   generators:
     - command: kustomize build --load_restrictor none .
+  patchFile: flux-patch.yaml
