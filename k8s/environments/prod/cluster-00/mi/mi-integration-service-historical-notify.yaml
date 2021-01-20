@@ -41,7 +41,7 @@ spec:
         DATA_SOURCE_EIGHTBYEIGHT: false
         DATA_SOURCE_PAYMENT: false
         DATA_SOURCE_HISTORICAL_NOTIFY: true
-        HISTORICAL_NOTIFY_CONTAINER: notify
+        HISTORICAL_NOTIFY_CONTAINER: historical-notify
       smoketests:
         image: ssprivateprod.azurecr.io/mi-integration-service:prod-0c90d42
         enabled: true
