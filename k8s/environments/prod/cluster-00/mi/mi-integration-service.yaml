@@ -55,15 +55,16 @@ spec:
         MI_CLIENT_ID: ee31a18f-45e9-41db-881d-5976695188fb
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
         DATA_SOURCE_CCD: true
-        DATA_SOURCE_NOTIFY: false
-        DATA_SOURCE_EIGHTBYEIGHT: false
-        DATA_SOURCE_PAYMENT: false
-        GOV_UK_NOTIFY_ENABLED_CMC: false
-        GOV_UK_NOTIFY_ENABLED_DIVORCE: false
-        GOV_UK_NOTIFY_ENABLED_IDAM: false
-        GOV_UK_NOTIFY_ENABLED_PROBATE: false
-        GOV_UK_NOTIFY_ENABLED_SSCS: false
+        DATA_SOURCE_NOTIFY: true
+        DATA_SOURCE_EIGHTBYEIGHT: true
+        DATA_SOURCE_PAYMENT: true
+        GOV_UK_NOTIFY_ENABLED_CMC: true
+        GOV_UK_NOTIFY_ENABLED_DIVORCE: true
+        GOV_UK_NOTIFY_ENABLED_IDAM: true
+        GOV_UK_NOTIFY_ENABLED_PROBATE: true
+        GOV_UK_NOTIFY_ENABLED_SSCS: true
         MI_VALIDATE_ALL_LANDING_BLOBS: true
+        MI_EIGHTBYEIGHT_EXTRACTION_FROM_DATE: 2021-01-19
       smoketests:
         image: ssprivateprod.azurecr.io/mi-integration-service:prod-51aa146
         enabled: true
