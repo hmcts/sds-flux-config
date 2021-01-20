@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: demo-helmrelease
+  name: dev-helmrelease
 spec:
   rollback:
     enable: true
