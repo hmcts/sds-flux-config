@@ -23,6 +23,10 @@ spec:
       kind: CronJob
       schedule: '30 2 * * *'
       activeDeadlineSeconds: 82800 #23 hours
+      memoryRequests: '2048Mi'
+      cpuRequests: '200m'
+      memoryLimits: '4096Mi'
+      cpuLimits: '2000m'
       labels:
         app.kubernetes.io/instance: mi-staging-service
         app.kubernetes.io/name: mi-staging-service
