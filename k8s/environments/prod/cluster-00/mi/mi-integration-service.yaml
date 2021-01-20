@@ -63,8 +63,6 @@ spec:
         GOV_UK_NOTIFY_ENABLED_IDAM: true
         GOV_UK_NOTIFY_ENABLED_PROBATE: true
         GOV_UK_NOTIFY_ENABLED_SSCS: true
-        MI_VALIDATE_ALL_LANDING_BLOBS: true
-        MI_EIGHTBYEIGHT_EXTRACTION_FROM_DATE: 2021-01-19
       smoketests:
         image: ssprivateprod.azurecr.io/mi-integration-service:prod-51aa146
         enabled: true
