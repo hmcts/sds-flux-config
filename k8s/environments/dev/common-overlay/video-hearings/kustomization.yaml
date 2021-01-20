@@ -1,12 +1,13 @@
+---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../../../../namespaces/toffee
+  - ../../../../namespaces/video-hearings
 
 patches:
-- target:
-    group: aadpodidentity.k8s.io
-    version: v1
-    kind: AzureIdentity
-    name: vh-aad-identity
-  path: aadpodidentity.yaml
+  - target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: vh-aad-identity
+    path: aadpodidentity.yaml
