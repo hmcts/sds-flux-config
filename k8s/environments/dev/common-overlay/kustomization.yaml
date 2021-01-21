@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
 - video-hearings
 patches:
-  - path: ../dev-helmrelease.yaml
-    target:
-      kind: HelmRelease
+- path: ../dev-helmrelease.yaml
+  target:
+    kind: HelmRelease
