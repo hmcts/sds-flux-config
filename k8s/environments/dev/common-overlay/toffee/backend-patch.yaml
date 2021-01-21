@@ -1,0 +1,12 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: toffee
+spec:
+  values:
+    java:
+      ingressHost: toffee-backend.dev.platform.hmcts.net
+    global:
+      environment: dev
