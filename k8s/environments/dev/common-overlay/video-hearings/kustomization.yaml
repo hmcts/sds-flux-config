@@ -3,3 +3,10 @@ kind: Kustomization
 resources:
 - ../../../../namespaces/video-hearings
 
+patches:
+- target:
+    group: aadpodidentity.k8s.io
+    version: v1
+    kind: AzureIdentity
+    name: toffee
+  path: azure-identity-patch.yaml
