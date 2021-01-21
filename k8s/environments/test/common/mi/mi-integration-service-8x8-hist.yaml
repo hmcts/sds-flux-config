@@ -20,7 +20,7 @@ spec:
     job:
       image: ssprivatetest.azurecr.io/mi-integration-service:pr-165-4291625
       kind: Job
-      activeDeadlineSeconds: 604800 // 7 days
+      activeDeadlineSeconds: 604800 # 7 days
       labels:
         app.kubernetes.io/instance: mi-integration-service-job-8x8-hist
         app.kubernetes.io/name: mi-integration-service-job-8x8-hist
