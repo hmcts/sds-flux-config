@@ -1,0 +1,51 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mi-integration-service-8x8-hist
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:prod-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:prod-*
+spec:
+  releaseName: mi-integration-service-8x8-hist
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-integration-service
+    ref: master
+  values:
+    job:
+      image: ssprivateprod.azurecr.io/mi-integration-service:prod-51aa146
+      kind: Job
+      activeDeadlineSeconds: 604800 #7 days
+      memoryRequests: '2048Mi'
+      cpuRequests: '200m'
+      memoryLimits: '4096Mi'
+      cpuLimits: '2000m'
+      labels:
+        app.kubernetes.io/instance: mi-integration-service-job-8x8-hist
+        app.kubernetes.io/name: mi-integration-service-job-8x8-hist
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+          - appinsights-instrumentationkey
+          - eightbyeight-api-user
+          - eightbyeight-api-password
+      environment:
+        MI_CLIENT_ID: ee31a18f-45e9-41db-881d-5976695188fb
+        APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+        DATA_SOURCE_CCD: false
+        DATA_SOURCE_NOTIFY: false
+        DATA_SOURCE_EIGHTBYEIGHT: true
+        DATA_SOURCE_PAYMENT: false
+        MI_EIGHTBYEIGHT_EXTRACTION_FROM_DATE: "2017-07-01"
+        MI_EIGHTBYEIGHT_EXTRACTION_TO_DATE: "2021-01-19"
+    global:
+      subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "prod"
