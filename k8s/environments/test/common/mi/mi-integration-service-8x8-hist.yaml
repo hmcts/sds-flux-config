@@ -16,9 +16,9 @@ spec:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-integration-service
     ref: master
-  values: 
+  values:
     job:
-      image: ssprivatetest.azurecr.io/mi-integration-service:pr-163-90e2560
+      image: ssprivatetest.azurecr.io/mi-integration-service:pr-165-4291625
       kind: Job
       activeDeadlineSeconds: 604800 // 7 days
       labels:
