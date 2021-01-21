@@ -5,6 +5,6 @@ resources:
 - video-hearings
 - toffee
 patches:
-  - path: ../dev-helmrelease.yaml
-    target:
-      kind: HelmRelease
+- path: ../dev-helmrelease.yaml
+  target:
+    kind: HelmRelease
