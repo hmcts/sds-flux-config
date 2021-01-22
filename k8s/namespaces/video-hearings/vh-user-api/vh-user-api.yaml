@@ -23,7 +23,7 @@ spec:
       releaseNameOverride: vh-user-api
       aadIdentityName: vh-aad-identity
       keyVaults:
-        vhinfracorehtdev:
+        vh-infra-core:
           excludeEnvironmentSuffix: false
           resourceGroup: vh-infra-core-{{ .Values.global.environment }}
           usePodIdentity: true
