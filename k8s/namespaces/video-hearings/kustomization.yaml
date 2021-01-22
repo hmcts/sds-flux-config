@@ -4,5 +4,6 @@ kind: Kustomization
 namespace: vh
 resources:
 - namespace.yaml
-- aadpodidentity.yaml
+- vh-user-api-identity-binding.yaml
+- vh-user-api-identity-binding.yaml
 - vh-user-api/vh-user-api.yaml
