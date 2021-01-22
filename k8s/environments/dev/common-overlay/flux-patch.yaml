@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: video-hearings
+  name: vh-user-api
   namespace: vh
 spec:
   values:
