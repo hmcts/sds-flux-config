@@ -19,7 +19,7 @@ spec:
       useInterpodAntiAffinity: false
       image: sdshmctspublic.azurecr.io/vh/user-api:latest
       applicationPort: 80
-      ingressHost: vh-user-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+      ingressHost: vh-user-api-{{ .Values.global.environment }}.platform.hmcts.net
       releaseNameOverride: vh-user-api
       aadIdentityName: vh-aad-identity
       keyVaults:
@@ -45,7 +45,7 @@ spec:
         APPINSIGHTS_PROFILERFEATURE_VERSION: disabled
         APPINSIGHTS_SNAPSHOTFEATURE_VERSION: disabled
         APPLICATIONINSIGHTS_INSTRUMENTATIONKEY: $(APPLICATIONINSIGHTS_INSTRUMENTATIONKEY)
-        ## APPLICATIONINSIGHTS_CONNECTION_STRING: InstrumentationKey=<azure-secret:vh-infra-core-AppInsightsKey>
+        APPLICATIONINSIGHTS_CONNECTION_STRING: InstrumentationKey=$(APPLICATIONINSIGHTS_INSTRUMENTATIONKEY)
         APPLICATIONINSIGHTSAGENT_EXTENSION_VERSION: ~2
         AZUREAD__CLIENTSECRET: $(AZUREAD__CLIENTSECRET)
         AZUREAD__CLIENTID: $(AZUREAD__CLIENTID)
