@@ -21,7 +21,7 @@ spec:
       applicationPort: 80
       ingressHost: vh-user-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
       releaseNameOverride: vh-user-api
-      aadIdentityName: vh
+      aadIdentityName: vh-aad-identity
       keyVaults:
         vhinfracorehtdev:
           excludeEnvironmentSuffix: false
