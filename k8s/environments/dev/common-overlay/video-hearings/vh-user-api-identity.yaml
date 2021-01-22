@@ -1,7 +1,8 @@
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
- name: vh-aad-identity
+ name: vh-user-api
+ namespace: vh
 spec:
   type: 0
   resourceID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/vh-infra-core-dev/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-infra-core-dev-kvuser
@@ -11,7 +12,8 @@ spec:
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
-  name: vh-aad-identity
+ name: vh-user-api
+ namespace: vh
 spec:
-  azureIdentity: vh-aad-identity
-  selector: vh-aad-identity
+ azureIdentity: vh-user-api
+ selector: vh-user-api
