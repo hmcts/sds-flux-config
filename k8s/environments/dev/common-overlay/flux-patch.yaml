@@ -2,8 +2,8 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: toffee-recipe-backend
-  namespace: toffee
+  name: vidfeo-hearings
+  namespace: vh
 spec:
   values:
     global:
