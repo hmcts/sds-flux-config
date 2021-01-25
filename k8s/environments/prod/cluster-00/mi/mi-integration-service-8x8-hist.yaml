@@ -45,6 +45,8 @@ spec:
         DATA_SOURCE_PAYMENT: false
         MI_EIGHTBYEIGHT_EXTRACTION_FROM_DATE: "2017-07-01"
         MI_EIGHTBYEIGHT_EXTRACTION_TO_DATE: "2021-01-19"
+        MI_VALIDATE_ALL_LANDING_BLOBS: true
+        MI_VALIDATE_ALL_LANDING_BLOBS_DISABLED_CONTEND_CHECK: true
     global:
       subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
