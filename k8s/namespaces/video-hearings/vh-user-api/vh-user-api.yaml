@@ -21,7 +21,7 @@ spec:
       applicationPort: 80
       ingressHost: vh-user-api-{{ .Values.global.environment }}.platform.hmcts.net
       releaseNameOverride: vh-user-api
-      aadIdentityName: vh-aad-identitys
+      aadIdentityName: vh-aad-identity
       keyVaults:
         vh-infra-core:
           excludeEnvironmentSuffix: false
