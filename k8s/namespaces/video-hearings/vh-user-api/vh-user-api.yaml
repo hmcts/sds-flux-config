@@ -25,7 +25,7 @@ spec:
       secrets:
         APPLICATIONINSIGHTS_INSTRUMENTATIONKEY:
           secretRef: vault-vh-infra-core
-          key: vh-user-api-key
+          key: vh-infra-core-AppInsightsKey
       keyVaults:
         vh-infra-core:
           excludeEnvironmentSuffix: false
