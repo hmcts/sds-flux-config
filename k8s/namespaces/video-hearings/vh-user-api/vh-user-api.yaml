@@ -36,11 +36,6 @@ spec:
             - redis-connection-str
             - testdefaultpassword
       environment:
-        - name: APPLICATIONINSIGHTS_INSTRUMENTATIONKEY
-          valueFrom:
-          secretKeyRef:
-            name: vault-vh-infra-core
-            key: vh-infra-core-AppInsightsKey
           ADGROUP__ADMINISTRATOR: VirtualRoomAdministrator
           ADGROUP__CASETYPE: CaseType
           ADGROUP__EXTERNAL: External
