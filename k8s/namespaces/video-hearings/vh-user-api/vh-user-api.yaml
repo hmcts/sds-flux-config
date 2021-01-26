@@ -22,6 +22,10 @@ spec:
       ingressHost: vh-user-api-{{ .Values.global.environment }}.platform.hmcts.net
       releaseNameOverride: vh-user-api
       aadIdentityName: vh-aad-identity
+      secrets:
+        APPLICATIONINSIGHTS_INSTRUMENTATIONKEY:
+          secretRef: vault-vh-infra-core
+          key: vh-user-api-key
       keyVaults:
         vh-infra-core:
           excludeEnvironmentSuffix: false
