@@ -73,7 +73,7 @@ spec:
         TESTING__EXISTINGUSERPRINCIPAL: UserApiTestUser@hearings.reform.hmcts.net
         TESTING__NEWGROUPS__0__DISPLAYNAME: NewUserApiTestGroup
         TESTING__NEWGROUPS__0__GROUPID: 7d62cf17-c548-4a69-8f8f-4bc7fee90fbe
-        VHSERVICES__USERAPIRESOURCEID: https://vh-user-api-{{ .Values.global.environment }}.azurewebsites.net
+        VHSERVICES__USERAPIRESOURCEID: https://vh-user-api-{{ .Values.global.environment }}.platform.hmcts.net
         VHSERVICES__USERAPIURL: https://vh-user-api-{{ .Values.global.environment }}-staging.azurewebsites.net/
         XDT_MICROSOFTAPPLICATIONINSIGHTS_BASEEXTENSIONS: disabled
         XDT_MICROSOFTAPPLICATIONINSIGHTS_MODE: default
