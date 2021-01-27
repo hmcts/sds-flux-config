@@ -10,8 +10,8 @@ metadata:
 spec:
   releaseName: vh-testing
   chart:
-    git: git@github.com:hmcts/vh-user-api
-    path: charts/vh-user-api
+    git: git@github.com:hmcts/vh-testing
+    path: charts/vh-testing
     ref: helm_chart_setup
   values:
     java:
