@@ -12,7 +12,7 @@ spec:
   chart:
     git: git@github.com:hmcts/vh-testing
     path: charts/vh-testing
-    ref: helm_chart_setup
+    ref: master
   values:
     java:
       replicas: 1
