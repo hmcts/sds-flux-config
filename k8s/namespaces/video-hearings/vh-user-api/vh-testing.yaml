@@ -35,12 +35,4 @@ spec:
             - defaultpassword
             - redis-connection-str
             - testdefaultpassword
-      environment:
-        ADGROUP__ADMINISTRATOR: VirtualRoomAdministrator
-        ADGROUP__CASETYPE: CaseType
-        ADGROUP__EXTERNAL: External
-        ADGROUP__JUDGE: VirtualRoomJudge
-        ADGROUP__JUDGESTESTGROUP: TestAccount
-        ADGROUP__PROFESSIONALUSER: VirtualRoomProfessionalUser
-        APPINSIGHTS_PROFILERFEATURE_VERSION: disabled
-        APPINSIGHTS_SNAPSHOTFEATURE_VERSION: disabled
+
