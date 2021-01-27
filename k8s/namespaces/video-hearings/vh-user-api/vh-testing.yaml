@@ -1,27 +1,46 @@
 ---
-java:
-  image: 'sdshmctspublic.azurecr.io/vh/bash:latest'
-  applicationPort: 80
-  ingressHost: vh-testing-{{ .Values.global.environment }}.platform.hmcts.net
-  releaseNameOverride: vh-user-api
-  aadIdentityName: vh-aad-identity
-  keyVaults:
-    vh-infra-core:
-      excludeEnvironmentSuffix: false
-      resourceGroup: vh-infra-core-{{ .Values.global.environment }}
-      usePodIdentity: true
-      secrets:
-        - vh-user-api-key
-        - vh-user-api-appid
-        - vh-user-api-identifieruris
-        - vh-infra-core-AppInsightsKey
-        - defaultpassword
-        - redis-connection-str
-        - testdefaultpassword
-  environment:
-    ADGROUP__ADMINISTRATOR: VirtualRoomAdministrator
-    ADGROUP__CASETYPE: CaseType
-    ADGROUP__EXTERNAL: External
-    ADGROUP__JUDGE: VirtualRoomJudge
-    ADGROUP__JUDGESTESTGROUP: TestAccount
-    ADGROUP__PROFESSIONALUSER: VirtualRoomProfessionalUser
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-testing-{{ .Values.global.environment }}
+  namespace: vh
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/tag.nodejs: glob:prod-*
+spec:
+  releaseName: vh-testing-{{ .Values.global.environment }}
+  chart:
+    git: git@github.com:hmcts/vh-user-api
+    path: charts/vh-user-api
+    ref: helm_chart_setup
+  values:
+    java:
+      replicas: 1
+      useInterpodAntiAffinity: false
+      image: sdshmctspublic.azurecr.io/vh/bash:latest
+      applicationPort: 80
+      ingressHost: vh-testing-{{ .Values.global.environment }}.platform.hmcts.net
+      releaseNameOverride: vh-testing-{{ .Values.global.environment }}
+      aadIdentityName: vh-aad-identity
+      keyVaults:
+        vh-infra-core:
+          excludeEnvironmentSuffix: false
+          resourceGroup: vh-infra-core-{{ .Values.global.environment }}
+          usePodIdentity: true
+          secrets:
+            - vh-user-api-key
+            - vh-user-api-appid
+            - vh-user-api-identifieruris
+            - vh-infra-core-AppInsightsKey
+            - defaultpassword
+            - redis-connection-str
+            - testdefaultpassword
+      environment:
+        ADGROUP__ADMINISTRATOR: VirtualRoomAdministrator
+        ADGROUP__CASETYPE: CaseType
+        ADGROUP__EXTERNAL: External
+        ADGROUP__JUDGE: VirtualRoomJudge
+        ADGROUP__JUDGESTESTGROUP: TestAccount
+        ADGROUP__PROFESSIONALUSER: VirtualRoomProfessionalUser
+        APPINSIGHTS_PROFILERFEATURE_VERSION: disabled
+        APPINSIGHTS_SNAPSHOTFEATURE_VERSION: disabled
