@@ -8,7 +8,7 @@ metadata:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/tag.nodejs: glob:prod-*
 spec:
-  releaseName: vh-testing-{{ .Values.global.environment }}
+  releaseName: vh-testing
   chart:
     git: git@github.com:hmcts/vh-user-api
     path: charts/vh-user-api
@@ -19,8 +19,8 @@ spec:
       useInterpodAntiAffinity: false
       image: sdshmctspublic.azurecr.io/vh/bash:latest
       applicationPort: 80
-      ingressHost: vh-testing-{{ .Values.global.environment }}.platform.hmcts.net
-      releaseNameOverride: vh-testing-{{ .Values.global.environment }}
+      ingressHost: vh-testing.platform.hmcts.net
+      releaseNameOverride: vh-testing
       aadIdentityName: vh-aad-identity
       keyVaults:
         vh-infra-core:
