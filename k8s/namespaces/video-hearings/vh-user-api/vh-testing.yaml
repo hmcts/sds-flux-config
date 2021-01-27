@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: vh-testing-{{ .Values.global.environment }}
+  name: vh-testing
   namespace: vh
   annotations:
     fluxcd.io/automated: "true"
