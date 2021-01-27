@@ -18,8 +18,6 @@ spec:
       replicas: 1
       useInterpodAntiAffinity: false
       image: sdshmctspublic.azurecr.io/vh/bash:latest
-      applicationPort: 80
-      ingressHost: vh-testing.platform.hmcts.net
       releaseNameOverride: vh-testing
       aadIdentityName: vh-aad-identity
       keyVaults:
