@@ -20,17 +20,4 @@ spec:
       image: sdshmctspublic.azurecr.io/vh/bash:latest
       releaseNameOverride: vh-testing
       aadIdentityName: vh-aad-identity
-      keyVaults:
-        vh-infra-core:
-          excludeEnvironmentSuffix: false
-          resourceGroup: vh-infra-core-{{ .Values.global.environment }}
-          usePodIdentity: true
-          secrets:
-            - vh-user-api-key
-            - vh-user-api-appid
-            - vh-user-api-identifieruris
-            - vh-infra-core-AppInsightsKey
-            - defaultpassword
-            - redis-connection-str
-            - testdefaultpassword
 
