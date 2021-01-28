@@ -45,16 +45,12 @@ spec:
           resources: {}
       volumes:
       - name: test
-        flexVolume:
-          driver: "azure/kv"
+        csi:
+          driver: secrets-store.csi.k8s.io
           options:
-            usepodidentity: "true"                   
-            keyvaultname: "mi-vault-test" 
-            keyvaultobjectnames: "sftp-remote-password;sftp-remote-user"         
-            keyvaultobjecttypes: "secret;secret"               
-            resourcegroup: "mi-test-rg"        
-            subscriptionid: "DTS-SHAREDSERVICES-TEST"
-            tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "mi-sftp-test-secret-provider"
       - name: config-cache
         emptyDir: {}
 
