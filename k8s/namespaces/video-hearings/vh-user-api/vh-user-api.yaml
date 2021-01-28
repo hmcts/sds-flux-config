@@ -17,8 +17,8 @@ spec:
     java:
       replicas: 2
       useInterpodAntiAffinity: false
-      image: sdshmctspublic.azurecr.io/vh/user-api:latest
-      applicationPort: 80
+      image: sdshmctspublic.azurecr.io/vh/user-api:v0.2
+      applicationPort: 8080
       ingressHost: vh-user-api-{{ .Values.global.environment }}.platform.hmcts.net
       releaseNameOverride: vh-user-api
       aadIdentityName: vh-aad-identity
