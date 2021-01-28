@@ -1,5 +1,5 @@
 job:
-  image: ssprivatesbox.azurecr.io/data-extractor:master
+  image: sdshmctspublic.azurecr.io/data-extractor:master
   memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job
@@ -27,7 +27,7 @@ job:
     ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
     ETL_ACCOUNT: midataextractor{{ .Values.global.environment }}
   smoketests:
-    image: ssprivatesbox.azurecr.io/data-extractor:master
+    image: sdshmctspublic.azurecr.io/data-extractor:master
     enabled: false
   testsConfig:
     memoryLimits: '512Mi'

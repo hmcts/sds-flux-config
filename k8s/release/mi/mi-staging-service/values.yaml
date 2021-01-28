@@ -1,5 +1,5 @@
 job:
-  image: ssprivatesbox.azurecr.io/mi-staging-service:master
+  image: sdshmctspublic.azurecr.io/mi-staging-service:master
   memoryRequests: '1024Mi'
   cpuRequests: '200m'
   memoryLimits: '2048Mi'
@@ -24,7 +24,7 @@ job:
     STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
     STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
   smoketests:
-    image: ssprivatesbox.azurecr.io/mi-staging-service:master
+    image: sdshmctspublic.azurecr.io/mi-staging-service:master
     enabled: false
   testsConfig:
     memoryLimits: '512Mi'

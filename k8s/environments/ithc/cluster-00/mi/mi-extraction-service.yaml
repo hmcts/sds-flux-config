@@ -7,9 +7,9 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:stg-*
+    filter.fluxcd.io/job: glob:ithc-*
     repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:stg-*
+    filter.fluxcd.io/smoke: glob:ithc-*
 spec:
   releaseName: mi-extraction-service
   chart:
@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-extraction-service:stg-8612ca9
+      image: sdshmctspublic.azurecr.io/mi-extraction-service:ithc-8612ca9
       suspend: false
       kind: CronJob
       schedule: '40 0 * * *'
@@ -34,17 +34,16 @@ spec:
           - appinsights-instrumentationkey
           - sftp-remote-user
           - sftp-remote-password
-          - encryption-publicKey
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
-        MI_CLIENT_ID: 6844ae4d-1934-4eaa-9fe7-ca50cb32e1bd
+        APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
+        MI_CLIENT_ID: 87982a0b-6fac-46e0-99a2-94f20642b2e1
         SFTP_ENABLED: false
         SFTP_FORCECHECK: true
         SFTP_REMOTE_HOST: 10.24.254.130
         SFTP_REMOTE_PORT: 22
         SFTP_REMOTE_FOLDER: files/mi-platform-export/
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-extraction-service:stg-8612ca9
+        image: sdshmctspublic.azurecr.io/mi-extraction-service:ithc-8612ca9
         enabled: true
       testsConfig:
         keyVaults:
@@ -55,10 +54,9 @@ spec:
             - appinsights-instrumentationkey
             - sftp-remote-user
             - sftp-remote-password
-            - encryption-publicKey
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
-          MI_CLIENT_ID: 6844ae4d-1934-4eaa-9fe7-ca50cb32e1bd
+          APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
+          MI_CLIENT_ID: 87982a0b-6fac-46e0-99a2-94f20642b2e1
           SFTP_ENABLED: false
           SFTP_REMOTE_HOST: 10.24.254.130
           SFTP_REMOTE_PORT: 22
@@ -67,6 +65,6 @@ spec:
           DUMMY: false
 
     global:
-      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+      subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      environment: "stg"
+      environment: "ithc"

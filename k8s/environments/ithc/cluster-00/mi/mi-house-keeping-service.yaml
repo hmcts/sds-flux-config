@@ -7,9 +7,9 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:stg-*
+    filter.fluxcd.io/job: glob:ithc-*
     repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:stg-*
+    filter.fluxcd.io/smoke: glob:ithc-*
 spec:
   releaseName: mi-house-keeping-service-job
   chart:
@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:stg-d0bc260
+      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:ithc-d0bc260
       suspend: false
       kind: CronJob
       schedule: '45 * * * *'
@@ -27,16 +27,16 @@ spec:
         app.kubernetes.io/instance: mi-house-keeping-service
         app.kubernetes.io/name: mi-house-keeping-service
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
-        MI_CLIENT_ID: 8d02986f-b9dc-4624-b035-8d4de6e90272
+        APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
+        MI_CLIENT_ID: baf8db11-a87e-4212-8c85-d72622dc26c9
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:stg-d0bc260
+        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:ithc-d0bc260
         enabled: true
       testsConfig:
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
-          MI_CLIENT_ID: 8d02986f-b9dc-4624-b035-8d4de6e90272
+          APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
+          MI_CLIENT_ID: baf8db11-a87e-4212-8c85-d72622dc26c9
     global:
-      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+      subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      environment: "stg"
+      environment: "ithc"

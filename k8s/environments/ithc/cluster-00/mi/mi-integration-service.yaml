@@ -7,9 +7,9 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:stg-*
+    filter.fluxcd.io/job: glob:ithc-*
     repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:stg-*
+    filter.fluxcd.io/smoke: glob:ithc-*
 spec:
   releaseName: mi-integration-service
   chart:
@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-integration-service:stg-0d36f30
+      image: sdshmctspublic.azurecr.io/mi-integration-service:ithc-0d36f30
       suspend: false
       kind: CronJob
       schedule: '15 0 * * *'
@@ -52,8 +52,8 @@ spec:
           - payment-bar-db-user
           - payment-bar-db-password
       environment:
-        MI_CLIENT_ID: d9b95365-310e-475a-9ab9-0edadd7fd742
-        APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
+        MI_CLIENT_ID: 9106f8ad-3189-4053-925d-0d4579c4e0d9
+        APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
         DATA_SOURCE_CCD: true
         DATA_SOURCE_NOTIFY: true
         DATA_SOURCE_EIGHTBYEIGHT: true
@@ -64,7 +64,7 @@ spec:
         GOV_UK_NOTIFY_ENABLED_PROBATE: true
         GOV_UK_NOTIFY_ENABLED_SSCS: true
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-integration-service:stg-0d36f30
+        image: sdshmctspublic.azurecr.io/mi-integration-service:ithc-0d36f30
         enabled: true
       testsConfig:
         keyVaults:
@@ -93,8 +93,8 @@ spec:
             - payment-bar-db-user
             - payment-bar-db-password
         environment:
-          MI_CLIENT_ID: d9b95365-310e-475a-9ab9-0edadd7fd742
-          APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
+          MI_CLIENT_ID: 9106f8ad-3189-4053-925d-0d4579c4e0d9
+          APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
           DATA_SOURCE_CCD: true
           DATA_SOURCE_NOTIFY: true
           DATA_SOURCE_EIGHTBYEIGHT: true
@@ -105,6 +105,6 @@ spec:
           GOV_UK_NOTIFY_ENABLED_PROBATE: true
           GOV_UK_NOTIFY_ENABLED_SSCS: true
     global:
-      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+      subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      environment: "stg"
+      environment: "ithc"

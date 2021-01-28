@@ -1,5 +1,5 @@
 job:
-  image: ssprivatesbox.azurecr.io/mi-integration-service:master
+  image: sdshmctspublic.azurecr.io/mi-integration-service:master
   memoryLimits: '2048Mi'
   cpuLimits: '2000m'
   kind: Job
@@ -22,7 +22,7 @@ job:
     STORAGE_EXTRACTION_NAME: midataextractor{{ .Values.global.environment }}
     STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
   smoketests:
-    image: ssprivatesbox.azurecr.io/mi-integration-service:master
+    image: sdshmctspublic.azurecr.io/mi-integration-service:master
     enabled: false
   testsConfig:
     memoryLimits: '512Mi'

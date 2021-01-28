@@ -1,7 +1,7 @@
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
- name: mi-data-extractor-job
+ name: data-extractor-job
  namespace: mi
 spec:
  type: 0
@@ -13,8 +13,8 @@ spec:
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
-  name: mi-data-extractor-job
+  name: data-extractor-job
   namespace: mi
 spec:
-  azureIdentity: mi-data-extractor-job
+  azureIdentity: data-extractor-job
   selector: mi-data-extractor-job

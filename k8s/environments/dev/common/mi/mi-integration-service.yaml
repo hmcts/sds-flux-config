@@ -36,7 +36,7 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
         DATA_SOURCE_NOTIFY: true
         GOV_UK_NOTIFY_ENABLED_CMC: true
-        MI_CLIENT_ID: 02094f84-fca9-4ed5-9b1a-ba093d080c7f
+        MI_CLIENT_ID: 47b18d2f-9a02-4f45-a87c-bacd17ea3583
       smoketests:
         image: sdshmctspublic.azurecr.io/mi-integration-service:pr-169-8675883
         enabled: false
@@ -52,7 +52,7 @@ spec:
           APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
           DATA_SOURCE_NOTIFY: true
           GOV_UK_NOTIFY_ENABLED_CMC: true
-          MI_CLIENT_ID: 02094f84-fca9-4ed5-9b1a-ba093d080c7f
+          MI_CLIENT_ID: 47b18d2f-9a02-4f45-a87c-bacd17ea3583
     global:
       subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

@@ -1,5 +1,5 @@
 job:
-  image: ssprivatesbox.azurecr.io/mi-house-keeping-service:master
+  image: sdshmctspublic.azurecr.io/mi-house-keeping-service:master
   memoryLimits: '512Mi'
   cpuLimits: '2000m'
   kind: Job
@@ -24,7 +24,7 @@ job:
     STORAGE_PERSISTENT_NAME: mipersistent{{ .Values.global.environment }}
     STORAGE_AUDIT_NAME: miaudit{{ .Values.global.environment }}
   smoketests:
-    image: ssprivatesbox.azurecr.io/mi-house-keeping-service:master
+    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:master
     enabled: false
   testsConfig:
     memoryLimits: '512Mi'
