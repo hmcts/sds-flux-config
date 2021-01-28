@@ -1,5 +1,5 @@
 job:
-  image: ssprivatesbox.azurecr.io/mi-extraction-service:master
+  image: sdshmctspublic.azurecr.io/mi-extraction-service:master
   memoryRequests: '1024Mi'
   cpuRequests: '200m'
   memoryLimits: '2048Mi'
@@ -27,7 +27,7 @@ job:
     STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
     STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
   smoketests:
-    image: ssprivatesbox.azurecr.io/mi-extraction-service:master
+    image: sdshmctspublic.azurecr.io/mi-extraction-service:master
     enabled: false
   testsConfig:
     memoryLimits: '512Mi'

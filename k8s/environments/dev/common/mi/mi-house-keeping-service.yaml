@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: mi-staging-service
+  name: mi-house-keeping-service
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -11,30 +11,32 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:pr-*
 spec:
-  releaseName: mi-staging-service
+  releaseName: mi-house-keeping-service-job
   chart:
     git: git@github.com:hmcts/shared-services-flux
-    path: k8s/release/mi/mi-staging-service
+    path: k8s/release/mi/mi-house-keeping-service
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-staging-service:pr-149-97dda78
+      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:pr-100-ac1e967
       suspend: true
       kind: CronJob
-      schedule: '30 1 * * *'
+      schedule: '45 1 * * *'
       labels:
-        app.kubernetes.io/instance: mi-staging-service
-        app.kubernetes.io/name: mi-staging-service
+        app.kubernetes.io/instance: mi-house-keeping-service
+        app.kubernetes.io/name: mi-house-keeping-service
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
-        MI_CLIENT_ID: 5407b258-9168-499b-8e5e-32fd2e1bad3b
+        MI_CLIENT_ID: 5793ad47-8629-4723-82dc-78b1b49ed280
+        STORAGE_DATA_EXTRACTOR_RETENTION: "14"
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-staging-service:pr-149-97dda78
-        enabled: false
+        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:pr-100-ac1e967
+        enabled: true
       testsConfig:
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
-          MI_CLIENT_ID: 5407b258-9168-499b-8e5e-32fd2e1bad3b
+          MI_CLIENT_ID: 5793ad47-8629-4723-82dc-78b1b49ed280
+
     global:
       subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

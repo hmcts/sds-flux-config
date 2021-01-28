@@ -7,9 +7,9 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:stg-*
+    filter.fluxcd.io/job: glob:pr-*
     repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:stg-*
+    filter.fluxcd.io/smoke: glob:pr-*
 spec:
   releaseName: mi-integration-service
   chart:
@@ -18,11 +18,10 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-integration-service:stg-0d36f30
+      image: sdshmctspublic.azurecr.io/mi-integration-service:pr-169-8675883
       suspend: false
       kind: CronJob
-      schedule: '15 0 * * *'
-      activeDeadlineSeconds: 82800 #23 hours
+      schedule: '15 1 * * *'
       labels:
         app.kubernetes.io/instance: mi-integration-service-job
         app.kubernetes.io/name: mi-integration-service-job
@@ -52,8 +51,7 @@ spec:
           - payment-bar-db-user
           - payment-bar-db-password
       environment:
-        MI_CLIENT_ID: d9b95365-310e-475a-9ab9-0edadd7fd742
-        APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
+        APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         DATA_SOURCE_CCD: true
         DATA_SOURCE_NOTIFY: true
         DATA_SOURCE_EIGHTBYEIGHT: true
@@ -63,8 +61,9 @@ spec:
         GOV_UK_NOTIFY_ENABLED_IDAM: true
         GOV_UK_NOTIFY_ENABLED_PROBATE: true
         GOV_UK_NOTIFY_ENABLED_SSCS: true
+        MI_CLIENT_ID: 4b4479ac-2998-4353-b202-675df08389f5
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-integration-service:stg-0d36f30
+        image: sdshmctspublic.azurecr.io/mi-integration-service:pr-169-8675883
         enabled: true
       testsConfig:
         keyVaults:
@@ -93,18 +92,18 @@ spec:
             - payment-bar-db-user
             - payment-bar-db-password
         environment:
-          MI_CLIENT_ID: d9b95365-310e-475a-9ab9-0edadd7fd742
-          APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
+          APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
           DATA_SOURCE_CCD: true
           DATA_SOURCE_NOTIFY: true
           DATA_SOURCE_EIGHTBYEIGHT: true
-          DATA_SOURCE_PAYMENT: true
           GOV_UK_NOTIFY_ENABLED_CMC: true
           GOV_UK_NOTIFY_ENABLED_DIVORCE: true
           GOV_UK_NOTIFY_ENABLED_IDAM: true
           GOV_UK_NOTIFY_ENABLED_PROBATE: true
           GOV_UK_NOTIFY_ENABLED_SSCS: true
+          MI_CLIENT_ID: 4b4479ac-2998-4353-b202-675df08389f5
     global:
-      subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+      subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      environment: "stg"
+      environment: "test"
+
