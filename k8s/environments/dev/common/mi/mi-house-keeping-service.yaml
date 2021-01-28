@@ -19,7 +19,7 @@ spec:
   values:
     job:
       image: sdshmctspublic.azurecr.io/mi-house-keeping-service:pr-100-ac1e967
-      suspend: false
+      suspend: true
       kind: CronJob
       schedule: '45 1 * * *'
       labels:

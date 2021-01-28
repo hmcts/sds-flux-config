@@ -19,7 +19,7 @@ spec:
   values:
     job:
       image: sdshmctspublic.azurecr.io/data-extractor-job:pr-178-5967f99
-      suspend: false
+      suspend: true
       kind: CronJob
       schedule: '0 1 * * *'
       activeDeadlineSeconds: 82800 #23 hours
