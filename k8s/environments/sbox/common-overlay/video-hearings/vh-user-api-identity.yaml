@@ -1,0 +1,19 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+ name: vh-aad-identity
+ namespace: vh
+spec:
+  type: 0
+  resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/managed-identities-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-infra-core-sbox-kvuser
+  clientID: 5453c7c7-c40b-49b6-83ae-871a882a20d9
+
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+ name: vh-aad-identity
+ namespace: vh
+spec:
+ azureIdentity: vh-aad-identity
+ selector: vh-aad-identity

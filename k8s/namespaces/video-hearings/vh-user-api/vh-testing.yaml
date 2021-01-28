@@ -18,7 +18,7 @@ spec:
       replicas: 1
       useInterpodAntiAffinity: false
       image: sdshmctspublic.azurecr.io/vh/bash:latest
-      applicationPort: 80
+      applicationPort: 8080
 
 
 
