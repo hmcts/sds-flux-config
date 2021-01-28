@@ -47,11 +47,9 @@ spec:
       - name: test
         csi:
           driver: secrets-store.csi.k8s.io
-          options:
-            readOnly: true
-            volumeAttributes:
-              secretProviderClass: "mi-sftp-test-secret-provider"
-      - name: config-cache
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "mi-extraction-service-job-vault-test-secret-provider"
         emptyDir: {}
 
 ---
