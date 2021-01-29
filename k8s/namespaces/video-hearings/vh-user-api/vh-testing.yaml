@@ -19,6 +19,8 @@ spec:
       useInterpodAntiAffinity: false
       image: sdshmctspublic.azurecr.io/vh/bash:latest
       applicationPort: 8080
+      readinessPath: /
+      livenessPath: /
 
 
 
