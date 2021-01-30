@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: mi-integration-service-8x8-hist-4
+  name: mi-integration-service-8x8-hist-5
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -11,7 +11,7 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:prod-*
 spec:
-  releaseName: mi-integration-service-8x8-hist-4
+  releaseName: mi-integration-service-8x8-hist-5
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-integration-service
@@ -26,8 +26,8 @@ spec:
       memoryLimits: '4096Mi'
       cpuLimits: '2000m'
       labels:
-        app.kubernetes.io/instance: mi-integration-service-job-8x8-hist-4
-        app.kubernetes.io/name: mi-integration-service-job-8x8-hist-4
+        app.kubernetes.io/instance: mi-integration-service-job-8x8-hist-5
+        app.kubernetes.io/name: mi-integration-service-job-8x8-hist-5
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false
@@ -58,6 +58,7 @@ spec:
         MI_EIGHTBYEIGHT_EXTRACTION_SERVICES_QUEUES_OFFLINE_SLAS_DISABLED: true
         MI_EIGHTBYEIGHT_EXTRACTION_SERVICES_GROUPS_INTERACTIONS_DISABLED: true
         MI_EIGHTBYEIGHT_EXTRACTION_SERVICES_GROUPS_DISABLED: true
+        MI_EIGHTBYEIGHT_EXTRACTION_SERVICES_GROUPS_ACTIVITIES_DISABLED: true
 
   keyVaults:
     global:
