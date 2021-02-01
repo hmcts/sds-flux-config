@@ -1,0 +1,23 @@
+apiVersion: ENC[AES256_GCM,data:qFM=,iv:LvCDmgPZkgfnM8pWtubfZWXJdA5Svh+ZejUf68gsnZk=,tag:jwPaivO9AiB+pzbCSDSZMg==,type:str]
+data:
+    values.yaml: ENC[AES256_GCM,data:B+FZNddcSw89J+iDx98XRFdTC7k8w90/f2RV5XL9+wVzyEiiz5X/7YR6xZ8mGcgZcZue0AQEcHL8tGB1zB/8diPpztEc3BAhR1kQhqLpoDe2ye72PXbkppHxrmsG0MDIvKEJ8ig8LSXqXdyj0IdHoMZXoAZbFQOypqzmeTwqfqG2sguKqdIznX3JRwf68xk46u/dgjktyZiXs8k3046ykvqMm/HmPgVcWkTbv0z06rqeubif5QZXVeyA4FljnYNbmfjEercfQ++QNpa+CPRZU0NJ/eAd1wPfBmqoIwq298IWFob0thK9sRL9ZOV2y2BcMFkjFA==,iv:2gRhvzk7fkI4bQsOMmmN0I4uLRZsYEZqHDDFgH/xEOM=,tag:FVyr5ybxbBZLyDwrxP5nCw==,type:str]
+kind: ENC[AES256_GCM,data:iqh4UYqk,iv:/Xtms5yMNp+p2jBcnWmnvdh6ZPTTAsMN5EOXFG4aFWI=,tag:+1TVoOJTdMrnkohnEEU1XA==,type:str]
+metadata:
+    creationTimestamp: null
+    name: ENC[AES256_GCM,data:Q/JoeE9ScTZxGwOPfQ==,iv:zBhzTBBRL8JYHcukAQVZM7wrMrvqjCmP5T91sIu8YA8=,tag:nKEVyQRrSu5ek5HhKKzzmA==,type:str]
+    namespace: ENC[AES256_GCM,data:2dJ8wlrsRaWo,iv:5YrHCtxck8c76/LZ+2ckgTN9lMkbHRT1QuWmLu+NHxU=,tag:w1mB3qqeyW+s4lSXx9TD7A==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+    -   vault_url: https://dtssharedservicesstgkv.vault.azure.net
+        name: sops-key
+        version: b1838c5e73d94e1ab2c158344574ad08
+        created_at: '2021-02-01T14:24:05Z'
+        enc: B9zDif1VZCHuKld63_AEZLWGpRruJNTNVkaTjKfGZmfoAYhLkbWtcFJLCaN0tJkhjP17TGaZka3U9RYhYiCv76iT-F5UGisCnJTlEPwGhpn7RYabwd53HSxcH6ax2G6W50YEL5-g5w03yVwnLWyNVrHhP4F6yjcpahIyXETLJlVcv5TuZ2Ni3j_W1HRGGIfG3XySdO7llF_OZVPFTjyv-hyEka08RBGkcWILtwY-L2fFlX99xcNeSNfJwydGJQY44gNhMukhUm5a4ytcuTgZv_Jj4g77QRgL62auH3t5JT49rzv6appkVSuPJy6AUHLyZCm6f0zE6JC0glhLqINU6w
+    hc_vault: []
+    lastmodified: '2021-02-01T14:24:12Z'
+    mac: ENC[AES256_GCM,data:8kxkYzeN9gz+aS5y03yGnaiZLpmb9u8Mt17ahKmZMj1hFJKR6KwiMzes8hStAVi+JWh5lUobVz+jNyOlO93qLGANdkUyATERpR1/x+jf/N8tPHx4xF669RDv0b2DQYvU3VzwkqJR51gRf+kuCRA3EESIaim/F89gW4j+cmgnaTc=,iv:bubb/RBo4oRz4ELiCIRssICh8sk9qXIiVD0GfN9O15A=,tag:KpjT7wwE3SXNAntNJ57H2g==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.6.1

@@ -13,7 +13,7 @@ spec:
           shareName: neuvector-data-01
         ingress:
           enabled: true
-          host: neuvector01.service.core-compute-sbox.internal
+          host: neuvector01.staging.platform.hmcts.net
           path: "/api"
           annotations:
             kubernetes.io/ingress.class: traefik-neuvector-api
@@ -34,10 +34,10 @@ spec:
                 - security-event
                 - audit
               Syslog_In_Json: false
-              Cluster_Name: sbox01
+              Cluster_Name: stg01
       manager:
         ingress:
-          host: neuvector01.service.core-compute-sbox.internal
+          host: neuvector01.staging.platform.hmcts.net
           enabled: true
           annotations:
             kubernetes.io/ingress.class: traefik-neuvector-api

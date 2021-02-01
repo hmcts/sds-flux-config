@@ -8,6 +8,7 @@ bases:
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
+- ../../../namespaces/neuvector
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -27,3 +28,6 @@ patchesStrategicMerge:
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/stg/cluster-00/env-injector.yaml
+
+#neuvector patch
+- ../../../namespaces/neuvector/patches/stg/cluster-01/neuvector.yaml
