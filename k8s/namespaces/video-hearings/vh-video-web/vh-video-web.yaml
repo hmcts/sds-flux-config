@@ -1,0 +1,15 @@
+---
+webVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-video-web
+  namespace: vh
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/tag.nodejs: glob:prod-*
+spec:
+  releaseName: vh-video-web
+  chart:
+    git: git@github.com:hmcts/vh-video-web
+    path: charts/vh-video-web
+    ref: sds-migration-chart-setup
