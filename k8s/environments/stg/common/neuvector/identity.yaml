@@ -1,0 +1,19 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: neuvector
+  namespace: neuvector
+spec:
+  type: 0
+  resourceID: /subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/managed-identities-stg-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/neuvector-stg-mi
+  clientID: f1e9ba3f-977e-4c31-a573-a3ac80c93518
+
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: neuvector-binding
+  namespace: neuvector
+spec:
+  azureIdentity: neuvector
+  selector: neuvector
