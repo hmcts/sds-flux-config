@@ -76,8 +76,6 @@ spec:
         limits:
           cpu: 1
           memory: 5Gi
-          containerd:
-            enabled: true
       controller:
         image:
           repository: neuvector/controller
