@@ -5,6 +5,7 @@ bases:
 - ../../../release/admin/traefik
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
+- ../../../release/admin/mailrelay
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
@@ -27,3 +28,6 @@ patchesStrategicMerge:
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/dev/cluster-00/env-injector.yaml
+
+# mail-relay
+- ../../../release/admin/mail-relay/patches/dev/cluster-01/mailrelay

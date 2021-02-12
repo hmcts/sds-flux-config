@@ -1,0 +1,17 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mailrelay
+  namespace: admin
+spec:
+  values:
+    service:
+      type: LoadBalancer
+      loadBalancerIP: "10.145.15.15"
+
+    workload: StatefulSet
+
+    volumeClaim:
+      storageClass: "managed-premium"
+      storageSize: 10Gi
