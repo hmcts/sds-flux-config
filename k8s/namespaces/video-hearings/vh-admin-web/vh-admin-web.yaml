@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-admin-web
+  namespace: vh
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/tag.nodejs: glob:prod-*
+spec:
+  releaseName: vh-admin-web
+  chart:
+    git: git@github.com:hmcts/vh-admin-web
+    path: charts/vh-admin-web
+    ref: helm_chart_setup

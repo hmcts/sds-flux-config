@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-test-api
+  namespace: vh
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/tag.nodejs: glob:prod-*
+spec:
+  releaseName: vh-test-api
+  chart:
+    git: git@github.com:hmcts/vh-test-api
+    path: charts/vh-test-api
+    ref: helm_chart_setup
