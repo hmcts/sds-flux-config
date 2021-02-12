@@ -1,0 +1,79 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-test-api
+  namespace: vh
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/tag.nodejs: glob:prod-*
+spec:
+  releaseName: vh-test-api
+  chart:
+    git: git@github.com:hmcts/vh-test-api
+    path: charts/vh-test-api
+    ref: helm_chart_setup
+  values:
+    java:
+      replicas: 2
+      useInterpodAntiAffinity: false
+      image: 'sdshmctspublic.azurecr.io/vh/test-api:latest'
+      applicationPort: 80
+      ingressHost: vh-test-api-{{ .Values.global.environment }}.platform.hmcts.net
+      releaseNameOverride: vh-test-api
+      aadIdentityName: vh-aad-identity
+      keyVaults:
+        vh-infra-core:
+          excludeEnvironmentSuffix: false
+          resourceGroup: vh-infra-core-{{ .Values.global.environment }}
+          usePodIdentity: true
+          secrets:
+            - vh-test-api-key
+            - vh-test-api-appid
+            - vh-test-api-identifieruris
+            - vh-infra-core-AppInsightsKey
+            - TestApiDb-connection-str
+            - testdefaultpassword
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: $(APPLICATIONINSIGHTS_INSTRUMENTATIONKEY)
+        APPINSIGHTS_PROFILERFEATURE_VERSION: disabled
+        APPINSIGHTS_SNAPSHOTFEATURE_VERSION: disabled
+        APPLICATIONINSIGHTS_INSTRUMENTATIONKEY: $(APPLICATIONINSIGHTS_INSTRUMENTATIONKEY)
+        APPLICATIONINSIGHTS_CONNECTION_STRING: InstrumentationKey=$(INSTRUMENTATIONKEY)
+        APPLICATIONINSIGHTSAGENT_EXTENSION_VERSION: ~2
+        AZUREAD__CLIENTSECRET: $(AZUREAD__CLIENTSECRET)
+        AZUREAD__CLIENTID: $(AZUREAD__CLIENTID)
+        AZUREAD__TENANTID: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+        AZUREAD__VHUSERAPIRESOURCEID: $(AZUREAD__VHUSERAPIRESOURCEID)
+        AZUREAD__VALIDAUDIENCE: https://vh-test-api-{{ .Values.global.environment }}.platform.hmcts.net
+        CONNECTIONSTRINGS__TESTAPI: $(TESTAPIDB-CONNECTION-STR)
+        DIAGNOSTICSERVICES_EXTENSION_VERSION: disabled
+        DISABLEHTTPSREDIRECTION: true
+        INSTRUMENTATIONENGINE_EXTENSION_VERSION: disabled
+        ISLIVE: false
+        SERVICES__BOOKINGSAPIRESSOURCEID: https://vh-bookings-api-{{ .Values.global.environment }}.platform.hmcts.net
+        SERVICES__BOOKINGSAPIURL: https://vh-bookings-api-{{ .Values.global.environment }}.platform.hmcts.net
+        SERVICES__USERAPIRESSOURCEID: https://vh-user-api-{{ .Values.global.environment }}.platform.hmcts.net
+        SERVICES__USERAPIURL: https://vh-user-api-{{ .Values.global.environment }}.platform.hmcts.net
+        SERVICES__VIDEOAPIRESSOURCEID: https://vh-video-api-{{ .Values.global.environment }}.platform.hmcts.net
+        SERVICES__VIDEOAPIURL: https://vh-video-api-{{ .Values.global.environment }}.platform.hmcts.net
+        SNAPSHOTDEBUGGER_EXTENSION_VERSION: disabled
+        TESTDEFAULTPASSWORD: $(TESTDEFAULTPASSWORD)
+        USERGROUPS__CASEADMINGROUPS: VirtualRoomAdministrator, Civil Money Claims, Financial Remedy, Generic, Children Act, Tax, Family Law Act, Tribunal, Civil, Land Registration, Housing Act, Housing & Planning Act, Leasehold Enfranchisement, Leasehold Management, Park Homes, Rents, Right to buy, Employment Tribunal, Court of Appeal Criminal Division, GRC - Charity, GRC - CRB, GRC - DVSA, GRC - Estate Agents, GRC - Food, GRC - Environment, GRC - Gambling, GRC - Immigration Services, GRC - Information Rights, GRC - Pensions Regulation, GRC - Professional Regulations, GRC - Query Jurisdiction, GRC - Welfare of Animals, Immigration and Asylum
+        USERGROUPS__INDIVIDUALGROUPS: External
+        USERGROUPS__JUDGEGROUPS: VirtualRoomJudge, Internal
+        USERGROUPS__JUDICIALOFFICEGROUP: JudicialOfficeHolder, External
+        USERGROUPS__KINLYGROUPS: vh_video_kinly_saml2_preprod_users, vh_video_kinly_saml2_test_users, vh_video_kinly_saml2_test1_users, vh_video_kinly_saml2_test2_users, vh_judges_vh_video_kinly_saml2_dev
+        USERGROUPS__KINLYPRODGROUPS: vh_video_kinly_saml2_prod_users
+        USERGROUPS__PERFORMANCETESTACCOUNTGROUPS: PerformanceTestAccount
+        USERGROUPS__REPRESENTATIONGROUPS: VirtualRoomProfessionalUser, External
+        USERGROUPS__TESTACCOUNTGROUPS: TestAccount
+        USERGROUPS__TESTWEBGROUPS: VHQA, Civil Money Claims
+        USERGROUPS__VIDEOHEARINGSOFFICERGROUPS: VirtualRoomAdministrator, Civil Money Claims, Financial Remedy, Generic, Children Act, Tax, Family Law Act, Tribunal, Civil, Land Registration, Housing Act, Housing & Planning Act, Leasehold Enfranchisement, Leasehold Management, Park Homes, Rents, Right to buy, Employment Tribunal, Court of Appeal Criminal Division, GRC - Charity, GRC - CRB, GRC - DVSA, GRC - Estate Agents, GRC - Food, GRC - Environment, GRC - Gambling, GRC - Immigration Services, GRC - Information Rights, GRC - Pensions Regulation, GRC - Professional Regulations, GRC - Query Jurisdiction, GRC - Welfare of Animals, Immigration and Asylum
+        USERNAMESTEM: hearings.reform.hmcts.net
+        WOWZACONFIGURATION__STORAGEACCOUNTKEY: < - - - -s
+        WOWZACONFIGURATION__STORAGEACCOUNTNAME: vhwowza{{ .Values.global.environment }}
+        WOWZACONFIGURATION__CONTAINERNAME: recordings
+        XDT_MICROSOFTAPPLICATIONINSIGHTS_BASEEXTENSIONS: disabled
+        XDT_MICROSOFTAPPLICATIONINSIGHTS_MODE: default
+        XDT_MICROSOFTAPPLICATIONINSIGHTS_PREEMPTSDK: 1

@@ -1,0 +1,58 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-bookings-api
+  namespace: vh
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/tag.nodejs: glob:prod-*
+spec:
+  releaseName: vh-bookings-api
+  chart:
+    git: git@github.com:hmcts/vh-bookings-api
+    path: charts/vh-bookings-api
+    ref: helm_chart_setup
+values:
+java:
+  replicas: 2
+  useInterpodAntiAffinity: false
+  image: 'sdshmctspublic.azurecr.io/vh/bookings-api:latest'
+  applicationPort: 80
+  ingressHost: vh-bookings-api-{{ .Values.global.environment }}.platform.hmcts.net
+  releaseNameOverride: vh-bookings-api
+  aadIdentityName: vh
+  keyVaults:
+    vh-infra-core:
+      excludeEnvironmentSuffix: false
+      resourceGroup: vh-infra-core-{{ .Values.global.environment }}
+      usePodIdentity: true
+      secrets:
+        - vh-bookings-api-key
+        - vh-bookings-api-appid
+        - vh-bookings-api-identifieruris
+        - vh-infra-core-AppInsightsKey
+        - TestApiDb-connection-str
+        - testdefaultpassword
+  environment:
+    APPINSIGHTS_INSTRUMENTATIONKEY: $(APPLICATIONINSIGHTS_INSTRUMENTATIONKEY)
+    APPINSIGHTS_PROFILERFEATURE_VERSION: disabled
+    APPINSIGHTS_SNAPSHOTFEATURE_VERSION: disabled
+    APPLICATIONINSIGHTS_INSTRUMENTATIONKEY: $(APPLICATIONINSIGHTS_INSTRUMENTATIONKEY)
+    APPLICATIONINSIGHTS_CONNECTION_STRING: InstrumentationKey=$(INSTRUMENTATIONKEY)
+    APPLICATIONINSIGHTSAGENT_EXTENSION_VERSION: ~2
+    AZUREAD__CLIENTSECRET: $(AZUREAD__CLIENTSECRET)
+    AZUREAD__CLIENTID: $(AZUREAD__CLIENTID)
+    AZUREAD__TENANTID: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    AZUREAD__VHBOOKINGSAPIRESOURCEID: $(AZUREAD__VHBOOKINGSAPIRESOURCEID)
+    DIAGNOSTICSERVICES_EXTENSION_VERSION: disabled
+    DISABLEHTTPSREDIRECTION: true
+    INSTRUMENTATIONENGINE_EXTENSION_VERSION: disabled
+    KINLYCONFIGURATION__SIPADDRESSSTEM: '@test.epvmr.{{ .Values.global.environment }}.kinlycloud.net'
+    SERVICEBUSCONNECTION: Endpoint=sb://vh-core-infra-{{ .Values.global.environment }}.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=    << --- - - - - -  needs addressing
+    SERVICEBUSQUEUE__CONNECTIONSTRING: Endpoint=sb://vh-core-infra-dev.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKeySend;SharedAccessKey=     << --- - - - - -  needs addressing
+    SNAPSHOTDEBUGGER_EXTENSION_VERSION: disabled
+    USESERVICEBUSFAKE: false
+    USESERVICEBUSFAKE__FALSE: false
+    XDT_MICROSOFTAPPLICATIONINSIGHTS_BASEEXTENSIONS: disabled
+    XDT_MICROSOFTAPPLICATIONINSIGHTS_MODE: default
