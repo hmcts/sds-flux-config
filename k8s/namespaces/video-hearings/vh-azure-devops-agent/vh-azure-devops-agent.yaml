@@ -10,6 +10,6 @@ metadata:
 spec:
   releaseName: vh-azure-devops-agent
   chart:
-    git: git@github.com:hmcts/vh-azure-devops-agent
-    path: charts/vh-azure-devops-agent
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/az-devops-agent
     ref: master
