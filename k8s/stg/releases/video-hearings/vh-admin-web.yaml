@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/video-hearings
     ref: master
   values:
-    image: sspublicstg.azurecr.io/vh-admin-web:master-a4f4dee807ef68ad615764569e2b733946c15e1f
+    image: sspublicstg.azurecr.io/vh-admin-web:master-744bdd7ac60c6bf13ddddc3560ae818738f1b0d6
     pullPolicy: Always
     replicaCount: 0
     service:
