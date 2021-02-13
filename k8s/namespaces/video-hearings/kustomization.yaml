@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: vh
 resources:
 - namespace.yaml
+- vh-azure-devops-agent/vh-azure-devops-agent.yaml
 - vh-user-api/vh-user-api.yaml
 - vh-video-web/vh-video-web.yaml
 - vh-video-api/vh-video-api.yaml
