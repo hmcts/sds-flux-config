@@ -12,6 +12,11 @@ bases:
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
+patches:
+  - path: ../stg-helmrelease.yaml
+    target:
+      kind: HelmRelease
+
 patchesStrategicMerge:
 
 #kube-slack patch
@@ -30,4 +35,5 @@ patchesStrategicMerge:
 # - ../../../release/admin/env-injector/patches/stg/cluster-00/env-injector.yaml
 
 #neuvector patch
+- ../../../namespaces/neuvector/patches/stg/common/neuvector.yaml
 - ../../../namespaces/neuvector/patches/stg/cluster-01/neuvector.yaml
