@@ -16,7 +16,7 @@ spec:
   values:
     job:
       image: sdshmctspublic.azurecr.io/data-extractor-job:pr-1
-      suspend: true
+      suspend: false
       kind: CronJob
       schedule: '0 * * * *'
       labels:

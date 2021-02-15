@@ -16,7 +16,7 @@ spec:
   values:
     job:
       image: sdshmctspublic.azurecr.io/mi-integration-service:pr-1
-      suspend: true
+      suspend: false
       kind: CronJob
       schedule: '15 * * * *'
       labels:
