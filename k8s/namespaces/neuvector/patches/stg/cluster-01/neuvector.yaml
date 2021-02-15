@@ -13,12 +13,7 @@ spec:
           shareName: neuvector-data-01
         ingress:
           enabled: true
-          host: neuvector01.staging.platform.hmcts.net
-          path: "/api"
-          annotations:
-            kubernetes.io/ingress.class: traefik-neuvector-api
-            ingress.kubernetes.io/rewrite-target: /
-            ingress.kubernetes.io/protocol: https
+          host: neuvector01-api.staging.platform.hmcts.net
         configmap:
           data:
             sysinitcfg.yaml: |
@@ -39,5 +34,3 @@ spec:
         ingress:
           host: neuvector01.staging.platform.hmcts.net
           enabled: true
-          annotations:
-            kubernetes.io/ingress.class: traefik-neuvector-api
