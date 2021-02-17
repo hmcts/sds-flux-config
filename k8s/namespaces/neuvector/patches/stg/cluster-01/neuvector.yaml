@@ -13,7 +13,7 @@ spec:
           shareName: neuvector-data-01
         ingress:
           enabled: true
-          host: neuvector01-api.staging.platform.hmcts.net
+          host: sds-neuvector01-api.staging.platform.hmcts.net
         configmap:
           data:
             samlinitcfg.yaml: |
@@ -54,8 +54,8 @@ spec:
                 - security-event
                 - audit
               Syslog_In_Json: false
-              Cluster_Name: stg01
+              Cluster_Name: sds-stg01
       manager:
         ingress:
-          host: neuvector01.staging.platform.hmcts.net
+          host: sds-neuvector01.staging.platform.hmcts.net
           enabled: true
