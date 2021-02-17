@@ -1,0 +1,23 @@
+apiVersion: ENC[AES256_GCM,data:uVs=,iv:EcutPPjONgwyFLe4n7te4KlvpMBY/vb+KFa3JTpoMmw=,tag:4LUUMhsrOsqRY9MtpYHr/Q==,type:str]
+data:
+    azure_log_workspace_id: ENC[AES256_GCM,data:8lgNBeMs+aevAasSpsnU59sAxSXMZdUVIoWXXV7flxysB5P4yo4jloHqCHPNVyA2,iv:U3KOnkNTPxJfufkXHC6bwyJEjV4OAOyyglvYhelng9c=,tag:Aipd1B64unbpHhkbdxzeXA==,type:str]
+    azure_log_workspace_shared_key: ENC[AES256_GCM,data:GHfJo8rX6ji5NR6T1b5gYpwQEXY6v8pCGOmoTtEbv600DXkcpOO2axs6tnQ4jf6lPN1erGcYRCcujfOo96JZZLJ61y+3awRmW46JGVToTtWJi6qx3TkK895VEjb7bDyNbXh96qN9dxt8qPaOOci4/l0ukQ28fsGA,iv:TCLwN8GoZu+WUlAawbYyhPPceFWHYnvGGdLA72C6Nj0=,tag:4BCGAc4ywaVq0yivWci3+A==,type:str]
+kind: ENC[AES256_GCM,data:QMDArwMD,iv:aT80pfQccb5JwmQsFipg0p3OIGC6DQxpupEH6Mfth1k=,tag:3ifjaITqL81b/k0LVrWLZQ==,type:str]
+metadata:
+    creationTimestamp: null
+    name: ENC[AES256_GCM,data:o6aZ0rhhpPZGXYWTxA==,iv:qaJ2v2tgDe6WGKkideFRypBXv6LMMIv5YNK0ZDzuBMk=,tag:piLlxhnJX0xWomDlIKO8Lg==,type:str]
+    namespace: ENC[AES256_GCM,data:NNinhZLNbwmK,iv:XA+4jkg7U8VIHjnCe2z8ha3lEDDJ3S1kKaek58JO95Y=,tag:ZKIQDnZyEOpT6PiWz6R4KA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+    -   vault_url: https://dtssharedservicesprodkv.vault.azure.net
+        name: sops-key
+        version: 883d8b431ad345d09b2697c3aaae2a0c
+        created_at: '2021-02-17T15:33:35Z'
+        enc: tw7Ythe-jQtGmEJo3ab0k0lvUnA7kQpq5fdEEsfxP55s6upv5XrdzKiHGqVkmOIuNnxJ0ugEU8DYY7Ol6Qhk-5wIvjutcxNoSxnlF55Ivlr5LmHuPIwQjRydJBGnOFJjivqnj6FrwP2oNAvb5QfZu8yN8Z68VZ_zanHQo7JBQ0f4riIBvTImm5UOPOP0ZhG-HPiRbGedS0WY0g3OnAlwIajRSBYRRy3iTQ9gachP_-ufNQUtsIa1eHQB4PndQ4btlIcZd1SFZS8XWEnFQNYRQGGVJbQGuhXB3pbnQiVMZHU_WFnS8IBDV4KRfKN3mcDYEqBSicZ0u6IJ4GJRtCJssg
+    lastmodified: '2021-02-17T15:33:39Z'
+    mac: ENC[AES256_GCM,data:1JKw5TNs7cFsq7+OpmKTqb/e8LyFUb6gMKc7nSQj5KQ95iUYG2TjqMCKPeEhmOgtgkNlUpzuxroqUdoXKTrQk5cbGGGPSMgTpAImjxlpnMY8gGiv+eUGEIPrJvJ/ivizVZQ/RAtpFae0hGD91si5HBhRdDfio2QtEDTkrf01CfA=,iv:x4BjBzLLzpgOSXbIUQ0xzwMSnDhqKXxm51xDK4IwQRQ=,tag:7zrqI6vdK45gjtLNuqSYEg==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.5.0
