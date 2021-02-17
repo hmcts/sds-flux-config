@@ -8,8 +8,14 @@ bases:
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
+- ../../../namespaces/neuvector
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
+
+patches:
+  - path: ../ithc-helmrelease.yaml
+    target:
+      kind: HelmRelease
 
 patchesStrategicMerge:
 
@@ -27,3 +33,7 @@ patchesStrategicMerge:
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/ithc/cluster-00/env-injector.yaml
+
+#neuvector patch
+- ../../../namespaces/neuvector/patches/nonprod/neuvector.yaml
+- ../../../namespaces/neuvector/patches/ithc/cluster-00/neuvector.yaml
