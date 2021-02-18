@@ -15,7 +15,7 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: toffee-recipe-frontend
+  name: toffee-frontend
   namespace: toffee
   annotations:
     fluxcd.io/automated: "true"
