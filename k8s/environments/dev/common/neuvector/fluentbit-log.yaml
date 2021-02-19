@@ -1,0 +1,24 @@
+apiVersion: ENC[AES256_GCM,data:mxc=,iv:dHTogenh8b4ZVEbUl++CtmSU/M43/5BrAT0GtLEioqo=,tag:vU3Z00tkajF+fxGLSDUewA==,type:str]
+data:
+    azure_log_workspace_id: ENC[AES256_GCM,data:fkV/1yAfYiYj/utXnyWasUCFnCpJBQEKWp8wjMmPLdHUywXifMfbOmW7aQZ6h3c4,iv:N/yKuHmPnVnCICZdjZlIg7tY86UR7cY1IUzHVsUmS/E=,tag:4HpBubHiXHtaj/Ep6cihow==,type:str]
+    azure_log_workspace_shared_key: ENC[AES256_GCM,data:3lrpL8SGhZAYLpviIboG2UZrThqqa9sgGSMdeT3eYaXpvz1JbsJAkv2KwtGTIStNuNGRsmLGBG3KqSfQ5P4esdzVglDeLnMiFfs+m4ZyfK5GwXIBptxeLcMEemdAvHqKCeK7vqA1Er5hBOAuvwju77/JKuTgGqtw,iv:dAX9tzofk4LnbSRocv65GvVyCapjA4jOzV5EoxrH7BQ=,tag:uFs+HsxDM3WjMINSsTmaDw==,type:str]
+kind: ENC[AES256_GCM,data:VHAbllMO,iv:OMUC2v9o3qmtTJEHl7d/+EvYLPhQ0FUVsqZfgVDU0ZA=,tag:lDJvYYa4w4ji2E8IiAxZCQ==,type:str]
+metadata:
+    creationTimestamp: null
+    name: ENC[AES256_GCM,data:/4WtbtpSl6qI2YiVJQy9CQ==,iv:DmIdjPuJiAQXJ2+fX8z2LQ21QgoDDt73hMqzQ3/nfzs=,tag:R+qx37bES6wxLwiDr4Z7ww==,type:str]
+    namespace: ENC[AES256_GCM,data:/RrWj9hZCaTe,iv:ux/zodf0aChWKCxm7UXD4kZriv6PDMUjD0BkEFyGrLE=,tag:FAVjJ31ZD30Q9aZFUrhByg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+    -   vault_url: https://dtssharedservicesdevkv.vault.azure.net
+        name: sops-key
+        version: 2beba064ddfe454482ad0133af2cf0fd
+        created_at: '2021-02-19T15:58:58Z'
+        enc: C_YCeEvEiIk8Pf2N_lDaEnv-oIVRTdO24eXbvEdeVhC6BKv-am_AkdWU7PhpkmHPbz_jyhQsmZe6JJKOeBIowLbzkxLWn4Truuq2SCB0Prokv-jSEwizNJj1mif86oxOKrFxV73V4HHfzGnMkjTIbRiRywZzdHr5090A2aZsJLN4x8OLcspSs2U1dKqltMOgIpn8NUJHApAIkIJRPKpRVszlKZG9zzlvW_PrcUUe7hK4wORzhEUctzoVPxdh2FDwRF0BBvD9UDANqDMAP2Ket8HZbHJeX9_e6xYmW-Pj4JrC3QMxFepvTNpplE-ngCm0MHYx3asO4G9HLoYe_glt9Q
+    hc_vault: []
+    lastmodified: '2021-02-19T15:58:59Z'
+    mac: ENC[AES256_GCM,data:62sf80M3S6e+vlr/mtUpDbxAUvLkQPuTJxA341sbAiwUscpvPWM/vWgaWk0wSVRgY+VJp/FWEyxjJ3S5SuqWmIXRQk8WbHgucV2Yj9DzDpTGXJGLvUYwVg1ArlUS28HlSPDGZpkndSsTyMNkIU0bJ9Iu9u9O0kSszchAzT7e35k=,iv:B+kMV0AGSV/KISATKxS0fqyzSTM6wGlNu6Rb+Khagtg=,tag:4xKjVxllIs25rCIRKsXTMQ==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.6.1
