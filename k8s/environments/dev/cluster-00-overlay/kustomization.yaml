@@ -9,8 +9,14 @@ bases:
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
+- ../../../namespaces/neuvector
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
+
+patches:
+  - path: ../dev-helmrelease.yaml
+    target:
+      kind: HelmRelease
 
 patchesStrategicMerge:
 
@@ -31,3 +37,7 @@ patchesStrategicMerge:
 
 # mail-relay
 - ../../../release/mailrelay/mailrelay/patches/dev/cluster-00/mailrelay.yaml
+
+#neuvector patch
+- ../../../namespaces/neuvector/patches/nonprod/neuvector.yaml
+- ../../../namespaces/neuvector/patches/dev/cluster-00/neuvector.yaml
