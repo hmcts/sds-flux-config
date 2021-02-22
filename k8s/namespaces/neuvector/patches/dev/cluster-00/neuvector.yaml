@@ -48,6 +48,8 @@ spec:
           update: '{"config":{"id":9,"comment":"","from":"MailRelay","to":"Office365Connector","ports":"tcp/25","action":"allow","applications":["Any"],"disable":false}}'
         - create: '{"insert":{"after":9,"rules":[{"id":10,"comment":"","from":"AllPods","to":"Office365Connector","ports":"tcp/25","action":"deny","applications":["Any"],"disable":false,"learned": false}]}}'
           update: '{"config":{"id":10,"comment":"","from":"AllPods","to":"Office365Connector","ports":"tcp/25","action":"deny","applications":["Any"],"disable":false}}'
+        - create: '{"insert":{"after":10,"rules":[{"id":11,"comment":"","from":"AllPods","to":"MailRelay","ports":["tcp/25", "tcp/8025"],"action":"deny","applications":["Any"],"disable":false,"learned": false}]}}'
+          update: '{"config":{"id":11,"comment":"","from":"AllPods","to":"MailRelay","ports":["tcp/25", "tcp/8025"],"action":"deny","applications":["Any"],"disable":false}}'
     groups:
       - '{"config":{"name":"AzurePostgreSQL","criteria":[{"key": "address", "value": "*.postgres.database.azure.com", "op": "="}]}}'
       - '{"config":{"name":"ApplicationInsights","criteria":[{"key": "address", "value": "dc.services.visualstudio.com", "op": "="}, {"key": "address", "value": "rt.services.visualstudio.com", "op": "="}, {"key": "address", "value": "dc.applicationinsights.microsoft.com", "op": "="}, {"key": "address", "value": "euw.rt.prod.applicationinsights.trafficmanager.net", "op": "="}]}}'
@@ -59,7 +61,7 @@ spec:
       - '{"config":{"name":"Mta","criteria":[{"key": "address", "value": "mta.reform.hmcts.net", "op": "="}]}}'
       - '{"config":{"name":"Idam","criteria":[{"key": "address", "value": "idam-api.platform.hmcts.net", "op": "="}]}}'
       - '{"config":{"name":"Office365Connector","criteria":[{"key": "address", "value": "40.92.0.0/15", "op": "="}, {"key": "address", "value": "40.107.0.0/16", "op": "="}, {"key": "address", "value": "52.100.0.0/14", "op": "="}, {"key": "address", "value": "104.47.0.0/17", "op": "="}]}}'
-      - '{"config":{"name":"MailRelay","criteria":[{"key": "container", "value": "exim", "op": "="}]}}'
+      - '{"config":{"name":"MailRelay","criteria":[{"key": "namespace", "value": "mailrelay", "op": "="}]}}'
     neuvector:
       controller:
         azureFileShare:
