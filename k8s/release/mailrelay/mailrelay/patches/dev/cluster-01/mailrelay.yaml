@@ -6,6 +6,10 @@ metadata:
   namespace: mailrelay
 spec:
   values:
+    image:
+      repository: sdshmctspublic.azurecr.io/exim-relay
+      tag: 0.3
+      pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
       loadBalancerIP: "10.145.31.31"
