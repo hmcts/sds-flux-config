@@ -6,62 +6,6 @@ metadata:
   namespace: neuvector
 spec:
   values:
-    rules:
-      admission:
-        enable: true
-        mode: "protect"  # one of: monitor, protect
-        rules:
-          - '{"config":{"id":1000,"category":"Kubernetes","comment":"Allow system namespaces","criteria":[{"name":"namespace","op":"containsAny","value":"neuvector,kube-system,knode-system"}],"disable":false,"rule_type": "exception","cfg_type":"user_created"}}'
-          - '{"config":{"id":1001,"category":"Kubernetes","comment":"Allow admin namespaces","criteria":[{"name":"namespace","op":"containsAny","value":"admin,kured,monitoring"}],"disable":false,"rule_type": "exception","cfg_type":"user_created"}}'
-          - '{"config":{"id":1002,"category":"Kubernetes","comment":"Allow HMCTS registries","criteria":[{"name":"imageRegistry","op":"containsAny","value":"https://hmctspublic.azurecr.io/,https://hmctsprivate.azurecr.io/,https://sdshmctsprivate.azurecr.io/,https://sdshmctspublic.azurecr.io/"}],"disable":false,"rule_type": "exception","cfg_type":"user_created"}}'
-          - '{"config":{"id":1003,"category":"Kubernetes","comment":"Default deny","criteria":[{"name":"imageRegistry","op":"containsAny","value":"https://localhost/,https://*.*/"}],"disable":false,"rule_type": "deny","cfg_type":"user_created"}}'
-        defaultAction: "allow"
-        admClientmMde: "service"
-        service: "neuvector"
-      response:
-        policies:
-          - '{"insert":{"after":0,"rules":[{"group":null,"conditions":[{"type":"name","value":"Admission.Control.Denied"}],"actions":["webhook"],"event":"admission-control","disable":false}]}}'
-          - '{"insert":{"after":1,"rules":[{"group":null,"conditions":[],"actions":["webhook"],"event":"security-event","disable":true}]}}'
-          - '{"insert":{"after":2,"rules":[{"group":null,"conditions":[{"type":"level","value":"Error"}],"actions":["webhook"],"event":"security-event","disable":false}]}}'
-          - '{"insert":{"after":3,"rules":[{"group":null,"conditions":[{"type":"name","value":"Container.Privilege.Escalation"}],"actions":["quarantine"],"event":"security-event","disable":true}]}}'
-          - '{"insert":{"after":4,"rules":[{"group":null,"conditions":[{"type":"cve-high","value":"10"}],"actions":["quarantine"],"event":"cve-report","disable":true}]}}'
-          - '{"insert":{"after":5,"rules":[{"group":null,"conditions":[{"type":"name","value":"Container.Quarantined"}],"actions":["webhook"],"event":"event","disable":false}]}}'
-          - '{"insert":{"after":6,"rules":[{"group":null,"conditions":[{"type":"name","value":"5.4"}],"actions":["webhook"],"event":"compliance","disable":true}]}}'
-      network:  # IDs must match array index + 1
-        - create: '{"insert":{"after":0,"rules":[{"id":1,"comment":"","from":"AllPods","to":"AzurePostgreSQL","ports":"tcp/5432","action":"allow","applications":["PostgreSQL","SSL","HTTP"],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":1,"comment":"","from":"AllPods","to":"AzurePostgreSQL","ports":"tcp/5432","action":"allow","applications":["PostgreSQL","SSL","HTTP"],"disable":false}}'
-        - create: '{"insert":{"after":1,"rules":[{"id":2,"comment":"","from":"AllPods","to":"ApplicationInsights","ports":"tcp/443","action":"allow","applications":["SSL","HTTP"],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":2,"comment":"","from":"AllPods","to":"ApplicationInsights","ports":"tcp/443","action":"allow","applications":["SSL","HTTP"],"disable":false}}'
-        - create: '{"insert":{"after":2,"rules":[{"id":3,"comment":"","from":"AllPods","to":"GovUkNotify","ports":"tcp/443","action":"allow","applications":["SSL","HTTP"],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":3,"comment":"","from":"AllPods","to":"GovUkNotify","ports":"tcp/443","action":"allow","applications":["SSL","HTTP"],"disable":false}}'
-        - create: '{"insert":{"after":3,"rules":[{"id":4,"comment":"","from":"AllPods","to":"GovUkPay","ports":"tcp/443","action":"allow","applications":["SSL","HTTP"],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":4,"comment":"","from":"AllPods","to":"GovUkPay","ports":"tcp/443","action":"allow","applications":["SSL","HTTP"],"disable":false}}'
-        - create: '{"insert":{"after":4,"rules":[{"id":5,"comment":"","from":"AllPods","to":"GovUkBankHolidays","ports":"tcp/443","action":"allow","applications":["SSL","HTTP"],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":5,"comment":"","from":"AllPods","to":"GovUkBankHolidays","ports":"tcp/443","action":"allow","applications":["SSL","HTTP"],"disable":false}}'
-        - create: '{"insert":{"after":5,"rules":[{"id":6,"comment":"","from":"AllPods","to":"ServiceBus","ports":"tcp/5671","action":"allow","applications":["SSL"],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":6,"comment":"","from":"AllPods","to":"ServiceBus","ports":"tcp/5671","action":"allow","applications":["SSL"],"disable":false}}'
-        - create: '{"insert":{"after":6,"rules":[{"id":7,"comment":"","from":"AllPods","to":"Mta","ports":"tcp/25","action":"allow","applications":[],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":7,"comment":"","from":"AllPods","to":"Mta","ports":"tcp/25","action":"allow","applications":[],"disable":false}}'
-        - create: '{"insert":{"after":7,"rules":[{"id":8,"comment":"","from":"AllPods","to":"Idam","ports":"tcp/443","action":"allow","applications":["SSL"],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":8,"comment":"","from":"AllPods","to":"Idam","ports":"tcp/443","action":"allow","applications":["SSL"],"disable":false}}'
-        - create: '{"insert":{"after":8,"rules":[{"id":9,"comment":"","from":"MailRelay","to":"Office365Connector","ports":"tcp/25","action":"allow","applications":[],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":9,"comment":"","from":"MailRelay","to":"Office365Connector","ports":"tcp/25","action":"allow","applications":[],"disable":false}}'
-        - create: '{"insert":{"after":9,"rules":[{"id":10,"comment":"","from":"AllPods","to":"Office365Connector","ports":"tcp/25","action":"deny","applications":[],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":10,"comment":"","from":"AllPods","to":"Office365Connector","ports":"tcp/25","action":"deny","applications":[],"disable":false}}'
-        - create: '{"insert":{"after":10,"rules":[{"id":11,"comment":"","from":"AllPods","to":"MailRelay","ports":["tcp/25", "tcp/8025"],"action":"deny","applications":[],"disable":false,"learned": false}]}}'
-          update: '{"config":{"id":11,"comment":"","from":"AllPods","to":"MailRelay","ports":["tcp/25", "tcp/8025"],"action":"deny","applications":[],"disable":false}}'
-    groups:
-      - '{"config":{"name":"AzurePostgreSQL","criteria":[{"key": "address", "value": "*.postgres.database.azure.com", "op": "="}]}}'
-      - '{"config":{"name":"ApplicationInsights","criteria":[{"key": "address", "value": "dc.services.visualstudio.com", "op": "="}, {"key": "address", "value": "rt.services.visualstudio.com", "op": "="}, {"key": "address", "value": "dc.applicationinsights.microsoft.com", "op": "="}, {"key": "address", "value": "euw.rt.prod.applicationinsights.trafficmanager.net", "op": "="}]}}'
-      - '{"config":{"name":"GovUkNotify","criteria":[{"key": "address", "value": "api.notifications.service.gov.uk", "op": "="}]}}'
-      - '{"config":{"name":"GovUkPay","criteria":[{"key": "address", "value": "publicapi.payments.service.gov.uk", "op": "="}]}}'
-      - '{"config":{"name":"GovUkBankHolidays","criteria":[{"key": "address", "value": "www.gov.uk", "op": "="}]}}'
-      - '{"config":{"name":"AllPods","criteria":[{"key": "namespace", "value": "*", "op": "="}]}}'
-      - '{"config":{"name":"ServiceBus","criteria":[{"key": "address", "value": "*.servicebus.windows.net", "op": "="}]}}'
-      - '{"config":{"name":"Mta","criteria":[{"key": "address", "value": "mta.reform.hmcts.net", "op": "="}]}}'
-      - '{"config":{"name":"Idam","criteria":[{"key": "address", "value": "idam-api.platform.hmcts.net", "op": "="}]}}'
-      - '{"config":{"name":"Office365Connector","criteria":[{"key": "address", "value": "40.92.0.0/15", "op": "="}, {"key": "address", "value": "40.107.0.0/16", "op": "="}, {"key": "address", "value": "52.100.0.0/14", "op": "="}, {"key": "address", "value": "104.47.0.0/17", "op": "="}]}}'
-      - '{"config":{"name":"MailRelay","criteria":[{"key": "namespace", "value": "mailrelay", "op": "="}]}}'
     neuvector:
       controller:
         azureFileShare:
@@ -77,20 +21,20 @@ spec:
               Issuer: https://sts.windows.net/531ff96d-0ae9-462a-8d2d-bec7c0b42082/
               X509_Cert: |
                 -----BEGIN CERTIFICATE-----
-                MIIDBTCCAe2gAwIBAgIQN33ROaIJ6bJBWDCxtmJEbjANBgkqhkiG9w0BAQsFADAtMSswKQYDVQQD
-                EyJhY2NvdW50cy5hY2Nlc3Njb250cm9sLndpbmRvd3MubmV0MB4XDTIwMTIyMTIwNTAxN1oXDTI1
-                MTIyMDIwNTAxN1owLTErMCkGA1UEAxMiYWNjb3VudHMuYWNjZXNzY29udHJvbC53aW5kb3dzLm5l
-                dDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKGiy0/YZHEo9rRn2bI27u189Sq7NKhI
-                nFz5hLCSjgUB2rmf5ETNR3RJIDiW1M51LKROsTrjkl45cxK6gcVwLuEgr3L1TgmBtr/Rt/riKyxe
-                XbLQ9LGBwaNVaJrSscxfdFbJa5J+qzUIFBiFoL7kE8ZtbkZJWBTxHEyEcNC52JJ8ydOhgvZYyket
-                e8AAVa2TZAbg4ECo9+6nMsaGsSBncRHJlRWVycq8Q4HV4faMEZmZ+iyCZRo2fZufXpn7sJwZ7CEB
-                uw4qycHvUl6y153sUUFqsswnZGGjqpKSq7I7sVI9vjB199RarHaSSbDgL2FxjmASiUY4RqxnTjVa
-                2XVHUwUCAwEAAaMhMB8wHQYDVR0OBBYEFI5mN5ftHloEDVNoIa8sQs7kJAeTMA0GCSqGSIb3DQEB
-                CwUAA4IBAQBnaGnojxNgnV4+TCPZ9br4ox1nRn9tzY8b5pwKTW2McJTe0yEvrHyaItK8KbmeKJOB
-                vASf+QwHkp+F2BAXzRiTl4Z+gNFQULPzsQWpmKlz6fIWhc7ksgpTkMK6AaTbwWYTfmpKnQw/KJm/
-                6rboLDWYyKFpQcStu67RZ+aRvQz68Ev2ga5JsXlcOJ3gP/lE5WC1S0rjfabzdMOGP8qZQhXk4wBO
-                gtFBaisDnbjV5pcIrjRPlhoCxvKgC/290nZ9/DLBH3TbHk8xwHXeBAnAjyAqOZij92uksAv7ZLq4
-                MODcnQshVINXwsYshG1pQqOLwMertNaY5WtrubMRku44Dw7R
+                MIIC8DCCAdigAwIBAgIQHTjN1UZmFJJEL3XDvmzEmzANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQD
+                EylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yMTAyMjIxNDEw
+                MzNaFw0yNDAyMjIxNDEwMzNaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQg
+                U1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3g+9NgCaJREb
+                6VAf7mfZCqdD+NUAH9P7pLRpdAMEuPW4IBlown62oQUl36B3TtWBs0w21Gzrm46xNEDrxSTrI8tT
+                mNzDxeH4QG6YZ+Fln9jcQM35bx70gDtG9Npj7VJQyh4DO5AHrdGJ3YiMDRhQcxN1LCOEEageck9o
+                CYHno3oKsFY3NGRBe7R4Lk/0en5VwW0+Gp2a3SPKK/rju3PbbLUuyyNWutX6GHRxqZ13ZD2AGFxJ
+                mokxzbb1jI/M78NVktjfG4f7rV4WGPWs6NdgAACLpdZUE4U3/pyHRWndym46gsLZvZXsghbJbuz/
+                xLxTrJphYoYDq88r51MsgptdUQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCpD/llkLbCWc6ABgFC
+                QkC4gY4LXZm5GGpOLk4cjny6tWg9apQDKSWWoqeb4Vcp/vhRvMboHZU6GR/uXfjSzzMXWfcExKxP
+                EZEi6/0+xpxOyfTr0VGXtfcv16c2I8+rjbYdApc+JXb6Z9AAdhu4vFvBV/ESHFYTjj1VGqbnewJ8
+                GqaWu8z1YQ5Zx+JHtSgbbVJSDhdVY+4g6snxvHtTcKgGcDAucjhXvX60oFZgginlK9wXYJ7wm35s
+                WJGzmYJZKKtBVzrTUJuS8nGHEXNC0sq7XNHr3F0gvsfGzAA3amW3zyydDcSvL1x9gl4Cmu3Pyy9V
+                +Qo65pQUOa7O+k0gX1Yk
                 -----END CERTIFICATE-----
               Enable: true
               Default_Role: reader
