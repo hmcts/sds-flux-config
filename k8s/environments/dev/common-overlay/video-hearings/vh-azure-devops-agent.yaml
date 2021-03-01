@@ -1,0 +1,33 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-azure-devops-agent-{{ .Values.global.environment }}
+  namespace: vh
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+keyVaults:
+  - name: vh-infra-core-dev
+    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    secrets:
+      - azure-devops-agent-token
+replicas: 1
+
+image:
+  repository: hmctspublic.azurecr.io/hmcts/vsts-agent
+  tag: db9h0g
+  pullPolicy: Always
+spec:
+  releaseName: vh-azure-devops-agent-{{ .Values.global.environment }}
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: charts/vh-azure-devops-agent
+    ref: master
+
+aadIdentityName: vh-aad-identity
+
+azureDevOps:
+  url: "https://hmctsreform.visualstudio.com/"
+  pool: "vh-sds"
+  agentName: "vh-azure-devops-agent"

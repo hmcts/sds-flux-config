@@ -1,0 +1,45 @@
+---
+replicas: 1
+
+image:
+  repository: hmctspublic.azurecr.io/hmcts/vsts-agent
+  tag: db9h0g
+  pullPolicy: Always
+
+resources: {}
+    # We usually recommend not to specify default resources and to leave this as a conscious
+    # choice for the user. This also increases chances charts run on environments with little
+    # resources, such as Minikube. If you do want to specify resources, uncomment the following
+    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+    #   limits:
+    #     cpu: 1
+    #     memory: 1Gi
+    #   requests:
+    #     cpu: 1
+    #     memory: 1Gi
+
+cleanRun: false
+
+aadIdentity:
+  name: vh-aad-identity
+  type: "0"
+  resourceId: "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/managed-identities-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-infra-core-sbox-kvuser"
+  clientId: "5453c7c7-c40b-49b6-83ae-871a882a20d9"
+
+keyVaults:
+- name: vh-infra-core-sbox
+  tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+  secrets: 
+  - azure-devops-agent-token
+
+azureDevOps:
+  url: "https://hmctsreform.visualstudio.com/"
+  pool: "vh-sds"
+  agentName: "vh-azure-devops-agent"
+
+env: {}
+
+extraEnv: {}
+
+volumes: {}
+
