@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: vh-azure-devops-agent-{{ .Values.global.environment }}
+  name: vh-azure-devops-agent-dev
   namespace: vh
   annotations:
     flux.weave.works/automated: "true"
@@ -19,7 +19,7 @@ image:
   tag: db9h0g
   pullPolicy: Always
 spec:
-  releaseName: vh-azure-devops-agent-{{ .Values.global.environment }}
+  releaseName: vh-azure-devops-agent-dev
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: charts/vh-azure-devops-agent
