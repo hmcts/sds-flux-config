@@ -1,0 +1,61 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: neuvector
+  namespace: neuvector
+spec:
+  values:
+    neuvector:
+      controller:
+        azureFileShare:
+          secretName: nv-storage-secret
+          shareName: neuvector-data-00
+        ingress:
+          enabled: true
+          host: sds-neuvector00-api.platform.hmcts.net
+        configmap:
+          data:
+            samlinitcfg.yaml: |
+              SSO_URL: https://login.microsoftonline.com/531ff96d-0ae9-462a-8d2d-bec7c0b42082/saml2
+              Issuer: https://sts.windows.net/531ff96d-0ae9-462a-8d2d-bec7c0b42082/
+              X509_Cert: |
+                -----BEGIN CERTIFICATE-----
+                MIIC8DCCAdigAwIBAgIQHE2ZlIwnubpO7QQcdHMERjANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQD
+                EylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yMTAyMTcxMTIw
+                MzFaFw0yNDAyMTcxMTIwMzFaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQg
+                U1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtGc4hKN88MAq
+                m2n/x6g3omPcs5HvTHjd4Aug0ba5/RdTzrErijgNukE16eRh32vu52lxdc6wybD+P3QWC98TUC+t
+                /oNHq8P7YYaArFHWRgTl3lFDHCJ1Hv403oNuqSWgQlyU9y46R9wyw/8ZYd89wSBbR7SJKA4hXepP
+                tj5ouatO4+Ur7qRSf+tkGKn3AGmimGht62BgP2q8xD2H8yKXEWQistIJqJSXSCUglwlmTMYLrWfT
+                8fn91afK3pSNALCkFYGZ2rc/euPM/qsRuqaF8D/d1wJQD9N/1PY6aTbQFPSeS6TnrYudR1G1ndav
+                xCNkqbxOtf7bezY4c2lyUGmbuQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQABpHmIcGehvLuSHoLt
+                h9+0DobtNtDW4+E5Vt86KTZt1fPQ9xqyCnkMr1/O9Bw8VAu9CFyhcADYkxtGfJtaCOC+rHavUyR5
+                hVfS0JNWEqu2qTcPLHOKkytVCSSctld1O6ED/UJGR70jWOUes2EjLrNewIHnnj9Oc/fPP7K3Nh/1
+                jO2hQJAidUBUsrGKjwDJ058Mrql+CCfV1tOsbyc+/NFUWAQSw4uw1QFfSdUgzqbEMQUDmDA9glXq
+                5KcH3CZ7B2AYjLmzcMzuEragK7gVzQJXRdOYbl3b8jY8nGwi+K48YA+eey9Praai+sA+8/pJirUt
+                IZ3+X2lXg9sNsIQsnDvc
+                -----END CERTIFICATE-----
+              Enable: true
+              Default_Role: reader
+              Role_Groups:
+                admin:
+                  - e7ea2042-4ced-45dd-8ae3-e051c6551789
+            sysinitcfg.yaml: |
+              New_Service_Policy_Mode: Discover
+              Syslog_ip: fluentbit-log
+              Syslog_IP_Proto: 6
+              Syslog_Port: 5140
+              Syslog_Level: Warning
+              Syslog_status: true
+              Syslog_in_json: true
+              Syslog_Categories:
+                - event
+                - security-event
+                - audit
+              Syslog_In_Json: false
+              Cluster_Name: sds-prod00
+      manager:
+        ingress:
+          host: sds-neuvector00.platform.hmcts.net
+          enabled: true
