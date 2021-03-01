@@ -17,4 +17,4 @@ spec:
       image: hmctspublic.azurecr.io/plum/frontend:prod-0968f786
       ingressHost: toffee.{{ .Values.global.environment }}.platform.hmcts.net
       environment:
-        RECIPE_BACKEND_URL: http://toffee-recipe-backend-java
+        RECIPE_BACKEND_URL: toffee.{{ .Values.global.environment }}-backend.platform.hmcts.net
