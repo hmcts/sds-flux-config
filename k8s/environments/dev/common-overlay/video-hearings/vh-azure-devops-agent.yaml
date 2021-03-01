@@ -21,7 +21,7 @@ image:
 spec:
   releaseName: vh-azure-devops-agent-{{ .Values.global.environment }}
   chart:
-    git: git@github.com:hmcts/vh-azure-devops-agent
+    git: git@github.com:hmcts/shared-services-flux
     path: charts/vh-azure-devops-agent
     ref: master
 
