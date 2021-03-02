@@ -10,6 +10,8 @@ spec:
   values:
     java:
       image: hmctspublic.azurecr.io/plum/frontend:prod-6fa89931
+    nodejs:
+      image: hmctspublic.azurecr.io/plum/frontend:aat-6fa89931
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -20,4 +22,3 @@ spec:
   values:
     java:
       image: hmctspublic.azurecr.io/plum/recipe-backend:prod-57e6edc5
-
