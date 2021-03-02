@@ -1,0 +1,18 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: neuvector
+  namespace: neuvector
+spec:
+  values:
+    keyvault: 
+      name: sdsneuvector
+      licensesecretname: neuvector-license
+    keyVaults:
+      sdsneuvector:
+        secrets:
+          - neuvector-admin-password  
+          - neuvector-license
+          - neuvector-slack-webhook
+          - neuvector-new-admin-password
