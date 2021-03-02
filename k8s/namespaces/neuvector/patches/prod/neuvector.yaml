@@ -8,11 +8,11 @@ spec:
   values:
     keyvault: 
       name: sdsneuvector
-      licensesecretname: neuvector-license-prod
+      licensesecretname: neuvector-license
     keyVaults:
       sdsneuvector:
         secrets:
           - neuvector-admin-password  
-          - neuvector-license-prod
+          - neuvector-license
           - neuvector-slack-webhook
           - neuvector-new-admin-password
