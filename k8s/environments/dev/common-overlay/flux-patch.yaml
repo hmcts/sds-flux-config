@@ -2,6 +2,16 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  name: toffee-frontend
+  namespace: toffee
+spec:
+  values:
+    nodejs:
+      image: hmctspublic.azurecr.io/plum/frontend:aat-6fa89931
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
   name: toffee-recipe-backend
   namespace: toffee
 spec:
