@@ -1,0 +1,113 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kube-prometheus-stack
+  namespace: monitoring
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/ignore: "false"
+spec:
+  releaseName: kube-prometheus-stack
+  forceUpgrade: true
+  rollback:
+    enable: true
+    retry: true
+  chart:
+    repository: https://prometheus-community.github.io/helm-charts
+    name: kube-prometheus-stack
+    version: 11.0.0
+  valueFileSecrets:
+    - name: "prometheus-values"
+  values:
+    defaultRules:
+      create: true
+      rules:
+        alertmanager: false
+        etcd: true
+        general: true
+        k8s: true
+        kubeApiserver: true
+        kubePrometheusNodeAlerting: true
+        kubePrometheusNodeRecording: true
+        kubernetesAbsent: true
+        kubernetesApps: true
+        kubernetesResources: true
+        kubernetesStorage: true
+        kubernetesSystem: true
+        kubeScheduler: true
+        network: true
+        node: true
+        prometheus: true
+        prometheusOperator: true
+        time: true
+
+    prometheus:
+      additionalServiceMonitors:
+        - name: "flux-monitor"
+          selector:
+            matchLabels:
+              app: flux
+          namespaceSelector:
+            matchNames:
+              - admin
+          endpoints:
+            - targetPort: 3030
+          path: /metrics
+      additionalPodMonitors:
+        - name: "node-problem-monitor"
+          selector:
+            matchLabels:
+              app.kubernetes.io/name: node-problem-detector
+          namespaceSelector:
+            matchNames:
+              - monitoring
+          podMetricsEndpoints:
+            - port: exporter
+              path: /metrics
+      ingress:
+        enabled: true
+
+    kubelet:
+      serviceMonitor:
+        https: false
+
+    alertmanager:
+      ingress:
+        enabled: true
+      config:
+        global:
+          resolve_timeout: "5m"
+        route:
+          receiver: slack_alerting  # default receiver
+          group_by:
+            - alertname
+            - cluster
+            - service
+          group_wait: "30s"
+          group_interval: "5m"
+          repeat_interval: "2h"
+          routes:
+            - match_re:
+                alertname: KubeletDown|KubeControllerManagerDown|KubeSchedulerDown
+              receiver: "null"
+            - match:
+                severity: critical
+              receiver: slack_critical
+        # Mute any warning-level notifications if the same alert is already critical.
+        inhibit_rules:
+          - source_match:
+              severity: "critical"
+            target_match:
+              severity: "warning"
+            equal: ["alertname", "cluster", "service"]
+        receivers:
+          - name: "slack_alerting"
+            slack_configs:
+              - channel: prometheus-alerting
+                text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
+          - name: "slack_critical"
+            slack_configs:
+              - channel: prometheus-critical
+                text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
+          - name: "null"
