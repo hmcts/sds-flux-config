@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-test-web
+  namespace: vh
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/tag.nodejs: glob:prod-*
+spec:
+  releaseName: vh-test-web
+  chart:
+    git: git@github.com:hmcts/vh-test-web
+    path: charts/vh-test-web
+    ref: VIH-7205_test-web
