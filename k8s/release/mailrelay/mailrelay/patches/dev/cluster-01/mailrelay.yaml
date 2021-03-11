@@ -19,6 +19,6 @@ spec:
     fluentbit:
       enabled: true
       image:
-        repository: fluent/fluent-bit
+        repository: sdshmctspublic.azurecr.io/fluent/fluent-bit
         tag: 1.7.2
         pullPolicy: IfNotPresent
