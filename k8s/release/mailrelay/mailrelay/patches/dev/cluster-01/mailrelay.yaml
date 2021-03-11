@@ -8,10 +8,17 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
-      tag: 0.3
+      tag: 0.4
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
       loadBalancerIP: "10.145.31.31"
 
     workload: StatefulSet
+    
+    fluentbit:
+      enabled: true
+      image:
+        repository: fluent/fluent-bit
+        tag: 1.7.2
+        pullPolicy: IfNotPresent
