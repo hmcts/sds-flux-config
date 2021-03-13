@@ -5,8 +5,8 @@ metadata:
  namespace: vh
 spec:
   type: 0
-  resourceID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/managed-identities-demo-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-infra-core-demo-kvuser
-  clientID: 576562d0-8cea-4904-868f-00edd75b7172
+  resourceID: /subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/managed-identities-stg-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-infra-core-stg-kvuser
+  clientID: b1b2680c-54bb-4b48-a1b6-532f1f36afe5
 
 ---
 apiVersion: "aadpodidentity.k8s.io/v1"
