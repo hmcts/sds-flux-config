@@ -8,7 +8,7 @@ metadata:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: glob:v*
 spec:
-  releaseName: vh-azure-devops-agent
+  releaseName: vh-devops-agent
   chart:
     git: git@github.com:hmcts/vh-azure-devops-agent
     path: charts/vh-azure-devops-agent
