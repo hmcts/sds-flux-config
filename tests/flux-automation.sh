@@ -28,13 +28,13 @@ for f in $(git diff-tree --no-commit-id --name-only -r $_github_head_sha $_githu
 do
   # do not run if file deleted
   [ ! -f "$f" ] && continue
-  # run check only if on the prod or aat path
-  echo "$f" | grep -E -q "k8s/(aat|prod)/(common|cluster-00|cluster-01)/"
+  # run check only if on the prod path
+  echo "$f" | grep -E -q "k8s/prod/(common|cluster-00|cluster-01)/"
   [ $? -eq 1 ] && continue
   # run check only if not whitelisted
   for wd in "${whitelist_dirs[@]}"
   do
-    echo "$f" | grep -E -q "k8s/(aat|prod)/(common|cluster-00|cluster-01)/${wd}"
+    echo "$f" | grep -E -q "k8s/prod/(common|cluster-00|cluster-01)/${wd}"
     [ $? -eq 0 ] && continue 2
   done
   # run check only if not in the exclusions list
