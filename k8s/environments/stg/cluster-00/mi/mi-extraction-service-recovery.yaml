@@ -43,7 +43,7 @@ spec:
         SFTP_FORCECHECK: true
         SFTP_REMOTE_HOST: 10.24.254.130
         SFTP_REMOTE_PORT: 22
-        SFTP_REMOTE_FOLDER: files/mi-platform-test/
+        SFTP_REMOTE_FOLDER: files/mi-platform-export/stagingtest/
       smoketests:
         image: sdshmctspublic.azurecr.io/mi-extraction-service:stg-2c2a120
         enabled: true
@@ -63,7 +63,7 @@ spec:
           SFTP_ENABLED: false
           SFTP_REMOTE_HOST: 10.24.254.130
           SFTP_REMOTE_PORT: 22
-          SFTP_REMOTE_FOLDER: files/mi-platform-test/
+          SFTP_REMOTE_FOLDER: files/mi-platform-export/
           SFTP_FORCECHECK: true
           DUMMY: false
 
