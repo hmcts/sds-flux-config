@@ -1,3 +1,4 @@
+---
 extends: default
 
 rules:
@@ -6,9 +7,23 @@ rules:
   new-line-at-end-of-file: disable
   comments-indentation: disable
   # sealed secrets adds these automatically, just turn it off so we aren't fighting it
+  trailing-spaces: disable
   empty-lines:
     max-end: 1
   comments:
     require-starting-space: false
   indentation:
     indent-sequences: consistent
+  braces:
+    max-spaces-inside: 10
+  commas:
+    max-spaces-before: 2
+    max-spaces-after: 2
+    min-spaces-after: 0
+  colons:
+    max-spaces-before: 2
+    max-spaces-after: 2
+  brackets:
+    max-spaces-inside: 10
+  hyphens:
+    max-spaces-after: 4
