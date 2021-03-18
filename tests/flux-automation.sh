@@ -6,12 +6,9 @@ _github_base_sha=$2
 
 # Applications in this directories (namespaces) are NOT checked
 whitelist_dirs=(
-    admin
-    kube-system
-    kube-public
-    knode-system
-    monitoring
-    neuvector)
+    toffee
+    video-hearings
+)
 
 # Applications that are currently excluded from this check
 # exclusions=(

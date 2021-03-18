@@ -11,22 +11,22 @@ kustomizepaths=(
     ../k8s/environments/demo/common-overlay
     ../k8s/environments/dev/cluster-00-overlay
     ../k8s/environments/dev/cluster-01-overlay
-    # ../k8s/environments/dev/common-overlay
+    ../k8s/environments/dev/common-overlay
     ../k8s/environments/ithc/cluster-00-overlay
     ../k8s/environments/ithc/cluster-01-overlay
-    # ../k8s/environments/ithc/common-overlay
+    ../k8s/environments/ithc/common-overlay
     ../k8s/environments/prod/cluster-00-overlay
     ../k8s/environments/prod/cluster-01-overlay
-    # ../k8s/environments/prod/common-overlay
+    ../k8s/environments/prod/common-overlay
     ../k8s/environments/sbox/cluster-00-overlay
     ../k8s/environments/sbox/cluster-01-overlay
-    # ../k8s/environments/sbox/common-overlay
+    ../k8s/environments/sbox/common-overlay
     ../k8s/environments/stg/cluster-00-overlay
     ../k8s/environments/stg/cluster-01-overlay
-    # ../k8s/environments/stg/common-overlay
+    ../k8s/environments/stg/common-overlay
     ../k8s/environments/test/cluster-00-overlay
     ../k8s/environments/test/cluster-01-overlay
-    # ../k8s/environments/test/common-overlay
+    ../k8s/environments/test/common-overlay
 )
 
 for filepath in "${kustomizepaths[@]}"; do
@@ -41,8 +41,8 @@ prod_whitelist_helm_release_pattern='toffee\|video-hearings' # Helm Release name
 
 for env in $(echo "prod"); do
  env_white_list=${env}_whitelist_helm_release_pattern
-  for filepath in $(echo "../k8s/environments/$env/cluster-00-overlay" "../k8s/environments/$env/cluster-01-overlay"); do
-    ./kustomize build --load_restrictor none "$filepath" | yq eval 'del( .metadata:.[])' -j "$filepath" |  (grep \"hmcts.github.com/prod-automated\":\"disabled\" || true ) | # grep -v "${!env_white_list}"
+  for filepath in $(echo "../k8s/environments/$env/cluster-00-overlay/kustomization.yaml" "../k8s/environments/$env/cluster-01-overlay/kustomization.yaml"); do
+    ./kustomize build --load_restrictor none "$filepath" | yq eval 'del( .metadata:.[])' -j "$filepath" |  (grep \"hmcts.github.com/prod-automated\":\"disabled\" || true ) | grep -v "${!env_white_list}"
     if [ $? -eq 0 ]
     then
       echo "Non whitelisted HelmReleases found with hmcts.github.com/prod-automated annotation in $filepath" && exit 1
