@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/data-extractor-job:pr-181-f6387d7
+      image: sdshmctspublic.azurecr.io/data-extractor-job:pr-123-3e13949
       suspend: false
       kind: CronJob
       schedule: '0 1 * * *'
@@ -30,7 +30,7 @@ spec:
         ETL_MSICLIENTID: 12b4adf8-7f22-4b35-bdba-78df0bfd02ea
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
       smoketests:
-        image: sdshmctspublic.azurecr.io/data-extractor-job:pr-181-f6387d7
+        image: sdshmctspublic.azurecr.io/data-extractor-job:pr-123-3e13949
         enabled: true
       testsConfig:
         environment:
