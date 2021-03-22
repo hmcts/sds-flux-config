@@ -1,23 +1,23 @@
 apiVersion: ENC[AES256_GCM,data:hVM=,iv:o0sgZpFm6N86C8qpxCc7wbkFkgSs9LUqZokzruH1aTs=,tag:QUbJN6kFYL2cY2MHkbVj1g==,type:str]
 data:
-    azure_log_workspace_id: ENC[AES256_GCM,data:b3avGLybFQq+SLGb42h7kT0PFGHAXZceLNxomfBwb4vNyq1NGJNOnIGLKKugk4Pg,iv:zf6FPKkR7n6ye7F6WLnfVYX31i0AJkuAg8fmdXeYXUo=,tag:8ZxGYJ8xsAoK/D9FPBpCaA==,type:str]
-    azure_log_workspace_shared_key: ENC[AES256_GCM,data:HH0L38TRV2TO++HNVl9IED7qPBVh0+PwWrke+szLMknA6+R3ro+JRCF+EtFY6/vfjQuYDW6qi+4RPvkSeg1BG7PA3ZcHdJArlMtdo0+SirivOz6P0SCzqegHF3ZzTYY3tq9LuaMnC/iTW6NacPlIcTEsQ+6ogrCf,iv:Ih1xeth37VvsV6SKufe+zTnYwrkp6B8hXVeqeoCVf/Q=,tag:H9fJuSyJFYeGs5++gB8o0Q==,type:str]
+  azure_log_workspace_id: ENC[AES256_GCM,data:b3avGLybFQq+SLGb42h7kT0PFGHAXZceLNxomfBwb4vNyq1NGJNOnIGLKKugk4Pg,iv:zf6FPKkR7n6ye7F6WLnfVYX31i0AJkuAg8fmdXeYXUo=,tag:8ZxGYJ8xsAoK/D9FPBpCaA==,type:str]
+  azure_log_workspace_shared_key: ENC[AES256_GCM,data:HH0L38TRV2TO++HNVl9IED7qPBVh0+PwWrke+szLMknA6+R3ro+JRCF+EtFY6/vfjQuYDW6qi+4RPvkSeg1BG7PA3ZcHdJArlMtdo0+SirivOz6P0SCzqegHF3ZzTYY3tq9LuaMnC/iTW6NacPlIcTEsQ+6ogrCf,iv:Ih1xeth37VvsV6SKufe+zTnYwrkp6B8hXVeqeoCVf/Q=,tag:H9fJuSyJFYeGs5++gB8o0Q==,type:str]
 kind: ENC[AES256_GCM,data:hsUc0M4s,iv:gYr8Opzc+SGePvVmJ0lvgllS/Ww+r6Uf0ZwILKfow5s=,tag:OFLJwQBCMvIgFM1ggkzkYg==,type:str]
 metadata:
-    creationTimestamp: null
-    name: ENC[AES256_GCM,data:8CBGKL5sWM+dKvcEGA==,iv:/PY2DmAErkPKJ5cFxwFtxxypMIIWTqk2b4NPX3k9hI4=,tag:S0U8OOiW0Y/z0i9wXKcfFw==,type:str]
-    namespace: ENC[AES256_GCM,data:jVR8HEQ602Br,iv:oHz/hPOzLvzqKxxTFBHYPSwcBpU8sOsw/L+FZPg3JoY=,tag:57KRU2bpYDz9Vau6xd8J1Q==,type:str]
+  creationTimestamp: null
+  name: ENC[AES256_GCM,data:8CBGKL5sWM+dKvcEGA==,iv:/PY2DmAErkPKJ5cFxwFtxxypMIIWTqk2b4NPX3k9hI4=,tag:S0U8OOiW0Y/z0i9wXKcfFw==,type:str]
+  namespace: ENC[AES256_GCM,data:jVR8HEQ602Br,iv:oHz/hPOzLvzqKxxTFBHYPSwcBpU8sOsw/L+FZPg3JoY=,tag:57KRU2bpYDz9Vau6xd8J1Q==,type:str]
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv:
+  kms: []
+  gcp_kms: []
+  azure_kv:
     -   vault_url: https://dtssharedservicesithckv.vault.azure.net
         name: sops-key
         version: 96812ee192044e6daabee8d3621b456f
         created_at: '2021-02-17T15:27:28Z'
         enc: YvGnym4hQRMqFv-8ZlGhU1lac_c-pgyyOMljGAL3XMpwj0mIU8Vii6njUBHMvnoyHUeORJHixsThdPDVyYSmxgs81uQmMR9QhuRxGvdRrzwAclsK-3jHwVCnlf5EmDYbFhKTxA8UTljHYvuUCrI34lUCvsgvgo4cj2_RwRKC3t7p_VCRTQOOWAkHkL0mRqcMRrF3Xy9abyJWM6ckUlW3aP00BGwD6-jiszTRBRJZjgFPIr9letIqSgM5Ry7-x2ncQ0whINqWoA7zjWVVJ0ucok0IC02_JaUDFXVyr_e9_1KuBJpw753SWNIRqFQ5r90o9piwVIWR198HKfFmoEisng
-    lastmodified: '2021-02-17T15:27:31Z'
-    mac: ENC[AES256_GCM,data:w+VCLZFO4ejJHS4oGh2Yc7599TY5FeLUQQEAYgOcb23H/qTnxD622Wq4xB93O49a7ePRr1pAkfN5lqn3kXXKS5gSnQnqJXZuEw60Yswuoa/NiHMxMD3w0l8QYsB5M0oPF1Oo5aiWA55H5Fm1xzcgkdYUMYtT5AkXVKfAu0Jzqq8=,iv:E2GLtKU941F8NZl9erWh/5aiLzGX4C20RFJG3VtKb+4=,tag:vy+HLk37+iPXP2iq25XK0g==,type:str]
-    pgp: []
-    unencrypted_suffix: _unencrypted
-    version: 3.5.0
+  lastmodified: '2021-02-17T15:27:31Z'
+  mac: ENC[AES256_GCM,data:w+VCLZFO4ejJHS4oGh2Yc7599TY5FeLUQQEAYgOcb23H/qTnxD622Wq4xB93O49a7ePRr1pAkfN5lqn3kXXKS5gSnQnqJXZuEw60Yswuoa/NiHMxMD3w0l8QYsB5M0oPF1Oo5aiWA55H5Fm1xzcgkdYUMYtT5AkXVKfAu0Jzqq8=,iv:E2GLtKU941F8NZl9erWh/5aiLzGX4C20RFJG3VtKb+4=,tag:vy+HLk37+iPXP2iq25XK0g==,type:str]
+  pgp: []
+  unencrypted_suffix: _unencrypted
+  version: 3.5.0

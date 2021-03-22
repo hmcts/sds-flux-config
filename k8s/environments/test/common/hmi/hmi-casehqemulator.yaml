@@ -27,7 +27,7 @@ spec:
         - /
       tls: []
       hosts:
-      - 'hmi-casehqemulator.test.platform.hmcts.net'
+        - 'hmi-casehqemulator.test.platform.hmcts.net'
     readinessProbe:
       enabled: false
     #   path: "/"

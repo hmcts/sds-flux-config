@@ -13,9 +13,9 @@ bases:
 # - ../../../release/kube-system/nodelocaldns
 
 patches:
-  - path: ../test-helmrelease.yaml
-    target:
-      kind: HelmRelease
+- path: ../test-helmrelease.yaml
+  target:
+    kind: HelmRelease
 
 patchesStrategicMerge:
 

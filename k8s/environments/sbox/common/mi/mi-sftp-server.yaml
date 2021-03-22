@@ -18,11 +18,11 @@ spec:
           image: atmoz/sftp:latest
           imagePullPolicy: Always
           env:
-          - name: SFTP_USERS
-            valueFrom:
-              secretKeyRef:
-                name: mi-secrets
-                key: SFTP_USERS
+            - name: SFTP_USERS
+              valueFrom:
+                secretKeyRef:
+                  name: mi-secrets
+                  key: SFTP_USERS
           ports:
             - containerPort: 22
           securityContext:
@@ -38,8 +38,8 @@ metadata:
   namespace: mi
 spec:
   ports:
-  - protocol: TCP
-    port: 2000
-    targetPort: 22
+    - protocol: TCP
+      port: 2000
+      targetPort: 22
   selector:
     app: mi-sftp-server

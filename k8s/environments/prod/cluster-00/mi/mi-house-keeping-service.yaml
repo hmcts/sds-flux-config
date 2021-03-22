@@ -22,7 +22,7 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '45 2 * * *'
-      activeDeadlineSeconds: 82800#23 hours
+      activeDeadlineSeconds: 82800
       labels:
         app.kubernetes.io/instance: mi-house-keeping-service
         app.kubernetes.io/name: mi-house-keeping-service

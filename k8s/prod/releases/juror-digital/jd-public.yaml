@@ -37,8 +37,8 @@ spec:
       #    hosts:
       #      - chart-example.local
       hosts:
-      - 'reply-jury-summons.service.gov.uk'
-      - 'jdfrontend.platform.hmcts.net'
+        - 'reply-jury-summons.service.gov.uk'
+        - 'jdfrontend.platform.hmcts.net'
     env:
       API_ENDPOINT: http://moj-reverse-proxy/api/v1/
       PORT: 3000

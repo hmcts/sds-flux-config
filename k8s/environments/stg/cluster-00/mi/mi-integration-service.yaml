@@ -22,7 +22,7 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '15 0 * * *'
-      activeDeadlineSeconds: 82800 #23 hours
+      activeDeadlineSeconds: 82800
       labels:
         app.kubernetes.io/instance: mi-integration-service-job
         app.kubernetes.io/name: mi-integration-service-job

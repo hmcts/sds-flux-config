@@ -27,7 +27,7 @@ spec:
         - /
       tls: []
       hosts:
-      - 'hmi-pact.dev.platform.hmcts.net'
+        - 'hmi-pact.dev.platform.hmcts.net'
     aadIdentityName: "aks-dev-mi"
     aadResourceId: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-dev-mi
     aadClientId: b86d64c4-ec90-451a-ab22-77cea15aeb68
@@ -39,13 +39,13 @@ spec:
       postgresqlPort: "5432"
       postgresqlDisableSsl: "true"
     keyvaults:
-    - name: hmi-shared-kv-dev
-      resourcegroup: hmi-sharedservices-dev-rg
-      subscriptionid: 867a878b-cb68-4de5-9741-361ac9e178b6
-      tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
-      secrets:
-      - pact-db-user
-      - pact-db-password
+      - name: hmi-shared-kv-dev
+        resourcegroup: hmi-sharedservices-dev-rg
+        subscriptionid: 867a878b-cb68-4de5-9741-361ac9e178b6
+        tenantid: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
+        secrets:
+          - pact-db-user
+          - pact-db-password
 
     readinessProbe:
       enabled: false

@@ -1,9 +1,9 @@
 replicas: 0
 
 image:
- repository: sdshmctspublic.azurecr.io/hmi/apim-tests-wiremock
- tag: v0.1
- pullPolicy: Always
+  repository: sdshmctspublic.azurecr.io/hmi/apim-tests-wiremock
+  tag: v0.1
+  pullPolicy: Always
 
 nameOverride: ""
 fullnameOverride: ""
@@ -13,15 +13,15 @@ service:
   port: 8080
 
 ingress:
- enabled: true
- annotations:
-   kubernetes.io/ingress.class: traefik-sbox
- paths:
-   - /product/p0001
- tls: []
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: traefik-sbox
+  paths:
+    - /product/p0001
+  tls: []
   #  - secretName: chart-example-tls
- hosts:
- - 'hmi-wiremock.sandbox.platform.hmcts.net'
+  hosts:
+    - 'hmi-wiremock.sandbox.platform.hmcts.net'
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

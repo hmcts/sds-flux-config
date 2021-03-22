@@ -1,12 +1,12 @@
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
- name: mi-house-keeping-service
- namespace: mi
+  name: mi-house-keeping-service
+  namespace: mi
 spec:
- type: 0
- resourceID: /subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourceGroups/managed-identities-ithc-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-housekeeping-service-ithc-mi
- clientID: baf8db11-a87e-4212-8c85-d72622dc26c9
+  type: 0
+  resourceID: /subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourceGroups/managed-identities-ithc-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-housekeeping-service-ithc-mi
+  clientID: baf8db11-a87e-4212-8c85-d72622dc26c9
 
 ---
 

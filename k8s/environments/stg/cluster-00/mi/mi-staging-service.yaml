@@ -22,7 +22,7 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '30 0 * * *'
-      activeDeadlineSeconds: 82800 #23 hours
+      activeDeadlineSeconds: 82800
       labels:
         app.kubernetes.io/instance: mi-staging-service
         app.kubernetes.io/name: mi-staging-service
