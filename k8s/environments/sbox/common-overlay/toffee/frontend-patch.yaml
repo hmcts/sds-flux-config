@@ -8,5 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: toffee.sandbox.platform.hmcts.net
+      environment:
+        RECIPE_BACKEND_URL: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
     global:
       environment: sandbox
