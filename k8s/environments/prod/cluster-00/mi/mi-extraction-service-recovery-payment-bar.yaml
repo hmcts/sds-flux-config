@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: mi-extraction-service-recovery-ccd
+  name: mi-extraction-service-payment-bar
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -11,7 +11,7 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:prod-*
 spec:
-  releaseName: mi-extraction-service-recovery-ccd
+  releaseName: mi-extraction-service-payment-bar
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-extraction-service
@@ -28,8 +28,8 @@ spec:
       memoryLimits: '4096Mi'
       cpuLimits: '2000m'
       labels:
-        app.kubernetes.io/instance: mi-extraction-service-recovery-ccd
-        app.kubernetes.io/name: mi-extraction-service-recovery-ccd
+        app.kubernetes.io/instance: mi-extraction-service-payment-bar
+        app.kubernetes.io/name: mi-extraction-service-payment-bar
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false
@@ -48,7 +48,7 @@ spec:
         SFTP_REMOTE_HOST: 10.24.254.130
         SFTP_REMOTE_PORT: 22
         SFTP_REMOTE_FOLDER: /files/mi-platform-export/
-        # EXPORT_SOURCES_CCD_ENABLED: false
+        EXPORT_SOURCES_CCD_ENABLED: false
         EXPORT_SOURCES_NOTIFY_ENABLED: false
         EXPORT_SOURCES_PAYMENTPAYMENTHISTORY_ENABLED: false
         EXPORT_SOURCES_PAYMENTPAYMENTREMISSION_ENABLED: false
@@ -59,9 +59,9 @@ spec:
         EXPORT_SOURCES_PAYMENTBSENVELOPEMETADATA_ENABLED: false
         EXPORT_SOURCES_PAYMENTBSENVELOPEPAYMENT_ENABLED: false
         EXPORT_SOURCES_PAYMENTFEESFEE_ENABLED: false
-        EXPORT_SOURCES_PAYMENTBARCASE_ENABLED: false
-        EXPORT_SOURCES_PAYMENTBARPAYMENT_ENABLED: false
-        EXPORT_SOURCES_PAYMENTBARSITE_ENABLED: false
+        # EXPORT_SOURCES_PAYMENTBARCASE_ENABLED: false
+        # EXPORT_SOURCES_PAYMENTBARPAYMENT_ENABLED: false
+        # EXPORT_SOURCES_PAYMENTBARSITE_ENABLED: false
         EXPORT_SOURCES_EIGHTBYEIGHTAGENTSACTIVITIES_ENABLED: false
         EXPORT_SOURCES_EIGHTBYEIGHTAGENTSINTERACTIONS_ENABLED: false
         EXPORT_SOURCES_EIGHTBYEIGHTAGENTSOUTBOUNDCALLS_ENABLED: false
@@ -90,8 +90,8 @@ spec:
         EXPORT_SOURCES_EIGHTBYEIGHTQUEUES_ENABLED: false
         EXPORT_SOURCES_EIGHTBYEIGHTCHANNELS_ENABLED: false
         EXPORT_SOURCES_EIGHTBYEIGHTAGENTS_ENABLED: false
-        RETRIEVE_FROM_DATE: "2021-03-19"
-        RETRIEVE_TO_DATE: "2021-03-20"
+        RETRIEVE_FROM_DATE: "2021-03-17"
+        RETRIEVE_TO_DATE: "2021-03-19"
       smoketests:
         image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-2c2a120
         enabled: true
