@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -e
-
+pwd
 for file in $(grep -lr "kind: HelmRelease" --exclude-dir={admin,monitoring,neuvector,azure-devops,kube-system} "../k8s/namespaces"); do
   
   NAMESPACE="$( echo $file | cut -d'/' -f4)"
