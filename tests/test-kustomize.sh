@@ -8,7 +8,7 @@ kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" -o install_kustomize
 kustomizepaths=(
     k8s/environments/demo/cluster-00-overlay
     k8s/environments/demo/cluster-01-overlay
-    # k8s/environments/demo/common-overlay
+    k8s/environments/demo/common-overlay
     k8s/environments/dev/cluster-00-overlay
     k8s/environments/dev/cluster-01-overlay
     # k8s/environments/dev/common-overlay
