@@ -29,13 +29,13 @@ kustomizepaths=(
     # k8s/environments/test/common-overlay
 )
 
-# for filepath in "${kustomizepaths[@]}"; do
-#     ./kustomize build --load_restrictor none "$filepath" >/dev/null
-#     if [ $? -eq 1 ]
-#     then
-#      echo "Kustomize failing for env $filepath" && exit 1
-#     fi
-# done
+for filepath in "${kustomizepaths[@]}"; do
+     ./kustomize build --load_restrictor none "$filepath" >/dev/null
+     if [ $? -eq 1 ]
+     then
+      echo "Kustomize failing for env $filepath" && exit 1
+     fi
+done
 
 prod_whitelist_helm_release_pattern='toffee\|video-hearings' # Helm Release names seperated by `\|`
 
