@@ -4,9 +4,9 @@ metadata:
   namespace: mi
   name: mi-developer
 rules:
-- apiGroups: [""]
-  resources: ["pods", "pods/log", "pods/portforward", "pods/attach", "pods/exec", "jobs"]
-  verbs: ["get", "list", "create", "watch", "delete"]
+- apiGroups: ["", "extensions", "apps", "batch", "helm.fluxcd.io"]
+  resources: ["*"]
+  verbs: ["*"]
 ---
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
