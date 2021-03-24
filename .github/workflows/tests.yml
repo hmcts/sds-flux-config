@@ -18,7 +18,7 @@ jobs:
           sudo apt-get install -y yamllint
           sudo add-apt-repository ppa:rmescandon/yq
           sudo apt update
-          sudo apt-get install yq=4.6.1 -y
+          sudo apt-get install yq=4.6 -y
       - name: Kustomize Tests
         run: ./tests/test-kustomize.sh
       - name: Lint Tests
