@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: vh-video-web
+  name: vh-video-web-test
   namespace: vh
   annotations:
     fluxcd.io/automated: "true"
@@ -11,5 +11,5 @@ spec:
   releaseName: vh-video-web
   chart:
     git: git@github.com:hmcts/vh-testing
-    path: charts/vvh-testing
+    path: charts/vh-testing
     ref: master
