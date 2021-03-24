@@ -16,8 +16,9 @@ jobs:
       - name: Install pre-reqs
         run: |
           sudo apt update
+          sudo apt install snapd
           sudo apt-get install -y yamllint
-          sudo apt install -y yq
+          sudo snap install yq
       - name: Kustomize Tests
         run: ./tests/test-kustomize.sh
       - name: Lint Tests
