@@ -20,14 +20,14 @@ resources: {}
 cleanRun: false
 
 volumeMounts:
-- name: docker-socket
-  mountPath: /var/run/docker.sock
-  readOnly: false
+  - name: docker-socket
+    mountPath: /var/run/docker.sock
+    readOnly: false
 
 volumes:
-- name: docker-socket
-  hostPath:
-    path: /var/run/docker.sock
+  - name: docker-socket
+    hostPath:
+      path: /var/run/docker.sock
 
 secrets:
   # Specifies whether secrets resources should be created
