@@ -37,7 +37,7 @@ for filepath in "${kustomizepaths[@]}"; do
      fi
 done
 
-prod_whitelist_helm_release_pattern='vh\|toffee' # Helm Release names seperated by `\|`
+prod_whitelist_helm_release_pattern='sample\|' # Helm Release names seperated by `\|`
 
 for env in $(echo "prod"); do
  env_white_list=${env}_whitelist_helm_release_pattern
