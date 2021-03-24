@@ -22,7 +22,7 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '30 2 * * *'
-      activeDeadlineSeconds: 82800 #23 hours
+      activeDeadlineSeconds: 82800
       memoryRequests: '2048Mi'
       cpuRequests: '200m'
       memoryLimits: '4096Mi'

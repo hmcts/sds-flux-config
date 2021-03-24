@@ -22,7 +22,7 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '0 0 * * *'
-      activeDeadlineSeconds: 82800 #23 hours
+      activeDeadlineSeconds: 82800
       labels:
         app.kubernetes.io/instance: data-extractor-job
         app.kubernetes.io/name: data-extractor-job

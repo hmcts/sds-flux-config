@@ -2,14 +2,14 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: vh-devops-agent
+  name: vh-devops-agent-dev
   namespace: vh
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: glob:v*
 spec:
-  releaseName: vh-azure-devops-agent
+  releaseName: vh-devops-agent-dev
   chart:
-    git: git@github.com:hmcts/vh-azure-devops-agent
-    path: charts/vh-azure-devops-agent
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/environments/dev/common-overlay/vh/vh-azure-devops-agent
     ref: master

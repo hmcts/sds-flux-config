@@ -3,8 +3,8 @@ kind: Kustomization
 namespace: toffee
 resources:
 - namespace.yaml
-- toffee-backend/toffee-recipe-backend.yaml
-- toffee-backend/toffee-azure-identity-binding.yaml
-- toffee-backend/toffee-azure-identity.yaml
+- toffee-recipe-backend/toffee-recipe-backend.yaml
+- toffee-recipe-backend/toffee-azure-identity-binding.yaml
+- toffee-recipe-backend/toffee-azure-identity.yaml
 - toffee-frontend/toffee-frontend.yaml
 

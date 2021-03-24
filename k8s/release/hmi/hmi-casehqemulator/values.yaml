@@ -20,19 +20,19 @@ ingress:
     - /
   tls: []
   hosts:
-  - 'hmi-casehqemulator.sandbox.platform.hmcts.net'
+    - 'hmi-casehqemulator.sandbox.platform.hmcts.net'
 
 volumeMounts:
-- name: azureshare
-  mountPath: /opt/app/data/
-  readOnly: false
+  - name: azureshare
+    mountPath: /opt/app/data/
+    readOnly: false
 
 volumes:
-- name: azureshare
-  azureFile:
-    secretName: storage-secret
-    shareName: casehq-mock
-    readOnly: false
+  - name: azureshare
+    azureFile:
+      secretName: storage-secret
+      shareName: casehq-mock
+      readOnly: false
 
 readinessProbe:
   enabled: false

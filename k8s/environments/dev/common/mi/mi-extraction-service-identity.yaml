@@ -1,12 +1,12 @@
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
- name: mi-extraction-service
- namespace: mi
+  name: mi-extraction-service
+  namespace: mi
 spec:
- type: 0
- resourceID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/managed-identities-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-extraction-service-dev-mi
- clientID: 6c3c3848-a572-4bc2-b465-008757f31b8b
+  type: 0
+  resourceID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/managed-identities-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-extraction-service-dev-mi
+  clientID: 6c3c3848-a572-4bc2-b465-008757f31b8b
 
 ---
 

@@ -1,0 +1,29 @@
+name: Flux sanity checks
+
+# yamllint disable-line
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install pre-reqs
+        run: |
+          sudo apt update
+          sudo apt install snapd
+          sudo apt-get install -y yamllint
+          sudo snap install yq
+      - name: Kustomize Tests
+        run: ./tests/test-kustomize.sh
+      - name: Lint Tests
+        run: ./tests/lint-yaml.sh
+      - name: Flux automation tests
+        run: ./tests/flux-automation.sh ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }}
+      - name: Helm Release naming convention tests
+        run: ./tests/helm-release-naming.sh
