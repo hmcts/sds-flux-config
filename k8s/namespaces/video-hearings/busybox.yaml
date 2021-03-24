@@ -8,7 +8,7 @@ metadata:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/tag.nodejs: glob:prod-*
 spec:
-  releaseName: vh-video-web
+  releaseName: vh-video-web-test
   chart:
     git: git@github.com:hmcts/vh-testing
     path: charts/vh-testing
