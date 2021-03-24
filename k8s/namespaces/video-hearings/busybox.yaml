@@ -1,37 +1,15 @@
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
 metadata:
-  name: vh-video-api-test
+  name: vh-video-web
   namespace: vh
-  labels:
-    aadpodidbinding: vh-aad-identity
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/tag.nodejs: glob:prod-*
 spec:
-  containers:
-    - name: vh-video-api-test
-      image: busybox
-      command: ['sleep']
-      args: ['3600']
-      volumeMounts:
-      - name: vault-vh-infra-core
-        readOnly: true
-        mountPath: /mnt/secrets/vh-infra-core
-      - name: vault-vh-video-api
-        readOnly: true
-        mountPath: /mnt/secrets/vh-video-api
-  restartPolicy: Never
-  volumes:
-    - name: vault-vh-infra-core
-      csi:
-        driver: secrets-store.csi.k8s.io
-        readOnly: true
-        volumeAttributes:
-          secretProviderClass: vh-video-api-vh-infra-core
-    - name: vault-vh-video-api
-      csi:
-        driver: secrets-store.csi.k8s.io
-        readOnly: true
-        volumeAttributes:
-          secretProviderClass: vh-video-api-vh-video-api
-
-MANIFEST:
+  releaseName: vh-video-web
+  chart:
+    git: git@github.com:hmcts/vh-testing
+    path: charts/vvh-testing
+    ref: master
