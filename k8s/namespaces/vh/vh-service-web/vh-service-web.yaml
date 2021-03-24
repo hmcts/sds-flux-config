@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-service-web
+  namespace: vh
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/tag.nodejs: glob:prod-*
+spec:
+  releaseName: vh-service-web
+  chart:
+    git: git@github.com:hmcts/vh-service-web
+    path: charts/vh-service-web
+    ref: VIH-7246-chart-setup
