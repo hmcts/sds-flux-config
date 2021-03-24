@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 set -e
-pwd
-for file in $(grep -lr "kind: HelmRelease" --exclude-dir={admin,monitoring,neuvector,azure-devops,kube-system} "../k8s/namespaces"); do
+
+for file in $(grep -lr "kind: HelmRelease" --exclude-dir={admin,monitoring,neuvector,azure-devops,kube-system} "k8s/namespaces"); do
   
-  NAMESPACE="$( echo $file | cut -d'/' -f4)"
-  FILE_NAMESPACE=$(yq eval '{.metadata.name:.[.name]}' ../k8s/namespaces/$NAMESPACE/namespace.yaml | cut -f1 -d":")
+  NAMESPACE="$( echo $file | cut -d'/' -f3)"
+  FILE_NAMESPACE=$(yq eval '{.metadata.name:.[.name]}' k8s/namespaces/$NAMESPACE/namespace.yaml | cut -f1 -d":")
   HELM_RELEASE_NAME=$(yq eval '{.metadata.name:.[.name]}' $file | cut -f1 -d":")
-  FILE_DIRECTORY="../k8s/namespaces/$NAMESPACE/$HELM_RELEASE_NAME/"
+  FILE_DIRECTORY="k8s/namespaces/$NAMESPACE/$HELM_RELEASE_NAME/"
   BASE_MANIFEST="$FILE_DIRECTORY$HELM_RELEASE_NAME.yaml"
   SPEC_RELEASE_NAME=$(yq eval '{.spec.releaseName:.[.releaseName]}' $file | cut -f1 -d":")
   

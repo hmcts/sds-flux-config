@@ -8,25 +8,25 @@ kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" -o install_kustomize
 kustomizepaths=(
     k8s/environments/demo/cluster-00-overlay
     k8s/environments/demo/cluster-01-overlay
-    k8s/environments/demo/common-overlay
+    # k8s/environments/demo/common-overlay
     k8s/environments/dev/cluster-00-overlay
     k8s/environments/dev/cluster-01-overlay
-    # k8s/environments/dev/common-overlay
+    k8s/environments/dev/common-overlay
     k8s/environments/ithc/cluster-00-overlay
     k8s/environments/ithc/cluster-01-overlay
-    # k8s/environments/ithc/common-overlay
-    k8s/environments/prod/cluster-00-overlay
+    k8s/environments/ithc/common-overlay
+    # k8s/environments/prod/cluster-00-overlay
     k8s/environments/prod/cluster-01-overlay
-    # k8s/environments/prod/common-overlay
+    k8s/environments/prod/common-overlay
     k8s/environments/sbox/cluster-00-overlay
     k8s/environments/sbox/cluster-01-overlay
-    # k8s/environments/sbox/common-overlay
+    k8s/environments/sbox/common-overlay
     k8s/environments/stg/cluster-00-overlay
     k8s/environments/stg/cluster-01-overlay
-    # k8s/environments/stg/common-overlay
+    k8s/environments/stg/common-overlay
     k8s/environments/test/cluster-00-overlay
     k8s/environments/test/cluster-01-overlay
-    # k8s/environments/test/common-overlay
+    k8s/environments/test/common-overlay
 )
 
 for filepath in "${kustomizepaths[@]}"; do
@@ -37,7 +37,7 @@ for filepath in "${kustomizepaths[@]}"; do
      fi
 done
 
-prod_whitelist_helm_release_pattern='toffee\|video-hearings' # Helm Release names seperated by `\|`
+prod_whitelist_helm_release_pattern='vh\|toffee' # Helm Release names seperated by `\|`
 
 for env in $(echo "prod"); do
  env_white_list=${env}_whitelist_helm_release_pattern

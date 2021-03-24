@@ -1,7 +1,0 @@
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentityBinding
-metadata:
-  name: toffee-binding
-spec:
-  azureIdentity: toffee
-  selector: toffee
