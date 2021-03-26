@@ -25,7 +25,7 @@ spec:
       memoryRequests: '2048Mi'
       cpuRequests: '200m'
       memoryLimits: '4096Mi'
-      activeDeadlineSeconds: 82800#23 hours
+      activeDeadlineSeconds: 82800  #23 hours
       labels:
         app.kubernetes.io/instance: data-extractor-job
         app.kubernetes.io/name: data-extractor-job
