@@ -1,0 +1,97 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mi-integration-service-8x8-recover
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:prod-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:prod-*
+spec:
+  releaseName: mi-integration-service-8x8-recover
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-integration-service
+    ref: master
+  values:
+    job:
+      image: sdshmctspublic.azurecr.io/mi-integration-service:prod-2c34285
+      suspend: false
+      kind: Job
+      activeDeadlineSeconds: 82800  #23 hours
+      labels:
+        app.kubernetes.io/instance: mi-integration-service-8x8-recover-job
+        app.kubernetes.io/name: mi-integration-service-8x8-recover-job
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+          - appinsights-instrumentationkey
+          - notify-api-key-cmc
+          - notify-api-key-divorce
+          - notify-api-key-idam
+          - notify-api-key-probate
+          - notify-api-key-sscs
+          - eightbyeight-api-user
+          - eightbyeight-api-password
+          - payment-db-host
+          - payment-db-user
+          - payment-db-password
+          - payment-bs-db-host
+          - payment-bs-db-user
+          - payment-bs-db-password
+          - payment-fees-db-host
+          - payment-fees-db-user
+          - payment-fees-db-password
+          - payment-bar-db-host
+          - payment-bar-db-user
+          - payment-bar-db-password
+      environment:
+        MI_CLIENT_ID: ee31a18f-45e9-41db-881d-5976695188fb
+        APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+        DATA_SOURCE_CCD: false
+        DATA_SOURCE_NOTIFY: false
+        DATA_SOURCE_EIGHTBYEIGHT: true
+        DATA_SOURCE_PAYMENT: false
+        MI_EIGHTBYEIGHT_EXTRACTION_SKIPERRORS: true
+      smoketests:
+        image: sdshmctspublic.azurecr.io/mi-integration-service:prod-2c34285
+        enabled: false
+      testsConfig:
+        keyVaults:
+          "mi-vault":
+            excludeEnvironmentSuffix: false
+            resourceGroup: mi-{{ .Values.global.environment }}-rg
+            secrets:
+            - appinsights-instrumentationkey
+            - notify-api-key-cmc
+            - notify-api-key-divorce
+            - notify-api-key-idam
+            - notify-api-key-probate
+            - notify-api-key-sscs
+            - eightbyeight-api-user
+            - eightbyeight-api-password
+            - payment-db-host
+            - payment-db-user
+            - payment-db-password
+            - payment-bs-db-host
+            - payment-bs-db-user
+            - payment-bs-db-password
+            - payment-fees-db-host
+            - payment-fees-db-user
+            - payment-fees-db-password
+            - payment-bar-db-host
+            - payment-bar-db-user
+            - payment-bar-db-password
+        environment:
+          MI_CLIENT_ID: ee31a18f-45e9-41db-881d-5976695188fb
+          APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+          DUMMY: dummy
+    global:
+      subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "prod"
