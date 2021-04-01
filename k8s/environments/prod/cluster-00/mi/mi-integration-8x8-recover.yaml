@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-integration-service:prod-2c34285
+      image: sdshmctspublic.azurecr.io/mi-integration-service:prod-43cd72d
       suspend: false
       kind: Job
       activeDeadlineSeconds: 82800  #23 hours
@@ -59,7 +59,7 @@ spec:
         DATA_SOURCE_PAYMENT: false
         MI_EIGHTBYEIGHT_EXTRACTION_SKIPERRORS: true
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-integration-service:prod-2c34285
+        image: sdshmctspublic.azurecr.io/mi-integration-service:prod-43cd72d
         enabled: false
       testsConfig:
         keyVaults:
