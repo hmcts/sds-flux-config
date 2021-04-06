@@ -8,6 +8,7 @@ bases:
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
+- ../../../namespaces/monitoring/kube-prometheus-stack
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -25,5 +26,7 @@ patchesStrategicMerge:
 #azure-devops-agent patch
 - ../../../namespaces/azure-devops/azure-devops-agent/patches/sbox/cluster-00/azure-devops-agent.yaml
 
+# prom-operator patch
+- ../../../namespaces/monitoring/kube-prometheus-stack/patches/sbox/cluster-00/kube-prometheus-stack.yaml
 # env-injector
 # - ../../../release/admin/env-injector/patches/sbox/cluster-00/env-injector.yaml
