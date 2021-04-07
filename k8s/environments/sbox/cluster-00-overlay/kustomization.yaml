@@ -12,6 +12,11 @@ bases:
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
+patches:
+- path: ../sbox-helmrelease.yaml
+  target:
+    kind: HelmRelease
+
 patchesStrategicMerge:
 
 #kube-slack patch
