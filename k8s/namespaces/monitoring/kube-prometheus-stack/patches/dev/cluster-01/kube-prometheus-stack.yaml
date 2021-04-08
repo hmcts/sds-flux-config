@@ -9,14 +9,14 @@ spec:
     prometheus:
       ingress:
         annotations:
-          kubernetes.io/ingress.class: traefik-private
+          kubernetes.io/ingress.class: traefik
         hosts:
           - sds-prometheus-01.dev.platform.hmcts.net
 
     alertmanager:
       ingress:
         annotations:
-          kubernetes.io/ingress.class: traefik-private
+          kubernetes.io/ingress.class: traefik
         hosts:
           - sds-alertmanager-01.dev.platform.hmcts.net
       config:
