@@ -10,14 +10,13 @@ bases:
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/neuvector
-- ../../../namespaces/monitoring/kube-prometheus-stack
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
 patches:
-  - path: ../prod-helmrelease.yaml
-    target:
-      kind: HelmRelease
+- path: ../prod-helmrelease.yaml
+  target:
+    kind: HelmRelease
 
 patchesStrategicMerge:
 
