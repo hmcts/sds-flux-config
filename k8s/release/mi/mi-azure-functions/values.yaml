@@ -16,8 +16,15 @@ keyVaultName: mi-vault
 keyVaultSecrets:
   - azure-functions-function-key
   - azure-functions-master-key
+  - mi-audit-storage-connection-string
 
 secretsMountPath: '/mnt/kvmnt'
 
 internalPort: 80
 externalPort: 80
+
+env:
+  ADF_RESOURCEGROUP: mi-sbox-rg
+  ADF_NAME: mi-ingestion-adf-sbox
+  ADF_INTEGRATIONRUNTIMENAME: mi-adf-shir
+  ADF_STORAGEACCOUNTNAME: miauditsbox

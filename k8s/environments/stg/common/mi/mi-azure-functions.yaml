@@ -19,6 +19,6 @@ spec:
       app.kubernetes.io/name: mi-azure-functions-deployment
     image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-4-220860e
     environment: "stg"
-    resourcegroup: "mi-stg-rg"
+    resourceGroup: "mi-stg-rg"
     subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

@@ -18,7 +18,11 @@ spec:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
     image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-4-220860e
+    env:
+      ADF_RESOURCEGROUP: mi-sbox-rg
+      ADF_NAME: mi-ingestion-adf-sbox
+      ADF_STORAGEACCOUNTNAME: miauditsbox
     environment: "sbox"
-    resourcegroup: "mi-sbox-rg"
+    resourceGroup: "mi-sbox-rg"
     subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

@@ -26,6 +26,11 @@ spec:
       containers:
         - name: mi-azure-functions
           image: {{ .Values.image }}
+          env:
+          {{- range $key, $val := .Values.env }}
+            - name: {{ $key }}
+              value: {{ tpl ($val | quote) $ }}
+          {{- end }}
           volumeMounts:
             - name: {{ .Values.keyVaultName }}-secrets-store
               mountPath: {{ .Values.secretsMountPath }}
