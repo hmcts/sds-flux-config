@@ -5,6 +5,8 @@ metadata:
   name: mailrelay
   namespace: mailrelay
 spec:
+  valueFileSecrets:
+    - name: "dev-mailrelay"
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
@@ -13,6 +15,8 @@ spec:
     service:
       type: LoadBalancer
       loadBalancerIP: "10.145.31.31"
+    global:
+      environment: dev
 
     workload: StatefulSet
     
