@@ -9,6 +9,7 @@ bases:
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/monitoring/kube-prometheus-stack
+- ../../../namespaces/mi
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -30,3 +31,6 @@ patchesStrategicMerge:
 - ../../../namespaces/monitoring/kube-prometheus-stack/patches/sbox/cluster-00/kube-prometheus-stack.yaml
 # env-injector
 # - ../../../release/admin/env-injector/patches/sbox/cluster-00/env-injector.yaml
+
+# mi patch
+- ../../../namespaces/neuvector/patches/sbox/mi.yaml

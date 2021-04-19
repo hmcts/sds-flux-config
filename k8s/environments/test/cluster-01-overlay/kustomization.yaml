@@ -9,6 +9,7 @@ bases:
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/neuvector
+- ../../../namespaces/mi
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -37,3 +38,6 @@ patchesStrategicMerge:
 #neuvector patch
 - ../../../namespaces/neuvector/patches/nonprod/neuvector.yaml
 - ../../../namespaces/neuvector/patches/test/cluster-01/neuvector.yaml
+
+# mi patch
+- ../../../namespaces/neuvector/patches/test/mi.yaml

@@ -1,0 +1,18 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mi-sftp-server
+  namespace: mi
+  labels:
+    app: mi-sftp-server
+spec:
+  replicas: 1
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      app: mi-sftp-server
+  template:
+    metadata:
+      labels:
+        app: mi-sftp-server
+        aadpodidbinding: mi-data-extractor-job
