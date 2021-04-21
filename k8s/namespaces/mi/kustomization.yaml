@@ -3,14 +3,14 @@ kind: Kustomization
 namespace: mi
 resources:
 - namespace.yaml
-- mi-data-extractor/mi-data-extractor.yaml
+- mi-data-extractor/mi-data-extractor-identity.yaml
 - mi-data-extractor/mi-data-extractor-binding.yaml
-- mi-extraction-service/mi-extraction-service.yaml
+- mi-extraction-service/mi-extraction-service-identity.yaml
 - mi-extraction-service/mi-extraction-service-binding.yaml
-- mi-house-keeping-service/mi-house-keeping-service.yaml
+- mi-house-keeping-service/mi-house-keeping-service-identity.yaml
 - mi-house-keeping-service/mi-house-keeping-service-binding.yaml
-- mi-integration-service/mi-integration-service.yaml
+- mi-integration-service/mi-integration-service-identity.yaml
 - mi-integration-service/mi-integration-service-binding.yaml
-- mi-staging-service/mi-staging-service.yaml
+- mi-staging-service/mi-staging-service-identity.yaml
 - mi-staging-service/mi-staging-service-binding.yaml
 - mi-developer-rbac.yaml
