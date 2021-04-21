@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - toffee
 - vh
+- mi
 - ../../../namespaces/mi/mi-sftp-server
 patches:
 - path: ../sbox-helmrelease.yaml
