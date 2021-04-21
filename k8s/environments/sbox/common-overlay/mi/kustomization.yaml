@@ -14,23 +14,23 @@ patches:
     group: helm.fluxcd.io
     version: v1
     kind: AzureIdentity
-    name: toffee-frontend
+    name: mi
   path: mi-extraction-service-identity-patch.yaml
 - target:
     group: helm.fluxcd.io
     version: v1
     kind: AzureIdentity
-    name: toffee-frontend
+    name: mi
   path: mi-house-keeping-service-identity-patch.yaml
 - target:
     group: helm.fluxcd.io
     version: v1
     kind: AzureIdentity
-    name: toffee-frontend
+    name: mi
   path: mi-integration-service-identity-patch.yaml
 - target:
     group: helm.fluxcd.io
     version: v1
     kind: AzureIdentity
-    name: toffee-frontend
+    name: mi
   path: mi-staging-service-identity-patch.yaml
