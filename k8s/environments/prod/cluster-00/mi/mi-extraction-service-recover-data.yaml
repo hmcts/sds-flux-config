@@ -20,8 +20,7 @@ spec:
     job:
       image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-2c2a120
       suspend: false
-      kind: CronJob
-      schedule: '0 3 * * *'
+      kind: Job
       activeDeadlineSeconds: 82800
       memoryRequests: '2048Mi'
       cpuRequests: '200m'
