@@ -1,11 +1,36 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- toffee
-- vh
-- mi
-- ../../../namespaces/mi/mi-sftp-server
+- ../../../../namespaces/mi
+
 patches:
-- path: ../sbox-helmrelease.yaml
-  target:
-    kind: HelmRelease
+- target:
+    group: aadpodidentity.k8s.io
+    version: v1
+    kind: AzureIdentity
+    name: mi
+  path: mi-data-extractor-identity-patch.yaml 
+- target:
+    group: helm.fluxcd.io
+    version: v1
+    kind: AzureIdentity
+    name: toffee-frontend
+  path: mi-extraction-service-identity-patch.yaml
+- target:
+    group: helm.fluxcd.io
+    version: v1
+    kind: AzureIdentity
+    name: toffee-frontend
+  path: mi-house-keeping-service-identity-patch.yaml
+- target:
+    group: helm.fluxcd.io
+    version: v1
+    kind: AzureIdentity
+    name: toffee-frontend
+  path: mi-integration-service-identity-patch.yaml
+- target:
+    group: helm.fluxcd.io
+    version: v1
+    kind: AzureIdentity
+    name: toffee-frontend
+  path: mi-staging-service-identity-patch.yaml
