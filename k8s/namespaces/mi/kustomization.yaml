@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: mi
+resources:
+- namespace.yaml
+- mi-data-extractor/mi-data-extractor.yaml
+- mi-data-extractor/mi-data-extractor-binding.yaml
+- mi-extraction-service/mi-extraction-service.yaml
+- mi-extraction-service/mi-extraction-service-binding.yaml
+- mi-house-keeping-service/mi-house-keeping-service.yaml
+- mi-house-keeping-service/mi-house-keeping-service-binding.yaml
+- mi-integration-service/mi-integration-service.yaml
+- mi-integration-service/mi-integration-service-binding.yaml
+- mi-staging-service/mi-staging-service.yaml
+- mi-staging-service/mi-staging-service-binding.yaml
+- toffee-frontend/toffee-frontend.yaml
