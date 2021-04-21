@@ -22,7 +22,7 @@ spec:
         image: busybox
         command: ["/bin/sh", "-c", "printf '%s:%s:1000::/files/mi-platform-export/'  $(cat /kvmnt/sftp-remote-user) $(cat /kvmnt/sftp-remote-password) > /sftp-config/users.conf"]
         volumeMounts:
-        - name: test
+        - name: azurekeyvault
           mountPath: /kvmnt
           readOnly: true
         - name: config-cache
@@ -32,7 +32,7 @@ spec:
         image: atmoz/sftp:latest
         imagePullPolicy: Always
         volumeMounts:
-        - name: test
+        - name: azurekeyvault
           mountPath: /kvmnt
           readOnly: true
         - name: config-cache
@@ -44,11 +44,11 @@ spec:
             add: ["SYS_ADMIN"]
         resources: {}
       volumes:
-      - name: test
+      - name: csi-volume
         csi:
           driver: secrets-store.csi.k8s.io
           readOnly: true
           volumeAttributes:
-            secretProviderClass: "mi-extraction-service-job-vault-test-secret-provider"
+            secretProviderClass: "mi-extraction-service-job-vault-secret-provider"
       - name: config-cache
         emptyDir: {}
