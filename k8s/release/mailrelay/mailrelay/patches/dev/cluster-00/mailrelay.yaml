@@ -5,9 +5,13 @@ metadata:
   name: mailrelay
   namespace: mailrelay
 spec:
+  valueFileSecrets:
+    - name: "dev-mailrelay"
   values:
     service:
       type: LoadBalancer
       loadBalancerIP: "10.145.15.15"
+    global:
+      environment: dev
 
     workload: StatefulSet
