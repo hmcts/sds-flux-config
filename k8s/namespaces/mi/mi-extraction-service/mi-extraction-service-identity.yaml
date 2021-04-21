@@ -5,16 +5,5 @@ metadata:
   namespace: mi
 spec:
   type: 0
-  resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/managed-identities-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-extraction-service-sbox-mi
-  clientID: 6818a9a6-f1db-4952-a8e6-b8b85275f3f0
-
----
-
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentityBinding
-metadata:
-  name: mi-extraction-service
-  namespace: mi
-spec:
-  azureIdentity: mi-extraction-service
-  selector: mi-extraction-service
+  resourceID: replace
+  clientID: replace
