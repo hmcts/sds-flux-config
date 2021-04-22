@@ -33,13 +33,13 @@ spec:
           image: atmoz/sftp:latest
           imagePullPolicy: Always
           volumeMounts:
-          - name: azurekeyvault
-            mountPath: /kvmnt
-            readOnly: true
-          - name: config-cache
-            mountPath: /etc/sftp
-            ports:
-            - containerPort: 22
+            - name: azurekeyvault
+              mountPath: /kvmnt
+              readOnly: true
+            - name: config-cache
+              mountPath: /etc/sftp
+              ports:
+                - containerPort: 22
           securityContext:
             capabilities:
               add: ["SYS_ADMIN"]
