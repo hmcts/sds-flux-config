@@ -5,8 +5,6 @@ metadata:
   name: mailrelay
   namespace: mailrelay
 spec:
-  valueFileSecrets:
-    - name: "dev-mailrelay"
   values:
     service:
       type: LoadBalancer
