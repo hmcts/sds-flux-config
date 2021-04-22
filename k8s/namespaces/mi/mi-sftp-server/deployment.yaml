@@ -23,32 +23,32 @@ spec:
         aadpodidbinding: mi-data-extractor-job
       spec:
       initContainers:
-        - name: install
-          image: busybox
-          command: ["/bin/sh", "-c", "printf '%s:%s:1000::/files/mi-platform-export/'  $(cat /kvmnt/sftp-remote-user) $(cat /kvmnt/sftp-remote-password) > /sftp-config/users.conf"]
-          volumeMounts:
-            - name: azurekeyvault
-              mountPath: /kvmnt
-              readOnly: true
-            - name: config-cache
-              mountPath: /sftp-config
-    containers:
-      - name: mi-sftp-server
-        image: atmoz/sftp:latest
-        imagePullPolicy: Always
+      - name: install
+        image: busybox
+        command: ["/bin/sh", "-c", "printf '%s:%s:1000::/files/mi-platform-export/'  $(cat /kvmnt/sftp-remote-user) $(cat /kvmnt/sftp-remote-password) > /sftp-config/users.conf"]
         volumeMounts:
-      - name: azurekeyvault
-        mountPath: /kvmnt
-        readOnly: true
-      - name: config-cache
-        mountPath: /etc/sftp
-        ports:
-          - containerPort: 22
-            securityContext:
-            capabilities:
-            add: ["SYS_ADMIN"]
-            resources: {}
-            volumes:
+        - name: azurekeyvault
+          mountPath: /kvmnt
+          readOnly: true
+        - name: config-cache
+          mountPath: /sftp-config
+    containers:
+    - name: mi-sftp-server
+      image: atmoz/sftp:latest
+      imagePullPolicy: Always
+      volumeMounts:
+    - name: azurekeyvault
+      mountPath: /kvmnt
+      readOnly: true
+    - name: config-cache
+      mountPath: /etc/sftp
+      ports:
+      - containerPort: 22
+        securityContext:
+        capabilities:
+          add: ["SYS_ADMIN"]
+          resources: {}
+          volumes:
           - name: azurekeyvault
             csi:
             driver: secrets-store.csi.k8s.io
