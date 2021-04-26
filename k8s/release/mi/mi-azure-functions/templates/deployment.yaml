@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+  template:
+    metadata:
+      namespace: {{ .Values.namespace }}
+      labels:
+        app: {{ .Values.appName }}
+        aadpodidbinding: {{ .Values.aadIdentityName }}
+    spec:
+      volumes:
+        - name: {{ .Values.keyVaultName }}-secrets-store
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: {{ .Values.appName }}-secret-provider
+      containers:
+        - name: mi-azure-functions
+          image: {{ .Values.image }}
+          volumeMounts:
+            - name: {{ .Values.keyVaultName }}-secrets-store
+              mountPath: {{ .Values.secretsMountPath }}
+              readOnly: true
