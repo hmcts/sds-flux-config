@@ -62,8 +62,8 @@ metadata:
   namespace: mi
 spec:
   ports:
-  - protocol: TCP
-    port: 2000
-    targetPort: 22
+    - protocol: TCP
+      port: 2000
+      targetPort: 22
   selector:
     app: mi-sftp-server
