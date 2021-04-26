@@ -53,3 +53,17 @@ spec:
               secretProviderClass: "mi-extraction-service-job-vault-secret-provider"
         - name: config-cache
           emptyDir: {}
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mi-sftp-server-svc
+  namespace: mi
+spec:
+  ports:
+  - protocol: TCP
+    port: 2000
+    targetPort: 22
+  selector:
+    app: mi-sftp-server
