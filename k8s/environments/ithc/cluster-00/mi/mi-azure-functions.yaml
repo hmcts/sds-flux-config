@@ -6,7 +6,7 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.job: glob:pr-*
+    flux.weave.works/tag.job: glob:ithc-*
 spec:
   releaseName: mi-azure-functions
   chart:
@@ -17,8 +17,8 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-3-30d9b06
-    environment: "dev"
-    resourcegroup: "mi-dev-rg"
-    subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:ithc
+    environment: "ithc"
+    resourcegroup: "mi-ithc-rg"
+    subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

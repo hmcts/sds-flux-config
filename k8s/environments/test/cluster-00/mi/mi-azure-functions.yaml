@@ -12,7 +12,7 @@ spec:
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-azure-functions
-    ref: azure-function-charts
+    ref: master
   values:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
