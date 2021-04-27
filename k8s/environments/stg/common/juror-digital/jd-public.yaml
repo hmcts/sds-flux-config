@@ -1,0 +1,27 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: jd-public
+  namespace: jd
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: glob:2.*
+spec:
+  releaseName: jd-public
+  chart:
+    git: git@github.com:hmcts/sds-helm-charts
+    path: charts/jd-public
+    ref: master
+  values:
+    nodejs:
+      image: ssprivatestg.azurecr.io/jd/juror_digital_public_portal:2.21.427
+      ingressHost: 'jdfrontend-nle.platform.hmcts.net'
+      ingressSessionAffinity:
+        enabled: true
+        sessionCookieName: ""
+      environment:
+        API_ENDPOINT: http://moj-nle-reverse-proxy/api/v1/
+        PORT: 3000
+        USE_AUTH: false
+        NODE_ENV: development
