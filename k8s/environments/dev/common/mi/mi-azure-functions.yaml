@@ -17,7 +17,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-3-c44ea49
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:stg-3d7b2f1
     environment: "dev"
     resourcegroup: "mi-dev-rg"
     subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"
