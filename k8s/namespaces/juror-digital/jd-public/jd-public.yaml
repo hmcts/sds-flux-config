@@ -3,7 +3,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: jd-public
-  namespace: jd
+  namespace: juror-digital
   annotations:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/tag.chart-image: glob:2.*
