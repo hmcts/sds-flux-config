@@ -11,11 +11,11 @@ spec:
     enable: true
     retry: true
   chart:
-    git: https://github.com/hmcts/charts
+    git: https://github.com/traefik
     ref: master
-    path: stable/traefik
+    path: traefik-helm-chart/traefik
   values:
-    imageTag: 1.7.26
+    imageTag: 2.4.8
     gzip:
       enabled: false
     resources:
@@ -35,9 +35,16 @@ spec:
     kubernetes:
       ingressEndpoint:
         useDefaultPublishedService: true
-    ssl:
+    tls:
+      options: myTLSOptions
+tls:
+  certificates:
+    certFile: replace
+    keyFile: replace
+  options:
+    myTLSOptions:
       enabled: true
-      tlsMinVersion: VersionTLS12
+      minVersion: VersionTLS12
       cipherSuites:
         [
           "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
