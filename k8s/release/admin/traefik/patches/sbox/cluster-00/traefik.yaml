@@ -5,6 +5,7 @@ metadata:
   namespace: admin
 spec:
   values:
+    imageTag: 2.4.8
     loadBalancerIP: 10.140.15.250
     dashboard:
       domain: traefik-ss-00.sandbox.platform.hmcts.net
