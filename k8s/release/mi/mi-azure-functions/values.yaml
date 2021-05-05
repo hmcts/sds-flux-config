@@ -13,7 +13,7 @@ namespace: mi
 aadIdentityName: mi-integration-service
 
 keyVaultName: mi-vault
-keyVaultSecrets:
+keyVaultCoreSecrets:
   - azure-functions-function-key
   - azure-functions-master-key
   - mi-audit-storage-connection-string
