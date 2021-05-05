@@ -3,6 +3,8 @@ kind: Kustomization
 namespace: mi
 resources:
 - namespace.yaml
+- mi-azure-functions/mi-azure-functions-identity.yaml
+- mi-azure-functions/mi-azure-functions-identity-binding.yaml
 - mi-data-extractor/mi-data-extractor-identity.yaml
 - mi-data-extractor/mi-data-extractor-identity-binding.yaml
 - mi-extraction-service/mi-extraction-service-identity.yaml
