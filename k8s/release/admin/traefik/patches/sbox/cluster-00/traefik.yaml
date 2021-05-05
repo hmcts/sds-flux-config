@@ -4,6 +4,9 @@ metadata:
   name: traefik
   namespace: admin
 spec:
+  chart:
+    git: https://github.com/traefik
+    path: traefik-helm-chart/traefik
   values:
     imageTag: 2.4.8
     loadBalancerIP: 10.140.15.250
