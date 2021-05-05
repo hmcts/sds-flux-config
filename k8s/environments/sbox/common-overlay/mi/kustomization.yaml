@@ -35,9 +35,3 @@ patches:
     kind: AzureIdentity
     name: mi
   path: mi-staging-service-identity-patch.yaml
-- target:
-    group: helm.fluxcd.io
-    version: v1
-    kind: AzureIdentity
-    name: mi
-  path: mi-azure-functions-identity-patch.yaml
