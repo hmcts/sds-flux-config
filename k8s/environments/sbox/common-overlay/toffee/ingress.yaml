@@ -8,8 +8,8 @@ metadata:
 spec:
   tls:
   - hosts:
-    - sandbox.platform.hmcts.net
-    secretName: ingress-tls-csi
+    - toffee.sandbox.platform.hmcts.net
+    secretName: STAR-sandbox-platform-hmcts-net
   rules:
   - host: toffee.sandbox.platform.hmcts.net
     http:
