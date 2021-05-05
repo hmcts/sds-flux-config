@@ -38,9 +38,9 @@ spec:
     tls:
       options: myTLSOptions
 tls:
-  certificates:
-    certFile: replace
-    keyFile: replace
+  # certificates:
+  #   certFile: replace
+  #   keyFile: replace
   options:
     myTLSOptions:
       enabled: true
