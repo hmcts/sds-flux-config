@@ -5,7 +5,8 @@ metadata:
   namespace: admin
 spec:
   chart:
-    git: https://traefik.github.io/traefik-helm-chart
+    git: git@github.com:traefik/traefik-helm-chart
+    ref: master
     path: traefik
   values:
     imageTag: 2.4.8
