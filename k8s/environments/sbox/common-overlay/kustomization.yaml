@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - toffee
 - vh
+- mi
 patches:
 - path: ../sbox-helmrelease.yaml
   target:
