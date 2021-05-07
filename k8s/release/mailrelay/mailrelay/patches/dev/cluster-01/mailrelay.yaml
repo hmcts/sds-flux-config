@@ -6,6 +6,10 @@ metadata:
   namespace: mailrelay
 spec:
   values:
+    image:
+      repository: sdshmctspublic.azurecr.io/exim-relay
+      tag: 0.8
+      pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
       loadBalancerIP: "10.145.31.31"
@@ -13,3 +17,20 @@ spec:
       environment: dev
 
     workload: StatefulSet
+    
+    fluentbit:
+      enabled: true
+      image:
+        repository: sdshmctspublic.azurecr.io/fluent/fluent-bit
+        tag: 1.7.2
+        pullPolicy: IfNotPresent
+    
+    eximexporter:
+      enabled: true
+      image:
+        repository: sdshmctspublic.azurecr.io/exim-exporter
+        tag: 0.1
+        pullPolicy: IfNotPresent
+    
+    prometheus:
+      enabled: true

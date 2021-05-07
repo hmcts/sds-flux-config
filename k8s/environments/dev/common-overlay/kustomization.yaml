@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - vh
 - toffee
+- mi
 patches:
 - path: ../dev-helmrelease.yaml
   target:
