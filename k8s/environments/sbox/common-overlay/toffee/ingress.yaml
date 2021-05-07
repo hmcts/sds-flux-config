@@ -9,7 +9,7 @@ spec:
   tls:
   - hosts:
     - toffee.sandbox.platform.hmcts.net
-    secretName: STAR-sandbox-platform-hmcts-net
+    secretName: star-sandbox-platform-hmcts-net
   rules:
   - host: toffee.sandbox.platform.hmcts.net
     http:
@@ -20,3 +20,4 @@ spec:
             port:
               number: 9000
         path: /
+        pathType: Prefix
