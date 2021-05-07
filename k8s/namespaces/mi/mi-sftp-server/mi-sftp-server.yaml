@@ -32,18 +32,17 @@ spec:
         - name: mi-sftp-server
           image: atmoz/sftp:latest
           imagePullPolicy: Always
+          securityContext:
+            capabilities:
+              add: ["SYS_ADMIN"]
           volumeMounts:
             - name: azurekeyvault
               mountPath: /kvmnt
               readOnly: true
             - name: config-cache
               mountPath: /etc/sftp
-              ports:
-                - containerPort: 22
-          securityContext:
-            capabilities:
-              add: ["SYS_ADMIN"]
-              resources: {}
+          ports:
+            - containerPort: 22
       volumes:
         - name: azurekeyvault
           csi:
