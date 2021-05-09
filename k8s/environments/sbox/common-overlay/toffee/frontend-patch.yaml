@@ -12,3 +12,10 @@ spec:
         RECIPE_BACKEND_URL: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
     global:
       environment: sandbox
+    volumes:
+      - name: azurekeyvault
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "default-cert"
