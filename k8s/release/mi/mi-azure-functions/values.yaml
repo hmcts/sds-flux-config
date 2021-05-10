@@ -28,3 +28,5 @@ env:
   ADF_NAME: mi-ingestion-adf-sbox
   ADF_INTEGRATIONRUNTIMENAME: mi-adf-shir
   ADF_STORAGEACCOUNTNAME: miauditsbox
+  ADF_TENANTID: {{ .tenantId }}
+  ADF_SUBSCRIPTIONID: {{ .subscriptionId }}
