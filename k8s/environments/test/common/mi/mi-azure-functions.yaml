@@ -23,6 +23,8 @@ spec:
       ADF_RESOURCEGROUP: mi-test-rg
       ADF_NAME: mi-ingestion-adf-test
       ADF_STORAGEACCOUNTNAME: miaudittest
+      ADF_TENANTID: "{{ .Values.tenantId }}"
+      ADF_SUBSCRIPTIONID: "{{ .Values.subscriptionId }}"
     environment: "test"
     resourceGroup: "mi-test-rg"
     subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
