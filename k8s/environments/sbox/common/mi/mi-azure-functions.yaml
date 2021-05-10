@@ -19,6 +19,7 @@ spec:
       app.kubernetes.io/name: mi-azure-functions-deployment
     image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-4-220860e
     env:
+      APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
       ADF_RESOURCEGROUP: mi-sbox-rg
       ADF_NAME: mi-ingestion-adf-sbox
       ADF_STORAGEACCOUNTNAME: miauditsbox
