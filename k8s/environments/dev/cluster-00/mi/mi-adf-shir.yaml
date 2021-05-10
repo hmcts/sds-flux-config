@@ -17,7 +17,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment
       app.kubernetes.io/name: mi-adf-shir-deployment
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:dev-814f45b
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-2d93cf8
     secretsMountPath: ''
     environment: "dev"
     resourceGroup: "mi-dev-rg"
