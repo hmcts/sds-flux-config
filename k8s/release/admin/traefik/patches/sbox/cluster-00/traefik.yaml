@@ -16,9 +16,11 @@ spec:
     accessLogs:
       enabled: true
     tls:
+      stores:
+        default:
+          defaultCertificate:
+            key: default-cert
       options: myTLSOptions
-tls:
-  options:
     myTLSOptions:
       enabled: true
       minVersion: VersionTLS12
