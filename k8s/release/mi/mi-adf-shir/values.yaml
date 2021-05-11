@@ -1,0 +1,28 @@
+environment: "sbox"
+resourceGroup: "mi-sbox-rg"
+subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+
+image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime
+
+replicaCount: 2
+
+appName: mi-adf-shir
+namespace: mi
+
+# Use only one of the two below. Currently Windows does not support podIdentity so using SOPS
+usePodIdentity: true
+aadIdentityName: mi-integration-service
+
+useVMManagedIdentity: false
+managedIdentityClientId: 9278a876-6f8a-489d-9053-01c996a7b6f6
+
+keyVaultName: mi-vault
+keyVaultSecrets:
+  - mi-adf-auth-key
+
+authKeySecretName: mi-adf-auth
+secretsMountPath: 'C:\kvmnt'
+
+haEnabled: "true"
+haPort: "8060"

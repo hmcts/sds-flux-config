@@ -1,0 +1,60 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+  template:
+    metadata:
+      namespace: {{ .Values.namespace }}
+      labels:
+        app: {{ .Values.appName }}
+        aadpodidbinding: {{ .Values.aadIdentityName }}
+    spec:
+      volumes:
+        {{ if .Values.secretsMountPath }}
+        - name: {{ .Values.keyVaultName }}-secrets-store
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: {{ .Values.appName }}-secret-provider
+        {{ end }}
+      containers:
+        - name: mi-adf-shir
+          image: {{ .Values.image }}
+          env:
+            {{ if .Values.secretsMountPath }}
+            - name: SECRETS_MOUNT_PATH
+              value: "{{ .Values.secretsMountPath }}"
+            {{ else }}
+            - name: AUTH_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.authKeySecretName }}
+                  key: key
+            {{ end }}
+            - name: ENABLE_HA
+              value: "{{ .Values.haEnabled }}"
+            - name: NODE_NAME
+              value: "{{ .Values.appName }}"
+            - name: HA_PORT
+              value: "{{ .Values.haPort }}"
+          {{ if .Values.secretsMountPath }}
+          volumeMounts:
+            - name: {{ .Values.keyVaultName }}-secrets-store
+              mountPath: {{ .Values.secretsMountPath }}
+              readOnly: true
+          {{ end }}
+      nodeSelector:
+        kubernetes.io/os: windows
+      tolerations:
+        - key: "kubernetes.io/os"
+          operator: "Equal"
+          value: "windows"
+          effect: "NoSchedule"

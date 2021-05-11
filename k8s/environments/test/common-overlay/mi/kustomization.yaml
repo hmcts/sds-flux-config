@@ -8,35 +8,35 @@ patches:
     group: aadpodidentity.k8s.io
     version: v1
     kind: AzureIdentity
-    name: mi
+    name: data-extractor-job
   path: mi-data-extractor-identity-patch.yaml 
 - target:
-    group: helm.fluxcd.io
+    group: aadpodidentity.k8s.io
     version: v1
     kind: AzureIdentity
-    name: mi
+    name: mi-extraction-service
   path: mi-extraction-service-identity-patch.yaml
 - target:
-    group: helm.fluxcd.io
+    group: aadpodidentity.k8s.io
     version: v1
     kind: AzureIdentity
-    name: mi
+    name: mi-house-keeping-service
   path: mi-house-keeping-service-identity-patch.yaml
 - target:
-    group: helm.fluxcd.io
+    group: aadpodidentity.k8s.io
     version: v1
     kind: AzureIdentity
-    name: mi
+    name: mi-integration-service
   path: mi-integration-service-identity-patch.yaml
 - target:
-    group: helm.fluxcd.io
+    group: aadpodidentity.k8s.io
     version: v1
     kind: AzureIdentity
-    name: mi
+    name: mi-staging-service
   path: mi-staging-service-identity-patch.yaml
 - target:
-    group: helm.fluxcd.io
+    group: aadpodidentity.k8s.io
     version: v1
     kind: AzureIdentity
-    name: mi
+    name: mi-azure-functions
   path: mi-azure-functions-identity-patch.yaml
