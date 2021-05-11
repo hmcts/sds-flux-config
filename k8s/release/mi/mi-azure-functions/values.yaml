@@ -10,14 +10,23 @@ replicaCount: 2
 appName: mi-azure-functions
 namespace: mi
 
-aadIdentityName: mi-integration-service
+aadIdentityName: mi-azure-functions
 
 keyVaultName: mi-vault
-keyVaultSecrets:
+keyVaultCoreSecrets:
   - azure-functions-function-key
   - azure-functions-master-key
+  - mi-audit-storage-connection-string
 
 secretsMountPath: '/mnt/kvmnt'
 
 internalPort: 80
 externalPort: 80
+
+env:
+  ADF_RESOURCEGROUP: mi-sbox-rg
+  ADF_NAME: mi-ingestion-adf-sbox
+  ADF_INTEGRATIONRUNTIMENAME: mi-adf-shir
+  ADF_STORAGEACCOUNTNAME: miauditsbox
+  ADF_TENANTID: "{{ .Values.tenantId }}"
+  ADF_SUBSCRIPTIONID: "{{ .Values.subscriptionId }}"
