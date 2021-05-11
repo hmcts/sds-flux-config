@@ -12,13 +12,15 @@ spec:
   chart:
     repository: https://hmctspublic.azurecr.io/helm/v1/repo/
     name: plum-recipe-backend
-    version: 0.8.2
+    version: 0.8.4
   values:
     java:
       image: hmctspublic.azurecr.io/plum/recipe-backend:prod-d58c633f
       ingressHost: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
       aadIdentityName: toffee
       keyVaults:
+        plumsi:
+          disabled: true
         toffee:
           secrets:
           - name: recipe-backend-POSTGRES-PASS
