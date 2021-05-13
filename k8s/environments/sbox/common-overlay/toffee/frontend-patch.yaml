@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: toffee-frontend
+  name: toffee-frontend-nodejs
   namespace: toffee
 spec:
   values:
