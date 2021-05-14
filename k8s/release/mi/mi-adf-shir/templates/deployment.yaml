@@ -51,6 +51,9 @@ spec:
               mountPath: {{ .Values.secretsMountPath }}
               readOnly: true
           {{ end }}
+      {{ if .Values.nodeName }}
+      nodeName: {{ .Values.nodeName }}
+      {{ end }}
       nodeSelector:
         kubernetes.io/os: windows
       tolerations:
