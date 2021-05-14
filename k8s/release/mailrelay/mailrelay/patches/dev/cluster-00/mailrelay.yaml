@@ -8,7 +8,7 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
-      tag: 0.1.1
+      tag: 0.1.2
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
@@ -31,6 +31,9 @@ spec:
         repository: sdshmctspublic.azurecr.io/exim-exporter
         tag: 0.1
         pullPolicy: IfNotPresent
+        ports:
+          - name: eximexporter-port
+            containerPort: 9636
     
     prometheus:
       enabled: true

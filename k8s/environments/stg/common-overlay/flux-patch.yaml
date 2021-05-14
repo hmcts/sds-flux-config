@@ -1,0 +1,24 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  annotations:
+    filter.fluxcd.io/java: glob:prod-*
+  name: toffee-frontend
+  namespace: toffee
+spec:
+  values:
+    java:
+      image: hmctspublic.azurecr.io/plum/frontend:prod-ec6f47f2
+    nodejs:
+      image: hmctspublic.azurecr.io/plum/frontend:pr-72
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: toffee
+spec:
+  values:
+    java:
+      image: hmctspublic.azurecr.io/plum/recipe-backend:prod-f8d99447
