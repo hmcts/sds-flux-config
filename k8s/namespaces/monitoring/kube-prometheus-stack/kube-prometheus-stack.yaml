@@ -65,16 +65,6 @@ spec:
           podMetricsEndpoints:
             - port: exporter
               path: /metrics
-        - name: "exim-mailrelay-monitor"
-          selector:
-            matchLabels:
-              app: exim
-          namespaceSelector:
-            matchNames:
-              - mailrelay
-          podMetricsEndpoints:
-            - port: 9636
-              path: /metrics
       ingress:
         enabled: true
 
