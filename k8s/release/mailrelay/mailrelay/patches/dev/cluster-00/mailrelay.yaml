@@ -31,6 +31,9 @@ spec:
         repository: sdshmctspublic.azurecr.io/exim-exporter
         tag: 0.1
         pullPolicy: IfNotPresent
+        ports:
+          - name: eximexporter-port
+            containerPort: 9636
     
     prometheus:
       enabled: true
