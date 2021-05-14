@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/maintenance
     ref: master
   values:
-    image: ssprivateprod.azurecr.io/maintenance:v0.3
+    image: ssprivateprod.azurecr.io/maintenance:v0.2
     pullPolicy: Always
     replicaCount: 1
     service:
