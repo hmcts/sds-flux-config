@@ -99,7 +99,7 @@ volumes:
       driver: secrets-store.csi.k8s.io
       readOnly: true
       volumeAttributes:
-        secretProviderClass: "{{ $releaseName }}-vault-{{ $globals.environment }}-secret-provider"
+        secretProviderClass: "{{ $releaseName }}-vault-secret-provider"
   {{- end }}
 {{- end }}
 securityContext:
