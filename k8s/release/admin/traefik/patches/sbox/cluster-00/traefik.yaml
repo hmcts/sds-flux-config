@@ -50,3 +50,15 @@ spec:
       podAnnotations:
         prometheus.io/port: "9100"
         prometheus.io/scrape: "true"
+controller:
+  extraVolumes:
+      - name: azurekeyvault
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: “default-cert”
+  extraVolumeMounts:
+      - name: azurekeyvault
+        mountPath: “/mnt/secrets-store”
+        readOnly: true

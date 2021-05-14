@@ -1,18 +1,18 @@
 apiVersion: aadpodidentity.k8s.io/v1
 kind: AzureIdentity
 metadata:
-    name: traefik
-    namespace: admin
+  name: traefik
+  namespace: admin
 spec:
-    type: 0
-    resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-sbox-mi
-    clientID: "09d99cb4-e1e7-49c2-a8e6-b5b1740e9c3b"
+  type: 0
+  resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-sbox-mi
+  clientID: "09d99cb4-e1e7-49c2-a8e6-b5b1740e9c3b"
 ---
 apiVersion: aadpodidentity.k8s.io/v1
 kind: AzureIdentityBinding
 metadata:
-    name: traefik-binding
-    namespace: admin
+  name: traefik-binding
+  namespace: admin
 spec:
-    azureIdentity: "traefik"
-    selector: traefik
+  azureIdentity: "traefik"
+  selector: traefik
