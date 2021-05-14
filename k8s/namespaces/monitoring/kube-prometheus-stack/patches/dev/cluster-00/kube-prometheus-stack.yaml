@@ -16,7 +16,7 @@ spec:
             matchNames:
               - mailrelay
           podMetricsEndpoints:
-            - port: 9636
+            - port: eximexporter-port
               path: /metrics
       ingress:
         annotations:
