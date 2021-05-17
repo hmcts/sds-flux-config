@@ -10,6 +10,8 @@ spec:
     version: 9.19.1
   values:
     service:
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       spec:
         loadBalancerIP: "10.140.15.250"
     access:
@@ -35,13 +37,13 @@ spec:
       maxReplicas: 2
 controller:
   extraVolumes:
-      - name: azurekeyvault
-        csi:
-          driver: secrets-store.csi.k8s.io
-          readOnly: true
-          volumeAttributes:
-            secretProviderClass: “default-cert”
-  extraVolumeMounts:
-      - name: azurekeyvault
-        mountPath: “/mnt/secrets-store”
+    - name: azurekeyvault
+      csi:
+        driver: secrets-store.csi.k8s.io
         readOnly: true
+        volumeAttributes:
+          secretProviderClass: “default-cert”
+extraVolumeMounts:
+  - name: azurekeyvault
+    mountPath: “/mnt/secrets-store”
+    readOnly: true
