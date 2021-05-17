@@ -19,15 +19,15 @@ spec:
       ingressRoute:
         dashboard:
         enabled: false
-ports:        
-  websecure:
-    tls:
-      enabled: true
-      stores:
-        default:
-          defaultCertificate:
-            key: default-cert
-      options: myTLSOptions
+    ports:        
+      websecure:
+        tls:
+          enabled: true
+          stores:
+            default:
+              defaultCertificate:
+                key: default-cert
+          options: myTLSOptions
     myTLSOptions:
       enabled: true
       minVersion: VersionTLS12
