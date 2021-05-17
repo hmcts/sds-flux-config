@@ -11,12 +11,12 @@ spec:
   selector:
     matchLabels:
       app: mi-sftp-server
-      aadpodidbinding: mi-data-extractor-job
+      aadpodidbinding: mi-extraction-service
   template:
     metadata:
       labels:
         app: mi-sftp-server
-        aadpodidbinding: mi-data-extractor-job
+        aadpodidbinding: mi-extraction-service
     spec:
       initContainers:
         - name: install
