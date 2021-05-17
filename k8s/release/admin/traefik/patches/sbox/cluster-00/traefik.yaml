@@ -24,8 +24,6 @@ spec:
       options: myTLSOptions
     myTLSOptions:
       enabled: true
-      type: loadBalancer
-      
       minVersion: VersionTLS12
       cipherSuites:
         [
