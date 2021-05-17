@@ -25,6 +25,10 @@ spec:
       type: ClusterIP
       port: 25
 
+    eximexporter-service:
+      type: ClusterIP 
+      port: 9636
+
     workload: Deployment
 
     volumeClaim:
