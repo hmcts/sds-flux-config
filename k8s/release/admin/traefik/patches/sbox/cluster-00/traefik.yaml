@@ -10,8 +10,6 @@ spec:
     version: 9.19.1
   values:
     service:
-      annotations:
-        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       spec:
         loadBalancerIP: "10.140.15.250"
     access:
@@ -24,6 +22,9 @@ spec:
       options: myTLSOptions
     myTLSOptions:
       enabled: true
+      type: loadBalancer
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       minVersion: VersionTLS12
       cipherSuites:
         [
