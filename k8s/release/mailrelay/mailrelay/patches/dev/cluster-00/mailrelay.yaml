@@ -8,7 +8,7 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
-      tag: 0.1.3
+      tag: 0.1.4
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
@@ -32,10 +32,10 @@ spec:
         tag: 0.1
         pullPolicy: IfNotPresent
         ports:
-          - name: eximexporter-port
+          - name: eximexporter
             containerPort: 9636
             
-    eximexporter-service:
+    eximExporterService:
       type: ClusterIP 
       port: 9636
     
