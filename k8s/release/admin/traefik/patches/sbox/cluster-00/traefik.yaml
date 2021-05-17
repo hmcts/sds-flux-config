@@ -10,8 +10,6 @@ spec:
     version: 9.19.1
   values:
     service:
-      enabled: true
-      type: loadBalancer
       annotations:
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       spec:
