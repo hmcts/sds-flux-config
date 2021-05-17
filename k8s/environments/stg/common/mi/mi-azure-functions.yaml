@@ -6,7 +6,7 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.job: glob:stg-*
+    flux.weave.works/tag.chart-image: glob:stg-*
 spec:
   releaseName: mi-azure-functions
   chart:

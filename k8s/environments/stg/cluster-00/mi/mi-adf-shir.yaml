@@ -6,7 +6,7 @@ metadata:
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:dev-*
+    flux.weave.works/tag.chart-image: glob:prod-*
 spec:
   releaseName: mi-adf-shir
   chart:
@@ -17,9 +17,9 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment
       app.kubernetes.io/name: mi-adf-shir-deployment
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:dev-814f45b
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-2d93cf8
     secretsMountPath: ''
-    environment: "test"
-    resourceGroup: "mi-test-rg"
-    subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
+    environment: "stg"
+    resourceGroup: "mi-stg-rg"
+    subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
