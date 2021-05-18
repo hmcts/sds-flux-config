@@ -5,6 +5,7 @@ metadata:
   name: mailrelay
   namespace: mailrelay
 spec:
+  timeout: 1200
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
