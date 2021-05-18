@@ -9,7 +9,6 @@ metadata:
     flux.weave.works/tag.chart-image: glob:v*
 spec:
   releaseName: mailrelay
-  timeout: 1200
   chart:
     git: git@github.com:hmcts/exim-relay
     path: helm/exim
