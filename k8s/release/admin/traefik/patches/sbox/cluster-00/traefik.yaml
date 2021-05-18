@@ -10,13 +10,12 @@ spec:
     version: 9.19.1
   values:
     service:
+      enabled: true
+      type: LoadBalancer
       annotations:
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
       spec:
-        loadBalancerIP: "10.140.15.250"
-      ingressRoute:
-        dashboard:
-        enabled: false
+        loadBalancerIP: 10.140.15.250
     ports:        
       websecure:
         tls:
