@@ -10,17 +10,25 @@ metadata:
 spec:
   values:
     java:
-      image: hmctspublic.azurecr.io/plum/recipe-backend:prod-d58c633f
+      image: hmctspublic.azurecr.io/plum/recipe-backend:prod-f8d99447
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: toffee-frontend
   namespace: toffee
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/java: glob:prod-*
 spec:
   values:
-    java:
-      image: hmctspublic.azurecr.io/plum/frontend:prod-6fa89931
+    nodejs:
+      ingressHost: toffee.staging.platform.hmcts.net
+      environment:
+        RECIPE_BACKEND_URL: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
+    global:
+      environment: staging
+    volumes:
+      - name: azurekeyvault
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "default-cert"
