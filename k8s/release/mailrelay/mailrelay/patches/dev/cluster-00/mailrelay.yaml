@@ -9,7 +9,7 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
-      tag: 0.1.6
+      tag: 0.1.7
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
@@ -30,7 +30,7 @@ spec:
       enabled: true
       image:
         repository: sdshmctspublic.azurecr.io/exim-exporter
-        tag: 0.1
+        tag: 0.2
         pullPolicy: IfNotPresent
         ports:
           - name: eximexporter
