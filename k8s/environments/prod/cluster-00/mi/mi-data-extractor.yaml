@@ -30,6 +30,7 @@ spec:
         app.kubernetes.io/instance: data-extractor-job
         app.kubernetes.io/name: data-extractor-job
       environment:
+        ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-v11-prod.postgres.database.azure.com:5432/ccd_data_store
         ETL_MSICLIENTID: 7fc8466f-2673-4c70-a6d0-5036f15b3e95
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
       smoketests:
@@ -37,6 +38,7 @@ spec:
         enabled: true
       testsConfig:
         environment:
+          ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-v11-prod.postgres.database.azure.com:5432/ccd_data_store
           ETL_MSICLIENTID: 7fc8466f-2673-4c70-a6d0-5036f15b3e95
           APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
     global:
