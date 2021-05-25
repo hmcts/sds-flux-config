@@ -24,7 +24,7 @@ job:
   environment:
     APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     ETL_MSICLIENTID: DUMMY
-    ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
+    ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-v11-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
     ETL_ACCOUNT: midataextractor{{ .Values.global.environment }}
   smoketests:
     image: sdshmctspublic.azurecr.io/data-extractor:master
@@ -46,7 +46,7 @@ job:
     environment:
       APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       ETL_MSICLIENTID: DUMMY
-      ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
+      ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-v11-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
       ETL_ACCOUNT: midataextractor{{ .Values.global.environment }}
 global:
   enableKeyVaults: true
