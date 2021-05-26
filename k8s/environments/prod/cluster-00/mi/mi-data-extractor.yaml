@@ -1,0 +1,46 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: data-extractor-job
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:prod-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:prod-*
+spec:
+  releaseName: data-extractor
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-data-extractor-job
+    ref: master
+  values:
+    job:
+      image: sdshmctspublic.azurecr.io/data-extractor-job:prod-9a0f1e4
+      suspend: false
+      kind: CronJob
+      schedule: '15 0 * * *'
+      memoryRequests: '2048Mi'
+      cpuRequests: '200m'
+      memoryLimits: '4096Mi'
+      activeDeadlineSeconds: 82800  #23 hours
+      labels:
+        app.kubernetes.io/instance: data-extractor-job
+        app.kubernetes.io/name: data-extractor-job
+      environment:
+        ETL_MSICLIENTID: 7fc8466f-2673-4c70-a6d0-5036f15b3e95
+        APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+      smoketests:
+        image: sdshmctspublic.azurecr.io/data-extractor-job:prod-9a0f1e4
+        enabled: true
+      testsConfig:
+        environment:
+          ETL_MSICLIENTID: 7fc8466f-2673-4c70-a6d0-5036f15b3e95
+          APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+    global:
+      subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "prod"
+      ccd_environment: "prod"
