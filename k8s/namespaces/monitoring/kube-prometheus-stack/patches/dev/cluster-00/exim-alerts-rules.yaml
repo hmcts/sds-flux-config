@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    app: kube-prometheus-stack
+    release: kube-prometheus-stack
+  name: prometheus-exim-alert-rules
+  namespace: monitoring
+spec:
+  "groups":
+  - "name": "EXIM"
+    "rules":
+    - "alert": "Exim down"
+      "annotations":
+        "message": "exim down"
+      "expr": |
+        delta(exim_up{success='true'}[6m]) = 0
+      "for": "5m"
+      "labels":
+        "severity": "critical"
+    - "alert": "Exim up"
+      "annotations":
+        "message": "exim is up and running"
+      "expr": |
+        delta(exim_up{success='true'}[6m]) = 1
+      "for": "5m"
+      "labels":
+        "severity": "info"
