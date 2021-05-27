@@ -10,3 +10,15 @@ patches:
     kind: AzureIdentity
     name: toffee
   path: azure-identity-patch.yaml
+- target:
+    group: helm.fluxcd.io
+    version: v1
+    kind: HelmRelease
+    name: toffee-frontend
+  path: frontend-patch.yaml
+- target:
+    group: helm.fluxcd.io
+    version: v1
+    kind: HelmRelease
+    name: toffee-recipe-backend
+  path: backend-patch.yaml
