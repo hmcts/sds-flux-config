@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: mi-extraction-service-recovery-job
+  name: mi-extraction-service-recovery-26-job
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -11,7 +11,7 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:prod-*
 spec:
-  releaseName: mi-extraction-service-recovery-job
+  releaseName: mi-extraction-service-recovery-26-job
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-extraction-service
@@ -27,8 +27,8 @@ spec:
       memoryLimits: '4096Mi'
       cpuLimits: '2000m'
       labels:
-        app.kubernetes.io/instance: mi-extraction-service-recovery-job
-        app.kubernetes.io/name: mi-extraction-service-recovery-job
+        app.kubernetes.io/instance: mi-extraction-service-recovery-26-job
+        app.kubernetes.io/name: mi-extraction-service-recovery-26-job
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false
