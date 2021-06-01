@@ -30,7 +30,7 @@ spec:
       enabled: true
       image:
         repository: sdshmctspublic.azurecr.io/exim-exporter
-        tag: 0.2
+        tag: 0.3
         pullPolicy: IfNotPresent
         ports:
           - name: eximexporter
