@@ -56,7 +56,7 @@ spec:
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "slack_alerting"
             slack_configs:
-              - channel: prometheus-alerting-mailrelay-dev
+              - channel: prometheus-alerting-nonprod
                 title: 'SDS-Dev-00 - {{ template "slack.default.title" . }}'
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
