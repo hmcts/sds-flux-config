@@ -8,21 +8,21 @@ metadata:
   namespace: monitoring
 spec:
   "groups":
-  - "name": "flux"
+  - "name": "EximAlerts
     "rules":
-    - "alert": "FluxSyncErrors"
+    - "alert": "eximdown"
       "annotations":
-        "message": "Flux sync errors, likely has infrastructure issues or duplicate manifests"
+        "message": "exim down"
       "expr": |
-        delta(flux_daemon_sync_duration_seconds_count{success='true'}[6m]) < 1
+        delta(exim_up{success='true'}[2m]) = 1
       "for": "5m"
       "labels":
         "severity": "critical"
-    - "alert": "FluxManifestError"
+    - "alert": "EximQueueLength"
       "annotations":
-        "message": "Error applying {{ $value }} manifests"
+        "message": "Queue size back to normal"
       "expr": |
-        flux_daemon_sync_manifests{success='false'} > 0
+        delta(exim_queue{}) = 0
       "for": "5m"
       "labels":
-        "severity": "critical"
+        "severity": "info"
