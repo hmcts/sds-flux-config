@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    app: kube-prometheus-stack
+    release: kube-prometheus-stack
+  name: prometheus-exim-alert-rules
+  namespace: monitoring
+spec:
+  "groups":
+  - "name": "flux"
+    "rules":
+    - "alert": "FluxSyncErrors"
+      "annotations":
+        "message": "Flux sync errors, likely has infrastructure issues or duplicate manifests"
+      "expr": |
+        delta(flux_daemon_sync_duration_seconds_count{success='true'}[6m]) < 1
+      "for": "5m"
+      "labels":
+        "severity": "critical"
+    - "alert": "FluxManifestError"
+      "annotations":
+        "message": "Error applying {{ $value }} manifests"
+      "expr": |
+        flux_daemon_sync_manifests{success='false'} > 0
+      "for": "5m"
+      "labels":
+        "severity": "critical"
