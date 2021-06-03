@@ -6,7 +6,6 @@ metadata:
   namespace: vh
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/tag.nodejs: glob:latest
 spec:
   releaseName: vh-admin-web
   chart:
