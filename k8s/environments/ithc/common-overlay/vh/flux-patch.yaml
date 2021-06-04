@@ -1,41 +1,41 @@
 ---
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: vh-user-api
-  namespace: vh
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/java: glob:prod-*
-spec:
-  values:
-    java:
-      image: 'sdshmctspublic.azurecr.io/vh/user-api:20210309.3'
-
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: vh-video-api
-  namespace: vh
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/java: glob:prod-*
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/vh/video-api:20210210.6
-
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: vh-video-web
-  namespace: vh
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/java: glob:prod-*
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/vh/video-web:20210210.14
+#apiVersion: helm.fluxcd.io/v1
+#kind: HelmRelease
+#metadata:
+#  name: vh-user-api
+#  namespace: vh
+#  annotations:
+#    fluxcd.io/automated: "true"
+#    filter.fluxcd.io/java: glob:prod-*
+#spec:
+#  values:
+#    java:
+#      image: 'sdshmctspublic.azurecr.io/vh/user-api:20210309.3'
+#
+#---
+#apiVersion: helm.fluxcd.io/v1
+#kind: HelmRelease
+#metadata:
+#  name: vh-video-api
+#  namespace: vh
+#  annotations:
+#    fluxcd.io/automated: "true"
+#    filter.fluxcd.io/java: glob:prod-*
+#spec:
+#  values:
+#    java:
+#      image: sdshmctspublic.azurecr.io/vh/video-api:20210210.6
+#
+#---
+#apiVersion: helm.fluxcd.io/v1
+#kind: HelmRelease
+#metadata:
+#  name: vh-video-web
+#  namespace: vh
+#  annotations:
+#    fluxcd.io/automated: "true"
+#    filter.fluxcd.io/java: glob:prod-*
+#spec:
+#  values:
+#    java:
+#      image: sdshmctspublic.azurecr.io/vh/video-web:20210210.14
