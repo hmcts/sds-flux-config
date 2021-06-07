@@ -1,14 +1,12 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  annotations:
-    flux.weave.works/automated: "false"
-  name: traefik2
+  name: traefik
   namespace: admin
 spec:
   chart:
     repository: https://helm.traefik.io/traefik
-    name: traefik2
+    name: traefik
     version: 9.19.1
   values:
     service:
