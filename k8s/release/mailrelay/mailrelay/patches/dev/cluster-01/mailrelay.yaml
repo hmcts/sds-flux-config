@@ -39,6 +39,10 @@ spec:
     eximExporterService:
       type: ClusterIP 
       port: 9636
+
+    volumeClaim:
+      storageClass: "managed-premium"
+      storageSize: 500Gi
     
     prometheus:
       enabled: true
