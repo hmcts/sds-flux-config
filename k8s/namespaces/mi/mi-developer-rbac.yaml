@@ -4,7 +4,7 @@ metadata:
   namespace: mi
   name: mi-developer
 rules:
-- apiGroups: ["", "extensions", "apps", "batch", "helm.fluxcd.io", "aadpodidentity.k8s.io"]
+- apiGroups: ["", "extensions", "apps", "batch", "helm.fluxcd.io", "aadpodidentity.k8s.io", "metrics.k8s.io"]
   resources: ["*"]
   verbs: ["*"]
 ---
