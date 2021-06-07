@@ -1,8 +1,6 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  annotations:
-    flux.weave.works/automated: "false"
   name: traefik2
   namespace: admin
 spec:
