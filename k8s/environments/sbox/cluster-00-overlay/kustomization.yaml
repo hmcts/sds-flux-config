@@ -3,6 +3,7 @@ kind: Kustomization
 bases:
 - ../../../release/admin/kube-slack
 - ../../../release/admin/traefik
+- ../../../release/admin/traefik
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
 - ../../../namespaces/azure-devops
@@ -19,6 +20,9 @@ patchesStrategicMerge:
 
 #traefik patch
 - ../../../release/admin/traefik/patches/sbox/cluster-00/traefik.yaml
+
+#traefik2 patch
+- ../../../release/admin/traefik/patches/sbox/cluster-00/traefik2.yaml
 
 #kured patch
 - ../../../release/admin/kured/patches/sbox/cluster-00/kured.yaml
