@@ -1,10 +1,10 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  annotations:
-    flux.weave.works/automated: "false"
   name: traefik2
   namespace: admin
+  annotations:
+    flux.weave.works/automated: "false"
 spec:
   chart:
     repository: https://helm.traefik.io/traefik
@@ -17,6 +17,8 @@ spec:
       spec:
         loadBalancerIP: "10.140.15.250"
     access:
+      enabled: true
+    rbac:
       enabled: true
     tls:
       stores:
