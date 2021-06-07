@@ -17,9 +17,9 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:ithc
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:stg-73c9410
     environment: "ithc"
     resourceGroup: "mi-ithc-rg"
     subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    replicaCount: 0 # Disables pod deployment
+    replicaCount: 2
