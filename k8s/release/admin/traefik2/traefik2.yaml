@@ -1,0 +1,39 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: traefik2
+  namespace: admin
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  chart:
+    repository: https://helm.traefik.io/traefik
+    name: traefik2
+    version: 9.19.1
+  values:
+    service:
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+    access:
+      enabled: true
+    rbac:
+      enabled: true
+    tls:
+      stores:
+        default:
+          defaultCertificate:
+            key: default-cert
+      options: myTLSOptions
+    myTLSOptions:
+      enabled: true
+      minVersion: VersionTLS12
+      cipherSuites:
+        [
+          "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+          "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+          "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+          "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+        ]
+    autoscaling:
+      minReplicas: 1
+      maxReplicas: 2
