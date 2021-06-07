@@ -1,0 +1,9 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: {{ include "azure-devops-agent.name" . }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  type: {{ .Values.aadIdentity.type }}
+  resourceID: {{ .Values.aadIdentity.resourceId }}
+  clientID: {{ .Values.aadIdentity.clientId }}

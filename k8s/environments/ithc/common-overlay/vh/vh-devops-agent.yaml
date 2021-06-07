@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-devops-agent-ithc
+  namespace: vh
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: vh-devops-agent-ithc
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/environments/ithc/common-overlay/vh/vh-azure-devops-agent
+    ref: master

@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: {{ include "azure-devops-agent.name" . }}-binding
+  namespace: {{ .Release.Namespace }}
+spec:
+  azureIdentity: {{ .Values.aadIdentity.name }}
+  selector: {{ .Values.aadIdentity.name }}
