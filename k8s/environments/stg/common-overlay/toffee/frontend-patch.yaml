@@ -9,7 +9,7 @@ spec:
     nodejs:
       ingressHost: toffee.staging.platform.hmcts.net
       environment:
-        RECIPE_BACKEND_URL: toffee-recipe-backend.staging.platform.hmcts.net
+        RECIPE_BACKEND_URL: http://toffee-recipe-backend.staging.platform.hmcts.net
     volumes:
       - name: azurekeyvault
         csi:
