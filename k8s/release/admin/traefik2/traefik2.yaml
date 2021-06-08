@@ -37,3 +37,7 @@ spec:
     autoscaling:
       minReplicas: 1
       maxReplicas: 2
+  
+ingressClass:
+  enabled: true
+  isDefaultClass: true

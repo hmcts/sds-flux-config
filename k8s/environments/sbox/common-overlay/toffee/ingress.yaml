@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: toffee-frontend-nodejs-traefik2
+  namespace: toffee
+  annotations:
+    kubernetes.io/ingress.class: traefik2
+    traefik.ingress.kubernetes.io/router.tls: "true"
+spec:
+  tls:
+  - hosts:
+    - toffee.sandbox.platform.hmcts.net
+    secretName: star-sandbox-platform-hmcts-net
+  rules:
+  - host: toffee.sandbox.platform.hmcts.net
+    http:
+      paths:
+      - backend:
+          service:
+            name: toffee-frontend-nodejs
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
