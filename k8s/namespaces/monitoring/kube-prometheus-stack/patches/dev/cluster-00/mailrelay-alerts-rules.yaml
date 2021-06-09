@@ -15,14 +15,14 @@ spec:
         "message": "exim down"
       "expr": |
         delta(exim_up{success='true'}[1m]) = 1
-      "for": "5m"
+      "for": "0s"
       "labels":
         "severity": "critical"
     - "alert": "EximQueueLength"
       "annotations":
         "message": "Queue size"
       "expr": |
-        exim_queue == 3
+        exim_queue > 5
       "for": "5m"
       "labels":
         "severity": "warning"
@@ -30,7 +30,7 @@ spec:
       "annotations":
         "message": "test messages being sent"
       "expr": |
-        exim_messages_total{flag="completed"} == 3
+        exim_messages_total{flag="completed"} > 3
       "for": "0m"
       "labels":
-        "severity": "critical"
+        "severity": "warning"
