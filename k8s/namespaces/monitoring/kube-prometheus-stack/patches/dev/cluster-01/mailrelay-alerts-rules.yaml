@@ -1,0 +1,36 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    app: kube-prometheus-stack
+    release: kube-prometheus-stack
+  name: prometheus-exim-alert-rules
+  namespace: monitoring
+spec:
+  "groups":
+  - "name": "EximAlerts"
+    "rules":
+    - "alert": "eximdown"
+      "annotations":
+        "message": "exim down"
+      "expr": |
+        delta(exim_up{success='true'}[1m]) = 1
+      "for": "0s"
+      "labels":
+        "severity": "critical"
+    - "alert": "EximQueueLength"
+      "annotations":
+        "message": "Queue size"
+      "expr": |
+        delta(exim_queue{}) > 5
+      "for": "5m"
+      "labels":
+        "severity": "warning"
+    - "alert": "TotalMessageCount"
+      "annotations":
+        "message": "test messages being sent"
+      "expr": |
+        delta(exim_messages_total{flag="completed"}) > 3
+      "for": "0m"
+      "labels":
+        "severity": "warning"
