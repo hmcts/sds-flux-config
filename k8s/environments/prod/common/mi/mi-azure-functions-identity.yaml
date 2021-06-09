@@ -1,0 +1,20 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: mi-azure-functions
+  namespace: mi
+spec:
+  type: 0
+  resourceID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/managed-identities-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-azure-functions-prod-mi
+  clientID: 6ca63ebe-d898-42fb-b5bb-88d67433c78f
+
+---
+
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: mi-azure-functions
+  namespace: mi
+spec:
+  azureIdentity: mi-azure-functions
+  selector: mi-azure-functions
