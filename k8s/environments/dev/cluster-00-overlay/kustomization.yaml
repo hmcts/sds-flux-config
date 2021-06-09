@@ -45,3 +45,7 @@ patchesStrategicMerge:
 
 # prom-operator patch
 - ../../../namespaces/monitoring/kube-prometheus-stack/patches/dev/cluster-00/kube-prometheus-stack.yaml
+
+# monitoring 
+- ../../../namespaces/monitoring/kube-prometheus-stack/patches/dev/cluster-00/kube-prometheus-stack.yaml
+- ../../../namespaces/monitoring/kube-prometheus-stack/patches/dev/cluster-01/kube-prometheus-stack.yaml
