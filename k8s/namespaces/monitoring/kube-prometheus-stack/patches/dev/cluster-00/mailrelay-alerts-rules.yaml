@@ -14,15 +14,23 @@ spec:
       "annotations":
         "message": "exim down"
       "expr": |
-        delta(exim_up{success='true'}[2m]) = 1
-      "for": "5m"
+        delta(exim_up{success='true'}[1m]) = 1
+      "for": "0s"
       "labels":
         "severity": "critical"
     - "alert": "EximQueueLength"
       "annotations":
-        "message": "Queue size back to normal"
+        "message": "Queue size"
       "expr": |
-        delta(exim_queue{}) = 0
+        exim_queue > 5
       "for": "5m"
       "labels":
-        "severity": "info"
+        "severity": "warning"
+    - "alert": "TotalMessageCount"
+      "annotations":
+        "message": "test messages being sent"
+      "expr": |
+        exim_messages_total{flag="completed"} > 3
+      "for": "0m"
+      "labels":
+        "severity": "warning"
