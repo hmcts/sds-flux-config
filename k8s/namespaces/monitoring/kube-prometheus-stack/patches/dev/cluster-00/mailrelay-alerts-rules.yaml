@@ -14,7 +14,7 @@ spec:
       "annotations":
         "message": "exim down"
       "expr": |
-        exim_up{}[1m] == 0
+        exim_up{} == 0
       "for": "0s"
       "labels":
         "severity": "critical"
