@@ -22,7 +22,7 @@ spec:
       "annotations":
         "message": "Queue size"
       "expr": |
-        exim_queue > 5
+        delta(exim_queue{}) > 5
       "for": "5m"
       "labels":
         "severity": "warning"
@@ -30,7 +30,7 @@ spec:
       "annotations":
         "message": "test messages being sent"
       "expr": |
-        exim_messages_total{flag="completed"} > 3
+        delta(exim_messages_total{flag="completed"}) > 3
       "for": "0m"
       "labels":
         "severity": "warning"
