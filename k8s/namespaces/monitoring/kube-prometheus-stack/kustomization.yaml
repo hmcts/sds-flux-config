@@ -4,7 +4,7 @@ bases:
 - ../monitoring/kube-prometheus-stack
 
 patches:
-- path: ../../../environments/dev/dev-helmrelease.yaml
+- path: ../../../../environments/dev/dev-helmrelease.yaml
   target:
     kind: HelmRelease
 
