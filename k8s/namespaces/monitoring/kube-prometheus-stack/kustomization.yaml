@@ -3,3 +3,15 @@ kind: Kustomization
 resources:
   - kube-prometheus-stack.yaml
   - namespace.yaml
+
+  
+patches:
+- path: ../../../environments/dev/dev-helmrelease.yaml
+  target:
+    kind: HelmRelease
+
+patchesStrategicMerge:
+
+# prom-operator patch
+- patches/dev/cluster-00/kube-prometheus-stack.yaml
+- patches/dev/cluster-01/kube-prometheus-stack.yaml
