@@ -12,17 +12,17 @@ spec:
     "rules":
     - "alert": "EximQueueLength"
       "annotations":
-        "message": "Queue size is above 3"
+        "message": "Queue size is above 5"
       "expr": |
         exim_queue > 5
       "for": "5m"
       "labels":
-        "severity": "warning"
-    - "alert": "EximQueueLengthNormal"
+        "severity": "critical"
+    - "alert": "eximdown"
       "annotations":
-        "message": "Queue size back to normal"
+        "message": "exim down"
       "expr": |
-        exim_queue < 1
-      "for": "5m"
+        exim_up == 0
+      "for": "1m"
       "labels":
-        "severity": "warning"
+        "severity": "critical"
