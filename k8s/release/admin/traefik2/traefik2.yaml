@@ -12,6 +12,8 @@ spec:
     version: 9.19.1
   values:
     deployment:
+      podLabels:
+        aadpodidbinding: traefik
       additionalVolumes:
         - name: star-sandbox-platform-hmcts-net
           csi:
@@ -30,22 +32,6 @@ spec:
       enabled: true
     rbac:
       enabled: true
-    tls:
-      stores:
-        default:
-          defaultCertificate:
-            key: default-cert
-      options: myTLSOptions
-    myTLSOptions:
-      enabled: true
-      minVersion: VersionTLS12
-      cipherSuites:
-        [
-          "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
-          "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
-          "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
-          "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
-        ]
     autoscaling:
       minReplicas: 1
       maxReplicas: 2
