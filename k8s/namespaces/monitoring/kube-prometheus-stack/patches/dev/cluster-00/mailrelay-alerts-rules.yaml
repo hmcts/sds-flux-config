@@ -10,27 +10,19 @@ spec:
   "groups":
   - "name": "EximAlerts"
     "rules":
+    - "alert": "EximQueueLength"
+      "annotations":
+        "message": "Queue size is above 5"
+      "expr": |
+        exim_queue > 5
+      "for": "5m"
+      "labels":
+        "severity": "critical"
     - "alert": "eximdown"
       "annotations":
         "message": "exim down"
       "expr": |
         exim_up == 0
-      "for": "0s"
+      "for": "1m"
       "labels":
         "severity": "critical"
-    - "alert": "EximQueueLength"
-      "annotations":
-        "message": "Queue size"
-      "expr": |
-        exim_queue > 5
-      "for": "5m"
-      "labels":
-        "severity": "warning"
-    - "alert": "TotalMessageCount"
-      "annotations":
-        "message": "test messages being sent"
-      "expr": |
-        exim_messages_total{flag='completed'} > 3
-      "for": "0m"
-      "labels":
-        "severity": "warning"
