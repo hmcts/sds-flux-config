@@ -14,7 +14,7 @@ spec:
       "annotations":
         "message": "exim down"
       "expr": |
-        exim_up{} == 0
+        exim_up = 0
       "for": "0s"
       "labels":
         "severity": "critical"
@@ -22,7 +22,7 @@ spec:
       "annotations":
         "message": "Queue size"
       "expr": |
-        exim_queue{} > 5
+        exim_queue > 5
       "for": "5m"
       "labels":
         "severity": "warning"
