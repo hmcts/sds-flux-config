@@ -1,0 +1,76 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mi-extraction-service-recovery-job
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:prod-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:prod-*
+spec:
+  releaseName: mi-extraction-service-recovery-job
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-extraction-service
+    ref: master
+  values:
+    job:
+      image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-2c2a120
+      suspend: false
+      kind: Job
+      activeDeadlineSeconds: 82800
+      memoryRequests: '2048Mi'
+      cpuRequests: '200m'
+      memoryLimits: '4096Mi'
+      cpuLimits: '2000m'
+      labels:
+        app.kubernetes.io/instance: mi-extraction-service-recovery-job
+        app.kubernetes.io/name: mi-extraction-service-recovery-job
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+          - appinsights-instrumentationkey
+          - sftp-remote-user
+          - sftp-remote-password
+          - encryption-publicKey
+      environment:
+        APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+        MI_CLIENT_ID: e8a52cff-ef0c-4447-baf2-665c3480d0de
+        SFTP_ENABLED: true
+        SFTP_FORCECHECK: true
+        SFTP_FILE_ENCRYPTION_ENABLED: true
+        SFTP_REMOTE_HOST: 10.24.254.130
+        SFTP_REMOTE_PORT: 22
+        SFTP_REMOTE_FOLDER: /files/mi-platform-export/
+        RETRIEVE_FROM_DATE: 2021-06-09
+        RETRIEVE_TO_DATE: 2021-06-09
+      smoketests:
+        image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-2c2a120
+        enabled: true
+      testsConfig:
+        keyVaults:
+          "mi-vault":
+            excludeEnvironmentSuffix: false
+            resourceGroup: mi-{{ .Values.global.environment }}-rg
+            secrets:
+            - appinsights-instrumentationkey
+            - sftp-remote-user
+            - sftp-remote-password
+            - encryption-publicKey
+        environment:
+          APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+          MI_CLIENT_ID: e8a52cff-ef0c-4447-baf2-665c3480d0de
+          SFTP_ENABLED: false
+          SFTP_REMOTE_HOST: 10.24.254.130
+          SFTP_REMOTE_PORT: 22
+          SFTP_REMOTE_FOLDER: /files/mi-platform-export/
+          SFTP_FORCECHECK: true
+    global:
+      subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "prod"
