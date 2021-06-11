@@ -15,8 +15,8 @@ spec:
         hosts:
           - sds-prometheus-01.sandbox.platform.hmcts.net
         tls:
-        - hosts:
-          - sds-prometheus-01.sandbox.platform.hmcts.net
+          - hosts:
+              - sds-prometheus-01.sandbox.platform.hmcts.net
 
     alertmanager:
       ingress:
@@ -27,8 +27,8 @@ spec:
         hosts:
           - sds-alertmanager-01.sandbox.platform.hmcts.net
         tls:
-        - hosts:
-          - sds-alertmanager-00.sandbox.platform.hmcts.net
+          - hosts:
+              - sds-alertmanager-00.sandbox.platform.hmcts.net
       config:
         receivers:
           - name: "slack_alerting"
