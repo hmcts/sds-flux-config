@@ -9,7 +9,7 @@ spec:
     prometheus:
       ingress:
         annotations:
-          kubernetes.io/ingress.class: traefik-private
+          kubernetes.io/ingress.class: traefik
         hosts:
           - sds-prometheus-01.sandbox.platform.hmcts.net
 
