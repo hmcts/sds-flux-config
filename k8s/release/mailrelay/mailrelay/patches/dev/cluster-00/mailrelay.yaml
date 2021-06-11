@@ -25,24 +25,7 @@ spec:
         repository: sdshmctspublic.azurecr.io/fluent/fluent-bit
         tag: 1.7.2
         pullPolicy: IfNotPresent
-  
-    eximexporter:
-      enabled: true
-      image:
-        repository: sdshmctspublic.azurecr.io/exim-exporter
-        tag: 0.3
-        pullPolicy: IfNotPresent
-        ports:
-          - name: eximexporter
-            containerPort: 9636
-            
-    eximExporterService:
-      type: ClusterIP 
-      port: 9636
 
     volumeClaim:
       storageClass: "managed-premium"
       storageSize: 500Gi
-    
-    prometheus:
-      enabled: true

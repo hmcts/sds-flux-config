@@ -52,3 +52,16 @@ spec:
         repository: sdshmctspublic.azurecr.io/fluent/fluent-bit
         tag: 1.7.2
         pullPolicy: IfNotPresent
+
+    eximexporter:
+      enabled: true
+      image:
+        repository: sdshmctspublic.azurecr.io/exim-exporter
+        tag: 0.3
+        pullPolicy: IfNotPresent
+        ports:
+          - name: eximexporter
+            containerPort: 9636
+          
+    prometheus:
+      enabled: true
