@@ -13,7 +13,7 @@ spec:
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
-      loadBalancerIP: "10.145.15.15"
+      loadBalancerIP: "10.145.31.31"
     global:
       environment: dev
 
