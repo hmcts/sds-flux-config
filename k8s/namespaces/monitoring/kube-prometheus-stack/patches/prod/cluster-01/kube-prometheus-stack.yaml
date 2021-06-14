@@ -7,6 +7,28 @@ metadata:
 spec:
   values:
     prometheus:
+      additionalServiceMonitors:
+        - name: "exim-mailrelay-service-monitor"
+          selector:
+            matchLabels:
+              app: exim
+          namespaceSelector:
+            matchNames:
+              - mailrelay
+          endpoints:
+            - targetPort: 9636
+          path: /metrics
+      additionalPodMonitors:
+        - name: "exim-mailrelay-monitor"
+          selector:
+            matchLabels:
+              app: exim
+          namespaceSelector:
+            matchNames:
+              - mailrelay
+          podMetricsEndpoints:
+            - port: eximexporter
+              path: /metrics
       ingress:
         annotations:
           kubernetes.io/ingress.class: traefik
