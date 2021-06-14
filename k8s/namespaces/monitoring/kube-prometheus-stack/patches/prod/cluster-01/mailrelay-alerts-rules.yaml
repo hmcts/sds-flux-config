@@ -26,3 +26,11 @@ spec:
       "for": "1m"
       "labels":
         "severity": "critical"
+    - "alert": "TotalMessageCount"
+      "annotations":
+        "message": "More than 3 messages have been sent"
+      "expr": |
+        exim_messages_total{flag='completed'} > 3
+      "for": "0m"
+      "labels":
+        "severity": "warning"
