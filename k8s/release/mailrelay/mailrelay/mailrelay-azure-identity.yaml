@@ -2,6 +2,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
   name: mailrelay
+  namespace: mailrelay
 spec:
   type: 0
   resourceID: replace
