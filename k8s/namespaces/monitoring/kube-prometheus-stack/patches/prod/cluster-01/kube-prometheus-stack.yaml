@@ -15,7 +15,6 @@ spec:
           namespaceSelector:
             matchNames:
               - mailrelay
-              - admin
           endpoints:
             - targetPort: 9636
           path: /metrics
