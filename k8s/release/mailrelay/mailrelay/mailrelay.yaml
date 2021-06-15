@@ -65,3 +65,8 @@ spec:
           
     prometheus:
       enabled: true
+
+    global:
+      environment: sbox
+      enableTls: false
+      enableAuth: false
