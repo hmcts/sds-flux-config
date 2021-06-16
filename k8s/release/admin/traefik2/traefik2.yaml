@@ -15,14 +15,14 @@ spec:
       podLabels:
         aadpodidbinding: traefik
       additionalVolumes:
-        - name: wildcard-sandbox-platform-hmcts-net
+        - name: star-sandbox-platform-hmcts-net
           csi:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: wildcard-sandbox-platform-hmcts-net
+              secretProviderClass: star-sandbox-platform-hmcts-net
     additionalVolumeMounts:
-      - name: wildcard-sandbox-platform-hmcts-net
+      - name: star-sandbox-platform-hmcts-net
         mountPath: "/mnt/certs"
         readOnly: true
     service:
