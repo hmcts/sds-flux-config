@@ -7,6 +7,7 @@ bases:
 - ../../../release/admin/secrets-csi-driver
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
+- ../../../namespaces/admin/traefik2
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/monitoring/kube-prometheus-stack
 # - ../../../release/admin/env-injector
@@ -19,6 +20,7 @@ patchesStrategicMerge:
 
 #traefik patch
 - ../../../release/admin/traefik/patches/sbox/cluster-01/traefik.yaml
+- ../../../namespaces/admin/traefik2/patches/sbox/cluster-01/traefik2.yaml
 
 #kured patch
 - ../../../release/admin/kured/patches/sbox/cluster-01/kured.yaml
