@@ -17,7 +17,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-9-dd70a8f
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-9-7ac7442
     env:
       APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
       ADF_RESOURCEGROUP: mi-dev-rg
