@@ -1,0 +1,10 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: jd-bureau
+  namespace: juror-digital
+spec:
+  values:
+    nodejs:
+      ingressHost: 'jdbureau.platform.hmcts.net'
