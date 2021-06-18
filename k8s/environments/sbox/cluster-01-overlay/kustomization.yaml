@@ -2,7 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
 - ../../../release/admin/kube-slack
-- ../../../release/admin/traefik
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
 - ../../../namespaces/azure-devops
@@ -19,6 +18,7 @@ patchesStrategicMerge:
 - ../../../release/admin/kube-slack/patches/sbox/cluster-01/kube-slack.yaml
 
 #traefik patch
+- ../../../namespaces/admin/traefik2/patches/sbox/secret-provider.yaml
 - ../../../namespaces/admin/traefik2/patches/sbox/cluster-01/traefik2.yaml
 
 #kured patch
