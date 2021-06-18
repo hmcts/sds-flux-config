@@ -17,14 +17,14 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-9-142451a
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-9-788597b
     env:
       APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
       ADF_RESOURCEGROUP: mi-test-rg
       ADF_NAME: mi-ingestion-adf-test
       ADF_STORAGEACCOUNTNAME: miaudittest
     keyVaultSecrets:
-      - encryption-publicKey
+    - encryption-publicKey
     environment: "test"
     resourceGroup: "mi-test-rg"
     subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
