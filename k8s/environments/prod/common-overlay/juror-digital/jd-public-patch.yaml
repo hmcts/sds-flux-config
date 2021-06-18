@@ -1,0 +1,10 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: jd-public
+  namespace: juror-digital
+spec:
+  values:
+    nodejs:
+      ingressHost: 'reply-jury-summons.service.gov.uk'
