@@ -23,6 +23,8 @@ spec:
       ADF_RESOURCEGROUP: mi-sbox-rg
       ADF_NAME: mi-ingestion-adf-sbox
       ADF_STORAGEACCOUNTNAME: miauditsbox
+    keyVaultSecrets:
+      - encryption-publicKey
     environment: "sbox"
     resourceGroup: "mi-sbox-rg"
     subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"

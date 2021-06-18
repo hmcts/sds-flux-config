@@ -18,6 +18,13 @@ spec:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
     image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-9-142451a
+    env:
+      APPINSIGHTS_INSTRUMENTATIONKEY: "dca44538-3493-497e-8375-05ef17511c98"
+      ADF_RESOURCEGROUP: mi-ithc-rg
+      ADF_NAME: mi-ingestion-adf-ithc
+      ADF_STORAGEACCOUNTNAME: miauditithc
+    keyVaultSecrets:
+      - encryption-publicKey
     environment: "ithc"
     resourceGroup: "mi-ithc-rg"
     subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
