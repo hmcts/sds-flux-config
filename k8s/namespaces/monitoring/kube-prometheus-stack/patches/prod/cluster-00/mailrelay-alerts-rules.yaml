@@ -14,10 +14,10 @@ spec:
       "annotations":
         "message": "Queue size is above 5"
       "expr": |
-        exim_queue > 5
+        exim_queue > 10
       "for": "5m"
       "labels":
-        "severity": "critical"
+        "severity": "warning"
     - "alert": "eximdown"
       "annotations":
         "message": "exim down"
