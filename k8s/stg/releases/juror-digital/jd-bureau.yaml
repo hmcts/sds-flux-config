@@ -40,6 +40,11 @@ spec:
       #      - chart-example.local
       hosts:
         - 'jdbureau-nle.platform.hmcts.net'
+    keyvault:
+      name: "juror-digital-vault-stg"
+      resourcegroup: "juror-digital-stg-rg"
+      tenantid: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      subscriptionid: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
     env:
       API_ENDPOINT: http://moj-nle-reverse-proxy/api/v1/
       PORT: 3000

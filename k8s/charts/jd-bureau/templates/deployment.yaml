@@ -72,7 +72,7 @@ spec:
                 keyvaultobjecttypes: secret;secret;secret;secret;secret;secret
                 resourcegroup: {{ .Values.keyvault.resourcegroup }}
                 subscriptionid: {{ .Values.keyvault.subscriptionid }}
-                tenantid: {{ .Values.keyvault.resourcegroup }}
+                tenantid: {{ .Values.keyvault.tenantid }}
         - name: secret-volume
           configMap:
             name: bureau-secret-config
