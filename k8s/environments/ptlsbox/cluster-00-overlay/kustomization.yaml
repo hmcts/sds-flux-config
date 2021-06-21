@@ -1,0 +1,33 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../../release/admin/kube-slack
+- ../../../release/admin/kured
+- ../../../release/admin/secrets-csi-driver
+- ../../../namespaces/azure-devops
+- ../../../namespaces/admin/aad-pod-identity
+- ../../../namespaces/admin/traefik2
+- ../../../namespaces/kube-system/aad-pod-identity
+- ../../../namespaces/monitoring/kube-prometheus-stack
+# - ../../../release/admin/env-injector
+# - ../../../release/kube-system/nodelocaldns
+
+patchesStrategicMerge:
+
+#kube-slack patch
+- ../../../release/admin/kube-slack/patches/ptlsbox/cluster-00/kube-slack.yaml
+
+#traefik2 patch
+- ../../../namespaces/admin/traefik2/patches/ptlsbox/secret-provider.yaml
+- ../../../namespaces/admin/traefik2/patches/ptlsbox/cluster-00/traefik2.yaml
+
+#kured patch
+- ../../../release/admin/kured/patches/ptlsbox/cluster-00/kured.yaml
+
+#azure-devops-agent patch
+- ../../../namespaces/azure-devops/azure-devops-agent/patches/ptlsbox/cluster-00/azure-devops-agent.yaml
+
+# prom-operator patch
+- ../../../namespaces/monitoring/kube-prometheus-stack/patches/ptlsbox/cluster-00/kube-prometheus-stack.yaml
+# env-injector
+# - ../../../release/admin/env-injector/patches/ptlsbox/cluster-00/env-injector.yaml
