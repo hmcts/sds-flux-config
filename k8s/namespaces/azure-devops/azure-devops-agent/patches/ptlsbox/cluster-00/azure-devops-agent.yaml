@@ -1,0 +1,21 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: azure-devops-agent
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: azure-devops-agent
+  values:
+    aadIdentity:
+      resourceId: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-ptlsbox-mi
+      clientId: 2a21e18e-3b15-46fb-99c9-e9312ff0a58c
+    azureDevOps:
+      pool: hmcts-sds-ptlsbox
+    keyVaults:
+    - name: dtssdsptlsbox
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      secrets:
+      - azure-devops-agent-token
