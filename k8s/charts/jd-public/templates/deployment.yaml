@@ -30,6 +30,9 @@ spec:
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           volumeMounts:
+          - name: azurekvjd
+            mountPath: /app/server/config/environment
+            readOnly: true
           - name: secret-volume
             mountPath: /app/server/config/environment/secret.js
             subPath: secret.js
@@ -57,6 +60,19 @@ spec:
               value: {{ $value | quote }}
             {{- end }}
       volumes:
+        - name: azurekvjd
+            flexVolume:
+              driver: "azure/kv"
+              secretRef:
+                name: kvcreds
+              options:
+                usepodidentity: "false"
+                keyvaultname: { { .Values.keyvault.name } }
+                keyvaultobjectnames: "public-sessionSecret;public-jwtKey;public-jwtNoAuthKey;public-jwtKeyBureau;public-jwtTTL"
+                keyvaultobjecttypes: secret;secret;secret;secret;secret
+                resourcegroup: { { .Values.keyvault.resourcegroup } }
+                subscriptionid: { { .Values.keyvault.subscriptionid } }
+                tenantid: { { .Values.keyvault.resourcegroup } }
         - name: secret-volume
           configMap:
             name: public-secret-config
