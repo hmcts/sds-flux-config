@@ -21,21 +21,21 @@ spec:
     spec:
       {{- if .Values.hostaliases }}
       hostAliases:
-      - ip: {{ .Values.hostaliases.ip | quote }}
-        hostnames:
-        - {{ .Values.hostaliases.hostname | quote }}
+        - ip: {{ .Values.hostaliases.ip | quote }}
+          hostnames:
+            - {{ .Values.hostaliases.hostname | quote }}
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image }}"
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           volumeMounts:
-          - name: azurekvjd
-            mountPath: /mnt/secrets/{{ .Values.keyvault.name }}
-            readOnly: true
-          - name: secret-volume
-            mountPath: /app/server/config/environment/secret.js
-            subPath: secret.js
+            - name: secret-volume
+              mountPath: /app/server/config/environment/secret.js
+              subPath: secret.js
+            - name: azurekvjd
+              mountPath: /mnt/secrets/{{ .Values.keyvault.name }}
+              readOnly: true
           ports:
             - name: http
               containerPort: 3000
@@ -61,18 +61,18 @@ spec:
             {{- end }}
       volumes:
         - name: azurekvjd
-            flexVolume:
-              driver: "azure/kv"
-              secretRef:
-                name: kvcreds
-              options:
-                usepodidentity: "false"
-                keyvaultname: {{ .Values.keyvault.name }}
-                keyvaultobjectnames: "bureau-sessionSecret;bureau-jwtKey;bureau-smartSurveyToken;bureau-smartSurveyTokenSecret;bureau-jwtNoAuthKey;bureau-jwtTTL"
-                keyvaultobjecttypes: secret;secret;secret;secret;secret;secret
-                resourcegroup: {{ .Values.keyvault.resourcegroup }}
-                subscriptionid: {{ .Values.keyvault.subscriptionid }}
-                tenantid: {{ .Values.keyvault.tenantid }}
+          flexVolume:
+            driver: "azure/kv"
+            secretRef:
+              name: kvcreds
+            options:
+              usepodidentity: "false"
+              keyvaultname: {{ .Values.keyvault.name }}
+              keyvaultobjectnames: "bureau-sessionSecret;bureau-jwtKey;bureau-smartSurveyToken;bureau-smartSurveyTokenSecret;bureau-jwtNoAuthKey;bureau-jwtTTL"
+              keyvaultobjecttypes: secret;secret;secret;secret;secret;secret
+              resourcegroup: {{ .Values.keyvault.resourcegroup }}
+              subscriptionid: {{ .Values.keyvault.subscriptionid }}
+              tenantid: {{ .Values.keyvault.tenantid }}
         - name: secret-volume
           configMap:
             name: bureau-secret-config
@@ -81,10 +81,10 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
     {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
+    affinity:
+      {{- toYaml . | nindent 8 }}
     {{- end }}
     {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
+    tolerations:
+      {{- toYaml . | nindent 8 }}
     {{- end }}

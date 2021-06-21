@@ -61,18 +61,18 @@ spec:
             {{- end }}
       volumes:
         - name: azurekvjd
-            flexVolume:
-              driver: "azure/kv"
-              secretRef:
-                name: kvcreds
-              options:
-                usepodidentity: "false"
-                keyvaultname: { { .Values.keyvault.name } }
-                keyvaultobjectnames: "public-sessionSecret;public-jwtKey;public-jwtNoAuthKey;public-jwtKeyBureau;public-jwtTTL"
-                keyvaultobjecttypes: secret;secret;secret;secret;secret
-                resourcegroup: { { .Values.keyvault.resourcegroup } }
-                subscriptionid: { { .Values.keyvault.subscriptionid } }
-                tenantid: { { .Values.keyvault.tenantid } }
+          flexVolume:
+            driver: "azure/kv"
+            secretRef:
+              name: kvcreds
+            options:
+              usepodidentity: "false"
+              keyvaultname: {{ .Values.keyvault.name }}
+              keyvaultobjectnames: "public-sessionSecret;public-jwtKey;public-jwtNoAuthKey;public-jwtKeyBureau;public-jwtTTL"
+              keyvaultobjecttypes: secret;secret;secret;secret;secret
+              resourcegroup: {{ .Values.keyvault.resourcegroup }}
+              subscriptionid: {{ .Values.keyvault.subscriptionid }}
+              tenantid: {{ .Values.keyvault.tenantid }}
         - name: secret-volume
           configMap:
             name: public-secret-config
