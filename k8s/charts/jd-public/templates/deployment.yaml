@@ -31,7 +31,7 @@ spec:
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           volumeMounts:
           - name: azurekvjd
-            mountPath: /mnt/secrets/{{ .Values.keyvault.name }}
+            mountPath: /mnt/secrets/juror-digital-vault
             readOnly: true
           - name: secret-volume
             mountPath: /app/server/config/environment/secret.js
