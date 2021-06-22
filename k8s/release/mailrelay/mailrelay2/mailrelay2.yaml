@@ -1,0 +1,72 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mailrelay2
+  namespace: mailrelay2
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: mailrelay2
+  chart:
+    git: git@github.com:hmcts/exim-relay
+    path: helm/exim
+    ref: master
+  valueFileSecrets:
+    - name: "mailrelay2-values"
+  values:
+    image:
+      repository: sdshmctspublic.azurecr.io/exim-relay
+      tag: 0.4
+      pullPolicy: IfNotPresent
+
+    service:
+      type: ClusterIP
+      port: 25
+
+    eximExporterService:
+      type: ClusterIP 
+      port: 9636
+
+    workload: Deployment
+
+    volumeClaim:
+      storageClass: "managed-premium"
+      storageSize: 10Gi
+
+    smtp:
+      relayDisableSenderVerification: false
+
+    resources:
+      requests:
+        cpu: 50m
+        memory: 64Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
+
+    fluentbit:
+      enabled: true
+      image:
+        repository: sdshmctspublic.azurecr.io/fluent/fluent-bit
+        tag: 1.7.2
+        pullPolicy: IfNotPresent
+
+    eximexporter:
+      enabled: true
+      image:
+        repository: sdshmctspublic.azurecr.io/exim-exporter
+        tag: 0.3
+        pullPolicy: IfNotPresent
+        ports:
+          - name: eximexporter
+            containerPort: 9636
+          
+    prometheus:
+      enabled: true
+
+    global:
+      environment: sbox
+      enableTls: false
+      enableAuth: false
