@@ -6,6 +6,7 @@ bases:
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
 - ../../../release/mailrelay/mailrelay
+- ../../../release/mailrelay/mailrelay2
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
@@ -38,6 +39,7 @@ patchesStrategicMerge:
 
 # mail-relay
 - ../../../release/mailrelay/mailrelay/patches/dev/cluster-00/mailrelay.yaml
+- ../../../release/mailrelay/mailrelay2/patches/dev/cluster-00/mailrelay2.yaml
 
 #neuvector patch
 - ../../../namespaces/neuvector/patches/nonprod/neuvector.yaml
@@ -46,3 +48,4 @@ patchesStrategicMerge:
 # prom-operator patch
 - ../../../namespaces/monitoring/kube-prometheus-stack/patches/dev/cluster-00/kube-prometheus-stack.yaml
 - ../../../namespaces/monitoring/kube-prometheus-stack/patches/dev/cluster-00/mailrelay-alerts-rules.yaml
+- ../../../namespaces/monitoring/kube-prometheus-stack/patches/dev/cluster-00/mailrelay2-alerts-rules.yaml

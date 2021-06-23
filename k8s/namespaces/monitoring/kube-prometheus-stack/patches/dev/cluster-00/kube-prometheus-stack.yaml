@@ -15,6 +15,7 @@ spec:
           namespaceSelector:
             matchNames:
               - mailrelay
+              - mailrelay2
               - admin
           endpoints:
             - targetPort: 9636
@@ -27,6 +28,7 @@ spec:
           namespaceSelector:
             matchNames:
               - mailrelay
+              - mailrelay2
           podMetricsEndpoints:
             - port: eximexporter
               path: /metrics

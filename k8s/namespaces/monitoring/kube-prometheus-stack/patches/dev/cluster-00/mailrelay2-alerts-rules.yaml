@@ -1,0 +1,28 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    app: kube-prometheus-stack
+    release: kube-prometheus-stack
+  name: prometheus-mailrelay2-alert-rules
+  namespace: monitoring
+spec:
+  "groups":
+  - "name": "EximAlerts"
+    "rules":
+    - "alert": "EximQueueLength"
+      "annotations":
+        "message": "Queue size is above 5"
+      "expr": |
+        exim_queue > 10
+      "for": "5m"
+      "labels":
+        "severity": "warning"
+    - "alert": "eximdown"
+      "annotations":
+        "message": "exim down"
+      "expr": |
+        exim_up == 0
+      "for": "1m"
+      "labels":
+        "severity": "critical"
