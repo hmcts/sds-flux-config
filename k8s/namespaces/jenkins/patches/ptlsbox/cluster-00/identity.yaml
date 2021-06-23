@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: jenkins
+  namespace: jenkins
+spec:
+  resourceID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/sds-jenkins-ptlsbox-mi
+  clientID: 3c973a06-15d2-42c6-853e-8942fd5b4721
