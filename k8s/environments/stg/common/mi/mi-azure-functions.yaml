@@ -17,14 +17,14 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:stg-73c9410
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:stg-172803c
     env:
       APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
       ADF_RESOURCEGROUP: mi-stg-rg
       ADF_NAME: mi-ingestion-adf-stg
       ADF_STORAGEACCOUNTNAME: miauditstg
     keyVaultSecrets:
-      - encryption-publicKey
+    - encryption-publicKey
     environment: "stg"
     resourceGroup: "mi-stg-rg"
     subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
