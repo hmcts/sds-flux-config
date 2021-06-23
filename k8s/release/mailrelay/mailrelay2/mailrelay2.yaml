@@ -14,7 +14,7 @@ spec:
     path: helm/exim
     ref: master
   valueFileSecrets:
-    - name: "mailrelay2-values"
+    - name: "mailrelay-values"
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
