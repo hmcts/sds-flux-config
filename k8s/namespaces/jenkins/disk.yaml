@@ -12,7 +12,6 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   azureDisk:
     kind: Managed
-    diskName: jenkins-disk
     cachingMode: ReadWrite
     fsType: ext4
     readOnly: false
