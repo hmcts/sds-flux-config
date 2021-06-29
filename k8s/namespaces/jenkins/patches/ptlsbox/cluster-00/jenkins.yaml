@@ -8,9 +8,6 @@ spec:
   values:
     controller:
       ingress:
-        annotations:
-          kubernetes.io/ingress.class: traefik
-          traefik.ingress.kubernetes.io/router.tls: "true"
         hostName: sds-sandbox-build.platform.hmcts.net
       containerEnv:
         - name: ENVIRONMENT
