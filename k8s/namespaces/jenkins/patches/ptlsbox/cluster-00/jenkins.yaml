@@ -230,9 +230,9 @@ spec:
                     azureCredentialsId: "jenkins-managed-identity"
                     cloudName: "cnp-azure"
                     deploymentTimeout: 1200
-                    existingResourceGroupName: "vm-agents-rg"
+                    newResourceGroupName: "vm-agents-rg"
+                    resourceGroupReferenceType: "new"
                     maxVirtualMachinesLimit: 10
-                    resourceGroupReferenceType: "existing"
                     vmTemplates:
                       - agentLaunchMethod: "SSH"
                         agentWorkspace: "/opt/jenkins"
