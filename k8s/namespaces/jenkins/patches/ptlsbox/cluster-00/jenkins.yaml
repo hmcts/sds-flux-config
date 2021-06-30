@@ -13,7 +13,7 @@ spec:
         - name: ENVIRONMENT
           value: "sandbox"
         - name: AZURE_KEYVAULT_URL
-          value: https://dtssdsptlsbox.vault.azure.net
+          value: https://ptlsbox.vault.azure.net
       JCasC:
         configScripts:
           welcome-message: |
@@ -27,7 +27,7 @@ spec:
                 - envVars:
                     env:
                       - key: INFRA_VAULT_NAME
-                        value: dtssdsptlsbox
+                        value: ptlsbox
                       - key: JENKINS_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICESPTL-SBOX
                       - key: JAVA_OPTS
@@ -77,7 +77,7 @@ spec:
           azure-key-vault: |
             unclassified:
               azureKeyVault:
-                keyVaultURL: https://dtssdsptlsbox.vault.azure.net
+                keyVaultURL: https://ptlsbox.vault.azure.net
                 credentialID: jenkins-managed-identity
           kubernetes-agent: |
             jenkins:
