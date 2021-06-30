@@ -61,6 +61,18 @@ spec:
                     name: Platform
                     recurse: true
                     title: Platform
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS_.*PIP-.*\/.+\/master
+                    name: PIP
+                    recurse: true
+                    title: Publishing & Information Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS_.*VH-.*\/.+\/master
+                    name: VH
+                    recurse: true
+                    title: Video Hearings Dashboard
           authentication: |
             jenkins:
               securityRealm:
