@@ -52,6 +52,8 @@ spec:
                         value: dtssharedservicessboxkv
                       - key: AKS_PROD_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-SBOX
+                      - key: PIPELINE_METRICS_URL
+                        value: https://sds-jenkins-pipeline-metrics-sbox.documents.azure.com/
           views: |
             jenkins:
               views:
