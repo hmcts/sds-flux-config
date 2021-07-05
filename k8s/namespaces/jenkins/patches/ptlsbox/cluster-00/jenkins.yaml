@@ -28,10 +28,6 @@ spec:
                     env:
                       - key: INFRA_VAULT_NAME
                         value: ptlsbox
-                      - key: NONPROD_ENVIRONMENT_NAME
-                        value: sbox
-                      - key: NONPROD_SUBSCRIPTION_NAME
-                        value: sbox
                       - key: JENKINS_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICESPTL-SBOX
                       - key: JAVA_OPTS
