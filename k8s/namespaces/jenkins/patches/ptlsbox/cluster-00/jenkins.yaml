@@ -54,6 +54,10 @@ spec:
                         value: DTS-SHAREDSERVICES-SBOX
                       - key: PIPELINE_METRICS_URL
                         value: https://sds-jenkins-pipeline-metrics-sbox.documents.azure.com/
+                      - key: TF_STATE_STORAGE_TEMPLATE
+                        value: sdsstate
+                      - key: TF_STATE_CONTAINER_TEMPLATE
+                        value: "tfstate-"
           views: |
             jenkins:
               views:
