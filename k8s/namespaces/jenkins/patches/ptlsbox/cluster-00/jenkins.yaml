@@ -36,13 +36,9 @@ spec:
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: REGISTRY_NAME
                         value: sdshmctspublicsbox
-                      - key: AAT_AKS_CLUSTER_NAME
+                      - key: SBOX_AKS_CLUSTER_NAME
                         value: ss-sbox-00-aks
-                      - key: AAT_AKS_RESOURCE_GROUP
-                        value: ss-sbox-00-rg
-                      - key: PREVIEW_AKS_CLUSTER_NAME
-                        value : ss-sbox-00-aks
-                      - key : PREVIEW_AKS_RESOURCE_GROUP
+                      - key: SBOX_AKS_RESOURCE_GROUP
                         value: ss-sbox-00-rg
                       - key: AKS_PREVIEW_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-SBOX
