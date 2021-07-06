@@ -70,6 +70,8 @@ spec:
                         value: sbox
                       - key: PROD_SUBSCRIPTION_NAME
                         value: sbox
+                      - key: JENKINS_CONFIG_REPO
+                        value: sds-jenkins-config
           views: |
             jenkins:
               views:
