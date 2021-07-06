@@ -58,6 +58,16 @@ spec:
                         value: sdsstate
                       - key: TF_STATE_CONTAINER_TEMPLATE
                         value: "tfstate-"
+                      - key: NONPROD_ENVIRONMENT_NAME
+                        value: sbox
+                      - key: NONPROD_SUBSCRIPTION_NAME
+                        value: sbox
+                      - key: PROD_ENVIRONMENT_NAME
+                        value: sbox
+                      - key: PREVIEW_ENVIRONMENT_NAME
+                        value: sbox
+                      - key: PROD_SUBSCRIPTION_NAME
+                        value: sbox
           views: |
             jenkins:
               views:
