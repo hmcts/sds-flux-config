@@ -56,6 +56,8 @@ spec:
                         value: https://sds-jenkins-pipeline-metrics-sbox.documents.azure.com/
                       - key: TF_STATE_STORAGE_TEMPLATE
                         value: sdsstate
+                      - key: TF_STATE_RG_TEMPLATE
+                        value: jenkins-state
                       - key: TF_STATE_CONTAINER_TEMPLATE
                         value: "tfstate-"
                       - key: NONPROD_ENVIRONMENT_NAME
