@@ -16,8 +16,8 @@ patchesStrategicMerge:
 - ../../../release/admin/kube-slack/patches/demo/cluster-00/kube-slack.yaml
 
 #traefik patch
-- ../../../namespaces/admin/traefik2/patches/dev/secret-provider.yaml
-- ../../../namespaces/admin/traefik2/patches/dev/cluster-00/traefik2.yaml
+- ../../../namespaces/admin/traefik2/patches/demo/secret-provider.yaml
+- ../../../namespaces/admin/traefik2/patches/demo/cluster-00/traefik2.yaml
 
 #kured patch
 - ../../../release/admin/kured/patches/demo/cluster-00/kured.yaml
