@@ -1,0 +1,14 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: pip-frontend
+  chart:
+    git: git@github.com:hmcts/pip-frontend
+    path: charts/pip-frontend
+    ref: master
