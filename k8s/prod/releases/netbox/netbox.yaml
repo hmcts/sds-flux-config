@@ -23,7 +23,7 @@ spec:
         kubernetes.io/ingress.class: traefik-netbox
         traefik.ingress.kubernetes.io/affinity: "true"
         ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
-        traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32, 213.121.161.124/32, 51.143.166.203, 51.140.97.229, 51.145.4.100"
+        traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32, 213.121.161.124/32, 10.10.64.0/21, 51.140.97.229, 51.145.4.100"
       hosts:
         - host: netbox.platform.hmcts.net
           paths:
