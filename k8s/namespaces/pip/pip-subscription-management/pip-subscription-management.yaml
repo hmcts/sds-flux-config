@@ -1,0 +1,14 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: pip-subscription-management
+  chart:
+    git: git@github.com:hmcts/pip-subscription-management
+    path: charts/pip-subscription-management
+    ref: master
