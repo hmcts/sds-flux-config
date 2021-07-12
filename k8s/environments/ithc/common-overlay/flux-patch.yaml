@@ -11,7 +11,7 @@ spec:
     java:
       image: hmctspublic.azurecr.io/plum/frontend:prod-d6ab8a9-20210616131508
     nodejs:
-      image: hmctspublic.azurecr.io/plum/frontend:pr-72
+      image: hmctspublic.azurecr.io/plum/frontend:pr-94
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
