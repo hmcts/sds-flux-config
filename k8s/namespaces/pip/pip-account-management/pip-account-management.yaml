@@ -1,0 +1,14 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: pip-account-management
+  chart:
+    git: git@github.com:hmcts/pip-account-management
+    path: charts/pip-account-management
+    ref: master
