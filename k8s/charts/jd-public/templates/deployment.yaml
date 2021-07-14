@@ -33,9 +33,6 @@ spec:
           - name: azurekvjd
             mountPath: /mnt/secrets/juror-digital-vault
             readOnly: true
-          - name: secret-volume
-            mountPath: /app/server/config/environment/secret.js
-            subPath: secret.js
           ports:
             - name: http
               containerPort: 3000
@@ -73,9 +70,6 @@ spec:
               resourcegroup: {{ .Values.keyvault.resourcegroup }}
               subscriptionid: {{ .Values.keyvault.subscriptionid }}
               tenantid: {{ .Values.keyvault.tenantid }}
-        - name: secret-volume
-          configMap:
-            name: public-secret-config
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
