@@ -14,7 +14,7 @@ spec:
     path: k8s/release/maintenance
     ref: master
   values:
-    image: sdshmctspublic.azurecr.io/maintenance:v0.3
+    image: sdshmctspublic.azurecr.io/maintenance
     replicaCount: 1
     ingress:
       annotations:
