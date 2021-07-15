@@ -17,17 +17,17 @@ spec:
     replicas: 1
     image:
       repository: "sdshmctspublic.azurecr.io/hmi/case-hq-emulator"
-      tag: "v0.1"
+      tag: "v0.2"
       pullPolicy: Always
     ingress:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: traefik
       paths:
-        - /
+      - /
       tls: []
       hosts:
-        - 'hmi-casehqemulator.dev.platform.hmcts.net'
+      - 'hmi-casehqemulator.dev.platform.hmcts.net'
     readinessProbe:
       enabled: false
     #   path: "/"
