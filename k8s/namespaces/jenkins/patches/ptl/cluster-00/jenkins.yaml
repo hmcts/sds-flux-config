@@ -27,29 +27,29 @@ spec:
                 - envVars:
                     env:
                       - key: INFRA_VAULT_NAME
-                        value: ptlsbox
+                        value: ptl
                       - key: JENKINS_SUBSCRIPTION_NAME
-                        value: DTS-SHAREDSERVICESPTL-SBOX
+                        value: DTS-SHAREDSERVICESPTL
                       - key: JAVA_OPTS
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: GRADLE_OPTS
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: REGISTRY_NAME
-                        value: sdshmctspublicsbox
+                        value: sdshmctspublic
                       - key: SBOX_AKS_CLUSTER_NAME
                         value: ss-sbox-00-aks
                       - key: SBOX_AKS_RESOURCE_GROUP
                         value: ss-sbox-00-rg
                       - key: AKS_PREVIEW_SUBSCRIPTION_NAME
-                        value: DTS-SHAREDSERVICES-SBOX
+                        value: DTS-SHAREDSERVICES-DEMO
                       - key: AKS_AAT_SUBSCRIPTION_NAME
-                        value: DTS-SHAREDSERVICES-SBOX
+                        value: DTS-SHAREDSERVICES-TEST
                       - key : AAT_AKS_KEY_VAULT
-                        value: dtssharedservicessboxkv
+                        value: dtssharedserviceskv
                       - key: AKS_PROD_SUBSCRIPTION_NAME
-                        value: DTS-SHAREDSERVICES-SBOX
+                        value: DTS-SHAREDSERVICES-PROD
                       - key: PIPELINE_METRICS_URL
-                        value: https://sds-jenkins-pipeline-metrics-sbox.documents.azure.com/
+                        value: https://sds-jenkins-pipeline-metrics.documents.azure.com/
                       - key: TF_STATE_STORAGE_TEMPLATE
                         value: sdsstate
                       - key: TF_STATE_RG_TEMPLATE
@@ -57,15 +57,15 @@ spec:
                       - key: TF_STATE_CONTAINER_TEMPLATE
                         value: "tfstate-"
                       - key: NONPROD_ENVIRONMENT_NAME
-                        value: sbox
+                        value: staging
                       - key: NONPROD_SUBSCRIPTION_NAME
-                        value: sbox
+                        value: DTS-SHAREDSERVICES-STG
                       - key: PROD_ENVIRONMENT_NAME
-                        value: sbox
+                        value: prod
                       - key: PREVIEW_ENVIRONMENT_NAME
-                        value: sbox
+                        value: preview
                       - key: PROD_SUBSCRIPTION_NAME
-                        value: sbox
+                        value: DTS-SHAREDSERVICES-PROD
                       - key: JENKINS_CONFIG_REPO
                         value: sds-jenkins-config
           views: |
@@ -103,11 +103,11 @@ spec:
             unclassified:
               location:
                 adminAddress: jenkins-reform@hmcts.net
-                url: 'https://sds-sandbox-build.platform.hmcts.net'
+                url: 'https://sds-build.platform.hmcts.net'
           azure-key-vault: |
             unclassified:
               azureKeyVault:
-                keyVaultURL: https://ptlsbox.vault.azure.net
+                keyVaultURL: https://ptl.vault.azure.net
                 credentialID: jenkins-managed-identity
           kubernetes-agent: |
             jenkins:
@@ -274,7 +274,7 @@ spec:
                         enableUAMI: true
                         ephemeralOSDisk: false
                         executeInitScriptAsRoot: true
-                        existingStorageAccountName: "hmctsjenkinssdssbox"
+                        existingStorageAccountName: "hmctsjenkinssds"
                         imageReference:
                           galleryImageDefinition: "jenkins-agent"
                           galleryImageVersion: "2.2.9"
@@ -329,9 +329,9 @@ spec:
                         templateDesc: "Jenkins build agents for HMCTS"
                         templateDisabled: false
                         templateName: "cnp-jenkins-builders"
-                        uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptlsbox-mi
+                        uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptl-mi
                         usageMode: "Use this node as much as possible"
                         usePrivateIP: true
                         virtualMachineSize: "Standard_D4s_v3"
-                        virtualNetworkName: "ss-ptlsbox-vnet"
-                        virtualNetworkResourceGroupName: "ss-ptlsbox-network-rg"
+                        virtualNetworkName: "ss-ptl-vnet"
+                        virtualNetworkResourceGroupName: "ss-ptl-network-rg"
