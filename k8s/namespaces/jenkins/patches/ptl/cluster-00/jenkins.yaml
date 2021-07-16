@@ -27,20 +27,31 @@ spec:
                 - envVars:
                     env:
                       - key: INFRA_VAULT_NAME
+<<<<<<< HEAD
                         value: ptl
                       - key: JENKINS_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICESPTL
+=======
+                        value: ptlsbox
+                      - key: JENKINS_SUBSCRIPTION_NAME
+                        value: DTS-SHAREDSERVICESPTL-SBOX
+>>>>>>> 3b2a8627d3faebf91933e37bd6de18c198f9bf32
                       - key: JAVA_OPTS
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: GRADLE_OPTS
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: REGISTRY_NAME
+<<<<<<< HEAD
                         value: sdshmctspublic
+=======
+                        value: sdshmctspublicsbox
+>>>>>>> 3b2a8627d3faebf91933e37bd6de18c198f9bf32
                       - key: SBOX_AKS_CLUSTER_NAME
                         value: ss-sbox-00-aks
                       - key: SBOX_AKS_RESOURCE_GROUP
                         value: ss-sbox-00-rg
                       - key: AKS_PREVIEW_SUBSCRIPTION_NAME
+<<<<<<< HEAD
                         value: DTS-SHAREDSERVICES-DEMO
                       - key: AKS_AAT_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-TEST
@@ -50,6 +61,17 @@ spec:
                         value: DTS-SHAREDSERVICES-PROD
                       - key: PIPELINE_METRICS_URL
                         value: https://sds-jenkins-pipeline-metrics.documents.azure.com/
+=======
+                        value: DTS-SHAREDSERVICES-SBOX
+                      - key: AKS_AAT_SUBSCRIPTION_NAME
+                        value: DTS-SHAREDSERVICES-SBOX
+                      - key : AAT_AKS_KEY_VAULT
+                        value: dtssharedservicessboxkv
+                      - key: AKS_PROD_SUBSCRIPTION_NAME
+                        value: DTS-SHAREDSERVICES-SBOX
+                      - key: PIPELINE_METRICS_URL
+                        value: https://sds-jenkins-pipeline-metrics-sbox.documents.azure.com/
+>>>>>>> 3b2a8627d3faebf91933e37bd6de18c198f9bf32
                       - key: TF_STATE_STORAGE_TEMPLATE
                         value: sdsstate
                       - key: TF_STATE_RG_TEMPLATE
@@ -57,6 +79,7 @@ spec:
                       - key: TF_STATE_CONTAINER_TEMPLATE
                         value: "tfstate-"
                       - key: NONPROD_ENVIRONMENT_NAME
+<<<<<<< HEAD
                         value: staging
                       - key: NONPROD_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-STG
@@ -66,6 +89,17 @@ spec:
                         value: preview
                       - key: PROD_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-PROD
+=======
+                        value: sbox
+                      - key: NONPROD_SUBSCRIPTION_NAME
+                        value: sbox
+                      - key: PROD_ENVIRONMENT_NAME
+                        value: sbox
+                      - key: PREVIEW_ENVIRONMENT_NAME
+                        value: sbox
+                      - key: PROD_SUBSCRIPTION_NAME
+                        value: sbox
+>>>>>>> 3b2a8627d3faebf91933e37bd6de18c198f9bf32
                       - key: JENKINS_CONFIG_REPO
                         value: sds-jenkins-config
           views: |
@@ -103,11 +137,19 @@ spec:
             unclassified:
               location:
                 adminAddress: jenkins-reform@hmcts.net
+<<<<<<< HEAD
                 url: 'https://sds-build.platform.hmcts.net'
           azure-key-vault: |
             unclassified:
               azureKeyVault:
                 keyVaultURL: https://ptl.vault.azure.net
+=======
+                url: 'https://sds-sandbox-build.platform.hmcts.net'
+          azure-key-vault: |
+            unclassified:
+              azureKeyVault:
+                keyVaultURL: https://ptlsbox.vault.azure.net
+>>>>>>> 3b2a8627d3faebf91933e37bd6de18c198f9bf32
                 credentialID: jenkins-managed-identity
           kubernetes-agent: |
             jenkins:
@@ -274,7 +316,11 @@ spec:
                         enableUAMI: true
                         ephemeralOSDisk: false
                         executeInitScriptAsRoot: true
+<<<<<<< HEAD
                         existingStorageAccountName: "hmctsjenkinssds"
+=======
+                        existingStorageAccountName: "hmctsjenkinssdssbox"
+>>>>>>> 3b2a8627d3faebf91933e37bd6de18c198f9bf32
                         imageReference:
                           galleryImageDefinition: "jenkins-agent"
                           galleryImageVersion: "2.2.9"
@@ -329,9 +375,18 @@ spec:
                         templateDesc: "Jenkins build agents for HMCTS"
                         templateDisabled: false
                         templateName: "cnp-jenkins-builders"
+<<<<<<< HEAD
                         uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptl-mi
                         usageMode: "Use this node as much as possible"
                         usePrivateIP: true
                         virtualMachineSize: "Standard_D4s_v3"
                         virtualNetworkName: "ss-ptl-vnet"
                         virtualNetworkResourceGroupName: "ss-ptl-network-rg"
+=======
+                        uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptlsbox-mi
+                        usageMode: "Use this node as much as possible"
+                        usePrivateIP: true
+                        virtualMachineSize: "Standard_D4s_v3"
+                        virtualNetworkName: "ss-ptlsbox-vnet"
+                        virtualNetworkResourceGroupName: "ss-ptlsbox-network-rg"
+>>>>>>> 3b2a8627d3faebf91933e37bd6de18c198f9bf32
