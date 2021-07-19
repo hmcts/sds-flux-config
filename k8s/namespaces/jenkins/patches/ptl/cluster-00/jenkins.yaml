@@ -45,7 +45,7 @@ spec:
                       - key: AKS_AAT_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-TEST
                       - key : AAT_AKS_KEY_VAULT
-                        value: dtssharedserviceskv
+                        value: dtssharedservicesstgkv
                       - key: AKS_PROD_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-PROD
                       - key: PIPELINE_METRICS_URL
@@ -63,7 +63,7 @@ spec:
                       - key: PROD_ENVIRONMENT_NAME
                         value: prod
                       - key: PREVIEW_ENVIRONMENT_NAME
-                        value: preview
+                        value: dev
                       - key: PROD_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-PROD
                       - key: JENKINS_CONFIG_REPO
