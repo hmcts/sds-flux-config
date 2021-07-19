@@ -45,13 +45,13 @@ spec:
                       - key: AKS_AAT_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-TEST
                       - key : AAT_AKS_KEY_VAULT
-                        value: dtssharedserviceskv
+                        value: dtssharedservicestestkv
                       - key: AKS_PROD_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-PROD
                       - key: PIPELINE_METRICS_URL
                         value: https://sds-jenkins-pipeline-metrics.documents.azure.com/
                       - key: TF_STATE_STORAGE_TEMPLATE
-                        value: sdsstate
+                        value: sdsstateprod
                       - key: TF_STATE_RG_TEMPLATE
                         value: jenkins-state
                       - key: TF_STATE_CONTAINER_TEMPLATE
@@ -63,7 +63,7 @@ spec:
                       - key: PROD_ENVIRONMENT_NAME
                         value: prod
                       - key: PREVIEW_ENVIRONMENT_NAME
-                        value: preview
+                        value: demo
                       - key: PROD_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-PROD
                       - key: JENKINS_CONFIG_REPO
