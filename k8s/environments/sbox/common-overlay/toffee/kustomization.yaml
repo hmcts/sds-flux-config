@@ -16,3 +16,9 @@ patches:
     kind: HelmRelease
     name: toffee-frontend
   path: frontend-patch.yaml
+- target:
+    group: aadpodidentity.k8s.io
+    version: v1
+    kind: AzureIdentity
+    name: apple
+  path: apple-azure-identity-patch.yaml
