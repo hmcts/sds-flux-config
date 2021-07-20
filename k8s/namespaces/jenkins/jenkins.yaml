@@ -17,13 +17,13 @@ spec:
   chart:
     repository: https://charts.jenkins.io
     name: jenkins
-    version: 3.4.0
+    version: 3.5.3
   values:
     controller:
       # Used for label app.kubernetes.io/component
       componentName: "jenkins-controller"
       image: "hmctspublic.azurecr.io/jenkins/jenkins"
-      tag: "dbdxpc"
+      tag: "dbehuq"
       podSecurityContextOverride:
         runAsUser: 0
       imagePullPolicy: "IfNotPresent"
