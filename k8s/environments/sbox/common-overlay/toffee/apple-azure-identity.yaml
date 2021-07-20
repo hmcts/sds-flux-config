@@ -1,0 +1,18 @@
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: apple
+spec:
+  type: 0
+  resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/managed-identities-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/apple-sbox-mi
+  clientID: 02e36e1b-857b-4437-889e-1c8da2f19db8
+
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: apple-binding
+spec:
+  azureIdentity: apple
+  selector: apple
