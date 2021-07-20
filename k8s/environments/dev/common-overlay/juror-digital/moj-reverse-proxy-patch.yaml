@@ -1,0 +1,6 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: moj-reverse-proxy
+  namespace: juror-digital
