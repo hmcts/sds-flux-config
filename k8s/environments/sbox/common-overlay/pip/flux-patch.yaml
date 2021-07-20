@@ -64,3 +64,15 @@ spec:
     java:
       image: hmctspublic.azurecr.io/pip-subscription-management:latest
 ---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/nodejs: glob:prod-*
+spec:
+  values:
+    nodejs:
+      image: hmctspublic.azurecr.io/pip-frontend:latest
