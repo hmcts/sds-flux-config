@@ -214,12 +214,6 @@ spec:
                           password: "${OWASPDb-Password}"
                           scope: GLOBAL
                           username: "owasp_administrator"
-                      - usernamePassword:
-                          description: "Storage account name and access key for storing build reports"
-                          id: "buildlog-storage-account"
-                          password: "to-do"
-                          scope: GLOBAL
-                          username: "to-do"
                       - sauce:
                           apiKey: "${sauce-access-key}"
                           description: "Sauce Labs Reform Key"
