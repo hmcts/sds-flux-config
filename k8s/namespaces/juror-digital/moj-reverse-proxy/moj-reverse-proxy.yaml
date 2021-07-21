@@ -6,7 +6,7 @@ metadata:
   namespace: juror-digital
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/tag.chart-image: glob:2.*
+    filter.fluxcd.io/tag.nodejs: glob:2.*
 spec:
   releaseName: moj-reverse-proxy
   chart:
