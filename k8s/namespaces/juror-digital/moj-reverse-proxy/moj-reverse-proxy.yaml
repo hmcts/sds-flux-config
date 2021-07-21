@@ -5,7 +5,7 @@ metadata:
   name: moj-reverse-proxy
   namespace: juror-digital
   annotations:
-    fluxcd.io/automated: "true"
+    fluxcd.io/automated: "false"
     filter.fluxcd.io/tag.nodejs: glob:2.*
 spec:
   releaseName: moj-reverse-proxy
