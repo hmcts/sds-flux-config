@@ -1,0 +1,10 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: admin
+spec:
+  values:
+    service:
+      spec:
+        loadBalancerIP: "10.147.15.250"
