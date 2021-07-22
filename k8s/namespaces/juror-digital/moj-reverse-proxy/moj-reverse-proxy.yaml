@@ -1,0 +1,18 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: moj-reverse-proxy
+  namespace: juror-digital
+  annotations:
+    fluxcd.io/automated: "false"
+    filter.fluxcd.io/tag.nodejs: glob:2.*
+spec:
+  releaseName: moj-reverse-proxy
+  chart:
+    git: git@github.com:hmcts/sds-helm-charts
+    path: charts/moj-reverse-proxy
+    ref: master
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/jd/juror-reverse-proxy:2.4.33

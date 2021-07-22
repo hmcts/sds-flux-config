@@ -17,13 +17,13 @@ spec:
   chart:
     repository: https://charts.jenkins.io
     name: jenkins
-    version: 3.4.0
+    version: 3.5.3
   values:
     controller:
       # Used for label app.kubernetes.io/component
       componentName: "jenkins-controller"
       image: "hmctspublic.azurecr.io/jenkins/jenkins"
-      tag: "dbdxpc"
+      tag: "dbejq1"
       podSecurityContextOverride:
         runAsUser: 0
       imagePullPolicy: "IfNotPresent"
@@ -164,7 +164,7 @@ spec:
                     serverUrl: 'https://sonarcloud.io'
           timestamper: |
             unclassified:
-              timestamperConfig:
+              timestamper:
                 allPipelines: true
           theme: |
             unclassified:
@@ -214,12 +214,6 @@ spec:
                           password: "${OWASPDb-Password}"
                           scope: GLOBAL
                           username: "owasp_administrator"
-                      - usernamePassword:
-                          description: "Storage account name and access key for storing build reports"
-                          id: "buildlog-storage-account"
-                          password: "to-do"
-                          scope: GLOBAL
-                          username: "to-do"
                       - sauce:
                           apiKey: "${sauce-access-key}"
                           description: "Sauce Labs Reform Key"
