@@ -8,7 +8,7 @@ bases:
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/neuvector
-- ../../../namespaces/admin/traefik2
+- ../../../namespaces/admin/traefik
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -23,8 +23,8 @@ patchesStrategicMerge:
 - ../../../release/admin/kube-slack/patches/ithc/cluster-00/kube-slack.yaml
 
 #traefik patch
-- ../../../namespaces/admin/traefik2/patches/ithc/secret-provider.yaml
-- ../../../namespaces/admin/traefik2/patches/ithc/cluster-00/traefik2.yaml
+- ../../../namespaces/admin/traefik/patches/ithc/secret-provider.yaml
+- ../../../namespaces/admin/traefik/patches/ithc/cluster-00/traefik.yaml
 
 #kured patch
 - ../../../release/admin/kured/patches/ithc/cluster-00/kured.yaml

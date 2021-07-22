@@ -6,7 +6,7 @@ bases:
 - ../../../release/admin/secrets-csi-driver
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
-- ../../../namespaces/admin/traefik2
+- ../../../namespaces/admin/traefik
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/monitoring/kube-prometheus-stack
 - ../../../namespaces/jenkins
@@ -18,9 +18,9 @@ patchesStrategicMerge:
 #kube-slack patch
 - ../../../release/admin/kube-slack/patches/ptlsbox/cluster-00/kube-slack.yaml
 
-#traefik2 patch
-- ../../../namespaces/admin/traefik2/patches/ptlsbox/secret-provider.yaml
-- ../../../namespaces/admin/traefik2/patches/ptlsbox/cluster-00/traefik2.yaml
+#traefik patch
+- ../../../namespaces/admin/traefik/patches/ptlsbox/secret-provider.yaml
+- ../../../namespaces/admin/traefik/patches/ptlsbox/cluster-00/traefik.yaml
 
 #kured patch
 - ../../../release/admin/kured/patches/ptlsbox/cluster-00/kured.yaml

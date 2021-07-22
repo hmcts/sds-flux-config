@@ -6,7 +6,7 @@ bases:
 - ../../../release/admin/secrets-csi-driver
 - ../../../release/mailrelay/mailrelay
 - ../../../release/mailrelay/mailrelay2
-- ../../../namespaces/admin/traefik2
+- ../../../namespaces/admin/traefik
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
@@ -23,8 +23,8 @@ patches:
 patchesStrategicMerge:
 
 #traefik patch
-- ../../../namespaces/admin/traefik2/patches/dev/secret-provider.yaml
-- ../../../namespaces/admin/traefik2/patches/dev/cluster-00/traefik2.yaml
+- ../../../namespaces/admin/traefik/patches/dev/secret-provider.yaml
+- ../../../namespaces/admin/traefik/patches/dev/cluster-00/traefik.yaml
 
 #kube-slack patch
 - ../../../release/admin/kube-slack/patches/dev/cluster-00/kube-slack.yaml
@@ -40,7 +40,7 @@ patchesStrategicMerge:
 
 # mail-relay
 - ../../../release/mailrelay/mailrelay/patches/dev/cluster-00/mailrelay.yaml
-- ../../../release/mailrelay/mailrelay2/patches/dev/cluster-00/mailrelay2.yaml
+- ../../../release/mailrelay/mailrelay/patches/dev/cluster-00/mailrelay.yaml
 
 #neuvector patch
 - ../../../namespaces/neuvector/patches/nonprod/neuvector.yaml
