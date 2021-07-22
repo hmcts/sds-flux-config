@@ -91,6 +91,12 @@ spec:
                     name: VH
                     recurse: true
                     title: Video Hearings Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS_.*HMI-.*\/(case-hq-emulator)\/master
+                    name: HMI
+                    recurse: true
+                    title: HMI Dashboard
           authentication: |
             jenkins:
               securityRealm:
