@@ -15,6 +15,7 @@ spec:
           namespaceSelector:
             matchNames:
               - mailrelay
+              - mailrelay2
           endpoints:
             - targetPort: 9636
           path: /metrics
@@ -26,12 +27,15 @@ spec:
           namespaceSelector:
             matchNames:
               - mailrelay
+              - mailrelay2
           podMetricsEndpoints:
             - port: eximexporter
               path: /metrics
       ingress:
         annotations:
           kubernetes.io/ingress.class: traefik
+          traefik.ingress.kubernetes.io/router.tls: "true"
+        enabled: true
         hosts:
           - sds-prometheus-01.dev.platform.hmcts.net
 
@@ -39,6 +43,8 @@ spec:
       ingress:
         annotations:
           kubernetes.io/ingress.class: traefik
+          traefik.ingress.kubernetes.io/router.tls: "true"
+        enabled: true
         hosts:
           - sds-alertmanager-01.dev.platform.hmcts.net
       config:

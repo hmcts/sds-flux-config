@@ -6,7 +6,7 @@ metadata:
   namespace: vh
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/tag.nodejs: glob:prod-*
+    filter.fluxcd.io/tag.nodejs: glob:test-*
 spec:
   releaseName: vh-video-web
   chart:

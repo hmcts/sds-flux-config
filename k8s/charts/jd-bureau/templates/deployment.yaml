@@ -34,7 +34,7 @@ spec:
               mountPath: /app/server/config/environment/secret.js
               subPath: secret.js
             - name: azurekvjd
-              mountPath: /mnt/secrets/{{ .Values.keyvault.name }}
+              mountPath: /mnt/secrets/juror-digital-vault
               readOnly: true
           ports:
             - name: http

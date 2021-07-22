@@ -35,3 +35,9 @@ patches:
     kind: AzureIdentity
     name: mi-staging-service
   path: mi-staging-service-identity-patch.yaml
+- target:
+    group: aadpodidentity.k8s.io
+    version: v1
+    kind: AzureIdentity
+    name: mi-azure-functions
+  path: mi-azure-functions-identity-patch.yaml

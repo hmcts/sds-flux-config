@@ -1,0 +1,14 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-business-rules
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: pip-business-rules
+  chart:
+    git: git@github.com:hmcts/pip-business-rules
+    path: charts/pip-business-rules
+    ref: master

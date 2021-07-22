@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: pip
+resources:
+- namespace.yaml
+- pip-azure-identity.yaml
+- pip-azure-identity-binding.yaml
+- pip-business-rules/pip-business-rules.yaml
+- pip-data-management/pip-data-management.yaml
+- pip-frontend/pip-frontend.yaml
+- pip-subscription-management/pip-subscription-management.yaml
+- pip-account-management/pip-account-management.yaml
+- pip-publication-services/pip-publication-services.yaml

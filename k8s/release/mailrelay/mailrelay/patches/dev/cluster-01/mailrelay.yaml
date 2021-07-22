@@ -23,6 +23,7 @@ spec:
     authKeyVaultName: sds-mailrelay
     authKeyVaultSecrets: 
       - "luigi"
+      - "v1test"
     tenantId: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
 
     volumeClaim:
@@ -32,4 +33,6 @@ spec:
     global:
       environment: dev
       enableTls: true
+      enableInternalTls: true
+      enableInboundTls: true
       enableAuth: true

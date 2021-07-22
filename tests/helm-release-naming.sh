@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-for file in $(grep -lr "kind: HelmRelease" --exclude-dir={admin,monitoring,neuvector,azure-devops,kube-system} "k8s/namespaces"); do
+for file in $(grep -lr "kind: HelmRelease" --exclude-dir={admin,monitoring,neuvector,azure-devops,kube-system,jenkins} "k8s/namespaces"); do
   
   NAMESPACE="$( echo $file | cut -d'/' -f3)"
   FILE_NAMESPACE=$(yq eval '{.metadata.name:.[.name]}' k8s/namespaces/$NAMESPACE/namespace.yaml | cut -f1 -d":")

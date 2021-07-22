@@ -31,11 +31,11 @@ spec:
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           volumeMounts:
           - name: azurekvjd
-            mountPath: /mnt/secrets/{{ .Values.keyvault.name }}
+            mountPath: /mnt/secrets/juror-digital-vault
             readOnly: true
           - name: secret-volume
             mountPath: /app/server/config/environment/secret.js
-            subPath: secret.js
+            subPath: secret.js 
           ports:
             - name: http
               containerPort: 3000
@@ -75,7 +75,7 @@ spec:
               tenantid: {{ .Values.keyvault.tenantid }}
         - name: secret-volume
           configMap:
-            name: public-secret-config
+            name: public-secret-config  
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

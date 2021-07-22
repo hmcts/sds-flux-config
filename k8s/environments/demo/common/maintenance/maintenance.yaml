@@ -1,0 +1,23 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: maintenance
+  namespace: maintenance
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: glob:v*
+spec:
+  releaseName: maintenance
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/maintenance
+    ref: master
+  values:
+    image: sdshmctspublic.azurecr.io/maintenance
+    replicaCount: 1
+    ingress:
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      hosts:
+      - 'maintenance.demo.platform.hmcts.net'

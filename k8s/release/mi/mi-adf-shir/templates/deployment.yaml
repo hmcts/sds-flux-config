@@ -61,3 +61,15 @@ spec:
           operator: "Equal"
           value: "windows"
           effect: "NoSchedule"
+      affinity:
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - {{ .Values.appName }}
+              topologyKey: "kubernetes.io/hostname"
+            weight: 100

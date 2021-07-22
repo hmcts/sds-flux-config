@@ -2,7 +2,7 @@
 
 image:
   repository: sdshmctspublic.azurecr.io/hmi/case-hq-emulator
-  tag: v0.1
+  tag: v0.2
   pullPolicy: Always
 
 nameOverride: ""
@@ -72,3 +72,6 @@ affinity: {}
 secrets:
   # Specifies whether secrets resources should be created
   create: true
+  
+azurestorageaccountname: casehqemulatordev
+azurestorageaccountkey: eko5eUZqMVlzMHh6Mi8xVE9tcHpQWEVmSjRjSGZvcVpQR3ZqbGQvUldkUHNqYlB6T2tpcEJSQlRvZjd5cTZVck5aMXlLQ0l0eEg1YmlHb3VCc1BEUWc9PQ==

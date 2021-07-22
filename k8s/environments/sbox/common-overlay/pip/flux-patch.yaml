@@ -1,0 +1,78 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/java: glob:prod-*
+spec:
+  values:
+    java:
+      image: hmctspublic.azurecr.io/pip-account-management:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-business-rules
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/java: glob:prod-*
+spec:
+  values:
+    java:
+      image: hmctspublic.azurecr.io/pip-business-rules:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/java: glob:prod-*
+spec:
+  values:
+    java:
+      image: hmctspublic.azurecr.io/pip-data-management:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/java: glob:prod-*
+spec:
+  values:
+    java:
+      image: hmctspublic.azurecr.io/pip-publication-services:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/java: glob:prod-*
+spec:
+  values:
+    java:
+      image: hmctspublic.azurecr.io/pip-subscription-management:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/nodejs: glob:prod-*
+spec:
+  values:
+    nodejs:
+      image: hmctspublic.azurecr.io/pip-frontend:latest
