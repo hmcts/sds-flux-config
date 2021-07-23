@@ -10,6 +10,8 @@ for file in $(grep -lr "kind: HelmRelease" --exclude-dir={admin,monitoring,neuve
   BASE_MANIFEST="$FILE_DIRECTORY$HELM_RELEASE_NAME.yaml"
   SPEC_RELEASE_NAME=$(yq eval '.spec.releaseName' $file)
   
+   echo "$NAMESPACE:$FILE_NAMESPACE"
+
   # Make sure spec release name is matching helm release name
   [ "$HELM_RELEASE_NAME" == "$SPEC_RELEASE_NAME" ] || (echo "spec.releaseName not matching HelmRelease name for $HELM_RELEASE_NAME" && exit 1 ) 
   
@@ -21,5 +23,4 @@ for file in $(grep -lr "kind: HelmRelease" --exclude-dir={admin,monitoring,neuve
   
 #   # Check base Manifest exists
   [ -f $BASE_MANIFEST ] || (echo "$HELM_RELEASE_NAME base manifest not found" && exit 1 )
-  
 done
