@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -e
-bash --version
+
 for file in $(grep -lr "kind: HelmRelease" --exclude-dir={admin,monitoring,neuvector,azure-devops,kube-system,jenkins} "k8s/namespaces"); do
-  yq --version 
   NAMESPACE="$( echo $file | cut -d'/' -f3)"
   FILE_NAMESPACE=$(yq eval '.metadata.name' k8s/namespaces/$NAMESPACE/namespace.yaml)
   HELM_RELEASE_NAME=$(yq eval '.metadata.name' $file)
