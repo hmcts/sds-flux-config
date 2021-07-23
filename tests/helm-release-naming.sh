@@ -10,7 +10,9 @@ for file in $(grep -lr "kind: HelmRelease" --exclude-dir={admin,monitoring,neuve
   BASE_MANIFEST="$FILE_DIRECTORY$HELM_RELEASE_NAME.yaml"
   SPEC_RELEASE_NAME=$(yq eval '.spec.releaseName' $file)
   
-   echo "$NAMESPACE:$FILE_NAMESPACE"
+  yq eval '.metadata.name' k8s/namespaces/pip/namespace.yaml
+
+  echo "$NAMESPACE:$FILE_NAMESPACE"
 
   # Make sure spec release name is matching helm release name
   [ "$HELM_RELEASE_NAME" == "$SPEC_RELEASE_NAME" ] || (echo "spec.releaseName not matching HelmRelease name for $HELM_RELEASE_NAME" && exit 1 ) 
