@@ -7,6 +7,13 @@ metadata:
 spec:
   values:
     controller:
+      probes:
+        startupProbe:
+          initialDelaySeconds: 300
+        livenessProbe:
+          initialDelaySeconds: 300
+        readinessProbe:
+          initialDelaySeconds: 300
       ingress:
         hostName: sds-build.platform.hmcts.net
       containerEnv:
@@ -56,16 +63,10 @@ spec:
                         value: jenkins-state
                       - key: TF_STATE_CONTAINER_TEMPLATE
                         value: "tfstate-"
-                      - key: NONPROD_ENVIRONMENT_NAME
-                        value: staging
-                      - key: NONPROD_SUBSCRIPTION_NAME
-                        value: DTS-SHAREDSERVICES-STG
                       - key: PROD_ENVIRONMENT_NAME
                         value: prod
-                      - key: PREVIEW_ENVIRONMENT_NAME
-                        value: dev
                       - key: PROD_SUBSCRIPTION_NAME
-                        value: DTS-SHAREDSERVICES-PROD
+                        value: prod
                       - key: JENKINS_CONFIG_REPO
                         value: sds-jenkins-config
           views: |
@@ -329,7 +330,7 @@ spec:
                         templateDesc: "Jenkins build agents for HMCTS"
                         templateDisabled: false
                         templateName: "cnp-jenkins-builders"
-                        uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptl-mi
+                        uamiID: /subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptl-mi
                         usageMode: "Use this node as much as possible"
                         usePrivateIP: true
                         virtualMachineSize: "Standard_D4s_v3"
