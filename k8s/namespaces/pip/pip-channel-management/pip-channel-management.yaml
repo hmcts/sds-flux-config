@@ -1,0 +1,14 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: pip-channel-management
+  chart:
+    git: git@github.com:hmcts/pip-channel-management
+    path: charts/pip-channel-management
+    ref: master
