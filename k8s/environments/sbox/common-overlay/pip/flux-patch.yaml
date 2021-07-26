@@ -76,3 +76,16 @@ spec:
   values:
     nodejs:
       image: hmctspublic.azurecr.io/pip-frontend:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/java: glob:prod-*
+spec:
+  values:
+    java:
+      image: hmctspublic.azurecr.io/pip-channel-management:latest
