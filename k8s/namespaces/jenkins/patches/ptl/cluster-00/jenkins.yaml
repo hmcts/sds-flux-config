@@ -63,10 +63,18 @@ spec:
                         value: jenkins-state
                       - key: TF_STATE_CONTAINER_TEMPLATE
                         value: "tfstate-"
-                      - key: PROD_ENVIRONMENT_NAME
-                        value: prod
-                      - key: PROD_SUBSCRIPTION_NAME
-                        value: prod
+                      - key: NONPROD_ENVIRONMENT_NAME
+                        value: stg
+                      - key: NONPROD_SUBSCRIPTION_NAME
+                        value: stg
+                      - key: PREVIEW_ENVIRONMENT_NAME
+                        value: dev
+                      - key: PREVIEW_SUBSCRIPTION_NAME
+                        value: dev
+                      - key: DEMO_SUBSCRIPTION_NAME
+                        value: demo
+                      - key: PERFTEST_ENVIRONMENT_NAME
+                        value: test
                       - key: JENKINS_CONFIG_REPO
                         value: sds-jenkins-config
           views: |
