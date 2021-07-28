@@ -27,14 +27,14 @@ spec:
         app.kubernetes.io/instance: data-extractor-job
         app.kubernetes.io/name: data-extractor-job
       environment:
-        ETL_MSICLIENTID: 0a0afc36-0228-49d7-886c-77533f9621bb
+        ETL_MSICLIENTID: e6ea2587-4575-4e63-be36-5a2e787ed1e1
         APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
       smoketests:
         image: sdshmctspublic.azurecr.io/data-extractor-job:stg-9a0f1e4
         enabled: true
       testsConfig:
         environment:
-          ETL_MSICLIENTID: 0a0afc36-0228-49d7-886c-77533f9621bb
+          ETL_MSICLIENTID: e6ea2587-4575-4e63-be36-5a2e787ed1e1
           APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
     global:
       subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"

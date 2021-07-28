@@ -28,14 +28,14 @@ spec:
         app.kubernetes.io/name: mi-house-keeping-service
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
-        MI_CLIENT_ID: 8d02986f-b9dc-4624-b035-8d4de6e90272
+        MI_CLIENT_ID: 6ad9dea6-326e-4b34-9ccf-f7785b1ddb58
       smoketests:
         image: sdshmctspublic.azurecr.io/mi-house-keeping-service:stg-d6c7a38
         enabled: true
       testsConfig:
         environment:
           APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
-          MI_CLIENT_ID: 8d02986f-b9dc-4624-b035-8d4de6e90272
+          MI_CLIENT_ID: 6ad9dea6-326e-4b34-9ccf-f7785b1ddb58
     global:
       subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
