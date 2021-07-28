@@ -263,6 +263,17 @@ spec:
             jenkins:
               clouds:
                 - azureVM:
+                    cloudTags:
+                      - name: "application"
+                        value: "core"
+                      - name: "builtFrom"
+                        value: "hmcts/shared-services-flux"
+                      - name: "businessArea"
+                        value: "Cross-Cutting"
+                      - name: "criticality"
+                        value: "High"
+                      - name: "environment"
+                        value: "ptlsbox"
                     azureCredentialsId: "jenkins-managed-identity"
                     cloudName: "cnp-azure"
                     deploymentTimeout: 1200
