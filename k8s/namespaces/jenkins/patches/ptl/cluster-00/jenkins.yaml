@@ -7,13 +7,6 @@ metadata:
 spec:
   values:
     controller:
-      probes:
-        startupProbe:
-          initialDelaySeconds: 300
-        livenessProbe:
-          initialDelaySeconds: 300
-        readinessProbe:
-          initialDelaySeconds: 300
       ingress:
         hostName: sds-build.platform.hmcts.net
       containerEnv:
