@@ -1,0 +1,14 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: netbox
+  namespace: netbox
+spec:
+  values:
+    ingress:
+      hosts:
+        - host: netbox.aat.platform.hmcts.net
+          paths:
+            # NB: You may also want to set the basePath above
+            - /
