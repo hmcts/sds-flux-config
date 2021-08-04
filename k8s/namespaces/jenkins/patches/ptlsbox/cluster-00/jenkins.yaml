@@ -93,7 +93,7 @@ spec:
                     title: Video Hearings Dashboard
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*HMI-.*\/(case-hq-emulator)\/master
+                      ^HMCTS_.*HMI-.*\/.+\/master
                     name: HMI
                     recurse: true
                     title: HMI Dashboard
