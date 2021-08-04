@@ -5,8 +5,8 @@ metadata:
   name: netbox
   namespace: netbox
   annotations:
-    flux.weave.works/automated: "false"
-    flux.weave.works/tag.chart-image: glob:Release-*
+    fluxcd.io/automated: "false"
+    filter.fluxcd.io/tag.chart-image: glob:Release-*
 spec:
   releaseName: netbox
   chart:
