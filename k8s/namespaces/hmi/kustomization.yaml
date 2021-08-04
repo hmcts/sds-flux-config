@@ -1,0 +1,9 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: hmi
+resources:
+- namespace.yaml
+- pip-azure-identity.yaml
+- pip-azure-identity-binding.yaml
+- hmi-case-hq-emulator/hmi-case-hq-emulator.yaml
