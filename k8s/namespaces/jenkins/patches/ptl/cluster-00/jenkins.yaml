@@ -40,6 +40,10 @@ spec:
                         value: ss-stg-00-aks
                       - key: STG_AKS_RESOURCE_GROUP
                         value: ss-stg-00-rg
+                      - key: DEV_AKS_CLUSTER_NAME
+                        value: ss-dev-00-aks
+                      - key: DEV_AKS_RESOURCE_GROUP
+                        value: ss-dev-00-rg
                       - key: AKS_PREVIEW_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-DEMO
                       - key: AKS_AAT_SUBSCRIPTION_NAME
