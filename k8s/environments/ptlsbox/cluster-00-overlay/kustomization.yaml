@@ -10,6 +10,7 @@ bases:
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/monitoring/kube-prometheus-stack
 - ../../../namespaces/jenkins
+- ../../../namespaces/netbox/netbox
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -32,6 +33,9 @@ patchesStrategicMerge:
 - ../../../namespaces/monitoring/kube-prometheus-stack/patches/ptlsbox/cluster-00/kube-prometheus-stack.yaml
 # env-injector
 # - ../../../release/admin/env-injector/patches/ptlsbox/cluster-00/env-injector.yaml
+
+# netbox patch
+- ../../../namespaces/netbox/netbox/patches/ptlsbox/cluster-00/netbox.yaml
 
 - ../../../namespaces/jenkins/patches/ptlsbox/cluster-00/disk.yaml
 - ../../../namespaces/jenkins/patches/ptlsbox/cluster-00/identity.yaml
