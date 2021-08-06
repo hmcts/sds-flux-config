@@ -56,6 +56,12 @@ spec:
                         value: ss-test-00-aks
                       - key: PERFTEST_AKS_RESOURCE_GROUP
                         value: ss-test-00-rg
+                      - key: AKS_DEMO_SUBSCRIPTION_NAME
+                        value: DTS-SHAREDSERVICES-DEMO
+                      - key: AKS_ITHC_SUBSCRIPTION_NAME
+                        value: DTS-SHAREDSERVICES-ITHC
+                      - key: AKS_PERFTEST_SUBSCRIPTION_NAME
+                        value: DTS-SHAREDSERVICES-TEST
                       - key: AKS_PREVIEW_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-DEV
                       - key: AKS_AAT_SUBSCRIPTION_NAME
