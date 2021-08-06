@@ -44,6 +44,18 @@ spec:
                         value: ss-dev-00-aks
                       - key: DEV_AKS_RESOURCE_GROUP
                         value: ss-dev-00-rg
+                      - key: DEMO_AKS_CLUSTER_NAME
+                        value: ss-demo-00-aks
+                      - key: DEMO_AKS_RESOURCE_GROUP
+                        value: ss-demo-00-rg
+                      - key: ITHC_AKS_CLUSTER_NAME
+                        value: ss-ithc-00-aks
+                      - key: ITHC_AKS_RESOURCE_GROUP
+                        value: ss-ithc-00-rg
+                      - key: PERFTEST_AKS_CLUSTER_NAME
+                        value: ss-test-00-aks
+                      - key: PERFTEST_AKS_RESOURCE_GROUP
+                        value: ss-test-00-rg
                       - key: AKS_PREVIEW_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-DEV
                       - key: AKS_AAT_SUBSCRIPTION_NAME
@@ -68,9 +80,17 @@ spec:
                         value: dev
                       - key: PREVIEW_SUBSCRIPTION_NAME
                         value: dev
+                      - key: DEMO_ENVIRONMENT_NAME
+                        value: demo
                       - key: DEMO_SUBSCRIPTION_NAME
                         value: demo
+                      - key: ITHC_ENVIRONMENT_NAME
+                        value: ithc
+                      - key: ITHC_SUBSCRIPTION_NAME
+                        value: ithc
                       - key: PERFTEST_ENVIRONMENT_NAME
+                        value: test
+                      - key: PERFTEST_SUBSCRIPTION_NAME
                         value: test
                       - key: JENKINS_CONFIG_REPO
                         value: sds-jenkins-config
