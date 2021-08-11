@@ -16,3 +16,5 @@ spec:
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/jd/juror-reverse-proxy:nle-db23
+      environment:
+        PORT: 8080
