@@ -18,17 +18,6 @@ spec:
       image: hmctspublic.azurecr.io/plum/recipe-backend:prod-d58c633f
       ingressHost: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
       aadIdentityName: toffee
-      keyVaults:
-        plumsi:
-          disabled: true
-        toffee:
-          secrets:
-          - name: recipe-backend-POSTGRES-PASS
-            alias: POSTGRES_PASSWORD
-      environment:
-        POSTGRES_HOST: "toffee-{{ .Values.global.environment }}.postgres.database.azure.com"
-        POSTGRES_DATABASE: "toffee"
-        POSTGRES_USER: "toffeeadmin@toffee-{{ .Values.global.environment }}"
     global:
       environment: replace
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
