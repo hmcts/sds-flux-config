@@ -8,8 +8,8 @@ spec:
   timeout: 1200
   values:
     image:
-      repository: sdshmctspublic.azurecr.io/exim-relay
-      tag: 0.12
+      repository: sdshmctspublic.azurecr.io/exim-relay-test
+      tag:
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
