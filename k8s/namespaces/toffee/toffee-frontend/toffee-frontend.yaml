@@ -9,9 +9,9 @@ metadata:
 spec:
   releaseName: toffee-frontend
   chart:
-    repository: https://hmctspublic.azurecr.io/helm/v1/repo/
-    name: plum-frontend
-    version: 0.0.3
+    git: git@github.com:hmcts/hmcts-charts
+    ref: master
+    path: stable/toffee-frontend
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/toffee/frontend:latest
