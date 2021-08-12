@@ -10,7 +10,7 @@ metadata:
 spec:
   values:
     java:
-      image: hmctspublic.azurecr.io/plum/recipe-backend:prod-d58c633f
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-68644af-20210805161941
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -23,4 +23,4 @@ metadata:
 spec:
   values:
     java:
-      image: hmctspublic.azurecr.io/plum/frontend:prod-6fa89931
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-81e47ca-20210729121156
