@@ -9,7 +9,7 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay-test
-      tag:
+      tag: latest
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
