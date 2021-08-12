@@ -15,7 +15,7 @@ spec:
     path: stable/toffee-recipe-backend
   values:
     java:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-68644af-20210805161941
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest
       ingressHost: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
       aadIdentityName: toffee
     global:
