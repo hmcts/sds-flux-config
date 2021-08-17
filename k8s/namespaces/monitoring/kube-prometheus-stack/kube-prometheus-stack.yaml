@@ -4,9 +4,6 @@ kind: HelmRelease
 metadata:
   name: kube-prometheus-stack
   namespace: monitoring
-  annotations:
-    flux.weave.works/automated: "false"
-    flux.weave.works/ignore: "false"
 spec:
   releaseName: kube-prometheus-stack
   forceUpgrade: true
@@ -16,9 +13,10 @@ spec:
   chart:
     repository: https://prometheus-community.github.io/helm-charts
     name: kube-prometheus-stack
-    version: 14.5.0
-  valueFileSecrets:
-    - name: "prometheus-values"
+    version: 17.2.2
+  valuesFrom:
+    - secretKeyRef:
+        name: "prometheus-values"
   values:
     defaultRules:
       create: true
