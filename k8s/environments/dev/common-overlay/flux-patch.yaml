@@ -2,6 +2,16 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  name: jd-bureau
+  namespace: jd
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.22.125
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
   name: toffee-frontend
   namespace: toffee
 spec:
