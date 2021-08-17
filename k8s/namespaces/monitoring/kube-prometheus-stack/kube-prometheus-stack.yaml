@@ -65,6 +65,9 @@ spec:
               path: /metrics
       ingress:
         enabled: true
+    nodeExporter:
+      # by default it tolerates everything and tries to deploy to windows nodes which fails
+      tolerations: []
 
     kubelet:
       serviceMonitor:
