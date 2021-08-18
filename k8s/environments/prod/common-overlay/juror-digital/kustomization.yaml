@@ -17,6 +17,12 @@ patches:
     name: jd-bureau
   path: jd-bureau-patch.yaml
 - target:
+    group: helm.fluxcd.io
+    version: v1
+    kind: HelmRelease
+    name: moj-reverse-proxy
+  path: moj-reverse-proxy-patch.yaml
+- target:
     group: aadpodidentity.k8s.io
     version: v1
     kind: AzureIdentity

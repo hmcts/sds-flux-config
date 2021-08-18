@@ -13,6 +13,3 @@ spec:
     git: git@github.com:hmcts/sds-helm-charts
     path: charts/jd-bureau
     ref: master
-  values:
-    nodejs:
-      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.22.125
