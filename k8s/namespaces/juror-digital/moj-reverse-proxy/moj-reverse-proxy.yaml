@@ -13,7 +13,3 @@ spec:
     git: git@github.com:hmcts/sds-helm-charts
     path: charts/moj-reverse-proxy
     ref: master
-  values:
-    nodejs:
-      image: sdshmctspublic.azurecr.io/jd/juror-reverse-proxy:nle-db26
-
