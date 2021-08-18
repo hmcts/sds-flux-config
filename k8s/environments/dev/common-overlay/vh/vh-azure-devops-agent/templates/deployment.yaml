@@ -61,7 +61,7 @@ spec:
             value: {{ $value | quote }}
           {{- end }}
           - name: AZP_TOKEN
-            value: "/kvmt/azure-devops-agent-token"
+            value: /kvmt/azure-devops-agent-token
           - name: AZP_URL
             value: {{ .Values.azureDevOps.url }}
           - name: AZP_POOL
