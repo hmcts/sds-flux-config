@@ -1,0 +1,14 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-nginx
+  namespace: vh
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: vh-nginx
+  chart:
+    git: git@github.com:hmcts/vh-testing
+    path: charts/vh-testing
+    ref: master
