@@ -13,3 +13,10 @@ spec:
     git: git@github.com:hmcts/sds-helm-charts
     path: charts/jd-public
     ref: master
+  values:
+    nodejs:
+      replicas: 2
+      autoscaling:
+        enabled: true
+        maxReplicas: 5
+        targetCPUUtilizationPercentage: 80
