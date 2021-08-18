@@ -15,7 +15,11 @@ spec:
     ref: master
   values:
     nodejs:
-      replicas: 2
+      replicas: "2"
+      memoryRequests: "248Mi"
+      cpuRequests: "200m"
+      memoryLimits: "1Gi"
+      cpuLimits: "1"
       autoscaling:
         enabled: true
         maxReplicas: 5
