@@ -2,12 +2,32 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  name: jd-bureau
+  namespace: jd
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.22.125
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: jd-public
+  namespace: jd
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:2.22.436
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
   name: toffee-frontend
   namespace: toffee
 spec:
   values:
     nodejs:
-      image: hmctspublic.azurecr.io/plum/frontend:pr-86
+      image: sdshmctspublic.azurecr.io/toffee/frontend:pr-12
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -17,4 +37,4 @@ metadata:
 spec:
   values:
     java:
-      image: hmctspublic.azurecr.io/plum/recipe-backend:prod-4e9e82a-20210719123755
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-68644af-20210805161941
