@@ -11,7 +11,10 @@
 nameOverride: ""
 fullnameOverride: ""
 
-# service:
+service:
+  annotations:
+    traefik.ingress.kubernetes.io/service.sticky.cookie: "true"
+    traefik.ingress.kubernetes.io/service.sticky.cookie.name: affinity
 #   type: ClusterIP
 #   port: 80
 
