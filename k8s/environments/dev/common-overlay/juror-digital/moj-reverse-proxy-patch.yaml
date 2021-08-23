@@ -1,0 +1,10 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: moj-reverse-proxy
+  namespace: juror-digital
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/jd/juror-reverse-proxy:nle-db26

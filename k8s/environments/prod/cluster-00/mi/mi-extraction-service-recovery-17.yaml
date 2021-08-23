@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: mi-extraction-service-recovery-job
+  name: mi-extraction-service-recovery-17-job
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -11,7 +11,7 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:prod-*
 spec:
-  releaseName: mi-extraction-service-recovery-job
+  releaseName: mi-extraction-service-recovery-17-job
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-extraction-service
@@ -27,8 +27,8 @@ spec:
       memoryLimits: '4096Mi'
       cpuLimits: '2000m'
       labels:
-        app.kubernetes.io/instance: mi-extraction-service-recovery-job
-        app.kubernetes.io/name: mi-extraction-service-recovery-job
+        app.kubernetes.io/instance: mi-extraction-service-recovery-17-job
+        app.kubernetes.io/name: mi-extraction-service-recovery-17-job
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false
@@ -47,8 +47,8 @@ spec:
         SFTP_REMOTE_HOST: 10.24.254.130
         SFTP_REMOTE_PORT: 22
         SFTP_REMOTE_FOLDER: /files/mi-platform-export/
-        RETRIEVE_FROM_DATE: 2021-06-09
-        RETRIEVE_TO_DATE: 2021-06-09
+        RETRIEVE_FROM_DATE: 2021-08-17
+        RETRIEVE_TO_DATE: 2021-08-17
       smoketests:
         image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-2c2a120
         enabled: true
