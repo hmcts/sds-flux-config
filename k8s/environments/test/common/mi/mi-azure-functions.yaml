@@ -5,8 +5,9 @@ metadata:
   name: mi-azure-functions-deployment
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:pr-*
+    fluxcd.io/automated: "true"
+    repository.fluxcd.io/chart-image: image
+    filter.fluxcd.io/chart-image: glob:pr-*
 spec:
   releaseName: mi-azure-functions
   chart:
@@ -17,7 +18,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-12-3aa7f8d
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-13-7c0961f
     env:
       APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
       ADF_RESOURCEGROUP: mi-test-rg
@@ -29,3 +30,4 @@ spec:
     resourceGroup: "mi-test-rg"
     subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    managedIdentityClientId: "4531cfbf-c944-4025-bcac-9126016baa4c"
