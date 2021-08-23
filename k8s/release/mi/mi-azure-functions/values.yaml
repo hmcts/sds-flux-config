@@ -30,4 +30,4 @@ env:
   ADF_STORAGEACCOUNTNAME: miauditsbox
   ADF_TENANTID: "{{ .Values.tenantId }}"
   ADF_SUBSCRIPTIONID: "{{ .Values.subscriptionId }}"
-  ADF_MANAGEDIDENTITYCLIENTID: "{{ .Values.managedIdentityClientId }}"
+  MANAGEDIDENTITYCLIENTID: "{{ .Values.managedIdentityClientId }}"
