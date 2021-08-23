@@ -13,3 +13,6 @@ spec:
           paths:
             # NB: You may also want to set the basePath above
             - /
+      tls:
+        - hosts:
+            - netbox.sandbox.platform.hmcts.net
