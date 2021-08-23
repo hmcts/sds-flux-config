@@ -5,8 +5,9 @@ metadata:
   name: mi-azure-functions-deployment
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:stg-*
+    fluxcd.io/automated: "true"
+    repository.fluxcd.io/chart-image: image
+    filter.fluxcd.io/chart-image: glob:stg-*
 spec:
   releaseName: mi-azure-functions
   chart:
