@@ -24,6 +24,7 @@ spec:
       ADF_RESOURCEGROUP: mi-prod-rg
       ADF_NAME: mi-ingestion-adf-prod
       ADF_STORAGEACCOUNTNAME: miauditprod
+      OPTIC_TOKEN_URL: https://hmcts.icasework.com/token
     keyVaultSecrets:
     - encryption-publicKey
     environment: "prod"
