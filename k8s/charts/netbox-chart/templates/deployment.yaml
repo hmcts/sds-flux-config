@@ -53,7 +53,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /{{ .Values.basePath }}login/
-              port: netbox
+              port: 80
               {{- if (not (eq (index .Values.allowedHosts 0) "*")) }}
               httpHeaders:
                 - name: Host
