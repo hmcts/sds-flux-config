@@ -295,8 +295,10 @@ reportsPersistence:
   size: 1Gi
 
 service:
-  type: LoadBalancer
-  loadBalancerIP: "10.147.15.250"
+  type: ClusterIP
+  port: 443
+  loadBalancerSourceRanges: []
+  # - 10.0.0.0/8
 
 ingress:
   enabled: false
