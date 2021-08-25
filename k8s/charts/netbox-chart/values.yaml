@@ -307,9 +307,6 @@ ingress:
   enabled: true
   hosts:
     - netbox.sandbox.platform.hmcts.net
-  tls:
-    - hosts:
-        - netbox.sandbox.platform.hmcts.net
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
