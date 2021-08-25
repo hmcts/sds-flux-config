@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: data-extractor-job
+  name: data-extractor-job-run
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -11,7 +11,7 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:prod-*
 spec:
-  releaseName: data-extractor
+  releaseName: data-extractor-run
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-data-extractor-job
@@ -26,8 +26,8 @@ spec:
       memoryLimits: '4096Mi'
       activeDeadlineSeconds: 82800  #23 hours
       labels:
-        app.kubernetes.io/instance: data-extractor-job
-        app.kubernetes.io/name: data-extractor-job
+        app.kubernetes.io/instance: data-extractor-job-run
+        app.kubernetes.io/name: data-extractor-job-run
       environment:
         ETL_MSICLIENTID: 7fc8466f-2673-4c70-a6d0-5036f15b3e95
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
