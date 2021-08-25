@@ -296,7 +296,7 @@ reportsPersistence:
 
 service:
   type: ClusterIP
-  port: 443
+  port: 80
   loadBalancerSourceRanges: []
   # - 10.0.0.0/8
 
@@ -309,7 +309,7 @@ ingress:
     - netbox.sandbox.platform.hmcts.net
   tls:
     - hosts:
-        - sds-prometheus-00-ptl.platform.hmcts.net
+        - netbox.sandbox.platform.hmcts.net
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
