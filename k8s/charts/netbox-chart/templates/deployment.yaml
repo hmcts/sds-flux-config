@@ -51,10 +51,10 @@ spec:
               containerPort: 8001
               protocol: TCP
           readinessProbe:
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
             httpGet:
               path: /{{ .Values.basePath }}login/
               port: netbox
-              initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
               {{- if (not (eq (index .Values.allowedHosts 0) "*")) }}
               httpHeaders:
                 - name: Host
@@ -125,10 +125,10 @@ spec:
               containerPort: 80
               protocol: TCP
           readinessProbe:
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
             httpGet:
               path: /{{ .Values.basePath }}
               port: http
-              initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
           volumeMounts:
             - name: config
               mountPath: /etc/nginx/nginx.conf
