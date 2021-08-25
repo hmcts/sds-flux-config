@@ -23,27 +23,28 @@ skipStartupScripts: true
 # server. NetBox will not permit write access to the server via any other
 # hostnames. The first FQDN in the list will be treated as the preferred name.
 allowedHosts:
-  - '*'
+  - "*"
 
 # Specify one or more name and email address tuples representing NetBox
 # administrators. These people will be notified of application errors (assuming
 # correct email settings are provided).
-admins: []
+admins:
+  []
   # - ['John Doe', 'jdoe@example.com']
 
 banner:
   # Optionally display a persistent banner at the top and/or bottom of every
   # page. HTML is allowed.
-  top: ''
-  bottom: ''
+  top: ""
+  bottom: ""
 
   # Text to include on the login page above the login form. HTML is allowed.
-  login: ''
+  login: ""
 
 # Base URL path if accessing NetBox within a directory. For example, if
 # installed at http://example.com/netbox/, set to 'netbox/'. If using
 # Kubernetes Ingress, make sure you set ingress.hosts[].paths[] appropriately.
-basePath: ''
+basePath: ""
 
 # Cache timeout in seconds. Set to 0 to disable caching. Defaults to 900
 # (15 minutes).
@@ -73,10 +74,10 @@ debug: false
 email:
   server: localhost
   port: 25
-  username: ''
-  password: ''
-  timeout: 10  # seconds
-  from: ''
+  username: ""
+  password: ""
+  timeout: 10 # seconds
+  from: ""
 
 # Enforcement of unique IP space can be toggled on a per-VRF basis. To enforce
 # unique IP space within the global table (all prefixes and IP addresses not
@@ -86,7 +87,7 @@ enforceGlobalUnique: false
 # Exempt certain models from the enforcement of view permissions. Models listed
 # here will be viewable by all users and by anonymous users. List models in the
 # form `<app>.<model>`. Add '*' to this list to exempt all models.
-exemptViewPermissions: ['*']
+exemptViewPermissions: ["*"]
 
 # Enable custom logging. Please see the Django documentation for detailed
 # guidance on configuring custom logs:
@@ -110,8 +111,8 @@ maxPageSize: 1000
 
 napalm:
   # Credentials that NetBox will use to access live devices.
-  username: ''
-  password: ''
+  username: ""
+  password: ""
 
   # NAPALM timeout (in seconds). (Default: 30)
   timeout: 30
@@ -164,12 +165,12 @@ timeZone: UTC
 
 # Date/time formatting. See the following link for supported formats:
 # https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date
-dateFormat: 'N j, Y'
-shortDateFormat: 'Y-m-d'
-timeFormat: 'g:i a'
-shortTimeFormat: 'H:i:s'
-dateTimeFormat: 'N j, Y g:i a'
-shortDateTimeFormat: 'Y-m-d H:i'
+dateFormat: "N j, Y"
+shortDateFormat: "Y-m-d"
+timeFormat: "g:i a"
+shortTimeFormat: "H:i:s"
+dateTimeFormat: "N j, Y g:i a"
+shortDateTimeFormat: "Y-m-d H:i"
 
 # If provided, this should be a 50+ character string of random characters. It
 # will be randomly generated if left blank.
@@ -296,13 +297,14 @@ reportsPersistence:
 
 service:
   type: ClusterIP
-  port: 443
+  port: 80
   loadBalancerSourceRanges: []
   # - 10.0.0.0/8
 
 ingress:
   enabled: false
-  annotations: {}
+  annotations:
+    {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
@@ -316,7 +318,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -342,7 +345,8 @@ nodeSelector: {}
 
 tolerations: []
 
-updateStrategy: {}
+updateStrategy:
+  {}
   # type: RollingUpdate
 
 affinity: {}
