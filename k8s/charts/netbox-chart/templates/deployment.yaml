@@ -54,7 +54,7 @@ spec:
             httpGet:
               path: /{{ .Values.basePath }}login/
               port: netbox
-              initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+              initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
               {{- if (not (eq (index .Values.allowedHosts 0) "*")) }}
               httpHeaders:
                 - name: Host
@@ -128,7 +128,7 @@ spec:
             httpGet:
               path: /{{ .Values.basePath }}
               port: http
-              initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+              initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
           volumeMounts:
             - name: config
               mountPath: /etc/nginx/nginx.conf
