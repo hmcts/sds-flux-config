@@ -9,7 +9,7 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
-      tag: 0.13
+      tag: 0.13.2
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
@@ -29,6 +29,13 @@ spec:
     volumeClaim:
       storageClass: "managed-premium"
       storageSize: 500Gi
+
+    certificate:
+      name: "dev-in"
+      objectName: "dev-in-mailrelay-platform-hmcts-net"
+      serverName: "mailrelay.platform.hmcts.net"
+      KeyVault: "acmedtssdsprod"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
 
     global:
       environment: dev

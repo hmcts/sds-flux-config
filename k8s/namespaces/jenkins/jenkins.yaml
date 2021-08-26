@@ -23,7 +23,7 @@ spec:
       # Used for label app.kubernetes.io/component
       componentName: "jenkins-controller"
       image: "hmctspublic.azurecr.io/jenkins/jenkins"
-      tag: "dbejq1"
+      tag: "dbfgbf"
       podSecurityContextOverride:
         runAsUser: 0
       imagePullPolicy: "IfNotPresent"
@@ -41,8 +41,8 @@ spec:
               topologyKey: "kubernetes.io/hostname"
       resources:
         requests:
-          cpu: "50m"
-          memory: "512Mi"
+          cpu: "2000m"
+          memory: "4096Mi"
         limits:
           cpu: "2000m"
           memory: "4096Mi"
