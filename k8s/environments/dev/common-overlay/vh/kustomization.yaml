@@ -3,4 +3,19 @@ kind: Kustomization
 resources:
 - vh-devops-agent.yaml
 - ../../../../namespaces/vh
+- ../../../../namespaces/all-namespaces/nonprod-role.yaml
 - vh-aad-identity.yaml
+patchesExec:
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: RoleBinding
+    name: nonprod-team-permissions
+    namespace: wa
+  patch: |-
+    - op: add
+      path: "/subjects"
+      value:
+        - apiGroup: rbac.authorization.k8s.io
+          kind: Group
+          name: "b9b83800-c0ea-4cc2-a13b-d14a28f57fbe"

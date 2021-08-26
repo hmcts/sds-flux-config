@@ -4,6 +4,15 @@ metadata:
   namespace: vh
   name: vh-pod-exec
 rules:
+- apiGroups: ['']
+  resources: ['pods']
+  verbs: ['delete']
+- apiGroups: ['']
+  resources: ['secrets']
+  verbs: ['list']
+- apiGroups: ['helm.fluxcd.io']
+  resources: ['helmreleases']
+  verbs: ['delete']
 - apiGroups: [""]
   resources: ["pods/exec"]
   verbs: ["create"]
