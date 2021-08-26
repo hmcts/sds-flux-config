@@ -11,7 +11,7 @@ patchesExec:
     version: v1
     kind: RoleBinding
     name: nonprod-team-permissions
-    namespace: wa
+    namespace: vh
   patch: |-
     - op: add
       path: "/subjects"
