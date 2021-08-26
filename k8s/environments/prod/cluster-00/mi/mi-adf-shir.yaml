@@ -20,7 +20,7 @@ spec:
       app.kubernetes.io/name: mi-adf-shir-deployment
     image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-09b63f3
     secretsMountPath: ''
-    environment: "stg"
-    resourceGroup: "mi-stg-rg"
-    subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+    environment: "prod"
+    resourceGroup: "mi-prod-rg"
+    subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

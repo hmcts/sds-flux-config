@@ -51,6 +51,7 @@ spec:
               containerPort: 8001
               protocol: TCP
           readinessProbe:
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
             httpGet:
               path: /{{ .Values.basePath }}login/
               port: netbox
@@ -124,6 +125,7 @@ spec:
               containerPort: 80
               protocol: TCP
           readinessProbe:
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
             httpGet:
               path: /{{ .Values.basePath }}
               port: http
