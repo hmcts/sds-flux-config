@@ -5,8 +5,9 @@ metadata:
   name: mi-adf-shir-deployment
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:dev-*
+    fluxcd.io/automated: "true"
+    repository.fluxcd.io/chart-image: image
+    filter.fluxcd.io/chart-image: glob:dev-*
 spec:
   releaseName: mi-adf-shir
   chart:

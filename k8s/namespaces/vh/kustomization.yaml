@@ -4,8 +4,8 @@ kind: Kustomization
 namespace: vh
 resources:
 - namespace.yaml
-#- vh-user-api/vh-user-api.yaml
-#- vh-notification-api/vh-notification-api.yaml
+- vh-user-api/vh-user-api.yaml
+- vh-notification-api/vh-notification-api.yaml
 #- vh-video-api/vh-video-api.yaml
 #- vh-bookings-api/vh-bookings-api.yaml
 #- vh-test-api/vh-test-api.yaml

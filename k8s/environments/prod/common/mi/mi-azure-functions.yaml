@@ -7,7 +7,7 @@ metadata:
   annotations:
     fluxcd.io/automated: "true"
     repository.fluxcd.io/chart-image: image
-    filter.fluxcd.io/chart-image: glob:pr-*
+    filter.fluxcd.io/chart-image: glob:prod-*
 spec:
   releaseName: mi-azure-functions
   chart:
@@ -18,16 +18,17 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-15-e0d0018
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-d12720b
     env:
-      APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
-      ADF_RESOURCEGROUP: mi-test-rg
-      ADF_NAME: mi-ingestion-adf-test
-      ADF_STORAGEACCOUNTNAME: miaudittest
+      APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+      ADF_RESOURCEGROUP: mi-prod-rg
+      ADF_NAME: mi-ingestion-adf-prod
+      ADF_STORAGEACCOUNTNAME: miauditprod
+      OPTIC_TOKEN_URL: https://hmcts.icasework.com/token
     keyVaultSecrets:
     - encryption-publicKey
-    environment: "test"
-    resourceGroup: "mi-test-rg"
-    subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
+    environment: "prod"
+    resourceGroup: "mi-prod-rg"
+    subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    managedIdentityClientId: "4531cfbf-c944-4025-bcac-9126016baa4c"
+    managedIdentityClientId: "6ca63ebe-d898-42fb-b5bb-88d67433c78f"
