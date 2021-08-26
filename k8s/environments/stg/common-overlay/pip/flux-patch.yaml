@@ -10,7 +10,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/account-management:latest
+      image: sdshmctspublicsbox.azurecr.io/pip/account-management:latest
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -23,7 +23,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/business-rules:latest
+      image: sdshmctspublicsbox.azurecr.io/pip/business-rules:latest
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -36,7 +36,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/data-management:latest
+      image: sdshmctspublicsbox.azurecr.io/pip/data-management:latest
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -49,7 +49,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/publication-services:latest
+      image: sdshmctspublicsbox.azurecr.io/pip/publication-services:latest
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -62,7 +62,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/subscription-management:latest
+      image: sdshmctspublicsbox.azurecr.io/pip/subscription-management:latest
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -75,7 +75,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:latest
+      image: sdshmctspublicsbox.azurecr.io/pip/frontend:latest
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -88,4 +88,4 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/channel-management:latest
+      image: sdshmctspublicsbox.azurecr.io/pip/channel-management:latest
