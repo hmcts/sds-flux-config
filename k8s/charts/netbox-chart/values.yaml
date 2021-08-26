@@ -296,20 +296,16 @@ reportsPersistence:
 
 service:
   type: ClusterIP
-  port: 443
+  port: 80
   loadBalancerSourceRanges: []
   # - 10.0.0.0/8
 
 ingress:
   annotations:
     kubernetes.io/ingress.class: traefik
-    traefik.ingress.kubernetes.io/router.tls: "true"
   enabled: true
   hosts:
     - netbox.sandbox.platform.hmcts.net
-  tls:
-    - hosts:
-        - sds-prometheus-00-ptl.platform.hmcts.net
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -371,3 +367,6 @@ extraInitContainers: []
 #  - name: init-myservice
 #    image: busybox
 #    command: ['sh', '-c', 'until nslookup myservice; do echo waiting for myservice; sleep 2; done;']
+
+readinessProbe:
+  initialDelaySeconds: 60
