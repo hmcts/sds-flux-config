@@ -5,6 +5,7 @@ bases:
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
 - ../../../release/mailrelay/mailrelay
+- ../../../release/mailrelay/mailrelay2
 - ../../../namespaces/admin/traefik2
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
@@ -39,6 +40,9 @@ patchesStrategicMerge:
 
 # mail-relay
 - ../../../release/mailrelay/mailrelay/patches/prod/cluster-01/mailrelay.yaml
+
+# mail-relay 2
+- ../../../release/mailrelay/mailrelay2/patches/prod/cluster-01/mailrelay2.yaml
 
 #neuvector patch
 - ../../../namespaces/neuvector/patches/prod/neuvector.yaml
