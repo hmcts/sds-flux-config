@@ -1,0 +1,34 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mi-azure-functions-deployment
+  namespace: mi
+  annotations:
+    fluxcd.io/automated: "true"
+    repository.fluxcd.io/chart-image: image
+    filter.fluxcd.io/chart-image: glob:prod-*
+spec:
+  releaseName: mi-azure-functions
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-azure-functions
+    ref: master
+  values:
+    labels:
+      app.kubernetes.io/instance: mi-azure-functions-deployment
+      app.kubernetes.io/name: mi-azure-functions-deployment
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-d12720b
+    env:
+      APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
+      ADF_RESOURCEGROUP: mi-prod-rg
+      ADF_NAME: mi-ingestion-adf-prod
+      ADF_STORAGEACCOUNTNAME: miauditprod
+      OPTIC_TOKEN_URL: https://hmcts.icasework.com/token
+    keyVaultSecrets:
+    - encryption-publicKey
+    environment: "prod"
+    resourceGroup: "mi-prod-rg"
+    subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    managedIdentityClientId: "6ca63ebe-d898-42fb-b5bb-88d67433c78f"
