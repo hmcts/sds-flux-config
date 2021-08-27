@@ -5,7 +5,7 @@ resources:
 - ../../../../namespaces/vh
 - ../../../../namespaces/all-namespaces/nonprod-role.yaml
 - vh-aad-identity.yaml
-patchesJson6902:
+patches:
 - target:
     group: rbac.authorization.k8s.io
     version: v1
