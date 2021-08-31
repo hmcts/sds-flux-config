@@ -29,6 +29,7 @@ spec:
       environment:
         APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
         MI_CLIENT_ID: 9ce2f133-1eab-4e62-8d36-e23c2968754b
+        CONTAINER_WHITELIST: "^(?!v2-).*"
       smoketests:
         image: sdshmctspublic.azurecr.io/mi-staging-service:stg-49f09a2
         enabled: true
