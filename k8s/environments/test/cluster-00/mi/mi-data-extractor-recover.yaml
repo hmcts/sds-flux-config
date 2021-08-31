@@ -1,0 +1,44 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: data-extractor-recover-job
+  namespace: mi
+  annotations:
+    flux.weave.works/automated: "true"
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:pr-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:pr-*
+spec:
+  releaseName: data-extractor-recover
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/release/mi/mi-data-extractor-job
+    ref: master
+  values:
+    job:
+      image: sdshmctspublic.azurecr.io/data-extractor-job:pr-193-c7f5c9d
+      suspend: false
+      kind: Job
+      activeDeadlineSeconds: 82800
+      labels:
+        app.kubernetes.io/instance: data-extractor-recover-job
+        app.kubernetes.io/name: data-extractor-recover-job
+      environment:
+        ETL_MSICLIENTID: 12b4adf8-7f22-4b35-bdba-78df0bfd02ea
+        APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+        TASK_VALIDATE_BLOB: true
+        TASK_DELETE_INVALID_BLOB: true
+      smoketests:
+        image: sdshmctspublic.azurecr.io/data-extractor-job:pr-193-c7f5c9d
+        enabled: false
+      testsConfig:
+        environment:
+          ETL_MSICLIENTID: 12b4adf8-7f22-4b35-bdba-78df0bfd02ea
+          APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+    global:
+      subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "test"
+      ccd_environment: "aat"
