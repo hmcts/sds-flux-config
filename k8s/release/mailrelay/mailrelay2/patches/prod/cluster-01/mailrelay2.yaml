@@ -1,0 +1,44 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: mailrelay2
+  namespace: mailrelay2
+spec:
+  timeout: 1200
+  values:
+    image:
+      repository: sdshmctspublic.azurecr.io/exim-relay
+      tag: 0.12
+      pullPolicy: IfNotPresent
+    service:
+      type: LoadBalancer
+      loadBalancerIP: "10.144.31.31"
+
+    workload: StatefulSet
+
+    aadIdentityName: mailrelay2
+    usePodIdentity: "true"
+    managedIdentityClientId: af6acaaa-1d4b-4909-9fac-2ffc77d54979
+    authKeyVaultName: sds-mailrelay
+    authKeyVaultSecrets:
+      - "pcol"
+    tenantId: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
+
+    volumeClaim:
+      storageClass: "managed-premium"
+      storageSize: 500Gi
+
+    resources:
+      requests:
+        cpu: 50m
+        memory: 64Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+
+    global:
+      environment: prod
+      enableTls: true
+      enableInboundTls: true
+      enableAuth: true

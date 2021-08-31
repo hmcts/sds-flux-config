@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: data-extractor-job
+  name: data-extractor-recover-job
   namespace: mi
   annotations:
     fluxcd.io/automated: "true"
@@ -11,7 +11,7 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:pr-*
 spec:
-  releaseName: data-extractor
+  releaseName: data-extractor-recover
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-data-extractor-job
@@ -20,18 +20,19 @@ spec:
     job:
       image: sdshmctspublic.azurecr.io/data-extractor-job:pr-218-b341ece
       suspend: false
-      kind: CronJob
-      schedule: '0 1 * * *'
+      kind: Job
       activeDeadlineSeconds: 82800
       labels:
-        app.kubernetes.io/instance: data-extractor-job
-        app.kubernetes.io/name: data-extractor-job
+        app.kubernetes.io/instance: data-extractor-recover-job
+        app.kubernetes.io/name: data-extractor-recover-job
       environment:
         ETL_MSICLIENTID: 12b4adf8-7f22-4b35-bdba-78df0bfd02ea
         APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
+        TASK_VALIDATE_BLOB: true
+        TASK_DELETE_INVALID_BLOB: true
       smoketests:
         image: sdshmctspublic.azurecr.io/data-extractor-job:pr-193-c7f5c9d
-        enabled: true
+        enabled: false
       testsConfig:
         environment:
           ETL_MSICLIENTID: 12b4adf8-7f22-4b35-bdba-78df0bfd02ea

@@ -1,0 +1,14 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: hmi-case-hq-emulator
+  namespace: hmi
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: hmi-case-hq-emulator
+  chart:
+    git: git@github.com:hmcts/hmi-case-hq-emulator
+    path: charts/hmi-case-hq-emulator
+    ref: master
