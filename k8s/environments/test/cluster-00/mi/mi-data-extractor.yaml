@@ -5,7 +5,7 @@ metadata:
   name: data-extractor-job
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
+    fluxcd.io/automated: "true"
     repository.fluxcd.io/job: job.image
     filter.fluxcd.io/job: glob:pr-*
     repository.fluxcd.io/smoke: job.smoketests.image
@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/data-extractor-job:pr-193-c7f5c9d
+      image: sdshmctspublic.azurecr.io/data-extractor-job:pr-218-b341ece
       suspend: false
       kind: CronJob
       schedule: '0 1 * * *'
