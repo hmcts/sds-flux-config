@@ -9,7 +9,7 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
-      tag: 0.12
+      tag: v0.2.3
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
@@ -25,6 +25,14 @@ spec:
       - "pcol"
     tenantId: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
 
+    certificate:
+      inboundCert:
+        name: "prod-in"
+        objectName: "prod-in-mailrelay-platform-hmcts-net"
+      outboundCert:
+        name: "prod"
+        objectName: "prod-mailrelay-platform-hmcts-net"
+
     volumeClaim:
       storageClass: "managed-premium"
       storageSize: 500Gi
@@ -39,6 +47,6 @@ spec:
 
     global:
       environment: prod
-      enableTls: true
+      enableOutboundTls: true
       enableInboundTls: true
       enableAuth: true
