@@ -34,6 +34,7 @@ spec:
         APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
         MI_CLIENT_ID: ce15efbc-13a8-40ee-8812-334a7d041910
         MAXLINESBUFFER: 500
+        CONTAINER_WHITELIST: "^(?!v2-).*"
       smoketests:
         image: sdshmctspublic.azurecr.io/mi-staging-service:prod-49f09a2
         enabled: true
