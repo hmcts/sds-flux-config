@@ -10,7 +10,7 @@ for file in $(grep -lr "kind: HelmRelease" --exclude-dir={admin,monitoring,neuve
   SPEC_RELEASE_NAME=$(yq eval '.spec.releaseName' $file)
 
   # Make sure spec release name is matching helm release name
-  [ "$HELM_RELEASE_NAME" == "$SPEC_RELEASE_NAME" ] || (echo "spec.releaseName not matching HelmRelease name for $HELM_RELEASE_NAME" && exit 1 ) 
+  [ "$HELM_RELEASE_NAME" == "$SPEC_RELEASE_NAME" ] || (echo "spec.releaseName $SPEC_RELEASE_NAME not matching HelmRelease name for $HELM_RELEASE_NAME, in file $file" && exit 1 ) 
   
 #   # Make sure namespace is matching directory name
   [ "$NAMESPACE" == "$FILE_NAMESPACE" ] || (echo "namespace not matching $NAMESPACE" && exit 1 )

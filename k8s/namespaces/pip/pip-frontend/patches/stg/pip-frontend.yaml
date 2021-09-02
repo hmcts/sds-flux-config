@@ -1,0 +1,10 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+spec:
+  releaseName: pip-frontend
+  values:
+    nodejs:
+      ingressHost: pip-frontend.staging.platform.hmcts.net
