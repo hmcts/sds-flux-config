@@ -10,3 +10,6 @@ patches:
     kind: AzureIdentity
     name: pip
   path: azure-identity-patch.yaml
+
+patchesStrategicMerge:
+- ../../../../namespaces/pip/pip-frontend/patches/stg/pip-frontend.yaml
