@@ -13,7 +13,7 @@ spec:
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
-      loadBalancerIP: "10.144.31.31"
+      loadBalancerIP: "10.144.31.32"
 
     workload: StatefulSet
 
