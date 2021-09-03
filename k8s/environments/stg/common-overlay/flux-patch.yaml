@@ -51,7 +51,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   annotations:
-    filter.fluxcd.io/nodejs: glob:aat-*
+    filter.fluxcd.io/nodejs: glob:prod-*
   name: pip-frontend
   namespace: pip
 spec:
