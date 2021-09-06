@@ -68,3 +68,13 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/pip/subscription-management:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: hmi-case-hq-emulator
+  namespace: hmi
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:latest

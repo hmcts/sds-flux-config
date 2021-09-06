@@ -108,7 +108,9 @@ kind: HelmRelease
 metadata:
   name: hmi-case-hq-emulator
   namespace: hmi
+  annotations:
+    fluxcd.io/automated: "true"
 spec:
   values:
     java:
-      image: hmctspublic.azurecr.io/hmi/case-hq-emulator
+      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:latest
