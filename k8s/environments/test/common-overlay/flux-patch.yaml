@@ -47,7 +47,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-60
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-51d4bf6-20210826152156
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
