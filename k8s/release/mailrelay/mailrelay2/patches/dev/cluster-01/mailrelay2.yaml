@@ -9,7 +9,7 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
-      tag: v0.2.3
+      tag: pr-45
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
@@ -21,7 +21,7 @@ spec:
     usePodIdentity: "true"
     managedIdentityClientId: c4acf9cf-3120-4b87-baa9-3916ffd293eb
     authKeyVaultName: sds-mailrelay
-    authKeyVaultSecrets: 
+    authKeyVaultSecrets:
       - "luigi"
       - "v1test"
     tenantId: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
