@@ -22,7 +22,7 @@ patches:
 patchesStrategicMerge:
 
 #secrets-csi-driver patch
-- ../../../release/admin/secrets-csi-driver/patches/sbox/common/secrets-csi-driver.yaml
+- ../../../release/admin/secrets-csi-driver/patches/dev/common/secrets-csi-driver.yaml
 
 #traefik patch
 - ../../../namespaces/admin/traefik2/patches/dev/secret-provider.yaml
