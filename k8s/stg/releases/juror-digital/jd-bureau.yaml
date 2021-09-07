@@ -30,8 +30,8 @@ spec:
         ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
         traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32, 194.33.192.0/25, 194.33.196.0/25, 195.59.75.0/24, 158.234.251.0/24, 158.234.250.0/24, 213.121.161.124/32"
         traefik.ingress.kubernetes.io/service-weights: |
-          jd-bureau: 0%
-          jd-bureau-maintenance: 100%
+          jd-bureau: 100%
+          jd-bureau-maintenance: 0%
       paths:
         - /
       tls: []
