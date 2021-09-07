@@ -6,14 +6,9 @@ metadata:
 data:
   logging.properties: |
     .level=INFO
+    com.microsoft.azure.vmagent.AzureVMAgentCleanUpTask.level=FINE
+
     handlers=java.util.logging.ConsoleHandler
-
-    java.util.logging.ConsoleHandler.level=INFO
+    java.util.logging.ConsoleHandler.level=FINE
+    java.util.logging.SimpleFormatter.format=[%1$tF %1$tT.%1$tL][%4$s][%2$s] %5$s %6$s%n
     java.util.logging.ConsoleHandler.formatter=java.util.logging.SimpleFormatter
-
-    winstone.level=INFO
-    org.apache.sshd.level=WARNING
-    hudson.model.WorkspaceCleanupThread.level=ALL
-    hudson.model.AsyncPeriodicWork.level=ALL
-    hudson.model.PeriodicWork.level=ALL
-
