@@ -50,8 +50,6 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  annotations:
-    filter.fluxcd.io/nodejs: glob:prod-*
   name: pip-frontend
   namespace: pip
 spec:
@@ -101,4 +99,4 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-68644af-20210805161941
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-c43d5c2-20210907131500
