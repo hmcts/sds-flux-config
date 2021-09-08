@@ -18,13 +18,13 @@ spec:
     - host: netbox.sandbox.platform.hmcts.net
       http:
         paths:
-        - backend:
-            service:
-              name: netbox
-              port:
-                number: 80
-          path: /
-          pathType: ImplementationSpecific
+          - backend:
+              service:
+                name: netbox
+                port:
+                  number: 80
+            path: /
+            pathType: ImplementationSpecific
 status:
   loadBalancer: {}
 ---
