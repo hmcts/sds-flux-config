@@ -5,7 +5,7 @@ metadata:
   namespace: toffee 
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/tag.nodejs: glob:prod-*
+    filter.fluxcd.io/nodejs: glob:prod-*
 spec:
   releaseName: toffee-frontend
   chart:
