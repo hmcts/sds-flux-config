@@ -123,6 +123,12 @@ spec:
                     name: VH
                     recurse: true
                     title: Video Hearings Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS_.*HMI-.*\/.+\/master
+                    name: HMI
+                    recurse: true
+                    title: Hearing Management Interface
           authentication: |
             jenkins:
               securityRealm:
