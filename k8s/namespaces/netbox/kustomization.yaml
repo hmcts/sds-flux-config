@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - netbox/netbox.yaml
+  - netbox/traefik-netbox.yaml
