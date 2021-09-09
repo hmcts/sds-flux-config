@@ -39,6 +39,7 @@ patchesStrategicMerge:
 
 # netbox patch
 - ../../../namespaces/netbox/netbox/patches/ptlsbox/cluster-00/netbox.yaml
+- ../../../namespaces/netbox/netbox/patches/ptlsbox/cluster-00/traefik-netbox.yaml
 
 - ../../../namespaces/jenkins/patches/ptlsbox/cluster-00/disk.yaml
 - ../../../namespaces/jenkins/patches/ptlsbox/cluster-00/identity.yaml
