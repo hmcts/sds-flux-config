@@ -1,0 +1,82 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: netbox
+  namespace: netbox
+spec:
+  releaseName: netbox
+  values:
+    ingress:
+      hosts:
+        - host: netbox.platform.hmcts.net
+          paths:
+            # NB: You may also want to set the basePath above
+            - /
+      tls:
+        - hosts:
+            - netbox.platform.hmcts.net
+
+    postgresql:
+      ## Deploy PostgreSQL using bundled chart
+      # To use an external database, set this to false and configure the settings
+      # under externalDatabase
+      enabled: false
+
+      postgresqlUsername: netbox
+      postgresqlDatabase: netbox
+
+    ## External database settings
+    # These are used if postgresql.enabled is false, and are ignored otherwise
+    externalDatabase:
+      host: netbox-prod-netboxazure.privatelink.postgres.database.azure.com
+      port: 5432
+      database: netbox
+      username: netbox@netbox-prod-netboxazure
+      password: ""
+      existingSecretName: netbox-postgresql
+      existingSecretKey: postgresql-password
+      sslMode: prefer
+      connMaxAge: 300
+
+    redis:
+      ## Deploy Redis using bundled chart
+      # To use an external Redis instance, set this to false and configure the
+      # settings under *both* webhooksRedis *and* cachingRedis
+      enabled: false
+
+    webhooksRedis:
+      database: 0
+      timeout: 300
+      ssl: false
+
+      # Used only when redis.enabled is false. host and port are not used if
+      # sentinels are given.
+      host: netbox-prod-netboxazure-standard.redis.cache.windows.net
+      port: 6379
+      sentinels: []
+      #  - mysentinel:26379
+      #sentinelService: netbox-redis
+      password: ""
+      existingSecretName: netbox-redis
+      existingSecretKey: redis-password
+
+    cachingRedis:
+      database: 1
+      timeout: 300
+      ssl: false
+
+      #Used only when redis.enabled is false. host and port are not used if
+      #sentinels are given.
+      host: netbox-prod-netboxazure-standard.redis.cache.windows.net
+      port: 6379
+      sentinels: []
+      #  - mysentinel:26379
+      #sentinelService: netbox-redis
+      password: ""
+      existingSecretName: netbox-redis
+      existingSecretKey: redis-password
+
+    imagePullSecrets: []
+    nameOverride: ""
+    fullnameOverride: ""
