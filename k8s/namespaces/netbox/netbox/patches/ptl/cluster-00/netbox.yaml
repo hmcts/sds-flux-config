@@ -29,10 +29,10 @@ spec:
     ## External database settings
     # These are used if postgresql.enabled is false, and are ignored otherwise
     externalDatabase:
-      host: netbox-prod-netboxazure.privatelink.postgres.database.azure.com
+      host: netbox-ptl-netboxazure.privatelink.postgres.database.azure.com
       port: 5432
       database: netbox
-      username: netbox@netbox-prod-netboxazure
+      username: netbox@netbox-ptl-netboxazure
       password: ""
       existingSecretName: netbox-postgresql
       existingSecretKey: postgresql-password
@@ -52,7 +52,7 @@ spec:
 
       # Used only when redis.enabled is false. host and port are not used if
       # sentinels are given.
-      host: netbox-prod-netboxazure-standard.redis.cache.windows.net
+      host: netbox-ptl-netboxazure-standard.redis.cache.windows.net
       port: 6379
       sentinels: []
       #  - mysentinel:26379
@@ -68,7 +68,7 @@ spec:
 
       #Used only when redis.enabled is false. host and port are not used if
       #sentinels are given.
-      host: netbox-prod-netboxazure-standard.redis.cache.windows.net
+      host: netbox-ptl-netboxazure-standard.redis.cache.windows.net
       port: 6379
       sentinels: []
       #  - mysentinel:26379
