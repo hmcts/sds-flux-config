@@ -7,8 +7,22 @@ metadata:
 spec:
   values:
     grafana:
-      replicas: 2
+      tolerations:
+      - key: CriticalAddonsOnly
+        operator: Equal
+        value: "true"
+        effect: NoSchedule
+      nodeSelector:
+        agentpool: system
     prometheus:
+      prometheusSpec:
+        tolerations:
+        - key: "CriticalAddonsOnly"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
+        nodeSelector:
+          agentpool: system 
       ingress:
         annotations:
           kubernetes.io/ingress.class: traefik
@@ -21,6 +35,14 @@ spec:
               - sds-prometheus-01.sandbox.platform.hmcts.net
 
     alertmanager:
+      alertmanagerSpec:
+        tolerations:
+        - key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
+        nodeSelector:
+          agentpool: system
       ingress:
         annotations:
           kubernetes.io/ingress.class: traefik
