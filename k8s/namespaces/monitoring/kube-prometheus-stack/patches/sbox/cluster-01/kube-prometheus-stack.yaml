@@ -6,6 +6,8 @@ metadata:
   namespace: monitoring
 spec:
   values:
+    grafana:
+      replicas: 2
     prometheus:
       ingress:
         annotations:
