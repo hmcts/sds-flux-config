@@ -6,12 +6,28 @@ metadata:
   namespace: monitoring
 spec:
   values:
+    kube-state-metrics:
+      tolerations:
+        - key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
+      nodeSelector:
+        agentpool: system
+    prometheusOperator:
+      tolerations:
+        - key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
+      nodeSelector:
+        agentpool: system    
     grafana:
       tolerations:
-      - key: CriticalAddonsOnly
-        operator: Equal
-        value: "true"
-        effect: NoSchedule
+        - key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
       nodeSelector:
         agentpool: system
     prometheus:
@@ -37,10 +53,10 @@ spec:
     alertmanager:
       alertmanagerSpec:
         tolerations:
-        - key: CriticalAddonsOnly
-          operator: Equal
-          value: "true"
-          effect: NoSchedule
+          - key: CriticalAddonsOnly
+            operator: Equal
+            value: "true"
+            effect: NoSchedule
         nodeSelector:
           agentpool: system
       ingress:
