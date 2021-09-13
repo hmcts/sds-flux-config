@@ -24,3 +24,10 @@ spec:
         memory: 1Gi
     envVars:
       NOT_READY_MIN_TIME: "180000"  # in ms
+    tolerations:
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
+    nodeSelector:
+      agentpool: system
