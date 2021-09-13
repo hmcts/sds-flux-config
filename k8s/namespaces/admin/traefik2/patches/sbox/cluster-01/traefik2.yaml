@@ -8,4 +8,11 @@ spec:
     service:
       spec:
         loadBalancerIP: "10.140.31.250"
+    tolerations:
+    - key: "CriticalAddonsOnly"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
+    nodeSelector:
+      agentpool: system
   
