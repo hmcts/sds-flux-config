@@ -33,3 +33,5 @@ spec:
         key: CriticalAddonsOnly
         operator: Equal
         value: "true"
+    nodeSelector:
+      agentpool: system
