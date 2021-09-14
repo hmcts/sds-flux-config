@@ -19,7 +19,7 @@ affinity:
     - weight: 1
       preference:
         matchExpressions:
-        - key: agentpool
+        - key: kubernetes.azure.com/mode
           operator: In
           values:
           - system
