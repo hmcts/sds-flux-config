@@ -4,7 +4,8 @@ kind: Kustomization
 commonLabels:
   k8s-app: aad-pod-id
 resources:
-  - https://raw.githubusercontent.com/Azure/aad-pod-identity/v1.8.3/deploy/infra/deployment-rbac.yaml
+# TODO when upgrading this remove patches/override-version.yaml
+  - https://raw.githubusercontent.com/Azure/aad-pod-identity/v1.8.4-rc.0/deploy/infra/deployment-rbac.yaml
   - mic-exception.yaml
 patchesStrategicMerge:
   - patches/override-version.yaml
