@@ -16,7 +16,7 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest
-      ingressHost: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
+      ingressHost: toffee-recipe-backend.sandbox.platform.hmcts.net
       aadIdentityName: toffee
     global:
       environment: replace
