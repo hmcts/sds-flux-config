@@ -1,0 +1,24 @@
+# Temporary work around as the manifests weren't updated and we need a fix in this version
+# https://github.com/Azure/aad-pod-identity/issues/977#issuecomment-918885246
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nmi
+spec:
+  template:
+    spec:
+      containers:
+        - name: nmi
+          image: "mcr.microsoft.com/oss/azure/aad-pod-identity/nmi:v1.8.4-rc.0"
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mic
+spec:
+  template:
+    spec:
+      containers:
+        - name: mic
+          image: mcr.microsoft.com/oss/azure/aad-pod-identity/mic:v1.8.4-rc.0

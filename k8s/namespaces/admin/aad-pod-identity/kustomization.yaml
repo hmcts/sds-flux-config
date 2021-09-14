@@ -7,4 +7,5 @@ resources:
   - https://raw.githubusercontent.com/Azure/aad-pod-identity/v1.8.3/deploy/infra/deployment-rbac.yaml
   - mic-exception.yaml
 patchesStrategicMerge:
+  - patches/override-version.yaml
   - patches/aad-pod-id.yaml
