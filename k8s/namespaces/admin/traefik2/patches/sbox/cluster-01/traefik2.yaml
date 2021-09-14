@@ -13,6 +13,13 @@ spec:
       operator: Equal
       value: "true"
       effect: NoSchedule
-    nodeSelector:
-      agentpool: system
-  
+affinity:
+  nodeAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - weight: 1
+      preference:
+        matchExpressions:
+        - key: agentpool
+          operator: In
+          values:
+          - system
