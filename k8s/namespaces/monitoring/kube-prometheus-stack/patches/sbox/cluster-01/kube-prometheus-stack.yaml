@@ -33,10 +33,10 @@ spec:
     prometheus:
       prometheusSpec:
         tolerations:
-          - key: "CriticalAddonsOnly"
-            operator: "Equal"
+          - key: CriticalAddonsOnly
+            operator: Equal
             value: "true"
-            effect: "NoSchedule"
+            effect: NoSchedule
         nodeSelector:
           agentpool: system 
       ingress:
