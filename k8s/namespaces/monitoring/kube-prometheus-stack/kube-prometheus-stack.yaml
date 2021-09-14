@@ -13,7 +13,7 @@ spec:
   chart:
     repository: https://prometheus-community.github.io/helm-charts
     name: kube-prometheus-stack
-    version: 17.2.2
+    version: 18.0.5
   valuesFrom:
     - secretKeyRef:
         name: "prometheus-values"
@@ -65,9 +65,12 @@ spec:
               path: /metrics
       ingress:
         enabled: true
-    nodeExporter:
+    prometheus-node-exporter:
       # by default it tolerates everything and tries to deploy to windows nodes which fails
-      tolerations: []
+      tolerations:
+        - key: 'CriticalAddonsOnly'
+          effect: NoSchedule
+          operator: Exists
 
     kubelet:
       serviceMonitor:

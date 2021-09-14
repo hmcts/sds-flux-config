@@ -5,7 +5,7 @@ metadata:
   namespace: toffee 
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/tag.nodejs: glob:prod-*
+    filter.fluxcd.io/nodejs: glob:prod-*
 spec:
   releaseName: toffee-frontend
   chart:
@@ -16,5 +16,6 @@ spec:
     nodejs:
       image: sdshmctspublic.azurecr.io/toffee/frontend:latest
       ingressHost: toffee.{{ .Values.global.environment }}.platform.hmcts.net
+      disableTraefikTls: true
       environment:
-        RECIPE_BACKEND_URL: toffee.{{ .Values.global.environment }}-backend.platform.hmcts.net
+        RECIPE_BACKEND_URL: http://toffee.{{ .Values.global.environment }}-backend.platform.hmcts.net

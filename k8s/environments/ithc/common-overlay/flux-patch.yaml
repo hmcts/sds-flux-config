@@ -8,10 +8,8 @@ metadata:
   namespace: toffee
 spec:
   values:
-    java:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-81e47ca-20210729121156
     nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:pr-12
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-81e47ca-20210729121156
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -21,4 +19,4 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-68644af-20210805161941
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-c43d5c2-20210907131500

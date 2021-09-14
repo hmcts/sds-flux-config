@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: pip
+namespace: hmi
 bases:
-- ../../../../namespaces/pip
+- ../../../../namespaces/hmi
 - ../../../../namespaces/all-namespaces/nonprod-role.yaml
 
 patches:
@@ -10,7 +10,7 @@ patches:
     group: aadpodidentity.k8s.io
     version: v1
     kind: AzureIdentity
-    name: pip
+    name: hmi
   path: azure-identity-patch.yaml
 
 patchesJson6902:
@@ -19,7 +19,7 @@ patchesJson6902:
     version: v1
     kind: RoleBinding
     name: nonprod-team-permissions
-    namespace: pip
+    namespace: hmi
   patch: |-
     - op: add
       path: "/subjects"

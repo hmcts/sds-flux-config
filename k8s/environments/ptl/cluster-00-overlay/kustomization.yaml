@@ -10,10 +10,14 @@ bases:
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/monitoring/kube-prometheus-stack
 - ../../../namespaces/jenkins
+- ../../../namespaces/netbox
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
 patchesStrategicMerge:
+
+#secrets-csi-driver patch
+- ../../../release/admin/secrets-csi-driver/patches/nonprod/common/secrets-csi-driver.yaml
 
 #kube-slack patch
 - ../../../release/admin/kube-slack/patches/ptl/cluster-00/kube-slack.yaml
@@ -33,6 +37,10 @@ patchesStrategicMerge:
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/ptl/cluster-00/env-injector.yaml
+
+# netbox patch
+- ../../../namespaces/netbox/netbox/patches/ptl/cluster-00/netbox.yaml
+- ../../../namespaces/netbox/netbox/patches/ptl/cluster-00/traefik-netbox.yaml
 
 - ../../../namespaces/jenkins/patches/ptl/cluster-00/disk.yaml
 - ../../../namespaces/jenkins/patches/ptl/cluster-00/identity.yaml
