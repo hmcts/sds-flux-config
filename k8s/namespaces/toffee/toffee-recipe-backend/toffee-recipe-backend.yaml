@@ -18,6 +18,7 @@ spec:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest
       ingressHost: toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net
       aadIdentityName: toffee
+      disableTraefikTls: true
     global:
       environment: replace
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
