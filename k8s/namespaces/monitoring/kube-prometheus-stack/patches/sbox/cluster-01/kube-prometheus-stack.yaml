@@ -31,13 +31,13 @@ spec:
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-              - key: kubernetes.azure.com/mode
-                operator: In
-                values:
-                - system   
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.azure.com/mode
+                    operator: In
+                    values:
+                      - system
     grafana:
       tolerations:
         - key: CriticalAddonsOnly
@@ -47,13 +47,13 @@ spec:
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-              - key: kubernetes.azure.com/mode
-                operator: In
-                values:
-                - system
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.azure.com/mode
+                    operator: In
+                    values:
+                      - system
     prometheus:
       prometheusSpec:
         tolerations:
@@ -64,13 +64,13 @@ spec:
         affinity:
           nodeAffinity:
             preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 1
-              preference:
-                matchExpressions:
-                - key: kubernetes.azure.com/mode
-                  operator: In
-                  values:
-                  - system
+              - weight: 1
+                preference:
+                  matchExpressions:
+                    - key: kubernetes.azure.com/mode
+                      operator: In
+                      values:
+                      - system
       ingress:
         annotations:
           kubernetes.io/ingress.class: traefik
@@ -92,13 +92,13 @@ spec:
         affinity:
           nodeAffinity:
             preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 1
-              preference:
-                matchExpressions:
-                - key: kubernetes.azure.com/mode
-                  operator: In
-                  values:
-                  - system
+              - weight: 1
+                preference:
+                  matchExpressions:
+                    - key: kubernetes.azure.com/mode
+                      operator: In
+                      values:
+                        - system
       ingress:
         annotations:
           kubernetes.io/ingress.class: traefik
