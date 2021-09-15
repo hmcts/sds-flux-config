@@ -16,6 +16,9 @@ bases:
 
 patchesStrategicMerge:
 
+#secrets-csi-driver patch
+- ../../../release/admin/secrets-csi-driver/patches/nonprod/common/secrets-csi-driver.yaml
+
 #kube-slack patch
 - ../../../release/admin/kube-slack/patches/ptlsbox/cluster-00/kube-slack.yaml
 
@@ -36,6 +39,7 @@ patchesStrategicMerge:
 
 # netbox patch
 - ../../../namespaces/netbox/netbox/patches/ptlsbox/cluster-00/netbox.yaml
+- ../../../namespaces/netbox/netbox/patches/ptlsbox/cluster-00/traefik-netbox.yaml
 
 - ../../../namespaces/jenkins/patches/ptlsbox/cluster-00/disk.yaml
 - ../../../namespaces/jenkins/patches/ptlsbox/cluster-00/identity.yaml

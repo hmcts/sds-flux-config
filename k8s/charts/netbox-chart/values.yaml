@@ -301,8 +301,6 @@ service:
   # - 10.0.0.0/8
 
 ingress:
-  annotations:
-    kubernetes.io/ingress.class: traefik
   enabled: true
   hosts:
     - netbox.sandbox.platform.hmcts.net

@@ -2,22 +2,22 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: jd-bureau
-  namespace: jd
+  name: hmi-case-hq-emulator
+  namespace: hmi
 spec:
   values:
-    nodejs:
-      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.22.125
+    java:
+      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:latest
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: jd-public
-  namespace: jd
+  name: pip-frontend
+  namespace: pip
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:2.22.436
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-13bc165-20210915102101
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -27,7 +27,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:pr-12
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-81e47ca-20210729121156
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -37,4 +37,4 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-68644af-20210805161941
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-c43d5c2-20210907131500

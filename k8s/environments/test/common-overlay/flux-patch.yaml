@@ -1,0 +1,10 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-13bc165-20210915102101

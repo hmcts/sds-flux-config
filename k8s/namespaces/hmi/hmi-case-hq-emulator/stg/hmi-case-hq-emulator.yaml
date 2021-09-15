@@ -1,10 +1,10 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: hmi-case-hq-emulator
   namespace: hmi
 spec:
+  releaseName: hmi-case-hq-emulator
   values:
-    java:
-      image: hmctspublic.azurecr.io/hmi/case-hq-emulator
+    nodejs:
+      ingressHost: hmi-case-hq-emulator.staging.platform.hmcts.net

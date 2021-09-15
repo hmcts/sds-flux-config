@@ -1,7 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources:
+namespace: pip
+bases:
 - ../../../../namespaces/pip
+- ../../../../namespaces/all-namespaces/nonprod-role.yaml
 
 patches:
 - target:
@@ -10,3 +12,18 @@ patches:
     kind: AzureIdentity
     name: pip
   path: azure-identity-patch.yaml
+
+patchesJson6902:
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: RoleBinding
+    name: nonprod-team-permissions
+    namespace: pip
+  patch: |-
+    - op: add
+      path: "/subjects"
+      value:
+        - apiGroup: rbac.authorization.k8s.io
+          kind: Group
+          name: "7bde62e7-b39f-487c-95c9-b4c794fdbb96"

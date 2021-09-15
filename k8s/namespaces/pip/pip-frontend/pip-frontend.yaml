@@ -6,9 +6,13 @@ metadata:
   namespace: pip
   annotations:
     fluxcd.io/automated: "true"
+    filter.fluxcd.io/nodejs: glob:prod-*
 spec:
   releaseName: pip-frontend
   chart:
     git: git@github.com:hmcts/pip-frontend
     path: charts/pip-frontend
     ref: master
+  values:
+    nodejs:
+      disableTraefikTls: true

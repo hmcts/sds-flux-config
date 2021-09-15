@@ -4,6 +4,6 @@ kind: Kustomization
 namespace: hmi
 resources:
 - namespace.yaml
-- pip-azure-identity.yaml
-- pip-azure-identity-binding.yaml
+- hmi-azure-identity.yaml
+- hmi-azure-identity-binding.yaml
 - hmi-case-hq-emulator/hmi-case-hq-emulator.yaml
