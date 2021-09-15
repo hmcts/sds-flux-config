@@ -70,7 +70,7 @@ spec:
                     - key: kubernetes.azure.com/mode
                       operator: In
                       values:
-                      - system
+                        - system
       ingress:
         annotations:
           kubernetes.io/ingress.class: traefik
