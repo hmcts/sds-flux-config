@@ -22,6 +22,9 @@ patches:
 
 patchesStrategicMerge:
 
+#secrets-csi-driver patch
+- ../../../release/admin/secrets-csi-driver/patches/prod/common/secrets-csi-driver.yaml
+
 #kube-slack patch
 # - ../../../release/admin/kube-slack/patches/prod/cluster-00/kube-slack.yaml
 
