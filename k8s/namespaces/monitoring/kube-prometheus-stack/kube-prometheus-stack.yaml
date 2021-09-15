@@ -39,7 +39,8 @@ spec:
         prometheus: true
         prometheusOperator: true
         time: true
-
+    grafana:
+      enabled: false
     prometheus:
       additionalServiceMonitors:
         - name: "flux-monitor"
