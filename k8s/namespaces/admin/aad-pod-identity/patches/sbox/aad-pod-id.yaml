@@ -15,7 +15,7 @@ spec:
         key: CriticalAddonsOnly
         operator: Equal
         value: "true"
-      nodeSelector:
+      nodeSelector:  # This can be removed once the changes to use the system node pool are in prod
 ---
 apiVersion: apps/v1
 kind: Deployment
