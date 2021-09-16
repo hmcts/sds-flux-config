@@ -42,3 +42,43 @@ spec:
                 title: 'SDS-Ptl-00 - {{ template "slack.default.title" . }}'
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
+    grafana:
+      enabled: true
+      ingress:
+        annotations:
+          traefik.ingress.kubernetes.io/router.tls: "true"
+        hosts:
+          - sds-grafana.platform.hmcts.net
+      additionalDataSources:
+        - name: dev-prometheus-00
+          type: prometheus
+          url: https://sds-prometheus-00.dev.platform.hmcts.net
+          access: proxy
+        - name: dev-prometheus-01
+          type: prometheus
+          url: https://sds-prometheus-01.dev.platform.hmcts.net
+          access: proxy
+        - name: prod-prometheus-00
+          type: prometheus
+          url: https://sds-prometheus-00.platform.hmcts.net
+          access: proxy
+        - name: prod-prometheus-01
+          type: prometheus
+          url: https://sds-prometheus-01.platform.hmcts.net
+          access: proxy
+        - name: dev-alertmanager-00
+          type: camptocamp-prometheus-alertmanager-datasource
+          url: https://sds-alertmanager-00.dev.platform.hmcts.net
+          access: proxy
+        - name: dev-alertmanager-01
+          type: camptocamp-prometheus-alertmanager-datasource
+          url: https://sds-alertmanager-01.dev.platform.hmcts.net
+          access: proxy
+        - name: prod-alertmanager-00
+          type: camptocamp-prometheus-alertmanager-datasource
+          url: https://sds-alertmanager-00.platform.hmcts.net
+          access: proxy
+        - name: prod-alertmanager-01
+          type: camptocamp-prometheus-alertmanager-datasource
+          url: https://sds-alertmanager-01.platform.hmcts.net
+          access: proxy
