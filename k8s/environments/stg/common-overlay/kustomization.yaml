@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - toffee
   - pip
+  - hmi
 patches:
   - path: ../stg-helmrelease.yaml
     target:
