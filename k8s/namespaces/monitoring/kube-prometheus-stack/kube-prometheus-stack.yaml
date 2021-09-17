@@ -93,7 +93,38 @@ spec:
             url: https://raw.githubusercontent.com/hmcts/prometheus-monitoring/master/grafana/dashboards/admin_health.json
           Mailrelay:
             url: https://raw.githubusercontent.com/hmcts/prometheus-monitoring/master/grafana/dashboards/mailrelay.json
+      tolerations:
+        - key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.azure.com/mode
+                    operator: In
+                    values:
+                      - system
     prometheus:
+      prometheusSpec:
+        tolerations:
+          - key: CriticalAddonsOnly
+            operator: Equal
+            value: "true"
+            effect: NoSchedule
+        affinity:
+          nodeAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 1
+                preference:
+                  matchExpressions:
+                    - key: kubernetes.azure.com/mode
+                      operator: In
+                      values:
+                        - system
       additionalServiceMonitors:
         - name: "flux-monitor"
           selector:
@@ -130,6 +161,22 @@ spec:
         https: false
 
     alertmanager:
+      alertmanagerSpec:
+        tolerations:
+          - key: CriticalAddonsOnly
+            operator: Equal
+            value: "true"
+            effect: NoSchedule
+        affinity:
+          nodeAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 1
+                preference:
+                  matchExpressions:
+                    - key: kubernetes.azure.com/mode
+                      operator: In
+                      values:
+                        - system
       ingress:
         enabled: true
       config:
@@ -168,3 +215,37 @@ spec:
               - channel: prometheus-critical
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
+
+    kube-state-metrics:
+      tolerations:
+        - key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.azure.com/mode
+                    operator: In
+                    values:
+                      - system
+
+    prometheusOperator:
+      tolerations:
+        - key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.azure.com/mode
+                    operator: In
+                    values:
+                      - system
