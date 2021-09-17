@@ -4,13 +4,7 @@ kind: Kustomization
 commonLabels:
   k8s-app: aad-pod-id
 resources:
-# TODO when upgrading this remove the images override below
-  - https://raw.githubusercontent.com/Azure/aad-pod-identity/v1.8.4-rc.0/deploy/infra/deployment-rbac.yaml
+  - https://raw.githubusercontent.com/Azure/aad-pod-identity/v1.8.4/deploy/infra/deployment-rbac.yaml
   - mic-exception.yaml
-images:
-  - name: mcr.microsoft.com/oss/azure/aad-pod-identity/nmi
-    newTag: v1.8.4-rc.0
-  - name: mcr.microsoft.com/oss/azure/aad-pod-identity/mic
-    newTag: v1.8.4-rc.0
 patchesStrategicMerge:
   - patches/aad-pod-id.yaml
