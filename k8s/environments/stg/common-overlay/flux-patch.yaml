@@ -2,12 +2,22 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  name: hmi-case-hq-emulator
+  namespace: hmi
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
   name: pip-frontend
   namespace: pip
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-5b4eebc-20210917132059
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-5540960-20210917144908
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -28,13 +38,3 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-c43d5c2-20210907131500
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: hmi-case-hq-emulator
-  namespace: hmi
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:latest
