@@ -234,6 +234,23 @@ spec:
                       - system
 
     prometheusOperator:
+      admissionWebhooks:
+        patch: 
+          tolerations:
+            - key: CriticalAddonsOnly
+              operator: Equal
+              value: "true"
+              effect: NoSchedule
+          affinity:
+            nodeAffinity:
+              preferredDuringSchedulingIgnoredDuringExecution:
+                - weight: 1
+                  preference:
+                    matchExpressions:
+                      - key: kubernetes.azure.com/mode
+                        operator: In
+                        values:
+                          - system
       tolerations:
         - key: CriticalAddonsOnly
           operator: Equal
@@ -248,4 +265,4 @@ spec:
                   - key: kubernetes.azure.com/mode
                     operator: In
                     values:
-                      - system
+                      - system 
