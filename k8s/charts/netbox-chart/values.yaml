@@ -329,12 +329,25 @@ podAnnotations: {}
 
 nodeSelector: {}
 
-tolerations: []
+tolerations:
+  - key: CriticalAddonsOnly
+    operator: Equal
+    value: "true"
+    effect: NoSchedule
 
 updateStrategy: {}
   # type: RollingUpdate
 
-affinity: {}
+affinity:
+  nodeAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+     - preference:
+         matchExpressions:
+         - key: kubernetes.azure.com/mode
+           operator: In
+           values:
+           - system
+       weight: 1
 
 ## Additional environment variables to set
 extraEnvs: []
