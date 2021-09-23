@@ -7,7 +7,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:latest
+      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:aat-4d0e51b-20210923084624
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
