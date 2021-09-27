@@ -12,22 +12,22 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  name: pip-business-rules
+  namespace: pip
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/pip/business-rules:prod-4c5ecda-20210927160730
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
   name: pip-frontend
   namespace: pip
 spec:
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/pip/frontend:prod-d5142b1-20210927160435
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: pip-business-rules
-  namespace: pip
-spec:
-  values:
-    nodejs:
-      image: sdshmctspublic.azurecr.io/pip/business-rules:latest
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
