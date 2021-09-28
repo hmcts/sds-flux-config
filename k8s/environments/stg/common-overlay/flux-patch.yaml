@@ -7,7 +7,17 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:latest
+      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:aat-3371100-20210927155212
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-business-rules
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/business-rules:aat-a1ee7ab-20210927165014
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -17,7 +27,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-ff71048-20210920105251
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-d5142b1-20210927160435
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease

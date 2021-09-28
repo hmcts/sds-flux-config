@@ -1,0 +1,10 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-business-rules
+  namespace: pip
+spec:
+  releaseName: pip-business-rules
+  values:
+    java:
+      ingressHost: pip-business-rules.staging.platform.hmcts.net
