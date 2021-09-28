@@ -16,7 +16,7 @@ metadata:
   namespace: pip
 spec:
   values:
-    nodejs:
+    java:
       image: sdshmctspublic.azurecr.io/pip/business-rules:prod-a1ee7ab-20210927165014
 ---
 apiVersion: helm.fluxcd.io/v1
