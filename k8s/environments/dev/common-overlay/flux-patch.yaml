@@ -38,3 +38,53 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-c43d5c2-20210907131500
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/publication-services:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/data-management:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/channel-management:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/account-management:latest
