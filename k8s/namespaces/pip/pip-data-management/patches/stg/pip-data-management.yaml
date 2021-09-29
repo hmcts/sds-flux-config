@@ -1,0 +1,10 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+spec:
+  releaseName: pip-data-management
+  values:
+    java:
+      ingressHost: pip-data-management.staging.platform.hmcts.net
