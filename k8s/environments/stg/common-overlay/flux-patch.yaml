@@ -28,6 +28,56 @@ spec:
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/pip/frontend:prod-f9fd6b2-20210929085405
+      ---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/account-management:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/channel-management:aat-896e1f2-20210928155524
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/data-management:aat-3a0cb26-20210928155518
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/publication-services:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:aat-4bc3d81-20210928155528
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
