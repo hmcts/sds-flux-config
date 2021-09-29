@@ -8,7 +8,7 @@ spec:
   chart:
     repository: https://hmctspublic.azurecr.io/helm/v1/repo/
     name: neuvector-azure-keyvault
-    version: 1.2.3
+    version: 1.2.4
   values:
     neuvector:
       tag: 4.3.2
@@ -67,3 +67,16 @@ spec:
             traefik.ingress.kubernetes.io/router.tls: "true"
           host: sds-neuvector00.ithc.platform.hmcts.net
           enabled: true
+      cve:
+        affinity:
+          podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                    - neuvector-scanner-pod
+                topologyKey: "kubernetes.io/hostname"
