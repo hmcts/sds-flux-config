@@ -12,33 +12,7 @@ spec:
   values:
     neuvector:
       tag: 4.3.2
-      controller:
-        tolerations:
-        - key: "CriticalAddonsOnly"
-          operator: "Equal"
-          value: "true"
-          effect: "NoSchedule"
-        affinity:
-          podAntiAffinity:
-            preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 100
-              podAffinityTerm:
-                labelSelector:
-                  matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                    - neuvector-controller-pod
-                topologyKey: "kubernetes.io/hostname"
-          nodeAffinity:
-            preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 1
-              preference:
-                matchExpressions:
-                - key: kubernetes.azure.com/mode
-                  operator: In
-                  values:
-                  - system
+      ontroller:
         azureFileShare:
           secretName: nv-storage-secret
           shareName: neuvector-data-01
@@ -87,64 +61,9 @@ spec:
               Syslog_In_Json: false
               Cluster_Name: sds-ithc01
       manager:
-        tolerations:
-        - key: "CriticalAddonsOnly"
-          operator: "Equal"
-          value: "true"
-          effect: "NoSchedule"
-        affinity:
-          podAntiAffinity:
-            preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 100
-              podAffinityTerm:
-                labelSelector:
-                  matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                    - neuvector-manager-pod
-                topologyKey: "kubernetes.io/hostname"
-          nodeAffinity:
-            preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 1
-              preference:
-                matchExpressions:
-                - key: kubernetes.azure.com/mode
-                  operator: In
-                  values:
-                  - system
         ingress:
           annotations:
             kubernetes.io/ingress.class: traefik
             traefik.ingress.kubernetes.io/router.tls: "true"
           host: sds-neuvector01.ithc.platform.hmcts.net
           enabled: true
-      cve:
-        scanner:
-          tolerations:
-          - key: "CriticalAddonsOnly"
-            operator: "Equal"
-            value: "true"
-            effect: "NoSchedule"
-          affinity:
-            podAntiAffinity:
-              preferredDuringSchedulingIgnoredDuringExecution:
-              - weight: 100
-                podAffinityTerm:
-                  labelSelector:
-                    matchExpressions:
-                    - key: app
-                      operator: In
-                      values:
-                      - neuvector-scanner-pod
-                  topologyKey: "kubernetes.io/hostname"
-            nodeAffinity:
-              preferredDuringSchedulingIgnoredDuringExecution:
-              - weight: 1
-                preference:
-                  matchExpressions:
-                  - key: kubernetes.azure.com/mode
-                    operator: In
-                    values:
-                    - system
-
