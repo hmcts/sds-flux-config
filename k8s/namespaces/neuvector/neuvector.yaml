@@ -134,13 +134,13 @@ spec:
                 topologyKey: "kubernetes.io/hostname"
           nodeAffinity:
             preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 1
-              preference:
-                matchExpressions:
-                - key: kubernetes.azure.com/mode
-                  operator: In
-                  values:
-                  - system
+              - weight: 1
+                preference:
+                  matchExpressions:
+                    - key: kubernetes.azure.com/mode
+                      operator: In
+                      values:
+                        - system
         image:
           repository: neuvector/manager
         env:
@@ -152,31 +152,31 @@ spec:
       cve:
         scanner:
           tolerations:
-          - key: "CriticalAddonsOnly"
-            operator: "Equal"
-            value: "true"
-            effect: "NoSchedule"
+            - key: "CriticalAddonsOnly"
+              operator: "Equal"
+              value: "true"
+              effect: "NoSchedule"
           affinity:
             podAntiAffinity:
               preferredDuringSchedulingIgnoredDuringExecution:
-              - weight: 100
-                podAffinityTerm:
-                  labelSelector:
-                    matchExpressions:
-                    - key: app
-                      operator: In
-                      values:
-                      - neuvector-scanner-pod
+                - weight: 100
+                  podAffinityTerm:
+                    labelSelector:
+                      matchExpressions:
+                        - key: app
+                          operator: In
+                          values:
+                            - neuvector-scanner-pod
                   topologyKey: "kubernetes.io/hostname"
             nodeAffinity:
               preferredDuringSchedulingIgnoredDuringExecution:
-              - weight: 1
-                preference:
-                  matchExpressions:
-                  - key: kubernetes.azure.com/mode
-                    operator: In
-                    values:
-                    - system
+                - weight: 1
+                  preference:
+                    matchExpressions:
+                      - key: kubernetes.azure.com/mode
+                        operator: In
+                        values:
+                          - system
         updater:
           # If false, cve updater will not be installed
           enabled: true
