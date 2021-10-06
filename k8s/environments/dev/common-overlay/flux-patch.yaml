@@ -7,7 +7,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:pr-6
+      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:staging-7c485f4-20211006134258
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -17,7 +17,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/account-management:pr-9
+      image: sdshmctspublic.azurecr.io/pip/account-management:pr-9-e6f3f8c-20211005142439
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
