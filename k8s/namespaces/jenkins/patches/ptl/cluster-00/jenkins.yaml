@@ -236,7 +236,7 @@ spec:
                             fsGroup: 118
                           initContainers:
                           - name: init-agent
-                            image: hmctspublic.azurecr.io/jenkins/minimal-agent:db6hu6
+                            image: hmctspublic.azurecr.io/jenkins/minimal-agent:dbg8js
                             command:
                               - /bin/sh
                               - -c
