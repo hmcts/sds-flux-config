@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/jd-bureau
     ref: JD-REMOVE-CM
   values:
-    image: ssprivatestg.azurecr.io/jd/juror_digital_bureau_portal:2.22.125
+    image: ssprivatestg.azurecr.io/jd/juror_digital_bureau_portal:2.23.145
     pullPolicy: Always
     replicaCount: 2
     service:

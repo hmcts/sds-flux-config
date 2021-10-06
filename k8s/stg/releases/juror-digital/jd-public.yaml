@@ -14,7 +14,7 @@ spec:
     path: k8s/charts/jd-public
     ref: JD-REMOVE-CM
   values:
-    image: ssprivatestg.azurecr.io/jd/juror_digital_public_portal:2.22.436
+    image: ssprivatestg.azurecr.io/jd/juror_digital_public_portal:2.23.473
     pullPolicy: Always
     replicaCount: 2
     service:
