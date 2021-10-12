@@ -1,0 +1,18 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/nodejs: glob:prod-*
+spec:
+  releaseName: pip-data-management
+  chart:
+    git: git@github.com:hmcts/pip-data-management
+    path: charts/pip-data-management
+    ref: master
+  values:
+    java:
+      disableTraefikTls: true

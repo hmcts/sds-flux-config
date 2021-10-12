@@ -1,0 +1,18 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/nodejs: glob:prod-*
+spec:
+  releaseName: pip-publication-services
+  chart:
+    git: git@github.com:hmcts/pip-publication-services
+    path: charts/pip-publication-services
+    ref: master
+  values:
+    java:
+      disableTraefikTls: true

@@ -18,4 +18,4 @@ spec:
       ingressHost: toffee.{{ .Values.global.environment }}.platform.hmcts.net
       disableTraefikTls: true
       environment:
-        RECIPE_BACKEND_URL: http://toffee.{{ .Values.global.environment }}-backend.platform.hmcts.net
+        RECIPE_BACKEND_URL: http://toffee-recipe-backend.{{ .Values.global.environment }}.platform.hmcts.net

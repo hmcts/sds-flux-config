@@ -45,7 +45,6 @@ spec:
     grafana:
       enabled: true
       ingress:
-        enabled: true
         annotations:
           traefik.ingress.kubernetes.io/router.tls: "true"
         hosts:

@@ -7,7 +7,57 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:latest
+      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:pr-6
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: jd-bureau
+  namespace: jd
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.23.145
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: jd-public
+  namespace: jd
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:2.23.473
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/account-management:pr-11
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/channel-management:aat-9f4c4b6-20210929183509
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/data-management:aat-9f573cc-20211008162057
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -17,7 +67,27 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-13bc165-20210915102101
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-faf0bf5-20211006164704
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/publication-services:latest
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:aat-4bc3d81-20210928155528
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -27,7 +97,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-81e47ca-20210729121156
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-c014f0a-20211005140906
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -37,4 +107,4 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-c43d5c2-20210907131500
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-3d4dc7e-20211006155138

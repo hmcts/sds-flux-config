@@ -1,0 +1,10 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+spec:
+  releaseName: pip-account-management
+  values:
+    java:
+      ingressHost: pip-account-management.staging.platform.hmcts.net

@@ -1,0 +1,10 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+spec:
+  releaseName: pip-subscription-management
+  values:
+    java:
+      ingressHost: pip-subscription-management.staging.platform.hmcts.net

@@ -30,9 +30,5 @@ patchesStrategicMerge:
 # prom-operator patch
 - ../../../namespaces/monitoring/kube-prometheus-stack/patches/sbox/cluster-01/kube-prometheus-stack.yaml
 
-
-# pod identity patches
-- ../../../namespaces/admin/aad-pod-identity/patches/sbox/aad-pod-id.yaml
-
 # env-injector
 # - ../../../release/admin/env-injector/patches/sbox/cluster-00/env-injector.yaml

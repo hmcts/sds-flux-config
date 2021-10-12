@@ -41,7 +41,90 @@ spec:
         time: true
     grafana:
       enabled: false
+      plugins:
+        - grafana-kubernetes-app
+        - camptocamp-prometheus-alertmanager-datasource
+      ingress:
+        enabled: true
+      dashboardProviders:
+        dashboardproviders.yaml:
+          apiVersion: 1
+          providers:
+            - name: "default"
+              orgId: 1
+              folder: ""
+              type: file
+              disableDeletion: false
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards/default
+      dashboards:
+        default:
+          kubernetes-pod-monitoring:
+            gnetId: 9144
+            revision: 2
+            datasource: Prometheus
+          Kubernetes-Deployment-Statefulset-Daemonset-metrics:
+            gnetId: 8588
+            revision: 1
+            datasource: Prometheus
+          Cluster-Monitoring-for-Kubernetes:
+            gnetId: 10000
+            revision: 1
+            datasource: Prometheus
+          Cluster-cost:
+            gnetId: 8670
+            revision: 5
+            datasource: Prometheus
+          Cluster-Dashboard:
+            gnetId: 11358
+            revision: 1
+          Jenkins:
+            gnetId: 9964
+            revision: 1
+            datasource: Prometheus
+          CoreDNS-Cluster:
+            url: https://raw.githubusercontent.com/hmcts/prometheus-monitoring/master/grafana/dashboards/coredns_cluster.json
+          FluxPerf:
+            url: https://raw.githubusercontent.com/hmcts/prometheus-monitoring/master/grafana/dashboards/flux-performance.json
+          AppHealth:
+            url: https://raw.githubusercontent.com/hmcts/prometheus-monitoring/master/grafana/dashboards/app_health.json
+          AdminApps:
+            url: https://raw.githubusercontent.com/hmcts/prometheus-monitoring/master/grafana/dashboards/admin_health.json
+          Mailrelay:
+            url: https://raw.githubusercontent.com/hmcts/prometheus-monitoring/master/grafana/dashboards/mailrelay.json
+      tolerations:
+        - key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.azure.com/mode
+                    operator: In
+                    values:
+                      - system
     prometheus:
+      prometheusSpec:
+        tolerations:
+          - key: CriticalAddonsOnly
+            operator: Equal
+            value: "true"
+            effect: NoSchedule
+        affinity:
+          nodeAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 1
+                preference:
+                  matchExpressions:
+                    - key: kubernetes.azure.com/mode
+                      operator: In
+                      values:
+                        - system
       additionalServiceMonitors:
         - name: "flux-monitor"
           selector:
@@ -78,6 +161,22 @@ spec:
         https: false
 
     alertmanager:
+      alertmanagerSpec:
+        tolerations:
+          - key: CriticalAddonsOnly
+            operator: Equal
+            value: "true"
+            effect: NoSchedule
+        affinity:
+          nodeAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 1
+                preference:
+                  matchExpressions:
+                    - key: kubernetes.azure.com/mode
+                      operator: In
+                      values:
+                        - system
       ingress:
         enabled: true
       config:
@@ -116,3 +215,54 @@ spec:
               - channel: prometheus-critical
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
+
+    kube-state-metrics:
+      tolerations:
+        - key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.azure.com/mode
+                    operator: In
+                    values:
+                      - system
+
+    prometheusOperator:
+      admissionWebhooks:
+        patch: 
+          tolerations:
+            - key: CriticalAddonsOnly
+              operator: Equal
+              value: "true"
+              effect: NoSchedule
+          affinity:
+            nodeAffinity:
+              preferredDuringSchedulingIgnoredDuringExecution:
+                - weight: 1
+                  preference:
+                    matchExpressions:
+                      - key: kubernetes.azure.com/mode
+                        operator: In
+                        values:
+                          - system
+      tolerations:
+        - key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.azure.com/mode
+                    operator: In
+                    values:
+                      - system

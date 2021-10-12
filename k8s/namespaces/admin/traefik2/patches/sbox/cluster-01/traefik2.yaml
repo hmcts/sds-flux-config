@@ -8,18 +8,3 @@ spec:
     service:
       spec:
         loadBalancerIP: "10.140.31.250"
-    tolerations:
-      - key: CriticalAddonsOnly
-        operator: Equal
-        value: "true"
-        effect: NoSchedule
-affinity:
-  nodeAffinity:
-    preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-            - key: kubernetes.azure.com/mode
-              operator: In
-              values:
-                - system

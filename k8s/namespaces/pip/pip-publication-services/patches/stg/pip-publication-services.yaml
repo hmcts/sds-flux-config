@@ -1,0 +1,10 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+spec:
+  releaseName: pip-publication-services
+  values:
+    java:
+      ingressHost: pip-publication-services.staging.platform.hmcts.net

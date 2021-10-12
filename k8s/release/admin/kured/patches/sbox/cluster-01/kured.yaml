@@ -9,8 +9,3 @@ spec:
     extraArgs:
       slack-username: sbox-01-aks
       slack-channel: aks-monitor-ss
-    tolerations:
-    - key: CriticalAddonsOnly
-      operator: Equal
-      value: "true"
-      effect: NoSchedule
