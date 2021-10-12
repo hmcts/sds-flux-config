@@ -12,6 +12,16 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  name: jd-bureau
+  namespace: jd
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.23.145
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
   name: jd-public
   namespace: jd
 spec:
