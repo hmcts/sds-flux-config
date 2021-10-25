@@ -131,6 +131,12 @@ spec:
                     name: HMI
                     recurse: true
                     title: Hearing Management Interface
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS_.*PRE-.*\/.+\/master
+                    name: PRE
+                    recurse: true
+                    title: Pre Recorded Evidence Dashboard
           authentication: |
             jenkins:
               securityRealm:
