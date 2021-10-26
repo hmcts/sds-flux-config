@@ -109,7 +109,7 @@ spec:
                     name: all
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*(Platform|CNP).*\/(cnp-toffee-recipes-service|cnp-toffee-frontend|cnp-toffee-shared-infrastructure)\/master
+                      ^HMCTS_.*Platform.*\/(sds-toffee-recipes-service|sds-toffee-frontend|sds-toffee-shared-infrastructure)\/master
                     name: Platform
                     recurse: true
                     title: Platform
@@ -131,6 +131,12 @@ spec:
                     name: HMI
                     recurse: true
                     title: Hearing Management Interface
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS_.*PRE-.*\/.+\/master
+                    name: PRE
+                    recurse: true
+                    title: Pre Recorded Evidence Dashboard
           authentication: |
             jenkins:
               securityRealm:
