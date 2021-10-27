@@ -22,16 +22,6 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: pip-business-rules
-  namespace: pip
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/pip/business-rules:aat-6947b4e-20211019112243
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
   name: pip-channel-management
   namespace: pip
 spec:
@@ -47,7 +37,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/data-management:pr-17
+      image: sdshmctspublic.azurecr.io/pip/data-management:aat-df324ff-20211027114152
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -57,7 +47,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-58cdd17-20211026103304
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-400c149-20211027114811
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
