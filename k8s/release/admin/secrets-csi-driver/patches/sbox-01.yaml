@@ -4,9 +4,6 @@ kind: HelmRelease
 metadata:
   name: csi-secrets-store-provider-azure
   namespace: admin
-  annotations:
-    flux.weave.works/ignore: "false"
-    flux.weave.works/automated: "false"
 spec:
   releaseName: csi-secrets-store-provider-azure
   chart:
