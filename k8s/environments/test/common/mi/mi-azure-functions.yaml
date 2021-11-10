@@ -7,7 +7,7 @@ metadata:
   annotations:
     fluxcd.io/automated: "true"
     repository.fluxcd.io/chart-image: image
-    filter.fluxcd.io/chart-image: glob:pr-*
+    filter.fluxcd.io/chart-image: glob:test-*
 spec:
   releaseName: mi-azure-functions
   chart:
@@ -18,7 +18,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-19-348d2fe
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:test-bcddc26
     env:
       APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
       ADF_RESOURCEGROUP: mi-test-rg
