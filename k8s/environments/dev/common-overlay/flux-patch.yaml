@@ -12,26 +12,6 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: jd-bureau
-  namespace: jd
-spec:
-  values:
-    nodejs:
-      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.23.168
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: jd-public
-  namespace: jd
-spec:
-  values:
-    nodejs:
-      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:2.23.492
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
   name: pip-account-management
   namespace: pip
 spec:
@@ -67,7 +47,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-e215948-20211111104003
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-9d8f278-20211111125552
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
