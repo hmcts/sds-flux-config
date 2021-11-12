@@ -133,10 +133,10 @@ spec:
                     title: Hearing Management Interface
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*PRE-.*\/.+\/master
+                      ^HMCTS_.*PRE-.*\/pre\-.+)\/master
                     name: PRE
                     recurse: true
-                    title: Pre Recorded Evidence Dashboard
+                    title: Pre-recorded Evidence Dashboard
           authentication: |
             jenkins:
               securityRealm:
