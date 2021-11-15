@@ -7,4 +7,5 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      ingressHost: pip-frontend.staging.platform.hmcts.net
+      ingressHost: pip-frontend.staging.platform.hmcts.net 
+      environment:
