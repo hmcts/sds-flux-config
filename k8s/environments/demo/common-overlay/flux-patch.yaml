@@ -2,26 +2,6 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: toffee-frontend
-  namespace: toffee
-spec:
-  values:
-    nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-c014f0a-20211005140906
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: toffee-recipe-backend
-  namespace: toffee
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-3d4dc7e-20211006155138
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
   name: pip-account-management
   namespace: pip
 spec:
@@ -47,7 +27,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/data-management:prod-85c6185-20211110163544
+      image: sdshmctspublic.azurecr.io/pip/data-management:prod-059da5e-20211115172209
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -78,3 +58,23 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-a634e71-20211019112249
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-frontend
+  namespace: toffee
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-c014f0a-20211005140906
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: toffee
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-3d4dc7e-20211006155138
