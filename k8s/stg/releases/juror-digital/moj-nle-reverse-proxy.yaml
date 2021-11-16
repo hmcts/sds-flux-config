@@ -16,7 +16,7 @@ spec:
   values:
     image: ssprivatestg.azurecr.io/jd/juror-reverse-proxy-stg:2.4.33
     pullPolicy: Always
-    replicaCount: 1
+    replicaCount: 0
     hostaliases:
       ip: 10.72.1.211
       hostname: juror-api-nle.dom1.infra.int

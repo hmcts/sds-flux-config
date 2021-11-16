@@ -16,7 +16,7 @@ spec:
   values:
     image: ssprivateprod.azurecr.io/maintenance:v0.3
     pullPolicy: Always
-    replicaCount: 1
+    replicaCount: 0
     service:
       type: ClusterIP
       port: 80
