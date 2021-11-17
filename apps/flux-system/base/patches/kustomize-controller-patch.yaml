@@ -7,7 +7,7 @@ spec:
   template:
     metadata:
       labels:
-        aadpodidbinding: aks-ptlsbox-mi
+        aadpodidbinding: aks-pod-identity-mi
     spec:
       containers:
       - name: manager
