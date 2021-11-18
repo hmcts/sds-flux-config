@@ -11,14 +11,14 @@ spec:
   git:
     checkout:
       ref:
-        branch: master
+        branch: DTSPO-5581_flux_v2_image_automation
     commit:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: master
+      branch: DTSPO-5581_flux_v2_image_automation
   update:
     path: .
     strategy: Setters
