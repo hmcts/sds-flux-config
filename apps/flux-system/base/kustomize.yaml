@@ -5,6 +5,8 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
+  decryption:
+    provider: sops
   interval: 1m0s
   prune: true
   sourceRef:
