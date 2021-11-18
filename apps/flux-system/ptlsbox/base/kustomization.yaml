@@ -7,5 +7,5 @@ resources:
   - ../../base/image-update-automation.yaml
 
 patchesStrategicMerge:
-  # - ../../base/patches/image-automation-components-patch.yaml
+  - ../../base/patches/image-automation-components-patch.yaml
   - ../../base/patches/kustomize-controller-patch.yaml
