@@ -21,7 +21,8 @@ spec:
       initContainers:
         - name: install
           image: busybox
-          command: ["/bin/sh", "-c", "printf '%s:%s:1000::/files/'  $(cat /kvmnt/sftp-remote-user) $(cat /kvmnt/sftp-remote-password) > /sftp-config/users.conf"]
+          command: ["/bin/sh", "-c"]
+          args: ["printf '%s:%s:1000::/files/' $(cat /kvmnt/sftp-remote-user) $(cat /kvmnt/sftp-remote-password) > /sftp-config/users.conf"; "sed -i.bak 's/ChrootDirectory %h/ChrootDirectory %h\/files/' /etc/ssh/sshd_config"]
           volumeMounts:
             - name: azurekeyvault
               mountPath: /kvmnt
