@@ -4,6 +4,7 @@ metadata:
   name: imageautomation
   namespace: flux-system
 spec:
+  suspend: true
   interval: 1m0s
   sourceRef:
     kind: GitRepository
