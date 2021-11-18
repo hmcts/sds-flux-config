@@ -3,5 +3,5 @@ kind: Kustomization
 namespace: labs
 bases:
 - namespace.yaml
-- labs-mokainos.yaml
+- labs-mokainos/labs-mokainos.yaml
 # Warning : Adding a file here, adds to all environments to which you add your kustomization.
