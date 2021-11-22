@@ -4,16 +4,21 @@ namespace: flux-system
 resources:
   - registry-credential-sync/sdshmctspublic/kustomize.yaml
   - registry-credential-sync/sdshmctsprivate/kustomize.yaml
+  - registry-credential-sync/hmctspublic/kustomize.yaml
 
 patches:
   - path: sdshmctspublic-image-repo.yaml
     target:
       kind: ImageRepository
-      annotationSelector: hmcts.github.com/image-registry != sdshmctsprivate
+      annotationSelector: hmcts.github.com/image-registry != sdshmctsprivate,hmcts.github.com/image-registry != hmctspublic
   - path: sdshmctsprivate-image-repo.yaml
     target:
       kind: ImageRepository
       annotationSelector: hmcts.github.com/image-registry == sdshmctsprivate
+  - path: hmctspublic-image-repo.yaml
+    target:
+      kind: ImageRepository
+      annotationSelector: hmcts.github.com/image-registry == hmctspublic
   - path: prod-image-policy.yaml
     target:
       kind: ImagePolicy
