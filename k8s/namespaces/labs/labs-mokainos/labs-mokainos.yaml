@@ -15,7 +15,7 @@ spec:
     path: charts/labs-mohanalatest
   values:
     java:
-      image: sdshmctspublicsbox.azurecr.io/labs/mohanalatest:prod-e9ce583-20211117144324
+      image: sdshmctspublicsbox.azurecr.io/labs/mohanalatest:prod-0fe1feb-20211122150834
       ingressHost: labs-mokainos.{{ .Values.global.environment }}.platform.hmcts.net
       disableTraefikTls: true
     global:
