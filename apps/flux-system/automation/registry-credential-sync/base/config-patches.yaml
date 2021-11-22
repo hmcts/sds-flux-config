@@ -1,0 +1,9 @@
+apiVersion: aadpodidentity.k8s.io/v1
+kind: AzureIdentity
+metadata:
+  name: credentials-sync  # name must match the stub-resource in az-identity.yaml
+  namespace: flux-system
+spec:
+  clientID: 2a21e18e-3b15-46fb-99c9-e9312ff0a58c
+  resourceID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourcegroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-ptlsbox-mi
+  type: 0  # user-managed identity
