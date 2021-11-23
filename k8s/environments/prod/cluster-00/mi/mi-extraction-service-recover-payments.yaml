@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-2c2a120
+      image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-936afc7
       suspend: false
       kind: Job
       activeDeadlineSeconds: 82800
@@ -92,7 +92,7 @@ spec:
         EXPORT_SOURCES_EIGHTBYEIGHTCHANNELS_ENABLED: false
         EXPORT_SOURCES_EIGHTBYEIGHTAGENTS_ENABLED: false
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-2c2a120
+        image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-936afc7
         enabled: true
       testsConfig:
         keyVaults:
