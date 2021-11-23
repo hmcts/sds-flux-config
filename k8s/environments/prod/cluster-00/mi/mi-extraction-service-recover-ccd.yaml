@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: mi-extraction-service-recover-ccd-again-job
+  name: mi-extraction-service-recover-ccd-job
   namespace: mi
   annotations:
     flux.weave.works/automated: "true"
@@ -11,7 +11,7 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:prod-*
 spec:
-  releaseName: mi-extraction-service-recover-ccd-again-job
+  releaseName: mi-extraction-service-recover-ccd-job
   chart:
     git: git@github.com:hmcts/shared-services-flux
     path: k8s/release/mi/mi-extraction-service
@@ -27,8 +27,8 @@ spec:
       memoryLimits: '4096Mi'
       cpuLimits: '2000m'
       labels:
-        app.kubernetes.io/instance: mi-extraction-service-recover-ccd-again-job
-        app.kubernetes.io/name: mi-extraction-service-recover-ccd-again-job
+        app.kubernetes.io/instance: mi-extraction-service-recover-ccd-job
+        app.kubernetes.io/name: mi-extraction-service-recover-ccd-job
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false
@@ -47,7 +47,7 @@ spec:
         SFTP_REMOTE_HOST: 10.24.254.130
         SFTP_REMOTE_PORT: 22
         SFTP_REMOTE_FOLDER: /files/mi-platform-export/
-        RETRIEVE_FROM_DATE: 2021-11-22
+        RETRIEVE_FROM_DATE: 2021-11-18
         RETRIEVE_TO_DATE: 2021-11-22
         EXPORT_SOURCES_CCD_ENABLED: true
         EXPORT_SOURCES_NOTIFY_ENABLED: false
