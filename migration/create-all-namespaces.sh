@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -ex
 
-# Running on preview as every probable namespace should be here.
+# Run on preview as every probable namespace should be here.
 
 for namespace in $(kubectl get ns -A -o jsonpath={.items[*].metadata.name} | xargs -n1 | sort -u | xargs); do
   
@@ -14,7 +14,6 @@ fi
 if [ ! -f "apps/$namespace/base/kustomize.yaml" ]
 then
     echo "Creating $namespace"
-    mkdir -p apps/$namespace
     mkdir -p apps/$namespace/base
 
 SLACK_CHANNEL=$(kubectl get ns $namespace -o jsonpath={.metadata.labels.slackChannel})

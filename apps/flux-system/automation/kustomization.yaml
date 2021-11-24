@@ -5,13 +5,14 @@ resources:
   - registry-credential-sync/sdshmctspublic/kustomize.yaml
   - registry-credential-sync/sdshmctsprivate/kustomize.yaml
   - registry-credential-sync/hmctspublic/kustomize.yaml
+  - registry-credential-sync/hmctsprivate/kustomize.yaml
   - ../../toffee/automation
 
 patches:
   - path: sdshmctspublic-image-repo.yaml
     target:
       kind: ImageRepository
-      annotationSelector: hmcts.github.com/image-registry != sdshmctsprivate,hmcts.github.com/image-registry != hmctspublic
+      annotationSelector: hmcts.github.com/image-registry != sdshmctsprivate,hmcts.github.com/image-registry != hmctspublic,hmcts.github.com/image-registry != hmctsprivate
   - path: sdshmctsprivate-image-repo.yaml
     target:
       kind: ImageRepository
@@ -20,6 +21,10 @@ patches:
     target:
       kind: ImageRepository
       annotationSelector: hmcts.github.com/image-registry == hmctspublic
+  - path: hmctsprivate-image-repo.yaml
+    target:
+      kind: ImageRepository
+      annotationSelector: hmcts.github.com/image-registry == hmctsprivate
   - path: prod-image-policy.yaml
     target:
       kind: ImagePolicy

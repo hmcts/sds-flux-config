@@ -15,8 +15,8 @@ for file in $(grep -lr "kind: ImagePolicy\|kind: ImageRepository" $FILE_DIRECTOR
   
   if [[ $(yq eval '.kind' $file) == "ImagePolicy" ]] || [[ $(yq eval '.kind' $file) == "ImageRepository" ]]
   then
-  FILE_PATH=$(realpath --relative-to=$FILE_DIRECTORY/automation $file)
-  FILE_PATH=$FILE_PATH  yq eval '.resources += [env(FILE_PATH)]' -i $FILE_DIRECTORY/automation/kustomization.yaml
+    FILE_PATH=$(realpath --relative-to=$FILE_DIRECTORY/automation $file)
+    FILE_PATH=$FILE_PATH  yq eval '.resources += [env(FILE_PATH)]' -i $FILE_DIRECTORY/automation/kustomization.yaml
   fi
   
 done
