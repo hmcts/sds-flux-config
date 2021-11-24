@@ -17,6 +17,9 @@ keyVaultCoreSecrets:
   - azure-functions-function-key
   - azure-functions-master-key
   - mi-audit-storage-connection-string
+  - encryption-publicKey
+  - encryption-private-key
+  - encryption-private-phase
 
 secretsMountPath: '/mnt/kvmnt'
 

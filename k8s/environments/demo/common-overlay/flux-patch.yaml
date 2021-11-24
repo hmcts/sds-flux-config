@@ -2,12 +2,72 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  name: pip-account-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/account-management:prod-9e32e0d-20211018113951
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-eee33e1-20211019112246
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/data-management:prod-059da5e-20211115172209
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-351bbfb-20211117135954
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/publication-services:prod-5ff643b-20211014170421
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-a634e71-20211019112249
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
   name: toffee-frontend
   namespace: toffee
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-c014f0a-20211005140906
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-270662e-20211119163356
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease

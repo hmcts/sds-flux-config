@@ -17,13 +17,13 @@ spec:
   chart:
     repository: https://charts.jenkins.io
     name: jenkins
-    version: 3.5.3
+    version: 3.8.8
   values:
     controller:
       # Used for label app.kubernetes.io/component
       componentName: "jenkins-controller"
       image: "hmctspublic.azurecr.io/jenkins/jenkins"
-      tag: "dbg0gm"
+      tag: "dbhhxp"
       podSecurityContextOverride:
         runAsUser: 0
       imagePullPolicy: "IfNotPresent"
@@ -238,7 +238,7 @@ spec:
 
       sidecars:
         configAutoReload:
-          image: kiwigrid/k8s-sidecar:0.1.275
+          image: kiwigrid/k8s-sidecar:1.14.2
           # If enabled: true, Jenkins Configuration as Code will be reloaded on-the-fly without a reboot.  If false or not-specified,
           # jcasc changes will cause a reboot and will only be applied at the subsequent start-up.  Auto-reload uses the Jenkins CLI
           # over SSH to reapply config when changes to the configScripts are detected.  The admin user (or account you specify in

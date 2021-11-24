@@ -295,7 +295,6 @@ spec:
                         credentialsId: "vm_agent_creds"
                         diskType: "managed"
                         doNotUseMachineIfInitFails: true
-                        enableMSI: false
                         enableUAMI: true
                         ephemeralOSDisk: true
                         executeInitScriptAsRoot: true
@@ -343,19 +342,16 @@ spec:
                         osDiskSize: 60
                         osDiskStorageAccountType: "Standard_LRS"
                         osType: "Linux"
-                        preInstallSsh: true
                         retentionStrategy:
                           azureVMCloudRetentionStrategy:
                             idleTerminationMinutes: 60
-                        shutdownOnIdle: false
                         storageAccountNameReferenceType: "existing"
                         storageAccountType: "Standard_LRS"
                         subnetName: "iaas"
                         templateDesc: "Jenkins build agents for HMCTS"
-                        templateDisabled: false
                         templateName: "cnp-jenkins-builders"
                         uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptlsbox-mi
-                        usageMode: "Use this node as much as possible"
+                        usageMode: NORMAL
                         usePrivateIP: true
                         virtualMachineSize: "Standard_D4s_v3"
                         virtualNetworkName: "ss-ptlsbox-vnet"

@@ -5,11 +5,9 @@ metadata:
   name: mi-extraction-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
-    repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:prod-*
-    repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:prod-*
+    fluxcd.io/automated: "true"
+    repository.fluxcd.io/chart-image: image
+    filter.fluxcd.io/chart-image: glob:prod-*
 spec:
   releaseName: mi-extraction-service
   chart:
@@ -18,7 +16,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-2c2a120
+      image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-936afc7
       suspend: false
       kind: CronJob
       schedule: '0 3 * * *'
@@ -49,7 +47,7 @@ spec:
         SFTP_REMOTE_PORT: 22
         SFTP_REMOTE_FOLDER: /files/mi-platform-export/
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-2c2a120
+        image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-936afc7
         enabled: true
       testsConfig:
         keyVaults:
