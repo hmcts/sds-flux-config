@@ -5,9 +5,8 @@ metadata:
   name: toffee-recipe-backend
   namespace: toffee
   annotations:
-    filter.fluxcd.io/java: ""
     fluxcd.io/automated: "false"
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
