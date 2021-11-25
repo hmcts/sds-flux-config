@@ -10,8 +10,8 @@
 | ITHC | Flux V1 | Not Migrated
 | Test | Flux V1| Not Migrated
 | Dev | Flux V1  | Not Migrated
-| Sbox | Flux V1  | Not Migrated
-| Ptl | Flux V1 | Not Migrated
+| Sbox | Flux V1  | Started Migration
+| Ptl | Flux V1 | Started Migration
 | Ptlsbox | Flux V1  | Not Migrated
 
 
