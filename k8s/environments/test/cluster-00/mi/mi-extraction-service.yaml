@@ -35,7 +35,6 @@ spec:
           - sftp-remote-password
           - encryption-publicKey
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         MI_CLIENT_ID: d726bc2d-fa66-49be-9425-b7cc13c0a8c2
         SFTP_ENABLED: true
         SFTP_REMOTE_HOST: mi-sftp-server-svc
@@ -56,7 +55,6 @@ spec:
             - sftp-remote-password
             - encryption-publicKey
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
           MI_CLIENT_ID: d726bc2d-fa66-49be-9425-b7cc13c0a8c2
           SFTP_ENABLED: true
           SFTP_REMOTE_HOST: mi-sftp-server-svc

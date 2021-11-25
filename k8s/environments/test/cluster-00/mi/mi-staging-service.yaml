@@ -26,14 +26,12 @@ spec:
         app.kubernetes.io/instance: mi-staging-service
         app.kubernetes.io/name: mi-staging-service
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         MI_CLIENT_ID: e045887e-0f15-45be-bbd2-44060d5e3aaa
       smoketests:
         image: sdshmctspublic.azurecr.io/mi-staging-service:pr-167-d79d6a6
         enabled: true
       testsConfig:
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
           MI_CLIENT_ID: e045887e-0f15-45be-bbd2-44060d5e3aaa
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"

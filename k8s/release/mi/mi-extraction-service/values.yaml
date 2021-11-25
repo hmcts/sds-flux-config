@@ -22,7 +22,6 @@ job:
       - sftp-remote-password
       - encryption-publicKey
   environment:
-    APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
     STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
     STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
@@ -42,7 +41,6 @@ job:
         - sftp-remote-password
         - encryption-publicKey
     environment:
-      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       MI_CLIENT_ID: DUMMY
       STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
       STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}

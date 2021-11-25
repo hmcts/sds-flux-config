@@ -34,7 +34,6 @@ spec:
           - sftp-remote-password
           - encryption-publicKey
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
         MI_CLIENT_ID: 3b98a9ff-c77c-42bf-a539-0c7f8316e22d
         SFTP_ENABLED: false
         SFTP_FORCECHECK: true
@@ -55,7 +54,6 @@ spec:
             - sftp-remote-password
             - encryption-publicKey
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
           MI_CLIENT_ID: 3b98a9ff-c77c-42bf-a539-0c7f8316e22d
           SFTP_ENABLED: false
           SFTP_REMOTE_HOST: 10.24.254.130

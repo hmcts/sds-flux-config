@@ -53,7 +53,6 @@ spec:
           - payment-bar-db-password
       environment:
         MI_CLIENT_ID: dfdc9e79-b5a5-44a9-892b-e02ebc31358f
-        APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
         DATA_SOURCE_CCD: true
         DATA_SOURCE_NOTIFY: true
         DATA_SOURCE_EIGHTBYEIGHT: true
@@ -94,7 +93,6 @@ spec:
             - payment-bar-db-password
         environment:
           MI_CLIENT_ID: dfdc9e79-b5a5-44a9-892b-e02ebc31358f
-          APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
           DATA_SOURCE_CCD: true
           DATA_SOURCE_NOTIFY: true
           DATA_SOURCE_EIGHTBYEIGHT: true

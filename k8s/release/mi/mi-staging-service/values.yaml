@@ -19,7 +19,6 @@ job:
       secrets:
       - appinsights-instrumentationkey
   environment:
-    APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
     STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
     STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}
@@ -36,7 +35,6 @@ job:
         secrets:
         - appinsights-instrumentationkey
     environment:
-      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       MI_CLIENT_ID: DUMMY
       STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
       STORAGE_STAGING_NAME: mipersistent{{ .Values.global.environment }}

@@ -17,7 +17,6 @@ job:
       secrets:
       - appinsights-instrumentationkey
   environment:
-    APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     MI_CLIENT_ID: DUMMY
     STORAGE_EXTRACTION_NAME: midataextractor{{ .Values.global.environment }}
     STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
@@ -34,7 +33,6 @@ job:
         secrets:
         - appinsights-instrumentationkey
     environment:
-      APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
       MI_CLIENT_ID: DUMMY
       STORAGE_EXTRACTION_NAME: midataextractor{{ .Values.global.environment }}
       STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}

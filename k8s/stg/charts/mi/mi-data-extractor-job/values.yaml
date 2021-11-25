@@ -17,7 +17,6 @@ job:
     app.kubernetes.io/instance : mi-data-extractor-job-001
     app.kubernetes.io/name: mi-data-extractor-job
   environment:
-    APPINSIGHTS_INSTRUMENTATIONKEY: DUMMY
     ETL_DB_URL: jdbc:postgresql://ccd-data-store-api-postgres-db-{{ .Values.global.ccd_environment }}.postgres.database.azure.com:5432/ccd_data_store
     ETL_ACCOUNT: dumyEtlAccount
 global:

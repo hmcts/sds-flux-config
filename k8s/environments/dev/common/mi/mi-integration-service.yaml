@@ -33,7 +33,6 @@ spec:
           - appinsights-instrumentationkey
           - notify-api-key-cmc
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
         DATA_SOURCE_NOTIFY: true
         GOV_UK_NOTIFY_ENABLED_CMC: true
         MI_CLIENT_ID: 47b18d2f-9a02-4f45-a87c-bacd17ea3583
@@ -49,7 +48,6 @@ spec:
             - appinsights-instrumentationkey
             - notify-api-key-cmc
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
           DATA_SOURCE_NOTIFY: true
           GOV_UK_NOTIFY_ENABLED_CMC: true
           MI_CLIENT_ID: 47b18d2f-9a02-4f45-a87c-bacd17ea3583
