@@ -5,7 +5,7 @@ metadata:
   name: mi-house-keeping-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
+    fluxcd.io/automated: "true"
     repository.fluxcd.io/job: job.image
     filter.fluxcd.io/job: glob:prod-*
     repository.fluxcd.io/smoke: job.smoketests.image

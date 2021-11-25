@@ -5,11 +5,11 @@ metadata:
   name: mi-staging-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
+    fluxcd.io/automated: "true"
     repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:pr-*
+    filter.fluxcd.io/job: glob:test-*
     repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:pr-*
+    filter.fluxcd.io/smoke: glob:test-*
 spec:
   releaseName: mi-staging-service
   chart:
