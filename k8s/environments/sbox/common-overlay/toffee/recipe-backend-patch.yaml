@@ -1,0 +1,13 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: toffee
+  annotations:
+    filter.fluxcd.io/java: ""
+    fluxcd.io/automated: "false"
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest
