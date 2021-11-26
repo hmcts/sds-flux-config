@@ -5,7 +5,7 @@ metadata:
   namespace: admin
 spec:
   entryPoints:
-    web:
+    websecure:
       address: ":443"
       forwardedHeaders:
         insecure: true
