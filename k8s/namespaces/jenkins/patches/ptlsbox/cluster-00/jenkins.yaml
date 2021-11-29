@@ -14,6 +14,9 @@ spec:
           value: "sandbox"
         - name: AZURE_KEYVAULT_URL
           value: https://ptlsbox.vault.azure.net
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          traefik.ingress.kubernetes.io/router.tls: "true"
       JCasC:
         configScripts:
           welcome-message: |
