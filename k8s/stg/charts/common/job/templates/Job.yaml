@@ -1,0 +1,8 @@
+{{- $jobKind := (default .Values.kind .Values.global.jobKind) -}}
+{{ if (and $jobKind (eq $jobKind "Job")) }}
+---
+apiVersion: batch/v1
+kind: Job
+{{ include "job.metadata" .}}
+{{ include "job.spec" .}}
+  {{- end}}

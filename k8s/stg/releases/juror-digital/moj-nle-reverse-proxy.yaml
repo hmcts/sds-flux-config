@@ -1,0 +1,38 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: moj-nle-reverse-proxy
+  namespace: jd
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: glob:2.*
+spec:
+  releaseName: moj-nle-reverse-proxy
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/moj-nle-reverse-proxy
+    ref: master
+  values:
+    image: ssprivatestg.azurecr.io/jd/juror-reverse-proxy-stg:2.4.33
+    pullPolicy: Always
+    replicaCount: 0
+    hostaliases:
+      ip: 10.72.1.211
+      hostname: juror-api-nle.dom1.infra.int
+    service:
+      type: ClusterIP
+      port: 80
+    ingress:
+      enabled: false
+      annotations:
+        kubernetes.io/ingress.class: traefik-stg
+      paths:
+      - /
+      tls: []
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
+      hosts:
+      - ''
+    env: []

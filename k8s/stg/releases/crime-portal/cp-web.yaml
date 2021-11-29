@@ -1,0 +1,89 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: cp-web
+  namespace: crimeportal
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: glob:Release-*
+spec:
+  releaseName: cp-web
+  chart:
+    git: git@github.com:hmcts/shared-services-flux
+    path: k8s/charts/cp-web
+    ref: master
+  values:
+    image: ssprivatestg.azurecr.io/cp/wildfly1:Release-22
+    pullPolicy: Always
+    replicaCount: 1
+    hostaliases:
+    - ip: 192.173.128.4
+      hostname: cpldap
+    - ip: 192.173.128.4
+      hostname: cpdb
+    service:
+      type: ClusterIP
+      http: 8080
+      https: 8443
+      mgmnt: 9990
+      mgmnts: 9993
+    serviceVpn:
+      enabled: true
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+      type: LoadBalancer
+      http: 8080
+      https: 8443
+      ip: 192.173.100.250
+    persistence:
+      enabled: true
+      storageClass: azurefile
+      accessMode: ReadWriteMany
+      size: 1Gi
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik-stg
+        traefik.ingress.kubernetes.io/affinity: "true"
+        ingress.kubernetes.io/whitelist-x-forwarded-for: "true"
+        traefik.ingress.kubernetes.io/whitelist-source-range: "81.134.202.29/32, 51.145.6.230/32, 194.33.192.0/25, 194.33.196.0/25, 195.59.75.0/24, 158.234.251.0/24, 158.234.250.0/24, 213.121.161.124/32"
+      paths:
+      - /
+      tls: []
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
+      hosts:
+      - 'cp-nle.platform.hmcts.net'
+    readinessProbe:
+      enabled: false
+      path: "/"
+      initialDelaySeconds: 60
+      periodSeconds: 30
+      failureThreshold: 6
+      timeoutSeconds: 5
+    livenessProbe:
+      enabled: false
+      path: "/"
+      initialDelaySeconds: 60
+      periodSeconds: 30
+      failureThreshold: 6
+      timeoutSeconds: 5
+    env:
+      WF10_HOST: localhost
+      WF10_CP_DS_URL: jdbc:postgresql://cpdb:5432/crime_portal_db
+      WF10_MGW_DS_URL: jdbc:postgresql://cpdb:5432/cp_mirror_gateway_db
+      WF10_SUBSCH_DS_URL: jdbc:postgresql://cpdb:5432/cp_subscriptionscheduler_db
+      WF10_SDRS_DS_URL: jdbc:postgresql://cpdb:5432/cp_sdrs_db
+      WF10_SB_DS_URL: jdbc:postgresql://cpdb:5432/cp_schedulerbaseline_db
+      WF10_PS_DS_URL: jdbc:postgresql://cpdb:5432/cp_print_service_db
+      http_proxy_full: http://10.0.0.77:8080
+      https_proxy_full: http://10.0.0.77:8080
+      http_proxy: http://10.0.0.77:8080
+      https_proxy: http://10.0.0.77:8080
+      http_proxy_port: 8080
+      https_proxy_port: 8080
+      http_proxy_ip: 10.0.0.77
+      https_proxy_ip: 10.0.0.77
+      no_proxy: "172.0.0.3,172.1.0.3,10.0.4.7,localhost,cp-notify"
