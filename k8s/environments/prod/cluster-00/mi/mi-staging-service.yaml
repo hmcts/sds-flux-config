@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-staging-service:prod-49f09a2
+      image: sdshmctspublic.azurecr.io/mi-staging-service:prod-93d2dec
       suspend: false
       kind: CronJob
       schedule: '30 2 * * *'
@@ -36,7 +36,7 @@ spec:
         MAXLINESBUFFER: 500
         CONTAINER_WHITELIST: "^(?!v2-).*"
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-staging-service:prod-49f09a2
+        image: sdshmctspublic.azurecr.io/mi-staging-service:prod-93d2dec
         enabled: true
       testsConfig:
         environment:
