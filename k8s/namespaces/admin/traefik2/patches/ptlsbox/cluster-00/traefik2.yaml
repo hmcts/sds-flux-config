@@ -4,12 +4,12 @@ metadata:
   name: traefik2
   namespace: admin
 spec:
-  entryPoints:
-    websecure:
-      address: ":443"
-      forwardedHeaders:
-        insecure: true
   values:
+    entryPoints:
+      websecure:
+        address: ":443"
+        forwardedHeaders:
+          insecure: true
     service:
       spec:
         loadBalancerIP: "10.147.15.250"
