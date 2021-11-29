@@ -16,11 +16,7 @@ spec:
           value: https://ptl.vault.azure.net
       JCasC:
         sidecars:
-          ingress:
-            enabled: true
-          labels: {}
           annotations:
-            kubernetes.io/ingress.class: traefik
             traefik.ingress.kubernetes.io/router.tls: "true"
         configScripts:
           welcome-message: |
