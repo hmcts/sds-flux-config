@@ -24,7 +24,6 @@ spec:
         app.kubernetes.io/name: data-extractor-job
       environment:
         ETL_MSICLIENTID: 736bf16e-d749-4fde-a413-f35785562838
-        APPINSIGHTS_INSTRUMENTATIONKEY: "c3043e63-3383-4add-a507-e0adf8588e4a"
     global:
       resourcegroup: "genesis_resource_group"
       subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"

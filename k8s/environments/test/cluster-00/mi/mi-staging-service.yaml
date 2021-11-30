@@ -5,11 +5,11 @@ metadata:
   name: mi-staging-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
+    fluxcd.io/automated: "true"
     repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:pr-*
+    filter.fluxcd.io/job: glob:test-*
     repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:pr-*
+    filter.fluxcd.io/smoke: glob:test-*
 spec:
   releaseName: mi-staging-service
   chart:
@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-staging-service:pr-167-d79d6a6
+      image: sdshmctspublic.azurecr.io/mi-staging-service:test-1794e6f
       suspend: false
       kind: CronJob
       schedule: '30 1 * * *'
@@ -26,14 +26,12 @@ spec:
         app.kubernetes.io/instance: mi-staging-service
         app.kubernetes.io/name: mi-staging-service
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
         MI_CLIENT_ID: e045887e-0f15-45be-bbd2-44060d5e3aaa
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-staging-service:pr-167-d79d6a6
+        image: sdshmctspublic.azurecr.io/mi-staging-service:test-1794e6f
         enabled: true
       testsConfig:
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "350a1a4c-d746-4c63-814c-4fee92e6e07c"
           MI_CLIENT_ID: e045887e-0f15-45be-bbd2-44060d5e3aaa
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"

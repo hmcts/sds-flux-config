@@ -20,7 +20,6 @@ spec:
       app.kubernetes.io/name: mi-azure-functions-deployment
     image: sdshmctspublic.azurecr.io/mi/azure-functions:stg-6187e71
     env:
-      APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
       ADF_RESOURCEGROUP: mi-stg-rg
       ADF_NAME: mi-ingestion-adf-stg
       ADF_STORAGEACCOUNTNAME: miauditstg

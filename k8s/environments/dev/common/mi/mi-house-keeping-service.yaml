@@ -26,7 +26,6 @@ spec:
         app.kubernetes.io/instance: mi-house-keeping-service
         app.kubernetes.io/name: mi-house-keeping-service
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
         MI_CLIENT_ID: 5793ad47-8629-4723-82dc-78b1b49ed280
         STORAGE_DATA_EXTRACTOR_RETENTION: "14"
       smoketests:
@@ -34,7 +33,6 @@ spec:
         enabled: true
       testsConfig:
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "36ab4447-464f-468d-929e-353627b156f8"
           MI_CLIENT_ID: 5793ad47-8629-4723-82dc-78b1b49ed280
 
     global:

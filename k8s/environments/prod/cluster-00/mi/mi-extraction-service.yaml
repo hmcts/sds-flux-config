@@ -6,8 +6,10 @@ metadata:
   namespace: mi
   annotations:
     fluxcd.io/automated: "true"
-    repository.fluxcd.io/chart-image: image
-    filter.fluxcd.io/chart-image: glob:prod-*
+    repository.fluxcd.io/job: job.image
+    filter.fluxcd.io/job: glob:prod-*
+    repository.fluxcd.io/smoke: job.smoketests.image
+    filter.fluxcd.io/smoke: glob:prod-*
 spec:
   releaseName: mi-extraction-service
   chart:
@@ -38,7 +40,6 @@ spec:
           - sftp-remote-password
           - encryption-publicKey
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
         MI_CLIENT_ID: e8a52cff-ef0c-4447-baf2-665c3480d0de
         SFTP_ENABLED: true
         SFTP_FORCECHECK: true
@@ -60,7 +61,6 @@ spec:
             - sftp-remote-password
             - encryption-publicKey
         environment:
-          APPINSIGHTS_INSTRUMENTATIONKEY: "8bfa6e68-ae68-442c-a237-83cde3b092f3"
           MI_CLIENT_ID: e8a52cff-ef0c-4447-baf2-665c3480d0de
           SFTP_ENABLED: false
           SFTP_REMOTE_HOST: 10.24.254.130

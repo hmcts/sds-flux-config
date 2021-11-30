@@ -5,7 +5,7 @@ metadata:
   name: mi-staging-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
+    fluxcd.io/automated: "true"
     repository.fluxcd.io/job: job.image
     filter.fluxcd.io/job: glob:stg-*
     repository.fluxcd.io/smoke: job.smoketests.image
@@ -27,7 +27,6 @@ spec:
         app.kubernetes.io/instance: mi-staging-service
         app.kubernetes.io/name: mi-staging-service
       environment:
-        APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
         MI_CLIENT_ID: 9ce2f133-1eab-4e62-8d36-e23c2968754b
         CONTAINER_WHITELIST: "^(?!v2-).*"
       smoketests:
@@ -36,7 +35,6 @@ spec:
       testsConfig:
         environment:
           MI_CLIENT_ID: 9ce2f133-1eab-4e62-8d36-e23c2968754b
-          APPINSIGHTS_INSTRUMENTATIONKEY: "5be27762-da20-4aaf-bc55-6b95a0c6ef6d"
     global:
       subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
