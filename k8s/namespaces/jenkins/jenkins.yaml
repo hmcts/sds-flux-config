@@ -83,7 +83,7 @@ spec:
             jenkins:
               crumbIssuer:
                 standard:
-                  excludeClientIPFromCrumb: false
+                  excludeClientIPFromCrumb: true
               markupFormatter:
                 rawHtml:
                   disableSyntaxHighlighting: false
@@ -262,7 +262,7 @@ spec:
         labels: {}
         annotations:
           kubernetes.io/ingress.class: traefik
-          # traefik.ingress.kubernetes.io/router.tls: "true"
+          traefik.ingress.kubernetes.io/router.tls: "true"
     agent:
       enabled: false
 
