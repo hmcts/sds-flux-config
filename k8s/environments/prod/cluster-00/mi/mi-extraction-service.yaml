@@ -48,7 +48,7 @@ spec:
         SFTP_REMOTE_PORT: 22
         SFTP_REMOTE_FOLDER: /files/mi-platform-export/
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-936afc7
+        image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-e565fd4
         enabled: true
       testsConfig:
         keyVaults:
