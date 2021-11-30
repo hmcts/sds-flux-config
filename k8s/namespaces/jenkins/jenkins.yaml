@@ -83,7 +83,7 @@ spec:
             jenkins:
               crumbIssuer:
                 standard:
-                  excludeClientIPFromCrumb: false
+                  excludeClientIPFromCrumb: true
               markupFormatter:
                 rawHtml:
                   disableSyntaxHighlighting: false
