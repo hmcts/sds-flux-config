@@ -9,15 +9,13 @@ spec:
     controller:
       ingress:
         hostName: sds-build.platform.hmcts.net
+        annotations:
+            traefik.ingress.kubernetes.io/router.tls: "true"
       containerEnv:
         - name: ENVIRONMENT
           value: "production"
         - name: AZURE_KEYVAULT_URL
           value: https://ptl.vault.azure.net
-      JCasC:
-        ingress:
-          annotations:
-            traefik.ingress.kubernetes.io/router.tls: "true"
         configScripts:
           welcome-message: |
             jenkins:
