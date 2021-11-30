@@ -9,8 +9,6 @@ spec:
     controller:
       ingress:
         hostName: sds-build.platform.hmcts.net
-        annotations:
-          traefik.ingress.kubernetes.io/router.tls: "true"
       containerEnv:
         - name: ENVIRONMENT
           value: "production"
