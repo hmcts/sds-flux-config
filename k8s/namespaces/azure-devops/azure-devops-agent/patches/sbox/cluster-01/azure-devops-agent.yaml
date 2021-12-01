@@ -20,5 +20,5 @@ spec:
       secrets:
       - azure-devops-agent-token
     image:
-      repository: "hmctspublic.azurecr.io/hmcts/vsts-agent"  # {"$imagepolicy": "flux-system:azure-devops-agent:name"}
+      repository: "hmctspublic.azurecr.io/hmcts/vsts-agent"
       tag: "dbfv0f"  # {"$imagepolicy": "flux-system:azure-devops-agent:tag"}
