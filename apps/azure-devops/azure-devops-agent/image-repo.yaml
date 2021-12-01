@@ -1,6 +1,8 @@
 apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImageRepository
 metadata:
-  name: az-devops-agent
+  name: azure-devops-agent-test
+  annotations:
+    hmcts.github.com/image-registry: hmctspublic
 spec:
-  image: sdshmctspublic.azurecr.io/hmi/azure-devops-agent
+  image: hmctspublic.azurecr.io/hmcts/vsts-agent
