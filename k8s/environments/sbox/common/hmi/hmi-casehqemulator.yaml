@@ -1,4 +1,3 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -16,18 +15,18 @@ spec:
   values:
     replicas: 1
     image:
-      repository: "sdshmctspublic.azurecr.io/hmi/case-hq-emulator"   # {"$imagepolicy": "flux-system:hmi-casehqemulator:name"}
-      tag: "v0.2"  # {"$imagepolicy": "flux-system:hmi-casehqemulator:tag"}
+      repository: "sdshmctspublic.azurecr.io/hmi/case-hq-emulator" # {"$imagepolicy": "flux-system:hmi-casehqemulator:name"}
+      tag: "prod-3371100-20210927155212" # {"$imagepolicy": "flux-system:hmi-casehqemulator:tag"}
       pullPolicy: Always
     ingress:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: traefik
       paths:
-      - /
+        - /
       tls: []
       hosts:
-      - 'hmi-casehqemulator.sandbox.platform.hmcts.net'
+        - 'hmi-casehqemulator.sandbox.platform.hmcts.net'
     readinessProbe:
       enabled: false
     #   path: "/"
