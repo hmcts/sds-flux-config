@@ -5,7 +5,7 @@ metadata:
   name: hmi-casehqemulator
   namespace: hmi
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:v*
 spec:
   releaseName: hmi-casehqemulator
@@ -16,8 +16,8 @@ spec:
   values:
     replicas: 1
     image:
-      repository: "sdshmctspublic.azurecr.io/hmi/case-hq-emulator"
-      tag: "v0.2"
+      repository: "sdshmctspublic.azurecr.io/hmi/case-hq-emulator"   # {"$imagepolicy": "flux-system:hmi-casehqemulator:name"}
+      tag: "v0.2"  # {"$imagepolicy": "flux-system:hmi-casehqemulator:tag"}
       pullPolicy: Always
     ingress:
       enabled: true

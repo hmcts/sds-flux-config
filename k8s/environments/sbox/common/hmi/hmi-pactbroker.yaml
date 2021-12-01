@@ -5,7 +5,7 @@ metadata:
   name: hmi-pactbroker
   namespace: hmi
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:v*
 spec:
   releaseName: hmi-pactbroker
@@ -16,8 +16,8 @@ spec:
   values:
     replicas: 1
     image:
-      repository: "sdshmctspublic.azurecr.io/hmi/apim-tests-pact"
-      tag: "v0.1"
+      repository: "sdshmctspublic.azurecr.io/hmi/apim-tests-pact"  # {"$imagepolicy": "flux-system:hmi-pactbroker:name"}
+      tag: "v0.1"  # {"$imagepolicy": "flux-system:hmi-pactbroker:tag"}
       pullPolicy: Always
     ingress:
       enabled: true

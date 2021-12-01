@@ -5,7 +5,7 @@ metadata:
   name: mi-integration-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.job: glob:pr-*
 spec:
   releaseName: mi-integration-service
@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-integration-service:pr-1
+      image: sdshmctspublic.azurecr.io/mi-integration-service:pr-1  # {"$imagepolicy": "flux-system:mi-integration-service"}
       suspend: false
       kind: CronJob
       schedule: '15 * * * *'

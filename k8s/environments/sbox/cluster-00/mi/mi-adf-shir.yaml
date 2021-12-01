@@ -5,7 +5,7 @@ metadata:
   name: mi-adf-shir-deployment
   namespace: mi
   annotations:
-    fluxcd.io/automated: "true"
+    fluxcd.io/automated: "false"
     repository.fluxcd.io/chart-image: image
     filter.fluxcd.io/chart-image: glob:dev-*
 spec:
@@ -18,7 +18,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment
       app.kubernetes.io/name: mi-adf-shir-deployment
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:dev-09b63f3
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:dev-09b63f3  # {"$imagepolicy": "flux-system:mi-adf-shir"}
     secretsMountPath: ''
     environment: "sbox"
     resourceGroup: "mi-sbox-rg"

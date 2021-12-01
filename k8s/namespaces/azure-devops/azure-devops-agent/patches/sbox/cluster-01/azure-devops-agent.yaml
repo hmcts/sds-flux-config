@@ -18,4 +18,7 @@ spec:
     - name: dtssharedservicessboxkv
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       secrets:
-      - azure-devops-agent-token    
+      - azure-devops-agent-token
+    image:
+      repository: "hmctspublic.azurecr.io/hmcts/vsts-agent"  # {"$imagepolicy": "flux-system:azure-devops-agent:name"}
+      tag: "dbfv0f"  # {"$imagepolicy": "flux-system:azure-devops-agent:tag"}

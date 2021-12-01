@@ -5,7 +5,7 @@ metadata:
   name: data-extractor-job
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.job: glob:pr-*
 spec:
   releaseName: data-extractor
@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/data-extractor-job:pr-1
+      image: sdshmctspublic.azurecr.io/data-extractor-job:pr-1  # {"$imagepolicy": "flux-system:mi-data-extractor"}
       suspend: false
       kind: CronJob
       schedule: '0 * * * *'

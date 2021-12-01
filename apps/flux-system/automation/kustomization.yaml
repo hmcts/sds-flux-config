@@ -7,6 +7,10 @@ resources:
   - registry-credential-sync/hmctspublic/kustomize.yaml
   - registry-credential-sync/hmctsprivate/kustomize.yaml
   - ../../toffee/automation
+  - ../../hmi/automation
+  - ../../mi/automation
+  - ../../azure-devops/automation
+
 
 patches:
   - path: sdshmctspublic-image-repo.yaml
