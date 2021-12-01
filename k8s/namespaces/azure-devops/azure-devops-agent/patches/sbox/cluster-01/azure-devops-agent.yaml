@@ -4,7 +4,7 @@ kind: HelmRelease
 metadata:
   name: azure-devops-agent
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:v*
 spec:
   releaseName: azure-devops-agent
@@ -18,4 +18,7 @@ spec:
     - name: dtssharedservicessboxkv
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       secrets:
-      - azure-devops-agent-token    
+      - azure-devops-agent-token
+    image:
+      repository: "hmctspublic.azurecr.io/hmcts/vsts-agent"
+      tag: "dbfv0f"  # {"$imagepolicy": "flux-system:azure-devops-agent:tag"}

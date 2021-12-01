@@ -5,7 +5,7 @@ metadata:
   name: mi-extraction-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.job: glob:pr-*
 spec:
   releaseName: mi-extraction-service
@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-extraction-service:pr-1
+      image: sdshmctspublic.azurecr.io/mi-extraction-service:pr-1  # {"$imagepolicy": "flux-system:mi-extraction-service"}
       suspend: false
       kind: CronJob
       schedule: '40 0 * * *'

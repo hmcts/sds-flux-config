@@ -5,7 +5,7 @@ metadata:
   name: mi-house-keeping-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.job: glob:pr-*
 spec:
   releaseName: mi-house-keeping-service-job
@@ -15,7 +15,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:pr-1
+      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:pr-1  # {"$imagepolicy": "flux-system:mi-house-keeping-service"}
       suspend: false
       kind: CronJob
       schedule: '45 * * * *'
