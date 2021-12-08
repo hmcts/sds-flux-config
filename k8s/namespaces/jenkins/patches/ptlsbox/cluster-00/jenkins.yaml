@@ -300,7 +300,7 @@ spec:
                         executeInitScriptAsRoot: true
                         existingStorageAccountName: "hmctsjenkinssdssbox"
                         imageReference:
-                          galleryImageDefinition: "jenkins-agent"
+                          galleryImageDefinition: "jenkins-ubuntu"
                           galleryImageVersion: "1.0.3"
                           galleryName: "hmcts"
                           galleryResourceGroup: "hmcts-image-gallery-rg"
