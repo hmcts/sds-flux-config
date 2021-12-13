@@ -14,7 +14,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-integration-service:prod-b21445c-20211129165100 # {"$imagepolicy": "flux-system:mi-integration-service"}
+      image: sdshmctspublic.azurecr.io/mi-integration-service:prod-43ee309-20211213132632 # {"$imagepolicy": "flux-system:mi-integration-service"}
       suspend: false
       kind: CronJob
       schedule: '15 * * * *'
