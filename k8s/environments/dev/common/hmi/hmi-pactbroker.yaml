@@ -5,8 +5,7 @@ metadata:
   name: hmi-pactbroker
   namespace: hmi
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:v*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: hmi-pactbroker
   chart:

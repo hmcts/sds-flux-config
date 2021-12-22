@@ -5,8 +5,7 @@ metadata:
   name: hmi-wiremock
   namespace: hmi
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:v*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: hmi-wiremock
   chart:
