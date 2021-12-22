@@ -1,0 +1,12 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-frontend
+  namespace: toffee
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-81e47ca-20210729121156 #{"$imagepolicy": "flux-system:toffee-frontend"}

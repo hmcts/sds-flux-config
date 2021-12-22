@@ -15,10 +15,10 @@ patches:
     version: v1
     kind: HelmRelease
     name: toffee-frontend
-  path: flux-patch.yaml
+  path: toffee-frontend-patch.yaml
 - target:
     group: helm.fluxcd.io
     version: v1
     kind: HelmRelease
     name: toffee-recipe-backend
-  path: flux-patch.yaml
+  path: toffee-recipe-backend-patch.yaml
