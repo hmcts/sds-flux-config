@@ -13,7 +13,9 @@ spec:
     path: k8s/release/hmi/hmi-wiremock
     ref: master
   values:
-    image: sdshmctspublic.azurecr.io/hmi/apim-tests-wiremock:v0.1 #{"$imagepolicy": "flux-system:hmi-wiremock"}
+    image:
+      repository: sdshmctspublic.azurecr.io/hmi/apim-tests-wiremock # {"$imagepolicy": "flux-system:hmi-wiremock:name"}
+      tag: v0.1 # {"$imagepolicy": "flux-system:hmi-wiremock:tag"}
       pullPolicy: Always
     ingress:
       enabled: true

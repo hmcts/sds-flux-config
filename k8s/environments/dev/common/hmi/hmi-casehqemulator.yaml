@@ -14,7 +14,9 @@ spec:
     ref: master
   values:
     replicas: 1
-    image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:prod-3371100-20210927155212 #{"$imagepolicy": "flux-system:hmi-casehqemulator"}
+    image:
+      repository: "sdshmctspublic.azurecr.io/hmi/case-hq-emulator" # {"$imagepolicy": "flux-system:hmi-casehqemulator:name"}
+      tag: prod-3371100-20210927155212 # {"$imagepolicy": "flux-system:hmi-casehqemulator:tag"}
       pullPolicy: Always
     ingress:
       enabled: true

@@ -14,7 +14,9 @@ spec:
     ref: master
   values:
     replicas: 1
-    image: sdshmctspublic.azurecr.io/hmi/apim-tests-pact:v0.1 #{"$imagepolicy": "flux-system:hmi-pactbroker"}
+    image:
+      repository: sdshmctspublic.azurecr.io/hmi/apim-tests-pact:v0.1 # {"$imagepolicy": "flux-system:hmi-pactbroker:name"}
+      tag: v0.1 # {"$imagepolicy": "flux-system:hmi-pactbroker:tag"}
       pullPolicy: Always
     ingress:
       enabled: true
