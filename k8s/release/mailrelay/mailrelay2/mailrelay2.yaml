@@ -5,8 +5,7 @@ metadata:
   name: mailrelay2
   namespace: mailrelay2
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:v*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: mailrelay2
   chart:
