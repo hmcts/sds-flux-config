@@ -4,8 +4,7 @@ kind: HelmRelease
 metadata:
   name: azure-devops-agent
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:v*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: azure-devops-agent
   chart:
@@ -13,9 +12,7 @@ spec:
     name: azure-devops-agent
     version: 0.2.1
   values:
-    image:
-      repository: "hmctspublic.azurecr.io/hmcts/vsts-agent"
-      tag: "dbfv0f"
+    image: hmctspublic.azurecr.io/hmcts/vsts-agent:prod-69783e7536b9abf576f8d1333049ad9484263750-20211201-101740z #{"$imagepolicy": "flux-system:azure-devops-agent"}
     aadIdentity:
       name: azure-devops-agent
       type: 0
