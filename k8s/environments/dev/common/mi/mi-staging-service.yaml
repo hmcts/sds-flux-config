@@ -5,11 +5,7 @@ metadata:
   name: mi-staging-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
-    repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:pr-*
-    repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:pr-*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: mi-staging-service
   chart:
@@ -18,7 +14,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-staging-service:pr-167-d79d6a6
+      image: sdshmctspublic.azurecr.io/mi-staging-service:prod-22043c8-20211215113038 # {"$imagepolicy": "flux-system:mi-staging-service"}
       suspend: true
       kind: CronJob
       schedule: '30 1 * * *'
@@ -28,7 +24,7 @@ spec:
       environment:
         MI_CLIENT_ID: 5407b258-9168-499b-8e5e-32fd2e1bad3b
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-staging-service:pr-167-d79d6a6
+        image: sdshmctspublic.azurecr.io/mi-staging-service:prod-22043c8-20211215113038 # {"$imagepolicy": "flux-system:mi-staging-service"}
         enabled: false
       testsConfig:
         environment:

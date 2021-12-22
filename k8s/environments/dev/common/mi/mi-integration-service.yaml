@@ -5,11 +5,7 @@ metadata:
   name: mi-integration-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
-    repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:pr-*
-    repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:pr-*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: mi-integration-service
   chart:
@@ -18,7 +14,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-integration-service:pr-183-eab3ab3
+      image: sdshmctspublic.azurecr.io/mi-integration-service:prod-ce0db08-20211215113044 # {"$imagepolicy": "flux-system:mi-integration-service"}
       suspend: true
       kind: CronJob
       schedule: '15 1 * * *'
@@ -37,7 +33,7 @@ spec:
         GOV_UK_NOTIFY_ENABLED_CMC: true
         MI_CLIENT_ID: 47b18d2f-9a02-4f45-a87c-bacd17ea3583
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-integration-service:pr-183-eab3ab3
+        image: sdshmctspublic.azurecr.io/mi-integration-service:prod-ce0db08-20211215113044 # {"$imagepolicy": "flux-system:mi-integration-service"}
         enabled: false
       testsConfig:
         keyVaults:
