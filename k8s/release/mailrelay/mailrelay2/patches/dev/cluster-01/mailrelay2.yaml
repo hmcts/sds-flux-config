@@ -4,6 +4,8 @@ kind: HelmRelease
 metadata:
   name: mailrelay2
   namespace: mailrelay2
+  annotations:
+    flux.weave.works/automated: "false"
 spec:
   timeout: 1200
   values:
