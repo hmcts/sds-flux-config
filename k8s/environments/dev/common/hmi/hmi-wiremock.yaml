@@ -5,8 +5,7 @@ metadata:
   name: hmi-wiremock
   namespace: hmi
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:v*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: hmi-wiremock
   chart:
@@ -15,8 +14,8 @@ spec:
     ref: master
   values:
     image:
-      repository: "sdshmctspublic.azurecr.io/hmi/apim-tests-wiremock"
-      tag: "v0.1"
+      repository: sdshmctspublic.azurecr.io/hmi/apim-tests-wiremock # {"$imagepolicy": "flux-system:hmi-wiremock:name"}
+      tag: v0.1 # {"$imagepolicy": "flux-system:hmi-wiremock:tag"}
       pullPolicy: Always
     ingress:
       enabled: true
