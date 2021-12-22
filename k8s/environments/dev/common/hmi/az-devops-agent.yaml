@@ -13,7 +13,9 @@ spec:
     path: k8s/release/az-devops-agent
     ref: master
   values:
-    image: sdshmctspublic.azurecr.io/hmi/azure-devops-agent:v0.1 # {"$imagepolicy": "flux-system:hmi-az-devops-agent"}
+    image:
+      repository: "sdshmctspublic.azurecr.io/hmi/azure-devops-agent" # {"$imagepolicy": "flux-system:hmi-az-devops-agent:name"}
+      tag: "v0.1" # {"$imagepolicy": "flux-system:hmi-az-devops-agent:tag"}
     env:
       AZP_URL: "https://dev.azure.com/hmcts"
       AZP_POOL: "hmi-dev"
