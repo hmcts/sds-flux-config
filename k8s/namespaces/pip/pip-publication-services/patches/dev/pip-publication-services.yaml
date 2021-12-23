@@ -1,0 +1,13 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: pip-publication-services
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/publication-services:prod-c94ad14-20211214154840 # {"$imagepolicy": "flux-system:pip-publication-services"}

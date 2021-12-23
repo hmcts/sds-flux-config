@@ -1,0 +1,13 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: pip-frontend
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-936c55f-20211213105441 # {"$imagepolicy": "flux-system:pip-frontend"}
