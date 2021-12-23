@@ -1,0 +1,13 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: pip-channel-management
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-1cc79b7-20211214104236 # {"$imagepolicy": "flux-system:pip-channel-management"}

@@ -5,11 +5,7 @@ metadata:
   name: mi-house-keeping-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
-    repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:pr-*
-    repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:pr-*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: mi-house-keeping-service-job
   chart:
@@ -18,7 +14,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:pr-126-8cb5512
+      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-2e4d9de-20211215113023 # {"$imagepolicy": "flux-system:mi-house-keeping-service"}
       suspend: true
       kind: CronJob
       schedule: '45 1 * * *'
@@ -29,7 +25,7 @@ spec:
         MI_CLIENT_ID: 5793ad47-8629-4723-82dc-78b1b49ed280
         STORAGE_DATA_EXTRACTOR_RETENTION: "14"
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:pr-126-8cb5512
+        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-2e4d9de-20211215113023 # {"$imagepolicy": "flux-system:mi-house-keeping-service"}
         enabled: true
       testsConfig:
         environment:

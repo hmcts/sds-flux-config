@@ -27,3 +27,11 @@ patchesJson6902:
         - apiGroup: rbac.authorization.k8s.io
           kind: Group
           name: "7bde62e7-b39f-487c-95c9-b4c794fdbb96"
+
+patchesStrategicMerge:
+- ../../../../namespaces/pip/pip-frontend/patches/dev/pip-frontend.yaml
+- ../../../../namespaces/pip/pip-publication-services/patches/dev/pip-publication-services.yaml
+- ../../../../namespaces/pip/pip-data-management/patches/dev/pip-data-management.yaml
+- ../../../../namespaces/pip/pip-channel-management/patches/dev/pip-channel-management.yaml
+- ../../../../namespaces/pip/pip-subscription-management/patches/dev/pip-subscription-management.yaml
+- ../../../../namespaces/pip/pip-account-management/patches/dev/pip-account-management.yaml
