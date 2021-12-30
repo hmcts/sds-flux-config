@@ -5,7 +5,7 @@ metadata:
   annotations:
     filter.fluxcd.io/nodejs: glob:prod-*
 spec:
-  interval: 1m
+  interval: 5m
   releaseName: toffee-frontend
   chart:
     spec:
