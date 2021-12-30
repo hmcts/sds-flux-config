@@ -10,3 +10,5 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-3d4dc7e-20211006155138 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
       ingressHost: toffee-recipe-backend.sandbox.platform.hmcts.net
+    global:
+      environment: sandbox
