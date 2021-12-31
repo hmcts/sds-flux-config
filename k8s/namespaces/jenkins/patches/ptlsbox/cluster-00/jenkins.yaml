@@ -20,7 +20,7 @@ spec:
             jenkins:
               systemMessage: >-
                   This jenkins is managed by configuration as code, update <a
-                  href="https://github.com/hmcts/shared-services-flux/blob/master/k8s/namespaces/jenkins/patches/ptlsbox/cluster-00/jenkins.yaml">here</a>
+                  href="https://github.com/hmcts/sds-flux-config/blob/master/k8s/namespaces/jenkins/patches/ptlsbox/cluster-00/jenkins.yaml">here</a>
           env-vars: |
             jenkins:
               globalNodeProperties:
@@ -275,7 +275,7 @@ spec:
                       - name: "application"
                         value: "core"
                       - name: "builtFrom"
-                        value: "hmcts/shared-services-flux"
+                        value: "hmcts/sds-flux-config"
                       - name: "businessArea"
                         value: "Cross-Cutting"
                       - name: "criticality"

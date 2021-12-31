@@ -10,7 +10,7 @@ metadata:
 spec:
   releaseName: hmi-wiremock
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/hmi/hmi-wiremock
     ref: master
   values:
