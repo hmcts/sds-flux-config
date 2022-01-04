@@ -4,5 +4,5 @@ resources:
   - ../../base
 namespace: toffee
 patchesStrategicMerge:
-  - ../../identity/toffee-azure-identity.yaml
   - ../../identity/apple-azure-identity.yaml
+  - ../../identity/sbox.yaml
