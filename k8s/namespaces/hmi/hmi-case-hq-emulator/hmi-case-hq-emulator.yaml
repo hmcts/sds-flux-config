@@ -5,7 +5,7 @@ metadata:
   name: hmi-case-hq-emulator
   namespace: hmi
   annotations:
-    fluxcd.io/automated: "true"
+    fluxcd.io/automated: "false"
 spec:
   releaseName: hmi-case-hq-emulator
   chart:

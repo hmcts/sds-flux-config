@@ -137,6 +137,12 @@ spec:
                     name: PRE
                     recurse: true
                     title: Pre Recorded Evidence Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS_.*TT-.*\/.+\/master
+                    name: TT
+                    recurse: true
+                    title: Tax Tribunals Dashboard
           authentication: |
             jenkins:
               securityRealm:
