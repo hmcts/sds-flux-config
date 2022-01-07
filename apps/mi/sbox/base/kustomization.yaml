@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+namespace: mi
+patches:
+  - path: ../../mi-azure-functions/sbox.yaml
+  - path: ../../mi-azure-functions/sbox-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: mi-azure-functions

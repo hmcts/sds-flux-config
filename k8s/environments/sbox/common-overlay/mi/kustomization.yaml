@@ -1,8 +1,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../../../../namespaces/mi
+- ../../../../namespaces/mi/mi-developer-rbac.yaml
 - ../../../../namespaces/mi/mi-sftp-server
+- ../../../../namespaces/mi/mi-data-extractor/mi-data-extractor-identity.yaml
+- ../../../../namespaces/mi/mi-data-extractor/mi-data-extractor-identity-binding.yaml
+- ../../../../namespaces/mi/mi-extraction-service/mi-extraction-service-identity.yaml
+- ../../../../namespaces/mi/mi-extraction-service/mi-extraction-service-identity-binding.yaml
+- ../../../../namespaces/mi/mi-house-keeping-service/mi-house-keeping-service-identity.yaml
+- ../../../../namespaces/mi/mi-house-keeping-service/mi-house-keeping-service-identity-binding.yaml
+- ../../../../namespaces/mi/mi-integration-service/mi-integration-service-identity.yaml
+- ../../../../namespaces/mi/mi-integration-service/mi-integration-service-identity-binding.yaml
+- ../../../../namespaces/mi/mi-staging-service/mi-staging-service-identity.yaml
+- ../../../../namespaces/mi/mi-staging-service/mi-staging-service-identity-binding.yaml
 
 patches:
 - target:
@@ -35,9 +45,3 @@ patches:
     kind: AzureIdentity
     name: mi-staging-service
   path: mi-staging-service-identity-patch.yaml
-- target:
-    group: aadpodidentity.k8s.io
-    version: v1
-    kind: AzureIdentity
-    name: mi-azure-functions
-  path: mi-azure-functions-identity-patch.yaml
