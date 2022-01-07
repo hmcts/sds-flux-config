@@ -1,4 +1,3 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -14,7 +13,7 @@ spec:
   values:
     image:
       repository: hmctspublic.azurecr.io/hmcts/vsts-agent # {"$imagepolicy": "flux-system:azure-devops-agent:name"}
-      tag: prod-69783e7536b9abf576f8d1333049ad9484263750-20211201-101740z # {"$imagepolicy": "flux-system:azure-devops-agent:tag"}
+      tag: prod-69783e7536b9abf576f8d1333049ad9484263750-20220107-020055z # {"$imagepolicy": "flux-system:azure-devops-agent:tag"}
     aadIdentity:
       name: azure-devops-agent
       type: 0
@@ -25,7 +24,7 @@ spec:
       pool: hmcts-ss-sbox
     replicas: 1
     keyVaults:
-    - name: dtssharedservicessboxkv
-      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      secrets:
-      - azure-devops-agent-token    
+      - name: dtssharedservicessboxkv
+        tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+        secrets:
+          - azure-devops-agent-token
