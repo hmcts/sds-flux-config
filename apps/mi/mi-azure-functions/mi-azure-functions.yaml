@@ -1,0 +1,22 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mi-azure-functions-deployment
+  namespace: mi
+spec:
+  releaseName: mi-azure-functions
+  values:
+    labels:
+      app.kubernetes.io/instance: mi-azure-functions-deployment
+      app.kubernetes.io/name: mi-azure-functions-deployment
+    keyVaultSecrets:
+      - encryption-publicKey
+  chart:
+    spec:
+      chart: ./k8s/release/mi/mi-azure-functions
+      sourceRef:
+        kind: GitRepository
+        name: flux-config
+        namespace: flux-system
+      interval: 1m
