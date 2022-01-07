@@ -1,26 +1,13 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: data-extractor-job
   namespace: mi
-  annotations:
-    flux.weave.works/automated: "false"
-    flux.weave.works/tag.job: glob:pr-*
 spec:
   releaseName: data-extractor
-  chart:
-    git: git@github.com:hmcts/sds-flux-config
-    path: k8s/release/mi/mi-data-extractor-job
-    ref: master
   values:
     job:
       image: sdshmctspublic.azurecr.io/data-extractor-job:prod-43d15fb-20211215114623 # {"$imagepolicy": "flux-system:mi-data-extractor"}
-      suspend: false
-      kind: CronJob
-      schedule: '0 * * * *'
-      labels:
-        app.kubernetes.io/instance: data-extractor-job
-        app.kubernetes.io/name: data-extractor-job
       environment:
         ETL_MSICLIENTID: 736bf16e-d749-4fde-a413-f35785562838
     global:

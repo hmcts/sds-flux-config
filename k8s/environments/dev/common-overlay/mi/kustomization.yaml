@@ -10,7 +10,7 @@ patches:
     version: v1
     kind: AzureIdentity
     name: data-extractor-job
-  path: mi-data-extractor-identity-patch.yaml 
+  path: mi-data-extractor-identity-patch.yaml
 - target:
     group: aadpodidentity.k8s.io
     version: v1
