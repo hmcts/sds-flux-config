@@ -1,0 +1,11 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hmi-case-hq-emulator
+  namespace: hmi
+spec:
+  releaseName: hmi-case-hq-emulator
+  chart:
+    spec:
+      chart: ./charts/hmi-case-hq-emulator
