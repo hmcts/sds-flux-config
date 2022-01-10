@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: mi-extraction-service
+  namespace: mi
+spec:
+  azureIdentity: mi-extraction-service
+  selector: mi-extraction-service
