@@ -1,0 +1,38 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hmi-wiremock
+  namespace: hmi
+spec:
+  releaseName: hmi-wiremock
+  values:
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      paths:
+        - /
+      tls: []
+    readinessProbe:
+      enabled: false
+    #   path: "/"
+    #   initialDelaySeconds: 60
+    #   periodSeconds: 30
+    #   failureThreshold: 6
+    #   timeoutSeconds: 5
+    livenessProbe:
+      enabled: false
+      #   path: "/"
+      #   initialDelaySeconds: 60
+      #   periodSeconds: 30
+      #   failureThreshold: 6
+      #   timeoutSeconds: 5
+  chart:
+    spec:
+      chart: ./k8s/release/hmi/hmi-wiremock
+      sourceRef:
+        kind: GitRepository
+        name: flux-config
+        namespace: flux-system
+      interval: 1m
