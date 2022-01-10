@@ -8,4 +8,9 @@ spec:
   releaseName: hmi-case-hq-emulator
   chart:
     spec:
-      chart: ./charts/hmi-case-hq-emulator
+      chart: ./k8s/release/hmi/hmi-case-hq-emulator
+      sourceRef:
+        kind: GitRepository
+        name: flux-config
+        namespace: flux-system
+      interval: 1m
