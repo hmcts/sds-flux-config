@@ -51,7 +51,7 @@ spec:
   image: ${ACR}.azurecr.io/${PRODUCT}/${COMPONENT}
 EOF
 ) > "${COMPONENT_DIR}/image-repo.yaml"
-elif [[ ${ACR} == "hmctssandbox" ]]
+elif [[ ${ACR} == "sdshmctspublicsbox" ]]
 then
 (
 cat <<EOF
@@ -60,7 +60,7 @@ kind: ImageRepository
 metadata:
   name: ${PRODUCT}-${COMPONENT}
   annotations:
-    hmcts.github.com/image-registry: hmctssandbox
+    hmcts.github.com/image-registry: sdshmctspublicsbox
 spec:
   image: ${ACR}.azurecr.io/${PRODUCT}/${COMPONENT}
 EOF

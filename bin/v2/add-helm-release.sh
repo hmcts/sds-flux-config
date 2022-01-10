@@ -62,7 +62,7 @@ spec:
       interval: 1m
   values:
     ${LANGUAGE}:
-      image: hmctssandbox.azurecr.io/${PRODUCT}/${COMPONENT}:latest # {"\$imagepolicy": "flux-system:${PRODUCT}-${COMPONENT}"}
+      image: sdshmctspublicsbox.azurecr.io/${PRODUCT}/${COMPONENT}:latest # {"\$imagepolicy": "flux-system:${PRODUCT}-${COMPONENT}"}
       ingressHost: ${INGRESS_HOST}
       disableTraefikTls: true
     global:
