@@ -16,7 +16,7 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublicsbox.azurecr.io/labs/endakelly:latest # {"$imagepolicy": "flux-system:labs-endakelly"}
+      image: sdshmctspublicsbox.azurecr.io/labs/endakelly:staging-5dfdb47-20220110133919 # {"$imagepolicy": "flux-system:labs-endakelly"}
       ingressHost: labs-endakelly-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
       disableTraefikTls: true
     global:
