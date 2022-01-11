@@ -1,0 +1,8 @@
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImageRepository
+metadata:
+  name: labs-endakelly
+  annotations:
+    hmcts.github.com/image-registry: sdshmctspublicsbox
+spec:
+  image: sdshmctspublicsbox.azurecr.io/labs/endakelly
