@@ -17,7 +17,7 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/labs/endakelly:staging-5dfdb47-20220110133919 # {"$imagepolicy": "flux-system:labs-endakelly"}
-      ingressHost: labs-endakelly.{{ .Values.global.environment }}.platform.hmcts.net
+      ingressHost: labs-endakelly.sandbox.platform.hmcts.net
       disableTraefikTls: true
     global:
       environment: sandbox
