@@ -24,6 +24,9 @@ kind: HelmRelease
 metadata:
   name: pip-data-management
   namespace: pip
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.java: glob:pr-220-*
 spec:
   values:
     java:
