@@ -1,0 +1,39 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kube-slack
+  namespace: admin
+spec:
+  releaseName: kube-slack
+  values:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 512Mi
+      limits:
+        cpu: 500m
+        memory: 1Gi
+    envVars:
+      NOT_READY_MIN_TIME: "180000" # in ms
+    tolerations:
+      - key: CriticalAddonsOnly
+        operator: Equal
+        value: "true"
+        effect: NoSchedule
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+                - key: kubernetes.azure.com/mode
+                  operator: In
+                  values:
+                    - system
+  valuesFrom:
+    - kind: Secret
+      name: kube-slack-values
+  chart:
+    spec:
+      chart: ./stable/kube-slack
