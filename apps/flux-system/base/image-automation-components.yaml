@@ -2000,7 +2000,7 @@ spec:
     spec:
       containers:
       - args:
-        - --events-addr=
+        - --events-addr=http://notification-controller/
         - --watch-all-namespaces=true
         - --log-level=info
         - --log-encoding=json
