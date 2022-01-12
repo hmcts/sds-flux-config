@@ -7,7 +7,7 @@ spec:
   releaseName: mi-integration-service
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-integration-service:prod-ce0db08-20211215113044 # {"$imagepolicy": "flux-system:mi-integration-service"}
+      image: sdshmctspublic.azurecr.io/mi-integration-service:prod-4f7c6f6-20220110160116 # {"$imagepolicy": "flux-system:mi-integration-service"}
       environment:
         MI_CLIENT_ID: 9278a876-6f8a-489d-9053-01c996a7b6f6
     global:

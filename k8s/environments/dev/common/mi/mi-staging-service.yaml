@@ -1,4 +1,3 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -14,7 +13,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-staging-service:prod-22043c8-20211215113038 # {"$imagepolicy": "flux-system:mi-staging-service"}
+      image: sdshmctspublic.azurecr.io/mi-staging-service:prod-1163655-20220110154525 # {"$imagepolicy": "flux-system:mi-staging-service"}
       suspend: true
       kind: CronJob
       schedule: '30 1 * * *'
@@ -24,7 +23,7 @@ spec:
       environment:
         MI_CLIENT_ID: 5407b258-9168-499b-8e5e-32fd2e1bad3b
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-staging-service:prod-22043c8-20211215113038 # {"$imagepolicy": "flux-system:mi-staging-service"}
+        image: sdshmctspublic.azurecr.io/mi-staging-service:prod-1163655-20220110154525 # {"$imagepolicy": "flux-system:mi-staging-service"}
         enabled: false
       testsConfig:
         environment:

@@ -1,4 +1,3 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -14,7 +13,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/data-extractor-job:prod-43d15fb-20211215114623 # {"$imagepolicy": "flux-system:mi-data-extractor"}
+      image: sdshmctspublic.azurecr.io/data-extractor-job:prod-7e01882-20220110151341 # {"$imagepolicy": "flux-system:mi-data-extractor"}
       suspend: true
       kind: CronJob
       schedule: '0 1 * * *'
@@ -25,7 +24,7 @@ spec:
       environment:
         ETL_MSICLIENTID: 0f64b0be-7dde-4083-9843-bd807acb7758
       smoketests:
-        image: sdshmctspublic.azurecr.io/data-extractor-job:prod-43d15fb-20211215114623  # {"$imagepolicy": "flux-system:mi-data-extractor"}
+        image: sdshmctspublic.azurecr.io/data-extractor-job:prod-7e01882-20220110151341 # {"$imagepolicy": "flux-system:mi-data-extractor"}
         enabled: true
       testsConfig:
         environment:

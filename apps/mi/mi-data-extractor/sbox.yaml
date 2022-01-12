@@ -7,7 +7,7 @@ spec:
   releaseName: data-extractor
   values:
     job:
-      image: sdshmctspublic.azurecr.io/data-extractor-job:prod-43d15fb-20211215114623 # {"$imagepolicy": "flux-system:mi-data-extractor"}
+      image: sdshmctspublic.azurecr.io/data-extractor-job:prod-7e01882-20220110151341 # {"$imagepolicy": "flux-system:mi-data-extractor"}
       environment:
         ETL_MSICLIENTID: 736bf16e-d749-4fde-a413-f35785562838
     global:

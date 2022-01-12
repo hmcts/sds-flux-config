@@ -1,4 +1,3 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -14,7 +13,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-integration-service:prod-ce0db08-20211215113044 # {"$imagepolicy": "flux-system:mi-integration-service"}
+      image: sdshmctspublic.azurecr.io/mi-integration-service:prod-4f7c6f6-20220110160116 # {"$imagepolicy": "flux-system:mi-integration-service"}
       suspend: true
       kind: CronJob
       schedule: '15 1 * * *'
@@ -26,14 +25,14 @@ spec:
           excludeEnvironmentSuffix: false
           resourceGroup: mi-{{ .Values.global.environment }}-rg
           secrets:
-          - appinsights-instrumentationkey
-          - notify-api-key-cmc
+            - appinsights-instrumentationkey
+            - notify-api-key-cmc
       environment:
         DATA_SOURCE_NOTIFY: true
         GOV_UK_NOTIFY_ENABLED_CMC: true
         MI_CLIENT_ID: 47b18d2f-9a02-4f45-a87c-bacd17ea3583
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-integration-service:prod-ce0db08-20211215113044 # {"$imagepolicy": "flux-system:mi-integration-service"}
+        image: sdshmctspublic.azurecr.io/mi-integration-service:prod-4f7c6f6-20220110160116 # {"$imagepolicy": "flux-system:mi-integration-service"}
         enabled: false
       testsConfig:
         keyVaults:
@@ -41,8 +40,8 @@ spec:
             excludeEnvironmentSuffix: false
             resourceGroup: mi-{{ .Values.global.environment }}-rg
             secrets:
-            - appinsights-instrumentationkey
-            - notify-api-key-cmc
+              - appinsights-instrumentationkey
+              - notify-api-key-cmc
         environment:
           DATA_SOURCE_NOTIFY: true
           GOV_UK_NOTIFY_ENABLED_CMC: true
@@ -51,4 +50,3 @@ spec:
       subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       environment: "dev"
-
