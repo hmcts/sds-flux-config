@@ -34,9 +34,6 @@ kind: HelmRelease
 metadata:
   name: pip-frontend
   namespace: pip
-  annotations:
-    fluxcd.io/automated: "true"
-    fluxcd.io/tag.nodejs: glob:pr-220-*
 spec:
   values:
     nodejs:
