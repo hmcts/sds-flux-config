@@ -4,7 +4,7 @@ metadata:
   name: pip-frontend
   namespace: pip
   annotations:
-    fluxcd.io/tag.nodejs: glob:pr-220-*
+    filter.fluxcd.io/nodejs: glob:pr-220-*
 spec:
   releaseName: pip-frontend
   values:
