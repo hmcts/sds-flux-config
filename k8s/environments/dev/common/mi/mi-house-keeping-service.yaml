@@ -1,24 +1,19 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: mi-house-keeping-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
-    repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:pr-*
-    repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:pr-*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: mi-house-keeping-service-job
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/mi/mi-house-keeping-service
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:pr-126-8cb5512
+      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-4bfd7a0-20220110163112 # {"$imagepolicy": "flux-system:mi-house-keeping-service"}
       suspend: true
       kind: CronJob
       schedule: '45 1 * * *'
@@ -29,12 +24,11 @@ spec:
         MI_CLIENT_ID: 5793ad47-8629-4723-82dc-78b1b49ed280
         STORAGE_DATA_EXTRACTOR_RETENTION: "14"
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:pr-126-8cb5512
+        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-4bfd7a0-20220110163112 # {"$imagepolicy": "flux-system:mi-house-keeping-service"}
         enabled: true
       testsConfig:
         environment:
           MI_CLIENT_ID: 5793ad47-8629-4723-82dc-78b1b49ed280
-
     global:
       subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

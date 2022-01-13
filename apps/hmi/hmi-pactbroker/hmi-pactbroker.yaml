@@ -1,0 +1,44 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hmi-pactbroker
+  namespace: hmi
+spec:
+  releaseName: hmi-pactbroker
+  values:
+    replicas: 1
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+      paths:
+        - /
+      tls: []
+    postgresql:
+      enabled: true
+      postgresqlDatabase: "hmi-pactbroker"
+      postgresqlPort: "5432"
+      postgresqlDisableSsl: "true"
+    readinessProbe:
+      enabled: false
+    #   path: "/diagnostic/status/heartbeat"
+    #   initialDelaySeconds: 60
+    #   periodSeconds: 10
+    #   failureThreshold: 6
+    #   timeoutSeconds: 5
+    livenessProbe:
+      enabled: false
+      #   path: "/diagnostic/status/heartbeat"
+      #   initialDelaySeconds: 60
+      #   periodSeconds: 10
+      #   failureThreshold: 6
+      #   timeoutSeconds: 5
+  chart:
+    spec:
+      chart: ./k8s/release/hmi/hmi-pactbroker
+      sourceRef:
+        kind: GitRepository
+        name: flux-config
+        namespace: flux-system
+      interval: 1m

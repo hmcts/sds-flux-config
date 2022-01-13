@@ -4,12 +4,14 @@ kind: HelmRelease
 metadata:
   name: mailrelay2
   namespace: mailrelay2
+  annotations:
+    flux.weave.works/automated: "false"
 spec:
   timeout: 1200
   values:
     image:
-      repository: sdshmctspublic.azurecr.io/exim-relay
-      tag: v0.2.8
+      repository: sdshmctspublic.azurecr.io/exim-relay # {"$imagepolicy": "flux-system:mailrelay:name"}
+      tag: v0.2.8 # {"$imagepolicy": "flux-system:mailrelay:tag"}
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer

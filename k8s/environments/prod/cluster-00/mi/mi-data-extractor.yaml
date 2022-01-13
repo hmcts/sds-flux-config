@@ -13,12 +13,12 @@ metadata:
 spec:
   releaseName: data-extractor
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/mi/mi-data-extractor-job
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/data-extractor-job:prod-43d15fb-20211215114623
+      image: sdshmctspublic.azurecr.io/data-extractor-job:prod-7e01882-20220110151341
       suspend: false
       kind: CronJob
       schedule: '15 0 * * *'
@@ -32,7 +32,7 @@ spec:
       environment:
         ETL_MSICLIENTID: 7fc8466f-2673-4c70-a6d0-5036f15b3e95
       smoketests:
-        image: sdshmctspublic.azurecr.io/data-extractor-job:prod-43d15fb-20211215114623
+        image: sdshmctspublic.azurecr.io/data-extractor-job:prod-7e01882-20220110151341
         enabled: true
       testsConfig:
         environment:

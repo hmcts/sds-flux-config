@@ -10,8 +10,9 @@ resources:
   - ../../hmi/automation
   - ../../mi/automation
   - ../../azure-devops/automation
-
-
+  - ../../mailrelay/automation
+  - ../../pip/automation
+  - ../../labs/automation
 patches:
   - path: sdshmctspublic-image-repo.yaml
     target:

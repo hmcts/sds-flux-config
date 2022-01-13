@@ -5,18 +5,17 @@ metadata:
   name: hmi-devops-agent
   namespace: hmi
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:v*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: az-devops-agent
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/az-devops-agent
     ref: master
   values:
     image:
-      repository: "sdshmctspublic.azurecr.io/hmi/azure-devops-agent"
-      tag: "v0.1"
+      repository: "sdshmctspublic.azurecr.io/hmi/azure-devops-agent" # {"$imagepolicy": "flux-system:hmi-az-devops-agent:name"}
+      tag: "v0.1" # {"$imagepolicy": "flux-system:hmi-az-devops-agent:tag"}
     env:
       AZP_URL: "https://dev.azure.com/hmcts"
       AZP_POOL: "hmi-dev"

@@ -1,30 +1,27 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: mi-azure-functions-deployment
   namespace: mi
   annotations:
-    fluxcd.io/automated: "true"
-    repository.fluxcd.io/chart-image: image
-    filter.fluxcd.io/chart-image: glob:pr-*
+    fluxcd.io/automated: "false"
 spec:
   releaseName: mi-azure-functions
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/mi/mi-azure-functions
     ref: master
   values:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:pr-19-348d2fe
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-b327670-20220110145641 # {"$imagepolicy": "flux-system:mi-azure-functions"}
     env:
       ADF_RESOURCEGROUP: mi-dev-rg
       ADF_NAME: mi-ingestion-adf-dev
       ADF_STORAGEACCOUNTNAME: miauditdev
     keyVaultSecrets:
-    - encryption-publicKey
+      - encryption-publicKey
     environment: "dev"
     resourceGroup: "mi-dev-rg"
     subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"

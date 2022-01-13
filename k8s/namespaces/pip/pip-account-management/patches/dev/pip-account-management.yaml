@@ -1,0 +1,13 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: pip-account-management
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/account-management:prod-3e430f7-20211214122737 # {"$imagepolicy": "flux-system:pip-account-management"}

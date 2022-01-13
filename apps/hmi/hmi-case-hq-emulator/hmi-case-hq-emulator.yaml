@@ -1,0 +1,16 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hmi-case-hq-emulator
+  namespace: hmi
+spec:
+  releaseName: hmi-case-hq-emulator
+  chart:
+    spec:
+      chart: ./k8s/release/hmi/hmi-case-hq-emulator
+      sourceRef:
+        kind: GitRepository
+        name: flux-config
+        namespace: flux-system
+      interval: 1m

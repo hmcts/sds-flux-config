@@ -1,23 +1,21 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: hmi-pactbroker
   namespace: hmi
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:v*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: hmi-pactbroker
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/hmi/hmi-pactbroker
     ref: master
   values:
     replicas: 1
     image:
-      repository: "sdshmctspublic.azurecr.io/hmi/apim-tests-pact"
-      tag: "v0.1"
+      repository: sdshmctspublic.azurecr.io/hmi/apim-tests-pact # {"$imagepolicy": "flux-system:hmi-pactbroker:name"}
+      tag: v0.1 # {"$imagepolicy": "flux-system:hmi-pactbroker:tag"}
       pullPolicy: Always
     ingress:
       enabled: true
@@ -46,7 +44,6 @@ spec:
         secrets:
           - pact-db-user
           - pact-db-password
-
     readinessProbe:
       enabled: false
     #   path: "/diagnostic/status/heartbeat"

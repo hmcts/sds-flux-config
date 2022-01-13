@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: toffee-frontend
+  namespace: toffee
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-270662e-20211119163356 #{"$imagepolicy": "flux-system:toffee-frontend"}
+      ingressHost: toffee.sandbox.platform.hmcts.net
+      environment:
+        RECIPE_BACKEND_URL: http://toffee-recipe-backend.sandbox.platform.hmcts.net
+    global:
+      environment: sandbox
+    volumes:
+      - name: azurekeyvault
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "default-cert"

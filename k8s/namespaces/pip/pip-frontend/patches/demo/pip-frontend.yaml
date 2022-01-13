@@ -3,6 +3,8 @@ kind: HelmRelease
 metadata:
   name: pip-frontend
   namespace: pip
+  annotations:
+    filter.fluxcd.io/nodejs: glob:pr-220-*
 spec:
   releaseName: pip-frontend
   values:

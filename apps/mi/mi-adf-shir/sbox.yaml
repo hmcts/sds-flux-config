@@ -1,0 +1,13 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mi-adf-shir-deployment
+  namespace: mi
+spec:
+  releaseName: mi-adf-shir
+  values:
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-c67d922-20211130213703 # {"$imagepolicy": "flux-system:mi-adf-shir"}
+    secretsMountPath: ''
+    environment: "sbox"
+    resourceGroup: "mi-sbox-rg"
+    subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"

@@ -13,7 +13,7 @@ metadata:
 spec:
   releaseName: mi-extraction-service
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/mi/mi-extraction-service
     ref: master
   values:

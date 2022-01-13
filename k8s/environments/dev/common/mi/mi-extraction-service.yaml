@@ -1,24 +1,19 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: mi-extraction-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
-    repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:pr-*
-    repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:pr-*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: mi-extraction-service
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/mi/mi-extraction-service
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-extraction-service:pr-151-d374d56
+      image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-e7e5eea-20220110162352 # {"$imagepolicy": "flux-system:mi-extraction-service"}
       suspend: true
       kind: CronJob
       schedule: '40 1 * * *'
@@ -30,10 +25,10 @@ spec:
           excludeEnvironmentSuffix: false
           resourceGroup: mi-{{ .Values.global.environment }}-rg
           secrets:
-          - appinsights-instrumentationkey
-          - sftp-remote-user
-          - sftp-remote-password
-          - encryption-publicKey
+            - appinsights-instrumentationkey
+            - sftp-remote-user
+            - sftp-remote-password
+            - encryption-publicKey
       environment:
         MI_CLIENT_ID: 6c3c3848-a572-4bc2-b465-008757f31b8b
         SFTP_ENABLED: true
@@ -42,7 +37,7 @@ spec:
         SFTP_REMOTE_FOLDER: files/mi-platform-export/
         SFTP_FILE_ENCRYPTION_ENABLED: true
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-extraction-service:pr-151-d374d56
+        image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-e7e5eea-20220110162352 # {"$imagepolicy": "flux-system:mi-extraction-service"}
         enabled: true
       testsConfig:
         keyVaults:
@@ -50,10 +45,10 @@ spec:
             excludeEnvironmentSuffix: false
             resourceGroup: mi-{{ .Values.global.environment }}-rg
             secrets:
-            - appinsights-instrumentationkey
-            - sftp-remote-user
-            - sftp-remote-password
-            - encryption-publicKey
+              - appinsights-instrumentationkey
+              - sftp-remote-user
+              - sftp-remote-password
+              - encryption-publicKey
         environment:
           MI_CLIENT_ID: 6c3c3848-a572-4bc2-b465-008757f31b8b
           SFTP_ENABLED: true

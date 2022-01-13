@@ -13,12 +13,12 @@ metadata:
 spec:
   releaseName: mi-house-keeping-service-job
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/mi/mi-house-keeping-service
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:stg-2e4d9de-20211215113023
+      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:stg-4bfd7a0-20220110163112
       suspend: false
       kind: CronJob
       schedule: '45 * * * *'
@@ -29,7 +29,7 @@ spec:
       environment:
         MI_CLIENT_ID: 6ad9dea6-326e-4b34-9ccf-f7785b1ddb58
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:stg-2e4d9de-20211215113023
+        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:stg-4bfd7a0-20220110163112
         enabled: true
       testsConfig:
         environment:

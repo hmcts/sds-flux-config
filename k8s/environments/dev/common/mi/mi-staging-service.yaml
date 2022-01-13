@@ -1,24 +1,19 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: mi-staging-service
   namespace: mi
   annotations:
-    flux.weave.works/automated: "true"
-    repository.fluxcd.io/job: job.image
-    filter.fluxcd.io/job: glob:pr-*
-    repository.fluxcd.io/smoke: job.smoketests.image
-    filter.fluxcd.io/smoke: glob:pr-*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: mi-staging-service
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/mi/mi-staging-service
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-staging-service:pr-167-d79d6a6
+      image: sdshmctspublic.azurecr.io/mi-staging-service:prod-1163655-20220110154525 # {"$imagepolicy": "flux-system:mi-staging-service"}
       suspend: true
       kind: CronJob
       schedule: '30 1 * * *'
@@ -28,7 +23,7 @@ spec:
       environment:
         MI_CLIENT_ID: 5407b258-9168-499b-8e5e-32fd2e1bad3b
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-staging-service:pr-167-d79d6a6
+        image: sdshmctspublic.azurecr.io/mi-staging-service:prod-1163655-20220110154525 # {"$imagepolicy": "flux-system:mi-staging-service"}
         enabled: false
       testsConfig:
         environment:

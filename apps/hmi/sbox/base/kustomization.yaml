@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+namespace: hmi
+patchesStrategicMerge:
+  - ../../hmi-az-devops-agent/sbox.yaml
+  - ../../hmi-case-hq-emulator/sbox.yaml
+  - ../../hmi-pactbroker/sbox.yaml
+  - ../../hmi-wiremock/sbox.yaml

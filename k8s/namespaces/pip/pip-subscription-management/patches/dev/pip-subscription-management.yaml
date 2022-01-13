@@ -1,0 +1,13 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: pip-subscription-management
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-980a2f8-20211216170247 # {"$imagepolicy": "flux-system:pip-subscription-management"}

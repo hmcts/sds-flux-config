@@ -1,11 +1,9 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: azure-devops-agent
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.chart-image: glob:v*
+    flux.weave.works/automated: "false"
 spec:
   releaseName: azure-devops-agent
   chart:
@@ -14,8 +12,8 @@ spec:
     version: 0.2.1
   values:
     image:
-      repository: "hmctspublic.azurecr.io/hmcts/vsts-agent"
-      tag: "dbfv0f"
+      repository: hmctspublic.azurecr.io/hmcts/vsts-agent # {"$imagepolicy": "flux-system:azure-devops-agent:name"}
+      tag: prod-69783e7536b9abf576f8d1333049ad9484263750-20220107-024226z # {"$imagepolicy": "flux-system:azure-devops-agent:tag"}
     aadIdentity:
       name: azure-devops-agent
       type: 0
@@ -26,7 +24,7 @@ spec:
       pool: hmcts-ss-sbox
     replicas: 1
     keyVaults:
-    - name: dtssharedservicessboxkv
-      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      secrets:
-      - azure-devops-agent-token    
+      - name: dtssharedservicessboxkv
+        tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+        secrets:
+          - azure-devops-agent-token

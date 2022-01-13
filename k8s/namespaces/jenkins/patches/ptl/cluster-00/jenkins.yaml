@@ -20,7 +20,7 @@ spec:
             jenkins:
               systemMessage: >-
                   This jenkins is managed by configuration as code, update <a
-                  href="https://github.com/hmcts/shared-services-flux/blob/master/k8s/namespaces/jenkins/patches/ptl/cluster-00/jenkins.yaml">here</a>
+                  href="https://github.com/hmcts/sds-flux-config/blob/master/k8s/namespaces/jenkins/patches/ptl/cluster-00/jenkins.yaml">here</a>
           env-vars: |
             jenkins:
               globalNodeProperties:
@@ -137,6 +137,12 @@ spec:
                     name: PRE
                     recurse: true
                     title: Pre Recorded Evidence Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS_.*TT-.*\/.+\/master
+                    name: TT
+                    recurse: true
+                    title: Tax Tribunals Dashboard
           authentication: |
             jenkins:
               securityRealm:
@@ -307,7 +313,7 @@ spec:
                       - name: "application"
                         value: "core"
                       - name: "builtFrom"
-                        value: "hmcts/shared-services-flux"
+                        value: "hmcts/sds-flux-config"
                       - name: "businessArea"
                         value: "Cross-Cutting"
                       - name: "criticality"
@@ -333,7 +339,7 @@ spec:
                         existingStorageAccountName: "hmctsjenkinssds"
                         imageReference:
                           galleryImageDefinition: "jenkins-ubuntu"
-                          galleryImageVersion: "1.0.6"
+                          galleryImageVersion: "1.1.0"
                           galleryName: "hmcts"
                           galleryResourceGroup: "hmcts-image-gallery-rg"
                           gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"

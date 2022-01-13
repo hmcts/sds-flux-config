@@ -19,6 +19,10 @@
 
 set -e
 
+# Unset CDPATH to restore default cd behavior. An exported CDPATH can
+# cause cd to output the current directory to STDOUT.
+unset CDPATH
+
 where=$PWD
 
 release_url=https://api.github.com/repos/kubernetes-sigs/kustomize/releases
@@ -98,7 +102,14 @@ elif [[ "$OSTYPE" == darwin* ]]; then
   opsys=darwin
 fi
 
-RELEASE_URL=$(curl -s $release_url |\
+releases=$(curl -s $release_url)
+
+if [[ $releases == *"API rate limit exceeded"* ]]; then
+  echo "Github rate-limiter failed the request. Either authenticate or wait a couple of minutes."
+  exit 1
+fi
+
+RELEASE_URL=$(echo "${releases}" |\
   grep browser_download.*${opsys}_${arch} |\
   cut -d '"' -f 4 |\
   sort -V | tail -n 1)

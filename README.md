@@ -1,4 +1,4 @@
-# shared-services-flux
+# sds-flux-config
 
 ### Flux V2 Migration status
 

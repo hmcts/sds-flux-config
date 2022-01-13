@@ -11,14 +11,14 @@ metadata:
 spec:
   releaseName: mi-azure-functions
   chart:
-    git: git@github.com:hmcts/shared-services-flux
+    git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/mi/mi-azure-functions
     ref: master
   values:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:stg-acc732b-20211214173324
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:stg-b327670-20220110145641
     env:
       ADF_RESOURCEGROUP: mi-stg-rg
       ADF_NAME: mi-ingestion-adf-stg
