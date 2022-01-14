@@ -16,6 +16,11 @@ patches:
 
 patchesStrategicMerge:
 - "../../../../namespaces/pip/pip-frontend/patches/demo/pip-frontend.yaml"
+- "../../../../namespaces/pip/pip-account-management/patches/demo/pip-account-management.yaml"
+- "../../../../namespaces/pip/pip-channel-management/patches/demo/pip-channel-management.yaml"
+- "../../../../namespaces/pip/pip-data-management/patches/demo/pip-data-management.yaml"
+- "../../../../namespaces/pip/pip-publication-services/patches/demo/pip-publication-services.yaml"
+- "../../../../namespaces/pip/pip-subscription-management/patches/demo/pip-subscription-management.yaml"
 
 patchesJson6902:
 - target:

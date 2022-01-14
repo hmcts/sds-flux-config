@@ -1,0 +1,12 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+  annotations:
+    filter.fluxcd.io/java: glob:pr-31-*
+spec:
+  releaseName: pip-subscription-management
+  values:
+    java:
+      environment:

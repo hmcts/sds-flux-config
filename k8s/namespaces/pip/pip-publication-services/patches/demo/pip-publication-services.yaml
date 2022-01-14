@@ -1,0 +1,12 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+  annotations:
+    filter.fluxcd.io/java: glob:pr-38-*
+spec:
+  releaseName: pip-publication-services
+  values:
+    java:
+      environment:
