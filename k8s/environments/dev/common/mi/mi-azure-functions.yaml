@@ -15,11 +15,12 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-b327670-20220110145641 # {"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-1003d65-20220114132941 # {"$imagepolicy": "flux-system:mi-azure-functions"}
     env:
       ADF_RESOURCEGROUP: mi-dev-rg
       ADF_NAME: mi-ingestion-adf-dev
       ADF_STORAGEACCOUNTNAME: miauditdev
+      MI_METADATA_SERVER_DB: mi-metadata-db-dev
     keyVaultSecrets:
       - encryption-publicKey
     environment: "dev"
