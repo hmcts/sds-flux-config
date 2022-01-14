@@ -9,8 +9,8 @@ spec:
   upgrade: 
     force: true
   valuesFrom:
-    - secretKeyRef:
-        name: "prometheus-values"
+    - name: "prometheus-values"
+      kind: Secret
   values:
     defaultRules:
       create: true
