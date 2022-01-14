@@ -6,7 +6,8 @@ metadata:
   namespace: monitoring
 spec:
   releaseName: kube-prometheus-stack
-  forceUpgrade: true
+  upgrade: 
+    force: true
   valuesFrom:
     - secretKeyRef:
         name: "prometheus-values"
