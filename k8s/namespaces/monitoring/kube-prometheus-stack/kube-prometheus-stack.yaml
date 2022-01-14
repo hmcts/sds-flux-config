@@ -15,8 +15,8 @@ spec:
     name: kube-prometheus-stack
     version: 18.0.7
   valuesFrom:
-    - secretKeyRef:
-        name: "prometheus-values"
+    - name: "prometheus-values"
+      kind: Secret
   values:
     defaultRules:
       create: true
