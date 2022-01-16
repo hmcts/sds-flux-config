@@ -16,7 +16,7 @@ spec:
         kind: GitRepository
         name: kured
         namespace: flux-system
-  interval: 5m
+  interval: 1m
   values:
     image:
       repository: docker.io/weaveworks/kured
