@@ -1,0 +1,12 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+  annotations:
+    filter.fluxcd.io/java: glob:pr-19-*
+spec:
+  releaseName: pip-account-management
+  values:
+    java:
+      environment:

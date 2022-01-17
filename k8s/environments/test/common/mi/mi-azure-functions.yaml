@@ -18,11 +18,12 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:test-225ef62-20220112110359
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:test-4050b20-20220114015116
     env:
       ADF_RESOURCEGROUP: mi-test-rg
       ADF_NAME: mi-ingestion-adf-test
       ADF_STORAGEACCOUNTNAME: miaudittest
+      MI_METADATA_SERVER_DB: mi-metadata-db-test
     keyVaultSecrets:
     - encryption-publicKey
     environment: "test"
