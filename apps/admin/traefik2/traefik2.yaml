@@ -1,4 +1,4 @@
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: traefik2
@@ -8,9 +8,13 @@ metadata:
 spec:
   releaseName: traefik
   chart:
-    repository: https://helm.traefik.io/traefik
-    name: traefik
-    version: 10.6.0
+    spec:
+      chart: ./traefik
+      sourceRef:
+        kind: GitRepository
+        name: traefik
+        namespace: flux-system
+  interval: 1m
   values:
     deployment:
       podLabels:
