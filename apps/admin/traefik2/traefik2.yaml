@@ -9,9 +9,10 @@ spec:
   releaseName: traefik
   chart:
     spec:
-      chart: ./
+      chart: traefik
+      version: 10.6.0
       sourceRef:
-        kind: GitRepository
+        kind: HelmRepository
         name: traefik
         namespace: flux-system
   interval: 1m
