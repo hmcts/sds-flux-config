@@ -11,9 +11,10 @@ spec:
   releaseName: kured
   chart:
     spec:
-      chart: ./charts/kured
+      chart: kured
+      version: 2.2.0
       sourceRef:
-        kind: GitRepository
+        kind: HelmRepository
         name: kured
         namespace: flux-system
   interval: 1m
