@@ -37,3 +37,7 @@ spec:
   chart:
     spec:
       chart: ./stable/kube-slack
+      sourceRef:
+        name: kube-slack
+        kind: GitRepository
+  interval: 1m
