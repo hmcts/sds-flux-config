@@ -9,7 +9,7 @@ spec:
   releaseName: traefik
   chart:
     spec:
-      chart: ./traefik
+      chart: ./
       sourceRef:
         kind: GitRepository
         name: traefik
