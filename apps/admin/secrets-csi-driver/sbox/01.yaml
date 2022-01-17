@@ -4,9 +4,3 @@ kind: HelmRelease
 metadata:
   name: csi-secrets-store-provider-azure
   namespace: admin
-spec:
-  releaseName: csi-secrets-store-provider-azure
-  chart:
-    spec:
-      chart: csi-secrets-store-provider-azure
-      version: 0.0.18
