@@ -38,6 +38,7 @@ spec:
     spec:
       chart: ./stable/kube-slack
       sourceRef:
-        name: kube-slack
         kind: GitRepository
+        name: kube-slack
+        namespace: flux-system
   interval: 1m
