@@ -143,6 +143,12 @@ spec:
                     name: TT
                     recurse: true
                     title: Tax Tribunals Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS_.*ET-.*\/.+\/master
+                    name: ET
+                    recurse: true
+                    title: Employment Tribunals Dashboard                    
           authentication: |
             jenkins:
               securityRealm:
