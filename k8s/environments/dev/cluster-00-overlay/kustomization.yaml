@@ -7,7 +7,7 @@ bases:
 - ../../../release/mailrelay/mailrelay
 - ../../../release/mailrelay/mailrelay2
 - ../../../namespaces/admin/traefik2
-- ../../../namespaces/azure-devops
+#- ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/monitoring/kube-prometheus-stack
@@ -32,7 +32,7 @@ patchesStrategicMerge:
 - ../../../release/admin/kured/patches/dev/cluster-00/kured.yaml
 
 #azure-devops-agent patch
-- ../../../namespaces/azure-devops/azure-devops-agent/patches/dev/cluster-00/azure-devops-agent.yaml
+#- ../../../namespaces/azure-devops/azure-devops-agent/patches/dev/cluster-00/azure-devops-agent.yaml
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/dev/cluster-00/env-injector.yaml
