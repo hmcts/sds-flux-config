@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - kube-slack.yaml
   - kube-slack-values.enc.yaml
+namespace: admin
