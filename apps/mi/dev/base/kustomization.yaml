@@ -4,14 +4,6 @@ resources:
   - ../../base
 namespace: mi
 patches:
-  #overlays for mi-data-extractor
-  - path: ../../mi-data-extractor/sbox.yaml
-  - path: ../../mi-data-extractor/sbox-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: data-extractor-job
   #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/dev.yaml
   - path: ../../mi-azure-functions/dev-identity-patch.yaml
