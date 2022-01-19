@@ -39,6 +39,6 @@ spec:
       chart: ./stable/kube-slack
       sourceRef:
         kind: GitRepository
-        name: kube-slack
-        namespace: admin
+        name: hmcts-stable
+        namespace: flux-system
   interval: 1m
