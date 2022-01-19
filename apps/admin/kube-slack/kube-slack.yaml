@@ -37,3 +37,8 @@ spec:
   chart:
     spec:
       chart: ./stable/kube-slack
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-stable
+        namespace: flux-system
+  interval: 1m
