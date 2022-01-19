@@ -9,7 +9,6 @@ bases:
 - ../../../namespaces/admin/traefik2
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/monitoring/kube-prometheus-stack
-- ../../../namespaces/jenkins
 - ../../../namespaces/netbox
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
@@ -37,7 +36,3 @@ patchesStrategicMerge:
 # netbox patch
 - ../../../namespaces/netbox/netbox/patches/ptlsbox/cluster-00/netbox.yaml
 - ../../../namespaces/netbox/netbox/patches/ptlsbox/cluster-00/traefik-netbox.yaml
-
-- ../../../namespaces/jenkins/patches/ptlsbox/cluster-00/disk.yaml
-- ../../../namespaces/jenkins/patches/ptlsbox/cluster-00/identity.yaml
-- ../../../namespaces/jenkins/patches/ptlsbox/cluster-00/jenkins.yaml
