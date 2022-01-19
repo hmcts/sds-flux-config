@@ -10,7 +10,6 @@ resources:
 - ../../../apps/labs/base/kustomize.yaml
 - ../../../apps/admin/base/kustomize.yaml
 - ../../../apps/kube-system/base/kustomize.yaml
-- ../../../apps/jenkins/base/kustomize.yaml
 
 patches:
 - path: ../../../apps/base/kustomize.yaml
