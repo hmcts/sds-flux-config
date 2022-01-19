@@ -38,9 +38,6 @@ patches:
 - target:
     group: aadpodidentity.k8s.io
     version: v1
-- target:
-    group: aadpodidentity.k8s.io
-    version: v1
     kind: AzureIdentity
     name: mi-azure-functions
   path: mi-azure-functions-identity-patch.yaml
