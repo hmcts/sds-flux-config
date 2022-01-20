@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: az-devops-agent
+  namespace: hmi
+spec:
+  releaseName: az-devops-agent
+  values:
+    image:
+      repository: "sdshmctspublic.azurecr.io/hmi/apim-tests-pact" # {"$imagepolicy": "flux-system:hmi-pactbroker:name"}
+      tag: "v0.1" # {"$imagepolicy": "flux-system:hmi-pactbroker:tag"}
+    env:
+      AZP_POOL: "hmi-dev"
+      AZP_WORK: "_work"
