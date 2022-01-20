@@ -10,7 +10,7 @@ bases:
 #- ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
-- ../../../namespaces/monitoring/kube-prometheus-stack
+#- ../../../namespaces/monitoring/kube-prometheus-stack
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -43,6 +43,6 @@ patchesStrategicMerge:
 - ../../../release/mailrelay/mailrelay2/patches/dev/cluster-01/mailrelay2.yaml
 
 # prom-operator patch
-- ../../../namespaces/monitoring/kube-prometheus-stack/patches/dev/cluster-01/kube-prometheus-stack.yaml
+#- ../../../namespaces/monitoring/kube-prometheus-stack/patches/dev/cluster-01/kube-prometheus-stack.yaml
 - ../../../namespaces/monitoring/kube-prometheus-stack/patches/dev/cluster-01/mailrelay-alerts-rules.yaml
 - ../../../namespaces/monitoring/kube-prometheus-stack/patches/dev/cluster-01/mailrelay2-alerts-rules.yaml
