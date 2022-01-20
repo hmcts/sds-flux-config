@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+    values.yaml: ENC[AES256_GCM,data:P0A6gc6ZVfQf4EdSMQXqaoYmYiwWg38eJz+wnktnokNR1bOAyZlx4AGTCIXjo6wN4byRVi5bJMy2B4NNFexj7vhul0PVEgDQxzBPPKNggq7ZBp9l4vrJ2hHq91CR3iKseG+mSB7ySVVX8P0ap4E5eOVb4dM2R5rg+p8oQWsqg0KY7mLHlHZ7yqIEDwRL5kUIPFtjzxG8R+p0O9adAcCpwa4ndOQFThYDWg2r0nQXtJBSW1ojbEqns/cEYesLtEUfZZhMsA==,iv:gIFQgFRj9nAc+EirtlTRwtvnFxRR4xMR06rHVQfiKdk=,tag:Nmf1p2ktHEovKKq427tNfg==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: ENC[AES256_GCM,data:CHTu1YMwBPoRElpzyugkLNI=,iv:dNPduhQsAHdgigIxfsJv33EmL5/3qF7KdmK1+fmnXd8=,tag:RBT19GhUIHP5l6C0RXZ2Kw==,type:str]
+    namespace: monitoring
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssharedservicesdevkv.vault.azure.net
+          name: sops-key
+          version: 2beba064ddfe454482ad0133af2cf0fd
+          created_at: "2022-01-20T15:40:13Z"
+          enc: ReUVTPcWAAar40iG5vh35ZCVpFav1GrXnKpgdDOpa4JYGqQyhze_cdKgq92Bnmef7ZHxA8or83u-ocAm3zRd6a4Qb-r0L2djrVBGWF0cu0qmlig5pJiBtOytelPsOHL-QuzTGD1TgW-aOnmMXPf9CDlsQXevY4umm_cmBvgz8YTWCazAfmV6EPVE5Gh1n7SuCddCERpRIdo-MW22Gsk4N1Lc0E81g6APjrJsfITj9pifc9Oy_Ay3LAtM1fUm1TAJVf1V_WZ6O_J_-9S_jV-Tk4go-QnJA_dqXgDpOUMofunx2ymH6lQhhEeBE198H9DcnXTCKWMEYUwWy9tMaXjEsw
+    hc_vault: []
+    age: []
+    lastmodified: "2022-01-20T15:40:19Z"
+    mac: ENC[AES256_GCM,data:gIpBpOJwHEqkk7GlXDu7g8U8fDt4V6ogNVHclz+JhQVsEoI3YMPAQGv7PdRczVFo9knKSK9uuEx3SpC2wSZZ5G2z/0h8Cmw25+wKKq4KyKDUb3NLWx5lJ8JV8HuSnkCWU4ed81e5wITGV60l9XPmPuLASwsD8Qmg6ZnUmQzA2B4=,iv:ySmg8FI1mTlYHDf5PX3WXK5KDaVXhAPyMrhCn6Ym2cI=,tag:yhO101lfodGZFl5C56S84w==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.1

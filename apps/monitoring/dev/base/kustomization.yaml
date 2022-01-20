@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - ../../base
 namespace: monitoring
+patchesStrategicMerge:
+  - ../../kube-prometheus-stack/dev/prometheus-values.yaml
