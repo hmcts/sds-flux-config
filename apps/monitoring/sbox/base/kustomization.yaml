@@ -4,6 +4,6 @@ resources:
   - ../../base
 namespace: monitoring
 patches:
-  - path: ../../kube-prometheus-stack/dev/prometheus-values.yaml
+  - path: ../../kube-prometheus-stack/sbox/prometheus-values.yaml
     target:
       namespace: monitoring
