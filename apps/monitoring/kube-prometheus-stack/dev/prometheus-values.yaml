@@ -20,4 +20,5 @@ sops:
   mac: ENC[AES256_GCM,data:GNQ4L6GDp2fq8OFxnIMqVPhXCdNOn9vb4a0nq9HJgQKGz/CVhhkBkGkqggMUu+ymSGgC9NkxyuW1gT6Qlsea4Tifqv+8kKSGEzrhsGSARWaMb5Tc4OPf11g6ieZ59JiAvQkXGIF3Gh8lELYfZJlaheE+1QGC29H2/HPkuhtpJZ0=,iv:a89F8L8xbFb3DPRgz5K77A2v/9ksZPhMD0mpsl860Go=,tag:iK8cuWwprHC1A/p25yk7KA==,type:str]
   pgp: []
   unencrypted_suffix: _unencrypted
+  encrypted_regex: ^(data|stringData)$
   version: 3.7.1
