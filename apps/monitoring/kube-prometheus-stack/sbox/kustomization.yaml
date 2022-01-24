@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - ../../base
 patchesStrategicMerge:
-  - ../../kube-prometheus-stack/sbox/prometheus-values.yaml
+  - ../../kube-prometheus-stack/sbox/prometheus-values.enc.yaml
