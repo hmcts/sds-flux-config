@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../data-management/pip-data-management.yaml
-  - ../data-management/pip-azure-identity.yaml
-  - ../data-management/pip-azure-identity-binding.yaml
+  - ../identity/pip-azure-identity.yaml
+  - ../identity/pip-azure-identity-binding.yaml
 namespace: pip
