@@ -12,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/pip-data-management
+      chart: ./stable/pip-data-management
       sourceRef:
         kind: GitRepository
         name: flux-config
