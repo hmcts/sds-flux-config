@@ -1,0 +1,20 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+spec:
+  releaseName: pip-frontend
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-e0a697f-20220105182009 # {"$imagepolicy": "flux-system:pip-frontend"}
+      disableTraefikTls: true
+  chart:
+    spec:
+      chart: ./charts/pip-frontend
+      sourceRef:
+        kind: GitRepository
+        name: flux-config
+        namespace: flux-system
+      interval: 1m
