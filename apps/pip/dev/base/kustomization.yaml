@@ -6,9 +6,9 @@ namespace: pip
 patches:
   #overlays for pip-data-management
   - path: ../../data-management/dev.yaml
-  - path: ../../data-management/dev-identity-patch.yaml
+  - path: ../../dev/base/dev-identity-patch.yaml
     target:
       group: aadpodidentity.k8s.io
       version: v1
       kind: AzureIdentity
-      name: pip-data-management
+      name: pip
