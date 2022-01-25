@@ -2,6 +2,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
   name: pip-binding
+  namespace: pip
 spec:
   azureIdentity: pip
   selector: pip
