@@ -9,3 +9,12 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/pip/data-management:prod-558ea59-20211214104223 # {"$imagepolicy": "flux-system:pip-data-management"}
+      disableTraefikTls: true
+  chart:
+    spec:
+      chart: ./charts/pip-data-management
+      sourceRef:
+        kind: GitRepository
+        name: flux-config
+        namespace: flux-system
+      interval: 1m
