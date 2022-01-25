@@ -1,0 +1,20 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+spec:
+  releaseName: pip-channel-management
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-c9ce779-20220105164714 # {"$imagepolicy": "flux-system:pip-channel-management"}
+      disableTraefikTls: true
+  chart:
+    spec:
+      chart: ./charts/pip-channel-management
+      sourceRef:
+        kind: GitRepository
+        name: flux-config
+        namespace: flux-system
+      interval: 1m
