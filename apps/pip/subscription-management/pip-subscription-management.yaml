@@ -12,9 +12,9 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/pip-subscription-management
+      chart: ./stable/pip-subscription-management
       sourceRef:
         kind: GitRepository
-        name: flux-config
+        name: hmcts-charts
         namespace: flux-system
       interval: 5m
