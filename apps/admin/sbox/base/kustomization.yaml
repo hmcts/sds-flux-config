@@ -4,3 +4,10 @@ resources:
   - ../../base
 patchesStrategicMerge:
   - ../../traefik2/sbox/secret-provider.yaml
+patches:
+  - path: ../../aad-pod-identity/sbox/azure-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: aks-pod-identity-mi
