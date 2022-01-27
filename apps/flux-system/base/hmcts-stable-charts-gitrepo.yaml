@@ -8,6 +8,8 @@ spec:
   url: ssh://github.com/hmcts/charts
   ref:
     branch: master
+  secretRef:
+    name: git-credentials
   ignore: |
     # exclude all
     /*
