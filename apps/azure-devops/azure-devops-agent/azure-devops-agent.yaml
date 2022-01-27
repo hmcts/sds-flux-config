@@ -17,9 +17,9 @@ spec:
     replicas: 1
   chart:
     spec:
-      chart: azure-devops-agent
+      chart: ./charts/azure-devops-agent
       version: 0.2.1
       sourceRef:
-        kind: HelmRepository
-        name: hmctspublic
+        kind: GitRepository
+        name: sds-helm-charts
         namespace: azure-devops
