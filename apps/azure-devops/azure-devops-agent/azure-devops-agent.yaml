@@ -17,7 +17,7 @@ spec:
     replicas: 1
   chart:
     spec:
-      chart: ./charts/azure-devops-agent/azure-devops-agent
+      chart: ./charts/azure-devops-agent
       version: 0.2.1
       sourceRef:
         kind: GitRepository
