@@ -72,8 +72,8 @@ spec:
                       values:
                         - system
       ingress:
+        ingressClassName: traefik
         annotations:
-          kubernetes.io/ingress.class: traefik
           traefik.ingress.kubernetes.io/router.tls: "true"
         enabled: true
         hosts:
@@ -99,8 +99,8 @@ spec:
                       values:
                         - system
       ingress:
+        ingressClassName: traefik
         annotations:
-          kubernetes.io/ingress.class: traefik
           traefik.ingress.kubernetes.io/router.tls: "true"
         enabled: true
         hosts:
