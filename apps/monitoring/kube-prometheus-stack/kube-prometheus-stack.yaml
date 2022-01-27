@@ -40,8 +40,6 @@ spec:
         - grafana-kubernetes-app
         - camptocamp-prometheus-alertmanager-datasource
       ingress:
-        annotations:
-          traefik.ingress.kubernetes.io/router.tls: "true"
         enabled: true
       dashboardProviders:
         dashboardproviders.yaml:

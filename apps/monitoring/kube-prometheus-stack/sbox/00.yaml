@@ -74,6 +74,8 @@ spec:
                         - system
       ingress:
         enabled: true
+        annotations:
+          traefik.ingress.kubernetes.io/router.tls: "true"
         hosts:
           - sds-prometheus-00.sandbox.platform.hmcts.net
         tls:
