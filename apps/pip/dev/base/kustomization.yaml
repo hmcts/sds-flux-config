@@ -3,23 +3,12 @@ kind: Kustomization
 resources:
   - ../../base
 namespace: pip
-patches:
-  #overlays for pip-account-management
-  - path: ../../account-management/dev.yaml
-  #overlays for pip-channel-management
-  - path: ../../channel-management/dev.yaml
-  #overlays for pip-data-management
-  - path: ../../data-management/dev.yaml
-  #overlays for pip-frontend
-  - path: ../../frontend/dev.yaml
-  #overlays for pip-publication-services
-  - path: ../../publication-services/dev.yaml
-  #overlays for pip-subscription-management
-  - path: ../../subscription-management/dev.yaml
-  #overlays for dev identity
-  - path: ../../dev/base/dev-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: pip
+patchesStrategicMerge:
+  - ../../identity/pip-azure-identity.yaml
+  - ../../identity/dev.yaml
+  - ../../account-management/dev.yaml
+  - ../../channel-management/dev.yaml
+  - ../../data-management/dev.yaml
+  - ../../frontend/dev.yaml
+  - ../../publication-services/dev.yaml
+  - ../../subscription-management/dev.yaml
