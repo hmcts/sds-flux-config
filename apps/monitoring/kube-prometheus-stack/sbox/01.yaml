@@ -5,7 +5,6 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
-  ingressClassName: traefik
   values:
     kube-state-metrics:
       tolerations:
@@ -73,6 +72,7 @@ spec:
                       values:
                         - system
       ingress:
+        ingressClassName: traefik
         annotations:
           traefik.ingress.kubernetes.io/router.tls: "true"
         enabled: true
@@ -99,6 +99,7 @@ spec:
                       values:
                         - system
       ingress:
+        ingressClassName: traefik
         annotations:
           traefik.ingress.kubernetes.io/router.tls: "true"
         enabled: true
