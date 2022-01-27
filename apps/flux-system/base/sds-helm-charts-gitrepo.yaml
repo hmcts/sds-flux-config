@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: ds-helm-charts
+  name: sds-helm-charts
   namespace: flux-system
 spec:
   interval: 1m
