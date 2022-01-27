@@ -5,6 +5,7 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
+  interval: 5m
   releaseName: kube-prometheus-stack
   upgrade: 
     force: true
@@ -39,6 +40,8 @@ spec:
         - grafana-kubernetes-app
         - camptocamp-prometheus-alertmanager-datasource
       ingress:
+        annotations:
+          traefik.ingress.kubernetes.io/router.tls: "true"
         enabled: true
       dashboardProviders:
         dashboardproviders.yaml:
