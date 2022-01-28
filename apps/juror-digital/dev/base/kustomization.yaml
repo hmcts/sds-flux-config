@@ -3,3 +3,9 @@ kind: Kustomization
 resources:
   - ../../base
 namespace: juror-digital
+patchesStrategicMerge:
+  - ../../identity/juror-digital-azure-identity.yaml
+  - ../../identity/juror-digital-azure-identity-binding.yaml  
+  - ../../jd-bureau/jd-bureau.yaml
+  - ../../jd-public/jd-public.yaml
+  - ../../moj-reverse-proxy/moj-reverse-proxy.yaml
