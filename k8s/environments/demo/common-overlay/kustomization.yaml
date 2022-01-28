@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - toffee
   - pip
+  - vh
 patches:
   - path: ../demo-helmrelease.yaml
     target:
