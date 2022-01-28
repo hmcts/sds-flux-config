@@ -11,10 +11,10 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/vh-service-web
+      chart: ./charts/vh-service-web
       sourceRef:
         kind: GitRepository
-        name: hmcts-charts
+        name: vh-service-web
         namespace: flux-system
       interval: 5m
   install:
