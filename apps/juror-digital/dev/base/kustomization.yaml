@@ -2,11 +2,11 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-namespace: juror-digital
-patchesStrategicMerge:
-  - ../../identity/juror-digital-azure-identity.yaml
-  - ../../identity/juror-digital-azure-identity-binding.yaml
-  - ../../identity/dev.yaml
-  - ../../jd-bureau/jd-bureau.yaml
-  - ../../jd-public/jd-public.yaml
-  - ../../moj-reverse-proxy/moj-reverse-proxy.yaml
+namespace: jd
+patches:
+  - path: ../../identity/dev-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: juror-digital

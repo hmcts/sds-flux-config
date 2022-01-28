@@ -2,6 +2,7 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
   name: juror-digital
+  namespace: jd
 spec:
   type: 0
   resourceID: replace
