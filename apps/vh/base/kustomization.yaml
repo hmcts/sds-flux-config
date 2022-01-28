@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ../user-api/user-api.yaml
+  - ../video-api/video-api.yaml
+  - ../test-api/test-api.yaml
+  - ../scheduler-jobs/scheduler-jobs.yaml
+  - ../notification-api/notification-api.yaml
+  - ../bookings-api/bookings-api.yaml
+  - ../booking-queue-subscriber/booking-queue-subscriber.yaml
+  - ../admin-web/admin-web.yaml
+  - ../service-web/service-web.yaml
+  - ../test-web/test-web.yaml
+  - ../video-web/video-web.yaml
+  - ../identity/vh-azure-identity.yaml
+namespace: vh
