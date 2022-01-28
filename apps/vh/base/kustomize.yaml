@@ -4,7 +4,7 @@ metadata:
   name: vh
   namespace: flux-system
 spec:
-  path: ./apps/pip/${ENVIRONMENT}
+  path: ./apps/vh/${ENVIRONMENT}
   postBuild:
     substitute:
       NAMESPACE: "vh"

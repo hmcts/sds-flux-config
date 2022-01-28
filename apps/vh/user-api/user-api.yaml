@@ -2,16 +2,16 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: pip-user-api
+  name: vh-user-api
 spec:
-  releaseName: pip-user-api
+  releaseName: vh-user-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/user-api:prod-e23c232-20220117145616 # {"$imagepolicy": "flux-system:pip-user-api"}
+      image: sdshmctspublic.azurecr.io/vh/user-api:prod-e23c232-20220117145616 # {"$imagepolicy": "flux-system:vh-user-api"}
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/pip-user-api
+      chart: ./stable/vh-user-api
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
