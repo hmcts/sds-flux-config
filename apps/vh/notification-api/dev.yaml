@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: vh-notification-api
   values:
-    image: sdshmctspublic.azurecr.io/vh/notification-api:prod-e23c232-20220117145616 #{"$imagepolicy": "flux-system:vh-notification-api"}
+    image: sdshmctspublic.azurecr.io/vh/notification-api:latest #{"$imagepolicy": "flux-system:vh-notification-api"}
     environment: "dev"
     resourceGroup: "vh-infra-core-dev"
     subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"

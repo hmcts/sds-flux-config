@@ -7,7 +7,7 @@ spec:
   releaseName: vh-service-web
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/service-web:prod-e23c232-20220117145616 # {"$imagepolicy": "flux-system:vh-service-web"}
+      image: sdshmctspublic.azurecr.io/vh/service-web:latest # {"$imagepolicy": "flux-system:vh-service-web"}
       disableTraefikTls: true
   chart:
     spec:
