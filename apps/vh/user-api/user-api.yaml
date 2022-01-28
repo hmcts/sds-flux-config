@@ -1,0 +1,23 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pip-user-api
+spec:
+  releaseName: pip-user-api
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pip/user-api:prod-e23c232-20220117145616 # {"$imagepolicy": "flux-system:pip-user-api"}
+      disableTraefikTls: true
+  chart:
+    spec:
+      chart: ./stable/pip-user-api
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true

@@ -1,0 +1,6 @@
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImageRepository
+metadata:
+  name: video-web
+spec:
+  image: sdshmctspublic.azurecr.io/pip/video-web
