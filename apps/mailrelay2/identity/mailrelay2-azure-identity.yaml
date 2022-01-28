@@ -1,0 +1,9 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: mailrelay2
+  namespace: mailrelay2
+spec:
+  type: 0
+  resourceID: replace
+  clientID: replace
