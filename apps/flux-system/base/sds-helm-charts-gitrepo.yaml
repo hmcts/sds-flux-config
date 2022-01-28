@@ -1,11 +1,11 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: hmcts-stable
+  name: sds-helm-charts
   namespace: flux-system
 spec:
-  interval: 5m
-  url: ssh://github.com/hmcts/charts
+  interval: 1m
+  url: ssh://github.com/hmcts/sds-helm-charts
   ref:
     branch: master
   secretRef:
@@ -14,5 +14,4 @@ spec:
     # exclude all
     /*
     # include charts directory
-    !/stable/
-    !/incubator/
+    !/charts/

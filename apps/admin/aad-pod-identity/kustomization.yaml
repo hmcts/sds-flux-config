@@ -6,5 +6,7 @@ commonLabels:
 resources:
   - https://raw.githubusercontent.com/Azure/aad-pod-identity/v1.8.4/deploy/infra/deployment-rbac.yaml
   - mic-exception.yaml
+  - aks-identity.yaml
+  - aks-binding.yaml
 patchesStrategicMerge:
   - aad-pod-id-patch.yaml

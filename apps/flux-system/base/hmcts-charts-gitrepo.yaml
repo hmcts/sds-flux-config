@@ -5,9 +5,11 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: https://github.com/hmcts/hmcts-charts
+  url: ssh://github.com/hmcts/hmcts-charts
   ref:
     branch: master
+  secretRef:
+    name: git-credentials
   ignore: |
     # exclude all
     /*

@@ -5,6 +5,7 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
+  interval: 5m
   releaseName: kube-prometheus-stack
   upgrade: 
     force: true

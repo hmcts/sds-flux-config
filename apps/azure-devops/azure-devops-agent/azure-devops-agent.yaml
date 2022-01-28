@@ -4,6 +4,7 @@ metadata:
   name: azure-devops-agent
 spec:
   releaseName: azure-devops-agent
+  interval: 5m
   values:
     image:
       repository: hmctspublic.azurecr.io/hmcts/vsts-agent # {"$imagepolicy": "flux-system:azure-devops-agent:name"}
@@ -16,9 +17,9 @@ spec:
     replicas: 1
   chart:
     spec:
-      chart: azure-devops-agent
+      chart: ./charts/azure-devops-agent
       version: 0.2.1
       sourceRef:
-        kind: HelmRepository
-        name: hmctspublic
-        namespace: flux-system
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: azure-devops
