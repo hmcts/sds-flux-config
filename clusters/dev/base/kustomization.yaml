@@ -9,6 +9,8 @@ resources:
   - ../../../apps/monitoring/base/kustomize.yaml
   - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml
+  - ../../../apps/mailrelay/base/kustomize.yaml
+  - ../../../apps/mailrelay2/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
