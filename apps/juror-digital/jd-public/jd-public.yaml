@@ -1,0 +1,22 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jd-public
+  namespace: jd
+spec:
+  releaseName: jd-public
+  values:
+    nodejs:
+      replicas: "2"
+      memoryRequests: "248Mi"
+      cpuRequests: "200m"
+      memoryLimits: "1Gi"
+      cpuLimits: "1"
+      autoscaling:
+        enabled: true
+        maxReplicas: 5
+        targetCPUUtilizationPercentage: 80
+  chart:
+    spec:
+      chart: ./charts/jd-public
