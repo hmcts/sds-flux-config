@@ -8,6 +8,8 @@ spec:
   releaseName: jd-bureau
   values:
     nodejs:
+      ingressHost: 'jdbureau.dev.platform.hmcts.net'
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.24.154
       replicas: 2
       autoscaling:
         enabled: true
