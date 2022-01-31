@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/data-extractor-job:ithc-4af93f8
+      image: sdshmctspublic.azurecr.io/data-extractor-job:ithc-c54f558-20220128155944
       suspend: false
       kind: CronJob
       schedule: '0 0 * * *'
@@ -29,7 +29,7 @@ spec:
       environment:
         ETL_MSICLIENTID: d0d62785-4e3f-4c83-97a6-0fb66739d1a1
       smoketests:
-        image: sdshmctspublic.azurecr.io/data-extractor-job:ithc-4af93f8
+        image: sdshmctspublic.azurecr.io/data-extractor-job:ithc-c54f558-20220128155944
         enabled: true
       testsConfig:
         environment:
