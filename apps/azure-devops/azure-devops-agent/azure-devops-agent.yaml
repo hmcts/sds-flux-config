@@ -22,4 +22,5 @@ spec:
       sourceRef:
         kind: GitRepository
         name: sds-helm-charts
-        namespace: azure-devops
+        namespace: flux-system
+      interval: 1m
