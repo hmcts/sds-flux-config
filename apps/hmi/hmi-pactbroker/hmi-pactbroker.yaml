@@ -10,8 +10,7 @@ spec:
     replicas: 1
     ingress:
       enabled: true
-      annotations:
-        kubernetes.io/ingress.class: traefik
+      ingressClassName: traefik
       paths:
         - /
       tls: []
