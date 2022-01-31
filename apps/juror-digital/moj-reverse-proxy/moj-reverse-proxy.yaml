@@ -8,6 +8,7 @@ spec:
   releaseName: moj-reverse-proxy
   values:
     nodejs:
+      image: sdshmctspublic.azurecr.io/jd/juror-reverse-proxy:nle-db26
       replicas: 2
       autoscaling:
         enabled: true
@@ -16,3 +17,8 @@ spec:
   chart:
     spec:
       chart: ./charts/moj-reverse-proxy
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+      interval: 1m

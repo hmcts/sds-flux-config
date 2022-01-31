@@ -5,6 +5,6 @@ resources:
 namespace: hmi
 patchesStrategicMerge:
   - ../../hmi-az-devops-agent/sbox.yaml
-  - ../../hmi-case-hq-emulator/sbox.yaml
   - ../../hmi-pactbroker/sbox.yaml
   - ../../hmi-wiremock/sbox.yaml
+  - ../../identity/sbox.yaml
