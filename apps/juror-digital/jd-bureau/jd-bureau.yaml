@@ -16,3 +16,8 @@ spec:
   chart:
     spec:
       chart: ./charts/jd-bureau
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+      interval: 1m
