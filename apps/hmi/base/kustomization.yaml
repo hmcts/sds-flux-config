@@ -2,10 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - hmi-azure-identity-binding.yaml
-  - hmi-azure-identity.yaml
   - ../hmi-az-devops-agent/az-devops-agent.yaml
   - ../hmi-pactbroker/hmi-pactbroker.yaml
   - ../hmi-wiremock/hmi-wiremock.yaml
   - ../hmi-case-hq-emulator/hmi-case-hq-emulator.yaml
+  - ../identity/hmi-azure-identity.yaml
 namespace: hmi
