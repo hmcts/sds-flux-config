@@ -1,0 +1,25 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jd-bureau
+  namespace: jd
+spec:
+  releaseName: jd-bureau
+  values:
+    nodejs:
+      ingressHost: 'jdbureau.dev.platform.hmcts.net'
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.24.154
+      replicas: 2
+      autoscaling:
+        enabled: true
+        maxReplicas: 5
+        targetCPUUtilizationPercentage: 80
+  chart:
+    spec:
+      chart: ./charts/jd-bureau
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+      interval: 1m

@@ -1,0 +1,16 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hmi-wiremock
+  namespace: hmi
+spec:
+  releaseName: hmi-wiremock
+  values:
+    image:
+      repository: "sdshmctspublic.azurecr.io/hmi/apim-tests-wiremock" # {"$imagepolicy": "flux-system:hmi-wiremock:name"}
+      tag: "v0.1" # {"$imagepolicy": "flux-system:hmi-wiremock:tag"}
+      pullPolicy: Always
+    ingress:
+      hosts:
+        - 'hmi-wiremock.dev.platform.hmcts.net'

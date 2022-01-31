@@ -1,0 +1,23 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-test-api
+spec:
+  releaseName: vh-test-api
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/vh/test-api:latest # {"$imagepolicy": "flux-system:vh-test-api"}
+      disableTraefikTls: true
+  chart:
+    spec:
+      chart: ./charts/vh-test-api
+      sourceRef:
+        kind: GitRepository
+        name: vh-test-api
+        namespace: flux-system
+      interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true

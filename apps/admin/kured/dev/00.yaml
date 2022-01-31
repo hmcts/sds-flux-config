@@ -1,0 +1,11 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kured
+  namespace: admin
+spec:
+  values:
+    extraArgs:
+      slack-username: dev-00-aks
+      slack-channel: aks-monitor-ss

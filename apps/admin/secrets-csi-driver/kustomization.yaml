@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - secrets-csi-driver.yaml
   - secrets-csi-driver-helmrepo.yaml
+namespace: admin

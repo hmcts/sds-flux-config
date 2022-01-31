@@ -12,6 +12,9 @@ spec:
     name: traefik
     version: 10.6.0
   values:
+    ingressClass:
+      enabled: true
+      isDefaultClass: true
     deployment:
       podLabels:
         aadpodidbinding: traefik

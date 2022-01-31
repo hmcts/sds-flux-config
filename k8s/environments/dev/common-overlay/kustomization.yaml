@@ -2,13 +2,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- juror-digital
-- toffee
-- mi
-- mailrelay
-- mailrelay2
-- pip
-- hmi
 patches:
 - path: ../dev-helmrelease.yaml
   target:

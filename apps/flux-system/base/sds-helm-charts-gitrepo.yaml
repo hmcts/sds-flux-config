@@ -1,0 +1,17 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: sds-helm-charts
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: ssh://github.com/hmcts/sds-helm-charts
+  ref:
+    branch: master
+  secretRef:
+    name: git-credentials
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/charts/
