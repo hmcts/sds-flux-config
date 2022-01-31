@@ -13,7 +13,7 @@ spec:
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
-        namespace: toffee
+        namespace: flux-system
       interval: 1m
   values:
     nodejs:

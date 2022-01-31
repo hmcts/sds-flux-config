@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
 - ../../base
 - ../identity/mailrelay2-azure-identity.yaml
+- ../identity/mailrelay2-azure-identity-binding.yaml
 namespace: mailrelay2
