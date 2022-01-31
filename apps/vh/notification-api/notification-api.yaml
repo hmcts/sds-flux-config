@@ -11,10 +11,10 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/vh-notification-api
+      chart: ./charts/vh-notification-api
       sourceRef:
         kind: GitRepository
-        name: hmcts-charts
+        name: vh-notification-api
         namespace: flux-system
       interval: 5m
   install:

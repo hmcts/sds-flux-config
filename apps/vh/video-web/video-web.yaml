@@ -11,10 +11,10 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/vh-video-web
+      chart: ./charts/vh-video-web
       sourceRef:
         kind: GitRepository
-        name: hmcts-charts
+        name: vh-video-web
         namespace: flux-system
       interval: 5m
   install:
