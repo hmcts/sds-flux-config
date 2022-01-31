@@ -1,12 +1,12 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: traefik2
+  name: traefik2-no-proxy
   namespace: admin
   annotations:
     flux.weave.works/automated: "false"
 spec:
-  releaseName: traefik
+  releaseName: traefik-no-proxy
   chart:
     repository: https://helm.traefik.io/traefik
     name: traefik
@@ -14,7 +14,7 @@ spec:
   values:
     ingressClass:
       enabled: true
-      isDefaultClass: true
+      isDefaultClass: false
     deployment:
       podLabels:
         aadpodidbinding: traefik
@@ -31,7 +31,7 @@ spec:
         readOnly: true
     service:
       annotations:
-        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+        service.beta.kubernetes.io/azure-load-balancer-resource-group: genesis-rg
     access:
       enabled: true
     rbac:

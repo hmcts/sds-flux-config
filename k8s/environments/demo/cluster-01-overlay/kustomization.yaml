@@ -5,6 +5,7 @@ bases:
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
 - ../../../namespaces/admin/traefik2
+- ../../../namespaces/admin/traefik2/traefik2-no-proxy.yaml
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
 # - ../../../release/admin/env-injector
@@ -18,6 +19,8 @@ patchesStrategicMerge:
 #traefik patch
 - ../../../namespaces/admin/traefik2/patches/demo/secret-provider.yaml
 - ../../../namespaces/admin/traefik2/patches/demo/cluster-01/traefik2.yaml
+- ../../../namespaces/admin/traefik2/patches/demo/cluster-01/traefik2-no-proxy.yaml
+
 
 #kured patch
 - ../../../release/admin/kured/patches/demo/cluster-01/kured.yaml
