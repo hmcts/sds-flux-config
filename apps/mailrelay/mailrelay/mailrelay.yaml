@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mailrelay
+  namespace: mailrelay
+spec:
+  releaseName: mailrelay
+  values:
+    labels:
+      app.kubernetes.io/instance: mailrelay
+      app.kubernetes.io/name: mailrelay
+    secretsMountPath: ''
+    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+  chart:
+    spec:
+      chart: ./k8s/release/mailrelay
+      sourceRef:
+        kind: GitRepository
+        name: flux-config
+        namespace: flux-system
+      interval: 1m
