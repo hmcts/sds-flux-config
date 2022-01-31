@@ -8,6 +8,8 @@ spec:
   releaseName: jd-public
   values:
     nodejs:
+      ingressHost: 'jdfrontend.dev.platform.hmcts.net'
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:2.24.100
       replicas: "2"
       memoryRequests: "248Mi"
       cpuRequests: "200m"
