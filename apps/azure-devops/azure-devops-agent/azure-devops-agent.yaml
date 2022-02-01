@@ -17,9 +17,10 @@ spec:
     replicas: 1
   chart:
     spec:
-      chart: ./charts/azure-devops-agent
+      chart: ./charts/azure-devops-agent/azure-devops-agent
       version: 0.2.1
       sourceRef:
         kind: GitRepository
         name: sds-helm-charts
-        namespace: azure-devops
+        namespace: flux-system
+      interval: 1m
