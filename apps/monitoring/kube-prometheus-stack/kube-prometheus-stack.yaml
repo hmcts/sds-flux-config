@@ -9,10 +9,10 @@ spec:
   releaseName: kube-prometheus-stack
   upgrade: 
     force: true
-  valuesFrom:
-    - name: "prometheus-values"
-      kind: Secret
   values:
+    valuesFrom:
+      - name: "prometheus-values"
+        kind: Secret
     defaultRules:
       create: true
       rules:
@@ -32,7 +32,7 @@ spec:
         network: true
         node: true
         prometheus: true
-        prometheusOperator: true
+        prometheusOperator: false
         time: true
     grafana:
       enabled: false
@@ -225,6 +225,7 @@ spec:
                     values:
                       - system
     prometheusOperator:
+      enabled: false
       admissionWebhooks:
         patch:
           tolerations:
@@ -260,7 +261,7 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: 18.0.7
+      version: 30.0.1
       sourceRef:
         kind: HelmRepository
         name: prometheus
