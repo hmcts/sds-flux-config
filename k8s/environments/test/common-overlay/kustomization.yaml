@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - mi
 - vh
+- pip
 patches:
 - path: ../test-helmrelease.yaml
   target:

@@ -1,0 +1,11 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+spec:
+  releaseName: pip-frontend
+  values:
+    nodejs:
+      environment:
+        DATA_MANAGEMENT_URL: https://pip-data-management.ithc.platform.hmcts.net
