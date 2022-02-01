@@ -31,7 +31,7 @@ spec:
           env:
             {{ if .Values.secretsMountPath }}
             - name: SECRETS_MOUNT_PATH
-              value: "{{ .Values.secretsMountPath }}"
+              value: {{ .Values.secretsMountPath }}
             {{ else }}
             - name: AUTH_KEY
               valueFrom:
