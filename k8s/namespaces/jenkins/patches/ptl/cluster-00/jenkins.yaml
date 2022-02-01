@@ -149,6 +149,12 @@ spec:
                     name: ET
                     recurse: true
                     title: Employment Tribunals Dashboard                    
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS_.*HWF-.*\/.+\/master
+                    name: HWF
+                    recurse: true
+                    title: Help with Fees
           authentication: |
             jenkins:
               securityRealm:
