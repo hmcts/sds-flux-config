@@ -4,7 +4,15 @@ resources:
 - vh-devops-agent.yaml
 - ../../../../namespaces/vh
 - ../../../../namespaces/all-namespaces/nonprod-role.yaml
-- vh-aad-identity.yaml
+
+patches:
+- target:
+    group: aadpodidentity.k8s.io
+    version: v1
+    kind: AzureIdentity
+    name: vh
+  path: vh-aad-identity.yaml
+
 
 patchesJson6902:
 - target:
