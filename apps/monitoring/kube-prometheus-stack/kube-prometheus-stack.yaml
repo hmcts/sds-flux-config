@@ -32,7 +32,7 @@ spec:
         network: true
         node: true
         prometheus: true
-        prometheusOperator: false
+        prometheusOperator: true
         time: true
     grafana:
       enabled: false
@@ -225,7 +225,6 @@ spec:
                     values:
                       - system
     prometheusOperator:
-      enabled: false
       admissionWebhooks:
         patch:
           tolerations:
@@ -261,7 +260,7 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: 30.0.1
+      version: 18.0.7
       sourceRef:
         kind: HelmRepository
         name: prometheus

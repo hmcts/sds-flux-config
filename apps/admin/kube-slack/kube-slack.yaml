@@ -5,7 +5,6 @@ metadata:
   name: kube-slack
   namespace: admin
 spec:
-  timeout: 10m
   releaseName: kube-slack
   values:
     valuesFrom:
@@ -38,7 +37,6 @@ spec:
   chart:
     spec:
       chart: ./stable/kube-slack
-      version: 1.4.0
       sourceRef:
         kind: GitRepository
         name: hmcts-stable
