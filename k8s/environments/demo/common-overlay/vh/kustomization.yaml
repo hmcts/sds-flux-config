@@ -11,7 +11,7 @@ patchesJson6902:
     version: v1
     kind: RoleBinding
     name: nonprod-team-permissions
-    namespace: pip
+    namespace: vh
   patch: |-
     - op: add
       path: "/subjects"
