@@ -7,6 +7,9 @@ metadata:
 spec:
   releaseName: kube-slack
   values:
+    valuesFrom:
+      - name: "kube-slack-values"
+        kind: Secret
     resources:
       requests:
         cpu: 100m
@@ -31,14 +34,12 @@ spec:
                   operator: In
                   values:
                     - system
-  valuesFrom:
-    - kind: Secret
-      name: kube-slack-values
   chart:
     spec:
       chart: ./stable/kube-slack
       sourceRef:
         kind: GitRepository
         name: hmcts-stable
-        namespace: admin
-  interval: 1m
+        namespace: flux-system
+      interval: 1m
+  interval: 5m
