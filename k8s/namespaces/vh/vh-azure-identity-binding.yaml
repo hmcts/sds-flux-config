@@ -1,0 +1,7 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: vh-binding
+spec:
+  azureIdentity: vh
+  selector: vh
