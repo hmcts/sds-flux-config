@@ -4,6 +4,8 @@ kind: Kustomization
 namespace: vh
 resources:
 - namespace.yaml
+- vh-azure-identity.yaml
+- vh-azure-identity-binding.yaml
 - vh-user-api/vh-user-api.yaml
 - vh-notification-api/vh-notification-api.yaml
 - vh-video-api/vh-video-api.yaml
