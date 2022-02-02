@@ -14,7 +14,7 @@ spec:
       chart: ./stable/vh-booking-queue-subscriber
       sourceRef:
         kind: GitRepository
-        name: hmcts-charts
+        name: vh-booking-queue-subscriber
         namespace: flux-system
       interval: 5m
   install:

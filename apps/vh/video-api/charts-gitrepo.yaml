@@ -1,0 +1,17 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: vh-video-api
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: ssh://github.com/hmcts/vh-video-api
+  ref:
+    branch: master
+  secretRef:
+    name: git-credentials
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/stable/
