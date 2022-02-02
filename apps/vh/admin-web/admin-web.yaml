@@ -14,7 +14,7 @@ spec:
       chart: ./stable/vh-admin-web
       sourceRef:
         kind: GitRepository
-        name: hmcts-charts
+        name: vh-admin-web
         namespace: flux-system
       interval: 5m
   install:
