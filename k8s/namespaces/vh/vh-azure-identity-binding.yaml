@@ -3,5 +3,5 @@ kind: AzureIdentityBinding
 metadata:
   name: vh-binding
 spec:
-  azureIdentity: vh
-  selector: vh
+  azureIdentity: vh-aad-identity
+  selector: vh-aad-identity
