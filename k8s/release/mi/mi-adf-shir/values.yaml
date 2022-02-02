@@ -8,10 +8,10 @@ appName: mi-adf-shir
 namespace: mi
 
 # Use only one of the two below. Currently Windows does not support podIdentity so using SOPS
-usePodIdentity: true
+usePodIdentity: false
 aadIdentityName: mi-integration-service
 
-useVMManagedIdentity: false
+useVMManagedIdentity: true
 
 keyVaultName: mi-vault
 keyVaultSecrets:

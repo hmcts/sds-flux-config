@@ -9,10 +9,10 @@ spec:
   releaseName: kube-prometheus-stack
   upgrade: 
     force: true
-  valuesFrom:
-    - name: "prometheus-values"
-      kind: Secret
   values:
+    valuesFrom:
+      - name: "prometheus-values"
+        kind: Secret
     defaultRules:
       create: true
       rules:
