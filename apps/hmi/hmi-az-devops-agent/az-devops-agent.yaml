@@ -4,6 +4,7 @@ metadata:
   name: az-devops-agent
   namespace: hmi
 spec:
+  interval: 5m
   releaseName: az-devops-agent
   values:
     env:
