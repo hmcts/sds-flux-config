@@ -10,6 +10,3 @@ patches:
     kind: AzureIdentity
     name: hmi
   path: azure-identity-patch.yaml
-
-patchesStrategicMerge:
-- ../../../../namespaces/hmi/hmi-case-hq-emulator/stg/hmi-case-hq-emulator.yaml

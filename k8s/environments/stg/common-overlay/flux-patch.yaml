@@ -2,16 +2,6 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: hmi-case-hq-emulator
-  namespace: hmi
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:pr-6
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
   name: pip-account-management
   namespace: pip
 spec:
