@@ -5,6 +5,7 @@ metadata:
   name: hmi-pactbroker
   namespace: hmi
 spec:
+  interval: 5m
   releaseName: hmi-pactbroker
   values:
     replicas: 1
