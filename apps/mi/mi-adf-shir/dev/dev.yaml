@@ -7,7 +7,7 @@ spec:
   releaseName: mi-adf-shir
   values:
     image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-c67d922-20211130213703 # {"$imagepolicy": "flux-system:mi-adf-shir"}
-    secretsMountPath: 'C:\kvmnt'
+    secretsMountPath: ''
     environment: "dev"
     resourceGroup: "mi-dev-rg"
     subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"

@@ -99,12 +99,6 @@ spec:
                     name: HMI
                     recurse: true
                     title: Hearing Management Interface
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS_.*LABS-.*\/.+\/master
-                    name: LABS
-                    recurse: true
-                    title: Labs
           authentication: |
             jenkins:
               securityRealm:

@@ -2,16 +2,6 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: hmi-case-hq-emulator
-  namespace: hmi
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/hmi/case-hq-emulator:prod-3371100-20210927155212
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
   name: toffee-frontend
   namespace: toffee
 spec:
