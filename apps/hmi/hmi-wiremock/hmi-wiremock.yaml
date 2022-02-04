@@ -5,12 +5,12 @@ metadata:
   name: hmi-wiremock
   namespace: hmi
 spec:
+  interval: 5m
   releaseName: hmi-wiremock
   values:
     ingress:
       enabled: true
       annotations:
-        kubernetes.io/ingress.class: traefik
       paths:
         - /
       tls: []
