@@ -5,7 +5,7 @@ metadata:
   name: hmi-pactbroker
   namespace: hmi
 spec:
-  releaseName: hmi-pactbroker^
+  releaseName: hmi-pactbroker
   values:
     aadIdentityName: "aks-sbox-mi"
     aadResourceId: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-sbox-mi
@@ -15,7 +15,7 @@ spec:
       tag: "v0.1" # {"$imagepolicy": "flux-system:hmi-pactbroker:tag"}
       pullPolicy: Always
     ingress:
-      hosts:p
+      hosts:
         - 'hmi-pact.sandbox.platform.hmcts.net'
     postgresql:
       postgresqlServerName: "hmi-pact-broker-sbox"
