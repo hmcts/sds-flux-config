@@ -15,4 +15,13 @@
 | Ptlsbox | Flux V1  | Not Migrated
 
 
-...
+### SOPs
+
+Sops fails linting by default as we require 2 spaces while it uses 4 spaces.
+You can use `yq` to fix this:
+
+```
+yq eval -I 2 --inplace apps/mi/mi-adf-shir/sbox/mi-adf-auth-values.enc.yaml
+```
+
+upstream issue: https://github.com/mozilla/sops/issues/900
