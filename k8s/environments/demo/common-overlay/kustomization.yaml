@@ -8,3 +8,6 @@ patches:
   - path: ../demo-helmrelease.yaml
     target:
       kind: HelmRelease
+patchesStrategicMerge:
+- ../../../namespaces/toffee/toffee-frontend/demo/demo.yaml
+- ../../../namespaces/toffee/toffee-recipe-backend/demo/demo.yaml
