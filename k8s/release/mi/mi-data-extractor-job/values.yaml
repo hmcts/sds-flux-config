@@ -8,7 +8,6 @@ job:
   activeDeadlineSeconds: 3600
   labels:
     app.kubernetes.io/instance : mi-data-extractor-job-001
-    app.kubernetes.io/name: mi-data-extractor-job
   ttlSecondsAfterFinished: 20
   keyVaults:
     "mi-vault":
