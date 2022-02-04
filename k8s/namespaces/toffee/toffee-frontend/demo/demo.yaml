@@ -1,0 +1,11 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-frontend
+  namespace: toffee
+spec:
+  releaseName: toffee-frontend
+  values:
+    nodejs:
+      ingressClass: traefik-no-proxy

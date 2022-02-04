@@ -1,0 +1,11 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: toffee
+spec:
+  releaseName: toffee-recipe-backend
+  values:
+    java:
+      ingressClass: traefik-no-proxy
