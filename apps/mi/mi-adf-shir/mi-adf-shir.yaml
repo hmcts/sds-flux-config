@@ -4,6 +4,7 @@ metadata:
   name: mi-adf-shir-deployment
   namespace: mi
 spec:
+  interval: 5m
   releaseName: mi-adf-shir
   values:
     labels:

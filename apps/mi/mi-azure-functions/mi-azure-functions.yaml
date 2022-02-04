@@ -5,11 +5,9 @@ metadata:
   name: mi-azure-functions-deployment
   namespace: mi
 spec:
+  interval: 5m
   releaseName: mi-azure-functions
   values:
-    labels:
-      app.kubernetes.io/instance: mi-azure-functions-deployment
-      app.kubernetes.io/name: mi-azure-functions-deployment
     keyVaultSecrets:
       - encryption-publicKey
   chart:
