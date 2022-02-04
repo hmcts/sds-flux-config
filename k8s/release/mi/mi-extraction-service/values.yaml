@@ -10,7 +10,6 @@ job:
   activeDeadlineSeconds: 3600
   labels:
     app.kubernetes.io/instance : mi-extraction-service
-    app.kubernetes.io/name: mi-extraction-service
   ttlSecondsAfterFinished: 20
   keyVaults:
     "mi-vault":

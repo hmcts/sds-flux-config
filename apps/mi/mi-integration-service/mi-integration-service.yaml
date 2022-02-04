@@ -4,15 +4,13 @@ metadata:
   name: mi-integration-service
   namespace: mi
 spec:
+  interval: 5m
   releaseName: mi-integration-service
   values:
     job:
       suspend: false
       kind: CronJob
       schedule: '15 * * * *'
-      labels:
-        app.kubernetes.io/instance: mi-integration-service-job
-        app.kubernetes.io/name: mi-integration-service-job
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false

@@ -8,7 +8,6 @@ job:
   activeDeadlineSeconds: 3600
   labels:
     app.kubernetes.io/instance : mi-house-keeping-service
-    app.kubernetes.io/name: mi-house-keeping-service
   keyVaults:
     "mi-vault":
       excludeEnvironmentSuffix: false

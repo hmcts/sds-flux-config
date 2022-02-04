@@ -1,4 +1,3 @@
----
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -8,7 +7,7 @@ spec:
   releaseName: mi-staging-service
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-staging-service:pr-1 # {"$imagepolicy": "flux-system::mi-staging-service"}
+      image: sdshmctspublic.azurecr.io/mi-staging-service:prod-1163655-20220110154525 # {"$imagepolicy": "flux-system:mi-staging-service"}
       environment:
         MI_CLIENT_ID: 5407b258-9168-499b-8e5e-32fd2e1bad3b
     global:
