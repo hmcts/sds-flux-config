@@ -21,7 +21,8 @@ patches:
       kind: AzureIdentity
       name: mi-azure-functions
   #overlays for mi-adf-shir
-  - path: ../../mi-adf-shir/dev.yaml
+  - path: ../../mi-adf-shir/dev/dev.yaml
+  - path: ../../mi-adf-shir/dev/mi-adf-auth-values.enc.yaml
   #overlays for mi-extraction-service
   - path: ../../mi-extraction-service/dev.yaml
   - path: ../../mi-extraction-service/dev-identity-patch.yaml
