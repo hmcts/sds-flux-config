@@ -8,7 +8,7 @@ spec:
   releaseName: mi-staging-service
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-staging-service:pr-1 # {"$imagepolicy": "flux-system::mi-staging-service"}
+      image: sdshmctspublic.azurecr.io/mi-staging-service:pr-1 # {"$imagepolicy": "flux-system:mi-staging-service"}
       environment:
         MI_CLIENT_ID: 5407b258-9168-499b-8e5e-32fd2e1bad3b
     global:
