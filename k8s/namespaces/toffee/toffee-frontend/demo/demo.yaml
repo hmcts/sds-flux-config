@@ -8,5 +8,4 @@ spec:
   releaseName: toffee-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-102fd9b-20220203164416
       ingressClass: traefik-no-proxy
