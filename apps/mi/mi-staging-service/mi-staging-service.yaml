@@ -5,15 +5,13 @@ metadata:
   name: mi-staging-service
   namespace: mi
 spec:
+  interval: 5m
   releaseName: mi-staging-service
   values:
     job:
       suspend: false
       kind: CronJob
       schedule: '30 * * * *'
-      labels:
-        app.kubernetes.io/instance: mi-staging-service
-        app.kubernetes.io/name: mi-staging-service
     global:
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
   chart:
