@@ -5,6 +5,7 @@ metadata:
   name: toffee-frontend
   namespace: toffee
 spec:
+  releaseName: toffee-frontend
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/toffee/frontend:prod-102fd9b-20220203164416
