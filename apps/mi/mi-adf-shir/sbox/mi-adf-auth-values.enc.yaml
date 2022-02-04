@@ -3,11 +3,8 @@ data:
   key: ENC[AES256_GCM,data:nVw9imLJJYeFS3lBE719SenZV3cizQhyzqXe4F4E+rHC1xmhMb2bicJHnf+C1R/5P6za0cI849otKf4VD/DIusK8EivGBQdXtEyI8utCsrZobjik8F814fShoWVCLwvcEyVvhIEvCWVKYuTAB0sItoPjMN4UMvoKNkVJUbMojodkmEmhIYuHe+6Yt3oGdWl98ys1uBkyqMMnt/n1vdWrVVtB8/8Xb/w1IdtUenTyyiWDnPznYqlyGUmsBBheDsqfLb9ZE2plMZaKRHJlbUPa198u8VU+6Jabuj8p3reEFjClAgRo5pqSBg==,iv:tbcVglu4v7v3P7Qvx4ADP1ec8KskI6D0piJO7KxDnXw=,tag:zFhi5umTpgSnPQzqEWFbPw==,type:str]
 kind: Secret
 metadata:
-  creationTimestamp: "2021-06-10T00:56:19Z"
   name: mi-adf-auth
   namespace: mi
-  resourceVersion: "7740200"
-  uid: e5a9862a-f39f-4f5f-9be8-3aecefb810ae
 type: Opaque
 sops:
   kms: []
@@ -20,8 +17,8 @@ sops:
       enc: i11nVOko7ZsqLzwGJl4fjzVQFle0awv_e30dRL2WC3pv4LpJLNor1z5YzmhJ5ehEdtMz5IdUA7VGHELKSfUEeH3BIKooS-FWA0g-ZDRvrhKfhzhzSs227H_D7S-4G4cTqqeDpwFTVJnALzjwTt3PHoUTXHARsuVEy9QztauKm7Q02rTm_p8yWkBHJfbly_7_o4U1xLT-j9AZ30CN4OdPEQg_XeIbHdKrr3gPBwY-i7VXVgvElfom9055JK8BbSnChx1HZSA-qyzX9bccqtkrmbUkbQEWuJIUt-fjmi8ZELtnCQr93NSCrNnsfqgUphFzAMAA1Mnf1aXCW4NlF031Ww
   hc_vault: []
   age: []
-  lastmodified: "2022-02-04T14:54:12Z"
-  mac: ENC[AES256_GCM,data:jSMEEDBh+DRCGgzqDSWwDprCxeyPDLfbAva1ahV9yAboVc7MxPUZP96JKz6RnrTge0UWk9OG0DBMGdf+EJrsutcos5w5dFXazp+DZv1+AY6L/iW0JKYUi5RBZzeEZQexDFSC4i8koBJTpUn0D2m3vjQcbSf2X4JvR+0DT2hOCYo=,iv:iMjjHx5xg8B9Z4FQZIXOTa9YkoPaLIhs1HXL2rapYxY=,tag:lBCgSn6ZySctWonm0RHq7g==,type:str]
+  lastmodified: "2022-02-04T15:48:36Z"
+  mac: ENC[AES256_GCM,data:QzsbUDu37r9+I0rwEptM20c0lA5MhwnnDdUZy0rZndLrEYkwnNcLWJuhg3nUTTcFc5+7QpUW5HoYKTCu4c9jU2mTitfKs/OmKtU1bAk0I/Y+Qw633qaS7pPLzZYcVtgLW26Ib0mhwkcvNyrvZ3A706EgAjHO5+ArXtQ5Z534cGw=,iv:xcjlxL4yKW/fCC8yWZGuFlsOYSmBvfI+AzoIp8HRBdk=,tag:czpg4+XoA1vslohwSontdw==,type:str]
   pgp: []
   encrypted_regex: ^(data|stringData)$
   version: 3.7.1
