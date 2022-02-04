@@ -4,15 +4,13 @@ metadata:
   name: data-extractor-job
   namespace: mi
 spec:
+  interval: 5m
   releaseName: data-extractor
   values:
     job:
       suspend: false
       kind: CronJob
       schedule: '0 * * * *'
-      labels:
-        app.kubernetes.io/instance: data-extractor-job
-        app.kubernetes.io/name: data-extractor-job
   chart:
     spec:
       chart: ./k8s/release/mi/mi-data-extractor-job
