@@ -11,7 +11,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-scheduler-jobs
+      chart: ./SchedulerJobs/SchedulerJobs
       sourceRef:
         kind: GitRepository
         name: vh-scheduler-jobs

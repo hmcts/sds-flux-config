@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-admin-web
 spec:
+  interval: 10m
   releaseName: vh-admin-web
   values:
     java:
@@ -11,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/vh-admin-web
+      chart: ./charts/vh-admin-web
       sourceRef:
         kind: GitRepository
         name: vh-admin-web

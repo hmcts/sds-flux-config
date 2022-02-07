@@ -11,7 +11,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-test-web
+      chart: ./TestWeb/TestWeb
       sourceRef:
         kind: GitRepository
         name: vh-test-web

@@ -11,7 +11,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-test-api
+      chart: ./TestApi/TestApi
       sourceRef:
         kind: GitRepository
         name: vh-test-api

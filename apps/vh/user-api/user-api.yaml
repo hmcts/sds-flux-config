@@ -11,7 +11,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-user-api
+      chart: ./UserApi/UserApi/
       sourceRef:
         kind: GitRepository
         name: vh-user-api
