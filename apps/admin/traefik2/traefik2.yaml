@@ -10,6 +10,7 @@ spec:
   chart:
     spec:
       chart: traefik
+      # update the crd version in traefik-crds when updating this
       version: 10.6.0
       sourceRef:
         kind: HelmRepository
