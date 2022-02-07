@@ -260,6 +260,7 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
+      # update crds in kube-prometheus-stack-crds when changing this version
       version: 18.0.7
       sourceRef:
         kind: HelmRepository
