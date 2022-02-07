@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-booking-queue-subscriber
 spec:
+  interval: 10m
   releaseName: vh-booking-queue-subscriber
   values:
     java:
@@ -11,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/vh-booking-queue-subscriber
+      chart: ./charts/vh-booking-queue-subscriber
       sourceRef:
         kind: GitRepository
         name: vh-booking-queue-subscriber

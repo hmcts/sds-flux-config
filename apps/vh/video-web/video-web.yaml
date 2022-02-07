@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-video-web
 spec:
+  interval: 10m
   releaseName: vh-video-web
   values:
     java:
