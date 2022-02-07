@@ -11,6 +11,8 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/vh/user-api:20210210.7
+    global:
+      environment: "test"
 
 ---
 apiVersion: helm.fluxcd.io/v1
