@@ -10,3 +10,5 @@ spec:
       ingressHost: pip-frontend.staging.platform.hmcts.net 
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.staging.platform.hmcts.net
+        OIDC: true
+        AUTH_RETURN_URL: https://pip-frontend.staging.platform.hmcts.net/login/return
