@@ -4,7 +4,7 @@ metadata:
   name: vh-admin-web
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 5m
   url: ssh://github.com/hmcts/vh-admin-web
   ref:
     branch: master
