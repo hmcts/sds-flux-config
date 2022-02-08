@@ -7,11 +7,11 @@ spec:
   interval: 5m
   url: ssh://github.com/hmcts/vh-user-api
   ref:
-    branch: master
+    branch: feature/VIH-7155_AksSecretFileProvider
   secretRef:
     name: git-credentials
   ignore: |
     # exclude all
     /*
     # include charts directory
-    !/UserApi/
+    !/charts/

@@ -7,11 +7,11 @@ spec:
   interval: 5m
   url: ssh://github.com/hmcts/vh-scheduler-jobs
   ref:
-    branch: master
+    branch: VIH-7337-vh-scheduler-jobs
   secretRef:
     name: git-credentials
   ignore: |
     # exclude all
     /*
     # include charts directory
-    !/SchedulerJobs/
+    !/charts/
