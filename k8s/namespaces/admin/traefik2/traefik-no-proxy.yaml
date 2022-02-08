@@ -31,7 +31,7 @@ spec:
         readOnly: true
     service:
       annotations:
-        service.beta.kubernetes.io/azure-load-balancer-resource-group: genesis-rg
+        service.beta.kubernetes.io/azure-load-balancer-balancer-internal: "true"
     access:
       enabled: true
     rbac:
