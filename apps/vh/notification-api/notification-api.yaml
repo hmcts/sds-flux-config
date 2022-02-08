@@ -12,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./NotificationApi/NotificationApi/
+      chart: ./charts/vh-notification-api
       sourceRef:
         kind: GitRepository
         name: vh-notification-api
