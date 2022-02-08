@@ -9,9 +9,9 @@
 | Demo|  Flux V1  | Not Migrated
 | ITHC | Flux V1 | Not Migrated
 | Test | Flux V1| Not Migrated
-| Dev | Flux V1  | Started Migration
-| Sbox | Flux V1  | Started Migration
-| Ptl | Flux V1 | Started Migration
+| Dev | Flux V1,Flux V2  | Started Migration
+| Sbox | Flux V2  | Started Migration
+| Ptl | Flux V1,Flux v2 | Started Migration
 | Ptlsbox | Flux V1  | Not Migrated
 
 
