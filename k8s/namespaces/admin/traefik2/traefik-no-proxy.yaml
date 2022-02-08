@@ -31,7 +31,7 @@ spec:
         readOnly: true
     service:
       annotations:
-        service.beta.kubernetes.io/azure-load-balancer-balancer-internal: "true"
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
     access:
       enabled: true
     rbac:
