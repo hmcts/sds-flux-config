@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-test-web
 spec:
+  interval: 10m
   releaseName: vh-test-web
   values:
     java:
@@ -11,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-test-web
+      chart: ./TestWeb/TestWeb
       sourceRef:
         kind: GitRepository
         name: vh-test-web

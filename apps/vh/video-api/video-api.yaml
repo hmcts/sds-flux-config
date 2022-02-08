@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-video-api
 spec:
+  interval: 10m
   releaseName: vh-video-api
   values:
     java:
@@ -11,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-video-api
+      chart: ./VideoApi/VideoApi
       sourceRef:
         kind: GitRepository
         name: vh-video-api

@@ -4,7 +4,7 @@ metadata:
   name: vh-scheduler-jobs
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 5m
   url: ssh://github.com/hmcts/vh-scheduler-jobs
   ref:
     branch: master
@@ -14,4 +14,4 @@ spec:
     # exclude all
     /*
     # include charts directory
-    !/stable/
+    !/SchedulerJobs/

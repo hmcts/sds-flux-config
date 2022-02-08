@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-scheduler-jobs
 spec:
+  interval: 10m
   releaseName: vh-scheduler-jobs
   values:
     java:
@@ -11,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-scheduler-jobs
+      chart: ./SchedulerJobs/SchedulerJobs
       sourceRef:
         kind: GitRepository
         name: vh-scheduler-jobs

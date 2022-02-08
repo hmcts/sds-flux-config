@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-notification-api
 spec:
+  interval: 10m
   releaseName: vh-notification-api
   values:
     java:
@@ -11,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-notification-api
+      chart: ./NotificationApi/NotificationApi/
       sourceRef:
         kind: GitRepository
         name: vh-notification-api

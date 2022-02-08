@@ -1,11 +1,11 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: vh-admin-web
+  name: vh-test-api
   namespace: flux-system
 spec:
-  interval: 1m
-  url: ssh://github.com/hmcts/vh-admin-web
+  interval: 5m
+  url: ssh://github.com/hmcts/vh-test-api
   ref:
     branch: master
   secretRef:
@@ -14,4 +14,4 @@ spec:
     # exclude all
     /*
     # include charts directory
-    !/stable/
+    !/TestApi/

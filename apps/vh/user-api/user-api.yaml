@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-user-api
 spec:
+  interval: 10m
   releaseName: vh-user-api
   values:
     java:
@@ -11,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-user-api
+      chart: ./UserApi/UserApi/
       sourceRef:
         kind: GitRepository
         name: vh-user-api

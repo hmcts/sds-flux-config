@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-service-web
 spec:
+  interval: 10m
   releaseName: vh-service-web
   values:
     java:
@@ -11,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-service-web
+      chart: ./ServiceWebsite/ServiceWebsite
       sourceRef:
         kind: GitRepository
         name: vh-service-web
