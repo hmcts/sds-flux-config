@@ -1,7 +1,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: traefik2-no-proxy
+  name: traefik-no-proxy
   namespace: admin
   annotations:
     flux.weave.works/automated: "false"
