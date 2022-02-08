@@ -7,7 +7,7 @@ spec:
   interval: 5m
   url: ssh://github.com/hmcts/vh-video-api
   ref:
-    branch: master
+    branch: feature/VIH-7205_video-api
   secretRef:
     name: git-credentials
   ignore: |
