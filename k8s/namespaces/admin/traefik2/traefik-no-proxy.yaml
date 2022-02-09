@@ -1,7 +1,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: traefik2-no-proxy
+  name: traefik-no-proxy
   namespace: admin
   annotations:
     flux.weave.works/automated: "false"
@@ -31,7 +31,7 @@ spec:
         readOnly: true
     service:
       annotations:
-        service.beta.kubernetes.io/azure-load-balancer-resource-group: genesis-rg
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
     access:
       enabled: true
     rbac:
