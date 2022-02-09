@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - nonprod-role.yaml
-  - ../identity/vh-azure-identity.yaml
+  - ../identity/vh-aad-identity.yaml
   - ../user-api/user-api.yaml
   - ../video-api/video-api.yaml
   - ../test-api/test-api.yaml
