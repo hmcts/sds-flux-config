@@ -27,7 +27,8 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/vh/video-api:20210210.6
-
+    global:
+      environment: "test"
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -41,3 +42,5 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/vh/video-web:20210210.14
+    global:
+      environment: "test"
