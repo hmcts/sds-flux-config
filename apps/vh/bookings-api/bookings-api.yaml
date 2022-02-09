@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-bookings-api
 spec:
+  interval: 10m
   releaseName: vh-bookings-api
   values:
     java:

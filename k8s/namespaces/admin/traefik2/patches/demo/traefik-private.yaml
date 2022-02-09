@@ -5,6 +5,6 @@ metadata:
   namespace: admin
 spec:
   values:
-    service:
-      spec:
-        loadBalancerIP: "10.51.95.250"
+    nameOverride: private
+    ingressClass:
+      isDefaultClass: false

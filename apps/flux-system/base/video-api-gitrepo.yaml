@@ -1,17 +1,17 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: vh-test-api
+  name: vh-video-api
   namespace: flux-system
 spec:
-  interval: 1m
-  url: ssh://github.com/hmcts/vh-test-api
+  interval: 5m
+  url: ssh://github.com/hmcts/vh-video-api
   ref:
-    branch: master
+    branch: feature/VIH-7205_video-api
   secretRef:
     name: git-credentials
   ignore: |
     # exclude all
     /*
     # include charts directory
-    !/stable/
+    !/charts/

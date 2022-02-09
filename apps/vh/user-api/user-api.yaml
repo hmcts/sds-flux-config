@@ -4,6 +4,7 @@ kind: HelmRelease
 metadata:
   name: vh-user-api
 spec:
+  interval: 10m
   releaseName: vh-user-api
   values:
     java:

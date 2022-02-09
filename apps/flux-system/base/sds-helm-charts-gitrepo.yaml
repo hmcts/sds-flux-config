@@ -4,7 +4,7 @@ metadata:
   name: sds-helm-charts
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 5m
   url: ssh://github.com/hmcts/sds-helm-charts
   ref:
     branch: master

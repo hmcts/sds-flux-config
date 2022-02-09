@@ -1,17 +1,17 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: vh-video-web
+  name: vh-notification-api
   namespace: flux-system
 spec:
-  interval: 1m
-  url: ssh://github.com/hmcts/vh-video-web
+  interval: 5m
+  url: ssh://github.com/hmcts/vh-notification-api
   ref:
-    branch: master
+    branch: VIH-7296-helm-setup
   secretRef:
     name: git-credentials
   ignore: |
     # exclude all
     /*
     # include charts directory
-    !/stable/
+    !/charts/
