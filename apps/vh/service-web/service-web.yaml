@@ -12,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./ServiceWebsite/ServiceWebsite
+      chart: ./charts/vh-service-web
       sourceRef:
         kind: GitRepository
         name: vh-service-web
