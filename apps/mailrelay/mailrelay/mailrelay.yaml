@@ -4,6 +4,7 @@ metadata:
   name: mailrelay
   namespace: mailrelay
 spec:
+  interval: 5m
   releaseName: mailrelay
   values:
     labels:
