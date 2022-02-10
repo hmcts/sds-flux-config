@@ -8,5 +8,5 @@ spec:
   releaseName: toffee-frontend
   values:
     nodejs:
-      ingressClass: traefik-no-proxy
+      ingressClass: traefik
       disableTraefikTls: false
