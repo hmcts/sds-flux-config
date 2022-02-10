@@ -13,7 +13,7 @@ spec:
     version: 10.6.0
   values:
     additionalArguments:
-      - --providers.kubernetesingress.ingressclass=traefik-private
+      - --providers.kubernetesingress.ingressclass=traefik
     ingressClass:
       enabled: true
       isDefaultClass: false
