@@ -4,7 +4,7 @@ resources:
   - ../../base
 namespace: vh
 patchesStrategicMerge:
-  - ../../identity/vh-azure-identity.yaml
+  - ../../identity/vh-aad-identity.yaml
   - ../../identity/dev.yaml
   - ../../user-api/dev.yaml
   - ../../video-api/dev.yaml

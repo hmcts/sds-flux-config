@@ -19,6 +19,7 @@ patchesStrategicMerge:
 #traefik patch
 - ../../../namespaces/admin/traefik2/patches/demo/secret-provider.yaml
 - ../../../namespaces/admin/traefik2/patches/demo/cluster-01/traefik-no-proxy.yaml
+- ../../../namespaces/admin/traefik2/patches/demo/traefik-private.yaml
 
 
 #kured patch
