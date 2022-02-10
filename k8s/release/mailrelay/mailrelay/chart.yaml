@@ -1,18 +1,21 @@
 ---
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: mailrelay
   namespace: mailrelay
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
     flux.weave.works/tag.chart-image: glob:v*
 spec:
+  interval: 10m
   releaseName: mailrelay
   chart:
-    git: git@github.com:hmcts/exim-relay
-    path: helm/exim
-    ref: master
+    spec:
+    prometheusSpec:
+      git: git@github.com:hmcts/exim-relay
+      path: helm/exim
+      ref: master
   valueFileSecrets:
     - name: "mailrelay-values"
   values:
