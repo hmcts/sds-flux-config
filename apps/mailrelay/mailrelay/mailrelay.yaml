@@ -4,8 +4,6 @@ metadata:
   name: mailrelay
   namespace: mailrelay
   annotations:
-    flux.weave.works/automated: "false"
-    flux.weave.works/tag.chart-image: glob:v*
 spec:
   interval: 5m
   releaseName: mailrelay
