@@ -5,6 +5,8 @@ metadata:
   namespace: admin
 spec:
   values:
+    additionalArguments:
+      - --providers.kubernetesingress.ingressclass=traefik-private
     nameOverride: private
     ingressClass:
       isDefaultClass: false
