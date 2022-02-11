@@ -6,17 +6,71 @@ metadata:
 spec:
   interval: 5m
   releaseName: mailrelay2
-  values:
-    labels:
-      app.kubernetes.io/instance: mailrelay2
-      app.kubernetes.io/name: mailrelay2
-    secretsMountPath: ''
-    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
   chart:
     spec:
-      chart: ./k8s/release/mailrelay2/mailrelay2
+      chart: ./helm/exim
       sourceRef:
         kind: GitRepository
-        name: flux-config
+        name: exim-relay
         namespace: flux-system
       interval: 1m
+  values:
+    valuesFrom:
+      - name: "mailrelay2-values"
+        kind: Secret
+    image:
+      repository: sdshmctspublic.azurecr.io/exim-relay
+      tag: 0.4
+      pullPolicy: IfNotPresent
+
+    service:
+      type: ClusterIP
+      port: 25
+
+    eximExporterService:
+      type: ClusterIP 
+      port: 9636
+
+    workload: Deployment
+
+    volumeClaim:
+      storageClass: "managed-premium"
+      storageSize: 10Gi
+
+    smtp:
+      relayDisableSenderVerification: false
+
+    resources:
+      requests:
+        cpu: 50m
+        memory: 64Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
+
+    fluentbit:
+      enabled: true
+      image:
+        repository: sdshmctspublic.azurecr.io/fluent/fluent-bit
+        tag: 1.7.2
+        pullPolicy: IfNotPresent
+
+    eximexporter:
+      enabled: true
+      image:
+        repository: sdshmctspublic.azurecr.io/exim-exporter
+        tag: 0.3
+        pullPolicy: IfNotPresent
+        ports:
+          - name: eximexporter
+            containerPort: 9636
+          
+    prometheus:
+      enabled: true
+
+    global:
+      environment: sbox
+      enableTls: false
+      enableOutboundTls: false
+      enableInboundTls: false
+      enableAuth: false
