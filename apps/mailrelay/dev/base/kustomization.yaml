@@ -2,10 +2,13 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
+  - dev-mailrelay-cert.enc.yaml
+  - dev-mailrelay-key.enc.yaml
+  - internal-dev-mailrelay-tls.enc.yaml
 namespace: mailrelay
 patches:
   - path: ../../identity/dev.yaml
-  - path: ../../dev/base/mailrelay-azure-identity-patch.yaml
+  - path: mailrelay-azure-identity-patch.yaml
     target:
       group: aadpodidentity.k8s.io
       version: v1
