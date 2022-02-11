@@ -3,7 +3,6 @@ kind: HelmRelease
 metadata:
   name: mailrelay
   namespace: mailrelay
-  annotations:
 spec:
   interval: 5m
   releaseName: mailrelay
