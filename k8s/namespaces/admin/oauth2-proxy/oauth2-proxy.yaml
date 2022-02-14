@@ -31,15 +31,12 @@ spec:
       tls-key: "/var/oauth2/demo-platform-hmcts-key.pem"
       upstream: http://traefik:80/
     extraVolumes:
-      - name: tls-cert
-        csi:
-          driver: secrets-store.csi.k8s.io
-          readOnly: true
-          volumeAttributes:
-            secretProviderClass: oauth2-proxy-secrets-store
+      - name: oauth2-proxy-cert
+        secret:
+          secretName: oauth2-proxy-cert
     extraVolumeMounts:
       - mountPath: "/var/oauth2"
-        name: "oauth2-proxy-secrets-store"
+        name: "oauth2-proxy-cert"
     ingress:
       enabled: true
       annotations:
