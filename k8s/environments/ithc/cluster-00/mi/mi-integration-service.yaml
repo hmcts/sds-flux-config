@@ -53,10 +53,10 @@ spec:
           - payment-bar-db-password
       environment:
         MI_CLIENT_ID: 9106f8ad-3189-4053-925d-0d4579c4e0d9
-        DATA_SOURCE_CCD: true
-        DATA_SOURCE_NOTIFY: true
+        DATA_SOURCE_CCD: false
+        DATA_SOURCE_NOTIFY: false
         DATA_SOURCE_EIGHTBYEIGHT: true
-        DATA_SOURCE_PAYMENT: true
+        DATA_SOURCE_PAYMENT: false
         GOV_UK_NOTIFY_ENABLED_CMC: true
         GOV_UK_NOTIFY_ENABLED_DIVORCE: true
         GOV_UK_NOTIFY_ENABLED_IDAM: true
