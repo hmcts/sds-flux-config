@@ -15,7 +15,8 @@ spec:
     provider: azure
     sources:
       - ingress
-    domainFilter: demo.platform.hmcts.net
+    domainFilters: 
+      - demo.platform.hmcts.net
     annotationFilter: "kubernetes.io/ingress.class=traefik"
     azure:
       resourceGroup: reformMgmtRG
