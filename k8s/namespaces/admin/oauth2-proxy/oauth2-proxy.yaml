@@ -41,7 +41,8 @@ spec:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: oauth2-proxy
-      defaultBackend: true
+      serviceName: oauth2-proxy
+      servicePort: 80
     podLabels:
       app: oauth2-proxy
     proxyVarsAsSecrets: true
