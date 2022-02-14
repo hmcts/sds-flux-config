@@ -9,4 +9,5 @@ spec:
   releaseName: pip-channel-management
   values:
     java:
+      disableTraefikTls: false
       environment:

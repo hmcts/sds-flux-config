@@ -9,4 +9,5 @@ spec:
   releaseName: pip-subscription-management
   values:
     java:
+      disableTraefikTls: false
       environment:
