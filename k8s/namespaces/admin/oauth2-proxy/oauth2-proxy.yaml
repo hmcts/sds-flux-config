@@ -32,11 +32,8 @@ spec:
       upstream: http://traefik:80/
     extraVolumes:
       - name: oauth2-proxy-cert
-        csi:
-          driver: secrets-store.csi.k8s.io
-          readOnly: true
-          volumeAttributes:
-            secretProviderClass: oauth2-proxy-cert
+        secret:
+          secretName: oauth2-proxy-cert
     extraVolumeMounts:
       - mountPath: "/var/oauth2"
         name: "oauth2-proxy-cert"
