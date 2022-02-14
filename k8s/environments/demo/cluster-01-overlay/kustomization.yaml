@@ -9,6 +9,7 @@ bases:
 - ../../../namespaces/admin/oauth2-proxy/oauth2-proxy.yaml
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
+- ../../../namespaces/admin/external-dns
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
 
@@ -30,3 +31,6 @@ patchesStrategicMerge:
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/demo/cluster-00/env-injector.yaml
+
+# external-dns patches
+- ../../../namespaces/admin/external-dns/patches/demo/cluster-01/external-dns.yaml
