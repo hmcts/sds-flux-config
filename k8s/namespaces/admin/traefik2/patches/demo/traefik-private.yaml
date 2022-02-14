@@ -7,9 +7,10 @@ spec:
   values:
     additionalArguments:
       - --providers.kubernetesingress.ingressclass=traefik-private
-    kubernetesIngress:
-      publishedService:
-        enabled: true
+    providers:
+      kubernetesIngress:
+        publishedService:
+          enabled: true
     nameOverride: private
     ingressClass:
       isDefaultClass: false
