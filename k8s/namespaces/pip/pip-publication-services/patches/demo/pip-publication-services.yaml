@@ -9,4 +9,5 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
+      disableTraefikTls: false
       environment:
