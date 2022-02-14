@@ -41,6 +41,7 @@ spec:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: oauth2-proxy
+      defaultBackend: true
     podLabels:
       app: oauth2-proxy
     proxyVarsAsSecrets: true
@@ -54,6 +55,8 @@ spec:
     service:
       annotations: 
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+    serviceAccount:
+      enabled: true
     valuesFrom:
       - name: "oauth2-proxy-values"
         kind: Secret
