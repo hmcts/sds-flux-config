@@ -37,7 +37,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-b4b0edf-20220208104725
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-0752bf2-20220215101349
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -62,11 +62,10 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  annotations:
+    filter.fluxcd.io/java: glob:prod-*
   name: vh-user-api
   namespace: vh
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/java: glob:prod-*
 spec:
   values:
     java:
@@ -75,11 +74,10 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  annotations:
+    filter.fluxcd.io/java: glob:prod-*
   name: vh-video-api
   namespace: vh
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/java: glob:prod-*
 spec:
   values:
     java:
@@ -88,11 +86,10 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
+  annotations:
+    filter.fluxcd.io/java: glob:prod-*
   name: vh-video-web
   namespace: vh
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/java: glob:prod-*
 spec:
   values:
     java:
