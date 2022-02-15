@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - ../../mailrelay-values.enc.yaml
+  - ../../mailrelay2/mailrelay-values.enc.yaml
   - dev-inbound-mailrelay2-tls.enc.yaml
   - dev-mailrelay2-cert.enc.yaml
   - dev-mailrelay2-key.enc.yaml
