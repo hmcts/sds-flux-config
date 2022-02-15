@@ -5,6 +5,7 @@ metadata:
   name: moj-reverse-proxy
   namespace: jd
 spec:
+  interval: 5m
   releaseName: moj-reverse-proxy
   values:
     nodejs:
