@@ -38,7 +38,8 @@ spec:
       - mountPath: /var/oauth2
         name: oauth2-proxy-cert
     ingress:
-      className: oauth2-proxy
+      annotations:
+        kubernetes.io/ingress.class: oauth2-proxy
       enabled: true
       hosts:
         - demo.platform.hmcts.net
