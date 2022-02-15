@@ -35,14 +35,14 @@ spec:
         secret:
           secretName: oauth2-proxy-cert
     extraVolumeMounts:
-      - mountPath: "/var/oauth2"
-        name: "oauth2-proxy-cert"
+      - mountPath: /var/oauth2
+        name: oauth2-proxy-cert
     ingress:
+      className: oauth2-proxy
       enabled: true
-      annotations:
-        kubernetes.io/ingress.class: oauth2-proxy
-      serviceName: oauth2-proxy
-      servicePort: 80
+      hosts:
+        - demo.platform.hmcts.net
+      path: /
     podLabels:
       app: oauth2-proxy
     proxyVarsAsSecrets: true
