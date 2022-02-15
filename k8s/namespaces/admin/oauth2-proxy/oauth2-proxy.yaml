@@ -17,8 +17,8 @@ spec:
       cookie-httponly: false
       cookie-secure: true
       email-domain: "*"
-      http-address: 4180
-      https-address: 4443
+      http-address: "0.0.0.0:4180"
+      https-address: "0.0.0.0:4443"
       oidc-issuer-url: https://login.microsoftonline.com/21ae17a1-694c-4005-8e0f-6a0e51c35a5f/v2.0
       pass-basic-auth: false
       pass-host-header: true
@@ -27,17 +27,21 @@ spec:
       proxy-prefix: "/oauth-proxy"
       request-logging: true
       skip-provider-button: true
-      tls-cert: "/var/oauth2/demo-platform-hmcts-crt.pem"
-      tls-key: "/var/oauth2/demo-platform-hmcts-key.pem"
+      tls-cert-file: "/var/oauth2/tls-cert"
+      tls-key-file: "/var/oauth2/tls-cert"
       upstream: http://traefik:80/
     extraVolumes:
       - name: oauth2-proxy-cert
-        secret:
-          secretName: oauth2-proxy-cert
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: oauth2-proxy-cert
     extraVolumeMounts:
-      - mountPath: /var/oauth2
+      - mountPath: "/var/oauth2"
         name: oauth2-proxy-cert
-    httpScheme: http
+        readOnly: true
+    httpScheme: https
     ingress:
       annotations:
         kubernetes.io/ingress.class: oauth2-proxy
@@ -47,6 +51,7 @@ spec:
       path: /
     podLabels:
       app: oauth2-proxy
+      aadpodidbinding: oauth2-proxy
     proxyVarsAsSecrets: true
     resources:
       limits:
@@ -58,7 +63,7 @@ spec:
     service:
       annotations: 
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-      portNumber: 80
+      portNumber: 443
     serviceAccount:
       enabled: true
     valuesFrom:
