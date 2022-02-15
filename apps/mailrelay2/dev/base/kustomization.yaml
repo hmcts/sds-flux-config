@@ -2,13 +2,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - ../../mailrelay2/mailrelay-values.enc.yaml
   - dev-inbound-mailrelay2-tls.enc.yaml
   - dev-mailrelay2-cert.enc.yaml
   - dev-mailrelay2-key.enc.yaml
 namespace: mailrelay2
 patchesStrategicMerge:
-  - ../../mailrelay2/dev.yaml 
+  - ../../mailrelay2/dev/dev.yaml
 patches:
   - path: ../../identity/dev.yaml
   - path: mailrelay2-azure-identity-patch.yaml
