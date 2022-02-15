@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+  oauth2-proxy-values.yaml: ENC[AES256_GCM,data:Khl8xt+EvXQVl5q/41Mfw2DVRfrVvOGBem3rJ+UOGXDmmY6iMXayz3pIc8jhfz0hPdAe+YDiZTN5r+iIgxoWM3EbBc3yVqKF9l4NnrbUwI8HBhHYOPUEj3MltwJB715ffQq1ovOBSYTIyr+Yc9QERtfkOIXeX6sYTQUo50cD9YM2HdsyYU5Si3M1QNbiKQge0qwlcaIAcD0=,iv:S8p6xlQkkORHPiqJ7K/3s7jNaGJiIsPa69MuwfvRuMA=,tag:23j3TbpeNOB4CoTmyfnP4Q==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: oauth2-proxy-values
+  namespace: admin
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicesdemokv.vault.azure.net
+      name: sops-key
+      version: 0657d01a616f4a0abb44e8b4ff26ac71
+      created_at: "2022-02-11T15:31:38Z"
+      enc: fbV2HMoA16nCdNfBB6N5U-y-_6IWhQLsT9-82rRvlI9FEszdtKk7rMVuQTe89NtJTrhEYG3d16zGCzwd4roMUskvsKrHV8n2N1KT3rBo_3laHfyyZVIKr5-LobyaxrSRiFemilVfiqf0AJ5MjCkh09fEo9feR8WjvAFx5cXvPuhrLxx5XCPUp5HqrGs-n1ga99KjmL7eQz1ZIDyDNoy8KnRSrBEIUVw3wtdeKNTtbYxpJOmXgAG_HGZYg_1EyHez6hQNGpI9Wxt2EGIU2iZPdpKtnT-jzmb1uilLZJYyNxmM93otWYn2y6gzfqoWQ0ESf44311uy92l_x67NW302tQ
+  hc_vault: []
+  age: []
+  lastmodified: "2022-02-11T15:31:42Z"
+  mac: ENC[AES256_GCM,data:eszND/ZUwiosD+c+OXrz3NwLbz18zDN0WIIUgJ39510n2atc3nyQjFDJeBj6fn625nrVTnltSsRVzCVR5Zmmo00dhJw8YLZ6FvRudssKoQuo7yQpie5W/mul8zdbMw6BvMKT/t5oEPJWflVSqi/S5mRIMs8vQEncoIxJpCG2N34=,iv:UsNeCExkO7OVDrCnbR11VjV8tmbc5GcKUxdw+OmDNcQ=,tag:c1naGdBAzu38JaNNj7aJ0A==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.1
