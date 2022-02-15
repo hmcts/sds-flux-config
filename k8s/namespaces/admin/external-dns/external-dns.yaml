@@ -10,6 +10,7 @@ spec:
     name: external-dns
     version: 6.1.4
   values:
+    policy: sync
     podLabels:
       aadpodidbinding: external-dns
     provider: azure
