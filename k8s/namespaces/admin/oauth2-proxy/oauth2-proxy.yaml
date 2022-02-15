@@ -37,7 +37,7 @@ spec:
     extraVolumeMounts:
       - mountPath: /var/oauth2
         name: oauth2-proxy-cert
-    httpScheme: 80
+    httpScheme: http
     ingress:
       annotations:
         kubernetes.io/ingress.class: oauth2-proxy
