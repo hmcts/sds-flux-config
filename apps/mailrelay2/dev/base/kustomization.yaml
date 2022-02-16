@@ -5,6 +5,7 @@ resources:
   - dev-inbound-mailrelay2-tls.enc.yaml
   - dev-mailrelay2-cert.enc.yaml
   - dev-mailrelay2-key.enc.yaml
+  - mailrelay2-values.enc.yaml
 namespace: mailrelay2
 patchesStrategicMerge:
   - ../../mailrelay2/dev/dev.yaml
