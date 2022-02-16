@@ -5,6 +5,7 @@ resources:
   - dev-mailrelay-cert.enc.yaml
   - dev-mailrelay-key.enc.yaml
   - internal-dev-mailrelay-tls.enc.yaml
+  - mailrelay-values.enc.yaml
 namespace: mailrelay
 patchesStrategicMerge:
   - ../../mailrelay/dev.yaml 
