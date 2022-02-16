@@ -5,14 +5,14 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
+  valuesFrom:
+    - name: "prometheus-values"
+      kind: Secret
   interval: 5m
   releaseName: kube-prometheus-stack
   upgrade: 
     force: true
   values:
-    valuesFrom:
-      - name: "prometheus-values"
-        kind: Secret
     defaultRules:
       create: true
       rules:
