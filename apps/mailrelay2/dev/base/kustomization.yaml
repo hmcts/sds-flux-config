@@ -8,7 +8,7 @@ resources:
   - mailrelay2-values.enc.yaml
 namespace: mailrelay2
 patchesStrategicMerge:
-  - ../../mailrelay2/dev/dev.yaml
+  - ../../mailrelay2/dev.yaml
 patches:
   - path: ../../identity/dev.yaml
   - path: mailrelay2-azure-identity-patch.yaml
