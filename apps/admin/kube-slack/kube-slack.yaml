@@ -6,10 +6,10 @@ metadata:
   namespace: admin
 spec:
   releaseName: kube-slack
+  valuesFrom:
+    - name: "kube-slack-values"
+      kind: Secret
   values:
-    valuesFrom:
-      - name: "kube-slack-values"
-        kind: Secret
     resources:
       requests:
         cpu: 100m
