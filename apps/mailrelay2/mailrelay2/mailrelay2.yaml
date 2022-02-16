@@ -16,7 +16,7 @@ spec:
       interval: 1m
   values:
     valuesFrom:
-      - name: "mailrelay2-values"
+      - name: "mailrelay-values"
         kind: Secret
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
