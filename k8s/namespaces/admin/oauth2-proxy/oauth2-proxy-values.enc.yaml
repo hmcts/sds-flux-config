@@ -1,24 +1,24 @@
 apiVersion: v1
 data:
-  oauth2-proxy-values.yaml: ENC[AES256_GCM,data:4j+8dU1kJ5NGcjtF/nuSrhq9DVaCaB3xuNx5GpTu/AMdkcQGF8voXhhuNv2bLl+JHCXqUtf2QDigx5ocsisG7drwlRmhwWui7ohOh1ttdA+1Aub6LuvarYpiyOGb+pA6+APx7+5DFV/4Ry1E1bg+eJUg3bUi4kCrFvorqoo58lRapdSVVmh5SD01qsD/EgCqfySYkjIAchSEwfm0,iv:j1efzeTzbNYoBSmyS4b1pOXKvZ86ZktwIXdaf4EHpmc=,tag:eiUAujN1Yjil2nuYJ8bTEw==,type:str]
+    oauth2-proxy-values.yaml: ENC[AES256_GCM,data:rOm4lTYRnqmclDZYQPU4dMwLHiGfN/1zO7Og327ASaszNElCiKknEZF1fo4s8yvJ/kgjPYV9YMytHrjAO6656YlI6nwI4LmKzPVM9iNlqgdXtyODRUa05QLq9lhrDDjEapsEPphODsTZa0GLjoyYfFMe614ba2XTRDk4qZNwjT3R3pMGkJCwrPb/09wfEW1Lo1HdYoY31rBEPuAzE/2sEr0EfiyJPeZlO7MHfMQwvavut3KhnusEx6nVXdbSL/24kZvsrQ+2UrANCQrBuvGiwAt20AIb1zDJAlQu+j6LVdjiMQ7vUG5syCjUg00TipytZkZSySWUSy51o4l/FaOl3o+MO+WTnLeDwn7EjYGJqQdI0ldoa/HevIVVOhP+DHJiB09RUG7ZSSOyLmYmrN+IX4UBl/Fg6vzJqGJIHmpZ8NjvNjGpAxvxmNpcp1PjPzed7Y0G8+2LPXDDTMurxXzyx1UPhAatK1w1bNlOCzyXTT+VTLn9eC54ov/ZpvD6whfSU4izhp9meKodYUxgGlaiLbfaKA2Vt9LZi5CApL9SQeELQafopPiAEPMEjWFK9/AG/vPzXk0xGJegQBUhLxk7S3EjIx5ziqeIB5k+DHMklZuH6APerMAUGc+unbM462PaLpgmPzVMAgePnF+at6gU6QRc80W8HEvLMUmr4jtlmfOBUuWm,iv:cTZ0dCmIB4b5/+crJqik5y+DRXlnYjwmKQHc9vyeVNU=,tag:cNVY1mMDmceqySqDw0fyDg==,type:str]
 kind: Secret
 metadata:
-  creationTimestamp: null
-  name: oauth2-proxy-values
-  namespace: admin
+    creationTimestamp: null
+    name: oauth2-proxy-values
+    namespace: admin
 sops:
-  kms: []
-  gcp_kms: []
-  azure_kv:
-    - vault_url: https://dtssharedservicesdemokv.vault.azure.net
-      name: sops-key
-      version: 0657d01a616f4a0abb44e8b4ff26ac71
-      created_at: "2022-02-15T16:09:27Z"
-      enc: lL5nK2oqbKkmJyPmB1c_8Z5QSXtXrzvGD2w5JeNUXiMyeGG9-z0gZMBa9l1tmVb39AfAlhD9_PZnpds713-NtOrnY5ELJP1C1qGqDkGxK2t4-xe6oGh1Xux2GFLG-vK0FCAvj6UlU8wO6AP3i6di38xOsuigz3FpT6ytONkgcDejzSAaTXx3Fr2Av1y7QGd7i-S6pSTFm57eg8E3Wi56cUvn-IBuDpgzRLjKNJrJNZ-aVeDJJnfxNs7R0nyppfpvkEzekDoVuH9l7Ch79gHupa_eATEDTBP7hFBSl7Ji26gTgFjpzJ62kz8ZJHVuCPPDUyiFM5hWtIo6UbTOP03YdQ
-  hc_vault: []
-  age: []
-  lastmodified: "2022-02-15T16:09:34Z"
-  mac: ENC[AES256_GCM,data:jpEjXvl6ne7JmXLRyEWEG+bvAqzHRRaxP7A8WRGBFPM51e6zlAyaT78RDIz/PjmgMxxocWIAb2sax3raeH/O6FSYrVERgscuFADDNPMHT/iTaUCpZZIRs7ex8bXyFqK8rZVSimYqdkLLc/2aphQUF6hwM0/2KyTjDMwEWWurRJU=,iv:pmbcrQBcGyd6R6Qpi2FQIWIzCQYHXXXY0PXUfzZffWY=,tag:8yQkV6C2hp/i88rnMeuI0g==,type:str]
-  pgp: []
-  encrypted_regex: ^(data|stringData)$
-  version: 3.7.1
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssharedservicesdemokv.vault.azure.net
+          name: sops-key
+          version: 0657d01a616f4a0abb44e8b4ff26ac71
+          created_at: "2022-02-16T13:00:12Z"
+          enc: C2VdpHD7udofNvdmKRCVFmO8WH9Kfhe3c8Eovbd-3zBDQ7NRQjQwn3l0metxS8bjPockDLupwETiYVk5Ntkhd026YnfJQza8Ks1fFVZYQlMdoR5dX4okJAwxQe__B7IK-bcfHEJQzgqtDLOjjc7BmxtBX66jBm4hHl5mXx9ujkj0Zlu4pTdkG9glWMLa5Qfa3pt9zQ05SFP67R96RCOgZR3chnFkOXnOnZC_LV-H9-6j51cULU3ZSQA8cmTfTQpNG0aLofyK6EKyMPYuT_VD23t3zrLmnX4uRN4iRfO4ywc623izlEkbwbpUSejn4Gx51eha5RzJYJi1fZBu_8neQA
+    hc_vault: []
+    age: []
+    lastmodified: "2022-02-16T13:00:17Z"
+    mac: ENC[AES256_GCM,data:UUcy32IU6O16mdsBZj0xNIE5E+WNwhW1w4WaalWIMtNnRXm5ubO5R8OSBX2RhjkS+tQjk0XTHCigUEdruS+1i0KcI/Kl3898JLgPJkgCo15T31w0s/xqunlnuLqF3WRIptWlVNB6tv1BX7BGnRw113CNP4Z64PhqQ9Yiq0+mAbY=,iv:AtVwNDwoGct2rLQ6RIwhu6rjvcPq5fECxIe26LH6EaI=,tag:lPMKxHqSfDQbzsA4+3Rosw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.1
