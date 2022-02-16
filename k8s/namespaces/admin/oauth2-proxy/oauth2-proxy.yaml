@@ -13,23 +13,53 @@ spec:
     version: 6.0.0
   values:
     extraArgs:
-      azure-tenant: "21ae17a1-694c-4005-8e0f-6a0e51c35a5f"
+      auth-logging: true
       cookie-httponly: false
       cookie-secure: true
       email-domain: "*"
       http-address: "0.0.0.0:4180"
       https-address: "0.0.0.0:4443"
-      oidc-issuer-url: https://login.microsoftonline.com/21ae17a1-694c-4005-8e0f-6a0e51c35a5f/v2.0
+      pass-authorization-header: true
       pass-basic-auth: false
       pass-host-header: true
       pass-user-headers: false
       provider: "azure"
       proxy-prefix: "/oauth-proxy"
       request-logging: true
+      set-authorization-header: true
+      set-xauthrequest: true
+      skip-jwt-bearer-tokens: true
       skip-provider-button: true
+      standard-logging: true
       tls-cert-file: "/var/oauth2/tls-cert"
       tls-key-file: "/var/oauth2/tls-cert"
-      upstream: http://traefik:80/
+      upstream: http://traefik-private:80/
+    extraEnv:
+      - name: OAUTH2_PROXY_CLIENT_ID
+        valueFrom:
+          secretKeyRef:
+            name: oauth2-proxy-values
+            key: client-id
+      - name: OAUTH2_PROXY_CLIENT_SECRET
+        valueFrom:
+          secretKeyRef:
+            name: oauth2-proxy-values
+            key: client-secret
+      - name: OAUTH2_PROXY_AZURE_TENANT
+        valueFrom:
+          secretKeyRef:
+            name: oauth2-proxy-values
+            key: azure-tenant
+      - name: OAUTH2_PROXY_EXTRA_JWT_ISSUERS
+        valueFrom:
+          secretKeyRef:
+            name: oauth2-proxy-values
+            key: extra-jwt-issuers
+      - name: OAUTH2_PROXY_OIDC_ISSUER_URL
+        valueFrom:
+          secretKeyRef:
+            name: oauth2-proxy-values
+            key: oidc-issuer-url
     extraVolumes:
       - name: oauth2-proxy-cert
         csi:
