@@ -9,9 +9,6 @@ kustomizepaths=(
     k8s/environments/demo/cluster-00-overlay
     k8s/environments/demo/cluster-01-overlay
     k8s/environments/demo/common-overlay
-    k8s/environments/dev/cluster-00-overlay
-    k8s/environments/dev/cluster-01-overlay
-    k8s/environments/dev/common-overlay
     k8s/environments/ithc/cluster-00-overlay
     k8s/environments/ithc/cluster-01-overlay
     k8s/environments/ithc/common-overlay
