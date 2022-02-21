@@ -13,27 +13,19 @@ spec:
     version: 6.0.0
   values:
     extraArgs:
-      auth-logging: true
       cookie-httponly: false
       cookie-secure: true
       email-domain: "*"
-      http-address: "0.0.0.0:4180"
-      https-address: "0.0.0.0:4443"
-      pass-authorization-header: true
+      http-address: "http://4180"
+      https-address: ":4443"
       pass-basic-auth: false
       pass-host-header: true
       pass-user-headers: false
       provider: "azure"
       proxy-prefix: "/oauth-proxy"
-      request-logging: true
-      set-authorization-header: true
-      set-xauthrequest: true
-      skip-jwt-bearer-tokens: true
-      skip-provider-button: true
-      standard-logging: true
+      skip-provider-button: false
       tls-cert-file: "/var/oauth2/tls-cert"
       tls-key-file: "/var/oauth2/tls-cert"
-      upstream: http://traefik-private:80/
     extraEnv:
       - name: OAUTH2_PROXY_CLIENT_ID
         valueFrom:
@@ -72,13 +64,6 @@ spec:
         name: oauth2-proxy-cert
         readOnly: true
     httpScheme: https
-    ingress:
-      annotations:
-        kubernetes.io/ingress.class: oauth2-proxy
-      enabled: true
-      hosts:
-        - demo.platform.hmcts.net
-      path: /
     podLabels:
       app: oauth2-proxy
       aadpodidbinding: oauth2-proxy
