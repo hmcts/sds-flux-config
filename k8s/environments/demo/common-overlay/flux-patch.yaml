@@ -18,16 +18,7 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/pip/channel-management:pr-9-2b0825c-20220113105135
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: pip-data-management
-  namespace: pip
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/pip/data-management:pr-44-9899d24-20220221211831
+
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
