@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../kube-slack/dev/kube-slack-values.enc.yaml
   - ../../kured/dev/kured-values.enc.yaml
+  - ../../rbac/reader-clusterrole.yaml
 namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/dev/secret-provider.yaml
