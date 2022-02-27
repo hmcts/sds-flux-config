@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+  values.yaml: ENC[AES256_GCM,data:RWdHdiOz4lTltxpmZQVvnnRPRYvrCtrRLLR++IjCyGvibi/GwkzbFH0Vc0EqYTcNK7pE8mvDLd6dCeyh/CzI9eWU0d5s/5pYG2AW/PUvTQPyTTkGTH/AAF91ZjknqUZUhWx+3DB/8Ls=,iv:PUYnciDQawV2Xpf04SLlAJOZT4Vb/lVl7KsidZlTTWw=,tag:4vuKcSESp+QrQSSu+xDOYQ==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: oneagent-values
+  namespace: monitoring
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicesstgkv.vault.azure.net
+      name: sops-key
+      version: b63a642ce6b14537bcc33a500f90b0e9
+      created_at: "2022-02-27T23:42:00Z"
+      enc: QGIDNefsMNkO-SmqpRM5T6uZdVFnKKHyfiMHF86V7iXwHHGe8eamlePjhpAymzkKB_4rJwIkRJviuIEG4H-98gWycu9mGhhmwqptat3f8XOE5YbbQm8kwbhEFRk2ddDZl2AtZRU6J0sndUQONmf-mW2RrvRK9AlT1Hv-r1VTceg_O04hsx2-LHt-7WmQqFt6ybIzcm0_4aJ3B-xqDoj4VqhkgOdp_VPpVUPS3UrOdsilxvJ8E4kA2LzyKsu8Awh7VyR8E7YPFem8oNgqnArMUw5JG-_cEgg-T3pxI7LMrl3k8_HTqnrcP7CZUjG5093TtAnnA_49ao9SqQA7Nm49Eg
+  hc_vault: []
+  age: []
+  lastmodified: "2022-02-27T23:42:01Z"
+  mac: ENC[AES256_GCM,data:lcf5lUh6RuAvFvOFcqQARGxo3YpRePFXA/1VBtyAyZ8yA4NktcVyG1iLRGiQrwuMbvOX4lUQsCUFhWMDUgCrWA7D582iIRtP4JJIa7STlAvWaFMxWDExGKwRGkOhSfzIj84FbwH3P4dBrffCQVLrD1oUMUtW2YEBA/1JSwzDu2k=,iv:vwo+0vjF1yzY9ByDPnSnGyGcjL31JvNVF8P1oihzURk=,tag:25pCnNfTF6+Su6kx+m1Zrw==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.1
