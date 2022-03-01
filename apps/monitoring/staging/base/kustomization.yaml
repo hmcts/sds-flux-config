@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../dynatrace/staging
-  - oneagent-values.yaml
+  - oneagent-values.enc.yaml
 
 patchesStrategicMerge:
   - ../../dynatrace/staging/dynatrace-operator.yaml
