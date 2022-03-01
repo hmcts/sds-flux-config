@@ -5,13 +5,13 @@
 | Environment  | Instances running | Status |
 | ------------- | ------------- | ------------- |
 | Prod | Flux V1  | Not Migrated
-| Staging |  Flux V1  | Not Migrated
+| Staging |  Flux V1, Flux v2  | Started Migration
 | Demo|  Flux V1  | Not Migrated
 | ITHC | Flux V1 | Not Migrated
 | Test | Flux V1| Not Migrated
 | Dev | Flux V2  | Completed
 | Sbox | Flux V2  | Completed
-| Ptl | Flux V1,Flux v2 | Started Migration
+| Ptl | Flux V1, Flux v2 | Started Migration
 | Ptlsbox | Flux V1  | Not Migrated
 
 
