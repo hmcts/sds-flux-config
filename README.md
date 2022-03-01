@@ -5,7 +5,7 @@
 | Environment  | Instances running | Status |
 | ------------- | ------------- | ------------- |
 | Prod | Flux V1  | Not Migrated
-| Staging |  Flux V1  | Not Migrated
+| Staging |  Flux V1  | Started Migration
 | Demo|  Flux V1  | Not Migrated
 | ITHC | Flux V1 | Not Migrated
 | Test | Flux V1| Not Migrated
