@@ -4,7 +4,7 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  path: ./clusters/stg/00
+  path: ./clusters/stg/01
   postBuild:
     substitute:
       ENVIRONMENT: "stg"
