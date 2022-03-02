@@ -59,8 +59,6 @@ spec:
         traefik.ingress.kubernetes.io/router.tls: "true"
       className: traefik-auth-proxy
       enabled: true
-      hosts:
-        - oauth-proxy.demo.platform.hmcts.net
     podLabels:
       app: oauth2-proxy
       aadpodidbinding: oauth2-proxy
