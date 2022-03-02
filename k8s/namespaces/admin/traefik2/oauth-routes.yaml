@@ -7,10 +7,11 @@ spec:
   entryPoints:
     - websecure
   routes:
-  - match: PathPrefix(`/oauth-proxy/`)
-    kind: Rule
-    services:
-      - name: oauth2-proxy
-        port: 80
-    middlewares:
-      - name: auth-headers
+    - kind: Rule
+      match: PathPrefix(`/oauth-proxy/`)
+      middlewares:
+        - name: auth-headers
+      services:
+        - kind: Service
+          name: oauth2-proxy
+          port: 80
