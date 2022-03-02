@@ -58,3 +58,23 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/pip/subscription-management:pr-31-a4cae64-20220223165740
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-frontend
+  namespace: toffee
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-5dd5af7-20220302151909
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: toffee
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-a847d98-20220203165443
