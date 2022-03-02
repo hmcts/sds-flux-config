@@ -1,28 +1,28 @@
 apiVersion: v1
 kind: Secret
 metadata:
-    name: oauth2-proxy-values
+  name: oauth2-proxy-values
 type: Opaque
 stringData:
-    client-id: ENC[AES256_GCM,data:ysNX+JEOoforev/y0fIGTeXhhzREU0WeV6ouBLQUZjQjK1SJ,iv:xkZI62EM1VUlDXTHzUUi58sDz7e9VdKZ8NlEWJG12fk=,tag:7iXO8HNpOBcsRDGt/z3mRw==,type:str]
-    client-secret: ENC[AES256_GCM,data:mMkZ3IBtWbatVS6fU0G1tDtrwVGmD/UaMVVh1JxxufOjjjmLig==,iv:/cHqocZC0Bh4eUKwmkYNnEoupPlKceC1D/AZkQ4b4UU=,tag:N8hs6vcAtOEjr4XzPDwg0g==,type:str]
-    extra-jwt-issuers: ENC[AES256_GCM,data:40dWZ7oFs/KJoFuWymvBCBOxX1UKayxEaejFH5AA07AkJyNkxX96zfZDsE7zeqBdTvYXw+np+xAClpiShiFINoNj8Nds1N+aVy8eb9GW26pxPjr0RUUlcFGjbqjsyt3iU3t5ZYxeD0rBFsvrNwsbrA==,iv:CA4pO8V/Qhr2V/gD/e1jw9uvrfSjMutlmrY4IZS3J+o=,tag:u5PoyD6Er6+S+OMOFCMQrA==,type:str]
-    azure-tenant: ENC[AES256_GCM,data:pEq8S8WmqCSAYvaca1q0qNelUNMgE1Hv5YYCZJmgpFFY49Fk,iv:8wDtSh6a3eDn5mW/hH4WV7uCj9Xmt8vP9lG0rQ4R2vs=,tag:icdJSmQn4Zj0P1XYulUAag==,type:str]
-    oidc-issuer-url: ENC[AES256_GCM,data:KlxAgawb7z7+ZkoQF6GhAbGjrAkIQ/QrSvJle0bLPKFoJeB3mwcRSuZbnIWvrTJYUYDadyyz1GU03IOaHg==,iv:7RYx2htZeNHjYI/iE4Fc9xqt1wWcdpY+ryXFUoI8qCk=,tag:4m4ZzxSARQ52po6akEN5GA==,type:str]
-    cookie-secret: ENC[AES256_GCM,data:ebmAsW4jJuMHqqyX/bGsDeo1TUsKT09bfut7cPRI9a+Tnr6hkOiqc1EfBC8=,iv:LUKkCe+dw8+4c8+5rYU9TVLmDESZIZTam7m/zk3C4Rs=,tag:YzRbyEZmUZKD0DXLmMia2g==,type:str]
+  client-id: ENC[AES256_GCM,data:ysNX+JEOoforev/y0fIGTeXhhzREU0WeV6ouBLQUZjQjK1SJ,iv:xkZI62EM1VUlDXTHzUUi58sDz7e9VdKZ8NlEWJG12fk=,tag:7iXO8HNpOBcsRDGt/z3mRw==,type:str]
+  client-secret: ENC[AES256_GCM,data:mMkZ3IBtWbatVS6fU0G1tDtrwVGmD/UaMVVh1JxxufOjjjmLig==,iv:/cHqocZC0Bh4eUKwmkYNnEoupPlKceC1D/AZkQ4b4UU=,tag:N8hs6vcAtOEjr4XzPDwg0g==,type:str]
+  extra-jwt-issuers: ENC[AES256_GCM,data:40dWZ7oFs/KJoFuWymvBCBOxX1UKayxEaejFH5AA07AkJyNkxX96zfZDsE7zeqBdTvYXw+np+xAClpiShiFINoNj8Nds1N+aVy8eb9GW26pxPjr0RUUlcFGjbqjsyt3iU3t5ZYxeD0rBFsvrNwsbrA==,iv:CA4pO8V/Qhr2V/gD/e1jw9uvrfSjMutlmrY4IZS3J+o=,tag:u5PoyD6Er6+S+OMOFCMQrA==,type:str]
+  azure-tenant: ENC[AES256_GCM,data:pEq8S8WmqCSAYvaca1q0qNelUNMgE1Hv5YYCZJmgpFFY49Fk,iv:8wDtSh6a3eDn5mW/hH4WV7uCj9Xmt8vP9lG0rQ4R2vs=,tag:icdJSmQn4Zj0P1XYulUAag==,type:str]
+  oidc-issuer-url: ENC[AES256_GCM,data:KlxAgawb7z7+ZkoQF6GhAbGjrAkIQ/QrSvJle0bLPKFoJeB3mwcRSuZbnIWvrTJYUYDadyyz1GU03IOaHg==,iv:7RYx2htZeNHjYI/iE4Fc9xqt1wWcdpY+ryXFUoI8qCk=,tag:4m4ZzxSARQ52po6akEN5GA==,type:str]
+  cookie-secret: ENC[AES256_GCM,data:ebmAsW4jJuMHqqyX/bGsDeo1TUsKT09bfut7cPRI9a+Tnr6hkOiqc1EfBC8=,iv:LUKkCe+dw8+4c8+5rYU9TVLmDESZIZTam7m/zk3C4Rs=,tag:YzRbyEZmUZKD0DXLmMia2g==,type:str]
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv:
-        - vault_url: https://dtssharedservicesdemokv.vault.azure.net
-          name: sops-key
-          version: 0657d01a616f4a0abb44e8b4ff26ac71
-          created_at: "2022-03-02T15:57:16Z"
-          enc: eHpdPWUr7vDl7jyyxQr8VE3uB2R-vS-pvToLAW7-vIlSVqNly7p81T6b8LPhvvo3b5c1cTd_Yj2P-qCbEnLrUbPYCCeL4jXSkNECyEU1BGE2aQFAR1T_awARPYrZW9QzhoXFpJkQ0jx1MNdyzh8OrmYsMCh0gdM91vKca_ilWyRfgOBK20RR4ow0AEXRwqG5V_dzFtXLcyYf2GWMzfffzv-B7uK4vhx90CnI7jJjrbPXmZ6c52w3LjEGwas_UrceJdT8H6W-oaaJgk5sys1nJZ_CSnV6thKkp0bVgPMHYvDGpSPH0ed_VRn4t1q2dBNPSoK1NcATrO_8BrmZe3y1dA
-    hc_vault: []
-    age: []
-    lastmodified: "2022-03-02T15:57:19Z"
-    mac: ENC[AES256_GCM,data:5XvPkm6RbDrj38XYr2x3khWLTkMKT/c/r8iNEUmTX/zHQrs84gvibMh5WYK61lOuF56t+OJhnQJXc9HigmBGSTvoHHkGTME7plfCDn6yV8DbollcrCUEbYLe72noFXoEOy0GOx4skJ7t77N2p4WJZttnpQnZ380yJLGgmw26jc4=,iv:XBMhfYXGjrUMLV/yGyBFR4jQMSfXTJlylugNwKG5YwU=,tag:J/pCqPstv3iCWsufFh7oeQ==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.7.1
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicesdemokv.vault.azure.net
+      name: sops-key
+      version: 0657d01a616f4a0abb44e8b4ff26ac71
+      created_at: "2022-03-02T15:57:16Z"
+      enc: eHpdPWUr7vDl7jyyxQr8VE3uB2R-vS-pvToLAW7-vIlSVqNly7p81T6b8LPhvvo3b5c1cTd_Yj2P-qCbEnLrUbPYCCeL4jXSkNECyEU1BGE2aQFAR1T_awARPYrZW9QzhoXFpJkQ0jx1MNdyzh8OrmYsMCh0gdM91vKca_ilWyRfgOBK20RR4ow0AEXRwqG5V_dzFtXLcyYf2GWMzfffzv-B7uK4vhx90CnI7jJjrbPXmZ6c52w3LjEGwas_UrceJdT8H6W-oaaJgk5sys1nJZ_CSnV6thKkp0bVgPMHYvDGpSPH0ed_VRn4t1q2dBNPSoK1NcATrO_8BrmZe3y1dA
+  hc_vault: []
+  age: []
+  lastmodified: "2022-03-02T15:57:19Z"
+  mac: ENC[AES256_GCM,data:5XvPkm6RbDrj38XYr2x3khWLTkMKT/c/r8iNEUmTX/zHQrs84gvibMh5WYK61lOuF56t+OJhnQJXc9HigmBGSTvoHHkGTME7plfCDn6yV8DbollcrCUEbYLe72noFXoEOy0GOx4skJ7t77N2p4WJZttnpQnZ380yJLGgmw26jc4=,iv:XBMhfYXGjrUMLV/yGyBFR4jQMSfXTJlylugNwKG5YwU=,tag:J/pCqPstv3iCWsufFh7oeQ==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.1
