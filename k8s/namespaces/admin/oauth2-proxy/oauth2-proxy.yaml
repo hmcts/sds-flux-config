@@ -13,19 +13,16 @@ spec:
     version: 6.2.0
   values:
     extraArgs:
-      cookie-domain: ".demo.platform.hmcts.net"
       email-domain: "*"
       pass-basic-auth: false
       pass-host-header: true
       pass-user-headers: false
       provider: "azure"
       proxy-prefix: "/oauth-proxy"
-      redirect-url: https://oauth-proxy.demo.platform.hmcts.net/oauth-proxy/callback
       reverse-proxy: true
       show-debug-on-error: true 
       skip-provider-button: true
       upstream: static://202
-      whitelist-domain: ".demo.platform.hmcts.net"
     extraEnv:
       - name: OAUTH2_PROXY_CLIENT_ID
         valueFrom:
