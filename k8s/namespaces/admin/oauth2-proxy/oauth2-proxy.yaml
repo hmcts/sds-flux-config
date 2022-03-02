@@ -10,22 +10,19 @@ spec:
   chart:
     repository: https://oauth2-proxy.github.io/manifests
     name: oauth2-proxy
-    version: 6.0.0
+    version: 6.2.0
   values:
     extraArgs:
-      cookie-httponly: false
-      cookie-secure: true
       email-domain: "*"
-      http-address: "http://4180"
-      https-address: ":4443"
       pass-basic-auth: false
       pass-host-header: true
       pass-user-headers: false
       provider: "azure"
       proxy-prefix: "/oauth-proxy"
-      skip-provider-button: false
-      tls-cert-file: "/var/oauth2/tls-cert"
-      tls-key-file: "/var/oauth2/tls-cert"
+      reverse-proxy: true
+      show-debug-on-error: true 
+      skip-provider-button: true
+      upstream: static://202
     extraEnv:
       - name: OAUTH2_PROXY_CLIENT_ID
         valueFrom:
@@ -37,6 +34,11 @@ spec:
           secretKeyRef:
             name: oauth2-proxy-values
             key: client-secret
+      - name: OAUTH2_PROXY_COOKIE_SECRET
+        valueFrom:
+          secretKeyRef:
+            name: oauth2-proxy-values
+            key: cookie-secret
       - name: OAUTH2_PROXY_AZURE_TENANT
         valueFrom:
           secretKeyRef:
@@ -52,22 +54,14 @@ spec:
           secretKeyRef:
             name: oauth2-proxy-values
             key: oidc-issuer-url
-    extraVolumes:
-      - name: oauth2-proxy-cert
-        csi:
-          driver: secrets-store.csi.k8s.io
-          readOnly: true
-          volumeAttributes:
-            secretProviderClass: oauth2-proxy-cert
-    extraVolumeMounts:
-      - mountPath: "/var/oauth2"
-        name: oauth2-proxy-cert
-        readOnly: true
-    httpScheme: https
+    ingress:
+      annotations:
+        traefik.ingress.kubernetes.io/router.tls: "true"
+      className: traefik-auth-proxy
+      enabled: true
     podLabels:
       app: oauth2-proxy
       aadpodidbinding: oauth2-proxy
-    proxyVarsAsSecrets: true
     resources:
       limits:
         cpu: 100m
@@ -75,12 +69,7 @@ spec:
       requests:
         cpu: 10m
         memory: 128Mi
-    service:
-      annotations: 
-        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-      portNumber: 443
-    serviceAccount:
-      enabled: true
     valuesFrom:
       - name: "oauth2-proxy-values"
         kind: Secret
+

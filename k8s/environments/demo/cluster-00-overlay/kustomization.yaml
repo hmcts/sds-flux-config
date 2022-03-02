@@ -6,7 +6,8 @@ bases:
 - ../../../release/admin/secrets-csi-driver
 - ../../../namespaces/admin/traefik2
 - ../../../namespaces/admin/traefik2/traefik-no-proxy.yaml
-# - ../../../namespaces/admin/oauth2-proxy/oauth2-proxy.yaml
+- ../../../namespaces/admin/traefik2/traefik-auth-proxy.yaml
+- ../../../namespaces/admin/oauth2-proxy/oauth2-proxy.yaml
 - ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/admin/external-dns
@@ -21,11 +22,11 @@ patchesStrategicMerge:
 #traefik patch
 - ../../../namespaces/admin/traefik2/patches/demo/secret-provider.yaml
 - ../../../namespaces/admin/traefik2/patches/demo/cluster-00/traefik-no-proxy.yaml
+- ../../../namespaces/admin/traefik2/patches/demo/cluster-00/traefik-auth-proxy.yaml
 - ../../../namespaces/admin/traefik2/patches/demo/traefik-private.yaml
 
 #oauth2-proxy patch
-# - ../../../namespaces/admin/oauth2-proxy/patches/demo/cluster-00/oauth2-proxy.yaml
-
+- ../../../namespaces/admin/oauth2-proxy/patches/demo/cluster-00/oauth2-proxy.yaml
 
 #kured patch
 - ../../../release/admin/kured/patches/demo/cluster-00/kured.yaml
