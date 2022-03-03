@@ -72,6 +72,7 @@ spec:
     podLabels:
       app: oauth2-proxy
       aadpodidbinding: oauth2-proxy
+    proxyVarsAsSecrets: true
     resources:
       limits:
         cpu: 100m
