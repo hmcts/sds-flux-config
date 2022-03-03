@@ -4,25 +4,9 @@ metadata:
   name: oauth2-proxy
 type: Opaque
 stringData:
-  client-id: ENC[AES256_GCM,data:o1aIe7twJI/7KmPsCjccDyr58cZ0stNLD7+gm59nVdJQfktt,iv:fiQDsPLdu8cF3Y3U9fYz3I/h/egjcyZsNQXc0/MQOYA=,tag:cv6EqjHp8pwCa18ZabAMIg==,type:str]
-  client-secret: ENC[AES256_GCM,data:I//LRw7atlyzowwa9vR0RTM55sxn8gWo9cLWFiOEP2c37tIyvg==,iv:ZGuUsLXiE5Ff/unWGKa1p8+DzouKJhC18M2L1jvnoZo=,tag:SIuX6EWqWUGfHUuJIYdP5A==,type:str]
-  extra-jwt-issuers: ENC[AES256_GCM,data:NI48U3np1svBSqt8crwOwam7KmvMm1+F+eCyI4UegWIOUiqjN2xwv7k3IKiMIMS0J9AtGPGpd3qcMdcnDVJYY9k4wFx4uJtaHZtjna0aeNG5H/8TT8XzrqkrlZnh3pOX2fvcTIFHlo7r9Cex3ApAeg==,iv:Ib2Ad9/Ki9cMUStmIZb0BIc5/dC8KuOLUBznhr4cWe0=,tag:3nEOJRUL+V82GFrmVV2Dow==,type:str]
-  azure-tenant: ENC[AES256_GCM,data:Dr/Sa2znh8m/1QK5X3U3pPN4hAECc/HQndidEPnOScQtxBhV,iv:Ye9bIJXcz8gePvyR6QH+zK0D/EKn2PK9NUQfNu3eTFs=,tag:EzgVZPQRgxRIIJKFoGBdmw==,type:str]
-  oidc-issuer-url: ENC[AES256_GCM,data:y6X3lFzP5UVT9sVfKLmEqGT5YWYkeuo1D12GK6UgEhQpuohjPpDFgMgaO2YQylHwTXJqo9iQ/F1mkxZ2vA==,iv:ayedK2Or6gYcINF+bMk2RrpbUgn/qnxtNWNgC5ODNqI=,tag:APasIpSHq0TtvWTJZnLRcQ==,type:str]
-  cookie-secret: ENC[AES256_GCM,data:un/YMpauxgPx33sB8No0ZRPuzgJfSshLrCbrwHUG2I4noA+kG/g23KPH0AU=,iv:Wv2jxN/SeZfNWY40G9y/+Mr7Buwgi5zrNyrBkl7M/a4=,tag:XMmM929DxkaNwxUnneg86w==,type:str]
-sops:
-  kms: []
-  gcp_kms: []
-  azure_kv:
-    - vault_url: https://dtssharedservicesdemokv.vault.azure.net
-      name: sops-key
-      version: 0657d01a616f4a0abb44e8b4ff26ac71
-      created_at: "2022-03-03T09:09:08Z"
-      enc: qM-7coeKowH2n_q6uILCPsbmqvRHD25q2r4D7rOHFJjtgMzK7MFEMf59ED0TWhDRbd2aozuL9vkGUqXSDhXRx5g-7zS0yOZKhE166DCQ6wUuYiMXyZ-0JY6RdCTBE6jEau4XdVM67p3ojDVrAeHUXeot6Nz-f_Heg-MSZ1iVwDkhcoslvGMFtlIq-pJVQvW_QKImsKfLx8CfGRswDc3QxgcYjksQFockt-QGI3lzjQLVo9D3W3l7fC11cJtyHIWDM44mZm0oWKCqNut5klybpM2vJS8if4Qi9X_30Zjf0A9isaZnNV6mV7qDJeh_EJF8ztF_EuWGu6xYY1CSk0bCRQ
-  hc_vault: []
-  age: []
-  lastmodified: "2022-03-03T09:09:09Z"
-  mac: ENC[AES256_GCM,data:rM/aHBuKPbaFAYHfjTZQ8FEMyngKPRxapCTaNVmrDfL5j/T87ynW+fHOz2z2mT68XS4++53FXmAvSDyIZm8LlW8aNDvFC8PZ1O6b0I6T8Z/8cUtC/koy2V4rXuYP2kJpYjqtMlMuBU+tMXowIqKWYpwYedb5ynArtyeh5LtFZps=,iv:N459x+ybwksyNdvOrhsBwqzKIP4V1VqQKKMuHC4AKaI=,tag:LRzRXG45ItJ0UIx2wOs3Og==,type:str]
-  pgp: []
-  encrypted_regex: ^(data|stringData)$
-  version: 3.7.1
+  client-id: ENC[AES256_GCM,data:OgRUogukbTPn6Gm46SeWy7DHo6R7ovZQKzaDLjrwJyTcADLx,iv:Q4gpeXul9NXgnzg1hktNn9k3cm11LgfmnSqr16mwdQ8=,tag:6L6c2wmf3lY3K2eaE1JQcw==,type:str]
+  client-secret: ENC[AES256_GCM,data:F639PaXlRmhSKSrvxXd8p6ElI2U3YatMCcQ+i7gkbZNwULKo4A==,iv:H8kNWg8TuDQ4GYgLf3dzZwgPnr8B0W5H9yb/bNyZU/o=,tag:WImjlAHqwGtN++qwjTk14g==,type:str]
+  extra-jwt-issuers: ENC[AES256_GCM,data:kQ7HBo8SSGKIgk/ZuB7OUc0aE1I32YIhVZyZynzxcuSLlr1fOzQURZHiGDVJC6gMQ4jthzpR8LbelcZhgPQ75tGKoRuw7Fnm8GrHdLl12arM+2L1XsV7AKdHwZN/AKwPJuY7lcm6PAXfofecEb5kEg==,iv:1kabKaNdZ+lM+5c6STQl6I1hI+go+j6KH51NDhGL8R8=,tag:gOfv8o7VuWj1ncQOhjhFRA==,type:str]
+  azure-tenant: ENC[AES256_GCM,data:AkNHg6460YT0GaOcZK6o8M13Zxq6bENdEwBGlLUlnJF96Fnf,iv:x7QTFPTcjXzMZeaJWCGd7e1QaU4eHO53Hf1oLZsyMLM=,tag:JHW+PptNUraMBsFQSdJIXw==,type:str]
+  oidc-issuer-url: ENC[AES256_GCM,data:gzwi1CjmbJxKFLgIwMgvB8ilp3vAPt5vxjsfh4mMFcN23H3XsjhuT15P1ry7/tKz+ymCOTBQvpzZEd7uOw==,iv:XnATdWe8C5NNeea+1KN1mrN+yws1YFvCQxFsplnkLsI=,tag:G4RJAID3Q6YwqsDS+NKDRw==,type:str]
+  cookie-secret: ENC[AES256_GCM,data:LjfvsW3DM0aGbTw6CrUvSFWiizh2zDyZLjzmkLrf8yydHxdadjajC/Q4DnQ=,iv:HfaDAWWq7l+zzGQhFQzzaVmUn46jvmIDahOLXuOOxBg=,tag:CSAGyFGOvFEnyYhXs+LB3g==,type:str]
