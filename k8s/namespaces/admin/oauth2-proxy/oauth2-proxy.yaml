@@ -27,32 +27,32 @@ spec:
       - name: OAUTH2_PROXY_CLIENT_ID
         valueFrom:
           secretKeyRef:
-            name: oauth2-proxy-values
+            name: oauth2-proxy
             key: client-id
       - name: OAUTH2_PROXY_CLIENT_SECRET
         valueFrom:
           secretKeyRef:
-            name: oauth2-proxy-values
+            name: oauth2-proxy
             key: client-secret
       - name: OAUTH2_PROXY_COOKIE_SECRET
         valueFrom:
           secretKeyRef:
-            name: oauth2-proxy-values
+            name: oauth2-proxy
             key: cookie-secret
       - name: OAUTH2_PROXY_AZURE_TENANT
         valueFrom:
           secretKeyRef:
-            name: oauth2-proxy-values
+            name: oauth2-proxy
             key: azure-tenant
       - name: OAUTH2_PROXY_EXTRA_JWT_ISSUERS
         valueFrom:
           secretKeyRef:
-            name: oauth2-proxy-values
+            name: oauth2-proxy
             key: extra-jwt-issuers
       - name: OAUTH2_PROXY_OIDC_ISSUER_URL
         valueFrom:
           secretKeyRef:
-            name: oauth2-proxy-values
+            name: oauth2-proxy
             key: oidc-issuer-url
     ingress:
       annotations:
@@ -70,6 +70,6 @@ spec:
         cpu: 10m
         memory: 128Mi
     valuesFrom:
-      - name: "oauth2-proxy-values"
+      - name: "oauth2-proxy"
         kind: Secret
 
