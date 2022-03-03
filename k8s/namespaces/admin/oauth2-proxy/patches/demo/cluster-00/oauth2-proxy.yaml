@@ -5,9 +5,6 @@ metadata:
   namespace: admin
 spec:
   values:
-    service:
-      spec:
-        loadBalancerIP: "10.51.79.251"
     extraArgs:
       cookie-domain: ".demo.platform.hmcts.net"
       redirect-url: https://oauth-proxy.demo.platform.hmcts.net/oauth-proxy/callback
