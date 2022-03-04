@@ -9,17 +9,18 @@ spec:
   chart:
     spec:
       chart: dynatrace-operator
-      version: 0.3.0
+      version: 0.4.2
       sourceRef:
         name: dynatrace-operator
         kind: HelmRepository
         namespace: monitoring
   valuesFrom:
-    - kind: Secret
-      name: oneagent-values
+    - name: "oneagent-values"
+      kind: Secret
   values:
+    autoCreateSecret: false
     platform: "kubernetes"
     oneagent:
       apiUrl: https://yrk32651.live.dynatrace.com/api
       args:
-        - --set-host-id-source=ip-addresses
+        - --set-host-id-source=ip-addresses 
