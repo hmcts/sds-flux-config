@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../dynatrace/stg
-  - ../../dynatrace/stg/oneagent-values.enc.yaml
+  - oneagent-values.enc.yaml
 namespace: monitoring
 patchesStrategicMerge:
   - ../../dynatrace/stg/dynatrace-operator.yaml
