@@ -13,7 +13,7 @@ spec:
     version: 10.6.0
   values:
     additionalArguments:
-      - --providers.kubernetesingress.ingressclass=traefik
+      - --providers.kubernetesingress.ingressclass=traefik-no-proxy
       - --providers.kubernetesingress.ingressendpoint.ip=20.108.232.218
     ingressClass:
       enabled: true

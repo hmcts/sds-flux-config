@@ -10,7 +10,7 @@ spec:
         loadBalancerIP: "10.51.79.250"
     ingressClass:
       enabled: true
-      isDefaultClass: true
+      isDefaultClass: false
     ports:
       web:
         redirectTo: websecure
