@@ -17,7 +17,7 @@ spec:
       - --providers.kubernetesingress.ingressendpoint.ip=20.90.197.52
     ingressClass:
       enabled: true
-      isDefaultClass: true
+      isDefaultClass: false
     deployment:
       podLabels:
         aadpodidbinding: traefik
