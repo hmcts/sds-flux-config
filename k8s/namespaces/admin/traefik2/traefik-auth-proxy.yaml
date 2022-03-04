@@ -13,7 +13,7 @@ spec:
     version: 10.6.0
   values:
     additionalArguments:
-      - --providers.kubernetesingress.ingressclass=traefik-auth-proxy
+      - --providers.kubernetesingress.ingressclass=traefik
       - --providers.kubernetesingress.ingressendpoint.ip=20.90.197.52
     ingressClass:
       enabled: true
@@ -36,8 +36,6 @@ spec:
       annotations:
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
     logs:
-      general:
-        level: INFO
       access:
         enabled: true
     rbac:
