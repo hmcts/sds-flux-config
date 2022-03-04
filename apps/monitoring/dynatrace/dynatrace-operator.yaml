@@ -22,3 +22,5 @@ spec:
     platform: "kubernetes"
     oneagent:
       apiUrl: https://yrk32651.live.dynatrace.com/api
+      args:
+        - --set-host-id-source=ip-addresses 
