@@ -10,6 +10,7 @@ spec:
   values:
     java:
       disableTraefikTls: false
-      ingressClass: traefik-no-proxy
+      ingressClass: traefik
+      enableOauth: true
       environment:
         DATA_MANAGEMENT_URL: 'https://pip-data-management.demo.platform.hmcts.net'

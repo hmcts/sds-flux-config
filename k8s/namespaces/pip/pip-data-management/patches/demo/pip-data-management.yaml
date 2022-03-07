@@ -10,5 +10,6 @@ spec:
   values:
     java:
       disableTraefikTls: false
-      ingressClass: traefik-no-proxy
+      ingressClass: traefik
+      enableOauth: true
       environment:
