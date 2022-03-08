@@ -8,11 +8,3 @@ spec:
     rco:
       Overrides:
         - '401': 302
-  errors:
-    status:
-      - "401-403"
-    service: 
-      name: oauth2-proxy
-      port: 80
-      passHostHeader: false
-    query: /oauth-proxy/sign_in
