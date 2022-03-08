@@ -10,4 +10,5 @@ spec:
     service: 
       name: oauth2-proxy
       port: 80
+      passHostHeader: false
     query: /oauth-proxy/sign_in
