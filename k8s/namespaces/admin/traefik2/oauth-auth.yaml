@@ -5,8 +5,5 @@ metadata:
   namespace: admin
 spec:
   forwardAuth:
-    address: https://oauth-proxy.demo.platform.hmcts.net/oauth-proxy/sign_in
+    address: https://oauth-proxy.demo.platform.hmcts.net/oauth-proxy/auth
     trustForwardHeader: true
-    authResponseHeaders:
-      - X-Auth-Request-Access-Token
-      - Authorization
