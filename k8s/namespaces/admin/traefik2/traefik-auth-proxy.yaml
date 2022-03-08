@@ -18,6 +18,11 @@ spec:
     ingressClass:
       enabled: true
       isDefaultClass: false
+    entryPoints:
+      websecure:
+        address: ":443"
+        forwardedHeaders:
+          insecure: true
     deployment:
       podLabels:
         aadpodidbinding: traefik
