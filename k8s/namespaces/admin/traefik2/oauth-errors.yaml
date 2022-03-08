@@ -4,6 +4,10 @@ metadata:
   name: oauth-errors
   namespace: admin
 spec:
+  plugin:
+    rco:
+      Overrides:
+        - '401': 302
   errors:
     status:
       - "401-403"
