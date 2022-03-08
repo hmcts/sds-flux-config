@@ -15,8 +15,6 @@ spec:
     additionalArguments:
       - --providers.kubernetesingress.ingressclass=traefik
       - --providers.kubernetesingress.ingressendpoint.ip=20.90.197.52
-      - --experimental.plugins.rco.moduleName=github.com/Lepkem/traefik-plugin-response-code-override
-      - --experimental.plugins.rco.version=v0.0.3
     ingressClass:
       enabled: true
       isDefaultClass: false
