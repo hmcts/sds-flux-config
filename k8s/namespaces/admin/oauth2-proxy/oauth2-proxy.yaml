@@ -19,7 +19,6 @@ spec:
       pass-user-headers: false
       provider: "azure"
       proxy-prefix: "/oauth-proxy"
-      real-client-ip-header: "X-Forwarded-For"
       reverse-proxy: true
       show-debug-on-error: true 
       skip-provider-button: true
