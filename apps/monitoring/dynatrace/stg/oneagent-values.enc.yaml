@@ -1,0 +1,18 @@
+apiVersion: v1
+data:
+  values.yaml: ENC[AES256_GCM,data:6CAjAHtFPF7HhG0qlTB8WA6pvNjjefiUu8UIuIasQT+fb/Dh5Ahj/qmUnNdXvqgKFpOtm0Bu1wB6Xlcr+T5Dkmj4nWFlI4SYMt9+Cr0jXY8BNujXxBC5YasOv4KVGoJYCJtwpZ2RyBvHRnXUSXF9FNdE0yHAnIpmmvna6rdjiXmZJq0YHWgzig1G3swha0j6evTvsmO/+y+Hk8A2XSRPFWSMRCeNOKkfNmQR3cFEPdif1odCXskbWq4BXrnc3U5y8esKwOsAtOoYZMMbOxvronnJmuMNQV9sT+sf0yqfFCWBNVoN9p+OUGMVh8nlto7/F8AQAO4HomIJ0VELj/qEe6BsnmBuO0DjzXIfs4cod6tbNqTZSIogZjf3vzHtlziIcUnIMt/t2v9qB3OQ++vU1Q==,iv:0VtoyaZs3T4lW5GyzrnynLLVoQdITP2rPM2i5U5FzuY=,tag:MfsU4At/VZimQECkDyPd3A==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: oneagent-values
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age: []
+  lastmodified: "2022-03-10T12:26:51Z"
+  mac: ENC[AES256_GCM,data:nbKzRXzQ0SslBovbMFioCwx8MauhDy+Myr/Gu96eKFGxx6HlIuo38iwPKANYKD1PXqTxSWyK66lf5gX2j+Txyvj2aoYLa1iJ0mO2JJ56boFav56ZNl8MoQpNTsb9W7gW6bDTZrSWGuoIqBwxQVAPgtYyOnEDWz3NoZ50LtYbJVE=,iv:9N6enDjRfJI/NsBxWhtH/3paIETOzCxRaNmqiydpmjo=,tag:5+Wv+ASjo/KD4iF0geMK9Q==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.1
