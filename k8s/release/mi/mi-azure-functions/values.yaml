@@ -15,6 +15,7 @@ aadIdentityName: mi-azure-functions
 keyVaultName: mi-vault
 keyVaultCoreSecrets:
   - appinsights-connectionstring
+  - appinsights-instrumentationkey
   - azure-functions-function-key
   - azure-functions-master-key
   - mi-audit-storage-connection-string
