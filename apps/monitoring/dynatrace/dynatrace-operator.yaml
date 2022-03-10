@@ -19,8 +19,8 @@ spec:
       kind: Secret
   values:
     autoCreateSecret: false
+    apiUrl: https://yrk32651.live.dynatrace.com/api
     platform: "kubernetes"
-    oneagent:
-      apiUrl: https://yrk32651.live.dynatrace.com/api
+    classicFullStack:
       args:
         - --set-host-id-source=ip-addresses 
