@@ -5,3 +5,4 @@ resources:
 namespace: monitoring
 patchesStrategicMerge:
   - ../../dynatrace/stg/dynatrace-operator.yaml
+  - ../../dynatrace/stg/dynatrace-operator-values.enc.yaml
