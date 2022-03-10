@@ -11,7 +11,7 @@ spec:
     nodejs:
       disableTraefikTls: false
       ingressClass: traefik
-      enableOauth: true
+      enableOAuth: true
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.demo.platform.hmcts.net
