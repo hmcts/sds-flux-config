@@ -1,18 +1,18 @@
 apiVersion: v1
 data:
-  values.yaml: ENC[AES256_GCM,data:6CAjAHtFPF7HhG0qlTB8WA6pvNjjefiUu8UIuIasQT+fb/Dh5Ahj/qmUnNdXvqgKFpOtm0Bu1wB6Xlcr+T5Dkmj4nWFlI4SYMt9+Cr0jXY8BNujXxBC5YasOv4KVGoJYCJtwpZ2RyBvHRnXUSXF9FNdE0yHAnIpmmvna6rdjiXmZJq0YHWgzig1G3swha0j6evTvsmO/+y+Hk8A2XSRPFWSMRCeNOKkfNmQR3cFEPdif1odCXskbWq4BXrnc3U5y8esKwOsAtOoYZMMbOxvronnJmuMNQV9sT+sf0yqfFCWBNVoN9p+OUGMVh8nlto7/F8AQAO4HomIJ0VELj/qEe6BsnmBuO0DjzXIfs4cod6tbNqTZSIogZjf3vzHtlziIcUnIMt/t2v9qB3OQ++vU1Q==,iv:0VtoyaZs3T4lW5GyzrnynLLVoQdITP2rPM2i5U5FzuY=,tag:MfsU4At/VZimQECkDyPd3A==,type:str]
+  values.yaml: ENC[AES256_GCM,data:PveEpZ5zE062IBYc6QkU1L9ayUNhnaor828wrM+kP0e+YFt64XAY8rxt1/J4yiH2sjsjvV0y7J6dhZXPHjGM7JqOj3QVn7dG2nueGSAVXUmpDH2palNe69k1wViq+oRqt1EuVzbaOTFkKIxN/s7XOTAqUV/tpMD8ZiyyrIHfUeb2XBkOy7ixx2DIyUbbN5XhkWuEjrTF0WC8oglDOwT1Ak1xLwYm7wHTJFIKYg6MNax1vDP6aE8Nuye5k/9rCK9MHXxTin4xd5nc0SSKymXKjDj9Q+UGKztBgvu68knhxeNXjar9BVqBPZL15iDkgQohwEeAHz6oTrK/HXbgC8jteYI2NWiVtsPe9wVZ/N5GoFKxc90kTDI5PpdQQn5CwA0vmN3sa21FkbD7Sf1Qcgxi8Q==,iv:Fk4VQH3fY2OjpSU4kKsrQLqL1SYtc2vxV5IqzXfdY78=,tag:2vUGdoGwX477tLCMOOR3JQ==,type:str]
 kind: Secret
 metadata:
   creationTimestamp: null
-  name: oneagent-values
+  name: dynatrace-operator-values
 sops:
   kms: []
   gcp_kms: []
   azure_kv: []
   hc_vault: []
   age: []
-  lastmodified: "2022-03-10T12:26:51Z"
-  mac: ENC[AES256_GCM,data:nbKzRXzQ0SslBovbMFioCwx8MauhDy+Myr/Gu96eKFGxx6HlIuo38iwPKANYKD1PXqTxSWyK66lf5gX2j+Txyvj2aoYLa1iJ0mO2JJ56boFav56ZNl8MoQpNTsb9W7gW6bDTZrSWGuoIqBwxQVAPgtYyOnEDWz3NoZ50LtYbJVE=,iv:9N6enDjRfJI/NsBxWhtH/3paIETOzCxRaNmqiydpmjo=,tag:5+Wv+ASjo/KD4iF0geMK9Q==,type:str]
+  lastmodified: "2022-03-10T13:45:55Z"
+  mac: ENC[AES256_GCM,data:4icCtefNDTtioCQ+ho6az2J+opWlbEeIYIeMmawLnMWxKencTDoIb+zlLm3Kq4ImSL9xTqhc7GWSwgGD/mKadTbHTAB5ue9TLDozLP7KdlY2I7j+/uYY3Fda18iVdChReUCP5l13sPXXflKjWKkGXJSDrI7O0W3SQjEa/c4B/hk=,iv:4bCIiLEN/kzQbsubaQNjnYEy9Xp0kUjETUX71F0f5+I=,tag:fLgJPVl0wfJyimuZSn666Q==,type:str]
   pgp: []
   encrypted_regex: ^(data|stringData)$
   version: 3.7.1
