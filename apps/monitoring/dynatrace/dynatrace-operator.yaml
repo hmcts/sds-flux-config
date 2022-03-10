@@ -18,7 +18,6 @@ spec:
     - name: "oneagent-values"
       kind: Secret
   values:
-    autoCreateSecret: false
     apiUrl: https://yrk32651.live.dynatrace.com/api
     platform: "kubernetes"
     classicFullStack:
