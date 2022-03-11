@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: dynatrace-operator
-  namespace: monitoring
+  namespace: dynatrace
 spec:
   releaseName: dynatrace-operator
   interval: 5m
@@ -13,7 +13,7 @@ spec:
       sourceRef:
         name: dynatrace-operator
         kind: HelmRepository
-        namespace: monitoring
+        namespace: dynatrace
   valuesFrom:
     - name: "dynatrace-operator-values"
       kind: Secret
