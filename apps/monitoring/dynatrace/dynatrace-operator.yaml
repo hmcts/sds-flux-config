@@ -15,8 +15,11 @@ spec:
         kind: HelmRepository
         namespace: monitoring
   valuesFrom:
-    - name: "dynatrace-operator-values"
+    - name: "oneagent-values"
       kind: Secret
   values:
     apiUrl: https://yrk32651.live.dynatrace.com/api
-    networkZone: 'azure.sds'
+    platform: "kubernetes"
+    classicFullStack:
+      args:
+        - --set-host-id-source=ip-addresses 

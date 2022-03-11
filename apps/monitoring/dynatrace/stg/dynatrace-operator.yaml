@@ -6,7 +6,7 @@ metadata:
   namespace: monitoring
 spec:
   values:
-    classicFullStack:
+    oneagent:
       args:
-        - --set-host-id-source=ip-addresses 
         - --set-host-group=STG_SDS
+        - --set-network-zone=azure.sds
