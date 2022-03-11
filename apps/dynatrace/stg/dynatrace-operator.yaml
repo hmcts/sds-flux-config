@@ -6,7 +6,7 @@ metadata:
   namespace: dynatrace
 spec:
   values:
-#    classicFullStack:
-#      args:
-#        - --set-host-id-source=ip-addresses
-#        - --set-host-group=STG_SDS
+    classicFullStack:
+      args:
+        - --set-host-id-source=ip-addresses
+        - --set-host-group=STG_SDS
