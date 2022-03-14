@@ -77,6 +77,8 @@ spec:
           cpu: 1
           memory: 5Gi
       controller:
+        ingress:
+          traefik.ingress.kubernetes.io/router.tls: "true"
         tolerations:
           - key: "CriticalAddonsOnly"
             operator: "Equal"
