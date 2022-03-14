@@ -117,6 +117,8 @@ spec:
         image:
           repository: neuvector/enforcer
       manager:
+        ingress:
+          traefik.ingress.kubernetes.io/router.tls: "true"
         tolerations:
           - key: "CriticalAddonsOnly"
             operator: "Equal"
