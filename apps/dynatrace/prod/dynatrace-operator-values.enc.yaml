@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  values.yaml: ENC[AES256_GCM,data:9YCCzfxR8QCNA84YxBRwtscS8pg8NpDhxTtAOghoZ2Rkt8wztH6xmKnzg6M678IxJUfwMm2CDGh97U4uP/7CTW0kYsjMnJOrpZhE1IvI/x697QpV7CcT0g==,iv:ihvoDjxYF9Er59xwSS3iS0nsA5XVneZ0bZ8Vb1ER5AQ=,tag:o4teajQwUtMqfR4Cw6jW0Q==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: dynatrace-operator-values
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicesprodkv.vault.azure.net
+      name: sops-key
+      version: 883d8b431ad345d09b2697c3aaae2a0c
+      created_at: "2022-03-14T17:01:17Z"
+      enc: WdsVwMSZglVamVf4Mg889cU4orlUf8rL-1QM_u41MJ-4ONtoR_07N_oHf3B1gBBHETqSdKgBwhCHrqgg_xWhSXWRJ6yI3m57GM6PO4tjgvxOobOGobdEWWU9HzpSSlhXfDYx1Nbqemzn0f67v8RQg_50qz5DIutYUZJ7rD--aOz8FfyZQV5x7nxz8svadV73S2Oq6N8tTX37fcHM0i4d-JhBayioLtXfPva7pA6G6z13osSh4tC5txbR8lbyP03ELxgRWbJ_RVFim_QxiZwVtFyB0wIrdh8lincCJVNZ7Wss5pGGlc3IqPuY2lCtUcRRgyyw54DjfBr7x2ZG6S4M9A
+  hc_vault: []
+  age: []
+  lastmodified: "2022-03-14T17:01:19Z"
+  mac: ENC[AES256_GCM,data:/A53l+QKCz6jWk9Ja+RB3ruQpDhepCE6uk4KfgSKmVAKv/ldCY+AG40Uof5xGKcVY9xmeq4MqnHWUqOrH2YIcwKU7l4Fz+B9QeyQ8i4uNhzFFKJ0rbVejXZ4S5ah7blQXquRu4EMzT1Sy1BQiNmYsc+BuggKOLHJemeum54m6eE=,iv:epW3e1sCAC/usNrqe1oPwhlq1a+cZQRtp4tbtnSxn+4=,tag:hpto7MduXCSoPj02D1lZQw==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.2
