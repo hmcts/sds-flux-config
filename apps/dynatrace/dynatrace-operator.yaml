@@ -22,3 +22,5 @@ spec:
     networkZone: 'azure.cft' # uses Active Gates from CFT
     classicFullStack:
       enabled: true
+      nodeSelector:
+        agentpool: system
