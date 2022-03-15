@@ -23,6 +23,11 @@ spec:
     operator:
       nodeSelector:
         agentpool: system
+      tolerations:
+        - effect: NoSchedule
+          key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
     classicFullStack:
       enabled: true
       tolerations:
