@@ -21,6 +21,11 @@ spec:
     apiUrl: https://yrk32651.live.dynatrace.com/api
     networkZone: 'azure.cft' # uses Active Gates from CFT
     operator:
+      tolerations:
+        - effect: NoSchedule
+          key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
       nodeSelector:
         agentpool: system
     classicFullStack:
