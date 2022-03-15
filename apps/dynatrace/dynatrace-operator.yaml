@@ -25,3 +25,8 @@ spec:
         agentpool: system
     classicFullStack:
       enabled: true
+      tolerations:
+        - effect: NoSchedule
+          key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
