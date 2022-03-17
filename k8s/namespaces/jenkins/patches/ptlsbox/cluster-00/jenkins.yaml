@@ -9,8 +9,6 @@ spec:
     controller:
       ingress:
         hostName: sds-sandbox-build.platform.hmcts.net
-      secondaryIngress:
-        hostName: static-sds-sandbox-build.platform.hmcts.net
       containerEnv:
         - name: ENVIRONMENT
           value: "sandbox"
