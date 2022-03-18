@@ -7,7 +7,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/account-management:pr-19-fce7993-20220113110224
+      image: sdshmctspublic.azurecr.io/pip/account-management:pr-19-b2ae6ab-20220318154110
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -27,7 +27,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/data-management:pr-44-2d12668-20220309155140
+      image: sdshmctspublic.azurecr.io/pip/data-management:pr-44-6007a1a-20220318152216
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -37,7 +37,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-220-a542578-20220309150048
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-220-62a3819-20220318151857
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -57,7 +57,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/subscription-management:pr-31-dcde972-20220309145950
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:pr-31-fc65926-20220318135021
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
