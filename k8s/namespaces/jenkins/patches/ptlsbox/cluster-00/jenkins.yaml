@@ -11,6 +11,8 @@ spec:
         hostName: sds-sandbox-build.platform.hmcts.net
       secondaryIngress:
         hostname: static-sds-sandbox-build.platform.hmcts.net
+        annotations:
+          traefik.ingress.kubernetes.io/router.tls: "true"
       containerEnv:
         - name: ENVIRONMENT
           value: "sandbox"
