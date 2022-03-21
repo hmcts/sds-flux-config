@@ -5,6 +5,10 @@ metadata:
   name: jenkins
   namespace: jenkins
 spec:
+  chart:
+    repository: https://charts.jenkins.io
+    name: jenkins
+    version: 3.10.0
   values:
     controller:
       ingress:
