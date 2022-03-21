@@ -9,8 +9,6 @@ spec:
     controller:
       ingress:
         hostName: sds-sandbox-build.platform.hmcts.net
-        annotations:
-          traefik.ingress.kubernetes.io/router.tls: "true"
       secondaryIngress:
         hostname: static-sds-sandbox-build.platform.hmcts.net
         annotations:
