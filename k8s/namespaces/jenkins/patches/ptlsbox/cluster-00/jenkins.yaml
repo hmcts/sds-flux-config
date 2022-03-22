@@ -19,7 +19,7 @@ spec:
       ingress:
         hostName: sds-sandbox-build.platform.hmcts.net
       secondaryingress:
-        hostname: static-sds-sandbox-build.platform.hmcts.net
+        hostName: static-sds-sandbox-build.platform.hmcts.net
         enabled: true
         paths: ["/"]
         annotations:
