@@ -21,6 +21,7 @@ spec:
       secondaryingress:
         hostname: static-sds-sandbox-build.platform.hmcts.net
         enabled: true
+        paths: []
         annotations:
           kubernetes.io/ingress.class: traefik
           traefik.ingress.kubernetes.io/router.tls: "true"
