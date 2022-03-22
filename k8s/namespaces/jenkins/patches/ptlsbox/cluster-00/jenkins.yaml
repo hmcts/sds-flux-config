@@ -18,7 +18,7 @@ spec:
         allowPrivilegeEscalation: true
       ingress:
         hostName: sds-sandbox-build.platform.hmcts.net
-      secondaryIngress:
+      secondaryingress:
         hostname: static-sds-sandbox-build.platform.hmcts.net
         annotations:
           traefik.ingress.kubernetes.io/router.tls: "true"
