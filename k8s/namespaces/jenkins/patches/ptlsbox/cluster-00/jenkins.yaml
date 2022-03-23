@@ -37,6 +37,10 @@ spec:
               systemMessage: >-
                   This jenkins is managed by configuration as code, update <a
                   href="https://github.com/hmcts/sds-flux-config/blob/master/k8s/namespaces/jenkins/patches/ptlsbox/cluster-00/jenkins.yaml">here</a>
+          resourceRoot: |
+            unclassified:
+              resourceRoot:
+                url: "https://static-sds-sandbox-build.platform.hmcts.net/"
           env-vars: |
             jenkins:
               globalNodeProperties:
