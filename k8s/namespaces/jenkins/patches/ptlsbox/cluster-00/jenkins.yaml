@@ -11,7 +11,6 @@ spec:
     version: 3.11.8
   values:
     controller:
-      image: "hmctspublic.azurecr.io/jenkins/jenkins"
       tag: "dbng30"
       containerSecurityContext:
         runAsUser: 0
