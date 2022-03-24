@@ -10,7 +10,6 @@ spec:
     name: jenkins
   values:
     controller:
-      tag: "dbngqy"
       containerSecurityContext:
         runAsUser: 0
         runAsGroup: 0
