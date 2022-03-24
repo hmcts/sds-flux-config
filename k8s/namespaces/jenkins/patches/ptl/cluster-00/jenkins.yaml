@@ -9,6 +9,8 @@ spec:
     controller:
       ingress:
         hostName: sds-build.platform.hmcts.net
+      secondaryingress:
+        hostName: static-sds-build.platform.hmcts.net
       containerEnv:
         - name: ENVIRONMENT
           value: "production"

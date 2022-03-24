@@ -8,10 +8,8 @@ spec:
   chart:
     repository: https://charts.jenkins.io
     name: jenkins
-    version: 3.11.8
   values:
     controller:
-      tag: "dbngqy"
       containerSecurityContext:
         runAsUser: 0
         runAsGroup: 0
@@ -21,11 +19,6 @@ spec:
         hostName: sds-sandbox-build.platform.hmcts.net
       secondaryingress:
         hostName: static-sds-sandbox-build.platform.hmcts.net
-        enabled: true
-        paths: ["/"]
-        annotations:
-          kubernetes.io/ingress.class: traefik
-          traefik.ingress.kubernetes.io/router.tls: "true"
       containerEnv:
         - name: ENVIRONMENT
           value: "sandbox"
