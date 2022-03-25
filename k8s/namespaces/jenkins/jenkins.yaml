@@ -71,7 +71,6 @@ spec:
         -Dkubernetes.websocket.ping.interval=60000
         -Dorg.apache.commons.jelly.tags.fmt.timeZone=Europe/London
         -Dhudson.model.WorkspaceCleanupThread.retainForDays=2
-        -Dhudson.model.DirectoryBrowserSupport.CSP="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self'"
 
       installPlugins: false
       # Below is the implementation of Jenkins Configuration as Code.  Add a key under configScripts for each configuration area,
