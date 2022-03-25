@@ -23,7 +23,7 @@ spec:
               systemMessage: >-
                   This jenkins is managed by configuration as code, update <a
                   href="https://github.com/hmcts/sds-flux-config/blob/master/k8s/namespaces/jenkins/patches/ptl/cluster-00/jenkins.yaml">here</a>
-          resourceRoot: |
+          resource-root: |
             unclassified:
               resourceRoot:
                 url: "https://static-sds-build.platform.hmcts.net/"
