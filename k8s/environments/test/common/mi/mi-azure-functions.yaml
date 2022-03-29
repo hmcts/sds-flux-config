@@ -18,7 +18,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:test-c20a67b-20220329024200
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:test-ca6dae5-20220329105117
     env:
       ADF_RESOURCEGROUP: mi-test-rg
       ADF_NAME: mi-ingestion-adf-test
