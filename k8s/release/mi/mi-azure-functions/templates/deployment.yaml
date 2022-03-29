@@ -35,3 +35,10 @@ spec:
             - name: {{ .Values.keyVaultName }}-secrets-store
               mountPath: {{ .Values.secretsMountPath }}
               readOnly: true
+          resources:
+            requests:
+              memory: {{ .Values.memoryRequests }}
+              cpu: {{ .Values.cpuRequests }}
+            limits:
+              memory: {{ .Values.memoryLimits }}
+              cpu: {{ .Values.cpuLimits }}
