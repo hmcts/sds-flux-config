@@ -12,10 +12,10 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./charts/vh-bookings-api
+      chart: ./stable/vh-bookings-api
       sourceRef:
         kind: GitRepository
-        name: vh-bookings-api
+        name: hmcts-charts
         namespace: flux-system
       interval: 5m
   install:
