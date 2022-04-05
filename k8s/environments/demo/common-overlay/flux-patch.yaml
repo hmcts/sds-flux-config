@@ -27,7 +27,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/data-management:pr-44-6007a1a-20220318152216
+      image: sdshmctspublic.azurecr.io/pip/data-management:pr-44-eb04ab4-20220404150706
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -37,7 +37,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-220-abd9729-20220330114537
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-220-e2b758c-20220404180627
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
