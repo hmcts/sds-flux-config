@@ -39,6 +39,8 @@ spec:
             requests:
               memory: {{ .Values.memoryRequests }}
               cpu: {{ .Values.cpuRequests }}
+              ephemeral-storage: {{ .Values.ephemeralStorageRequests }}
             limits:
               memory: {{ .Values.memoryLimits }}
               cpu: {{ .Values.cpuLimits }}
+              ephemeral-storage: {{ .Values.ephemeralStorageLimits }}
