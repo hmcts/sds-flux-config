@@ -12,3 +12,4 @@ spec:
       disableTraefikTls: false
       ingressClass: traefik-no-proxy
       environment:
+        PUBLICATION_SERVICES_URL: 'https://pip-publication-services.demo.platform.hmcts.net'
