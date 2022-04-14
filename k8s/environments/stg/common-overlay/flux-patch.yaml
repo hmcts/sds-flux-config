@@ -78,3 +78,15 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-7098754-20220302151854
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  annotations:
+    filter.fluxcd.io/java: glob:next-release-*
+  name: vh-bookings-api
+  namespace: vh
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/vh/bookings-api:20210210.7
