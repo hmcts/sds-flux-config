@@ -63,34 +63,11 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   annotations:
-    filter.fluxcd.io/java: glob:prod-*
-  name: vh-user-api
+    filter.fluxcd.io/java: glob:latest
+  name: vh-bookings-api
   namespace: vh
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/user-api:20210210.7
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  annotations:
-    filter.fluxcd.io/java: glob:prod-*
-  name: vh-video-api
-  namespace: vh
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/vh/video-api:20210210.6
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  annotations:
-    filter.fluxcd.io/java: glob:prod-*
-  name: vh-video-web
-  namespace: vh
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/vh/video-web:20210210.14
+      image: sdshmctspublic.azurecr.io/vh/bookings-api:20210210.7
+
