@@ -27,7 +27,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/data-management:prod-67da210-20220414141501
+      image: sdshmctspublic.azurecr.io/pip/data-management:prod-5bb22bb-20220414155829
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -62,12 +62,9 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  annotations:
-    filter.fluxcd.io/java: glob:latest
   name: vh-bookings-api
   namespace: vh
 spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/vh/bookings-api:20210210.7
-
