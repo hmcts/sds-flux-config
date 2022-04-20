@@ -10,6 +10,6 @@ metadata:
 spec:
   releaseName: vh-bookings-api
   chart:
-    git: git@github.com:hmcts/vh-bookings-api
-    path: charts/vh-bookings-api
-    ref: feature/VIH-7234_fixing_typo
+    git: git@github.com:hmcts/hmcts-charts
+    path: ./stable/vh-bookings-api
+    ref: master
