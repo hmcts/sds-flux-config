@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mi-extraction-service
+  namespace: mi
+spec:
+  releaseName: mi-extraction-service
+  values:
+    job:
+      image: sdshmctspublic.azurecr.io/mi-extraction-service:prod-e7e5eea-20220110162352 # {"$imagepolicy": "flux-system:mi-extraction-service"}
+      environment:
+        MI_CLIENT_ID: 87982a0b-6fac-46e0-99a2-94f20642b2e1
+    global:
+      subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
+      environment: "ithc"
