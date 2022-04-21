@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mi-azure-functions-deployment
+  namespace: mi
+spec:
+  releaseName: mi-azure-functions
+  values:
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-cfe8eb2-20220406175738 #{"$imagepolicy": "flux-system:mi-azure-functions-ithc"}
+    env:
+      ADF_RESOURCEGROUP: mi-ithc-rg
+      ADF_NAME: mi-ingestion-adf-ithc
+      ADF_STORAGEACCOUNTNAME: miauditithc
+      MI_METADATA_SERVER_DB: mi-metadata-db-ithc
+    keyVaultSecrets:
+      - encryption-publicKey
+    environment: "ithc"
+    resourceGroup: "mi-ithc-rg"
+    subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
+    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    managedIdentityClientId: "259b6e80-5132-40af-a35b-b3413ae828a9"
