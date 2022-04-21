@@ -18,7 +18,7 @@ spec:
     ref: master
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:test-a6ea973-20220420104916
+      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:test-4cf90c2-20220420163339
       suspend: false
       kind: CronJob
       schedule: '45 1 * * *'
@@ -29,7 +29,7 @@ spec:
         MI_CLIENT_ID: b97f7ade-7db0-41b0-bac2-22effc9d79b5
         STORAGE_DATA_EXTRACTOR_RETENTION: "14"
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:test-a6ea973-20220420104916
+        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:test-4cf90c2-20220420163339
         enabled: true
       testsConfig:
         environment:
