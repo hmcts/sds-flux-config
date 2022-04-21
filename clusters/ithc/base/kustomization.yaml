@@ -4,6 +4,7 @@ resources:
   - ../../../apps/flux-system/ithc/base
   - ../../../apps/azure-devops/base/kustomize.yaml
   - ../../../apps/admin/base/kustomize.yaml
+  - ../../../apps/mi/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
