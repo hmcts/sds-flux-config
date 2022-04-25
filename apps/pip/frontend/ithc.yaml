@@ -7,4 +7,3 @@ spec:
   releaseName: pip-frontend
   values:
     image: sdshmctspublic.azurecr.io/pip/frontend:prod-e0a697f-20220105182009 #{"$imagepolicy": "flux-system:pip-frontend"}
-    environment: "ithc"

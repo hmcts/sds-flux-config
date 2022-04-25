@@ -7,4 +7,3 @@ spec:
   releaseName: pip-publication-services
   values:
     image: sdshmctspublic.azurecr.io/pip/publication-services:prod-47a49e6-20220105164709 #{"$imagepolicy": "flux-system:pip-publication-services"}
-    environment: "ithc"

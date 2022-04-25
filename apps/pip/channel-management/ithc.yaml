@@ -7,4 +7,3 @@ spec:
   releaseName: pip-channel-management
   values:
     image: sdshmctspublic.azurecr.io/pip/channel-management:prod-c9ce779-20220105164714 #{"$imagepolicy": "flux-system:pip-channel-management"}
-    environment: "ithc"

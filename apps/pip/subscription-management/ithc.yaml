@@ -7,4 +7,3 @@ spec:
   releaseName: pip-subscription-management
   values:
     image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-e23c232-20220117145616 #{"$imagepolicy": "flux-system:pip-subscription-management"}
-    environment: "ithc"
