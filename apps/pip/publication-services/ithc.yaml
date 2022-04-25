@@ -8,7 +8,3 @@ spec:
   values:
     image: sdshmctspublic.azurecr.io/pip/publication-services:prod-47a49e6-20220105164709 #{"$imagepolicy": "flux-system:pip-publication-services"}
     environment: "ithc"
-    resourceGroup: "pip-ss-ithc-rg"
-    subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
-    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    managedIdentityClientId: "6eadcd84-611f-4d93-b2c4-5e3ff2dc239e"
