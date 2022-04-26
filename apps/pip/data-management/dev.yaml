@@ -7,8 +7,3 @@ spec:
   releaseName: pip-data-management
   values:
     image: sdshmctspublic.azurecr.io/pip/data-management:prod-558ea59-20211214104223 #{"$imagepolicy": "flux-system:pip-data-management"}
-    environment: "dev"
-    resourceGroup: "pip-ss-stg-rg"
-    subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
-    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    managedIdentityClientId: "8d0ead51-3b31-44df-a78e-ada4eea9fe87"
