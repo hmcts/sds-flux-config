@@ -5,10 +5,10 @@ resources:
 namespace: pip
 patchesStrategicMerge:
   - ../../identity/pip-azure-identity.yaml
-  - ../../identity/dev.yaml
-  - ../../account-management/dev.yaml
-  - ../../channel-management/dev.yaml
-  - ../../data-management/dev.yaml
-  - ../../frontend/dev.yaml
-  - ../../publication-services/dev.yaml
-  - ../../subscription-management/dev.yaml
+  - ../../identity/ithc.yaml
+  - ../../account-management/ithc.yaml
+  - ../../channel-management/ithc.yaml
+  - ../../data-management/ithc.yaml
+  - ../../frontend/ithc.yaml
+  - ../../publication-services/ithc.yaml
+  - ../../subscription-management/ithc.yaml
