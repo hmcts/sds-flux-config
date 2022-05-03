@@ -179,10 +179,6 @@ spec:
             tag: latest
           schedule: "0 0 * * *"
   chart:
-    spec:
-      chart: neuvector-azure-keyvault
-      version: 1.2.3
-      sourceRef:
-        kind: HelmRepository
-        name: hmctspublic
-        namespace: flux-system
+    repository: https://hmctspublic.azurecr.io/helm/v1/repo/
+    name: neuvector-azure-keyvault
+    version: 1.2.5
