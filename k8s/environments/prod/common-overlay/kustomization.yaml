@@ -6,6 +6,7 @@ resources:
   - mailrelay
   - mailrelay2
   - pip
+  - vh
 patches:
   - path: ../prod-helmrelease.yaml
     target:
