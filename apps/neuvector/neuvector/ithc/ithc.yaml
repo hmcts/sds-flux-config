@@ -17,5 +17,6 @@ spec:
           - neuvector-slack-webhook
           - neuvector-new-admin-password
   chart:
-    spec:
-      version: 1.2.5
+    repository: https://hmctspublic.azurecr.io/helm/v1/repo/
+    name: neuvector-azure-keyvault
+    version: 1.2.5
