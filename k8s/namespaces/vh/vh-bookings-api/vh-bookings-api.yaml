@@ -6,10 +6,10 @@ metadata:
   namespace: vh
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/java: glob:latest
+    filter.fluxcd.io/java: glob:staging-*
 spec:
   releaseName: vh-bookings-api
   chart:
     git: git@github.com:hmcts/hmcts-charts
-    path: ./stable/vh-bookings-api
+    path: ./stable/vh-bookings-api/non-prod
     ref: master
