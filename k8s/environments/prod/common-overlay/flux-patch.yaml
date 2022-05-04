@@ -62,8 +62,6 @@ spec:
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  annotations:
-    filter.fluxcd.io/java: glob:next-release-*
   name: vh-bookings-api
   namespace: vh
 spec:
