@@ -6,7 +6,7 @@
 | ------------- | ------------- | ------------- |
 | Prod | Flux V1, Flux V2  | Started Migration
 | Staging |  Flux V1, Flux v2  | Started Migration
-| Demo|  Flux V1  | Not Migrated
+| Demo |  Flux V1, Flux V2  | Started Migration
 | ITHC | Flux V2 | Completed
 | Test | Flux V1| Not Migrated
 | Dev | Flux V2  | Completed
