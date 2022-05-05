@@ -5,12 +5,12 @@ metadata:
   namespace: vh
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/java: glob:prod-*
+    filter.fluxcd.io/java: glob:latest
 spec:
   releaseName: vh-bookings-api
   chart:
     git: git@github.com:hmcts/hmcts-charts
-    path: ./stable/vh-bookings-api/prod
+    path: ./stable/vh-bookings-api/non-prod
     ref: master
   values:
     java:
