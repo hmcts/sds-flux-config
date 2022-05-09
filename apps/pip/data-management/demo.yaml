@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+spec:
+  releaseName: pip-data-management
+  values:
+    image: sdshmctspublic.azurecr.io/pip/data-management:prod-558ea59-20211214104223 #{"$imagepolicy": "flux-system:pip-data-management"}
+    java:
+      disableTraefikTls: false
+      ingressClass: traefik-no-proxy
+      environment:
+        SUBSCRIPTION_MANAGEMENT_URL: 'https://pip-subscription-management.demo.platform.hmcts.net'
