@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../base
+
+patchesStrategicMerge:
+  - ../../kured/demo/01.yaml
+  - ../../kube-slack/demo/01.yaml
+  - ../../secrets-csi-driver/demo/01.yaml
+  - ../../traefik2/demo/01-traefik2.yaml
+  - ../../traefik2/demo/01-traefik-no-proxy.yaml
+  - ../../external-dns/demo/01-external-dns-private.yaml
+  - ../../external-dns/demo/01-external-dns.yaml
