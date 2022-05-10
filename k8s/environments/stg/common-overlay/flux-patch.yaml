@@ -37,7 +37,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-05dba11-20220510115553
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-28c2def-20220510161740
 ---
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
@@ -87,4 +87,4 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/bookings-api:staging-594c0c0545e5418eba63f9f266dcf7c06947afc1
+      image: sdshmctspublic.azurecr.io/vh/bookings-api:staging-bdd2ff9d42133d20466cc2187dda169631637e99
