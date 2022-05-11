@@ -3,6 +3,8 @@ kind: HelmRelease
 metadata:
   name: external-dns
   namespace: admin 
+  annotations:
+    flux.weave.works/automated: "false"
 spec:
   releaseName: external-dns
   chart:
