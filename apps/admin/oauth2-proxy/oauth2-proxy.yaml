@@ -74,6 +74,9 @@ spec:
         traefik.ingress.kubernetes.io/router.tls: "true"
       className: traefik
       enabled: true
+    podLabels:
+      app: oauth2-proxy
+      aadpodidbinding: oauth2-proxy
     proxyVarsAsSecrets: true
     resources:
       limits:
