@@ -15,7 +15,6 @@ spec:
         kind: HelmRepository
         name: external-dns
         namespace: admin
-  interval: 1m
   values:
     policy: sync
     podLabels:
