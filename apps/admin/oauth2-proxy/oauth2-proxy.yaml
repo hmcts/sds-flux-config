@@ -18,6 +18,9 @@ spec:
   interval: 1m
   values:
     extraArgs:
+      cookie-domain: ".demo.platform.hmcts.net"
+      redirect-url: https://oauth-proxy.demo.platform.hmcts.net/oauth-proxy/callback
+      whitelist-domain: ".demo.platform.hmcts.net"
       email-domain: "*"
       pass-basic-auth: false
       pass-host-header: true
@@ -72,6 +75,8 @@ spec:
     ingress:
       annotations:
         traefik.ingress.kubernetes.io/router.tls: "true"
+      hosts:
+        - oauth-proxy.demo.platform.hmcts.net
       className: traefik
       enabled: true
     podLabels:
