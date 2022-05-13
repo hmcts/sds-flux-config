@@ -2,7 +2,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: mi-house-keeping-service
+  name: mi-house-keeping-service-manual
   namespace: mi
   annotations:
     fluxcd.io/automated: "true"
@@ -11,7 +11,7 @@ metadata:
     repository.fluxcd.io/smoke: job.smoketests.image
     filter.fluxcd.io/smoke: glob:prod-*
 spec:
-  releaseName: mi-house-keeping-service-job
+  releaseName: mi-house-keeping-service-manual-job
   chart:
     git: git@github.com:hmcts/sds-flux-config
     path: k8s/release/mi/mi-house-keeping-service
@@ -19,13 +19,11 @@ spec:
   values:
     job:
       image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-f078395-20220512231906
-      suspend: false
-      kind: CronJob
-      schedule: '45 2 * * *'
+      kind: Job
       activeDeadlineSeconds: 82800
       labels:
-        app.kubernetes.io/instance: mi-house-keeping-service
-        app.kubernetes.io/name: mi-house-keeping-service
+        app.kubernetes.io/instance: mi-house-keeping-service-manual
+        app.kubernetes.io/name: mi-house-keeping-service-manual
       environment:
         MI_CLIENT_ID: "12d8c94d-2d49-48d8-9e1b-0bc9937c6670"
       smoketests:
