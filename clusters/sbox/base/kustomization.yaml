@@ -9,6 +9,7 @@ resources:
 - ../../../apps/monitoring/base/kustomize.yaml
 - ../../../apps/admin/base/kustomize.yaml
 - ../../../apps/kube-system/base/kustomize.yaml
+- ../../../apps/c100/base/kustomize.yaml
 
 patches:
 - path: ../../../apps/base/kustomize.yaml
