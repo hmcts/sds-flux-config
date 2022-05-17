@@ -115,55 +115,55 @@ spec:
                     name: all
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*Platform.*\/(sds-toffee-recipes-service|sds-toffee-frontend|sds-toffee-shared-infrastructure)\/master
+                      ^HMCTS.*\/(sds-toffee-recipes-service|sds-toffee-frontend|sds-toffee-shared-infrastructure)\/master
                     name: Platform
                     recurse: true
                     title: Platform
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*PIP-.*\/.+\/master
+                      ^HMCTS.*\/(pip|pih)-.+\/master
                     name: PIP
                     recurse: true
                     title: Publishing & Information Dashboard
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*VH-.*\/.+\/master
+                      ^HMCTS.*\/vh-.+\/master
                     name: VH
                     recurse: true
                     title: Video Hearings Dashboard
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*HMI-.*\/.+\/master
+                      ^HMCTS.*\/hmi-.+\/master
                     name: HMI
                     recurse: true
                     title: Hearing Management Interface
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*PRE-.*\/.+\/master
+                      ^HMCTS.*\/pre-.+\/master
                     name: PRE
                     recurse: true
                     title: Pre Recorded Evidence Dashboard
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*TT-.*\/.+\/master
+                      ^HMCTS.*\/tax-tribunals.*\/master
                     name: TT
                     recurse: true
                     title: Tax Tribunals Dashboard
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*ET-.*\/.+\/master
+                      ^HMCTS.*\/employment-tribunals.+\/master
                     name: ET
                     recurse: true
                     title: Employment Tribunals Dashboard                    
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*HWF-.*\/.+\/master
+                      ^HMCTS.*\/help-with-fees.*\/master
                     name: HWF
                     recurse: true
                     title: Help with Fees
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS_.*C100-.*\/.+\/master
+                      ^HMCTS.*\/c100.*\/master
                     name: C100
                     recurse: true
                     title: Child Arrangement Service Dashboard
