@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: traefik-auth-proxy
+  namespace: admin
+spec:
+  values:
+    service:
+      spec:
+        loadBalancerIP: "10.51.95.250"
+    fullnameOverride: traefik
+    ingressClass:
+      enabled: true
+      isDefaultClass: true
+    ports:
+      web:
+        redirectTo: websecure
