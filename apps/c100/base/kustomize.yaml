@@ -1,0 +1,11 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: c100
+  namespace: flux-system
+spec:
+  path: ./apps/c100/${ENVIRONMENT}/${CLUSTER}
+  postBuild:
+    substitute:
+      NAMESPACE: "c100"
+      TEAM_NOTIFICATION_CHANNEL: "${ENV_MONITOR_CHANNEL}"

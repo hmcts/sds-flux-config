@@ -1,0 +1,23 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: c100-backend
+  namespace: c100
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: c100-backend
+  chart:
+    git: git@github.com:hmcts/hmcts-charts
+    ref: master
+    path: stable/c100-backend
+  values:
+    java:
+      image: hmctssandbox.azurecr.io/c100:master-c100-ado-ac2d561
+      aadIdentityName: c100
+      disableTraefikTls: true
+    global:
+      environment: replace
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      enableKeyVaults: true

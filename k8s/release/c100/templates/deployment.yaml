@@ -1,0 +1,121 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}
+  namespace: {{ .Values.Namespace }}
+spec:
+  replicas: {{ .Values.replicacount }}
+  revisionHistoryLimit: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 50%
+      maxSurge: 100%
+  selector:
+    matchLabels:
+      app: {{ .Values.applicationName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.applicationName }}
+        tier: frontend
+    spec:
+      containers:
+        - name: webapp
+          image: {{ .Values.imageName }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: {{ .Values.containerportnumber }}
+          resources:
+            requests:
+              cpu: 20m
+              memory: 500Mi
+            limits:
+              cpu: 250m
+              memory: 4Gi
+          readinessProbe:
+            httpGet:
+              path: /ping.json
+              port: {{ .Values.containerportnumber }}
+              httpHeaders:
+                - name: X-Forwarded-Proto
+                  value: https
+                - name: X-Forwarded-Ssl
+                  value: 'on'
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /ping.json
+              port: {{ .Values.containerportnumber }}
+              httpHeaders:
+                - name: X-Forwarded-Proto
+                  value: https
+                - name: X-Forwarded-Ssl
+                  value: 'on'
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          envFrom:
+            - configMapRef:
+                name: c100-application-configmap-staging
+          env:
+            - name: AUTH0_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: c100-application-secrets-staging
+                  key: auth0_client_secret
+            - name: AUTH0_RULES_BEARER_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: c100-application-secrets-staging
+                  key: auth0_rules_bearer_token
+            - name: GOVUK_PAY_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: c100-application-secrets-staging
+                  key: govuk_pay_api_key
+            - name: GOVUK_NOTIFY_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: c100-application-secrets-staging
+                  key: govuk_notify_api_key
+            - name: GOVUK_NOTIFY_BEARER_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: c100-application-secrets-staging
+                  key: govuk_notify_bearer_token
+            - name: HTTP_AUTH_USER
+              valueFrom:
+                secretKeyRef:
+                  name: c100-application-secrets-staging
+                  key: http_auth_user
+            - name: HTTP_AUTH_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: c100-application-secrets-staging
+                  key: http_auth_password
+            - name: ORDNANCE_SURVEY_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: c100-application-secrets-staging
+                  key: ordnance_survey_api_key
+            - name: SECRET_KEY_BASE
+              valueFrom:
+                secretKeyRef:
+                  name: c100-application-secrets-staging
+                  key: secret_key_base
+            - name: SENTRY_DSN
+              valueFrom:
+                secretKeyRef:
+                  name: c100-application-secrets-staging
+                  key: sentry_dsn
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: rds-instance-c100-staging
+                  key: url
+            - name: REDIS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: elasticache-c100-staging
+                  key: url
