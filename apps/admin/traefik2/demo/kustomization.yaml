@@ -4,5 +4,6 @@ resources:
   - ../../base
   # - traefik-no-proxy.yaml
   - traefik-auth-proxy.yaml
+  - ../oauth2-proxy
 patchesStrategicMerge:
   - secret-provider.yaml
