@@ -6,8 +6,6 @@ metadata:
 spec:
   entryPoints:
     - websecure
-  forwardedHeaders:
-    insecure: true
   routes:
     - kind: Rule
       match: PathPrefix(`/oauth-proxy/`)
