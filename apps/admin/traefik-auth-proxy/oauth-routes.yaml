@@ -10,7 +10,7 @@ spec:
     - kind: Rule
       match: PathPrefix(`/oauth-proxy/`)
       middlewares:
-        - name: auth-headers
+        - name: oauth-headers
       services:
         - kind: Service
           name: oauth2-proxy
