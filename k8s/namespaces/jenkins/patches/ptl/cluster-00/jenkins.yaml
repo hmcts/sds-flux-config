@@ -167,6 +167,12 @@ spec:
                     name: C100
                     recurse: true
                     title: Child Arrangement Service Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/libragob.*\/master
+                    name: Libra GoB
+                    recurse: true
+                    title: Libra Green on Black Dashboard
           authentication: |
             jenkins:
               securityRealm:
