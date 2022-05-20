@@ -5,9 +5,11 @@ resources:
   - ../../kube-slack/dev/kube-slack-values.enc.yaml
   - ../../kured/dev/kured-values.enc.yaml
   - ../../../rbac/reader-clusterrole.yaml
+  - ../../keda
 namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/dev/secret-provider.yaml
+  - keda-identity.yaml
 patches:
   - path: ../../aad-pod-identity/dev/azure-identity-patch.yaml
     target:
