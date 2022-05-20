@@ -9,7 +9,7 @@ resources:
 namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/dev/secret-provider.yaml
-  - keda-identity.yaml
+  - ../../stg/keda-identity.yaml
 patches:
   - path: ../../aad-pod-identity/dev/azure-identity-patch.yaml
     target:
