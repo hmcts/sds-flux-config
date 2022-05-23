@@ -2,6 +2,11 @@ tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
 
 image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime
 
+memoryRequests: '1024Mi'
+cpuRequests: '500m'
+memoryLimits: '3072Mi'
+cpuLimits: '2000m'
+
 replicaCount: 2
 
 appName: mi-adf-shir
