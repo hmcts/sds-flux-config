@@ -18,7 +18,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment
       app.kubernetes.io/name: mi-adf-shir-deployment
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:dev-e6b00bf-20211203155048
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:dev-c84df95-20220524104456
     replicaCount: 4
     secretsMountPath: ''
     environment: "test"
