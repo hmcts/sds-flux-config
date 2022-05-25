@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-adf-shir
   values:
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-c67d922-20211130213703 # {"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-fa3b16c-20220525112604 # {"$imagepolicy": "flux-system:mi-adf-shir"}
     secretsMountPath: ''
     environment: "sbox"
     resourceGroup: "mi-sbox-rg"
