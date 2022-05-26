@@ -13,3 +13,6 @@ spec:
     git: git@github.com:hmcts/hmcts-charts
     path: ./stable/vh-bookings-api/non-prod
     ref: master
+  values:
+    java:
+      disableTraefikTls: true
