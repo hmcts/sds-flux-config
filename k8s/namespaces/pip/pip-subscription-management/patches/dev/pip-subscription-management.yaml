@@ -11,3 +11,6 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-980a2f8-20211216170247 # {"$imagepolicy": "flux-system:pip-subscription-management"}
+      environment:
+        DATA_MANAGEMENT_URL: https://pip-data-management.staging.platform.hmcts.net
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.staging.platform.hmcts.net
