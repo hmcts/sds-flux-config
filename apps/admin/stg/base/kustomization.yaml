@@ -11,7 +11,7 @@ patchesStrategicMerge:
   - ../../traefik2/stg/secret-provider.yaml
   - ../../stg/keda-identity.yaml
 patches:
-  - path: ../../aad-pod-identity/dev/azure-identity-patch.yaml
+  - path: ../../aad-pod-identity/stg/azure-identity-patch.yaml
     target:
       group: aadpodidentity.k8s.io
       version: v1
