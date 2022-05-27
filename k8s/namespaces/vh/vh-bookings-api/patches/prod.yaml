@@ -15,3 +15,5 @@ spec:
   values:
     java:
       ingressHost: vh-bookings-api.platform.hmcts.net
+      environment:
+        SERVICES__BOOKINGSAPIRESOURCEID: http://vh-bookings-api.platform.hmcts.net
