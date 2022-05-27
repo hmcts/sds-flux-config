@@ -8,3 +8,5 @@ spec:
   values:
     java:
       ingressHost: pip-data-management.platform.hmcts.net
+      environment:
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net

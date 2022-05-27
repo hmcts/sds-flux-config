@@ -8,3 +8,5 @@ spec:
   values:
     java:
       ingressHost: pip-account-management.staging.platform.hmcts.net
+      environment:
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.staging.platform.hmcts.net
