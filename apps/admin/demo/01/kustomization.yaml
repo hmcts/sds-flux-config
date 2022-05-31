@@ -8,7 +8,6 @@ resources:
   - ../../external-dns
 
 patchesStrategicMerge:
-  - ../../kured/demo/01.yaml
   - ../../traefik2/demo/01-traefik2.yaml
   - ../../traefik-no-proxy/demo/01-traefik-no-proxy.yaml
   - ../../traefik-auth-proxy/demo/01-traefik-auth-proxy.yaml
