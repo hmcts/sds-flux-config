@@ -4,6 +4,5 @@ resources:
   - ../base
 
 patchesStrategicMerge:
-  - ../../secrets-csi-driver/ithc/01.yaml
   - ../../kured/ithc/01.yaml
   - ../../traefik2/ithc/01-traefik2.yaml
