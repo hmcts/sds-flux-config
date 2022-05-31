@@ -16,6 +16,9 @@ patches:
 
 patchesStrategicMerge:
 - ../../../../namespaces/pip/pip-frontend/patches/test/pip-frontend.yaml
+- ../../../../namespaces/pip/pip-subscription-management/patches/test/pip-subscription-management.yaml
+- ../../../../namespaces/pip/pip-data-management/patches/test/pip-data-management.yaml
+- ../../../../namespaces/pip/pip-account-management/patches/test/pip-account-management.yaml
 
 patchesJson6902:
 - target:
