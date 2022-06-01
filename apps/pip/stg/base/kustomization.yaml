@@ -4,11 +4,4 @@ resources:
   - ../../base
 namespace: pip
 patchesStrategicMerge:
-  - ../../identity/pip-azure-identity.yaml
   - ../../identity/stg.yaml
-  - ../../account-management/pip-account-management.yaml
-  - ../../channel-management/pip-channel-management.yaml
-  - ../../data-management/pip-data-management.yaml
-  - ../../frontend/pip-frontend.yaml
-  - ../../publication-services/pip-publication-services.yaml
-  - ../../subscription-management/pip-subscription-management.yaml
