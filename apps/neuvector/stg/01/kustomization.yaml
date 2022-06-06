@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - ../base
 
-# patchesStrategicMerge:
-#   - ../../neuvector/stg/01.yaml
+patchesStrategicMerge:
+  - ../../neuvector/stg/01.yaml
