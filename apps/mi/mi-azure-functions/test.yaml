@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mi-azure-functions-deployment
+  namespace: mi
+spec:
+  releaseName: mi-azure-functions
+  values:
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:test-4c01869-20220507003408 #{"$imagepolicy": "flux-system:mi-azure-functions-test"}
+    env:
+      ADF_RESOURCEGROUP: mi-test-rg
+      ADF_NAME: mi-ingestion-adf-test
+      ADF_STORAGEACCOUNTNAME: miaudittest
+      MI_METADATA_SERVER_DB: mi-metadata-db-test
+    keyVaultSecrets:
+    - encryption-publicKey
+    environment: "test"
+    resourceGroup: "mi-test-rg"
+    subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
+    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    managedIdentityClientId: "4531cfbf-c944-4025-bcac-9126016baa4c"
