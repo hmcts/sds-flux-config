@@ -47,11 +47,11 @@ patches:
       version: v1
       kind: AzureIdentity
       name: mi-integration-service
-  #overlays for mi-test-service
-  - path: ../../mi-test-service/test.yaml
-  - path: ../../mi-test-service/test-identity-patch.yaml
+  #overlays for mi-staging-service
+  - path: ../../mi-staging-service/test.yaml
+  - path: ../../mi-staging-service/test-identity-patch.yaml
     target:
       group: aadpodidentity.k8s.io
       version: v1
       kind: AzureIdentity
-      name: mi-test-service
+      name: mi-staging-service
