@@ -4,6 +4,7 @@ resources:
 - ../../../apps/flux-system/prod/base
 - ../../../apps/monitoring/base/kustomize.yaml
 - ../../../apps/dynatrace/base/kustomize.yaml
+- ../../../apps/admin/base/kustomize.yaml
 
 patches:
 - path: ../../../apps/base/kustomize.yaml
