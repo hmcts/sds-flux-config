@@ -7,7 +7,7 @@ spec:
   releaseName: mi-extraction-service
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-extraction-service:test-0130c80-20220128174620 # {"$imagepolicy": "flux-system:mi-extraction-service"}
+      image: sdshmctspublic.azurecr.io/mi-extraction-service:test-0130c80-20220128174620 # {"$imagepolicy": "flux-system:mi-extraction-service-test"}
       suspend: false
       kind: CronJob
       schedule: '40 1 * * *'
@@ -31,7 +31,7 @@ spec:
         SFTP_REMOTE_FOLDER: files/mi-platform-export/
         SFTP_FILE_ENCRYPTION_ENABLED: true
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-extraction-service:test-0130c80-20220128174620 # {"$imagepolicy": "flux-system:mi-extraction-service"}
+        image: sdshmctspublic.azurecr.io/mi-extraction-service:test-0130c80-20220128174620 # {"$imagepolicy": "flux-system:mi-extraction-service-test"}
         enabled: true
       testsConfig:
         keyVaults:

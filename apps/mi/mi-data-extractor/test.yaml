@@ -7,7 +7,7 @@ spec:
   releaseName: data-extractor
   values:
     job:
-      image: sdshmctspublic.azurecr.io/data-extractor-job:test-c54f558-20220128155944 # {"$imagepolicy": "flux-system:mi-data-extractor"}
+      image: sdshmctspublic.azurecr.io/data-extractor-job:test-c54f558-20220128155944 # {"$imagepolicy": "flux-system:mi-data-extractor-test"}
       suspend: true
       kind: CronJob
       schedule: '0 1 * * *'
@@ -18,7 +18,7 @@ spec:
       environment:
         ETL_MSICLIENTID: 12b4adf8-7f22-4b35-bdba-78df0bfd02ea
       smoketests:
-        image: sdshmctspublic.azurecr.io/data-extractor-job:test-c54f558-20220128155944 # {"$imagepolicy": "flux-system:mi-data-extractor"}
+        image: sdshmctspublic.azurecr.io/data-extractor-job:test-c54f558-20220128155944 # {"$imagepolicy": "flux-system:mi-data-extractor-test"}
         enabled: true
       testsConfig:
         environment:
