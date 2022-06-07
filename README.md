@@ -8,7 +8,7 @@
 | Staging |  Flux V1, Flux v2  | Started Migration
 | Demo |  Flux V2  | Completed
 | ITHC | Flux V2 | Completed
-| Test | Flux V1| Not Migrated
+| Test | Flux V1, Flux V2 | Started Migration
 | Dev | Flux V2  | Completed
 | Sbox | Flux V2  | Completed
 | Ptl | Flux V1, Flux v2 | Started Migration
