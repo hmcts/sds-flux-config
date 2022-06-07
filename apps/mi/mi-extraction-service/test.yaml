@@ -11,9 +11,6 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '40 1 * * *'
-      labels:
-        app.kubernetes.io/instance: mi-extraction-service
-        app.kubernetes.io/name: mi-extraction-service
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false

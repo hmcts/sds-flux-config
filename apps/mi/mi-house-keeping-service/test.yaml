@@ -11,9 +11,6 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '45 1 * * *'
-      labels:
-        app.kubernetes.io/instance: mi-house-keeping-service
-        app.kubernetes.io/name: mi-house-keeping-service
       environment:
         MI_CLIENT_ID: b97f7ade-7db0-41b0-bac2-22effc9d79b5
         STORAGE_DATA_EXTRACTOR_RETENTION: "14"
