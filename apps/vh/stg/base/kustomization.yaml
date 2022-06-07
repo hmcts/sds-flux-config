@@ -6,3 +6,14 @@ namespace: vh
 patchesStrategicMerge:
   - ../../identity/vh-aad-identity.yaml
   - ../../identity/stg.yaml
+  - ../../user-api/stg.yaml
+  - ../../video-api/stg.yaml
+  - ../../test-api/stg.yaml
+  - ../../scheduler-jobs/stg.yaml
+  - ../../notification-api/stg.yaml
+  - ../../bookings-api/stg.yaml
+  - ../../booking-queue-subscriber/stg.yaml
+  - ../../admin-web/stg.yaml
+  - ../../service-web/stg.yaml
+  - ../../test-web/stg.yaml
+  - ../../video-web/stg.yaml
