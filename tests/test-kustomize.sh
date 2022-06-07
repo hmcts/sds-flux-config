@@ -12,9 +12,6 @@ kustomizepaths=(
     k8s/environments/stg/cluster-00-overlay
     k8s/environments/stg/cluster-01-overlay
     k8s/environments/stg/common-overlay
-    k8s/environments/test/cluster-00-overlay
-    k8s/environments/test/cluster-01-overlay
-    k8s/environments/test/common-overlay
 )
 
 for filepath in "${kustomizepaths[@]}"; do
