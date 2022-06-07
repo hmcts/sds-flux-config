@@ -12,9 +12,6 @@ spec:
       kind: CronJob
       schedule: '0 1 * * *'
       activeDeadlineSeconds: 82800
-      labels:
-        app.kubernetes.io/instance: data-extractor-job
-        app.kubernetes.io/name: data-extractor-job
       environment:
         ETL_MSICLIENTID: 12b4adf8-7f22-4b35-bdba-78df0bfd02ea
       smoketests:

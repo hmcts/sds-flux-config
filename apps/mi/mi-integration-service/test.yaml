@@ -11,9 +11,6 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '15 1 * * *'
-      labels:
-        app.kubernetes.io/instance: mi-integration-service-job
-        app.kubernetes.io/name: mi-integration-service-job
       keyVaults:
         "mi-vault":
           excludeEnvironmentSuffix: false

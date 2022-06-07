@@ -11,9 +11,6 @@ spec:
       suspend: false
       kind: CronJob
       schedule: '30 1 * * *'
-      labels:
-        app.kubernetes.io/instance: mi-staging-service
-        app.kubernetes.io/name: mi-staging-service
       environment:
         MI_CLIENT_ID: e045887e-0f15-45be-bbd2-44060d5e3aaa
       smoketests:
