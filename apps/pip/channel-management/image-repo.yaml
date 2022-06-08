@@ -1,6 +1,6 @@
 apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImageRepository
 metadata:
-  name: channel-management
+  name: pip-channel-management
 spec:
   image: sdshmctspublic.azurecr.io/pip/channel-management
