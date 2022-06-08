@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+  key: ENC[AES256_GCM,data:IQI+R2EpeMwERG4PJwa/L987wsAYD02Ihq00d965hK0f/ROh6/pd60L1QspGT0KAHBV2uJl6Cf0Gemk7WpaZVly008XNf4hECdjVEmYmY8yKju5niniIRViXe1aRdWBwTBYNn3CRwqSqiSWZEShjFqR3Z+AztOOtgVhjpuCbtCCgqv7sFwOYAE+K+C8+hjBNpIjcoJtbiVmKPd9K/kUN+wG33bwXRLbDalcuVFBYgfUIY9CBs1A5x5ajqRz2iOVPKDTxyhg1oxjN/j5dYw4ta4BljiG8CYQ1KoTB8Ixgct70kr/hJVlVCg==,iv:8lvto69UAMuwqKqg1/YWUyV8Qernaur5h32ynJXu9vU=,tag:NOLx2vU4cx/xCelw0ZzIFg==,type:str]
+kind: Secret
+metadata:
+  name: mi-adf-auth
+  namespace: mi
+type: Opaque
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicesstgkv.vault.azure.net
+      name: sops-key
+      version: b63a642ce6b14537bcc33a500f90b0e9
+      created_at: "2022-05-30T16:56:44Z"
+      enc: k4PG6g-MIxNGyA_mFzXcw7P8xf-OhRXddOri_m1T2eQShVgzyyT5uVCdIzIXPEEemb9magQu7y_ag549kFW2kAb3ykry0SU8jrx09WBTG81oLvoDi5JBTan3jHqkzflRpCr2uzDciiO958Ahbst9eQRQIkAklg0orL5mgJCaf8XfXHJg_maqIO-ds-chSpgMuEl_TMRwu9d-LVu3aElAr8HBlTIKRiOiDA0OCbWtVdcW1ierL6jXPQrePnFFR_V1jlvR88M9hXdYCZ8mIAqIEdO2AknID_8CzKO-XbhAqsxPhN_mVP6ZTcV_iD5JVz9Oe66_gNFOEN8lp5993ipy0Q
+  hc_vault: []
+  age: []
+  lastmodified: "2022-05-30T16:56:45Z"
+  mac: ENC[AES256_GCM,data:+WFdigxMwVx1lxEb+l88YaKe+f6OWIlHFk902xRRFu73Vn/LP6te40cPunAbu9XIcVXjL7paNbJUxlJ8osAc1KgBtWOImXN9hSVtL1qjqXdaioTKfIHQtNmy64iGdVLCp88YQKzohvQ0EI2tAY3lWY+t/fOHgFp8tuVzu9YHunc=,iv:KfTmYtX5TCCnpOLEOhnMf9qqbsXCW9moMJpxZY3XUhk=,tag:Mp2U1NqAGRxX1IP7gWQLTA==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.1

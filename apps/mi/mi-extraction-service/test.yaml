@@ -1,0 +1,53 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mi-extraction-service
+  namespace: mi
+spec:
+  releaseName: mi-extraction-service
+  values:
+    job:
+      image: sdshmctspublic.azurecr.io/mi-extraction-service:test-0130c80-20220128174620 # {"$imagepolicy": "flux-system:mi-extraction-service-test"}
+      suspend: false
+      kind: CronJob
+      schedule: '40 1 * * *'
+      keyVaults:
+        "mi-vault":
+          excludeEnvironmentSuffix: false
+          resourceGroup: mi-{{ .Values.global.environment }}-rg
+          secrets:
+          - appinsights-instrumentationkey
+          - sftp-remote-user
+          - sftp-remote-password
+          - encryption-publicKey
+      environment:
+        MI_CLIENT_ID: d726bc2d-fa66-49be-9425-b7cc13c0a8c2
+        SFTP_ENABLED: true
+        SFTP_REMOTE_HOST: mi-sftp-server-svc
+        SFTP_REMOTE_PORT: 2000
+        SFTP_REMOTE_FOLDER: files/mi-platform-export/
+        SFTP_FILE_ENCRYPTION_ENABLED: true
+      smoketests:
+        image: sdshmctspublic.azurecr.io/mi-extraction-service:test-0130c80-20220128174620 # {"$imagepolicy": "flux-system:mi-extraction-service-test"}
+        enabled: true
+      testsConfig:
+        keyVaults:
+          "mi-vault":
+            excludeEnvironmentSuffix: false
+            resourceGroup: mi-{{ .Values.global.environment }}-rg
+            secrets:
+            - appinsights-instrumentationkey
+            - sftp-remote-user
+            - sftp-remote-password
+            - encryption-publicKey
+        environment:
+          MI_CLIENT_ID: d726bc2d-fa66-49be-9425-b7cc13c0a8c2
+          SFTP_ENABLED: true
+          SFTP_REMOTE_HOST: mi-sftp-server-svc
+          SFTP_REMOTE_PORT: 2000
+          SFTP_REMOTE_FOLDER: files/mi-platform-export/
+          SFTP_FILE_ENCRYPTION_ENABLED: true
+    global:
+      subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: "test"

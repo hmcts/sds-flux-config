@@ -20,3 +20,5 @@ resources:
   - video-api-gitrepo.yaml
   - video-web-gitrepo.yaml
   - exim-relay-gitrepo.yaml
+patchesStrategicMerge:
+  - patches/kustomize-controller-patch.yaml

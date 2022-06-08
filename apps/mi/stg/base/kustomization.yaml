@@ -1,0 +1,57 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ../../mi-adf-shir/stg/mi-adf-auth-values.enc.yaml
+namespace: mi
+patches:
+  #overlays for mi-data-extractor
+  - path: ../../mi-data-extractor/stg.yaml
+  - path: ../../mi-data-extractor/stg-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: data-extractor-job
+  #overlays for mi-azure-functions
+  - path: ../../mi-azure-functions/stg.yaml
+  - path: ../../mi-azure-functions/stg-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: mi-azure-functions
+  #overlays for mi-adf-shir
+  - path: ../../mi-adf-shir/stg/stg.yaml
+  #overlays for mi-extraction-service
+  - path: ../../mi-extraction-service/stg.yaml
+  - path: ../../mi-extraction-service/stg-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: mi-extraction-service
+  #overlays for mi-house-keeping-service
+  - path: ../../mi-house-keeping-service/stg.yaml
+  - path: ../../mi-house-keeping-service/stg-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: mi-house-keeping-service
+  #overlays for mi-integration-service
+  - path: ../../mi-integration-service/stg.yaml
+  - path: ../../mi-integration-service/stg-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: mi-integration-service
+  #overlays for mi-staging-service
+  - path: ../../mi-staging-service/stg.yaml
+  - path: ../../mi-staging-service/stg-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: mi-staging-service
