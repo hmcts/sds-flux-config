@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: pip-frontend
   values:
-    java:
+    nodejs:
       image: sdshmctspublic.azurecr.io/pip/frontend:prod-f578ee2-20220607125853 # {"$imagepolicy": "flux-system:pip-frontend"}
       disableTraefikTls: true
   chart:
