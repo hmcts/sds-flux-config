@@ -4,11 +4,6 @@ kind: HelmRelease
 metadata:
   name: toffee-recipe-receiver
 spec:
-  chart:
-    spec:
-      valuesFiles:
-        - values.yaml
-        - values-sbox.yaml
   values:
     function:
       image: sdshmctspublic.azurecr.io/toffee/recipe-receiver:prod-1100a0e-20220609130124 #{"$imagepolicy": "flux-system:toffee-recipe-receiver"}

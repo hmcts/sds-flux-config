@@ -21,3 +21,10 @@ spec:
   values:
     function:
       image: sdshmctspublic.azurecr.io/toffee/recipe-receiver:prod-1100a0e-20220609130124
+      triggers:
+        - type: azure-servicebus
+          namespace: toffee-servicebus-{{ .Values.global.environment }}
+          queueName: recipes
+          queueLength: "5"
+  environment:
+    FULLY_QUALIFIED_NAMESPACE: "toffee-servicebus-{{ .Values.global.environment }}.servicebus.windows.net"
