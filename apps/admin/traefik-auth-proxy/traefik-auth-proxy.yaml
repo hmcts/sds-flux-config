@@ -20,7 +20,7 @@ spec:
   values:
     additionalArguments:
       - --providers.kubernetesingress.ingressclass=traefik
-      - --providers.kubernetesingress.ingressendpoint.ip=20.90.197.52
+      - --providers.kubernetesingress.ingressendpoint.ip=20.90.193.192
       - --entryPoints.web.forwardedHeaders.insecure
       - --entryPoints.websecure.forwardedHeaders.insecure
     ingressClass:
