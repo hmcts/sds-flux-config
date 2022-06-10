@@ -14,7 +14,8 @@ spec:
         name: recipe-receiver
         namespace: flux-system
       version: '*'
-      valuesFile: ./charts/recipe-receiver/values-staging.yaml
+      valuesFiles:
+        - values.yaml
   interval: 5m
   releaseName: toffee-recipe-receiver
   values:
