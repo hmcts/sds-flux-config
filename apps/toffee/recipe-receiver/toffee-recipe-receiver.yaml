@@ -26,5 +26,5 @@ spec:
           namespace: toffee-servicebus-${ENVIRONMENT}
           queueName: recipes
           queueLength: "5"
-    environment:
-      FULLY_QUALIFIED_NAMESPACE: "toffee-servicebus-${ENVIRONMENT}.servicebus.windows.net"
+      environment:
+        FULLY_QUALIFIED_NAMESPACE: "toffee-servicebus-${ENVIRONMENT}.servicebus.windows.net"
