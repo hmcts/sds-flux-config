@@ -1,0 +1,11 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: dts-legacy
+  namespace: flux-system
+spec:
+  path: ./apps/dts-legacy/${ENVIRONMENT}/base
+  postBuild:
+    substitute:
+      NAMESPACE: "dts-legacy"
+      TEAM_NOTIFICATION_CHANNEL: "dts-legacy-apps-contact"

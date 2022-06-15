@@ -1,0 +1,5 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../lgy-iac-web/image-repo.yaml
+  - ../lgy-iac-web/image-policy.yaml
