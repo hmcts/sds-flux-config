@@ -2,66 +2,6 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: pip-account-management
-  namespace: pip
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/pip/account-management:prod-6f844de-20220105164733
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: pip-channel-management
-  namespace: pip
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-469a718-20220601103602
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: pip-data-management
-  namespace: pip
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/pip/data-management:prod-097ea10-20220114142257
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: pip-frontend
-  namespace: pip
-spec:
-  values:
-    nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-e0a697f-20220105182009
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: pip-publication-services
-  namespace: pip
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/pip/publication-services:prod-1838cb4-20220608180601
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: pip-subscription-management
-  namespace: pip
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-1cb4283-20220608194630
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
   name: vh-bookings-api
   namespace: vh
 spec:
