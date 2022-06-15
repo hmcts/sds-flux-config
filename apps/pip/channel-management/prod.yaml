@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+spec:
+  releaseName: pip-channel-management
+  values:
+    java:
+      ingressHost: pip-channel-management.platform.hmcts.net
