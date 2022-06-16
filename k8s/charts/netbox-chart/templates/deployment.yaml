@@ -135,7 +135,7 @@ spec:
               subPath: nginx.conf
               readOnly: true
             - name: static
-              mountPath: /opt/netbox/netbox/static
+              mountPath: /opt/netbox/netbox/project-static
               readOnly: true
           {{- if .Values.nginx.resources }}
           resources:
