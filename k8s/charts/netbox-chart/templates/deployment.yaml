@@ -48,7 +48,7 @@ spec:
             {{- end }}
           ports:
             - name: netbox
-              containerPort: 8080
+              containerPort: 8001
               protocol: TCP
           readinessProbe:
             initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
