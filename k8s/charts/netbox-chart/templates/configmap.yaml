@@ -192,8 +192,8 @@ data:
         listen      80;
         access_log  off;
 
-        location /{{ .Values.basePath }}project-static/ {
-          alias /opt/netbox/netbox/static/;
+        location /{{ .Values.basePath }}static/ {
+          alias /opt/netbox/netbox/project-static/;
         }
 
         location /{{ .Values.basePath }} {
