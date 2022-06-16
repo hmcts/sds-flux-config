@@ -193,7 +193,7 @@ data:
         access_log  off;
 
         location /{{ .Values.basePath }}static/ {
-          alias /opt/netbox/netbox/project-static/;
+          alias /opt/netbox/netbox/static/;
         }
 
         location /{{ .Values.basePath }} {
