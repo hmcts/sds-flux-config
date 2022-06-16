@@ -80,7 +80,7 @@ spec:
               subPath: {{ .Values.reportsPersistence.subPath | default "" | quote }}
             {{- end }}
             - name: static
-              mountPath: /opt/netbox/netbox/static
+              mountPath: /opt/netbox/netbox/project-static
             {{- if or .Values.postgresql.enabled .Values.externalDatabase.existingSecretName }}
             - name: db-secret
               mountPath: /run/secrets/database
