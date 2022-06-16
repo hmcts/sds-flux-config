@@ -1,6 +1,6 @@
 apiVersion: v1
 data:
-  key: ENC[AES256_GCM,data:yN7Oa42g//3R5/8pZWm2Mh1mb7Hmo1J8mRgAhpmYDDfWNbXXOP7Kp8A66GV+e0z+FqYcDMUp8t3/ollcj2MchFb3kll0VJWBEiC3akixNunHa9waYP2+w2BRpR23DyY2lpquRlIs3o5I9keQauJvqPuIFpN72ip/SI/rj1WYzU4vdGbp5qZREh6RNe6sZiMKCh8NJHzY8DekvX+tl02AsP/dflGkCNosCBJWrKvVUGZbJ2BOcmaH6BQ6HvXVHjKNPa2W85rMjcjvq6fljEUWxs5fuOkjQIrzYicQncMEEG1L2xiahMaD6w==,iv:Y9+qPqc5IWDHA0npQwKUcouyDMH7okdUV1qm5eBApkY=,tag:+CdsMPNJlcZTsTGwLJuItQ==,type:str]
+  key: ENC[AES256_GCM,data:79RdvOKRhijC8wYIYP+Y0Rk5sAHrIbSbfaAArinAkmo5kzMA9J/QvrNplvpm2xiQ17ybvTNQwn5h6zOlbeUjwoxeNhpGQneYH0nrqnRqkl4qS+X70jXqcyJ0U9apUPj66IfRuavccNxzGV3tK9XJB8JdhpPRZ4ajpDW/AkLhPsE8Yultm8a9A0rR98iGFhIxWAHYPJerQiQugzU9C4JZ5Urq/mA232dwlykJHXFp9fwzukW0V4aH3Wt2BO4Q8d5/lRpy0xMySwUgpuKtlJQXGz4lpdwocLAsa2cPB6k959N6FvG/bsxrttp4piI=,iv:HBZl9Yk4AKqKTQ9+ttlZyuX7ecm8iWxQ9H99z+5FAbg=,tag:AWgtJOLqCyOOhEgOyVAHIw==,type:str]
 kind: Secret
 metadata:
   name: mi-adf-auth
@@ -13,12 +13,12 @@ sops:
     - vault_url: https://dtssharedservicestestkv.vault.azure.net
       name: sops-key
       version: 6d094e08ab7240ea8a64ec77f7f734b7
-      created_at: "2022-06-06T13:56:59Z"
-      enc: XGzBZHxQNwKAnu7nsowBzca08nEIGRs1DhVNh5myyxOekXw5Re8k5LhNT_D2Hor3440pJB78c90v8rr4V-li5RCU2Qws2Z82EtD9qlmHDX8HmAcTmnAZk1jAy5z-y99B2XK61wj7PQcj-y57KZ7irMU5k_0ap-50RcS7MmCyM2SfcYQE78jKzMk3D7qgMiqv5IGxiMkUzHNEAS4jPzWr9Ylme9Db7-lUX2giIkMA1DTJEYXbEKPClDSNiDceg6YBbF_Ll7xpSqQqccmwGy5sV1h6ivohTma-J7jmtYOzvjdWMc3VjiF6EnyCZtk0x65jri5hciAFpUZCgvyPI00drA
+      created_at: "2022-06-16T14:02:30Z"
+      enc: 6m6kXA7Q5QRZcOO7k_ouObIMzNtnj_ylJZmAWr61EicqlhkXUgYqUzasF-oC9OWIkG0TMbX48OPGUCiQT_LhxihpNM0GV_5RtOnQ0zL4v_9cxxh5MXobziNnvdDmNXimJB3h6Dhy_1Ctgj8TO7Y2WhNrJ0SszJ3f58HZTaKpsyb7HNeCPyeSAqEuLq5E1XmkfrM_fFNb-ehZMPiQwCP_25HzPPZ5VIlW8Ru8BW_BE5t_wq3fNJ1ZV1rEJLG8ojcxRfq0-00R0Dp6W7_pYQ_TY_1R2XJH77s8JKtIHwP8m-dKTtHc4qMBVosbk68ul3huY6NENaMliZxTtK2fkdLhlg
   hc_vault: []
   age: []
-  lastmodified: "2022-06-06T13:57:02Z"
-  mac: ENC[AES256_GCM,data:WNtryZWpJ61HbwoSH2XFjxst3PcSZZ1iWEvy63GAeHgUeGO6cej7ondj3BxW7vH5BwV890jeeGi0VsLlS1VMwSIOhBsCmPX9hduL7z1orziQv32uI8ET2Mh6GGy7ZFf4IJmb4W2x++gBJs8J/ct1HZtvNbOyIGQGeRMose/WGDw=,iv:80ZepGGpfKz1agWkgvgDKeQXqg4g4d6anKF/sID1Kbw=,tag:WDmWM05OEkmVGrxAS2eFzA==,type:str]
+  lastmodified: "2022-06-16T14:02:30Z"
+  mac: ENC[AES256_GCM,data:kDvRx2DkL5UNsMwD5IAUiX6rTs9Uf8uKFltZv2CTu2/Y6iTbfPpRljQ3wzX/jQ9RWZlioPyK9qrDVZnfWWghQidjQD1KQ06EeO4npT3wbKT/yrjE735NcCBgOXYJx2tj5GmYhM0IKf5ibrMzL3QO28rDqVKoihUJz88iZY4ocbc=,iv:E1V4t8YIkYSxcWQrEKcedCQRTtK7N0RAhw4UO1exg3U=,tag:igk4Y/CrDqKxx4lyDnDY3w==,type:str]
   pgp: []
-  encrypted_regex: ^(data|stringData)$
+  encrypted_regex: ^data$
   version: 3.7.2
