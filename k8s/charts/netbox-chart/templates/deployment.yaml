@@ -36,6 +36,17 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                  - "/bin/sh"
+                  - "-c"
+                  - >
+                    apk add postgresql-dev gcc python3-dev musl-dev zlib-dev jpeg-dev build-base;
+                    pip install psycopg2-binary;
+                    pip install -r /opt/netbox/requirements.txt;
+                    /opt/netbox/upgrade.sh;
           env:
             - name: SUPERUSER_NAME
               value: {{ .Values.superuser.name | quote }}
@@ -48,7 +59,7 @@ spec:
             {{- end }}
           ports:
             - name: netbox
-              containerPort: 8001
+              containerPort: 8080
               protocol: TCP
           readinessProbe:
             initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
