@@ -4,7 +4,6 @@ resources:
   - ../../base
 namespace: toffee
 patchesStrategicMerge:
-  - ../../identity/apple-azure-identity.yaml
   - ../../identity/demo.yaml
   - ../../frontend/demo.yaml
   - ../../recipe-backend/demo.yaml
