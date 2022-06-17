@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: toffee
+  namespace: toffee
+spec:
+  resourceID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourcegroups/managed-identities-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/toffee-prod-mi
+  clientID: 74b9420d-5d98-476b-adc9-a519a58b6f9e

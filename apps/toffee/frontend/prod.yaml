@@ -7,14 +7,11 @@ spec:
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/toffee/frontend:prod-91925d1-20220606152310 #{"$imagepolicy": "flux-system:toffee-frontend"}
-      disableTraefikTls: false
-      ingressHost: toffee.demo.platform.hmcts.net
+      ingressHost: toffee.platform.hmcts.net
       environment:
-        RECIPE_BACKEND_URL: http://toffee-recipe-backend.demo.platform.hmcts.net
-      ingressClass: traefik
-      enableOAuth: true
+        RECIPE_BACKEND_URL: http://toffee-recipe-backend.platform.hmcts.net
     global:
-      environment: demo
+      environment: prod
     volumes:
       - name: azurekeyvault
         csi:

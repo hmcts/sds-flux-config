@@ -4,7 +4,7 @@ resources:
   - ../../base
 namespace: toffee
 patchesStrategicMerge:
-  - ../../identity/demo.yaml
-  - ../../frontend/demo.yaml
-  - ../../recipe-backend/demo.yaml
-  - ../../recipe-receiver/demo.yaml
+  - ../../identity/prod.yaml
+  - ../../frontend/prod.yaml
+  - ../../recipe-backend/prod.yaml
+  - ../../recipe-receiver/prod.yaml
