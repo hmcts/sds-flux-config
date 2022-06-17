@@ -3,8 +3,6 @@ kind: HelmRelease
 metadata:
   name: toffee-recipe-backend
   namespace: toffee
-  annotations:
-    fluxcd.io/automated: "false"
 spec:
   values:
     java:
