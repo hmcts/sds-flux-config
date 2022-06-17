@@ -8,7 +8,7 @@ spec:
   values:
     image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-83243c8-20220510084518 #{"$imagepolicy": "flux-system:mi-azure-functions-stg"}
     env:
-      ADF_RESOURCEGROUP: mi-stg-rg
+      ADF_RESOURCEGROUP: mi-ingestion-stg-rg
       ADF_NAME: mi-ingestion-adf-stg
       ADF_STORAGEACCOUNTNAME: miauditstg
       MI_METADATA_SERVER_DB: mi-metadata-db-stg

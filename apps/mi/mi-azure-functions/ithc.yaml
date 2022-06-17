@@ -8,7 +8,7 @@ spec:
   values:
     image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-cfe8eb2-20220406175738 #{"$imagepolicy": "flux-system:mi-azure-functions-ithc"}
     env:
-      ADF_RESOURCEGROUP: mi-ithc-rg
+      ADF_RESOURCEGROUP: mi-ingestion-ithc-rg
       ADF_NAME: mi-ingestion-adf-ithc
       ADF_STORAGEACCOUNTNAME: miauditithc
       MI_METADATA_SERVER_DB: mi-metadata-db-ithc
