@@ -1,24 +1,24 @@
 apiVersion: v1
 data:
-  values.yaml: ENC[AES256_GCM,data:XdAejMzEGiZXDnftL6cy8dRrU6Yn17B/irTeH1WwBvktYXfIRL5TyzGKA6iw8FAuEYFDVGc109BB4mh7qAbcyj6o49QOXXMZGYjRykzgf1ejIFE2vw2Rfe9i7C5Q016REwz5fZzqPleTiNu+KArQiPf/yujUI16+D8L7Tb1snoN5PF/EU3hpKaoZHwEy+ZWg+LXPNxcTxxGfDH8gej/inpZxayzjjrPuwKqpkeNupg4LikBVm1+0e7w3/qakfmGRlfsGEHuRjPc8RGMJSNizvwDcJQ4qyM6vdHS+nKuWV/3dIBSzn1TcXqXfeiuJ6hwRkFl2aUXte23ow1kG2SespY+Z5vy/fQD0Yb5cKEpTRHUK0CEu1NnceGWmNKcH7NfyGH+O/KC5UPrzVTNIz+u4A3gQHV/2h/ApLA2kQclN/fbn8pHiaWHWDClFYYMAp3Eu/VCBPPzMLwa2CvCV/XygMR0ZT+7+J2vUGG6YsEEwVZ3bGA7DrTiRD1zwcH8AI9kpzZaKkLELUZxiNOBezDCQgS+kE5LOTtkxvGY7v7+qaX10T7Z5mHX2e9Slh3KcZeUN3H4+eHSQWRuhoHrw7rjuZPsxE7M=,iv:g1iI++cJPial5Anrg5T8mSf/GJAscQIWc0sfwYqpLAQ=,tag:VcMIn4QhElVJo2+YvgwEGw==,type:str]
+  key: ENC[AES256_GCM,data:df+GPTzoU5h0hvHIy71NMt2i9bPaIckBI37xKwfiC9e3eNJMhjlN32heZBRG7ob9uvBBLoCvjgLJOwIg7wq8QKWNoVyS0IUC2B4yeaiRmResy6z3oikDBsLWLTCKvuqc0pVfwKDsvddbwUlko3JTQLTeSoErQk1RHBg4Wt+E6I4S5b4k1gQPoQTeYwhCt6J4+7FJFzYKYQv5P+bN9TPgYdoxdYD6uvvG+ifztj667RE0gk3aI6bhL9PvS50qW7MXQANHQVY+8FoAkEgQ94BinuqSBmwoEex+2mzrn3Cy+2XB4yAWU4rmnnJH9Z0=,iv:Z4BI3TMF+KxA8P/WKJlHzgnx4Drth5lvf2M4V1dn/8U=,tag:i3mXutpSfChWdHeY9u95vg==,type:str]
 kind: Secret
 metadata:
-  creationTimestamp: null
   name: mi-adf-auth
   namespace: mi
+type: Opaque
 sops:
   kms: []
   gcp_kms: []
   azure_kv:
-    - vault_url: https://dtssharedservicesithckv.vault.azure.net
-      name: sops-key
-      version: 96812ee192044e6daabee8d3621b456f
-      created_at: "2022-04-21T09:29:36Z"
-      enc: MEGfM0VDNBgeHi3WeuIw4q5kr7s0XZIrW8ojgsAprp_aT3RJPhFz0SI2juKvKub9qjyHZqylZBHrjSvgv1xTNIJNCETLy_MuEtzbe1JB9Wja5rWiSEoNFnod2Wq4nzhOyap7yk6J9W9hSJZscphRy4agYE23YL9_1BQ4mW6fzw37xcx0AO72Txt_8FNQn7aa2DJp24QeX0odFxdgkRSk11jgX6Ox9qKFNUc5NmcH6eucB-zwx31YBLQroqNfZoCMdKTx1DaqDzIaop6pHF4pXCpaFQhS2HER-MSRph0i0GlrYcw2L4sj-pON5PRm2YoqWRDmi_-TTqHYjkWowICuBw
+  - vault_url: https://dtssharedservicesithckv.vault.azure.net
+    name: sops-key
+    version: 96812ee192044e6daabee8d3621b456f
+    created_at: "2022-06-15T11:12:33Z"
+    enc: QAmSlNWSQvY4ueIELb4s4S5DGxw5Z8oyN3FRetvnNp_EvVDvPulO1KFks3FcOSLrRMM8esQEesEn9r2ajxyuRXfP4Kdh0k7cKEzV5l_g0Mh9l8ERAbDiwZioaMQQmPgP71yR0xYwcbZc-pkBf2Jkcc5pmGmTHhMmUsf7SBl7Z_PxxdRzYOEK3jsIAw-s4ZenWvc8GRLkMLKSEVR3h1MY5qtuJBErT6YMHH6BdB_hikvR7Z0BQl4ATyNfcoObiPLIZqwOZVNv7JNfjdvRGCoxSm-LhKQtkGm0Kslf12qpbO7jUeywxINzBcRjwfiNto2DJOMyzRGzidjp0Q8_TdQ9YQ
   hc_vault: []
   age: []
-  lastmodified: "2022-04-21T09:29:39Z"
-  mac: ENC[AES256_GCM,data:7gF54du8zY9isgNJKGCF0QRTe/MGZq/XyfCbYX670003eubSnyvDpC6b2tL7gKaB52vG1Z73oEXPT9He4hoxpovoMQIpsnVmS5WUKgnCpvzYg6WEt1Gk15WUIi57UowcMa6n5xpTtdojiiPnZ5lGU2oCVMtR7kFhLjMgN985cDQ=,iv:OJsLt9RW1HN/N3gbxvwzzeX7fHTtLr0plykybQDGZH0=,tag:93nTAO5nJhJ4fHk5ug2QMw==,type:str]
+  lastmodified: "2022-06-15T11:12:34Z"
+  mac: ENC[AES256_GCM,data:TKqKKW78PMV2IxEt+yRdnJut65qtiXfxqmqYOp6VN8NJW+Mum9a2B2OVCBrIbDxdif8srLARuLQuzHgD4U8tCK/V5Nb/lay6UbIH+vb5mN6kUtn979bsUFRzh2uETsCrmLIR+p7RvjINlsx0QyxJixhctOpkANWMaTJ3cwJ779U=,iv:po5GJgC3P5awWdQPgBUdc9ZO1mkbC1QSAPC1O7nLfic=,tag:UaVA0pIJfVsXOmk3t6PlMw==,type:str]
   pgp: []
-  encrypted_regex: ^(data|stringData)$
+  encrypted_regex: ^data$
   version: 3.7.2

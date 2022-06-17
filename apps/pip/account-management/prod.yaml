@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+spec:
+  releaseName: pip-account-management
+  values:
+    java:
+      ingressHost: pip-account-management.platform.hmcts.net
+      environment:
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
