@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: netboxcommunity/netbox
-  tag: v2.8.5
+  tag: v2.11.12
   pullPolicy: IfNotPresent
 
 superuser:
@@ -139,7 +139,7 @@ preferIPv4: false
 # Remote authentication support
 remoteAuth:
   enabled: false
-  backend: utilities.auth_backends.RemoteUserBackend
+  backend: netbox.auth_authentication.RemoteUserBackend
   header: HTTP_REMOTE_USER
   autoCreateUser: true
   defaultGroups: []
