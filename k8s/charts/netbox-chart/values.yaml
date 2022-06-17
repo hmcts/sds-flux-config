@@ -139,7 +139,7 @@ preferIPv4: false
 # Remote authentication support
 remoteAuth:
   enabled: false
-  backend: netbox.auth_authentication.RemoteUserBackend
+  backend: netbox.authentication.RemoteUserBackend
   header: HTTP_REMOTE_USER
   autoCreateUser: true
   defaultGroups: []
