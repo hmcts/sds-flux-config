@@ -6,14 +6,14 @@ metadata:
 spec:
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-83243c8-20220510084518 #{"$imagepolicy": "flux-system:mi-azure-functions-test"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-8c3eeee-20220620154504 #{"$imagepolicy": "flux-system:mi-azure-functions-test"}
     env:
       ADF_RESOURCEGROUP: mi-ingestion-test-rg
       ADF_NAME: mi-ingestion-adf-test
       ADF_STORAGEACCOUNTNAME: miaudittest
       MI_METADATA_SERVER_DB: mi-metadata-db-test
     keyVaultSecrets:
-      - encryption-publicKey
+    - encryption-publicKey
     environment: "test"
     resourceGroup: "mi-test-rg"
     subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
