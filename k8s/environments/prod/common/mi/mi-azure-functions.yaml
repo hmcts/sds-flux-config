@@ -20,7 +20,7 @@ spec:
       app.kubernetes.io/name: mi-azure-functions-deployment
     image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-8c3eeee-20220620154504
     env:
-      ADF_RESOURCEGROUP: mi-prod-rg
+      ADF_RESOURCEGROUP: mi-ingestion-prod-rg
       ADF_NAME: mi-ingestion-adf-prod
       ADF_STORAGEACCOUNTNAME: miauditprod
       MI_METADATA_SERVER_DB: mi-metadata-db-prod
