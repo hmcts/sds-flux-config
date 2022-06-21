@@ -2,6 +2,14 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../base
+- ../../../apps/juror-digital/base/kustomize.yaml
+
+# Only needed when deploying an app to a single cluster 
+patches:
+- path: ../../../apps/base/kustomize.yaml
+  target:
+    kind: Kustomization
+    annotationSelector: hmcts.github.com/kustomize-defaults != disabled
 
 patchesStrategicMerge:
 - ../../../apps/flux-system/prod/00/kustomize.yaml
