@@ -12,3 +12,4 @@ patches:
 - path: ../../../apps/base/kustomize.yaml
   target:
     kind: Kustomization 
+    annotationSelector: hmcts.github.com/kustomize-defaults != disabled
