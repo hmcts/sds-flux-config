@@ -17,7 +17,5 @@ spec:
     nodejs:
       image: sdshmctspublic.azurecr.io/toffee/frontend:latest
       disableTraefikTls: true
-      startupPeriod: 10
-      startupFailureThreshold: 18
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.sandbox.platform.hmcts.net
