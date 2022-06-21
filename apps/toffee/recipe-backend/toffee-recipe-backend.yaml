@@ -9,8 +9,8 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest
-      startupPeriod: 120
-      startupFailureThreshold: 3
+      startupPeriod: 10
+      startupFailureThreshold: 18
       aadIdentityName: toffee
       disableTraefikTls: true
   chart:
