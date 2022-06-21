@@ -6,10 +6,10 @@ resources:
 
 # Only needed when deploying an app to a single cluster 
 patches:
-  - path: ../../../apps/base/kustomize.yaml
-    target:
-      kind: Kustomization
-      annotationSelector: hmcts.github.com/kustomize-defaults != disabled
+- path: ../../../apps/base/kustomize.yaml
+  target:
+    kind: Kustomization
+    annotationSelector: hmcts.github.com/kustomize-defaults != disabled
 
 patchesStrategicMerge:
 - ../../../apps/flux-system/stg/00/kustomize.yaml
