@@ -1,10 +1,1 @@
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: vh-bookings-api
-  namespace: vh
-spec:
-  values:
-    java:
-      image: sdshmctspublic.azurecr.io/vh/bookings-api:prod-v0.0.1-james
+
