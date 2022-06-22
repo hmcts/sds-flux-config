@@ -14,7 +14,7 @@ bases:
 - ../../../namespaces/monitoring/kube-prometheus-stack
 # - ../../../release/admin/env-injector
 # - ../../../release/kube-system/nodelocaldns
-
+- vh
 patches:
 - path: ../prod-helmrelease.yaml
   target:
