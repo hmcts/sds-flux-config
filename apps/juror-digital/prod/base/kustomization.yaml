@@ -5,15 +5,7 @@ resources:
 namespace: jd
 
 patchesStrategicMerge:
-  - ../../identity/juror-digital-azure-identity.yaml
   - ../../identity/prod.yaml
-  - .././
-
-
-patches:
-  - path: ../../identity/dev-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: juror-digital
+  - ../../jd-bureau/prod.yaml
+  - ../../jd-public/prod.yaml
+  - ../../moj-reverse-proxy/prod.yaml
