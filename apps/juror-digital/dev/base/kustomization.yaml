@@ -3,10 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
 namespace: jd
-patches:
-  - path: ../../identity/dev-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: juror-digital
+
+patchesStrategicMerge:
+  - ../../identity/dev.yaml
