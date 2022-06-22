@@ -5,4 +5,7 @@ resources:
 namespace: jd
 
 patchesStrategicMerge:
-  - ../../identity/dev.yaml
+  - ../../identity/prod.yaml
+  - ../../jd-bureau/prod.yaml
+  - ../../jd-public/prod.yaml
+  - ../../moj-reverse-proxy/prod.yaml
