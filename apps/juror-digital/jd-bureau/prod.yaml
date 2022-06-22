@@ -1,0 +1,14 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: jd-bureau
+  namespace: juror-digital
+spec:
+  values:
+    nodejs:
+      ingressHost: 'juror-bureau.justice.gov.uk'
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.25.183
+      environment:
+        NODE_ENV: production
+        TRACKING_CODE: UA-91917174-1
