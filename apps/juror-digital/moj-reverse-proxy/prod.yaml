@@ -1,0 +1,10 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: moj-reverse-proxy
+  namespace: jd
+spec:
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/jd/juror-reverse-proxy:prod-db2b9

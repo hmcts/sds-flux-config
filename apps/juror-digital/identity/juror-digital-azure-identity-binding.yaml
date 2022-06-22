@@ -1,8 +1,0 @@
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentityBinding
-metadata:
-  name: juror-digital-binding
-  namespace: jd
-spec:
-  azureIdentity: juror-digital
-  selector: juror-digital
