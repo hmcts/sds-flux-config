@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-83243c8-20220510084518 #{"$imagepolicy": "flux-system:mi-azure-functions-stg"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:stg-8c3eeee-20220620154504 # {"$imagepolicy": "flux-system:mi-azure-functions-stg"}
     env:
       ADF_RESOURCEGROUP: mi-ingestion-stg-rg
       ADF_NAME: mi-ingestion-adf-stg
