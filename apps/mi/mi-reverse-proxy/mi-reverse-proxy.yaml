@@ -1,0 +1,52 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mi-reverse-proxy
+  namespace: mi
+  labels:
+    app: mi-reverse-proxy
+spec:
+  replicas: 1
+  minReadySeconds: 60
+  selector:
+    matchLabels:
+      app: mi-reverse-proxy
+      aadpodidbinding: mi-azure-functions
+  template:
+    metadata:
+      labels:
+        app: mi-reverse-proxy
+        aadpodidbinding: mi-azure-functions
+    spec:
+      containers:
+        - name: mi-reverse-proxy
+          image: linuxserver/openssh-server
+          ports:
+            - name: ssh
+              containerPort: 2222
+          env:
+            - name: DOCKER_MODS
+              value: linuxserver/mods:openssh-server-ssh-tunnel
+            - name: PUID
+              value: '1000'
+            - name: PGID
+              value: '1000'
+            - name: TZ
+              value: 'Europe/London'
+            - name: PASSWORD_ACCESS
+              value: 'true'
+            - name: USER_NAME
+              value: 'sdp_user'
+            - name: USER_PASSWORD_FILE
+              value: '/kvmnt/reverse-proxy-password'
+          volumeMounts:
+            - name: azurekeyvault
+              mountPath: /kvmnt
+              readOnly: true
+      volumes:
+        - name: azurekeyvault
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "mi-reverse-proxy-secret-provider"
