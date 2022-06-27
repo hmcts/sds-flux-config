@@ -8,13 +8,5 @@ resources:
   - mailrelay2-values.enc.yaml
 namespace: mailrelay2
 patchesStrategicMerge:
-  - ../../mailrelay2/dev.yaml
-patches:
-  - path: ../../identity/dev.yaml
-  - path: mailrelay2-azure-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: mailrelay2
-      namespace: mailrelay2
+  - ../../mailrelay2/dev/dev.yaml
+  - ../../identity/dev.yaml
