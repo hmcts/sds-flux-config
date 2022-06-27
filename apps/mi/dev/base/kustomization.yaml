@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../mi-adf-shir/dev/mi-adf-auth-values.enc.yaml
+  - ../../mi-reverse-proxy/mi-reverse-proxy.yaml
 namespace: mi
 patches:
   #overlays for mi-azure-functions
