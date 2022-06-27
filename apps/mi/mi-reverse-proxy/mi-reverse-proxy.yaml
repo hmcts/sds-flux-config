@@ -40,13 +40,13 @@ spec:
             - name: USER_PASSWORD_FILE
               value: '/kvmnt/reverse-proxy-password'
           volumeMounts:
-            - name: azurekeyvault
+            - name: mi-vault-secrets-store
               mountPath: /kvmnt
               readOnly: true
       volumes:
-        - name: azurekeyvault
+        - name: mi-vault-secrets-store
           csi:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: "mi-reverse-proxy-secret-provider"
+              secretProviderClass: mi-reverse-proxy-secret-provider
