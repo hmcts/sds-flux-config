@@ -4,7 +4,7 @@ metadata:
   name: mailrelay2
   namespace: flux-system
 spec:
-  path: ./apps/mailrelay2/${ENVIRONMENT}
+  path: ./apps/mailrelay2/${ENVIRONMENT}/${CLUSTER}
   postBuild:
     substitute:
       NAMESPACE: "mailrelay2"
