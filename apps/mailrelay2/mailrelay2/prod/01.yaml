@@ -1,0 +1,11 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mailrelay2
+  namespace: mailrelay2
+spec:
+  values:
+    service:
+      type: LoadBalancer
+      loadBalancerIP: "10.144.31.32"
