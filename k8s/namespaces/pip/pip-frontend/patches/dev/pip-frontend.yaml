@@ -1,4 +1,3 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -10,7 +9,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-936c55f-20211213105441 # {"$imagepolicy": "flux-system:pip-frontend"}
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-4c5aae8-20220629145821 # {"$imagepolicy": "flux-system:pip-frontend"}
       environment:
         AUTH_RETURN_URL: https://pip-frontend.dev.platform.hmcts.net/login/return
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.dev.platform.hmcts.net
