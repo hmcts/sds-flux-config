@@ -2,14 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../base
-- ../../../apps/mailrelay2/base/kustomize.yaml
 
-# patchesStrategicMerge:
-# - ../../../apps/flux-system/prod/01/kustomize.yaml
-
-# Ready for migration
-patches:
-- path: ../../../apps/base/kustomize.yaml
-  target:
-    kind: Kustomization
-    annotationSelector: hmcts.github.com/kustomize-defaults != disabled
+patchesStrategicMerge:
+- ../../../apps/flux-system/prod/01/kustomize.yaml
