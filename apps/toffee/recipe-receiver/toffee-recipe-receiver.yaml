@@ -15,7 +15,7 @@ spec:
         namespace: flux-system
       version: '*'
       valuesFiles:
-        - values.yaml
+        - ./charts/recipe-receiver/values-sds.yaml
   interval: 5m
   releaseName: toffee-recipe-receiver
   values:

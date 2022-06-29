@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../mi-adf-shir/test/mi-adf-auth-values.enc.yaml
+  - ../../mi-reverse-proxy/mi-reverse-proxy.yaml
+  - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
 namespace: mi
 patches:
   #overlays for mi-azure-functions
@@ -30,3 +32,10 @@ patches:
       version: v1
       kind: AzureIdentity
       name: mi-integration-service
+  #overlays for mi-reverse-proxy-secret-provider
+  - path: ../../mi-reverse-proxy/test-secret-provider-patch.yaml
+    target:
+      group: secrets-store.csi.x-k8s.io
+      version: v1alpha1
+      kind: SecretProviderClass
+      name: mi-reverse-proxy-secret-provider
