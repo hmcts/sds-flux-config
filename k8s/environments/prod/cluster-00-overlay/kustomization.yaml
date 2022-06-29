@@ -1,7 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
-# - ../../../release/admin/kube-slack
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
 - ../../../release/mailrelay/mailrelay
@@ -12,8 +11,7 @@ bases:
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/neuvector
 - ../../../namespaces/monitoring/kube-prometheus-stack
-# - ../../../release/admin/env-injector
-# - ../../../release/kube-system/nodelocaldns
+- mailrelay2
 
 patches:
 - path: ../prod-helmrelease.yaml
@@ -21,10 +19,6 @@ patches:
     kind: HelmRelease
 
 patchesStrategicMerge:
-
-#kube-slack patch
-# - ../../../release/admin/kube-slack/patches/prod/cluster-00/kube-slack.yaml
-
 #traefik patch
 - ../../../namespaces/admin/traefik2/patches/prod/secret-provider.yaml
 - ../../../namespaces/admin/traefik2/patches/prod/cluster-00/traefik2.yaml
@@ -34,9 +28,6 @@ patchesStrategicMerge:
 
 #azure-devops-agent patch
 - ../../../namespaces/azure-devops/azure-devops-agent/patches/prod/cluster-00/azure-devops-agent.yaml
-
-# env-injector
-# - ../../../release/admin/env-injector/patches/prod/cluster-00/env-injector.yaml
 
 # mail-relay
 - ../../../release/mailrelay/mailrelay/patches/prod/cluster-00/mailrelay.yaml
