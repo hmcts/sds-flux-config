@@ -4,12 +4,5 @@ resources:
 - ../base
 - ../../../apps/toffee/base/kustomize.yaml
 
-# Only needed when deploying an app to a single cluster 
-patches:
-- path: ../../../apps/base/kustomize.yaml
-  target:
-    kind: Kustomization
-    annotationSelector: hmcts.github.com/kustomize-defaults != disabled
-
 patchesStrategicMerge:
 - ../../../apps/flux-system/stg/01/kustomize.yaml
