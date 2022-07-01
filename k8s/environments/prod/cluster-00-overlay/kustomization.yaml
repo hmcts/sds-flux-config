@@ -3,7 +3,6 @@ kind: Kustomization
 bases:
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
-- ../../../release/mailrelay/mailrelay
 - ../../../namespaces/admin/traefik2
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
@@ -26,9 +25,6 @@ patchesStrategicMerge:
 
 #azure-devops-agent patch
 - ../../../namespaces/azure-devops/azure-devops-agent/patches/prod/cluster-00/azure-devops-agent.yaml
-
-# mail-relay
-- ../../../release/mailrelay/mailrelay/patches/prod/cluster-00/mailrelay.yaml
 
 #neuvector patch
 - ../../../namespaces/neuvector/patches/prod/neuvector.yaml

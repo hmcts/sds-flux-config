@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mailrelay
+  namespace: mailrelay
+spec:
+  timeout: 20m
+  values:
+    service:
+      type: LoadBalancer
+      loadBalancerIP: "10.145.15.15"
