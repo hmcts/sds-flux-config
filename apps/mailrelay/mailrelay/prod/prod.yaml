@@ -1,0 +1,24 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mailrelay
+  namespace: mailrelay
+spec:
+  values:
+    workload: StatefulSet
+
+    volumeClaim:
+      storageClass: "managed-premium"
+      storageSize: 100Gi
+
+    resources:
+      requests:
+        cpu: 50m
+        memory: 64Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+
+    global:
+      environment: prod
