@@ -4,7 +4,6 @@ bases:
 # - ../../../release/admin/kube-slack
 - ../../../release/admin/kured
 - ../../../release/admin/secrets-csi-driver
-- ../../../release/mailrelay/mailrelay
 - ../../../namespaces/admin/traefik2
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
@@ -37,9 +36,6 @@ patchesStrategicMerge:
 
 # env-injector
 # - ../../../release/admin/env-injector/patches/prod/cluster-00/env-injector.yaml
-
-# mail-relay
-- ../../../release/mailrelay/mailrelay/patches/prod/cluster-01/mailrelay.yaml
 
 #neuvector patch
 - ../../../namespaces/neuvector/patches/prod/neuvector.yaml
