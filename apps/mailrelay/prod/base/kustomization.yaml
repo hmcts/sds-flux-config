@@ -3,7 +3,8 @@ kind: Kustomization
 namespace: mailrelay
 resources:
   - ../../base 
-  - mailrelay-values.enc.yaml
+  - ../../mailrelay/prod/mailrelay-values.enc.yaml
+
 patchesStrategicMerge:
   - ../../mailrelay/prod/prod.yaml
   - ../../identity/prod.yaml
