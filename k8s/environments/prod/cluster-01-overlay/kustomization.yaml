@@ -1,7 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
-- ../../../release/admin/secrets-csi-driver
 - ../../../namespaces/admin/traefik2
 - ../../../namespaces/azure-devops
 - ../../../namespaces/admin/aad-pod-identity
