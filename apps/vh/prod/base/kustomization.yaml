@@ -5,7 +5,7 @@ resources:
 namespace: vh
 patchesStrategicMerge:
   - ../../identity/vh-aad-identity.yaml
-  - ../../identity/dev.yaml
-  - ../../user-api/dev.yaml
-  - ../../bookings-api/dev.yaml
-  - ../../notification-api/dev.yaml
+  - ../../identity/prod.yaml
+  - ../../bookings-api/test.yaml
+  - ../../user-api/test.yaml
+  - ../../notification-api/test.yaml
