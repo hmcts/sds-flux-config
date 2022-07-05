@@ -1,9 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
-- ../../../namespaces/admin/traefik2
 - ../../../namespaces/azure-devops
-- ../../../namespaces/admin/aad-pod-identity
 - ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/neuvector
 - ../../../namespaces/monitoring/kube-prometheus-stack
@@ -14,10 +12,6 @@ patches:
     kind: HelmRelease
 
 patchesStrategicMerge:
-#traefik patch
-- ../../../namespaces/admin/traefik2/patches/prod/secret-provider.yaml
-- ../../../namespaces/admin/traefik2/patches/prod/cluster-00/traefik2.yaml
-
 #azure-devops-agent patch
 - ../../../namespaces/azure-devops/azure-devops-agent/patches/prod/cluster-00/azure-devops-agent.yaml
 
