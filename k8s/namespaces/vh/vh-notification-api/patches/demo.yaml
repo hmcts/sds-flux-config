@@ -1,0 +1,10 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: vh-notification-api
+  namespace: vh
+spec:
+  releaseName: vh-notification-api
+  values:
+    java:
+      ingressHost: vh-notification-api.demo.platform.hmcts.net
