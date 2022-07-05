@@ -1,4 +1,3 @@
----
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
@@ -6,13 +5,15 @@ metadata:
   namespace: vh
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/java: glob:staging-*
+    filter.fluxcd.io/java: glob:prod-*
 spec:
   releaseName: vh-notification-api
   chart:
     git: git@github.com:hmcts/hmcts-charts
-    path: ./stable/vh-notification-api/non-prod
+    path: ./stable/vh-notification-api/prod
     ref: master
   values:
     java:
-      disableTraefikTls: true
+      ingressHost: vh-notification-api.platform.hmcts.net
+      environment:
+        SERVICES__NOTIFICATIONAPIRESOURCEID: http://vh-notification-api.platform.hmcts.net
