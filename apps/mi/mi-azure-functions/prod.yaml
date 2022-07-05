@@ -1,0 +1,21 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mi-azure-functions-deployment
+  namespace: mi
+spec:
+  values:
+    labels:
+      app.kubernetes.io/instance: mi-azure-functions-deployment
+      app.kubernetes.io/name: mi-azure-functions-deployment
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-6326575-20220630110849
+    env:
+      ADF_RESOURCEGROUP: mi-ingestion-prod-rg
+      ADF_NAME: mi-ingestion-adf-prod
+      ADF_STORAGEACCOUNTNAME: miauditprod
+      MI_METADATA_SERVER_DB: mi-metadata-db-prod
+      OPTIC_TOKEN_URL: https://hmcts.icasework.com/token
+    resourceGroup: "mi-prod-rg"
+    subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+    managedIdentityClientId: "6ca63ebe-d898-42fb-b5bb-88d67433c78f"

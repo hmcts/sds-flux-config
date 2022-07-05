@@ -1,0 +1,52 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: mi
+resources:
+  - ../../base
+  - ../mi-azure-functions/mi-azure-functions.yaml
+  - ../mi-adf-shir/mi-adf-shir.yaml
+  - ../mi-house-keeping-service/mi-house-keeping-service.yaml
+ 
+  - ../identity/mi-azure-functions-identity.yaml
+  - ../identity/mi-azure-functions-identity-binding.yaml
+  - ../identity/mi-house-keeping-service-identity-binding.yaml
+  - ../identity/mi-house-keeping-service-identity.yaml
+  - ../identity/mi-integration-service-identity-binding.yaml
+  - ../identity/mi-integration-service-identity.yaml
+  
+  - ../base/mi-developer-rbac.yaml
+  - mi-adf-auth-values.enc.yaml
+
+
+patchesStrategicMerge:
+- ../identity/prod.yaml
+- ../mi-azure-functions/prod.yaml
+- ../mi-adf-shir/prod.yaml
+- ../mi-house-keeping-service/prod.yaml
+
+# patches:
+#   #overlays for mi-azure-functions
+#   - path: ../../mi-azure-functions/stg.yaml
+#   - path: ../../mi-azure-functions/stg-identity-patch.yaml
+#     target:
+#       group: aadpodidentity.k8s.io
+#       version: v1
+#       kind: AzureIdentity
+#       name: mi-azure-functions
+#   #overlays for mi-adf-shir
+#   - path: ../../mi-adf-shir/stg/stg.yaml
+#   #overlays for mi-house-keeping-service
+#   - path: ../../mi-house-keeping-service/prod.yaml
+#   - path: ../../mi-house-keeping-service/prod-identity-patch.yaml
+#     target:
+#       group: aadpodidentity.k8s.io
+#       version: v1
+#       kind: AzureIdentity
+#       name: mi-house-keeping-service
+#   #overlays for mi-integration-service
+#   - path: ../../mi-integration-service/prod-identity-patch.yaml
+#     target:
+#       group: aadpodidentity.k8s.io
+#       version: v1
+#       kind: AzureIdentity
+#       name: mi-integration-service
