@@ -6,6 +6,8 @@ metadata:
 spec:
   releaseName: vh-user-api
   values:
+    java:
+      ingressHost: vh-user-api.staging.platform.hmcts.net
     image: sdshmctspublic.azurecr.io/vh/user-api:staging-9abf483d3945d40e453754ceb58d16226b808bf7-202205260824-1 #{"$imagepolicy": "flux-system:vh-user-api"}
     environment: "stg"
     resourceGroup: "vh-infra-core-stg"
