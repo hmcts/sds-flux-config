@@ -7,7 +7,7 @@ spec:
   interval: 5m
   url: ssh://github.com/hmcts/vh-notification-api
   ref:
-    branch: VIH-7296-helm-setup
+    branch: master
   secretRef:
     name: git-credentials
   ignore: |
