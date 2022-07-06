@@ -1,5 +1,5 @@
 ---
-apiVersion: "aadpodidentity.k8s.io/v1"
+apiVersion: aadpodidentity.k8s.io/v1
 kind: AzureIdentity
 metadata:
   name: mi-azure-functions
@@ -9,7 +9,7 @@ spec:
   clientID: 6ca63ebe-d898-42fb-b5bb-88d67433c78f
 
 ---
-apiVersion: "aadpodidentity.k8s.io/v1"
+apiVersion: aadpodidentity.k8s.io/v1
 kind: AzureIdentity
 metadata:
   name: mi-house-keeping-service
@@ -19,7 +19,7 @@ spec:
   clientID: 12d8c94d-2d49-48d8-9e1b-0bc9937c6670
 
 ---
-apiVersion: "aadpodidentity.k8s.io/v1"
+apiVersion: aadpodidentity.k8s.io/v1
 kind: AzureIdentity
 metadata:
   name: mi-integration-service

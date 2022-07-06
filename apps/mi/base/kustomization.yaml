@@ -4,12 +4,12 @@ resources:
   - ../../base
   - mi-developer-rbac.yaml
   - ../mi-azure-functions/mi-azure-functions.yaml
-  - ../mi-azure-functions/mi-azure-functions-identity.yaml
-  - ../mi-azure-functions/mi-azure-functions-identity-binding.yaml
+  - ../identity/mi-azure-functions-identity.yaml
+  - ../identity/mi-azure-functions-identity-binding.yaml
   - ../mi-adf-shir/mi-adf-shir.yaml
-  - ../mi-house-keeping-service/mi-house-keeping-service-identity-binding.yaml
-  - ../mi-house-keeping-service/mi-house-keeping-service-identity.yaml
+  - ../identity/mi-house-keeping-service-identity-binding.yaml
+  - ../identity/mi-house-keeping-service-identity.yaml
   - ../mi-house-keeping-service/mi-house-keeping-service.yaml
-  - ../mi-integration-service/mi-integration-service-identity-binding.yaml
-  - ../mi-integration-service/mi-integration-service-identity.yaml
+  - ../identity/mi-integration-service-identity-binding.yaml
+  - ../identity/mi-integration-service-identity.yaml
 namespace: mi

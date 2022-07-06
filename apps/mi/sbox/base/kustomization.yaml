@@ -1,32 +1,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: mi
+
 resources:
   - ../../base
   - ../../mi-adf-shir/sbox/mi-adf-auth-values.enc.yaml
-namespace: mi
+
+patchesStrategicMerge:
+  - ../../identity/sbox.yaml
+
 patches:
   #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/sbox.yaml
-  - path: ../../mi-azure-functions/sbox-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: mi-azure-functions
   #overlays for mi-adf-shir
   - path: ../../mi-adf-shir/sbox/sbox.yaml
   #overlays for mi-house-keeping-service
   - path: ../../mi-house-keeping-service/sbox.yaml
-  - path: ../../mi-house-keeping-service/sbox-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: mi-house-keeping-service
-  #overlays for mi-integration-service
-  - path: ../../mi-integration-service/sbox-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: mi-integration-service

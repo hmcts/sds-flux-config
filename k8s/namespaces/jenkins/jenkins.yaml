@@ -23,7 +23,7 @@ spec:
       # Used for label app.kubernetes.io/component
       componentName: "jenkins-controller"
       image: "hmctspublic.azurecr.io/jenkins/jenkins"
-      tag: "2.356-105"
+      tag: "2.357-113"
       containerSecurityContext:
         runAsUser: 0
         runAsGroup: 0
@@ -236,6 +236,12 @@ spec:
                           description: "GitHub APP Key - CNP"
                           id: "hmcts-jenkins-cnp"
                           privateKey: "${hmcts-jenkins-cnp-ghapp}"
+                      - azureCosmosDB:
+                          credentialsId: "jenkins-managed-identity"
+                          id: "cosmos-connection"
+                          preferredRegion: "UK South"
+                          scope: GLOBAL
+                          url: "https://${pipeline-metrics-account-name}.documents.azure.com:443/"
           jobs: |
             jobs:
               - url: https://raw.githubusercontent.com/hmcts/sds-jenkins-config/master/jobdsl/organisations.groovy
