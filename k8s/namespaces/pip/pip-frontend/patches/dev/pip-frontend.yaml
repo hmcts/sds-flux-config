@@ -9,7 +9,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-34b687d-20220705123858 # {"$imagepolicy": "flux-system:pip-frontend"}
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-ac491c7-20220706104405 # {"$imagepolicy": "flux-system:pip-frontend"}
       environment:
         AUTH_RETURN_URL: https://pip-frontend.dev.platform.hmcts.net/login/return
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.dev.platform.hmcts.net
