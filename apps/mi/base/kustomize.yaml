@@ -4,7 +4,7 @@ metadata:
   name: mi
   namespace: flux-system
 spec:
-  path: ./apps/mi/${ENVIRONMENT}
+  path: ./apps/mi/${ENVIRONMENT}/${CLUSTER}
   postBuild:
     substitute:
       NAMESPACE: "mi"
