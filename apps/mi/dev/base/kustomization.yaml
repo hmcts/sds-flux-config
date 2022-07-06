@@ -8,7 +8,7 @@ resources:
   - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
 
 patchesStrategicMerge:
-- ../../identity/dev.yaml
+  - ../../identity/dev.yaml
 
 patches:
   #overlays for mi-azure-functions

@@ -7,7 +7,7 @@ resources:
   - ../../mi-adf-shir/sbox/mi-adf-auth-values.enc.yaml
 
 patchesStrategicMerge:
-- ../../identity/sbox.yaml
+  - ../../identity/sbox.yaml
 
 patches:
   #overlays for mi-azure-functions

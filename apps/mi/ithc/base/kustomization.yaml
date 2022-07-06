@@ -7,7 +7,7 @@ resources:
   - ../../mi-adf-shir/ithc/mi-adf-auth-values.enc.yaml
 
 patchesStrategicMerge:
-- ../../identity/ithc.yaml
+  - ../../identity/ithc.yaml
 
 patches:
   #overlays for mi-azure-functions

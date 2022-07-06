@@ -9,7 +9,8 @@ resources:
   - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
 
 patchesStrategicMerge:
-- ../../identity/test.yaml
+  - ../../identity/test.yaml
+
 patches:
   #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/test.yaml
