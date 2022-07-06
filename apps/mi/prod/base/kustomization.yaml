@@ -7,12 +7,12 @@ resources:
   - mi-adf-auth-values.enc.yaml
 
 patchesStrategicMerge:
-  - ../../identity/stg.yaml
+  - ../../identity/prod.yaml
 
 patches:
   #overlays for mi-azure-functions
-  - path: ../../mi-azure-functions/stg.yaml
+  - path: ../../mi-azure-functions/prod.yaml
   #overlays for mi-adf-shir
-  - path: ../../mi-adf-shir/stg.yaml
+  - path: ../../mi-adf-shir/prod.yaml
   #overlays for mi-house-keeping-service
-  - path: ../../mi-house-keeping-service/stg.yaml
+  - path: ../../mi-house-keeping-service/prod.yaml
