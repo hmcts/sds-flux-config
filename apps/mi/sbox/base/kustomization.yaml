@@ -4,7 +4,7 @@ namespace: mi
 
 resources:
   - ../../base
-  - ../../mi-adf-shir/sbox/mi-adf-auth-values.enc.yaml
+  - mi-adf-auth-values.enc.yaml
 
 patchesStrategicMerge:
   - ../../identity/sbox.yaml
@@ -13,6 +13,6 @@ patches:
   #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/sbox.yaml
   #overlays for mi-adf-shir
-  - path: ../../mi-adf-shir/sbox/sbox.yaml
+  - path: ../../mi-adf-shir/sbox.yaml
   #overlays for mi-house-keeping-service
   - path: ../../mi-house-keeping-service/sbox.yaml
