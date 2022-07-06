@@ -1,0 +1,29 @@
+---
+apiVersion: aadpodidentity.k8s.io/v1
+kind: AzureIdentity
+metadata:
+  name: mi-azure-functions
+  namespace: mi
+spec:
+  resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/managed-identities-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-azure-functions-sbox-mi
+  clientID: 106e1ba9-8eef-4a9f-a103-b2f35052d717
+
+---
+apiVersion: aadpodidentity.k8s.io/v1
+kind: AzureIdentity
+metadata:
+  name: mi-house-keeping-service
+  namespace: mi
+spec:
+  resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/managed-identities-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-housekeeping-service-sbox-mi
+  clientID: f74e3f17-9785-480b-8bd4-fcac2b53c682
+
+---
+apiVersion: aadpodidentity.k8s.io/v1
+kind: AzureIdentity
+metadata:
+  name: mi-integration-service
+  namespace: mi
+spec:
+  resourceID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/managed-identities-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-integration-service-sbox-mi
+  clientID: 9278a876-6f8a-489d-9053-01c996a7b6f6
