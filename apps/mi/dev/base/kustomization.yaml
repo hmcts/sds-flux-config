@@ -1,37 +1,22 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: mi
 resources:
   - ../../base
   - ../../mi-adf-shir/dev/mi-adf-auth-values.enc.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
-namespace: mi
+
+patchesStrategicMerge:
+  - ../../identity/dev.yaml
+
 patches:
   #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/dev.yaml
-  - path: ../../mi-azure-functions/dev-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: mi-azure-functions
   #overlays for mi-adf-shir
   - path: ../../mi-adf-shir/dev/dev.yaml
   #overlays for mi-house-keeping-service
   - path: ../../mi-house-keeping-service/dev.yaml
-  - path: ../../mi-house-keeping-service/dev-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: mi-house-keeping-service
-  #overlays for mi-integration-service identity for adf-shir
-  - path: ../../mi-integration-service/dev-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: mi-integration-service
   #overlays for mi-reverse-proxy-secret-provider
   - path: ../../mi-reverse-proxy/dev-secret-provider-patch.yaml
     target:
