@@ -8,3 +8,5 @@ spec:
   values:
     java:
       ingressHost: pip-publication-services.platform.hmcts.net
+      environment:
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
