@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-user-api.test.platform.hmcts.net
-    image: sdshmctspublic.azurecr.io/vh/user-api:staging-240efd0fac898fbc53e3c920c14e45dbc76a4255-202207070232-090909 #{"$imagepolicy": "flux-system:vh-user-api"}
+    image: sdshmctspublic.azurecr.io/vh/user-api:staging-883314c-202207070246-090909 #{"$imagepolicy": "flux-system:vh-user-api"}
     environment: "test"
     resourceGroup: "vh-infra-core-test"
     subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
