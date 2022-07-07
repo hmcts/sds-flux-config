@@ -19,4 +19,4 @@ spec:
       chart: ./stable/vh-bookings-api/prod
   filterTags:
     extract: $ts
-    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
+    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'
