@@ -12,7 +12,7 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/vh-user-api/non-prod
+      chart: ./stable/vh-notification-api/non-prod
       sourceRef:
         kind: GitRepository
         name: hmcts-charts

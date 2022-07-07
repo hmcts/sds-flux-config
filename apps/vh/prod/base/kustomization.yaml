@@ -6,6 +6,6 @@ namespace: vh
 patchesStrategicMerge:
   - ../../identity/vh-aad-identity.yaml
   - ../../identity/prod.yaml
-  - ../../bookings-api/test.yaml
-  - ../../user-api/test.yaml
-  - ../../notification-api/test.yaml
+  - ../../bookings-api/prod.yaml
+  - ../../user-api/prod.yaml
+  - ../../notification-api/prod.yaml
