@@ -19,5 +19,5 @@ spec:
       chart: ./stable/vh-notification-api/prod
   filterTags:
     extract: $ts
-    pattern: '^prod-*'
+    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
 
