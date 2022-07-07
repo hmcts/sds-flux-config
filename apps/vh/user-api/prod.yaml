@@ -17,3 +17,6 @@ spec:
   chart:
     spec:
       chart: ./stable/vh-user-api/prod
+  filterTags:
+    extract: $ts
+    pattern: '^prod-*'

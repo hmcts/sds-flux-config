@@ -17,4 +17,7 @@ spec:
   chart:
     spec:
       chart: ./stable/vh-notification-api/prod
+  filterTags:
+    extract: $ts
+    pattern: '^prod-*'
 
