@@ -7,7 +7,7 @@ metadata:
 spec:
   filterTags:
     extract: $ts
-    pattern: '^staging-*'
+    pattern: '^staging-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
   imageRepositoryRef:
     name: vh-bookings-api
   policy:
