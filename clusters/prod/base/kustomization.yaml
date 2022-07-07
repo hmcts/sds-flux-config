@@ -11,6 +11,7 @@ resources:
 - ../../../apps/mailrelay2/base/kustomize.yaml
 - ../../../apps/mailrelay/base/kustomize.yaml
 - ../../../apps/azure-devops/base/kustomize.yaml
+- ../../../apps/mi/base/kustomize.yaml
 
 patches:
 - path: ../../../apps/base/kustomize.yaml

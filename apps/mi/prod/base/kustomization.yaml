@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: mi
+
+resources:
+  - ../../base
+  - mi-adf-auth-values.enc.yaml
+
+patchesStrategicMerge:
+  - ../../identity/prod.yaml
+
+patches:
+  #overlays for mi-azure-functions
+  - path: ../../mi-azure-functions/prod.yaml
+  #overlays for mi-adf-shir
+  - path: ../../mi-adf-shir/prod.yaml
+  #overlays for mi-house-keeping-service
+  - path: ../../mi-house-keeping-service/prod.yaml

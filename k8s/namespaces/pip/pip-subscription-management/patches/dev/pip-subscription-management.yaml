@@ -9,7 +9,7 @@ spec:
   releaseName: pip-subscription-management
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-2d54dac-20220701174921 # {"$imagepolicy": "flux-system:pip-subscription-management"}
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-b57b2eb-20220704142102 # {"$imagepolicy": "flux-system:pip-subscription-management"}
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.staging.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.staging.platform.hmcts.net
