@@ -10,7 +10,6 @@ spec:
       ingressHost: vh-notification-api.platform.hmcts.net
       environment:
         SERVICES__NOTIFICATIONAPIRESOURCEID: http://vh-notification-api.platform.hmcts.net
-        NotifyConfiguration__Environment: Prod
     image: sdshmctspublic.azurecr.io/vh/notification-api:staging-d8ab707-202207080930 #{"$imagepolicy": "flux-system:vh-notification-api"}
   chart:
     spec:
