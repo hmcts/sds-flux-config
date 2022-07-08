@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-video-api
+  namespace: vh
+spec:
+  releaseName: vh-video-api
+  values:
+    java:
+      ingressHost: vh-video-api.platform.hmcts.net
+    image: sdshmctspublic.azurecr.io/vh/video-api:staging-9abf483d3945d40e453754ceb58d16226b808bf7-202205260824-1 #{"$imagepolicy": "flux-system:vh-video-api"}
+    environment: "prod"
+    resourceGroup: "vh-infra-core-prod"
+    subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    managedIdentityClientId: "df0c1ced-b6cb-4fe0-a4e4-9bc48181435c"
+  chart:
+    spec:
+      chart: ./stable/vh-video-api/prod
+  filterTags:
+    extract: $ts
+    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'

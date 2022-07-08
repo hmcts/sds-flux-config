@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-video-api
+spec:
+  interval: 10m
+  releaseName: vh-video-api
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/vh/video-api:staging-9abf483d3945d40e453754ceb58d16226b808bf7-202205260824-1 # {"$imagepolicy": "flux-system:vh-video-api"}
+      disableTraefikTls: true
+  chart:
+    spec:
+      chart: ./stable/vh-video-api/non-prod
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true

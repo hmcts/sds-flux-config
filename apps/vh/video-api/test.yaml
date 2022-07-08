@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-video-api
+  namespace: vh
+spec:
+  releaseName: vh-video-api
+  values:
+    java:
+      ingressHost: vh-video-api.test.platform.hmcts.net
+    image: sdshmctspublic.azurecr.io/vh/video-api:staging-9abf483d3945d40e453754ceb58d16226b808bf7-202205260824-1 #{"$imagepolicy": "flux-system:vh-video-api"}
+    environment: "test"
+    resourceGroup: "vh-infra-core-test"
+    subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
+    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    managedIdentityClientId: "0440f204-63be-4a43-afcd-7e267030e3b9"
