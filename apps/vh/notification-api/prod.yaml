@@ -8,15 +8,9 @@ spec:
   values:
     java:
       ingressHost: vh-notification-api.platform.hmcts.net
-    image: sdshmctspublic.azurecr.io/vh/notification-api:staging-d8ab707-202207080930 #{"$imagepolicy": "flux-system:vh-notification-api"}
-    environment: "prod"
-    resourceGroup: "vh-infra-core-prod"
-    subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
-    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    managedIdentityClientId: "df0c1ced-b6cb-4fe0-a4e4-9bc48181435c"
+      environment:
+        SERVICES__NOTIFICATIONAPIRESOURCEID: http://vh-notification-api.platform.hmcts.net
+    image: sdshmctspublic.azurecr.io/vh/notification-api:staging-d8ab707-202207080930 #{"$imagepolicy": "flux-system:vh-notification-api-prod"}
   chart:
     spec:
       chart: ./stable/vh-notification-api/prod
-  filterTags:
-    extract: $ts
-    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'
