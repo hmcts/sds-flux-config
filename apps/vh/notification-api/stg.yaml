@@ -8,9 +8,8 @@ spec:
   values:
     java:
       ingressHost: vh-notification-api.staging.platform.hmcts.net
+      environment:
+        SERVICES__NOTIFICATIONAPIRESOURCEID: http://vh-notification-api.staging.platform.hmcts.net
+        NotifyConfiguration__Environment: Stg
     image: sdshmctspublic.azurecr.io/vh/notification-api:staging-d8ab707-202207080833 #{"$imagepolicy": "flux-system:vh-notification-api"}
-    environment: "stg"
-    resourceGroup: "vh-infra-core-stg"
-    subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
-    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    managedIdentityClientId: "b1ec3b17-8ec1-4e9a-a51c-8c0eff2bae6b"
+
