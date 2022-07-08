@@ -1,4 +1,3 @@
----
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -9,25 +8,22 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay # {"$imagepolicy": "flux-system:mailrelay:name"}
-      tag: v0.2.8 # {"$imagepolicy": "flux-system:mailrelay:tag"}
+      tag: v0.2.9 # {"$imagepolicy": "flux-system:mailrelay:tag"}
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
       loadBalancerIP: "10.145.31.32"
-
     workload: StatefulSet
-
     aadIdentityName: mailrelay2
     usePodIdentity: "true"
     managedIdentityClientId: c4acf9cf-3120-4b87-baa9-3916ffd293eb
     authKeyVaultName: sds-mailrelay
     authKeyVaultSecrets:
-      - "v1test"
-      - "mailrelay-dev-user"
-      - "tenable"
-      - "dcsdev"
+    - "v1test"
+    - "mailrelay-dev-user"
+    - "tenable"
+    - "dcsdev"
     tenantId: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
-
     certificate:
       inboundCert:
         name: "dev-in"
@@ -35,11 +31,9 @@ spec:
       outboundCert:
         name: "dev"
         objectName: "dev-mailrelay-platform-hmcts-net"
-
     volumeClaim:
       storageClass: "managed-premium"
       storageSize: 500Gi
-
     global:
       environment: dev
       enableOutboundTls: true
