@@ -9,7 +9,7 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay # {"$imagepolicy": "flux-system:mailrelay:name"}
-      tag: v0.2.8 # {"$imagepolicy": "flux-system:mailrelay:tag"}
+      tag: v0.2.9 # {"$imagepolicy": "flux-system:mailrelay:tag"}
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
@@ -33,8 +33,8 @@ spec:
         name: "dev-in"
         objectName: "dev-in-mailrelay-platform-hmcts-net"
       outboundCert:
-        name: "dev"
-        objectName: "dev-mailrelay-platform-hmcts-net"
+        name: "dev-in"
+        objectName: "dev-in-mailrelay-platform-hmcts-net"
 
     volumeClaim:
       storageClass: "managed-premium"
