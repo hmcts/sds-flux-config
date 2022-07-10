@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+    values.yaml: ENC[AES256_GCM,data:xNoUFAAsGTETEUl0rTJDwMy+mydQ/J/aanuxCXKJcXjiNjDQgL4XF6Iy0is8P/A//k7CuwQGDaxddm9xUjeen2dVBn62cxOixoDe9Wk3I/14fBQGOd5GiydzJFeTV0OEzF5NAMJjuAR8jA6lRYkEgieGFo0I5UFnZYikmCqqUjEIZRVtzUJuj1tca3qo7zC0IRPUMIHJsXcRTR+UJEGPgzd05siENeb7/iRXlPOZ+bF6zib0MyulxTBL0xz+i4acf2hWmn5fvk0fmUUmK0Je1Wimx7g87ddSPXJeu0a6xxJsTmD0tbA3TuF0ZeWkB+l9YxZSd1jIJANtn1OprZq9XMJ8sEnL2VybFGMZnO0SsZr/YhUCjDwU8erVcf8QOo4xAYY8NoBsEEKsAlUsnzGW9dQimRsAVGbvI7a4K0IRtSdv8OVrzrOZaFj3R/KdDl9yLcI+cs2kY04=,iv:sMZ25QZ1IgGDJ7P+gqxNVcpuiuFT/E+qzEn8yLyxMDc=,tag:Cf5GoW/+tnL1b7VhFbpuNA==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: mailrelay-values
+    namespace: mailrelay2
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssharedservicesprodkv.vault.azure.net
+          name: sops-key
+          version: 883d8b431ad345d09b2697c3aaae2a0c
+          created_at: "2022-07-10T10:39:35Z"
+          enc: vPfX_JGl1dHLeMJejoj14G2vR9PlExcl4jlyzQ7DdvdTvJWEMbLrH8N8zg3-ZH5Qfz1sxkW4FS6ya3OdYTuM6kuGu2BjqFUwCjCK6Is-wiI46zZ8U013jHjToMxkx78dLjHXtW7Ru31SfDLGGn2kOV5lo2YyZuNR4ig8_kmOoJWDhg9D5DQaRQ7bfiDz53HHT8tr6bp2nk2mputsCobV0uRs9uePhqvPKTzUTFghpKSOHLCTT0ZGOOV3sJ8SKCMZYGT8BaQc5lRdiKSraje38AYRh3AmpeRqs7KQOUyvndakJqRUQijyzhGwNVtDfN6xPHEWVMLtqDPResXaoJWgzg
+    hc_vault: []
+    age: []
+    lastmodified: "2022-07-10T10:39:36Z"
+    mac: ENC[AES256_GCM,data:FR6qutGdgC3OTygyuSIO3kkUigWjOXgIJK6+YKX0Tz4rIKxpVQQi2eK8lNpYmFBxWCGIcIpkPRv6QFay2VxM7LdGN8exTyW3nvsysGpFKi8PUElLgIZwj9R9rgfAXlb1Dc9eTi1QCFZqbul3RFkjVO1NK+kd3+wMSovzTKglp5w=,iv:Rq1PyU8FTqg5UQ1vCShd4mUzTWeogRs4cxr7B6u2Csw=,tag:oyv4wkIogSOy/zQWwSWjmw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.1
