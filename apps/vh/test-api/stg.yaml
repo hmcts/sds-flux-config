@@ -9,5 +9,5 @@ spec:
     java:
       ingressHost: vh-test-api.staging.platform.hmcts.net
       environment:
-        SERVICES__TESTAPIRESOURCEID: http://vh-staging-api.staging.platform.hmcts.net
+        SERVICES__TESTAPIRESOURCEID: http://vh-test-api.staging.platform.hmcts.net
     image: sdshmctspublic.azurecr.io/vh/test-api:staging-edadaef-202207081217 #{"$imagepolicy": "flux-system:vh-test-api"}
