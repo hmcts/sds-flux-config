@@ -26,6 +26,9 @@ spec:
     - "dcsdev"
     tenantId: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
     certificate:
+      serverName: "mailrelay.platform.hmcts.net"
+      KeyVault: "acmedtssdsprod"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
       inboundCert:
         name: "dev-in"
         objectName: "dev-in-mailrelay-platform-hmcts-net"
