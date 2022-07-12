@@ -1,20 +1,3 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
-- ../../../namespaces/kube-system/aad-pod-identity
-- ../../../namespaces/neuvector
-- ../../../namespaces/monitoring/kube-prometheus-stack
-
-patches:
-- path: ../prod-helmrelease.yaml
-  target:
-    kind: HelmRelease
-
-patchesStrategicMerge:
-#neuvector patch
-- ../../../namespaces/neuvector/patches/prod/neuvector.yaml
-- ../../../namespaces/neuvector/patches/prod/cluster-00/neuvector.yaml
-
-# prom-operator patch
-- ../../../namespaces/monitoring/kube-prometheus-stack/patches/prod/cluster-00/kube-prometheus-stack.yaml
-- ../../../namespaces/monitoring/kube-prometheus-stack/patches/prod/cluster-00/mailrelay-alerts-rules.yaml
