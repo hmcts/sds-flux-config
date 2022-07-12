@@ -143,6 +143,9 @@ spec:
             - port: exporter
               path: /metrics
       ingress:
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          traefik.ingress.kubernetes.io/router.tls: "true"
         enabled: true
     prometheus-node-exporter:
       # by default it tolerates everything and tries to deploy to windows nodes which fails
@@ -171,6 +174,9 @@ spec:
                       values:
                         - system
       ingress:
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          traefik.ingress.kubernetes.io/router.tls: "true"
         enabled: true
       config:
         global:
