@@ -4,7 +4,7 @@
 
 | Environment  | Instances running | Status |
 | ------------- | ------------- | ------------- |
-| Prod | Flux V1, Flux V2  | Started Migration
+| Prod | Flux V2  | Completed
 | Staging |  Flux v2  | Completed
 | Demo |  Flux V2  | Completed
 | ITHC | Flux V2 | Completed
