@@ -13,7 +13,6 @@ spec:
       activeDeadlineSeconds: 82800
       labels:
         app.kubernetes.io/instance: mi-house-keeping-service
-        app.kubernetes.io/name: mi-house-keeping-service
       environment:
         MI_CLIENT_ID: "12d8c94d-2d49-48d8-9e1b-0bc9937c6670"
       smoketests:
