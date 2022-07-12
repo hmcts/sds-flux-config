@@ -1,16 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: pip-channel-management
+  name: vh-test-api
 spec:
-  releaseName: pip-channel-management
+  interval: 10m
+  releaseName: vh-test-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-815d2aa-20220711165227 # {"$imagepolicy": "flux-system:pip-channel-management"}
+      image: sdshmctspublic.azurecr.io/vh/test-api:staging-8017d13-202207121146 # {"$imagepolicy": "flux-system:vh-test-api"}
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/pip-channel-management
+      chart: ./stable/vh-test-api/non-prod
       sourceRef:
         kind: GitRepository
         name: hmcts-charts

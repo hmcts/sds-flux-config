@@ -8,5 +8,5 @@ resources:
   - mailrelay-values.enc.yaml
 namespace: mailrelay
 patchesStrategicMerge:
-  - ../../mailrelay/dev/dev.yaml 
+  - ../../mailrelay/dev/dev.yaml
   - ../../identity/dev.yaml
