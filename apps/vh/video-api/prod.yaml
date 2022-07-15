@@ -17,6 +17,3 @@ spec:
   chart:
     spec:
       chart: ./stable/vh-video-api/prod
-  filterTags:
-    extract: $ts
-    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'
