@@ -41,6 +41,8 @@ spec:
         - camptocamp-prometheus-alertmanager-datasource
       ingress:
         enabled: true
+        annotations:
+          traefik.ingress.kubernetes.io/router.tls: "true"
       dashboardProviders:
         dashboardproviders.yaml:
           apiVersion: 1
