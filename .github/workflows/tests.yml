@@ -19,8 +19,6 @@ jobs:
           sudo apt-get install -y yamllint
       - name: Install yq
         run: ./tests/install-yq.sh
-      - name: Kustomize Tests
-        run: ./tests/test-kustomize.sh
       - name: Kustomize Testsc2
         run: ./tests/test-kustomize-v2.sh
       - name: Lint Tests

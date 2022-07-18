@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: lgy-iac-web
-  namespace: legacy-apps
+  namespace: dts-legacy
 spec:
   releaseName: lgy-iac-web
   values:
