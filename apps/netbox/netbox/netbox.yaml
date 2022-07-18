@@ -9,7 +9,7 @@ spec:
   releaseName: netbox
   chart:
     spec:
-      chart: ./k8s/release/mi/mi-azure-functions
+      chart: ./k8s/charts/netbox-chart
       sourceRef:
         kind: GitRepository
         name: flux-config
