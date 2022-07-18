@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - ../../base
   - ../identity/identity.yaml
+  - ../lgy-iac-web/lgy-iac-web.yaml
 namespace: dts-legacy
