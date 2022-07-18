@@ -4,6 +4,7 @@ resources:
 - ../../../apps/flux-system/ptlsbox/base
 - ../../../apps/admin/base/kustomize.yaml
 - ../../../apps/azure-devops/base/kustomize.yaml
+- ../../../apps/netbox/base/kustomize.yaml
 
 patches:
 - path: ../../../apps/base/kustomize.yaml
