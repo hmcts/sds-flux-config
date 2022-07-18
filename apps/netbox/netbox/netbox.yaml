@@ -5,6 +5,7 @@ metadata:
   name: netbox
   namespace: netbox
 spec:
+  timeout: "360"
   releaseName: netbox
   chart:
     spec:
