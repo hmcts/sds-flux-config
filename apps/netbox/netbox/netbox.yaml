@@ -7,9 +7,13 @@ metadata:
 spec:
   releaseName: netbox
   chart:
-    git: git@github.com:hmcts/sds-flux-config
-    path: k8s/charts/netbox-chart
-    ref: master
+    spec:
+      chart: ./k8s/release/mi/mi-azure-functions
+      sourceRef:
+        kind: GitRepository
+        name: flux-config
+        namespace: flux-system
+      interval: 1m
   values:
     ingress:
       enabled: true
