@@ -7,6 +7,9 @@ resources:
   - ../../kured/ptlsbox/kured-values.enc.yaml
   - ../../../rbac/reader-clusterrole.yaml
 
+patchesStrategicMerge:
+  - ../../traefik2/prod/secret-provider.yaml
+
 patches:
   - path: ../../aad-pod-identity/ptlsbox/azure-identity-patch.yaml
     target:
