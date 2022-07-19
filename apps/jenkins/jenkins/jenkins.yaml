@@ -16,7 +16,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: jenkins
-        namespace: admin
+        namespace: jenkins
   values:
     controller:
       # Used for label app.kubernetes.io/component
