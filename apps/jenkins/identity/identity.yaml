@@ -1,4 +1,4 @@
-apiVersion: "aadpodidentity.k8s.io/v1"
+apiVersion: aadpodidentity.k8s.io/v1
 kind: AzureIdentity
 metadata:
   name: jenkins
@@ -7,7 +7,7 @@ spec:
   type: 0
 
 ---
-apiVersion: "aadpodidentity.k8s.io/v1"
+apiVersion: aadpodidentity.k8s.io/v1
 kind: AzureIdentityBinding
 metadata:
   name: jenkins-binding
