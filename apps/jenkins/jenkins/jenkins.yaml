@@ -10,9 +10,13 @@ spec:
     timeout: 600s
   timeout: 600s
   chart:
-    repository: https://charts.jenkins.io
-    name: jenkins
-    version: 3.11.8
+    spec:
+      chart: jenkins
+      version: 3.11.8
+      sourceRef:
+        kind: HelmRepository
+        name: jenkins
+        namespace: admin
   values:
     controller:
       # Used for label app.kubernetes.io/component
@@ -189,32 +193,32 @@ spec:
                       - string:
                           scope: GLOBAL
                           id: sonarcloud-api-token
-                          secret: '${sonarcloud-api-token}'
+                          secret: '$${sonarcloud-api-token}'
                           description: SonarCloud API token
                       - string:
                           scope: GLOBAL
                           id: slack-token
-                          secret: '${slack-token}'
+                          secret: '$${slack-token}'
                           description: Slack token
                       - usernamePassword:
                           description: "SSH credentials for Jenkins agents"
                           id: "vm_agent_creds"
-                          password: "${jenkins-agent-password}"
+                          password: "$${jenkins-agent-password}"
                           scope: GLOBAL
                           username: "jenkinsssh"
                       - string:
                           description: "Read/Write Key To Publish CosmosDB Metrics"
                           id: "COSMOSDB_TOKEN_KEY"
                           scope: GLOBAL
-                          secret: "${cosmosdb-token-key}"
+                          secret: "$${cosmosdb-token-key}"
                       - usernamePassword:
                           description: "Username and password for the OWASP vulnerability database"
                           id: "owasp-db-login"
-                          password: "${OWASPDb-Password}"
+                          password: "$${OWASPDb-Password}"
                           scope: GLOBAL
                           username: "owasp_administrator"
                       - sauce:
-                          apiKey: "${sauce-access-key}"
+                          apiKey: "$${sauce-access-key}"
                           description: "Sauce Labs Reform Key"
                           id: "reform_tunnel"
                           scope: GLOBAL
@@ -222,7 +226,7 @@ spec:
                           restEndpoint: "https://eu-central-1.saucelabs.com/"
                       - azureImds:
                           azureEnvName: "Azure"
-                          subscriptionId: "${subscription-id}"
+                          subscriptionId: "$${subscription-id}"
                           description: "Jenkins Azure identity"
                           id: "jenkins-managed-identity"
                           scope: GLOBAL
@@ -230,13 +234,13 @@ spec:
                           appID: "52960"
                           description: "GitHub APP Key - CNP"
                           id: "hmcts-jenkins-cnp"
-                          privateKey: "${hmcts-jenkins-cnp-ghapp}"
+                          privateKey: "$${hmcts-jenkins-cnp-ghapp}"
                       - azureCosmosDB:
                           credentialsId: "jenkins-managed-identity"
                           id: "cosmos-connection"
                           preferredRegion: "UK South"
                           scope: GLOBAL
-                          url: "https://${pipeline-metrics-account-name}.documents.azure.com:443/"
+                          url: "https://$${pipeline-metrics-account-name}.documents.azure.com:443/"
           jobs: |
             jobs:
               - url: https://raw.githubusercontent.com/hmcts/sds-jenkins-config/master/jobdsl/organisations.groovy
