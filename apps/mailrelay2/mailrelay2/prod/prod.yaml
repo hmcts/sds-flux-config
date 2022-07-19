@@ -36,8 +36,8 @@ spec:
         name: "prod-in"
         objectName: "prod-in-mailrelay-platform-hmcts-net"
       outboundCert:
-        name: "prod"
-        objectName: "prod-mailrelay-platform-hmcts-net"
+        name: "prod-in"
+        objectName: "prod-in-mailrelay-platform-hmcts-net"
 
     volumeClaim:
       storageClass: "managed-premium"
