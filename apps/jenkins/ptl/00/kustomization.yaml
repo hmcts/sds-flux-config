@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../base
+
+patchesStrategicMerge:
+  - ../../jenkins/ptl/disk.yaml
+  - ../../jenkins/ptl/jenkins.yaml
+  - ../../identity/ptl.yaml
