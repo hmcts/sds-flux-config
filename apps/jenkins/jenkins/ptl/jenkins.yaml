@@ -141,36 +141,36 @@ spec:
                     name: HMI
                     recurse: true
                     title: Hearing Management Interface
-          #       - buildMonitor:
-          #           includeRegex: >-
-          #             ^HMCTS.*\/pre-.+\/master
-          #           name: PRE
-          #           recurse: true
-          #           title: Pre Recorded Evidence Dashboard
-          #       - buildMonitor:
-          #           includeRegex: >-
-          #             ^HMCTS.*\/tax-tribunals.*\/master
-          #           name: TT
-          #           recurse: true
-          #           title: Tax Tribunals Dashboard
-          #       - buildMonitor:
-          #           includeRegex: >-
-          #             ^HMCTS.*\/employment-tribunals.+\/master
-          #           name: ET
-          #           recurse: true
-          #           title: Employment Tribunals Dashboard                    
-          #       - buildMonitor:
-          #           includeRegex: >-
-          #             ^HMCTS.*\/help-with-fees.*\/master
-          #           name: HWF
-          #           recurse: true
-          #           title: Help with Fees
-          #       - buildMonitor:
-          #           includeRegex: >-
-          #             ^HMCTS.*\/c100.*\/master
-          #           name: C100
-          #           recurse: true
-          #           title: Child Arrangement Service Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/pre-.+\/master
+                    name: PRE
+                    recurse: true
+                    title: Pre Recorded Evidence Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/tax-tribunals.*\/master
+                    name: TT
+                    recurse: true
+                    title: Tax Tribunals Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/employment-tribunals.+\/master
+                    name: ET
+                    recurse: true
+                    title: Employment Tribunals Dashboard                    
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/help-with-fees.*\/master
+                    name: HWF
+                    recurse: true
+                    title: Help with Fees
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/c100.*\/master
+                    name: C100
+                    recurse: true
+                    title: Child Arrangement Service Dashboard
           #       - buildMonitor:
           #           includeRegex: >-
           #             ^HMCTS.*\/libragob.*\/master
