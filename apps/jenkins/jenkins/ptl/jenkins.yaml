@@ -165,12 +165,12 @@ spec:
                     name: C100
                     recurse: true
                     title: Child Arrangement Service Dashboard
-          # - buildMonitor:
-          #     includeRegex: >-
-          #       ^HMCTS.*\/help-with-fees.*\/master
-          #     name: HWF
-          #     recurse: true
-          #     title: Help with Fees
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/help-with-fees.*\/master
+                    name: HWF
+                    recurse: true
+                    title: Help with Fees
           #       - buildMonitor:
           #           includeRegex: >-
           #             ^HMCTS.*\/libragob.*\/master
