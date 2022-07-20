@@ -112,77 +112,77 @@ spec:
                         value: sds-jenkins-config
                       - key: BUSINESS_AREA_TAG
                         value: Cross-Cutting
-          views: |
-            jenkins:
-              views:
-                - all:
-                    name: all
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/(sds-toffee-recipes-service|sds-toffee-frontend|sds-toffee-shared-infrastructure)\/master
-                    name: Platform
-                    recurse: true
-                    title: Platform
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/(pip|pih)-.+\/master
-                    name: PIP
-                    recurse: true
-                    title: Publishing & Information Dashboard
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/vh-.+\/master
-                    name: VH
-                    recurse: true
-                    title: Video Hearings Dashboard
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/hmi-.+\/master
-                    name: HMI
-                    recurse: true
-                    title: Hearing Management Interface
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/pre-.+\/master
-                    name: PRE
-                    recurse: true
-                    title: Pre Recorded Evidence Dashboard
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/tax-tribunals.*\/master
-                    name: TT
-                    recurse: true
-                    title: Tax Tribunals Dashboard
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/employment-tribunals.+\/master
-                    name: ET
-                    recurse: true
-                    title: Employment Tribunals Dashboard                    
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/help-with-fees.*\/master
-                    name: HWF
-                    recurse: true
-                    title: Help with Fees
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/c100.*\/master
-                    name: C100
-                    recurse: true
-                    title: Child Arrangement Service Dashboard
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/libragob.*\/master
-                    name: Libra GoB
-                    recurse: true
-                    title: Libra Green on Black Dashboard
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/lgy-.*\/master
-                    name: Legacy
-                    recurse: true
-                    title: DTS Legacy Apps
+          # views: |
+          #   jenkins:
+          #     views:
+          #       - all:
+          #           name: all
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/(sds-toffee-recipes-service|sds-toffee-frontend|sds-toffee-shared-infrastructure)\/master
+          #           name: Platform
+          #           recurse: true
+          #           title: Platform
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/(pip|pih)-.+\/master
+          #           name: PIP
+          #           recurse: true
+          #           title: Publishing & Information Dashboard
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/vh-.+\/master
+          #           name: VH
+          #           recurse: true
+          #           title: Video Hearings Dashboard
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/hmi-.+\/master
+          #           name: HMI
+          #           recurse: true
+          #           title: Hearing Management Interface
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/pre-.+\/master
+          #           name: PRE
+          #           recurse: true
+          #           title: Pre Recorded Evidence Dashboard
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/tax-tribunals.*\/master
+          #           name: TT
+          #           recurse: true
+          #           title: Tax Tribunals Dashboard
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/employment-tribunals.+\/master
+          #           name: ET
+          #           recurse: true
+          #           title: Employment Tribunals Dashboard                    
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/help-with-fees.*\/master
+          #           name: HWF
+          #           recurse: true
+          #           title: Help with Fees
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/c100.*\/master
+          #           name: C100
+          #           recurse: true
+          #           title: Child Arrangement Service Dashboard
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/libragob.*\/master
+          #           name: Libra GoB
+          #           recurse: true
+          #           title: Libra Green on Black Dashboard
+          #       - buildMonitor:
+          #           includeRegex: >-
+          #             ^HMCTS.*\/lgy-.*\/master
+          #           name: Legacy
+          #           recurse: true
+          #           title: DTS Legacy Apps
           authentication: |
             jenkins:
               securityRealm:
