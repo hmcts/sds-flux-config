@@ -171,18 +171,18 @@ spec:
                     name: HWF
                     recurse: true
                     title: Help with Fees
-          #       - buildMonitor:
-          #           includeRegex: >-
-          #             ^HMCTS.*\/libragob.*\/master
-          #           name: Libra GoB
-          #           recurse: true
-          #           title: Libra Green on Black Dashboard
-          #       - buildMonitor:
-          #           includeRegex: >-
-          #             ^HMCTS.*\/lgy-.*\/master
-          #           name: Legacy
-          #           recurse: true
-          #           title: DTS Legacy Apps
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/libragob.*\/master
+                    name: Libra GoB
+                    recurse: true
+                    title: Libra Green on Black Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/lgy-.*\/master
+                    name: Legacy
+                    recurse: true
+                    title: DTS Legacy Apps
           authentication: |
             jenkins:
               securityRealm:
