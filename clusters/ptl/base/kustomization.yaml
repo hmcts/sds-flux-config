@@ -6,6 +6,7 @@ resources:
 - ../../../apps/azure-devops/base/kustomize.yaml
 - ../../../apps/monitoring/base/kustomize.yaml
 - ../../../apps/netbox/base/kustomize.yaml
+- ../../../apps/jenkins/base/kustomize.yaml
 
 patches:
 - path: ../../../apps/base/kustomize.yaml
