@@ -5,6 +5,10 @@ metadata:
   name: jenkins
   namespace: jenkins
 spec:
+  chart:
+    spec:
+      chart: jenkins
+      version: 3.11.8
   values:
     controller:
       ingress:
@@ -184,8 +188,8 @@ spec:
               securityRealm:
                 azure:
                   cacheDuration: 3600
-                  clientId: "${aad-auth-app-id}"
-                  clientSecret: "${aad-auth-client-secret}"
+                  clientId: "$${aad-auth-app-id}"
+                  clientSecret: "$${aad-auth-client-secret}"
                   tenant: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
           location: |
             unclassified:
