@@ -1,28 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
-- ../../../release/admin/kube-slack
-- ../../../release/admin/kured
-- ../../../release/admin/secrets-csi-driver
-- ../../../namespaces/admin/aad-pod-identity
-- ../../../namespaces/admin/traefik2
-- ../../../namespaces/kube-system/aad-pod-identity
 - ../../../namespaces/jenkins
 - ../../../namespaces/netbox
-- ../../../../apps/rbac/reader-clusterrole.yaml
 
 patchesStrategicMerge:
-
-#kube-slack patch
-- ../../../release/admin/kube-slack/patches/ptl/cluster-00/kube-slack.yaml
-
-#traefik2 patch
-- ../../../namespaces/admin/traefik2/patches/ptl/secret-provider.yaml
-- ../../../namespaces/admin/traefik2/patches/ptl/cluster-00/traefik2.yaml
-
-#kured patch
-- ../../../release/admin/kured/patches/ptl/cluster-00/kured.yaml
-
 # netbox patch
 - ../../../namespaces/netbox/netbox/patches/ptl/cluster-00/netbox.yaml
 - ../../../namespaces/netbox/netbox/patches/ptl/cluster-00/traefik-netbox.yaml
