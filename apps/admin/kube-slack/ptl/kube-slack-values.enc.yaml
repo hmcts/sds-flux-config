@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+    values.yaml: ENC[AES256_GCM,data:ud8vCdgWMl1aDlbKINfHo4ht5ijaWzSJFP4hjg0xoS9he2tXCJIK2fIO72IaLnnT+0YQSNGgnkAupIiP8VOuzU/J1QLgz3ogsfTZ0Qz4+ruSOXDvc0HVBHBKvZAJ154ctGXL8b6S8gBtJ5vh0lKltapeHARIqdyRv8Tin3ncJ4VcBR2g,iv:eRJZmauP17ok5DI6/YTy11mzRihYdiezHSr8tOR49Og=,tag:CWnQ2Rth5UrEdSr+54y7UQ==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: kube-slack-values
+    namespace: admin
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssdsptl.vault.azure.net
+          name: sops-key
+          version: b047792919f74e6c875ba3a8945ed7a9
+          created_at: "2022-07-20T10:27:06Z"
+          enc: CGEO8PO5Og_ZRJTk6RUStvcunTtSqcVJJdS4YIULBZLjJok63IX3mQYeJPjkPAITVEahJtlwDbX22lH9EafVzT3sNQ0keRm2Lq_PI3D0kTmHNPmKdYzDeZT0aIjNRHKN1EH3dGPFBnkn4YaiwNoS-_qpmXOssHNP05xI9cWw6LZgolX1XOsOTbxClmrt1jjF24qwPpN8ySaykP9-1ytP8n75JmCfwWoeHcILcJlqqd22WbOKHMgFSdi1BFqIfbyJWRlYvS4WuFL7s5JTbOGgKhCL0M9JyU81cVDmgMsTeOlN8-m1etrBj9wuht3uDh8GJc3eK5L2Q-o1HbU1UBNhyQ
+    hc_vault: []
+    age: []
+    lastmodified: "2022-07-20T10:27:08Z"
+    mac: ENC[AES256_GCM,data:k7H5ADM4KvHC6WywuP94/b+5RA2E869LROOZalFCVJR7OChnUM9lq0tPP4Mw06W7+22nePK2SvGLWmyTJrb08IMwEdJqyoMYJs4otvkMQwgESSaPN+G01U84m+RZJgNP0xZj+gDvYJpB0CL6SDuDdfb7BkA49FUhw3x9tDfAMw4=,iv:D6qICI5Jcy/WzT6Fr5ivvr7LIypqrDxZDSc3JlLCimE=,tag:/jGK0eDaQItnz5eI2j2JXA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
