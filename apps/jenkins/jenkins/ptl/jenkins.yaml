@@ -123,24 +123,24 @@ spec:
                     name: Platform
                     recurse: true
                     title: Platform
-          #       - buildMonitor:
-          #           includeRegex: >-
-          #             ^HMCTS.*\/(pip|pih)-.+\/master
-          #           name: PIP
-          #           recurse: true
-          #           title: Publishing & Information Dashboard
-          #       - buildMonitor:
-          #           includeRegex: >-
-          #             ^HMCTS.*\/vh-.+\/master
-          #           name: VH
-          #           recurse: true
-          #           title: Video Hearings Dashboard
-          #       - buildMonitor:
-          #           includeRegex: >-
-          #             ^HMCTS.*\/hmi-.+\/master
-          #           name: HMI
-          #           recurse: true
-          #           title: Hearing Management Interface
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/(pip|pih)-.+\/master
+                    name: PIP
+                    recurse: true
+                    title: Publishing & Information Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/vh-.+\/master
+                    name: VH
+                    recurse: true
+                    title: Video Hearings Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/hmi-.+\/master
+                    name: HMI
+                    recurse: true
+                    title: Hearing Management Interface
           #       - buildMonitor:
           #           includeRegex: >-
           #             ^HMCTS.*\/pre-.+\/master
