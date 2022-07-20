@@ -3,8 +3,6 @@ kind: Kustomization
 bases:
 - ../../../namespaces/jenkins
 
-patchesStrategicMerge:
-
 - ../../../namespaces/jenkins/patches/ptl/cluster-00/disk.yaml
 - ../../../namespaces/jenkins/patches/ptl/cluster-00/identity.yaml
 - ../../../namespaces/jenkins/patches/ptl/cluster-00/jenkins.yaml
