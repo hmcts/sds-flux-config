@@ -158,19 +158,19 @@ spec:
                       ^HMCTS.*\/employment-tribunals.+\/master
                     name: ET
                     recurse: true
-                    title: Employment Tribunals Dashboard                    
+                    title: Employment Tribunals Dashboard
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS.*\/help-with-fees.*\/master
-                    name: HWF
+                      ^HMCTS.*\/c100.*\/master
+                    name: C100
                     recurse: true
-                    title: Help with Fees
+                    title: Child Arrangement Service Dashboard
           # - buildMonitor:
           #     includeRegex: >-
-          #       ^HMCTS.*\/c100.*\/master
-          #     name: C100
+          #       ^HMCTS.*\/help-with-fees.*\/master
+          #     name: HWF
           #     recurse: true
-          #     title: Child Arrangement Service Dashboard
+          #     title: Help with Fees
           #       - buildMonitor:
           #           includeRegex: >-
           #             ^HMCTS.*\/libragob.*\/master
