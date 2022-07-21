@@ -9,7 +9,7 @@ spec:
   values:
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay # {"$imagepolicy": "flux-system:mailrelay:name"}
-      tag: v0.2.9 # {"$imagepolicy": "flux-system:mailrelay:tag"}
+      tag: v0.2.14 # {"$imagepolicy": "flux-system:mailrelay:tag"}
       pullPolicy: IfNotPresent
     service:
       type: LoadBalancer
