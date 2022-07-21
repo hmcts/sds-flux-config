@@ -1,9 +1,0 @@
-apiVersion: "v1"
-kind: "PersistentVolume"
-metadata:
-  name: "jenkins"
-  namespace: "jenkins"
-spec:
-  azureDisk:
-    diskName: sds-jenkins-ptl-disk
-    diskURI: /subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/disks-ptl-rg/providers/Microsoft.Compute/disks/sds-jenkins-ptl-disk
