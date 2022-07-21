@@ -12,6 +12,8 @@ resources:
   - ../../../apps/toffee/base/kustomize.yaml
   - ../../../apps/vh/base/kustomize.yaml
   - ../../../apps/dts-legacy/base/kustomize.yaml
+  - ../../../apps/kube-system/base/kustomize.yaml
+
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
