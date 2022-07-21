@@ -62,16 +62,3 @@ kustomizepaths=()
         done
 
 done
-
-for ENVIRONMENT in $(echo ${ENVIRONMENTS}); do
-kustomizepaths=()
-
-        for path in "${kustomizepaths[@]}"; do
-        ./kustomize build --load_restrictor none $path >/dev/null
-        if [ $? -eq 1 ]
-        then
-        echo "Kustomize failing for env $path" && exit 1
-        fi
-        done
-
-done
