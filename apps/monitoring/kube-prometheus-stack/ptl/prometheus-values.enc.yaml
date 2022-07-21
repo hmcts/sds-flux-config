@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+  values.yaml: ENC[AES256_GCM,data:dY3S8GtSct2l4uDN54hffRnTvkFocKZZh4lD21bXjuWndbXstn4BaYKBTyte9iydznx5FZLwECBcKqsV0se44RQ7YBmheBoYZlKhaas5vuf9h50KBcpPs8U7a5TUkNBY4BTuiDrqg3+Qr1tKopvpPmDz3+gbMg852PN8/mTDu4ftcSCS4lA1oY5mVmyR0fzO8R4T79KmNnfHFPHEbA7EnoGQeqOniigmdmeLOboWL9wOvIHaTSdcK0r9xTY=,iv:ZTttclRsP0V0gWLAL6UP8LfktDCmj2G2y8+Mb+xJygU=,tag:pPPtHIZbDYFJ03phrkxGjw==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: prometheus-values
+  namespace: monitoring
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssdsptl.vault.azure.net
+      name: sops-key
+      version: b047792919f74e6c875ba3a8945ed7a9
+      created_at: "2022-07-20T14:33:24Z"
+      enc: NRSirC6l1LSj2ukTmoyrOolH12qxdGBn6_3oXsM2nqI5gxm96aPuVHMLNEAh0s4LaTwRibIhUGeYzQvBW8nZopNDEqS8c550VGix25o23S5FaW6xZqp3yGCsctxyNa55zSe7AyZqQGAzJ-Zrre2j57CrjTFfMMvbwQKbzuT1SNt-WTcdldWBD5rQNDzNc4Av7255U5Pvp45X_DBBNWlCSFYoJYyjdeuiwpFSS9s_haFntgm36wkzdVeNjZxJrUEDeb76SQOevAdzye9Gv7sheZWNpRA1UWoSKycv_5Ai8rsIUFsOcVGsEgHipIe4hnecdFGkc_pW24BgkKpVjas1mQ
+  hc_vault: []
+  age: []
+  lastmodified: "2022-07-20T14:33:25Z"
+  mac: ENC[AES256_GCM,data:PkTx0Wd74qD41H73fqFy06UwAHRGhhNJRKI86nP7F+5bF5+gbfjBoqqRiUBqTOMqnb0aLJ34ky8T9oappuInp7JFt6UOmv7z14FgnGjnZxoQhRJPe0q+BErlaFcmJ8CivDuEYpfio9xrESHO8O9Xqw6nfZpWb82DV21N6Og25eQ=,iv:kYSdodQB8gG5Bsp/yv9CMgKeoirV0RlrLdRENMcCFBw=,tag:fIGWgB5phwEgx7+RdGfNPA==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3

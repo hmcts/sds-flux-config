@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: admin
+resources:
+  - ../../base
+  - ../../kube-slack/ptl/kube-slack-values.enc.yaml
+  - ../../kured/ptl/kured-values.enc.yaml
+  - ../../../rbac/reader-clusterrole.yaml
+
+patchesStrategicMerge:
+  - ../../traefik2/ptl/secret-provider.yaml
+
+patches:
+  - path: ../../aad-pod-identity/ptl/azure-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: aks-pod-identity-mi

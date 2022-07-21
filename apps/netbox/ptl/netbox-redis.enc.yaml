@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+  redis-password: ENC[AES256_GCM,data:IkhWjHA0EszjGFeQiLZQm8E2cFqDykXKbF0XXHmi9uPOdd/ThViLmWKTy7TO6QhOyBJxteYUCyTtfVTc,iv:lysk8kOZQluatqBScW3mshry6gtEvb0OzGl7oZh0LOg=,tag:flELK8xfLsNSWU8f3Ev8ew==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: netbox-redis
+  namespace: netbox
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssdsptl.vault.azure.net
+      name: sops-key
+      version: b047792919f74e6c875ba3a8945ed7a9
+      created_at: "2022-07-20T10:30:25Z"
+      enc: BP0gSHN-JfgHKvuRFJ5tVO5Xv7DxAmMIZBRQheSKy-oRXMcz1PY3W1wgnDazukPpRf7ITrywHJTlwJO0RO587730ry_iGHscWp0RYOcuxYQYyyeM5kAiXmHqPn8mQ6nycreIVKlQsCqrbRJbvBUXijSS-CxXYcow4T1tsfd2xO6i3H8z-mVdkXu5plO9HjpX1pwFV5prpWmlAz8v-XDrca8fl5Qh0Zwoeh-g_I0kLT9ocn04o-1WmtdjkwmAL6Ma9Fk-hU5k5HZiOis-N7lBYdROhoLLMMP3OHZYAJLZU52folunwPa2P8Zfx8gDPB5OW00JaSrurR1mAN0e7PoO2A
+  hc_vault: []
+  age: []
+  lastmodified: "2022-07-20T10:30:26Z"
+  mac: ENC[AES256_GCM,data:7LBt74hIWFnFHKNCMsUpqvzCKGrrPZ7EWgPrNEGS52N23x2f/XcHlOLH5gAoznV1H/cO/IbBC8/5wLdcYs7ph1wNjye7whfZjfQSsWO7SZPwGcKv2ADwFAQYPC3gAaMXBtDCHk0dflFsyLbKvUfrPZPAwl9kXrCdfCHWoftpjbk=,iv:Ab6nAbNGxF4XFvaRpeYD4RWqJGci42nARyuBKOR57wI=,tag:syp/5H1axR3SgjY03YDchg==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3
