@@ -18,4 +18,4 @@ patches:
         # Add this if you are using aad pod identity with managed identity
       - op: add 
         path: /spec/template/metadata/labels/aadpodidbinding
-        value: aks-pod-identity-mi
+        value: aks-kubelet-identity-mi

@@ -8,5 +8,7 @@ resources:
   - mic-exception.yaml
   - aks-identity.yaml
   - aks-binding.yaml
+  - aks-kubelet-identity.yaml
+  - aks-kubelet-binding.yaml
 patchesStrategicMerge:
   - aad-pod-id-patch.yaml
