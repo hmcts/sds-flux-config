@@ -7,20 +7,8 @@ spec:
   releaseName: vh-admin-web
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/admin-web:prod-07727e8-202207080320 #{"$imagepolicy": "flux-system:vh-admin-web-prod"}
       ingressHost: vh-admin-web.platform.hmcts.net
-      environment:
-        AZUREAD__POSTLOGOUTREDIRECTURI: https://vh-admin-web.staging.platform.hmcts.net/logout
-        AZUREAD__REDIRECTURI: https://vh-admin-web.staging.platform.hmcts.net/home
-        VHSERVICES__BOOKINGSAPIRESOURCEID: https://vh-bookings-api.staging.platform.hmcts.net
-        VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
-        VHSERVICES__NOTIFICATIONAPIRESOURCEID: https://vh-notification-api.staging.platform.hmcts.net
-        VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.staging.platform.hmcts.net/
-        VHSERVICES__USERAPIRESOURCEID: https://vh-user-api.staging.platform.hmcts.net
-        VHSERVICES__USERAPIURL: https://vh-user-api.staging.platform.hmcts.net/
-        VHSERVICES__VIDEOAPIRESOURCEID: https://vh-video-api.staging.platform.hmcts.net
-        VHSERVICES__VIDEOAPIURL: https://vh-video-api.staging.platform.hmcts.net/
-        VHSERVICES__VIDEOWEBURL: https://vh-video-web.staging.platform.hmcts.net/
+    image: sdshmctspublic.azurecr.io/vh/admin-web:prod-07727e8-202207080320 #{"$imagepolicy": "flux-system:vh-admin-web-prod"}
   chart:
     spec:
       chart: ./stable/vh-admin-web/prod
