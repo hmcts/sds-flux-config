@@ -5,3 +5,20 @@ resources:
 
 patchesStrategicMerge:
 - ../../../apps/flux-system/sbox/01/kustomize.yaml
+- |-
+  apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+  kind: Kustomization
+  metadata:
+    name: csi-crd
+    namespace: flux-system
+  $patch: delete
+
+patchesJSON6902:
+- target:
+    group: kustomize.toolkit.fluxcd.io
+    version: v1beta2
+    kind: Kustomization
+    name: admin
+  patch: |-
+    - op: remove
+      path: /spec/dependsOn/0
