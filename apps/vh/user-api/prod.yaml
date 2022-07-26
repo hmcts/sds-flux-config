@@ -9,11 +9,6 @@ spec:
     java:
       ingressHost: vh-user-api.platform.hmcts.net
     image: sdshmctspublic.azurecr.io/vh/user-api:staging-52f7c47-202207070302 #{"$imagepolicy": "flux-system:vh-user-api-prod"}
-    environment: "prod"
-    resourceGroup: "vh-infra-core-prod"
-    subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
-    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    managedIdentityClientId: "df0c1ced-b6cb-4fe0-a4e4-9bc48181435c"
   chart:
     spec:
       chart: ./stable/vh-user-api/prod
