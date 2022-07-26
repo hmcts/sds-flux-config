@@ -21,6 +21,9 @@ spec:
     deployment:
       podLabels:
         aadpodidbinding: traefik
+    ingressClass:
+      enabled: true
+      isDefaultClass: true
       additionalVolumes:
         - name: traefik-default-cert
           csi:
