@@ -18,12 +18,12 @@ spec:
         namespace: admin
   interval: 1m
   values:
-    deployment:
-      podLabels:
-        aadpodidbinding: traefik
     ingressClass:
       enabled: true
       isDefaultClass: true
+    deployment:
+      podLabels:
+        aadpodidbinding: traefik
       additionalVolumes:
         - name: traefik-default-cert
           csi:
