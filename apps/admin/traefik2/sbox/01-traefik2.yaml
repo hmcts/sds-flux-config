@@ -8,3 +8,7 @@ spec:
     service:
       spec:
         loadBalancerIP: "10.140.31.250"
+    ingressClass:
+      # true is not unit-testable yet, pending https://github.com/rancher/helm-unittest/pull/12
+      enabled: true
+      isDefaultClass: true
