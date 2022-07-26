@@ -6,6 +6,22 @@ resources:
   - ../../base/image-update-automation.yaml
   - git-credentials.enc.yaml
   - ../../automation
+  - ../../base/image-automation-components.yaml
+patches:
+  - target:
+      version: v1
+      group: apps
+      kind: Deployment
+      name: image-reflector-controller
+      namespace: flux-system
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/args/-
+        value: --azure-autologin-for-acr
+        # Add this if you are using aad pod identity with managed identity
+      - op: add 
+        path: /spec/template/metadata/labels/aadpodidbinding
+        value: aks-kubelet-identity-mi
 
 patchesStrategicMerge:
   - ../../base/patches/image-automation-components-patch.yaml
