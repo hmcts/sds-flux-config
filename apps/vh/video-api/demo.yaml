@@ -9,8 +9,3 @@ spec:
     java:
       ingressHost: vh-video-api.demo.platform.hmcts.net
     image: sdshmctspublic.azurecr.io/vh/video-api:staging-9abf483d3945d40e453754ceb58d16226b808bf7-202205260824-1 #{"$imagepolicy": "flux-system:vh-video-api"}
-    environment: "demo"
-    resourceGroup: "vh-infra-core-demo"
-    subscriptionId: "c68a4bed-4c3d-4956-af51-4ae164c1957c"
-    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    managedIdentityClientId: "998f8527-42c6-4442-abb7-21da200f1197"
