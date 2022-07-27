@@ -10,6 +10,13 @@ namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/dev/secret-provider.yaml
   - ../../stg/keda-identity.yaml
+  - |-
+    apiVersion: helm.toolkit.fluxcd.io/v2beta1
+    kind: HelmRelease
+    metadata:
+      name: csi-secrets-store-provider-azure
+      namespace: admin
+    $patch: delete
 patches:
   - path: ../../aad-pod-identity/dev/azure-identity-patch.yaml
     target:
