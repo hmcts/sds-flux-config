@@ -17,3 +17,9 @@ patches:
       version: v1
       kind: AzureIdentity
       name: aks-pod-identity-mi
+  - path: ../../aad-pod-identity/prod/azure-kubelet-identity-patch.yaml
+    target:
+      group: aadpodidentity.k8s.io
+      version: v1
+      kind: AzureIdentity
+      name: aks-kubelet-identity-mi
