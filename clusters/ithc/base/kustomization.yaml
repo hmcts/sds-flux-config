@@ -9,13 +9,12 @@ resources:
   - ../../../apps/toffee/base/kustomize.yaml
   - ../../../apps/neuvector/base/kustomize.yaml
   - ../../../apps/kube-system/base/kustomize.yaml
-
+  - ../../../apps/c100/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
       kind: Kustomization
       annotationSelector: hmcts.github.com/kustomize-defaults != disabled
-
 patchesStrategicMerge:
   - |-
     apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
@@ -24,7 +23,6 @@ patchesStrategicMerge:
       name: csi-crd
       namespace: flux-system
     $patch: delete
-
 patchesJSON6902:
   - target:
       group: kustomize.toolkit.fluxcd.io
