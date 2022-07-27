@@ -1,23 +1,23 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../../../apps/flux-system/prod/base
-- ../../../apps/monitoring/base/kustomize.yaml
-- ../../../apps/dynatrace/base/kustomize.yaml
-- ../../../apps/admin/base/kustomize.yaml
-- ../../../apps/pip/base/kustomize.yaml
-- ../../../apps/toffee/base/kustomize.yaml
-- ../../../apps/juror-digital/base/kustomize.yaml
-- ../../../apps/mailrelay2/base/kustomize.yaml
-- ../../../apps/mailrelay/base/kustomize.yaml
-- ../../../apps/azure-devops/base/kustomize.yaml
-- ../../../apps/mi/base/kustomize.yaml
-- ../../../apps/neuvector/base/kustomize.yaml
-- ../../../apps/vh/base/kustomize.yaml
-- ../../../apps/kube-system/base/kustomize.yaml
-
+  - ../../../apps/flux-system/prod/base
+  - ../../../apps/monitoring/base/kustomize.yaml
+  - ../../../apps/dynatrace/base/kustomize.yaml
+  - ../../../apps/admin/base/kustomize.yaml
+  - ../../../apps/pip/base/kustomize.yaml
+  - ../../../apps/toffee/base/kustomize.yaml
+  - ../../../apps/juror-digital/base/kustomize.yaml
+  - ../../../apps/mailrelay2/base/kustomize.yaml
+  - ../../../apps/mailrelay/base/kustomize.yaml
+  - ../../../apps/azure-devops/base/kustomize.yaml
+  - ../../../apps/mi/base/kustomize.yaml
+  - ../../../apps/neuvector/base/kustomize.yaml
+  - ../../../apps/vh/base/kustomize.yaml
+  - ../../../apps/kube-system/base/kustomize.yaml
+  - ../../../apps/c100/base/kustomize.yaml
 patches:
-- path: ../../../apps/base/kustomize.yaml
-  target:
-    kind: Kustomization 
-    annotationSelector: hmcts.github.com/kustomize-defaults != disabled
+  - path: ../../../apps/base/kustomize.yaml
+    target:
+      kind: Kustomization
+      annotationSelector: hmcts.github.com/kustomize-defaults != disabled
