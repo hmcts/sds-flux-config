@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: flux-system
 resources:
   - registry-credential-sync/sdshmctspublic/kustomize.yaml
-  - registry-credential-sync/sdshmctsprivate/kustomize.yaml
   - registry-credential-sync/hmctspublic/kustomize.yaml
   - registry-credential-sync/hmctsprivate/kustomize.yaml
   - ../../toffee/automation
