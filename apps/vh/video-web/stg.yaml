@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-video-web
+  namespace: vh
+spec:
+  releaseName: vh-video-web
+  values:
+    java:
+      ingressHost: vh-video-web.staging.platform.hmcts.net
+      environment:
+        AZUREAD__POSTLOGOUTREDIRECTURI: https://vh-video-web.staging.platform.hmcts.net/logout
+        AZUREAD__REDIRECTURI: https://vh-video-web.staging.platform.hmcts.net/home
+        VHSERVICES__BOOKINGSAPIRESOURCEID: https://vh-bookings-api.staging.platform.hmcts.net
+        VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
+        VHSERVICES__USERAPIRESOURCEID: https://vh-user-api.staging.platform.hmcts.net
+        VHSERVICES__USERAPIURL: https://vh-user-api.staging.platform.hmcts.net/
+        VHSERVICES__VIDEOAPIRESOURCEID: https://vh-video-api.staging.platform.hmcts.net
+        VHSERVICES__VIDEOAPIURL: https://vh-video-api.staging.platform.hmcts.net/
+    image: sdshmctspublic.azurecr.io/vh/video-web:staging-d03bb10-202207220849 #{"$imagepolicy": "flux-system:vh-video-web"}
