@@ -6,7 +6,6 @@ resources:
   - ../../base/image-update-automation.yaml
   - git-credentials.enc.yaml
   - ../../automation
-  - ../../base/image-automation-components.yaml
 patches:
   - target:
       version: v1
