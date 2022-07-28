@@ -9,13 +9,6 @@ resources:
 patchesStrategicMerge:
   - ../../traefik2/sbox/secret-provider.yaml
   - ../../keda/sbox/identity.yaml
-  - |-
-    apiVersion: helm.toolkit.fluxcd.io/v2beta1
-    kind: HelmRelease
-    metadata:
-      name: csi-secrets-store-provider-azure
-      namespace: admin
-    $patch: delete
 
 patches:
   - path: ../../aad-pod-identity/sbox/azure-identity-patch.yaml
