@@ -9,6 +9,13 @@ resources:
 
 patchesStrategicMerge:
   - ../../traefik2/ptlsbox/secret-provider.yaml
+  - |-
+    apiVersion: helm.toolkit.fluxcd.io/v2beta1
+    kind: HelmRelease
+    metadata:
+      name: csi-secrets-store-provider-azure
+      namespace: admin
+    $patch: delete
 
 patches:
   - path: ../../aad-pod-identity/ptlsbox/azure-identity-patch.yaml
