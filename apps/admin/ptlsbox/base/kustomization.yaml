@@ -18,20 +18,6 @@ patchesStrategicMerge:
     $patch: delete
 
 patches:
-  - path: ../../aad-pod-identity/sbox/azure-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: aks-pod-identity-mi
-  - path: ../../aad-pod-identity/sbox/azure-kubelet-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: aks-kubelet-identity-mi
-
-patches:
   - path: ../../aad-pod-identity/ptlsbox/azure-identity-patch.yaml
     target:
       group: aadpodidentity.k8s.io
