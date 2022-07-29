@@ -8,6 +8,8 @@ spec:
   values:
     java:
       ingressHost: vh-test-api.demo.platform.hmcts.net
+      ingressClass: traefik-private
+      disableTraefikTls: false
       environment:
         SERVICES__TESTAPIRESOURCEID: http://vh-test-api.demo.platform.hmcts.net
     image: sdshmctspublic.azurecr.io/vh/test-api:staging-8017d13-202207121146 #{"$imagepolicy": "flux-system:vh-test-api"}
