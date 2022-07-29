@@ -8,6 +8,8 @@ spec:
   values:
     java:
       ingressHost: vh-notification-api.demo.platform.hmcts.net
+      ingressClass: traefik-private
+      disableTraefikTls: false
       environment:
         SERVICES__NOTIFICATIONAPIRESOURCEID: http://vh-notification-api.demo.platform.hmcts.net
     image: sdshmctspublic.azurecr.io/vh/notification-api:staging-e452db7-202207180303 #{"$imagepolicy": "flux-system:vh-notification-api"}
