@@ -3,12 +3,12 @@
 set -ex
 declare -A SUBMAP
 
-SUBMAP[aat]="DCD-CNP-DEV"
-SUBMAP[perftest]="DCD-CNP-QA"
-SUBMAP[demo]="DCD-CNP-DEV"
-SUBMAP[ithc]="DCD-CNP-QA"
-SUBMAP[prod]="DCD-CNP-Prod"
-SUBMAP[sbox]="DCD-CFT-Sandbox"
+SUBMAP[stg]="DTS-SHAREDSERVICES-STG"
+SUBMAP[test]="DTS-SHAREDSERVICES-TEST"
+SUBMAP[demo]="DTS-SHAREDSERVICES-DEMO"
+SUBMAP[ithc]="DTS-SHAREDSERVICES-ITHC"
+SUBMAP[prod]="DTS-SHAREDSERVICES-PROD"
+SUBMAP[sbox]="DTS-SHAREDSERVICES-SBOX"
 
 NAMESPACE="$1"
 SHORT_NAME="$2"
@@ -26,10 +26,10 @@ then
 fi
 
 MI_ENV=${ENV}
-if [ "${ENV}"  == "preview" ]
+if [ "${ENV}"  == "dev" ]
 then
-    MI_ENV="aat"
-    yq eval -i '.resources += "../../identity/identity.yaml"' apps/$NAMESPACE/preview/base/kustomization.yaml
+    MI_ENV="stg"
+    yq eval -i '.resources += "../../identity/identity.yaml"' apps/$NAMESPACE/dev/base/kustomization.yaml
 fi
 
 
