@@ -10,4 +10,4 @@ spec:
       ingressHost: vh-video-api.demo.platform.hmcts.net
       ingressClass: traefik-private
       disableTraefikTls: false
-    image: sdshmctspublic.azurecr.io/vh/video-api:staging-9abf483d3945d40e453754ceb58d16226b808bf7-202205260824-1 #{"$imagepolicy": "flux-system:vh-video-api"}
+    image: sdshmctspublic.azurecr.io/vh/video-api:staging-2e5bf08-202207291040 #{"$imagepolicy": "flux-system:vh-video-api"}

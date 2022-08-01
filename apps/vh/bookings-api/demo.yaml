@@ -10,4 +10,4 @@ spec:
       ingressHost: vh-bookings-api.demo.platform.hmcts.net
       ingressClass: traefik-private
       disableTraefikTls: false
-    image: sdshmctspublic.azurecr.io/vh/bookings-api:staging-e8c03b7-202207250213 #{"$imagepolicy": "flux-system:vh-bookings-api"}
+    image: sdshmctspublic.azurecr.io/vh/bookings-api:staging-cce9894-202207290329 #{"$imagepolicy": "flux-system:vh-bookings-api"}
