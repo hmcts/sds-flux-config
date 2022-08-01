@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-adf-shir
   values:
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:dev-6e951aa-20220801154334 #{"$imagepolicy": "flux-system:mi-adf-shir-dev"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-ab6e20b-20220531093946 #{"$imagepolicy": "flux-system:mi-adf-shir-dev"}
     secretsMountPath: ''
     environment: "dev"
     resourceGroup: "mi-dev-rg"
@@ -14,4 +14,4 @@ spec:
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     managedIdentityClientId: "47b18d2f-9a02-4f45-a87c-bacd17ea3583"
     keyVaultSecrets:
-      - mi-adf-auth-key
+    - mi-adf-auth-key
