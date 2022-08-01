@@ -47,7 +47,6 @@ metadata:
 spec:
   resourceID: $RESOURCE_ID
   clientID: $CLIENT_ID
-
 EOF
 ) > "apps/${NAMESPACE}/identity/${MI_ENV}.yaml"
 # -----------------------------------------------------------
