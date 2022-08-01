@@ -10,6 +10,8 @@ resources:
   - ../../pip/automation
   - ../../vh/automation
   - ../../dts-legacy/automation
+  - aks-kubelet-binding.yaml
+  - aks-kubelet-identity.yaml
 patches:
   - path: sdshmctspublic-image-repo.yaml
     target:
