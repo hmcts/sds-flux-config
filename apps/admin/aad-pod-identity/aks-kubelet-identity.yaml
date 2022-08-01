@@ -2,6 +2,6 @@ apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
   name: aks-kubelet-identity-mi
-  namespace: admin
+  namespace: flux-system
 spec:
   type: 0
