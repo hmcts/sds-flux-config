@@ -1,13 +1,15 @@
 apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImagePolicy
 metadata:
-  name: mi-adf-shir
+  name: mi-adf-shir-dev
+  annotations:
+    hmcts.github.com/prod-automated: disabled
 spec:
   imageRepositoryRef:
     name: mi-adf-shir
   filterTags:
-    extract: $ts
-    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
+    extract: '$ts'
+    pattern: '^dev-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
   policy:
     alphabetical:
       order: asc
