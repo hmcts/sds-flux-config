@@ -1,0 +1,9 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: lgy-iac
+  namespace: dts-legacy
+spec:
+  resourceID: "/subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourcegroups/managed-identities-stg-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/lgy-iac-stg-mi"
+  clientID: "9b535b4a-5abf-409d-89f7-f874cf059226"
+
