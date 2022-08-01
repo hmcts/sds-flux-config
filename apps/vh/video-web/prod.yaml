@@ -17,7 +17,7 @@ spec:
         VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
         VHSERVICES__VIDEOAPIRESOURCEID: https://vh-video-api.platform.hmcts.net
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
-    image: sdshmctspublic.azurecr.io/vh/video-web:prod-6f17593-202207250956 # {"$imagepolicy": "flux-system:vh-video-web-prod"}
+    image: sdshmctspublic.azurecr.io/vh/video-web:prod-c13fbd9-202207291122 # {"$imagepolicy": "flux-system:vh-video-web-prod"}
   chart:
     spec:
       chart: ./stable/vh-video-web/prod
