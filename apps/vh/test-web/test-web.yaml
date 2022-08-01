@@ -1,16 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: pip-publication-services
+  name: vh-test-web
 spec:
-  releaseName: pip-publication-services
+  interval: 10m
+  releaseName: vh-test-web
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/publication-services:prod-72527b2-20220801142256 # {"$imagepolicy": "flux-system:pip-publication-services"}
+      image: sdshmctspublic.azurecr.io/vh/test-web:staging-32c261e-202207290309 # {"$imagepolicy": "flux-system:vh-test-web"}
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/pip-publication-services
+      chart: ./stable/vh-test-web/non-prod
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
