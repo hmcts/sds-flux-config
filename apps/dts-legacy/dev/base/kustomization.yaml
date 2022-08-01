@@ -3,3 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
 namespace: dts-legacy
+patchesStrategicMerge:
+  - ../../identity/lgy-iac-identity.yaml
+  - ../../identity/stg.yaml
