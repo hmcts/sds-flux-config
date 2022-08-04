@@ -38,7 +38,14 @@ resources:
 namespace: $NAMESPACE
 EOF
 ) > "${APPS_DIR}/${NAMESPACE}/${ENVIRONMENT}/base/kustomization.yaml"
+
+if [[ ${ENVIRONMENT} != "prod" ]]; then
+  yq -i '.resources += "../../../rbac/nonprod-role.yaml"' "${APPS_DIR}/${NAMESPACE}/${ENVIRONMENT}/base/kustomization.yaml"
 fi
+
+fi
+
+
 
 export NAMESPACE_PATH="../../../apps/$NAMESPACE/base/kustomize.yaml"
 if [[ $(yq eval '.resources[] | ( . == env(NAMESPACE_PATH))' ${CLUSTERS_DIR}/${ENVIRONMENT}/base/kustomization.yaml) =~ "true" ]]; then
