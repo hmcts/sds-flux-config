@@ -41,3 +41,6 @@ roleRef:
   kind: Role
   name: nonprod-team-permissions
 subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: "${TEAM_AAD_GROUP_ID:=7bde62e7-b39f-487c-95c9-b4c794fdbb96}"
