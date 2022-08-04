@@ -45,8 +45,6 @@ fi
 
 fi
 
-
-
 export NAMESPACE_PATH="../../../apps/$NAMESPACE/base/kustomize.yaml"
 if [[ $(yq eval '.resources[] | ( . == env(NAMESPACE_PATH))' ${CLUSTERS_DIR}/${ENVIRONMENT}/base/kustomization.yaml) =~ "true" ]]; then
   echo "Reference to ${CLUSTERS_DIR}/${ENVIRONMENT}/base/kustomization.yaml already exists ignoring.."
