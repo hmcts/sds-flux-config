@@ -9,7 +9,7 @@ rules:
 - apiGroups: ['']
   resources: ['secrets']
   verbs: ['*']
-- apiGroups: ['helm.fluxcd.io']
+- apiGroups: ['helm.toolkit.fluxcd.io']
   resources: ['helmreleases']
   verbs: ['delete']
 - apiGroups: ['']
