@@ -8,16 +8,12 @@ clusters/ @hmcts/platform-operations
 
 # Production applications
 ## environment rules
-k8s/environments/prod/ @hmcts/production-apps-approvals
 clusters/prod/ @hmcts/production-apps-approvals
 
 ## Platform rules
 
-k8s/common/ @hmcts/platform-operations
-k8s/namespaces/ @hmcts/platform-operations
-k8s/**/*-overlay/ @hmcts/platform-operations
-k8s/namespaces/kube-system/ @hmcts/platform-operations
-k8s/namespaces/monitoring/ @hmcts/platform-operations
+apps/kube-system/ @hmcts/platform-operations
+apps/monitoring/ @hmcts/platform-operations
 tests/ @hmcts/platform-operations
 .github/  @hmcts/platform-operations
 bin/ @hmcts/platform-operations
@@ -28,12 +24,6 @@ bin/ @hmcts/platform-operations
 
 ### Platform Operations
 
-k8s/namespaces/admin/ @hmcts/platform-operations
-k8s/namespaces/azure-devops/ @hmcts/platform-operations
-k8s/namespaces/jenkins/ @hmcts/platform-operations
-k8s/namespaces/neuvector/ @hmcts/platform-operations
-k8s/namespaces/toffee/ @hmcts/platform-operations
-
 apps/admin/ @hmcts/platform-operations
 apps/azure-devops/ @hmcts/platform-operations
 apps/jenkins/ @hmcts/platform-operations
@@ -41,25 +31,20 @@ apps/neuvector/ @hmcts/platform-operations
 apps/toffee/ @hmcts/platform-operations
 
 ### HMI
-k8s/namespaces/hmi/ @hmcts/hmi
 apps/hmi/ @hmcts/hmi
 
 ### MI
-k8s/namespaces/mi/ @hmcts/mi
 apps/mi/ @hmcts/mi
 
 ### PIP
-k8s/namespaces/pip/ @hmcts/pip-admins
 apps/pip/rpe-send-letter-service/ @hmcts/pip-admins
 
 ## VH
-k8s/namespaces/vh/ @hmcts/vh-devops
 apps/vh/ @hmcts/vh-devops
 
 ### Next team
 
 ### Kustomization control
 
-k8s/namespaces/**/kustomization.yaml @hmcts/platform-operations
 apps/**/kustomization.yaml @hmcts/platform-operations
 apps/**/kustomize.yaml @hmcts/platform-operations
