@@ -12,9 +12,6 @@ rules:
 - apiGroups: ['helm.fluxcd.io']
   resources: ['helmreleases']
   verbs: ['delete']
-- apiGroups: ['helm.toolkit.fluxcd.io']
-  resources: ['helmreleases']
-  verbs: ['delete']
 - apiGroups: ['']
   resources: ['pods/exec']
   verbs: ['create']
@@ -46,4 +43,4 @@ roleRef:
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: Group
-  name: "989d52b1-e385-4914-aad9-25af8877d92b"
+  name: "${TEAM_AAD_GROUP_ID:=7bde62e7-b39f-487c-95c9-b4c794fdbb96}"
