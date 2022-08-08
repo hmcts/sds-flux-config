@@ -9,7 +9,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment
       app.kubernetes.io/name: mi-adf-shir-deployment
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-ab6e20b-20220531093946
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-ab6e20b-20220531093946 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     replicaCount: 4
     secretsMountPath: ''
     resourceGroup: "mi-prod-rg"

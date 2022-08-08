@@ -46,6 +46,10 @@ spec:
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: REGISTRY_NAME
                         value: sdshmctspublic
+                      - key: PTL_AKS_CLUSTER_NAME
+                        value: ss-ptl-00-aks
+                      - key: PTL_AKS_RESOURCE_GROUP
+                        value: ss-ptl-00-rg
                       - key: STG_AKS_CLUSTER_NAME
                         value: ss-stg-00-aks
                       - key: STG_AKS_RESOURCE_GROUP
@@ -66,6 +70,8 @@ spec:
                         value: ss-test-00-aks
                       - key: PERFTEST_AKS_RESOURCE_GROUP
                         value: ss-test-00-rg
+                      - key: AKS_PTL_SUBSCRIPTION_NAME
+                        value: DTS-SHAREDSERVICESPTL
                       - key: AKS_DEMO_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-DEMO
                       - key: AKS_ITHC_SUBSCRIPTION_NAME
@@ -88,6 +94,10 @@ spec:
                         value: jenkins-state
                       - key: TF_STATE_CONTAINER_TEMPLATE
                         value: "tfstate-"
+                      - key: PTL_ENVIRONMENT_NAME
+                        value: ptl
+                      - key: PTL_SUBSCRIPTION_NAME
+                        value: ptl
                       - key: NONPROD_ENVIRONMENT_NAME
                         value: stg
                       - key: NONPROD_SUBSCRIPTION_NAME
@@ -379,7 +389,7 @@ spec:
                         existingStorageAccountName: "hmctsjenkinssds"
                         imageReference:
                           galleryImageDefinition: "jenkins-ubuntu"
-                          galleryImageVersion: "1.4.1"
+                          galleryImageVersion: "1.4.3"
                           galleryName: "hmcts"
                           galleryResourceGroup: "hmcts-image-gallery-rg"
                           gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"

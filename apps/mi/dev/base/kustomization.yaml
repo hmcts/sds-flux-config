@@ -6,7 +6,7 @@ resources:
   - mi-adf-auth-values.enc.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
-
+  - ../../../rbac/nonprod-role.yaml
 patchesStrategicMerge:
   - ../../identity/dev.yaml
 

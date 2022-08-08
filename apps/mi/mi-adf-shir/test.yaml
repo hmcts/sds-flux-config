@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-adf-shir
   values:
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-ab6e20b-20220531093946 # {"$imagepolicy": "flux-system:mi-adf-shir-dev"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-ab6e20b-20220531093946 #{"$imagepolicy": "flux-system:mi-adf-shir-dev"}
     replicaCount: 4
     secretsMountPath: ''
     environment: "test"
@@ -14,4 +14,4 @@ spec:
     subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     keyVaultSecrets:
-      - mi-adf-auth-key
+    - mi-adf-auth-key
