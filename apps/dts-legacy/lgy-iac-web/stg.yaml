@@ -1,0 +1,9 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: lgy-iac-web
+spec:
+  releaseName: lgy-iac-web
+  values:
+    java:
+      ingressHost: lgy-iac-web.staging.platform.hmcts.net
