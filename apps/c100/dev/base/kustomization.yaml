@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../identity/identity.yaml
 namespace: c100
 patchesStrategicMerge:
   - ../../identity/stg.yaml

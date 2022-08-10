@@ -1,7 +1,7 @@
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentity
 metadata:
-  name: c100
+  name: pet
   namespace: c100
 spec:
   type: 0
@@ -11,8 +11,8 @@ spec:
 apiVersion: "aadpodidentity.k8s.io/v1"
 kind: AzureIdentityBinding
 metadata:
-  name: c100-binding
+  name: pet-binding
   namespace: c100
 spec:
-  azureIdentity: c100
-  selector: c100
+  azureIdentity: pet
+  selector: pet
