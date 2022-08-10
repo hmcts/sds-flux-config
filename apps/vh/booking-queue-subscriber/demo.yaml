@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-booking-queue-subscriber
+  namespace: vh
+spec:
+  releaseName: vh-booking-queue-subscriber
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-32c261e-202207290309 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
+      ingressClass: traefik-private
+      disableTraefikTls: false
+      triggers:
+      - type: azure-servicebus
+        serviceBusName: vh-infra-core-demo
+
