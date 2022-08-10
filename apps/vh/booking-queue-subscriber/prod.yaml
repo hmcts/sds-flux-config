@@ -19,6 +19,8 @@ spec:
       triggers:
       - type: azure-servicebus
         serviceBusName: vh-infra-core-prod
+        queueName: booking
+        messageCount: 1
   chart:
     spec:
       chart: ./stable/vh-booking-queue-subscriber/prod
