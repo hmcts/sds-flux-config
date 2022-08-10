@@ -11,3 +11,5 @@ spec:
       triggers:
       - type: azure-servicebus
         serviceBusName: vh-infra-core-test
+        queueName: booking
+        messageCount: 1
