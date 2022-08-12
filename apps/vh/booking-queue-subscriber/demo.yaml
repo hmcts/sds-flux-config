@@ -7,7 +7,7 @@ spec:
   releaseName: vh-booking-queue-subscriber
   values:
     function:
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-44683a7-202208100136 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-b100177-202208111058 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
       ingressClass: traefik-private
       disableTraefikTls: false
       triggers:
