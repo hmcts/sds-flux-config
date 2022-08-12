@@ -15,7 +15,7 @@ spec:
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOWEBRESOURCEID: https://vh-video-web.staging.platform.hmcts.net
         VHSERVICES__VIDEOWEBURL: https://vh-video-web.staging.platform.hmcts.net/
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-b100177-202208111058 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-f8b9ad3-202208120304 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
       triggers:
       - type: azure-servicebus
         serviceBusName: vh-infra-core-stg
