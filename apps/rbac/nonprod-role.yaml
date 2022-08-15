@@ -17,7 +17,7 @@ rules:
   verbs: ['create']
 - apiGroups: ['']
   resources: ['services']
-  verbs: ['delete']
+  verbs: ['create', 'delete']
 - apiGroups: ['apps']
   resources: ['deployments']
   verbs: ['delete']
