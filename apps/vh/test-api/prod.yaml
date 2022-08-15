@@ -9,6 +9,11 @@ spec:
     java:
       ingressHost: vh-test-api.platform.hmcts.net
       environment:
+        SERVICES__TESTAPIURL: https://vh-test-api.platform.hmcts.net/
+        SERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
+        SERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
+        SERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
+        AzureAd__ValidAudience: https://vh-test-api.platform.hmcts.net/
     image: sdshmctspublic.azurecr.io/vh/test-api:prod-07727e8-202207080320 #{"$imagepolicy": "flux-system:vh-test-api-prod"}
   chart:
     spec:
