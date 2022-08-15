@@ -11,5 +11,5 @@ spec:
       ingressClass: traefik-private
       disableTraefikTls: false
       environment:
-        SERVICES__NOTIFICATIONAPIRESOURCEID: http://vh-notification-api.demo.platform.hmcts.net
     image: sdshmctspublic.azurecr.io/vh/notification-api:staging-03db555-202208120245 #{"$imagepolicy": "flux-system:vh-notification-api"}
+
