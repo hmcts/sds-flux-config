@@ -21,7 +21,7 @@ rules:
 - apiGroups: ['apps']
   resources: ['deployments']
   verbs: ['delete']
-- apiGroups: ['policy']
+- apiGroups: ['', 'policy']
   resources: ['poddisruptionbudgets']
   verbs: ['delete']
 - apiGroups: ['networking.k8s.io']
