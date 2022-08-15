@@ -9,8 +9,10 @@ spec:
     function:
       environment:
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
+        VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
-        VHSERVICES__VIDEOWEBURL: https://video.hearings.reform.hmcts.net
+        VHSERVICES__VIDEOWEBURL: https://video.hearings.reform.hmcts.net/
+        VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
       image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:prod-ff86a33-202208111011 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-prod"}
       triggers:
       - type: azure-servicebus
@@ -19,4 +21,4 @@ spec:
         messageCount: 1
   chart:
     spec:
-      chart: ./stable/vh-booking-queue-subscriber/prod 
+      chart: ./stable/vh-booking-queue-subscriber/prod
