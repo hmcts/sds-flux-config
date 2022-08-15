@@ -29,7 +29,7 @@ rules:
   verbs: ['delete']
 - apiGroups: ['']
   resources: ['serviceaccounts']
-  verbs: ['delete']
+  verbs: ['create', 'delete']
 - apiGroups: ['keda.sh']
   resources: ['scaledjobs', 'scaledobjects', 'triggerauthentications']
   verbs: ['delete']
