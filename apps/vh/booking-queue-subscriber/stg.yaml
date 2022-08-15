@@ -9,8 +9,10 @@ spec:
     function:
       environment:
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
+        VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.staging.platform.hmcts.net/
-        VHSERVICES__VIDEOWEBURL: https://vh-video-web.staging.platform.hmcts.net/
+        VHSERVICES__VIDEOWEBURL: https://video.staging.hearings.hmcts.net/
+        VHSERVICES__USERAPIURL: https://vh-user-api.staging.platform.hmcts.net/
       image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-b100177-202208111058 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
       triggers:
       - type: azure-servicebus
