@@ -1,47 +1,50 @@
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: nonprod-team-permissions
+  name: dev-team-permissions
 rules:
 - apiGroups: ['']
   resources: ['pods']
-  verbs: ['delete']
+  verbs: ['*']
 - apiGroups: ['']
   resources: ['secrets']
   verbs: ['*']
 - apiGroups: ['helm.toolkit.fluxcd.io']
   resources: ['helmreleases']
-  verbs: ['delete']
+  verbs: ['*']
 - apiGroups: ['']
   resources: ['pods/exec']
-  verbs: ['create']
+  verbs: ['*']
 - apiGroups: ['']
   resources: ['services']
-  verbs: ['delete']
+  verbs: ['*']
 - apiGroups: ['apps']
   resources: ['deployments']
-  verbs: ['delete']
+  verbs: ['*']
 - apiGroups: ['policy']
   resources: ['poddisruptionbudgets']
-  verbs: ['delete']
+  verbs: ['*']
 - apiGroups: ['networking.k8s.io']
   resources: ['ingresses']
-  verbs: ['delete']
+  verbs: ['*']
 - apiGroups: ['']
   resources: ['serviceaccounts']
-  verbs: ['delete']
+  verbs: ['*']
+- apiGroups: ['batch']
+  resources: ['cronjobs']
+  verbs: ['*']
 - apiGroups: ['keda.sh']
   resources: ['scaledjobs', 'scaledobjects', 'triggerauthentications']
-  verbs: ['delete']
+  verbs: ['*']
 ---
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: nonprod-team-permissions
+  name: dev-team-permissions
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: nonprod-team-permissions
+  name: dev-team-permissions
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: Group
