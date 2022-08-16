@@ -11,10 +11,12 @@ spec:
   selector:
     matchLabels:
       app: mi-sftp-server
+      aadpodidbinding: mi-azure-functions
   template:
     metadata:
       labels:
         app: mi-sftp-server
+        aadpodidbinding: mi-azure-functions
     spec:
       initContainers:
         - name: install
