@@ -8,7 +8,7 @@ resources:
   - ../../mi-reverse-proxy/mi-reverse-proxy.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
   - ../../../rbac/nonprod-role.yaml
-  - ../mi-sftp-server/mi-sftp-server.yaml
+  - ../../mi-sftp-server/mi-sftp-server.yaml
 patchesStrategicMerge:
   - ../../identity/test.yaml
 
