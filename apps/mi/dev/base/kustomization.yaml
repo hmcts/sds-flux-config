@@ -8,6 +8,7 @@ resources:
   - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
   - ../../../rbac/dev-role.yaml
   - ../../mi-sftp-server/mi-sftp-server.yaml
+  - ../../mi-sftp-server/dev-secret-provider-patch.yaml
 patchesStrategicMerge:
   - ../../identity/dev.yaml
 

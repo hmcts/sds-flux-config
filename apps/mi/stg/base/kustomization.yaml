@@ -7,6 +7,7 @@ resources:
   - mi-adf-auth-values.enc.yaml
   - ../../../rbac/nonprod-role.yaml
   - ../../mi-sftp-server/mi-sftp-server.yaml
+  - ../../mi-sftp-server/stg-secret-provider-patch.yaml
 patchesStrategicMerge:
   - ../../identity/stg.yaml
 
