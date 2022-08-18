@@ -9,7 +9,7 @@ spec:
       disableTraefikTls: true
       replicas: 2
       useInterpodAntiAffinity: true
-      image: sdshmctspublic.azurecr.io/c100/application:prod-75a3b98-20220818131446 #{"$imagepolicy": "flux-system:c100-application"}
+      image: sdshmctspublic.azurecr.io/c100/application:prod-a191625-20220818153525 #{"$imagepolicy": "flux-system:c100-application"}
       smoketestscron:
         image: c100/application:pr-35-5f23d20-20220810102444
       functionaltestscron:
