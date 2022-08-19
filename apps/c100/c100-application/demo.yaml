@@ -5,6 +5,6 @@ metadata:
 spec:
   releaseName: c100-application
   values:
-    java:
+    base:
       ingressClass: traefik-private
       disableTraefikTls: false
