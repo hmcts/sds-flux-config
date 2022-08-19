@@ -5,7 +5,7 @@ metadata:
 spec:
   releaseName: c100-application
   values:
-    java:
+    base:
       disableTraefikTls: true
       replicas: 2
       useInterpodAntiAffinity: true

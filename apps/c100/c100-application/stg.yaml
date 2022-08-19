@@ -5,7 +5,7 @@ metadata:
 spec:
   releaseName: c100-application
   values:
-    java:
+    base:
       ingressHost: c100-application.staging.platform.hmcts.net
     global:
       environment: staging
