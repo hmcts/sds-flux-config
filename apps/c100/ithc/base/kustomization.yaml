@@ -4,3 +4,5 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
 namespace: c100
+patchesStrategicMerge:
+  - ../../identity/stg.yaml
