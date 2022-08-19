@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: c100
+  namespace: c100
+spec:
+  resourceID: "/subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourcegroups/managed-identities-ithc-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/c100-ithc-mi"
+  clientID: "4c63baf4-c7a7-4088-82e3-d642a48f40df"
