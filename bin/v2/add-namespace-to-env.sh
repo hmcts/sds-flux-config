@@ -39,8 +39,11 @@ namespace: $NAMESPACE
 EOF
 ) > "${APPS_DIR}/${NAMESPACE}/${ENVIRONMENT}/base/kustomization.yaml"
 
-  if [[ ${ENVIRONMENT} != "prod" ]]; then
+  if [[ ${ENVIRONMENT} != "prod" && ${ENVIRONMENT} != "dev" ]]; then
     yq -i '.resources += "../../../rbac/nonprod-role.yaml"' "${APPS_DIR}/${NAMESPACE}/${ENVIRONMENT}/base/kustomization.yaml"
+  fi
+  if [[ ${ENVIRONMENT} == "dev" ]]; then
+    yq -i '.resources += "../../../rbac/dev-role.yaml"' "${APPS_DIR}/${NAMESPACE}/${ENVIRONMENT}/base/kustomization.yaml"
   fi
 
 fi

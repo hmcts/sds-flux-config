@@ -12,6 +12,7 @@ resources:
   - ../../dts-legacy/automation
   - aks-kubelet-binding.yaml
   - aks-kubelet-identity.yaml
+  - ../../c100/automation
 patches:
   - path: sdshmctspublic-image-repo.yaml
     target:

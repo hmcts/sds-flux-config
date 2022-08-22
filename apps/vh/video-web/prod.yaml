@@ -7,15 +7,14 @@ spec:
   releaseName: vh-video-web
   values:
     java:
-      ingressHost: vh-video-web.platform.hmcts.net
+      ingressHost: video.hearings.reform.hmcts.net
       environment:
-        AZUREAD__POSTLOGOUTREDIRECTURI: https://vh-video-web.platform.hmcts.net/logout
-        AZUREAD__REDIRECTURI: https://vh-video-web.platform.hmcts.net/home
-        VHSERVICES__BOOKINGSAPIRESOURCEID: https://vh-bookings-api.platform.hmcts.net
+        AZUREAD__POSTLOGOUTREDIRECTURI: https://video.hearings.reform.hmcts.net/logout
+        AZUREAD__REDIRECTURI: https:/video.hearings.reform.hmcts.net/home
+        EJUDAD__POSTLOGOUTREDIRECTURI: https://video.hearings.reform.hmcts.net/logout
+        EJUDAD__REDIRECTURI: https:/video.hearings.reform.hmcts.net/home
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
-        VHSERVICES__USERAPIRESOURCEID: https://vh-user-api.platform.hmcts.net
         VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
-        VHSERVICES__VIDEOAPIRESOURCEID: https://vh-video-api.platform.hmcts.net
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
     image: sdshmctspublic.azurecr.io/vh/video-web:prod-c13fbd9-202207291122 # {"$imagepolicy": "flux-system:vh-video-web-prod"}
   chart:

@@ -10,4 +10,4 @@ spec:
       ingressHost: vh-user-api.demo.platform.hmcts.net
       ingressClass: traefik-private
       disableTraefikTls: false
-    image: sdshmctspublic.azurecr.io/vh/user-api:staging-9344a8c-202207220733 #{"$imagepolicy": "flux-system:vh-user-api"}
+    image: sdshmctspublic.azurecr.io/vh/user-api:staging-d5f37c3-202208160955 #{"$imagepolicy": "flux-system:vh-user-api"}
