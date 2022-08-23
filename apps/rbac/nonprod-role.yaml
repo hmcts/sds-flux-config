@@ -30,7 +30,7 @@ rules:
 - apiGroups: ['']
   resources: ['serviceaccounts']
   verbs: ['delete']
-- apiGroups: ['']
+- apiGroups: ['batch']
   resources: ['jobs']
   verbs: ['delete']
 - apiGroups: ['keda.sh']
