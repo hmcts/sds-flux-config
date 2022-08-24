@@ -11,7 +11,7 @@ spec:
       ADF_RESOURCEGROUP: mi-ingestion-ithc-rg
       ADF_NAME: mi-ingestion-adf-ithc
       ADF_STORAGEACCOUNTNAME: miauditithc
-      MI_METADATA_SERVER: mi-metadata-server-ithc
+      MI_METADATA_SERVER: mi-metadata-server-ithc.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-ithc
     keyVaultSecrets:
     - encryption-publicKey

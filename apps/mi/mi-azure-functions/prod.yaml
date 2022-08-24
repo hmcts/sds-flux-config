@@ -14,7 +14,7 @@ spec:
       ADF_RESOURCEGROUP: mi-ingestion-prod-rg
       ADF_NAME: mi-ingestion-adf-prod
       ADF_STORAGEACCOUNTNAME: miauditprod
-      MI_METADATA_SERVER: mi-metadata-server-prod
+      MI_METADATA_SERVER: mi-metadata-server-prod.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-prod
       OPTIC_TOKEN_URL: https://hmcts.icasework.com/token
     resourceGroup: "mi-prod-rg"

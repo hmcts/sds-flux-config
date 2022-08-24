@@ -11,7 +11,7 @@ spec:
       ADF_RESOURCEGROUP: mi-ingestion-dev-rg
       ADF_NAME: mi-ingestion-adf-dev
       ADF_STORAGEACCOUNTNAME: miauditdev
-      MI_METADATA_SERVER: mi-metadata-server-dev
+      MI_METADATA_SERVER: mi-metadata-server-dev.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-dev
     keyVaultSecrets:
     - encryption-publicKey

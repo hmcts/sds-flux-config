@@ -11,7 +11,7 @@ spec:
       ADF_RESOURCEGROUP: mi-ingestion-stg-rg
       ADF_NAME: mi-ingestion-adf-stg
       ADF_STORAGEACCOUNTNAME: miauditstg
-      MI_METADATA_SERVER: mi-metadata-server-stg
+      MI_METADATA_SERVER: mi-metadata-server-stg.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-stg
     keyVaultSecrets:
     - encryption-publicKey
