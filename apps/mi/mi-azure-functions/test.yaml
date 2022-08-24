@@ -11,9 +11,8 @@ spec:
       ADF_RESOURCEGROUP: mi-ingestion-test-rg
       ADF_NAME: mi-ingestion-adf-test
       ADF_STORAGEACCOUNTNAME: miaudittest
+      MI_METADATA_SERVER: mi-metadata-server-test.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-test
-    keyVaultSecrets:
-    - encryption-publicKey
     environment: "test"
     resourceGroup: "mi-test-rg"
     subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
