@@ -13,8 +13,6 @@ spec:
       ADF_STORAGEACCOUNTNAME: miauditithc
       MI_METADATA_SERVER: mi-metadata-server-ithc.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-ithc
-    keyVaultSecrets:
-    - encryption-publicKey
     environment: "ithc"
     resourceGroup: "mi-ithc-rg"
     subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"

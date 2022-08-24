@@ -13,8 +13,6 @@ spec:
       ADF_STORAGEACCOUNTNAME: miauditsbox
       MI_METADATA_SERVER: mi-metadata-server-sbox.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-sbox
-    keyVaultSecrets:
-    - encryption-publicKey
     environment: "sbox"
     resourceGroup: "mi-sbox-rg"
     subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
