@@ -11,6 +11,7 @@ spec:
       ADF_RESOURCEGROUP: mi-ingestion-sbox-rg
       ADF_NAME: mi-ingestion-adf-sbox
       ADF_STORAGEACCOUNTNAME: miauditsbox
+      MI_METADATA_SERVER: mi-metadata-server-sbox
       MI_METADATA_SERVER_DB: mi-metadata-db-sbox
     keyVaultSecrets:
     - encryption-publicKey

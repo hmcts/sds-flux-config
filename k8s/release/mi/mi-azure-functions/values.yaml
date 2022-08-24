@@ -25,7 +25,6 @@ keyVaultCoreSecrets:
   - encryption-publicKey
   - encryption-private-key
   - encryption-private-phase
-  - mi-metadata-server
 
 secretsMountPath: '/mnt/kvmnt'
 
@@ -40,4 +39,5 @@ env:
   ADF_TENANTID: "{{ .Values.tenantId }}"
   ADF_SUBSCRIPTIONID: "{{ .Values.subscriptionId }}"
   MANAGEDIDENTITYCLIENTID: "{{ .Values.managedIdentityClientId }}"
+  MI_METADATA_SERVER: mi-metadata-server-sbox
   MI_METADATA_SERVER_DB: mi-metadata-db-sbox

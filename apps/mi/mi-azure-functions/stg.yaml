@@ -11,9 +11,10 @@ spec:
       ADF_RESOURCEGROUP: mi-ingestion-stg-rg
       ADF_NAME: mi-ingestion-adf-stg
       ADF_STORAGEACCOUNTNAME: miauditstg
+      MI_METADATA_SERVER: mi-metadata-server-stg
       MI_METADATA_SERVER_DB: mi-metadata-db-stg
     keyVaultSecrets:
-      - encryption-publicKey
+    - encryption-publicKey
     environment: "stg"
     resourceGroup: "mi-stg-rg"
     subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
