@@ -12,7 +12,7 @@ spec:
     nodejs:
       replicas: 2
       useInterpodAntiAffinity: true
-      image: hmctspublic.azurecr.io/my-time/frontend:latest #{"$imagepolicy": "flux-system:my-time-frontend"}
+      image: sdshmctspublic.azurecr.io/my-time/frontend:latest #{"$imagepolicy": "flux-system:my-time-frontend"}
       environment:
         VAR_TA: trigger1
       keyVaults:
