@@ -1,0 +1,11 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: my-time
+  namespace: flux-system
+spec:
+  path: ./apps/my-time/${ENVIRONMENT}/base
+  postBuild:
+    substitute:
+      NAMESPACE: "my-time"
+      TEAM_NOTIFICATION_CHANNEL: "my-time-builds"
