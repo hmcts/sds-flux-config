@@ -6,14 +6,15 @@ metadata:
 spec:
   releaseName: vh-booking-queue-subscriber
   values:
-    function:
+    java:
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:prod-ff86a33-202208111011 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-prod"}
       environment:
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
         VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
         VHSERVICES__VIDEOWEBURL: https://video.hearings.reform.hmcts.net/
         VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:prod-ff86a33-202208111011 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-prod"}
+    function:
       triggers:
       - type: azure-servicebus
         serviceBusName: vh-infra-core-prod
