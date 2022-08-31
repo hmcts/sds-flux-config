@@ -2,6 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../base
+  - ../../reply-urls-operator
+  - ../../reply-urls-operator/sbox/secret.enc.yaml
 
 patchesStrategicMerge:
   - ../../traefik2/sbox/00-traefik2.yaml
