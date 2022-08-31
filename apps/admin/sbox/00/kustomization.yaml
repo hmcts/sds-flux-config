@@ -4,6 +4,7 @@ resources:
   - ../base
   - ../../reply-urls-operator
   - ../../reply-urls-operator/sbox/secret.enc.yaml
+  - ../../reply-urls-operator/sbox/reply-url-sync-config.yaml
 
 patchesStrategicMerge:
   - ../../traefik2/sbox/00-traefik2.yaml
