@@ -2,6 +2,7 @@ apiVersion: appregistrations.azure.hmcts.net/v1alpha1
 kind: ReplyURLSync
 metadata:
   name: sandbox-platform-hmcts-net
+  namespace: admin
 spec:
   ingressClassFilter: traefik
   domainFilter: .*..sandbox.platform.hmcts.net
