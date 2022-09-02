@@ -20,6 +20,9 @@ spec:
         serviceBusName: vh-infra-core-prod
         queueName: booking
         messageCount: 1
+      object:
+        pollingInterval: 10
+        cooldownPeriod: 600
   chart:
     spec:
       chart: ./stable/vh-booking-queue-subscriber/prod

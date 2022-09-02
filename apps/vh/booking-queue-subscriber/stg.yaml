@@ -20,3 +20,6 @@ spec:
         serviceBusName: vh-infra-core-stg
         queueName: booking
         messageCount: 1
+      object:
+        pollingInterval: 10
+        cooldownPeriod: 600
