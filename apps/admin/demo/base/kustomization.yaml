@@ -6,11 +6,15 @@ resources:
   - ../../kured/demo/kured-values.enc.yaml
   - ../../../rbac/reader-clusterrole.yaml
   - ../../keda
+  - ../../reply-urls-operator
+  - ../../reply-urls-operator/demo/secret.enc.yaml
+  - ../../reply-urls-operator/demo/reply-url-sync-config.yaml
 namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/demo/secret-provider.yaml
   - ../../traefik2/demo/traefik-private.yaml
   - ../../keda/demo/identity.yaml
+  - ../../reply-urls-operator/demo/deployment-patch.yaml
 
 patches:
   - path: ../../aad-pod-identity/demo/azure-identity-patch.yaml
