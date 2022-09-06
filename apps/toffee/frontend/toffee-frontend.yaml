@@ -17,5 +17,6 @@ spec:
     nodejs:
       image: sdshmctspublic.azurecr.io/toffee/frontend:latest
       disableTraefikTls: true
+      disableIngressClassAnnotation: true
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.sandbox.platform.hmcts.net
