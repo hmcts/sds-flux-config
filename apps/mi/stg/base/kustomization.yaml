@@ -4,6 +4,7 @@ namespace: mi
 
 resources:
   - ../../base
+  - ../../base-dev
   - mi-adf-auth-values.enc.yaml
   - ../../../rbac/nonprod-role.yaml
 patchesStrategicMerge:

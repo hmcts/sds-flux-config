@@ -4,6 +4,7 @@ namespace: mi
 
 resources:
   - ../../base
+  - ../../../rbac/reader-clusterrole.yaml
   - mi-adf-auth-values.enc.yaml
 
 patchesStrategicMerge:

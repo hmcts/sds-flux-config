@@ -4,6 +4,7 @@ namespace: mi
 
 resources:
   - ../../base
+  - ../../base-dev
   - mi-adf-auth-values.enc.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
