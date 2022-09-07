@@ -7,7 +7,7 @@ spec:
   releaseName: vh-admin-web
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/admin-web:staging-12c6c05-202209010404 # {"$imagepolicy": "flux-system:vh-admin-web"}
+      image: sdshmctspublic.azurecr.io/vh/admin-web:staging-b3f42f9-202209071151 # {"$imagepolicy": "flux-system:vh-admin-web"}
       disableTraefikTls: true
   chart:
     spec:
