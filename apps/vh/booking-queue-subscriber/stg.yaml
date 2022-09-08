@@ -23,3 +23,6 @@ spec:
       object:
         pollingInterval: 10
         cooldownPeriod: 600
+        idleReplicaCount: 1
+        maxReplicaCount: 2
+        minReplicaCount: 1
