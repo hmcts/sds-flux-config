@@ -13,13 +13,13 @@ spec:
       failureThreshold: 5
       exec:
         command:
-          - cat
-          - /opt/tomcat/README.md
+        - cat
+        - /opt/tomcat/README.md
   values:
     java:
       replicas: 2
       useInterpodAntiAffinity: true
-      image: sdshmctspublic.azurecr.io/lgy-iac/web:prod-0b73a45-20220908194157 #{"$imagepolicy": "flux-system:lgy-iac-web"}
+      image: sdshmctspublic.azurecr.io/lgy-iac/web:prod-1b12fce-20220909133610 #{"$imagepolicy": "flux-system:lgy-iac-web"}
   chart:
     spec:
       chart: ./stable/lgy-iac-web
