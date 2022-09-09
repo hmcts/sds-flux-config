@@ -2,24 +2,28 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: lgy-iac-web
+
 spec:
   releaseName: lgy-iac-web
-  containers:
-    startupProbe:
-      initialDelaySeconds: 10
-      periodSeconds: 2
-      timeoutSeconds: 2
-      successThreshold: 1
-      failureThreshold: 5
-      exec:
-        command:
-        - cat
-        - /opt/tomcat/README.md
   values:
     java:
       replicas: 2
       useInterpodAntiAffinity: true
       image: sdshmctspublic.azurecr.io/lgy-iac/web:prod-1b12fce-20220909133610 #{"$imagepolicy": "flux-system:lgy-iac-web"}
+  template:
+    spec:
+      containers:
+        - name: lgy-iac-web
+          startupProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 2
+            timeoutSeconds: 2
+            successThreshold: 1
+            failureThreshold: 5
+            exec:
+              command:
+                - cat
+                - /opt/tomcat/README.md
   chart:
     spec:
       chart: ./stable/lgy-iac-web
