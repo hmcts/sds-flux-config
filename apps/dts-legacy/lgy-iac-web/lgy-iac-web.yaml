@@ -4,6 +4,17 @@ metadata:
   name: lgy-iac-web
 spec:
   releaseName: lgy-iac-web
+  containers:
+    startupProbe:
+      initialDelaySeconds: 10
+      periodSeconds: 2
+      timeoutSeconds: 2
+      successThreshold: 1
+      failureThreshold: 5
+      exec:
+        command:
+          - cat
+          - /opt/tomcat/README.md
   values:
     java:
       replicas: 2
