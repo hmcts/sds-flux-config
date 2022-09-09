@@ -1,0 +1,22 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: my-time-api
+spec:
+  releaseName: my-time-api
+  chart:
+    git: git@github.com:hmcts/hmcts-charts
+    ref: master
+    path: stable/my-time-api
+  values:
+    nodejs:
+      replicas: 2
+      useInterpodAntiAffinity: true
+      image: sdshmctspublic.azurecr.io/my-time/api:latest #{"$imagepolicy": "flux-system:my-time-api"}
+      environment:
+        VAR_TA: trigger1
+      keyVaults:
+        my-time:
+          resourceGroup: my-time
+          secrets:
+            - AppInsightsInstrumentationKey
