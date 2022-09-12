@@ -9,20 +9,6 @@ spec:
       replicas: 2
       useInterpodAntiAffinity: true
       image: sdshmctspublic.azurecr.io/lgy-iac/web:prod-e6e964b-20220909171347 #{"$imagepolicy": "flux-system:lgy-iac-web"}
-  template:
-    spec:
-      containers:
-      - name: lgy-iac-web
-        startupProbe:
-          initialDelaySeconds: 10
-          periodSeconds: 2
-          timeoutSeconds: 2
-          successThreshold: 1
-          failureThreshold: 5
-          exec:
-            command:
-            - cat
-            - /opt/tomcat/README.md
   chart:
     spec:
       chart: ./stable/lgy-iac-web
