@@ -7,3 +7,8 @@ spec:
   values:
     java:
       ingressHost: lgy-iac-web.staging.platform.hmcts.net
+      startupPath: '/health/'
+      startupDelay: 100
+      startupTimeout: 3
+      startupPeriod: 10
+      startupFailureThreshold: 20
