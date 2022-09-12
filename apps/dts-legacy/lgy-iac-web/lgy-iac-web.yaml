@@ -6,7 +6,7 @@ spec:
   releaseName: lgy-iac-web
   values:
     java:
-      replicas: 2
+      replicas: 1
       useInterpodAntiAffinity: true
       image: sdshmctspublic.azurecr.io/lgy-iac/web:prod-a43ac96-20220912172830 #{"$imagepolicy": "flux-system:lgy-iac-web"}
   chart:
