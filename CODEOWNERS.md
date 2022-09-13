@@ -14,6 +14,8 @@ To add a new application, create an application namespace under apps and create 
 
 Ensure `apps/<namespace>` is added to CODEOWNERS
 
+Team names are from [HMCTS teams in github](https://github.com/orgs/hmcts/teams)
+
 Raise a pull request adding the application to the kustomization for the cluster by appending to the kustomization file e.g. ```clusters/dev/base/kustomization.yaml```
 
 ```
