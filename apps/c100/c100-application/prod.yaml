@@ -7,3 +7,5 @@ spec:
   values:
     base:
       ingressHost: c100-application.platform.hmcts.net
+      environment:
+        TEST_ENV_VR: restart
