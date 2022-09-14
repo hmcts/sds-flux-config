@@ -6,14 +6,13 @@ metadata:
 spec:
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-6326575-20220630110849 # {"$imagepolicy": "flux-system:mi-azure-functions-sbox"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-97e502f-20220901115004 # {"$imagepolicy": "flux-system:mi-azure-functions-sbox"}
     env:
       ADF_RESOURCEGROUP: mi-ingestion-sbox-rg
       ADF_NAME: mi-ingestion-adf-sbox
       ADF_STORAGEACCOUNTNAME: miauditsbox
+      MI_METADATA_SERVER: mi-metadata-server-sbox.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-sbox
-    keyVaultSecrets:
-    - encryption-publicKey
     environment: "sbox"
     resourceGroup: "mi-sbox-rg"
     subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"

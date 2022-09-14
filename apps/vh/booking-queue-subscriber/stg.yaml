@@ -6,16 +6,23 @@ metadata:
 spec:
   releaseName: vh-booking-queue-subscriber
   values:
-    function:
+    java:
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-f1a3338-202208261235 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
       environment:
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
         VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOWEBURL: https://video.staging.hearings.hmcts.net/
         VHSERVICES__USERAPIURL: https://vh-user-api.staging.platform.hmcts.net/
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-f8b9ad3-202208120304 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
+    function:
       triggers:
       - type: azure-servicebus
         serviceBusName: vh-infra-core-stg
         queueName: booking
         messageCount: 1
+      object:
+        pollingInterval: 10
+        cooldownPeriod: 600
+        idleReplicaCount: 1
+        maxReplicaCount: 2
+        minReplicaCount: 1

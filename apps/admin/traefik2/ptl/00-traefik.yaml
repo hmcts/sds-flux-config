@@ -8,5 +8,4 @@ spec:
     service:
       spec:
         loadBalancerIP: "10.147.79.250"
-    additionalArguments:
-      - "--entryPoints.websecure.forwardedHeaders.insecure=true"
+
