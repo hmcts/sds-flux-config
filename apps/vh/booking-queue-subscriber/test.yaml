@@ -6,10 +6,17 @@ metadata:
 spec:
   releaseName: vh-booking-queue-subscriber
   values:
+    java:
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-f1a3338-202208261235 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
     function:
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-80fbf23-202208221106 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
       triggers:
       - type: azure-servicebus
         serviceBusName: vh-infra-core-test
         queueName: booking
         messageCount: 1
+      object:
+        pollingInterval: 30
+        cooldownPeriod: 600
+        idleReplicaCount: 1
+        maxReplicaCount: 2
+        minReplicaCount: 1
