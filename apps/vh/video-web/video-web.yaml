@@ -7,7 +7,7 @@ spec:
   releaseName: vh-video-web
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/video-web:staging-42d38d7-202209071203 # {"$imagepolicy": "flux-system:vh-video-web"}
+      image: sdshmctspublic.azurecr.io/vh/video-web:staging-7f68e59-202209140744 # {"$imagepolicy": "flux-system:vh-video-web"}
       disableTraefikTls: true
   chart:
     spec:
