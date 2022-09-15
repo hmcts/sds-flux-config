@@ -8,6 +8,6 @@ spec:
   values:
     java:
       ingressHost: vh-video-web.demo.platform.hmcts.net
-      ingressClass: traefik-private
-      disableTraefikTls: false
+      ingressClass: traefik
+      enableOauth: true
     image: sdshmctspublic.azurecr.io/vh/video-web:staging-7f68e59-202209140744 # {"$imagepolicy": "flux-system:vh-video-web"}

@@ -8,6 +8,6 @@ spec:
   values:
     java:
       ingressHost: vh-test-web.demo.platform.hmcts.net
-      ingressClass: traefik-private
-      disableTraefikTls: false
+      ingressClass: traefik
+      enableOauth: true
     image: sdshmctspublic.azurecr.io/vh/test-web:staging-da19417-202208180253 # {"$imagepolicy": "flux-system:vh-test-web"}
