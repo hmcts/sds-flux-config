@@ -7,6 +7,7 @@ spec:
   releaseName: vh-test-web
   values:
     java:
+      disableTraefikTls: true
       image: sdshmctspublic.azurecr.io/vh/test-web:staging-da19417-202208180253 # {"$imagepolicy": "flux-system:vh-test-web"}
   chart:
     spec:
