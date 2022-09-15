@@ -10,4 +10,5 @@ spec:
       ingressHost: vh-admin-web.demo.platform.hmcts.net
       ingressClass: traefik
       enableOauth: true
+      disableTraefikTls: false
     image: sdshmctspublic.azurecr.io/vh/admin-web:staging-abb5c26-202209090411 #{"$imagepolicy": "flux-system:vh-admin-web"}
