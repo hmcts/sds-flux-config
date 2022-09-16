@@ -8,6 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-admin-web.demo.platform.hmcts.net
-      ingressClass: traefik-private
+      ingressClass: traefik
+      enableOauth: true
       disableTraefikTls: false
-    image: sdshmctspublic.azurecr.io/vh/admin-web:staging-12c6c05-202209010404 #{"$imagepolicy": "flux-system:vh-admin-web"}
+    image: sdshmctspublic.azurecr.io/vh/admin-web:staging-abb5c26-202209090411 #{"$imagepolicy": "flux-system:vh-admin-web"}
