@@ -4,14 +4,5 @@ metadata:
   name: vh-aad-identity
   namespace: vh
 spec:
-  resourceID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/managed-identities-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-infra-core-dev-kvuser
-  clientID: d6947a36-ec6a-4f58-9b1a-d88bda1f2a7b
----
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentity
-metadata:
-  name: vh-aad-identity-storage
-  namespace: vh
-spec:
-  resourceID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/vh-infra-wowza-dev/providers/Microsoft.ManagedIdentity/userAssignedIdentities/wowza-storage-dev
-  clientID: c63a45bf-98e8-4c49-a03f-f5a5c92550b2
+  resourceID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/managed-identities-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-dev-mi
+  clientID: c4453af6-ce3c-4270-ba51-52e64bbc2fc1
