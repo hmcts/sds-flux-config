@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: met-schema
+  namespace: met
+spec:
+  resourceID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/managed-identities-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/libragob-prod-mi
+  clientID: 3590c75d-8ad2-4b4e-bf25-27485d807cf4

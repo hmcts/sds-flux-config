@@ -1,0 +1,26 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: themis-fe
+  namespace: met
+spec:
+  interval: 5m
+  releaseName: met-themis-fe
+  values:
+    nodejs:
+      ingressHost: 'gob-gateway.test.platform.hmcts.net'
+      image: 'sdshmctspublic.azurecr.io/themis/themis_wildfly:1.0.0'
+      replicas: 2
+      autoscaling:
+        enabled: true
+        maxReplicas: 5
+        targetCPUUtilizationPercentage: 80
+  chart:
+    spec:
+      chart: ./charts/met
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+      interval: 1m
