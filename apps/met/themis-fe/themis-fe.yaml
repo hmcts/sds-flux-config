@@ -9,7 +9,7 @@ spec:
   releaseName: met-themis-fe
   values:
     nodejs:
-      ingressHost: 'gob-gateway.test.platform.hmcts.net'
+      ingressHost: 'gobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_wildfly:1.0.0'
       replicas: 2
       autoscaling:
