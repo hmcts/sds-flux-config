@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -ex
 
-NAMESPACE=my-time
-SLACK_CHANNEL=my-time-builds
+NAMESPACE=$1
+SLACK_CHANNEL=$2
 
 function usage() {
   echo 'usage: ./add-namespace.sh <namespace> <slack-channel>'
