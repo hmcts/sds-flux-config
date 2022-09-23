@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-c764bde-20220916150044 # {"$imagepolicy": "flux-system:mi-azure-functions-sbox"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-09386e3-20220923084423 # {"$imagepolicy": "flux-system:mi-azure-functions-sbox"}
     env:
       ADF_RESOURCEGROUP: mi-ingestion-sbox-rg
       ADF_NAME: mi-ingestion-adf-sbox
