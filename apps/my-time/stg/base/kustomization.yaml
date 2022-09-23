@@ -4,3 +4,5 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
 namespace: my-time
+patchesStrategicMerge:
+  - ../../identity/stg.yaml
