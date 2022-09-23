@@ -6,7 +6,7 @@ spec:
   releaseName: pip-account-management
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/account-management:prod-54f68aa-20220922111733 # {"$imagepolicy": "flux-system:pip-account-management"}
+      image: sdshmctspublic.azurecr.io/pip/account-management:prod-166a46b-20220923120000 # {"$imagepolicy": "flux-system:pip-account-management"}
       disableTraefikTls: true
   chart:
     spec:
