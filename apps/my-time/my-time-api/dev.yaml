@@ -1,7 +1,0 @@
-metadata:
-  name: my-time-api
-  namespace: my-time
-spec:
-  releaseName: my-time-api
-  values:
-    image: sdshmctspublic.azurecr.io/my-time/api:latest #{"$imagepolicy": "flux-system:my-time-api"}
