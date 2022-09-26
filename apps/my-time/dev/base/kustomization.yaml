@@ -4,3 +4,8 @@ resources:
   - ../../base
   - ../../../rbac/dev-role.yaml
 namespace: my-time
+patchesStrategicMerge:
+  - ../../identity/pip-azure-identity.yaml
+  - ../../identity/dev.yaml
+  - ../../my-time-frontend/dev.yaml
+  - ../../my-time-api/dev.yaml

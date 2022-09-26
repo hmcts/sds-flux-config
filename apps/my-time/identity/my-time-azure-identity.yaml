@@ -1,0 +1,16 @@
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: my-time
+  namespace: my-time
+spec:
+  type: 0
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: my-time-binding
+spec:
+  azureIdentity: my-time
+  selector: my-time

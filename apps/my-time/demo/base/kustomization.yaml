@@ -3,6 +3,9 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
-namespace: my-time
+namespace: pip
 patchesStrategicMerge:
+  - ../../identity/my-time-azure-identity.yaml
   - ../../identity/demo.yaml
+  #- ../../my-time-frontend/demo.yaml
+  #- ../../my-time-api/demo.yaml
