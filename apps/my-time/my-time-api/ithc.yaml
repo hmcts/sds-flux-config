@@ -1,9 +1,9 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: pip-data-management
-  namespace: pip
+  name: my-time-api
+  namespace: my-time
 spec:
-  releaseName: pip-data-management
+  releaseName: my-time-api
   values:
-    image: sdshmctspublic.azurecr.io/pip/data-management:prod-2d2e18b-20220923093546 #{"$imagepolicy": "flux-system:pip-data-management"}
+    image: sdshmctspublic.azurecr.io/my-time/api:latest #{"$imagepolicy": "flux-system:latest"}

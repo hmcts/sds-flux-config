@@ -5,7 +5,7 @@ resources:
   - ../../../rbac/nonprod-role.yaml
 namespace: my-time
 patchesStrategicMerge:
-  - ../../identity/pip-azure-identity.yaml
+  - ../../identity/my-time-azure-identity.yaml
   - ../../identity/ithc.yaml
   #- ../../my-time-frontend/demo.yaml
   #- ../../my-time-api/demo.yaml
