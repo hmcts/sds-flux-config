@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ../identity/met-schema-azure-identity.yaml
+  - ../themis-fe/themis-fe.yaml
+namespace: met

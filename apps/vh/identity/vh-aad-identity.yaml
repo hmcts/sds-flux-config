@@ -14,19 +14,3 @@ metadata:
 spec:
   azureIdentity: vh-aad-identity
   selector: vh-aad-identity
----
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentity
-metadata:
-  name: vh-aad-identity-storage
-  namespace: vh
-spec:
-  type: 0
----
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentityBinding
-metadata:
-  name: vh-binding-storage
-spec:
-  azureIdentity: vh-aad-identity-storage
-  selector: vh-aad-identity-storage
