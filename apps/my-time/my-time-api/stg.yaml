@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: my-time-api
+  namespace: my-time
+spec:
+  releaseName: my-time-api
+  values:
+    java:
+      ingressHost: my-time-api.staging.platform.hmcts.net
+      environment:
