@@ -9,10 +9,6 @@ spec:
       image: sdshmctspublic.azurecr.io/my-time/api:latest # {"$imagepolicy": "flux-system:my-time-api"}
       disableTraefikTls: true
   chart:
-    spec:
-      chart: ./stable/my-time-api
-      sourceRef:
-        kind: GitRepository
-        name: hmcts-charts
-        namespace: flux-system
-      interval: 5m
+    git: git@github.com:hmcts/hmcts-charts
+    ref: master
+    path: stable/my-time-api
