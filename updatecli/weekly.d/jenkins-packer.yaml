@@ -39,7 +39,7 @@ targets:
       content: 'galleryImageVersion: "{{ source `latestPackerImageVersion` }}"'
 
 pullrequests:
-   setAzureGalleryImageVersion:
+  setAzureGalleryImageVersion:
     kind: github
     scmid: default
     title: >
