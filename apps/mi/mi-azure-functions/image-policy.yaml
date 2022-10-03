@@ -8,7 +8,7 @@ spec:
     name: mi-azure-functions
   filterTags:
     extract: $ts
-    pattern: '^sbox-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
+    pattern: .*sbox.*
   policy:
     alphabetical:
       order: asc
@@ -23,7 +23,7 @@ spec:
     name: mi-azure-functions
   filterTags:
     extract: $ts
-    pattern: '^dev-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
+    pattern: .*dev.*
   policy:
     alphabetical:
       order: asc
@@ -38,7 +38,52 @@ spec:
     name: mi-azure-functions
   filterTags:
     extract: $ts
-    pattern: '^test-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
+    pattern: .*test.*
+  policy:
+    alphabetical:
+      order: asc
+
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImagePolicy
+metadata:
+  name: mi-azure-functions-ithc
+spec:
+  imageRepositoryRef:
+    name: mi-azure-functions
+  filterTags:
+    extract: $ts
+    pattern: .*ithc.*
+  policy:
+    alphabetical:
+      order: asc
+
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImagePolicy
+metadata:
+  name: mi-azure-functions-stg
+spec:
+  imageRepositoryRef:
+    name: mi-azure-functions
+  filterTags:
+    extract: $ts
+    pattern: .*stg.*
+  policy:
+    alphabetical:
+      order: asc
+
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImagePolicy
+metadata:
+  name: mi-azure-functions-prod
+spec:
+  imageRepositoryRef:
+    name: mi-azure-functions
+  filterTags:
+    extract: $ts
+    pattern: .*prod.*
   policy:
     alphabetical:
       order: asc
