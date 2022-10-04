@@ -6,6 +6,7 @@ metadata:
 spec:
   releaseName: pip-frontend
   values:
+    image: sdshmctspublic.azurecr.io/pip/frontend:pr-528-cca8d7c-20220930141617
     nodejs:
       image: sdshmctspublic.azurecr.io/pip/frontend:pr-528-cca8d7c-20220930141617
       ingressHost: pip-frontend.test.platform.hmcts.net 

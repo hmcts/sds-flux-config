@@ -7,9 +7,9 @@ spec:
   releaseName: vh-test-web
   values:
     java:
-      ingressHost: vh-test-web.staging.platform.hmcts.net
+      ingressHost: test.staging.hearings.reform.hmcts.net
       environment:
-        AZUREAD__POSTLOGOUTREDIRECTURI: https://vh-test-web.staging.platform.hmcts.net/logout
-        AZUREAD__REDIRECTURI: https://vh-test-web.staging.platform.hmcts.net/home
+        AZUREAD__POSTLOGOUTREDIRECTURI: https://test.staging.hearings.reform.hmcts.net/logout
+        AZUREAD__REDIRECTURI: https://test.staging.hearings.reform.hmcts.net/home
         SERVICES__TESTAPIURL: https://vh-test-api.staging.platform.hmcts.net/
     image: sdshmctspublic.azurecr.io/vh/test-web:staging-da19417-202208180253 #{"$imagepolicy": "flux-system:vh-test-web"}
