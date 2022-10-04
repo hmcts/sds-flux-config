@@ -6,6 +6,7 @@ metadata:
 spec:
   releaseName: pip-frontend
   values:
+    image: sdshmctspublic.azurecr.io/pip/frontend:pr-528-cca8d7c-20220930141617
     nodejs:
       ingressHost: pip-frontend.test.platform.hmcts.net 
       environment:
@@ -16,3 +17,4 @@ spec:
         ADMIN_AUTH_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/login/admin/return
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
         FRONTEND_URL: https://pip-frontend.test.platform.hmcts.net
+        CFT_IDAM_URL: https://idam-web-public.perftest.platform.hmcts.net
