@@ -7,4 +7,11 @@ namespace: met
 
 patchesStrategicMerge:
   - ../../identity/test.yaml
-  - ../../themis-fe/test.yaml
+
+patches:
+  - path: ../../themis-fe/test.yaml
+    target:
+      group: secrets-store.csi.x-k8s.io
+      version: v1alpha1
+      kind: SecretProviderClass
+      name: met-themis-fe-nodejs-libragob-kv
