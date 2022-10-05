@@ -5,6 +5,7 @@ metadata:
   name: themis-fe
   namespace: met
 spec:
-  keyVaults:
-    libragob-test-kv:
-      excludeEnvironmentSuffix: true
+  values:
+    keyVaults:
+      libragob-test-kv:
+        excludeEnvironmentSuffix: true
