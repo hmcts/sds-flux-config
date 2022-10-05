@@ -1,0 +1,11 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: themis-fe
+  namespace: met
+spec:
+  values:
+    keyVaults:
+      libragob-test-kv:
+        excludeEnvironmentSuffix: true
