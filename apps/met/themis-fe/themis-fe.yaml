@@ -8,6 +8,8 @@ spec:
   interval: 5m
   releaseName: met-themis-fe
   values:
+    podLabels:
+      aadpodidbinding: met-schema-binding
     nodejs:
       ingressHost: 'gobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_wildfly:1.0.0'
