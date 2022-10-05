@@ -7,7 +7,4 @@ namespace: met
 
 patchesStrategicMerge:
   - ../../identity/test.yaml
-
-keyVaults:
-  libragob-test-kv:
-    excludeEnvironmentSuffix: true
+  - ../../themis-fe/test.yaml
