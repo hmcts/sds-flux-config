@@ -6,6 +6,7 @@ metadata:
   namespace: met
 spec:
   values:
-    keyVaults:
-      libragob-test-kv:
-        excludeEnvironmentSuffix: true
+    nodejs:
+      keyVaults:
+        libragob-test-kv:
+          excludeEnvironmentSuffix: true
