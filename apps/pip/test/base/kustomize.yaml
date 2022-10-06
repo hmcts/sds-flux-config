@@ -4,7 +4,7 @@ metadata:
   name: pip
   namespace: flux-system
 spec:
-  path: ./${CLUSTERS}
+  path: ./test/${CLUSTERS}
   postBuild:
     substitute:
       NAMESPACE: "pip"
