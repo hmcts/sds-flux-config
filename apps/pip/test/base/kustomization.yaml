@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
-  - ../../data-management-no-match-artefacts-cron/pip-data-management-no-match-artefacts-cron.yaml
+  - ../../data-management-no-match-artefacts-cron/test/${CLUSTER}.yaml
 namespace: pip
 patchesStrategicMerge:
   - ../../identity/pip-azure-identity.yaml
