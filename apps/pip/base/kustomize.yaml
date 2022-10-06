@@ -7,5 +7,6 @@ spec:
   path: ./apps/pip/${ENVIRONMENT}
   postBuild:
     substitute:
+      CLUSTER: ${CLUSTER}
       NAMESPACE: "pip"
       TEAM_NOTIFICATION_CHANNEL: "${ENV_MONITOR_CHANNEL}"
