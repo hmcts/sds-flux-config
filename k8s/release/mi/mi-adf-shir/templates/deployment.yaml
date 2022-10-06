@@ -51,6 +51,13 @@ spec:
               mountPath: {{ .Values.secretsMountPath }}
               readOnly: true
           {{ end }}
+          resources:
+            requests:
+              memory: {{ .Values.memoryRequests }}
+              cpu: {{ .Values.cpuRequests }}
+            limits:
+              memory: {{ .Values.memoryLimits }}
+              cpu: {{ .Values.cpuLimits }}
       {{ if .Values.nodeName }}
       nodeName: {{ .Values.nodeName }}
       {{ end }}
