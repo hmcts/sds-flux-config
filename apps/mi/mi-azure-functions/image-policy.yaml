@@ -1,89 +1,13 @@
----
 apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImagePolicy
 metadata:
-  name: mi-azure-functions-sbox
+  name: mi-azure-functions
 spec:
   imageRepositoryRef:
     name: mi-azure-functions
   filterTags:
     extract: $ts
-    pattern: .*sbox.*
-  policy:
-    alphabetical:
-      order: asc
-
----
-apiVersion: image.toolkit.fluxcd.io/v1alpha2
-kind: ImagePolicy
-metadata:
-  name: mi-azure-functions-dev
-spec:
-  imageRepositoryRef:
-    name: mi-azure-functions
-  filterTags:
-    extract: $ts
-    pattern: .*dev.*
-  policy:
-    alphabetical:
-      order: asc
-
----
-apiVersion: image.toolkit.fluxcd.io/v1alpha2
-kind: ImagePolicy
-metadata:
-  name: mi-azure-functions-test
-spec:
-  imageRepositoryRef:
-    name: mi-azure-functions
-  filterTags:
-    extract: $ts
-    pattern: .*test.*
-  policy:
-    alphabetical:
-      order: asc
-
----
-apiVersion: image.toolkit.fluxcd.io/v1alpha2
-kind: ImagePolicy
-metadata:
-  name: mi-azure-functions-ithc
-spec:
-  imageRepositoryRef:
-    name: mi-azure-functions
-  filterTags:
-    extract: $ts
-    pattern: .*ithc.*
-  policy:
-    alphabetical:
-      order: asc
-
----
-apiVersion: image.toolkit.fluxcd.io/v1alpha2
-kind: ImagePolicy
-metadata:
-  name: mi-azure-functions-stg
-spec:
-  imageRepositoryRef:
-    name: mi-azure-functions
-  filterTags:
-    extract: $ts
-    pattern: .*stg.*
-  policy:
-    alphabetical:
-      order: asc
-
----
-apiVersion: image.toolkit.fluxcd.io/v1alpha2
-kind: ImagePolicy
-metadata:
-  name: mi-azure-functions-prod
-spec:
-  imageRepositoryRef:
-    name: mi-azure-functions
-  filterTags:
-    extract: $ts
-    pattern: .*prod.*
+    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
   policy:
     alphabetical:
       order: asc

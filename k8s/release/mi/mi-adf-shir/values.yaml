@@ -22,3 +22,8 @@ secretsMountPath: 'C:\kvmnt'
 
 haEnabled: "true"
 haPort: "8060"
+
+memoryRequests: '1024Mi'
+cpuRequests: '500m'
+memoryLimits: '2048Mi'
+cpuLimits: '2000m'
