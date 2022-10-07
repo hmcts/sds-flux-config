@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../data-management-no-match-artefacts-cron/pip-data-management-no-match-artefacts-cron.yaml
+  - ../../data-management-no-match-artefacts-cron/test/${CLUSTER}.yaml
 namespace: pip
 patchesStrategicMerge:
   - ../../identity/pip-azure-identity.yaml
@@ -14,4 +15,3 @@ patchesStrategicMerge:
   - ../../frontend/test.yaml
   - ../../publication-services/test.yaml
   - ../../subscription-management/test.yaml
-  - ../../data-management-no-match-artefacts-cron/test/${CLUSTER}.yaml
