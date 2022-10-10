@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: pip-frontend
   values:
-    image: sdshmctspublic.azurecr.io/pip/frontend:prod-8e35472-20220923120235 #{"$imagepolicy": "flux-system:pip-frontend"}
+    image: sdshmctspublic.azurecr.io/pip/frontend:prod-38ebeab-20221010135850 #{"$imagepolicy": "flux-system:pip-frontend"}
     nodejs:
       environment:
         CFT_IDAM_URL: https://idam-web-public.ithc.platform.hmcts.net

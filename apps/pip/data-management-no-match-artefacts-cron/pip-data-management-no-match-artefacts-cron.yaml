@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pip-data-management-no-match-artefacts-cron
+spec:
+  releaseName: pip-data-management-no-match-artefacts-cron
+  values:
+    job:
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-034d976-20221006140414 # {"$imagepolicy": "flux-system:pip-data-management-no-match-artefacts-cron"}
+      args:
+        - NO_MATCH_ARTEFACTS
+      disableTraefikTls: true
+  chart:
+    spec:
+      chart: ./stable/pip-cron-trigger
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true

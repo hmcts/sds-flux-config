@@ -7,13 +7,13 @@ spec:
   releaseName: vh-admin-web
   values:
     java:
-      ingressHost: admin.staging.hearings.hmcts.net
+      ingressHost: admin.staging.hearings.reform.hmcts.net
       environment:
-        AZUREAD__POSTLOGOUTREDIRECTURI: https://admin.staging.hearings.hmcts.net/logout
-        AZUREAD__REDIRECTURI: https://admin.staging.hearings.hmcts.net/home
+        AZUREAD__POSTLOGOUTREDIRECTURI: https://admin.staging.hearings.reform.hmcts.net/logout
+        AZUREAD__REDIRECTURI: https://admin.staging.hearings.reform.hmcts.net/home
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
         VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.staging.platform.hmcts.net/
         VHSERVICES__USERAPIURL: https://vh-user-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOWEBURL: https://vh-video-web.staging.platform.hmcts.net/
-    image: sdshmctspublic.azurecr.io/vh/admin-web:staging-abb5c26-202209090411 #{"$imagepolicy": "flux-system:vh-admin-web"}
+    image: sdshmctspublic.azurecr.io/vh/admin-web:staging-1ec1c09-202210100916 #{"$imagepolicy": "flux-system:vh-admin-web"}

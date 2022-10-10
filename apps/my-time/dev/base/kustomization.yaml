@@ -4,3 +4,6 @@ resources:
   - ../../base
   - ../../../rbac/dev-role.yaml
 namespace: my-time
+patchesStrategicMerge:
+  - ../../identity/my-time-azure-identity.yaml
+  - ../../identity/dev.yaml

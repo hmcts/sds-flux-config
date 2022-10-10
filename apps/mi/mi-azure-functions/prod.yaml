@@ -1,4 +1,3 @@
----
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -9,7 +8,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-6326575-20220630110849
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-9a656b1-20220927110356 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     env:
       ADF_RESOURCEGROUP: mi-ingestion-prod-rg
       ADF_NAME: mi-ingestion-adf-prod
