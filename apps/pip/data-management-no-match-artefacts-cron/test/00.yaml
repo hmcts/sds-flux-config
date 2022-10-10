@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pip-data-management-no-match-artefacts-cron
+spec:
+  releaseName: pip-data-management-no-match-artefacts-cron
+  values:
+    job:
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-034d976-20221006140414 # {"$imagepolicy": "flux-system:pip-data-management-no-match-artefacts-cron"}
+      schedule: "0 1 * * 1,3,5,7"
+      environment:
+        DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
+    global:
+      jobKind: CronJob
+      enableKeyVaults: true
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      environment: test
