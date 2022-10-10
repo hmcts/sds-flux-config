@@ -6,7 +6,7 @@ spec:
   releaseName: pip-data-management-no-match-artefacts-cron
   values:
     job:
-      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-034d976-20221006140414 # {"$imagepolicy": "flux-system:pip-data-management-no-match-artefacts-cron"}
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:pr-16-c6da07f-20221010163358 # {"$imagepolicy": "flux-system:pip-data-management-no-match-artefacts-cron"}
       #schedule: "0 1 * * 2,4,6"
       schedule: "*/10 * * * *"
       environment:
