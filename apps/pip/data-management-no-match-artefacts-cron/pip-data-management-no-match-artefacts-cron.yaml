@@ -10,13 +10,13 @@ spec:
       args:
         - NO_MATCH_ARTEFACTS
       disableTraefikTls: true
-    spec:
-      chart: ./stable/pip-cron-trigger
-      sourceRef:
-        kind: GitRepository
-        name: hmcts-charts
-        namespace: flux-system
-      interval: 5m
+  spec:
+    chart: ./stable/pip-cron-trigger
+    sourceRef:
+      kind: GitRepository
+      name: hmcts-charts
+      namespace: flux-system
+    interval: 5m
   install:
     disableWait: true
   upgrade:
