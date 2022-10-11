@@ -7,9 +7,11 @@ spec:
   values:
     job:
       image: sdshmctspublic.azurecr.io/pip/cron-trigger:pr-16-f60a52f-20221011092914 # {"$imagepolicy": "flux-system:pip-data-management-no-match-artefacts-cron"}
-      args:
-        - "NO_MATCH_ARTEFACTS"
       disableTraefikTls: true
+      environment:
+        DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
+        TRIGGER_TYPE: NO_MATCH_ARTEFACTS
   chart:
     spec:
       chart: ./stable/pip-cron-trigger
