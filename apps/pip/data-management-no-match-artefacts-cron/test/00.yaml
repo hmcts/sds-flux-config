@@ -9,6 +9,8 @@ spec:
       image: sdshmctspublic.azurecr.io/pip/cron-trigger:pr-16-c6da07f-20221010163358 # {"$imagepolicy": "flux-system:pip-data-management-no-match-artefacts-cron"}
       #schedule: "0 1 * * 1,3,5,7"
       schedule: "*/10 * * * *"
+      args:
+        - NO_MATCH_ARTEFACTS
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
