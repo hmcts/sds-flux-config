@@ -4,6 +4,10 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../data-management-no-match-artefacts-cron/pip-data-management-no-match-artefacts-cron.yaml
+  - ../../data-management-expired-artefacts-cron/pip-data-management-expired-artefacts-cron.yaml
+  - ../../data-management-subscriptions-cron/pip-data-management-subscriptions-cron.yaml
+  - ../../account-management-inactive-verification-cron/pip-account-management-inactive-verification-cron.yaml
+  - ../../account-management-media-reporting-cron/pip-account-management-media-reporting-cron.yaml
 
 namespace: pip
 patchesStrategicMerge:
