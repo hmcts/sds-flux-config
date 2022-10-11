@@ -1,9 +1,9 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: pip-account-management-inactive-verification-cron
+  name: pip-account-management-inactive-verify-cron
 spec:
-  releaseName: pip-account-management-inactive-verification-cron
+  releaseName: pip-account-management-inactive-verify-cron
   values:
     job:
       schedule: "01 08 * * 0,2,4,6"
