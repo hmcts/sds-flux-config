@@ -6,9 +6,7 @@ spec:
   interval: 10m
   releaseName: vh-scheduler-jobs
   values:
-    java:
       image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:staging-7e40cb4-202210050351 # {"$imagepolicy": "flux-system:vh-scheduler-jobs"}
-      disableTraefikTls: true
   chart:
     spec:
       chart: ./stable/vh-scheduler-jobs/non-prod
