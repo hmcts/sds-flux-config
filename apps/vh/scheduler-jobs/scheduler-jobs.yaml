@@ -6,7 +6,7 @@ spec:
   interval: 10m
   releaseName: vh-scheduler-jobs
   values:
-    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:staging-3f70c92-202210120122 #{"$imagepolicy": "flux-system:vh-scheduler-jobs"}
+    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:staging-d8b4751-202210120707 #{"$imagepolicy": "flux-system:vh-scheduler-jobs"}
   chart:
     spec:
       chart: ./stable/vh-scheduler-jobs/non-prod
@@ -19,4 +19,3 @@ spec:
     disableWait: true
   upgrade:
     disableWait: true
-    
