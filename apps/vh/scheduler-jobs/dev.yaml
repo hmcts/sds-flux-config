@@ -5,3 +5,5 @@ metadata:
   namespace: vh
 spec:
   releaseName: vh-scheduler-jobs
+  values:
+    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:staging-3f70c92-202210120122 #{"$imagepolicy": "flux-system:vh-scheduler-jobs"}
