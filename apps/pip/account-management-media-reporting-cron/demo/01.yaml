@@ -8,6 +8,6 @@ spec:
     job:
       schedule: "0 0 * FEB,APR,JUN,AUG,OCT,DEC MON"
       environment:
-        DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
-        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.demo.platform.hmcts.net
         TRIGGER_TYPE: MEDIA_APPLICATION_REPORTING
