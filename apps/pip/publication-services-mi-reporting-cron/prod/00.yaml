@@ -1,14 +1,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: pip-account-management-media-reporting-cron
+  name: pip-publication-services-mi-reporting-cron
 spec:
-  releaseName: pip-account-management-media-reporting-cron
+  releaseName: pip-publication-services-mi-reporting-cron
   values:
     job:
-      schedule: "0 0 * FEB,APR,JUN,AUG,OCT,DEC MON"
+      schedule: "01 08 * * 0,2,4,6"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
         PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
-        TRIGGER_TYPE: MEDIA_APPLICATION_REPORTING
+        TRIGGER_TYPE: MI_DATA_REPORTING

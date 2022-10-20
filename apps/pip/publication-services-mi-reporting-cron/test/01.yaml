@@ -1,14 +1,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: pip-data-management-no-match-artefacts-cron
+  name: pip-account-management-media-reporting-cron
 spec:
-  releaseName: pip-data-management-no-match-artefacts-cron
+  releaseName: pip-publication-services-mi-reporting-cron
   values:
     job:
-      schedule: "0 1 * * 0,2,4,6"
+      schedule: "0 * * * *"   # TODO: run every 1 hour for testing. Need to be changed back to every day
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
         PUBLICATION_SERVICES_URL: https://pip-publication-services.test.platform.hmcts.net
-        TRIGGER_TYPE: NO_MATCH_ARTEFACTS
+        TRIGGER_TYPE: MI_DATA_REPORTING
