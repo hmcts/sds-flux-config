@@ -11,4 +11,5 @@ spec:
       disableTraefikTls: false
       ingressClass: traefik-no-proxy
       environment:
-        SUBSCRIPTION_MANAGEMENT_URL: 'https://pip-subscription-management.demo.platform.hmcts.net'
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.demo.platform.hmcts.net
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.demo.platform.hmcts.net
