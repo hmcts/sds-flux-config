@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: pip-subscription-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-6afc91e-20221026110142 #{"$imagepolicy": "flux-system:pip-subscription-management"}
+    image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-c67cd8e-20221026163550 #{"$imagepolicy": "flux-system:pip-subscription-management"}
     java:
       disableTraefikTls: false
       ingressClass: traefik-no-proxy
