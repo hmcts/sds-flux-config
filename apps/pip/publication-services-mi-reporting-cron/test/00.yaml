@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services-mi-reporting-cron
+spec:
+  releaseName: pip-publication-services-mi-reporting-cron
+  values:
+    job:
+      schedule: "0 * * * *"   # TODO: run every 1 hour for testing. Need to be changed back to every day
+      environment:
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.test.platform.hmcts.net
+        TRIGGER_TYPE: MI_DATA_REPORTING
