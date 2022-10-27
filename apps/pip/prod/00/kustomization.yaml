@@ -4,3 +4,10 @@ namespace: pip
 
 resources:
   - ../base
+
+patchesStrategicMerge:
+  - ../../data-management-no-match-artefacts-cron/prod/00.yaml
+  - ../../data-management-expired-artefacts-cron/prod/00.yaml
+  - ../../data-management-subscriptions-cron/prod/00.yaml
+  - ../../account-management-inactive-verification-cron/prod/00.yaml
+  - ../../account-management-media-reporting-cron/prod/00.yaml
