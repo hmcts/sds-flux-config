@@ -7,7 +7,7 @@ spec:
   releaseName: pip-subscription-management
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/subscription-management:pr-86-1f15f48-20221026104018 # {"$imagepolicy": "flux-system:pip-subscription-management"}
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-c67cd8e-20221026163550 # {"$imagepolicy": "flux-system:pip-subscription-management"}
       ingressHost: pip-subscription-management.test.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
