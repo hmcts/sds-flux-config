@@ -6,27 +6,7 @@ spec:
   releaseName: pip-publication-services-mi-reporting-cron
   values:
     job:
-      schedule: "*/10 * * * *"   # TODO: run every 10 mins for testing. Need to be changed back to every day
-      keyVaults:
-        pip-ss-kv:
-          excludeEnvironmentSuffix: false
-          resourceGroup: pip-ss-test-rg
-          usePodIdentity: true
-          secrets:
-            - name: app-insights-java-instrumentation-key
-              alias: INSTRUMENTATION_KEY
-            - name: app-pip-cron-timer-id
-              alias: CLIENT_ID
-            - name: app-pip-cron-timer-pwd
-              alias: CLIENT_SECRET
-            - name: app-tenant-id
-              alias: TENANT_ID
-            - name: app-pip-data-management-scope
-              alias: DATA_MANAGEMENT_AZ_API
-            - name: app-pip-account-management-scope
-              alias: ACCOUNT_MANAGEMENT_AZ_API
-            - name: app-pip-publication-services-scope
-              alias: PUBLICATION_SERVICES_AZ_API
+      schedule: "01 08 * * 0,2,4,6"
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.test.platform.hmcts.net
         TRIGGER_TYPE: MI_DATA_REPORTING

@@ -7,34 +7,7 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-193-bfc6b2e-20221027110413
       ingressHost: pip-publication-services.test.platform.hmcts.net
-      keyVaults:
-        pip-ss-kv:
-          resourceGroup: pip-ss-test-rg
-          secrets:
-            - name: gov-uk-notify-api-key
-              alias: NOTIFY_API_KEY
-            - name: app-pip-publication-services-id
-              alias: CLIENT_ID
-            - name: app-pip-publication-services-pwd
-              alias: CLIENT_SECRET
-            - name: app-tenant-id
-              alias: TENANT_ID
-            - name: app-pip-publication-services-scope
-              alias: APP_URI
-            - name: app-insights-java-instrumentation-key
-              alias: INSTRUMENTATION_KEY
-            - name: app-pip-data-management-scope
-              alias: DATA_MANAGEMENT_AZ_API
-            - name: app-pip-subscription-management-scope
-              alias: SUBSCRIPTION_MANAGEMENT_AZ_API
-            - name: app-pip-account-management-scope
-              alias: ACCOUNT_MANAGEMENT_AZ_API
-            - name: pip-team-email
-              alias: PI_TEAM_EMAIL
-            - name: courtel-certificate
-              alias: THIRD_PARTY_CERTIFICATE
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
