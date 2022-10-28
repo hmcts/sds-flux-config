@@ -7,10 +7,10 @@ spec:
   releaseName: vh-admin-web
   values:
     java:
-      ingressHost: admin.hearings.reform.hmcts.net
+      ingressHost: admin-sds.hearings.reform.hmcts.net
       environment:
-        AZUREAD__POSTLOGOUTREDIRECTURI: https://admin.hearings.reform.hmcts.net/logout
-        AZUREAD__REDIRECTURI: https://admin.hearings.reform.hmcts.net/home
+        AZUREAD__POSTLOGOUTREDIRECTURI: https://admin-sds.hearings.reform.hmcts.net/logout
+        AZUREAD__REDIRECTURI: https://admin-sds.hearings.reform.hmcts.net/home
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
         VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.platform.hmcts.net/
         VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
