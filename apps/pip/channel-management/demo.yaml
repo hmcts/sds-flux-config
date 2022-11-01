@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: pip-channel-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/channel-management:prod-b4bb71b-20221101100549 #{"$imagepolicy": "flux-system:pip-channel-management"}
+    image: sdshmctspublic.azurecr.io/pip/channel-management:prod-9fcd07b-20221101110436 #{"$imagepolicy": "flux-system:pip-channel-management"}
     java:
       disableTraefikTls: false
       ingressClass: traefik-no-proxy
