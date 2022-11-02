@@ -15,7 +15,7 @@ spec:
         VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.platform.hmcts.net/
         VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
-    image: sdshmctspublic.azurecr.io/vh/admin-web:prod-6f17593-202207250956 #{"$imagepolicy": "flux-system:vh-admin-web-prod"}
+    image: sdshmctspublic.azurecr.io/vh/admin-web:prod-1c50c01-202211021150 #{"$imagepolicy": "flux-system:vh-admin-web-prod"}
   chart:
     spec:
       chart: ./stable/vh-admin-web/prod
