@@ -7,7 +7,7 @@ resources:
   - ../../data-management-subscriptions-cron/pip-data-management-subscriptions-cron.yaml
   - ../../account-management-inactive-verification-cron/pip-account-management-inactive-verification-cron.yaml
   - ../../account-management-media-reporting-cron/pip-account-management-media-reporting-cron.yaml
-
+  - ../../publication-services-mi-reporting-cron/pip-publication-services-mi-reporting-cron.yaml
 namespace: pip
 patchesStrategicMerge:
   - ../../identity/prod.yaml
@@ -17,4 +17,3 @@ patchesStrategicMerge:
   - ../../frontend/prod.yaml
   - ../../publication-services/prod.yaml
   - ../../subscription-management/prod.yaml
-  
