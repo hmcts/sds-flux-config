@@ -8,6 +8,7 @@ spec:
   values:
     java:
       ingressHost: admin.staging.hearings.reform.hmcts.net
+      image: sdshmctspublic.azurecr.io/vh/admin-web:staging-b68d9f9-202211030616 #{"$imagepolicy": "flux-system:vh-admin-web"}
       environment:
         AZUREAD__POSTLOGOUTREDIRECTURI: https://admin.staging.hearings.reform.hmcts.net/logout
         AZUREAD__REDIRECTURI: https://admin.staging.hearings.reform.hmcts.net/home
@@ -16,4 +17,3 @@ spec:
         VHSERVICES__USERAPIURL: https://vh-user-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOWEBURL: https://vh-video-web.staging.platform.hmcts.net/
-    image: sdshmctspublic.azurecr.io/vh/admin-web:staging-af3177a-202210240835 #{"$imagepolicy": "flux-system:vh-admin-web"}

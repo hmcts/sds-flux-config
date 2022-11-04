@@ -11,4 +11,4 @@ spec:
       environment:
         KINLYCONFIGURATION__CALLBACKURI: http://vh-video-api.staging.platform.hmcts.net/callback
         SERVICES__CALLBACKURI: http://vh-video-api.staging.platform.hmcts.net/callback
-    image: sdshmctspublic.azurecr.io/vh/video-api:staging-c9bbd84-202210071058 #{"$imagepolicy": "flux-system:vh-video-api"}
+      image: sdshmctspublic.azurecr.io/vh/video-api:staging-e8558d2-202211011228 #{"$imagepolicy": "flux-system:vh-video-api"}

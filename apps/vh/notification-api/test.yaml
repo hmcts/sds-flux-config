@@ -8,5 +8,4 @@ spec:
   values:
     java:
       ingressHost: vh-notification-api.test.platform.hmcts.net
-      environment:
-    image: sdshmctspublic.azurecr.io/vh/notification-api:staging-2f500bc-202210070233 #{"$imagepolicy": "flux-system:vh-notification-api"}
+      image: sdshmctspublic.azurecr.io/vh/notification-api:staging-5e372c8-202210251142 #{"$imagepolicy": "flux-system:vh-notification-api"}
