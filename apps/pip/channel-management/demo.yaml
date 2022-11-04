@@ -10,3 +10,7 @@ spec:
     java:
       disableTraefikTls: false
       ingressClass: traefik-no-proxy
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.demo.platform.hmcts.net
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.demo.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
