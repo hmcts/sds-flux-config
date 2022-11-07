@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/dev-role.yaml
+  - ../test-api/test-api.yaml
+  - ../test-web/test-web.yaml
 namespace: vh
 patchesStrategicMerge:
   - ../../identity/vh-aad-identity.yaml
