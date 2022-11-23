@@ -1,27 +1,27 @@
 apiVersion: v1
 data:
-    key: ENC[AES256_GCM,data:3u24i7JXBLpRdlekrzf5VP3lhiWBwA8OH8SOuzTXfVxUNPyoZLCtGAjj5IGQNrfHCi7ZWFw1OVdiT7CIaqFrjbL7TWAQ+lMOSqcT4VQ885XmNfzy+tZA8YYH8sMcmF+UcC6W1khRjGHfLRcjCxA2TR+2xtZQj1x72fIGrW1HBOmycAWrqAcIgyCuUBvIbpfYEFh5qgLZnP9qyfllfTtfR4cC9dE=,iv:keyUUbsqyyJbeXb7mDG42Ace77C51vWeLwBtXF0eJW0=,tag:9MvOwV3HzqgijzAiVgDzfw==,type:str]
+  key: ENC[AES256_GCM,data:3u24i7JXBLpRdlekrzf5VP3lhiWBwA8OH8SOuzTXfVxUNPyoZLCtGAjj5IGQNrfHCi7ZWFw1OVdiT7CIaqFrjbL7TWAQ+lMOSqcT4VQ885XmNfzy+tZA8YYH8sMcmF+UcC6W1khRjGHfLRcjCxA2TR+2xtZQj1x72fIGrW1HBOmycAWrqAcIgyCuUBvIbpfYEFh5qgLZnP9qyfllfTtfR4cC9dE=,iv:keyUUbsqyyJbeXb7mDG42Ace77C51vWeLwBtXF0eJW0=,tag:9MvOwV3HzqgijzAiVgDzfw==,type:str]
 kind: Secret
 metadata:
-    creationTimestamp: "2022-11-22T09:31:27Z"
-    name: mi-oracle-tns-tec
-    namespace: mi
-    resourceVersion: "114972828"
-    uid: 12d1c4e4-18e9-4f7a-af93-872ae2063184
+  creationTimestamp: "2022-11-22T09:31:27Z"
+  name: mi-oracle-tns-tec
+  namespace: mi
+  resourceVersion: "114972828"
+  uid: 12d1c4e4-18e9-4f7a-af93-872ae2063184
 type: Opaque
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv:
-        - vault_url: https://dtssharedservicesithckv.vault.azure.net
-          name: sops-key
-          version: 96812ee192044e6daabee8d3621b456f
-          created_at: "2022-11-23T08:57:30Z"
-          enc: N0T4Dx-Y70eoMyBAfdIIcfg8GyBi0h3EInnggfvn9vOFP9i7Kd1_7_lofc7j0E-4AkseY94zKp39MtvixOCsenxO4aERp23T8trvjCJ-P0qGhncWMAhlfvMICyf3oQqUs5nWQiPGzFwgpa4O2pf8WzcZ6zV6YxQVHHDUY8M_xLJ3w7jd2Tx8xruKcK8eiQW_5C8NtP1BNzwgvDUhlI_jUllK4MgBpDql2f-_XXVE4tPTgPGEpCL1pqPjgCfVA6mByFng4v_zBWthAJ7H8Iusv26PggjthpgM_CnxI58LsvZrH7Vuur2YJCUf8OZdWCj8gJybEn6e3agCL9yhKRMCPg
-    hc_vault: []
-    age: []
-    lastmodified: "2022-11-23T08:57:31Z"
-    mac: ENC[AES256_GCM,data:C1A1OoLLbqiL1XO3qVyKJtLa0Jdrhu8nhwR5ubNtiDnG7yd75Clz/dwOiujVnFs7e/kYbZra5zIveAAXwxrjfT57ZreDlpiyP/IuoaPeSUywoSobN2yW4c/6zBBL0GbwCrqneDeb8n6A273ptktDhzX9f5VDBWB6zE/dS1mCsDk=,iv:And2tryFD4XotWSmy1W++v0jAZbL7J8ihvDIEeqOlFA=,tag:QdV2Gtup4Lm0xU1+p8HHJQ==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.7.3
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicesithckv.vault.azure.net
+      name: sops-key
+      version: 96812ee192044e6daabee8d3621b456f
+      created_at: "2022-11-23T08:57:30Z"
+      enc: N0T4Dx-Y70eoMyBAfdIIcfg8GyBi0h3EInnggfvn9vOFP9i7Kd1_7_lofc7j0E-4AkseY94zKp39MtvixOCsenxO4aERp23T8trvjCJ-P0qGhncWMAhlfvMICyf3oQqUs5nWQiPGzFwgpa4O2pf8WzcZ6zV6YxQVHHDUY8M_xLJ3w7jd2Tx8xruKcK8eiQW_5C8NtP1BNzwgvDUhlI_jUllK4MgBpDql2f-_XXVE4tPTgPGEpCL1pqPjgCfVA6mByFng4v_zBWthAJ7H8Iusv26PggjthpgM_CnxI58LsvZrH7Vuur2YJCUf8OZdWCj8gJybEn6e3agCL9yhKRMCPg
+  hc_vault: []
+  age: []
+  lastmodified: "2022-11-23T08:57:31Z"
+  mac: ENC[AES256_GCM,data:C1A1OoLLbqiL1XO3qVyKJtLa0Jdrhu8nhwR5ubNtiDnG7yd75Clz/dwOiujVnFs7e/kYbZra5zIveAAXwxrjfT57ZreDlpiyP/IuoaPeSUywoSobN2yW4c/6zBBL0GbwCrqneDeb8n6A273ptktDhzX9f5VDBWB6zE/dS1mCsDk=,iv:And2tryFD4XotWSmy1W++v0jAZbL7J8ihvDIEeqOlFA=,tag:QdV2Gtup4Lm0xU1+p8HHJQ==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3
