@@ -13,6 +13,9 @@ spec:
     keyVaultSecrets:
       - mi-adf-auth-key
     secretsMountPath: ''
+    additionalEnvSecrets:
+      - envName: ORACLE_TNS_TEC
+        keyName: mi-oracle-tns-tec
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
   chart:
     spec:

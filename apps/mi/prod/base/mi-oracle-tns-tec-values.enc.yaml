@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+    key: ENC[AES256_GCM,data:quZn0Kom7l1TbwXkPbkTRa6SAMASrUjAPrQwgspF/xPqkOCJsTemBeQqQCGwDd3+9gV1i58QLitV1KbD6NLjqou3rfMpjgN8TPf/ebJfqJFNB0okAWknd8i6sws5U+cJDW3G+/tBxiTBlE/xmnkBjTHg5a3h72AEHOUovUlLsBkB/k4dXFeN7bJHP/2QO69BXxX6xT8XPBflSUajCpSyKy2LzYnhtyOF6W4pHjDWimj/1r5M5iFC1bT9saRsVd5+PmsciQpUKKLpqlMuPXHS1XIkauhwieEtoTHSky9GN5D2lp35YR+fZ7Y021dU7J/aD3unkUMK5+NDBmD/sLg0/rHKgk6QP+Cu96c4NE5+Lp/alIMt3nhni5KzA8KBxUoqspkcSDX69wexAmBs06vImDYCSYIQT7uQXdvh+4uG0jlUp7nU3Pj0S8ngyFcBDB6rYnHrovryl1DT9qdDCiVFIQw10CIItUpux5Hs8vq+iv4GNPXUUO8Am4WE9no35MjR,iv:5rUZ6pjZ+5Eex99Dxc+3mnAc0HXjGg4hJ6NnCd9HzTU=,tag:/oO1/HKZLmWXpTC2UVVX/A==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: "2022-11-22T09:17:14Z"
+    name: mi-oracle-tns-tec
+    namespace: mi
+    resourceVersion: "114966029"
+    uid: f948d23a-c1cf-4eaf-b154-cc70355258a7
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssharedservicesprodkv.vault.azure.net
+          name: sops-key
+          version: 883d8b431ad345d09b2697c3aaae2a0c
+          created_at: "2022-11-23T08:57:42Z"
+          enc: d0vnTnETpRBaT8na71utSBhRee_eaO_wb3OYsntbEBY6no1b_Pi6nVxAclTo4Z_9_Q_ObCiczwwyA84dc0JxEpaL729MoR7T8-l6AIXSU0GT1CgGdVXxMdAmVV3pTAVPMrwy0TLGAUrtEooUqzetq_blSq6W8D4lk2CbNrYmr6qk3BfWu9tq7Lt-kQC-qs3FjSjgSwjIEzAYGAVK-uParkiX94szruPvUynauCdHUaRtsrhG-y_nNviiSku147gM4S7tz6bjhOb3QOK6mUtIXodHe2PnaBU_ZgbXAN-kppWS2mZbZnm8jC4uldvLNiKs7K7sFc-XvPEjiPOsLCS7ww
+    hc_vault: []
+    age: []
+    lastmodified: "2022-11-23T08:57:42Z"
+    mac: ENC[AES256_GCM,data:FwZAkPsKgCkFt/beJGQFvzK9HGcUlX0Tg9nWcUR9PIInlZhjyjcgxKuFoG8okAmcRf6Aez1CqX+UWroY1HpRp6VQtzVqIKy2DaonOcSS72uPTbkg4TPJDNdxCCg2Asm0yJt62oDfqqzG8ls07z7GndFH9LARom9BpaW1JrgGVaw=,iv:laY8xMOpdBZvdOrS+DBsPZdtIX2tqCvGH90eyrfxNWE=,tag:j01Y3HUHMaxu1PyOf9PavQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

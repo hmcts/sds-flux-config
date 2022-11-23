@@ -4,6 +4,7 @@ namespace: mi
 resources:
   - ../../base
   - mi-adf-auth-values.enc.yaml
+  - mi-oracle-tns-tec-values.enc.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
   - ../../../rbac/dev-role.yaml

@@ -45,6 +45,15 @@ spec:
               value: "{{ .Values.appName }}"
             - name: HA_PORT
               value: "{{ .Values.haPort }}"
+            {{ if .Values.additionalEnvSecrets }}
+              {{- range $secret := .Values.additionalEnvSecrets }}
+              - name: {{ $secret.envName }}
+                valueFrom:
+                  secretKeyRef:
+                    name: {{ $secret.keyName }}
+                    key: key
+              {{- end }}
+            {{ end }}
           {{ if .Values.secretsMountPath }}
           volumeMounts:
             - name: {{ .Values.keyVaultName }}-secrets-store

@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+    key: ENC[AES256_GCM,data:e4XTh12iyDtUkrMARcyEQVPfAGqwwy5YxudVAJtv6Z9pJWsKrItPANa8B9I08uyOESikuDCYyyjGWBvsth1Hcv0yUpyP6SRehReJan9cI60IRkxNpTDnRrdauRI/Xuc3aRHNGksNc6OqLQt1qz9MVqBt2QVW0BV7JvmN6XkkLM3ZsekgdCRSP3JmNPTbsAwzp8EGyX73zzRndgDkANN7N/X7PKQ=,iv:gQietzfwdeOsVJokB1ovRPvccxtizG5RgdquHxXZW4M=,tag:JJK7s5Qd3e9tInCyIydEXQ==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: "2022-11-22T09:31:27Z"
+    name: mi-oracle-tns-tec
+    namespace: mi
+    resourceVersion: "114972828"
+    uid: 12d1c4e4-18e9-4f7a-af93-872ae2063184
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssharedservicessboxkv.vault.azure.net
+          name: sops-key
+          version: 743d27d4b20644a6bd1936f3e55d1db3
+          created_at: "2022-11-23T08:56:56Z"
+          enc: KJtq9d7u-RX3MLSlcj0r8whX1Z_SMu2j8WZKRyzV1PQmWuuT3J5u3vrWngtMEiB70yvTMBYYthpwiYeGBkupstqdXteOf5cbpty_TaIaf42dF3ctbyAx_JzM6cVXV0hy94caAbPLEcJ0lXfwBpLIfJBQmofv77yx9lyuqBYvICmc34QUZ3c7sCo2HJ5u7Bfzu2ZwOQpGW55Ps_xJHz1fRkLpasG2kod25p1ZP-3jPz74bT028CG_V0OwVOsA5e8iWwkrqNqtQ-aF90eplgrkYkC3S8SoSBLkOqM0T8ecNK_vHqeQci6Tm8fnn3iTWweVdNW2Faet8Atv_KqzIxxKMA
+    hc_vault: []
+    age: []
+    lastmodified: "2022-11-23T08:56:56Z"
+    mac: ENC[AES256_GCM,data:Vh+WoCl53Jhc+hIGtKH3yeV1hJtWDTqQacDUy8Jn3uPntQeXu9YDgMB22dKU4uroSRSfTXJ8GfOivLGtWwlhMOgGq5O5d9j2+gZVFL1hRBU7X0RR0Q2x11Q04/ZBiM/P0zvS64VfMgjqX5tOJda3JAm/y0udD7jB2z4gI9DxIaI=,iv:KZSsfgrLpuF/Qqp8+ZEaJSaa7mjtMe7y1vh6ySVps0c=,tag:RXZ8xLROEAYHgWL2U3xb/g==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

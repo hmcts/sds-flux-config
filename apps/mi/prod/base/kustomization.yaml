@@ -5,6 +5,7 @@ namespace: mi
 resources:
   - ../../base
   - mi-adf-auth-values.enc.yaml
+  - mi-oracle-tns-tec-values.enc.yaml
 
 patchesStrategicMerge:
   - ../../identity/prod.yaml
