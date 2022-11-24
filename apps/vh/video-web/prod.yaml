@@ -9,10 +9,10 @@ spec:
     java:
       ingressHost: video-sds.hearings.reform.hmcts.net
       environment:
-        AZUREAD__POSTLOGOUTREDIRECTURI: https://video-sds.hearings.reform.hmcts.net/logout
-        AZUREAD__REDIRECTURI: https://test-video-sds.hearings.reform.hmcts.net/home
-        EJUDAD__POSTLOGOUTREDIRECTURI: https://video-sds.hearings.reform.hmcts.net/logout
-        EJUDAD__REDIRECTURI: https://video-sds.hearings.reform.hmcts.net/home
+        AZUREAD__POSTLOGOUTREDIRECTURI: https://testurl-video-sds.hearings.reform.hmcts.net/logout
+        AZUREAD__REDIRECTURI: https://testurl-video-sds.hearings.reform.hmcts.net/home
+        EJUDAD__POSTLOGOUTREDIRECTURI: https://testurl-video-sds.hearings.reform.hmcts.net/logout
+        EJUDAD__REDIRECTURI: https://testurl-video-sds.hearings.reform.hmcts.net/home
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
         VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
