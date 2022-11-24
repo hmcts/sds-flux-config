@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-adf-shir
   values:
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-1da27af-20221116104338 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-a3708ad-20221124100119 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     environment: "stg"
     resourceGroup: "mi-stg-rg"
     subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
