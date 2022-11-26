@@ -4,4 +4,4 @@ nameSuffix: -auth-proxy
 resources:
   - ../traefik2/traefik2.yaml
 patchesStrategicMerge:
-  - ../traefik-auth-proxy/traefik-auth-proxy.yaml
+  - traefik-auth-proxy.yaml
