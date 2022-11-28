@@ -3,4 +3,5 @@ kind: Kustomization
 nameSuffix: -auth-proxy
 resources:
   - ../traefik2/traefik2.yaml
+patchesStrategicMerge:
   - traefik-auth-proxy.yaml
