@@ -6,6 +6,7 @@ resources:
   - ../../traefik-no-proxy
   - ../../oauth2-proxy
   - ../../external-dns
+  - ../../traefik2-auth-middlewares
 
 patchesStrategicMerge:
   - ../../traefik2/demo/01-traefik2.yaml
