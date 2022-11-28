@@ -3,3 +3,5 @@ kind: Kustomization
 nameSuffix: -no-proxy
 resources:
   - ../traefik2/traefik2.yaml
+patchesStrategicMerge:
+  - traefik-no-proxy.yaml
