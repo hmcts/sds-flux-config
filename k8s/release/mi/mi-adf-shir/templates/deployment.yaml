@@ -51,6 +51,16 @@ spec:
               mountPath: {{ .Values.secretsMountPath }}
               readOnly: true
           {{ end }}
+          {{ if .Values.hostAliases }}
+          hostAliases:
+          {{- range $alias := .Values.hostAliases }}
+            - ip: {{ $alias.ip }}
+              hostnames:
+              {{ - range $hostname := $alias.hostnames }}
+                - {{ $hostname }}
+              {{- end }}
+          {{- end }}
+          {{ end }}
           resources:
             requests:
               memory: {{ .Values.memoryRequests }}
