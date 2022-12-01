@@ -56,7 +56,7 @@ spec:
           {{- range $alias := .Values.hostAliases }}
             - ip: {{ $alias.ip }}
               hostnames:
-              {{ - range $hostname := $alias.hostnames }}
+              {{- range $hostname := $alias.hostnames }}
                 - {{ $hostname }}
               {{- end }}
           {{- end }}
