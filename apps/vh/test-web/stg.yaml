@@ -8,8 +8,8 @@ spec:
   values:
     java:
       ingressHost: test.staging.hearings.reform.hmcts.net
+      image: sdshmctspublic.azurecr.io/vh/test-web:staging-394bacb-202211300243 #{"$imagepolicy": "flux-system:vh-test-web"}
       environment:
         AZUREAD__POSTLOGOUTREDIRECTURI: https://test.staging.hearings.reform.hmcts.net/logout
         AZUREAD__REDIRECTURI: https://test.staging.hearings.reform.hmcts.net/home
         SERVICES__TESTAPIURL: https://vh-test-api.staging.platform.hmcts.net/
-    image: sdshmctspublic.azurecr.io/vh/test-web:staging-9e6eb70-202210050319 #{"$imagepolicy": "flux-system:vh-test-web"}

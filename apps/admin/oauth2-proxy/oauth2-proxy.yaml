@@ -10,15 +10,18 @@ spec:
   chart:
     spec:
       chart: oauth2-proxy
-      version: 6.2.0
+      version: 6.3.0
       sourceRef:
         kind: HelmRepository
         name: oauth2-proxy
         namespace: admin
   interval: 1m
   values:
+    image:
+      tag: "v7.4.0"
     extraArgs:
       email-domain: "*"
+      session-cookie-minimal: true
       pass-basic-auth: false
       pass-host-header: true
       pass-user-headers: false
@@ -71,13 +74,12 @@ spec:
         name: oauth2-proxy-values
     ingress:
       annotations:
-        kubernetes.io/ingress.class: traefik
         traefik.ingress.kubernetes.io/router.tls: "true"
       className: traefik
       enabled: true
     podLabels:
       aadpodidbinding: oauth2-proxy
-    proxyVarsAsSecrets: true
+    proxyVarsAsSecrets: false
     resources:
       limits:
         cpu: 100m

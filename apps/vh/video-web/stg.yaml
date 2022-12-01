@@ -12,8 +12,8 @@ spec:
         AZUREAD__POSTLOGOUTREDIRECTURI: https://video.staging.hearings.reform.hmcts.net/logout
         AZUREAD__REDIRECTURI: https://video.staging.hearings.reform.hmcts.net/home
         EJUDAD__POSTLOGOUTREDIRECTURI: https://video.staging.hearings.reform.hmcts.net/logout
-        EJUDAD__REDIRECTURI: https:/video.staging.hearings.reform.hmcts.net/home
+        EJUDAD__REDIRECTURI: https://video.staging.hearings.reform.hmcts.net/home
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
         VHSERVICES__USERAPIURL: https://vh-user-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.staging.platform.hmcts.net/
-    image: sdshmctspublic.azurecr.io/vh/video-web:staging-2803750-202210050208 # {"$imagepolicy": "flux-system:vh-video-web"}
+      image: sdshmctspublic.azurecr.io/vh/video-web:staging-359a9b2-202212011007 # {"$imagepolicy": "flux-system:vh-video-web"}

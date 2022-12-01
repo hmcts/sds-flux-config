@@ -6,9 +6,10 @@ metadata:
 spec:
   releaseName: pip-data-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/data-management:prod-959f64e-20221010141548 #{"$imagepolicy": "flux-system:pip-data-management"}
+    image: sdshmctspublic.azurecr.io/pip/data-management:prod-20fd0b0-20221130110824 #{"$imagepolicy": "flux-system:pip-data-management"}
     java:
       disableTraefikTls: false
       ingressClass: traefik-no-proxy
       environment:
-        SUBSCRIPTION_MANAGEMENT_URL: 'https://pip-subscription-management.demo.platform.hmcts.net'
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.demo.platform.hmcts.net
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.demo.platform.hmcts.net

@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-fa7cf76-20221013172754 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-b2d9c22-20221107130706 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     env:
       ADF_RESOURCEGROUP: mi-ingestion-stg-rg
       ADF_NAME: mi-ingestion-adf-stg
@@ -15,6 +15,6 @@ spec:
       MI_METADATA_SERVER_DB: mi-metadata-db-stg
     environment: "stg"
     resourceGroup: "mi-stg-rg"
-    subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
+    subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     managedIdentityClientId: "51bbb6d8-80a8-4c6d-a003-ceaf583d5b69"
