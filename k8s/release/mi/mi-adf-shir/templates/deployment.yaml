@@ -25,6 +25,16 @@ spec:
             volumeAttributes:
               secretProviderClass: {{ .Values.appName }}-secret-provider
         {{ end }}
+      {{ if .Values.hostAliases }}
+      hostAliases:
+      {{- range $alias := .Values.hostAliases }}
+        - ip: {{ $alias.ip }}
+          hostnames:
+          {{- range $hostname := $alias.hostnames }}
+            - {{ $hostname }}
+          {{- end }}
+        {{- end }}
+      {{ end }}
       containers:
         - name: mi-adf-shir
           image: {{ .Values.image }}
