@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: pip-publication-services
   values:
-    image: sdshmctspublic.azurecr.io/pip/publication-services:prod-09bbb9c-20221201145627 #{"$imagepolicy": "flux-system:pip-publication-services"}
+    image: sdshmctspublic.azurecr.io/pip/publication-services:prod-7c4935e-20221202091657 #{"$imagepolicy": "flux-system:pip-publication-services"}
     java:
       disableTraefikTls: false
       ingressClass: traefik-no-proxy
