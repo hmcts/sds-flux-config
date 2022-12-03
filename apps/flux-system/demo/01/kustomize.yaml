@@ -4,7 +4,7 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  path: ./clusters/demo/00
+  path: ./clusters/demo/01
   postBuild:
     substitute:
       ENVIRONMENT: "demo"
