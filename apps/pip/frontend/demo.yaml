@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: pip-frontend
   values:
-    image: sdshmctspublic.azurecr.io/pip/frontend:prod-c69a2cc-20221205145605 #{"$imagepolicy": "flux-system:pip-frontend"}
+    image: sdshmctspublic.azurecr.io/pip/frontend:prod-a7ed34f-20221205164447 #{"$imagepolicy": "flux-system:pip-frontend"}
     nodejs:
       disableTraefikTls: false
       ingressClass: traefik-no-proxy
