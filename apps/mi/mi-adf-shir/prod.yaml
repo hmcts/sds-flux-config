@@ -8,7 +8,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment
       app.kubernetes.io/name: mi-adf-shir-deployment
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-a3708ad-20221124100119 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-0641eb6-20221206112502 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     replicaCount: 4
     memoryLimits: '4096Mi'
     resourceGroup: "mi-prod-rg"
@@ -17,6 +17,6 @@ spec:
     environment: "prod"
     managedIdentityClientId: "ee31a18f-45e9-41db-881d-5976695188fb"
     hostAliases:
-      - ip: 51.141.129.74
-        hostnames:
-          - mcmshmctsproddataextract.blob.core.windows.net
+    - ip: 51.141.129.74
+      hostnames:
+      - mcmshmctsproddataextract.blob.core.windows.net
