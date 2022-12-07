@@ -8,6 +8,6 @@ spec:
   postBuild:
     substitute:
       ENVIRONMENT: "demo"
-      CLUSTER: "00"
+      CLUSTER: "01"
       ENV_MONITOR_CHANNEL: "aks-monitor-demo"
       KEYVAULT_ENVIRONMENT: "demo"
