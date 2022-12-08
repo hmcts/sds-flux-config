@@ -6,7 +6,7 @@ spec:
   releaseName: pip-channel-management
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-c939c49-20221206121555 # {"$imagepolicy": "flux-system:pip-channel-management"}
+      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-faf7fdf-20221208114249 # {"$imagepolicy": "flux-system:pip-channel-management"}
       disableTraefikTls: true
   chart:
     spec:
