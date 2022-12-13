@@ -7,6 +7,12 @@ resources:
   - ../../../rbac/reader-clusterrole.yaml
   - ../../keda
   - ../../reply-urls-operator/demo
+  - ../../traefik-auth-proxy
+  - ../../traefik-no-proxy
+  - ../../oauth2-proxy
+  - ../../external-dns
+  - ../../traefik2-auth-middlewares
+  
 namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/demo/secret-provider.yaml
