@@ -51,7 +51,7 @@ spec:
             {{ end }}
             - name: ENABLE_HA
               value: "{{ .Values.haEnabled }}"
-            (( if .Values.nodeName }}
+            {{ if .Values.nodeName }}
             - name: NODE_NAME
               value: "{{ .Values.nodeName }}"
             {{ else }}
