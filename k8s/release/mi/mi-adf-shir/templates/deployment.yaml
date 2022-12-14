@@ -51,8 +51,15 @@ spec:
             {{ end }}
             - name: ENABLE_HA
               value: "{{ .Values.haEnabled }}"
+            (( if .Values.nodeName }}
             - name: NODE_NAME
-              value: "{{ .Values.appName }}"
+              value: "{{ .Values.nodeName }}"
+            {{ else }}
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            {{ end }}
             - name: HA_PORT
               value: "{{ .Values.haPort }}"
           {{ if .Values.secretsMountPath }}
