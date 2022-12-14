@@ -320,7 +320,7 @@ resources: {}
 nginx:
   image:
     repository: nginx
-    tag: 1.18.0-alpine
+    tag: 1.23.3-alpine
     pullPolicy: IfNotPresent
 
   resources: {}
