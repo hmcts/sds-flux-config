@@ -8,6 +8,7 @@ spec:
   values:
     image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-0641eb6-20221206112502 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     replicaCount: 2
+    memoryLimits: '4096Mi'
     environment: "test"
     resourceGroup: "mi-test-rg"
     subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
