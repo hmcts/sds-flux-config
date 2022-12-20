@@ -17,3 +17,6 @@ spec:
         redirectTo: websecure
     additionalArguments:
       - --providers.kubernetesingress.ingressendpoint.ip=20.90.86.88
+      - --providers.kubernetesingress.ingressclass=traefik
+      - --entryPoints.web.forwardedHeaders.insecure
+      - --entryPoints.websecure.forwardedHeaders.insecure

@@ -17,3 +17,6 @@ spec:
         redirectTo: websecure
     additionalArguments:
       - --providers.kubernetesingress.ingressendpoint.ip=51.142.81.239
+      - --providers.kubernetesingress.ingressclass=traefik
+      - --entryPoints.web.forwardedHeaders.insecure
+      - --entryPoints.websecure.forwardedHeaders.insecure
