@@ -1,9 +1,0 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: pip-data-management
-  namespace: pip
-spec:
-  releaseName: pip-data-management
-  values:
-    image: sdshmctspublic.azurecr.io/pip/data-management:prod-b37756f-20221214143053 #{"$imagepolicy": "flux-system:pip-data-management"}
