@@ -11,9 +11,9 @@ spec:
   values:
     additionalArguments:
       - --providers.kubernetesingress.ingressclass=traefik
-      - --providers.kubernetesingress.ingressendpoint.ip=51.142.81.239
       - --entryPoints.web.forwardedHeaders.insecure
       - --entryPoints.websecure.forwardedHeaders.insecure
+
     ingressClass:
       enabled: true
       isDefaultClass: false

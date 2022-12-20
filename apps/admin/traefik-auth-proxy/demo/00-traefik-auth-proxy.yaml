@@ -15,3 +15,5 @@ spec:
     ports:
       web:
         redirectTo: websecure
+    additionalArguments:
+      - --providers.kubernetesingress.ingressendpoint.ip=51.142.81.239
