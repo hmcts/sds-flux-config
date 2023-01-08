@@ -8,7 +8,7 @@ spec:
   domainFilter: .*..sandbox.platform.hmcts.net
   clientID: 1f26b7c2-a15e-4fa6-a3c7-4c0d95beb2cb
   clientSecret:
-    envVarClientSecret: true
+    envVarClientSecret: AZURE_CLIENT_SECRET
     keyVaultClientSecret:
       secretName: reply-urls-operator-client-secret
       keyVaultName: dtssharedservicessboxkv
