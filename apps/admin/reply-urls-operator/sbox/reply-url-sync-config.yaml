@@ -8,7 +8,8 @@ spec:
   domainFilter: .*..sandbox.platform.hmcts.net
   clientID: 1f26b7c2-a15e-4fa6-a3c7-4c0d95beb2cb
   clientSecret:
-    secretName: reply-urls-operator-client-secret
-    keyVaultName: dtssharedservicessboxkv
+    keyVaultClientSecret:
+      secretName: reply-urls-operator-client-secret
+      keyVaultName: dtssharedservicessboxkv
   objectID: b40e709c-24e0-4e1f-8e79-65268a4c24fe
   tenantID: 21ae17a1-694c-4005-8e0f-6a0e51c35a5f
