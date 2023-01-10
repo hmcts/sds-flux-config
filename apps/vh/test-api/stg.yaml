@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-test-api.staging.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/test-api:staging-32f9766-202211301047 #{"$imagepolicy": "flux-system:vh-test-api"}
+      image: sdshmctspublic.azurecr.io/vh/test-api:staging-b735d39-202212150925 #{"$imagepolicy": "flux-system:vh-test-api"}
       environment:
         SERVICES__TESTAPIURL: https://vh-test-api.staging.platform.hmcts.net/
         SERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
