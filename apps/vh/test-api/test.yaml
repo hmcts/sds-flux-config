@@ -8,5 +8,4 @@ spec:
   values:
     java:
       ingressHost: vh-test-api.test.platform.hmcts.net
-      environment:
-    image: sdshmctspublic.azurecr.io/vh/test-api:staging-bd52c53-202208150407 #{"$imagepolicy": "flux-system:vh-test-api"}
+      image: sdshmctspublic.azurecr.io/vh/test-api:staging-b735d39-202212150925 #{"$imagepolicy": "flux-system:vh-test-api"}

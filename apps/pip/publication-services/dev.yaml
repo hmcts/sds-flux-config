@@ -1,9 +1,0 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: pip-publication-services
-  namespace: pip
-spec:
-  releaseName: pip-publication-services
-  values:
-    image: sdshmctspublic.azurecr.io/pip/publication-services:prod-11846f6-20220815150745 #{"$imagepolicy": "flux-system:pip-publication-services"}

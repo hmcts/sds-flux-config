@@ -25,6 +25,16 @@ spec:
             volumeAttributes:
               secretProviderClass: {{ .Values.appName }}-secret-provider
         {{ end }}
+      {{ if .Values.hostAliases }}
+      hostAliases:
+      {{- range $alias := .Values.hostAliases }}
+        - ip: {{ $alias.ip }}
+          hostnames:
+          {{- range $hostname := $alias.hostnames }}
+            - {{ $hostname }}
+          {{- end }}
+        {{- end }}
+      {{ end }}
       containers:
         - name: mi-adf-shir
           image: {{ .Values.image }}
@@ -41,8 +51,15 @@ spec:
             {{ end }}
             - name: ENABLE_HA
               value: "{{ .Values.haEnabled }}"
+            {{ if .Values.shirNodeName }}
             - name: NODE_NAME
-              value: "{{ .Values.appName }}"
+              value: "{{ .Values.shirNodeName }}"
+            {{ else }}
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            {{ end }}
             - name: HA_PORT
               value: "{{ .Values.haPort }}"
           {{ if .Values.secretsMountPath }}
@@ -51,6 +68,13 @@ spec:
               mountPath: {{ .Values.secretsMountPath }}
               readOnly: true
           {{ end }}
+          resources:
+            requests:
+              memory: {{ .Values.memoryRequests }}
+              cpu: {{ .Values.cpuRequests }}
+            limits:
+              memory: {{ .Values.memoryLimits }}
+              cpu: {{ .Values.cpuLimits }}
       {{ if .Values.nodeName }}
       nodeName: {{ .Values.nodeName }}
       {{ end }}

@@ -1,4 +1,3 @@
----
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -7,7 +6,7 @@ metadata:
 spec:
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-f078395-20220512231906
+      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-0bc52a6-20221006092633 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
       suspend: false
       schedule: '45 2 * * *'
       activeDeadlineSeconds: 82800
@@ -16,7 +15,7 @@ spec:
       environment:
         MI_CLIENT_ID: "12d8c94d-2d49-48d8-9e1b-0bc9937c6670"
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-f078395-20220512231906
+        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-0bc52a6-20221006092633 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
         enabled: true
       testsConfig:
         environment:

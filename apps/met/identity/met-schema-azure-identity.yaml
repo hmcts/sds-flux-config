@@ -1,0 +1,19 @@
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: met-schema
+  namespace: met
+spec:
+  type: 0
+  resourceID: replace
+  clientID: replace
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: met-schema
+  namespace: met
+spec:
+  azureIdentity: met-schema
+  selector: met-schema

@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: pip
+
+resources:
+  - ../base
+
+patchesStrategicMerge:
+  - ../../data-management-no-match-artefacts-cron/prod/00.yaml
+  - ../../data-management-expired-artefacts-cron/prod/00.yaml
+  - ../../data-management-subscriptions-cron/prod/00.yaml
+  - ../../account-management-inactive-verification-cron/prod/00.yaml
+  - ../../account-management-media-reporting-cron/prod/00.yaml
+  - ../../publication-services-mi-reporting-cron/prod/00.yaml
+  - ../../refresh-views-cron/prod/00.yaml

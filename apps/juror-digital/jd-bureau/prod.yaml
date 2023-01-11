@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: 'juror-bureau.justice.gov.uk'
-      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:2.27.190
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:3.1.85
       environment:
         NODE_ENV: production
         TRACKING_CODE: UA-91917174-1

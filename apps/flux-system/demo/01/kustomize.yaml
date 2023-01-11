@@ -4,10 +4,10 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  path: ./clusters/demo/00
+  path: ./clusters/demo/01
   postBuild:
     substitute:
       ENVIRONMENT: "demo"
-      CLUSTER: "00"
+      CLUSTER: "01"
       ENV_MONITOR_CHANNEL: "aks-monitor-demo"
       KEYVAULT_ENVIRONMENT: "demo"

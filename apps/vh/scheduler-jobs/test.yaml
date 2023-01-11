@@ -6,6 +6,4 @@ metadata:
 spec:
   releaseName: vh-scheduler-jobs
   values:
-    java:
-      ingressHost: vh-scheduler-jobs.test.platform.hmcts.net
-    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs:staging-109249f-202208031038 #{"$imagepolicy": "flux-system:vh-scheduler-jobs"}
+    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:staging-b710ace-202212161317 #{"$imagepolicy": "flux-system:vh-scheduler-jobs"}

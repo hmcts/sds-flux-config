@@ -6,8 +6,7 @@ spec:
   interval: 10m
   releaseName: vh-booking-queue-subscriber
   values:
-    function:
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-f8b9ad3-202208120304 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
+    java:
       disableTraefikTls: true
   chart:
     spec:
