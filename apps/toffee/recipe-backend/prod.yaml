@@ -8,5 +8,7 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-7e9163f-20221129083910 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
       ingressHost: toffee-recipe-backend.platform.hmcts.net
+      autoscaling:
+        enabled: true
     global:
       environment: prod
