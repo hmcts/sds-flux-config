@@ -12,6 +12,8 @@ spec:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.platform.hmcts.net
       autoscaling:
         enabled: true
+        maxReplicas: 5    # Required setting
+        targetCPUUtilizationPercentage: 50
     global:
       environment: prod
     volumes:
