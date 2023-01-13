@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+spec:
+  releaseName: pip-publication-services
+  values:
+    image: sdshmctspublic.azurecr.io/pip/publication-services:prod-df2419c-20230109120941 #{"$imagepolicy": "flux-system:pip-publication-services"}
+    replicaCount: 0
