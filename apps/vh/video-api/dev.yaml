@@ -47,6 +47,8 @@ spec:
             - connectionstrings--videoapi
             - name: wowzaconfiguration--restendpoint--0
               alias: WowzaConfiguration--RestApiEndpoints--0
+            - name: wowzaconfiguration--restendpoint--0
+              alias: WowzaConfiguration--RestApiEndpoints--1
         vh-video-api:
           excludeEnvironmentSuffix: false
           resourceGroup: vh-infra-core-{{ .Values.global.environment }}
