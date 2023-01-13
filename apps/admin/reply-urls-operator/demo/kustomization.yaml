@@ -3,7 +3,6 @@ namespace: admin
 kind: Kustomization
 resources:
   - https://github.com/hmcts/reply-urls-operator/config/default?ref=v0.0.10
-  - secret.enc.yaml
   - reply-url-sync-config.yaml
 
 patchesStrategicMerge:
