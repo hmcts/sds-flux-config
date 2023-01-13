@@ -11,6 +11,10 @@ spec:
       autoscaling:
         enabled: true
         maxReplicas: 5    # Required setting
+        cpu:
+          averageUtilization: 50
+        memory:
+          averageUtilization: 50
 
     global:
       environment: prod
