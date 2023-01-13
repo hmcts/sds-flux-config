@@ -6,4 +6,5 @@ metadata:
 spec:
   releaseName: pip-account-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/data-management:prod-b37756f-20221214143053 #{"$imagepolicy": "flux-system:pip-data-management"}
+    image: sdshmctspublic.azurecr.io/pip/data-management:prod-15d2368-20230111102053 #{"$imagepolicy": "flux-system:pip-data-management"}
+    replicaCount: 0

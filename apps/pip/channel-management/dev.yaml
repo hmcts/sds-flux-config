@@ -6,4 +6,5 @@ metadata:
 spec:
   releaseName: pip-channel-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/channel-management:prod-60b5739-20221214111050 #{"$imagepolicy": "flux-system:pip-channel-management"}
+    image: sdshmctspublic.azurecr.io/pip/channel-management:prod-645100d-20230110114325 #{"$imagepolicy": "flux-system:pip-channel-management"}
+    replicaCount: 0
