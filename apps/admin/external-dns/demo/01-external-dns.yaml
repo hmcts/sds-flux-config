@@ -5,6 +5,10 @@ metadata:
   namespace: admin 
 spec:
   releaseName: external-dns
+  chart:
+    spec:
+      chart: external-dns
+      version: 6.13.0
   values:
     logLevel: debug
     txtOwnerId: sds-demo-aks-inactive
