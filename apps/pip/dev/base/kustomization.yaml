@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../../base/namespace.yaml
   - ../../identity/pip-azure-identity.yaml
+  - ../../../rbac/dev-role.yaml
 namespace: pip
 patchesStrategicMerge:
   - ../../identity/dev.yaml
