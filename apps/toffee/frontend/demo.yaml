@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-d1389be-20221129085727 #{"$imagepolicy": "flux-system:toffee-frontend"}
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-6fcdaa3-20230116122338 #{"$imagepolicy": "flux-system:toffee-frontend"}
       disableTraefikTls: false
       ingressHost: toffee.demo.platform.hmcts.net
       environment:

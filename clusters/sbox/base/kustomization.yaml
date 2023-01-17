@@ -10,6 +10,7 @@ resources:
   - ../../../apps/admin/base/kustomize.yaml
   - ../../../apps/kube-system/base/kustomize.yaml
   - ../../../apps/dts-legacy/base/kustomize.yaml
+  - ../../../apps/cronjob/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
