@@ -11,7 +11,8 @@ spec:
       ingressHost: toffee.demo.platform.hmcts.net
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.demo.platform.hmcts.net
-      ingressClass: traefik-no-proxy
+      ingressClass: traefik
+      enableOAuth: true
     global:
       environment: demo
     volumes:
