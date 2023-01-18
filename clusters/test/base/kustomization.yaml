@@ -11,6 +11,7 @@ resources:
   - ../../../apps/kube-system/base/kustomize.yaml
   - ../../../apps/c100/base/kustomize.yaml
   - ../../../apps/met/base/kustomize.yaml
+  - ../../../apps/toffee/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
