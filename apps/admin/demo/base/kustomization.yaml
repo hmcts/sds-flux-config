@@ -9,8 +9,6 @@ resources:
   - ../../reply-urls-operator/demo
 namespace: admin
 patchesStrategicMerge:
-  - ../../traefik2/demo/secret-provider.yaml
-  - ../../traefik2/demo/traefik-private.yaml
   - ../../keda/demo/identity.yaml
 
 patches:
