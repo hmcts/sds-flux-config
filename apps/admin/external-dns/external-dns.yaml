@@ -24,7 +24,6 @@ spec:
       - ingress
     domainFilters: 
       - demo.platform.hmcts.net
-    annotationFilter: "kubernetes.io/ingress.class=traefik"
     azure:
       resourceGroup: reformMgmtRG
       tenantId: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
