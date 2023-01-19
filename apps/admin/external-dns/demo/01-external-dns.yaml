@@ -6,5 +6,6 @@ metadata:
 spec:
   releaseName: external-dns
   values:
+    annotationFilter: external-dns-selector in (traefik, traefik-no-proxy)
     logLevel: debug
     txtOwnerId: sds-demo-aks-active
