@@ -5,6 +5,10 @@ metadata:
   namespace: admin
 spec:
   values:
+    providers:
+      kubernetesIngress:
+        publishedService:
+          enabled: false
     additionalArguments:
       - --providers.kubernetesingress.ingressclass=traefik-private
     providers:
