@@ -6,14 +6,17 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-f29acb4-20230112153503 #{"$imagepolicy": "flux-system:toffee-frontend"}
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-9cd91ce-20230117113915 #{"$imagepolicy": "flux-system:toffee-frontend"}
       ingressHost: toffee.platform.hmcts.net
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.platform.hmcts.net
       autoscaling:
         enabled: true
-        maxReplicas: 5    # Required setting
-        targetCPUUtilizationPercentage: 50
+        maxReplicas: 5 # Required setting
+        cpu:
+          averageUtilization: 55
+        memory:
+          averageUtilization: 55
     global:
       environment: prod
     volumes:
