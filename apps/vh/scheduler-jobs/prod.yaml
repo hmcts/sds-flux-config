@@ -13,63 +13,63 @@ spec:
         schedule: "30 5 * * *"
         concurrencyPolicy: Forbid
         args: 
-        - AnonymiseHearingsConferencesAndDeleteAadUsersJob
+          - AnonymiseHearingsConferencesAndDeleteAadUsersJob
 
       - cronJobName: vh-clear-conference-message-history-job
         suspend: true
         schedule: "0 * * * *"
         concurrencyPolicy: Forbid
         args: 
-        - ClearConferenceInstantMessageHistoryJob
+          - ClearConferenceInstantMessageHistoryJob
 
       - cronJobName: vh-clear-hearings-job
         suspend: true
         schedule: "0 23 * * *"
         concurrencyPolicy: Forbid
         args:
-        - ClearHearingsJob
+          - ClearHearingsJob
 
       - cronJobName: vh-delete-audio-recording-applications-job
         suspend: true
         schedule: "0 22 * * *"
         concurrencyPolicy: Forbid
         args:
-        - DeleteAudioRecordingApplicationsJob
+          - DeleteAudioRecordingApplicationsJob
         
       - cronJobName: vh-get-judiciary-users-job
         suspend: true
         schedule: "0 2 * * *"
         concurrencyPolicy: Forbid
         args:
-        - GetJudiciaryUsersJob
+          - GetJudiciaryUsersJob
 
       - cronJobName: vh-reconcile-hearing-audio-with-storage-job
         suspend: true
         schedule: "0 22 * * *"
         concurrencyPolicy: Forbid
         args: 
-        - ReconcileHearingAudioWithStorageJob
+          - ReconcileHearingAudioWithStorageJob
 
       - cronJobName: vh-remove-heartbeats-for-conferences-job
         suspend: true
         schedule: "40 5 * * *"
         concurrencyPolicy: Forbid
         args:
-        - RemoveHeartbeatsForConferencesJob
+          - RemoveHeartbeatsForConferencesJob
 
       - cronJobName: vh-send-hearing-notifications-job
         suspend: true
         schedule: "0 10 * * *"
         concurrencyPolicy: Forbid
         args:
-        - SendHearingNotificationsJob
+          - SendHearingNotificationsJob
           
       - cronJobName: vh-hearing-allocations-job
         suspend: true
         schedule: "0 3 * * *"
         concurrencyPolicy: Forbid
         args:
-        - HearingsAllocationJob
+          - HearingsAllocationJob
   chart:
     spec:
       chart: ./stable/vh-scheduler-jobs/prod
