@@ -5,6 +5,9 @@ metadata:
 spec:
   releaseName: azure-devops-agent
   interval: 5m
+  install:
+    remediation:
+      retries: 6
   values:
     image:
       repository: hmctspublic.azurecr.io/hmcts/vsts-agent # {"$imagepolicy": "flux-system:azure-devops-agent:name"}
