@@ -7,6 +7,6 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-e08c0a0-20230116125820 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
-      ingressHost: toffee-recipe-backend.testing.platform.hmcts.net
+      ingressHost: toffee-recipe-backend.test.platform.hmcts.net
     global:
       environment: testing
