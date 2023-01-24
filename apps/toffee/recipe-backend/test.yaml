@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: toffee
+spec:
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-e08c0a0-20230116125820 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
+      ingressHost: toffee-recipe-backend.testing.platform.hmcts.net
+    global:
+      environment: testing
