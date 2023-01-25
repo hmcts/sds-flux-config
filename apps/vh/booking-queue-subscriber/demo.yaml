@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-booking-queue-subscriber
+  namespace: vh
+spec:
+  releaseName: vh-booking-queue-subscriber
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-ef6ced7-202301230933 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-prod"}
+    function:
+      triggers:
+      - type: azure-servicebus
+        serviceBusName: vh-infra-core-demo
+        queueName: booking
+        messageCount: 1
+      object:
+        pollingInterval: 30
+        cooldownPeriod: 600
+        idleReplicaCount: 1
+        maxReplicaCount: 2
+        minReplicaCount: 1
