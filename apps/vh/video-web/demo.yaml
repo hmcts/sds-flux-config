@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-video-web
+  namespace: vh
+spec:
+  releaseName: vh-video-web
+  values:
+    java:
+      ingressHost: vh-video-web.demo.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/vh/video-web:staging-b413531-202301111135 # {"$imagepolicy": "flux-system:vh-video-web-prod"}
+      additionalIngressHosts: ['vh-video-web-demo.hearings.reform.hmcts.net']
