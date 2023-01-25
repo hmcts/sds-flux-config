@@ -2,12 +2,30 @@ apiVersion: image.toolkit.fluxcd.io/v1alpha2
 kind: ImagePolicy
 metadata:
   name: mi-azure-functions
+  annotations:
+    hmcts.github.com/prod-automated: disabled
 spec:
   imageRepositoryRef:
     name: mi-azure-functions
   filterTags:
     extract: $ts
     pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImagePolicy
+metadata:
+  name: mi-azure-functions-dev
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+spec:
+  imageRepositoryRef:
+    name: mi-azure-functions
+  filterTags:
+    extract: $ts
+    pattern: '^pr-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'
   policy:
     alphabetical:
       order: asc
