@@ -6,7 +6,7 @@ resources:
   - ../../kube-slack/ptl/kube-slack-values.enc.yaml
   - ../../kured/ptl/kured-values.enc.yaml
   - ../../../rbac/reader-clusterrole.yaml
-
+  - ../../traefik2
 patchesStrategicMerge:
   - ../../traefik2/ptl/secret-provider.yaml
 

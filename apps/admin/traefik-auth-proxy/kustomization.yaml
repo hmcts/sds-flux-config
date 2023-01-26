@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: admin
+nameSuffix: -auth-proxy
 resources:
+  - ../traefik2/traefik2.yaml
+patchesStrategicMerge:
   - traefik-auth-proxy.yaml
-  - oauth-auth.yaml
-  - oauth-errors.yaml
-  - oauth-headers.yaml
-  - oauth-routes.yaml

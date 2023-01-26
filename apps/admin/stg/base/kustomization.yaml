@@ -6,6 +6,8 @@ resources:
   - ../../kured/stg/kured-values.enc.yaml
   - ../../../rbac/reader-clusterrole.yaml
   - ../../keda
+  - ../../traefik2
+
 namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/stg/secret-provider.yaml

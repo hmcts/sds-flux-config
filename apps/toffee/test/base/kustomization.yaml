@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ../../identity/apple-azure-identity.yaml
+namespace: toffee
+patchesStrategicMerge:
+  - ../../identity/test.yaml
+  - ../../frontend/test.yaml
+  - ../../recipe-backend/test.yaml
+  - ../../recipe-receiver/test.yaml

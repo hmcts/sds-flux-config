@@ -6,6 +6,7 @@ resources:
   - ../../kube-slack/test/kube-slack-values.enc.yaml
   - ../../kured/test/kured-values.enc.yaml
   - ../../../rbac/reader-clusterrole.yaml
+  - ../../traefik2
 patchesStrategicMerge:
   - ../../keda/test/identity.yaml
   - ../../traefik2/test/secret-provider.yaml

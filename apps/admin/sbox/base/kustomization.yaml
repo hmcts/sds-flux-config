@@ -6,6 +6,7 @@ resources:
   - ../../kured/sbox/kured-values.enc.yaml
   - ../../../rbac/reader-clusterrole.yaml
   - ../../keda
+  - ../../traefik2
 patchesStrategicMerge:
   - ../../traefik2/sbox/secret-provider.yaml
   - ../../keda/sbox/identity.yaml
