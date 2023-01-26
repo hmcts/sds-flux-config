@@ -12,7 +12,7 @@ spec:
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.demo.platform.hmcts.net
       ingressClass: traefik-no-proxy
-      enableOAuth: true
+      enableOAuth: false
     global:
       environment: demo
     volumes:
