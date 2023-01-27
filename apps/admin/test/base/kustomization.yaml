@@ -10,7 +10,6 @@ resources:
 patchesStrategicMerge:
   - ../../keda/test/identity.yaml
   - ../../traefik2/test/secret-provider.yaml
-  - ../../aad-pod-identity/test/ds-patch.yaml
 patches:
   - path: ../../aad-pod-identity/test/azure-identity-patch.yaml
     target:
@@ -18,12 +17,6 @@ patches:
       version: v1
       kind: AzureIdentity
       name: aks-pod-identity-mi
-  - path: ../../aad-pod-identity/test/azure-kubelet-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: aks-kubelet-identity-mi
   - path: ../../aad-pod-identity/test/azure-kubelet-identity-patch.yaml
     target:
       group: aadpodidentity.k8s.io
