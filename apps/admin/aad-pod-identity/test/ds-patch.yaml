@@ -15,4 +15,4 @@ spec:
         component: nmi
         tier: node
     spec:
-      preemptionPolicy: Never
+      priorityClassName: system-node-critical
