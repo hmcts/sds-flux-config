@@ -9,3 +9,4 @@ spec:
     java:
       ingressHost: vh-test-api.demo.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/vh/test-api:staging-b735d39-202212150925 #{"$imagepolicy": "flux-system:vh-test-api-prod"}
+      ingressClass: traefik-private

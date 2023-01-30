@@ -9,6 +9,7 @@ spec:
     java:
       ingressHost: vh-video-api.demo.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/vh/video-api:prod-230fa2d-202212211002 #{"$imagepolicy": "flux-system:vh-video-api-prod"}
+      ingressClass: traefik-private
       keyVaults:
         vh-infra-core:
           excludeEnvironmentSuffix: false
