@@ -10,7 +10,7 @@ resources:
 patchesStrategicMerge:
   - ../../traefik2/sbox/secret-provider.yaml
   - ../../keda/sbox/identity.yaml
-
+  - ../../aad-pod-identity/sbox/ds-patch.yaml
 patches:
   - path: ../../aad-pod-identity/sbox/azure-identity-patch.yaml
     target:

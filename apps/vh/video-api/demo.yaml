@@ -7,8 +7,8 @@ spec:
   releaseName: vh-video-api
   values:
     java:
-      ingressHost: vh-video-api.dev.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/video-api:staging-49f0c9d-202301300910 #{"$imagepolicy": "flux-system:vh-video-api"}
+      ingressHost: vh-video-api.demo.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/vh/video-api:prod-230fa2d-202212211002 #{"$imagepolicy": "flux-system:vh-video-api-prod"}
       keyVaults:
         vh-infra-core:
           excludeEnvironmentSuffix: false
@@ -31,9 +31,9 @@ spec:
             alias: wowzaconfiguration--StorageDirectory
           - name: wowzaconfiguration--azure-storage-directory
             alias: wowzaconfiguration--AzureStorageDirectory
-          - name: wowzaconfiguration--endpoint-https
+          - name: wowzaconfiguration--endpoint
             alias: wowzaconfiguration--LoadBalancer
-          - name: wowzaconfiguration--endpoint-rtmps
+          - name: wowzaconfiguration--endpoint-streaming
             alias: wowzaconfiguration--StreamingEndpoint
           - name: wowzaconfiguration--storage-account
             alias: wowzaconfiguration--StorageAccountName

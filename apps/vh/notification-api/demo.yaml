@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-notification-api
+  namespace: vh
+spec:
+  releaseName: vh-notification-api
+  values:
+    java:
+      ingressHost: vh-notification-api.demo.platform.hmcts.net
+      environment:
+      image: sdshmctspublic.azurecr.io/vh/notification-api:prod-1b67219-202212211001 #{"$imagepolicy": "flux-system:vh-notification-api-prod"}

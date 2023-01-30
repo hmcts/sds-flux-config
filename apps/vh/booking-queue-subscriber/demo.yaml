@@ -7,11 +7,11 @@ spec:
   releaseName: vh-booking-queue-subscriber
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-c0368c3-202301280941 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:prod-5195c19-202212211029 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-prod"}
     function:
       triggers:
       - type: azure-servicebus
-        serviceBusName: vh-infra-core-test
+        serviceBusName: vh-infra-core-demo
         queueName: booking
         messageCount: 1
       object:

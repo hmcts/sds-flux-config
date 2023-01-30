@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-admin-web
+  namespace: vh
+spec:
+  releaseName: vh-admin-web
+  values:
+    java:
+      ingressHost: vh-admin-web.demo.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/vh/admin-web:prod-c0fb5ff-202212211034 #{"$imagepolicy": "flux-system:vh-admin-web-prod"}

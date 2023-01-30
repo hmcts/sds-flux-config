@@ -10,6 +10,7 @@ resources:
 patchesStrategicMerge:
   - ../../keda/test/identity.yaml
   - ../../traefik2/test/secret-provider.yaml
+  - ../../aad-pod-identity/test/ds-patch.yaml
 patches:
   - path: ../../aad-pod-identity/test/azure-identity-patch.yaml
     target:
