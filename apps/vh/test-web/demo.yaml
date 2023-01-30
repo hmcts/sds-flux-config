@@ -10,3 +10,4 @@ spec:
       ingressHost: vh-test-web.demo.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/vh/test-web:staging-22ea6ef-202212141559 # {"$imagepolicy": "flux-system:vh-test-web-prod"}
       ingressClass: traefik-no-proxy
+      disableTraefikTls: false
