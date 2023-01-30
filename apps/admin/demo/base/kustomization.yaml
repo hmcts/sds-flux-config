@@ -10,7 +10,7 @@ resources:
 namespace: admin
 patchesStrategicMerge:
   - ../../keda/demo/identity.yaml
-
+  - ../../aad-pod-identity/demo/ds-patch.yaml
 patches:
   - path: ../../aad-pod-identity/demo/azure-identity-patch.yaml
     target:

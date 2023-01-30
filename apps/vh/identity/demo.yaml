@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: vh-aad-identity
+  namespace: vh
+spec:
+  resourceID: /subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/managed-identities-demo-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vh-demo-mi
+  clientID: 4bf5c5b6-e344-48be-9acd-1e00377aecae

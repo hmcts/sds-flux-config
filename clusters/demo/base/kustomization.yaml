@@ -8,6 +8,7 @@ resources:
   - ../../../apps/kube-system/base/kustomize.yaml
   - ../../../apps/c100/base/kustomize.yaml
   - ../../../apps/my-time/base/kustomize.yaml
+  - ../../../apps/vh/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
