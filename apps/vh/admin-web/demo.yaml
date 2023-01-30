@@ -9,3 +9,5 @@ spec:
     java:
       ingressHost: vh-admin-web.demo.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/vh/admin-web:prod-c0fb5ff-202212211034 #{"$imagepolicy": "flux-system:vh-admin-web-prod"}
+      ingressClass: traefik-no-proxy
+      disableTraefikTls: false

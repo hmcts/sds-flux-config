@@ -9,3 +9,5 @@ spec:
     java:
       ingressHost: vh-user-api.demo.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/vh/user-api:prod-793bfc5-202212211001 #{"$imagepolicy": "flux-system:vh-user-api-prod"}
+      ingressClass: traefik-private
+      disableTraefikTls: false
