@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: pip-data-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/data-management:prod-c5ff713-20230130104720 #{"$imagepolicy": "flux-system:pip-data-management"}
+    image: sdshmctspublic.azurecr.io/pip/data-management:prod-5ab73ec-20230130114739 #{"$imagepolicy": "flux-system:pip-data-management"}
     java:
       disableTraefikTls: false
       ingressClass: traefik-no-proxy
