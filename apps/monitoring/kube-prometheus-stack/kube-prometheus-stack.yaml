@@ -122,17 +122,6 @@ spec:
                       operator: In
                       values:
                         - system
-      additionalServiceMonitors:
-        - name: "flux-monitor"
-          selector:
-            matchLabels:
-              app: flux
-          namespaceSelector:
-            matchNames:
-              - admin
-          endpoints:
-            - targetPort: 3030
-          path: /metrics
       additionalPodMonitors:
         - name: "node-problem-monitor"
           selector:
