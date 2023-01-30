@@ -33,9 +33,9 @@ spec:
             alias: wowzaconfiguration--StorageDirectory
           - name: wowzaconfiguration--azure-storage-directory
             alias: wowzaconfiguration--AzureStorageDirectory
-          - name: wowzaconfiguration--endpoint
+          - name: wowzaconfiguration--endpoint-https
             alias: wowzaconfiguration--LoadBalancer
-          - name: wowzaconfiguration--endpoint-streaming
+          - name: wowzaconfiguration--endpoint-rtmps
             alias: wowzaconfiguration--StreamingEndpoint
           - name: wowzaconfiguration--storage-account
             alias: wowzaconfiguration--StorageAccountName
