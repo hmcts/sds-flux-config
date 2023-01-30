@@ -7,6 +7,9 @@ spec:
   releaseName: mi-azure-functions
   values:
     image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-683c7ca-20230130121359 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    keyVaultSecrets:
+      - encryption-publicKey
+      - aramis-encryption-secret
     env:
       ADF_RESOURCEGROUP: mi-ingestion-dev-rg
       ADF_NAME: mi-ingestion-adf-dev
