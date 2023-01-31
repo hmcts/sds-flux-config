@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../base/patches/image-automation-components_v38.3.yaml
+  - ../../base/image-update-automation.yaml
   - git-credentials.enc.yaml
   - ../../automation
 patches:
