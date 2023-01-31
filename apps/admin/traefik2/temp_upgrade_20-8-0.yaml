@@ -16,3 +16,9 @@ spec:
         kind: HelmRepository
         name: traefik
         namespace: admin
+  values:
+    ports:
+      websecure:
+        tls:
+          enabled: false
+    instanceLabelOverride: traefik
