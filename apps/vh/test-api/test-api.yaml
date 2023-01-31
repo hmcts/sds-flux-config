@@ -8,7 +8,7 @@ spec:
   releaseName: vh-test-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/test-api:staging-7e75704-202301261453 # {"$imagepolicy": "flux-system:vh-test-api"}
+      image: sdshmctspublic.azurecr.io/vh/test-api:staging-57fc06a-202301301137 # {"$imagepolicy": "flux-system:vh-test-api"}
       disableTraefikTls: true
   chart:
     spec:
