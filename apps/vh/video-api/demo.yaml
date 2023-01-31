@@ -11,6 +11,7 @@ spec:
       image: sdshmctspublic.azurecr.io/vh/video-api:prod-230fa2d-202212211002 #{"$imagepolicy": "flux-system:vh-video-api-prod"}
       ingressClass: traefik-private
       disableTraefikTls: false
+      disableIngressClassAnnotation: true
       keyVaults:
         vh-infra-core:
           excludeEnvironmentSuffix: false
@@ -33,9 +34,9 @@ spec:
             alias: wowzaconfiguration--StorageDirectory
           - name: wowzaconfiguration--azure-storage-directory
             alias: wowzaconfiguration--AzureStorageDirectory
-          - name: wowzaconfiguration--endpoint
+          - name: wowzaconfiguration--endpoint-https
             alias: wowzaconfiguration--LoadBalancer
-          - name: wowzaconfiguration--endpoint-streaming
+          - name: wowzaconfiguration--endpoint-rtmps
             alias: wowzaconfiguration--StreamingEndpoint
           - name: wowzaconfiguration--storage-account
             alias: wowzaconfiguration--StorageAccountName

@@ -3,7 +3,8 @@ kind: Kustomization
 resources:
   - ../../../apps/flux-system/ithc/base
   - ../../../apps/azure-devops/base/kustomize.yaml
-  - ../../../apps/admin/base/kustomize.yaml
+#  - ../../../apps/admin/base/kustomize.yaml
+  - ../../../apps/admin/base/kustomize_temp_traefik_upgrade.yaml
   - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/mi/base/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml

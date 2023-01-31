@@ -11,3 +11,4 @@ spec:
       image: sdshmctspublic.azurecr.io/vh/bookings-api:prod-0fc5d5c-202212211000 #{"$imagepolicy": "flux-system:vh-bookings-api-prod"}
       ingressClass: traefik-private
       disableTraefikTls: false
+      disableIngressClassAnnotation: true
