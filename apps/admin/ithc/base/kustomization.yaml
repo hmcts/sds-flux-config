@@ -13,6 +13,7 @@ patchesStrategicMerge:
   - ../../traefik2/ithc/secret-provider.yaml
   - ../../keda/ithc/identity.yaml
   - ../../traefik2/temp_upgrade_20-8-0.yaml
+  - ../../aad-pod-identity/ithc/ds-patch.yaml
 patches:
   - path: ../../aad-pod-identity/ithc/azure-identity-patch.yaml
     target:
