@@ -2,8 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - ../../base/image-automation-components.yaml
-  - ../../base/image-update-automation.yaml
+  - ../../base/patches/image-automation-components_v38.3.yaml
   - git-credentials.enc.yaml
   - ../../automation
 patches:
@@ -25,3 +24,4 @@ patches:
 patchesStrategicMerge:
   - ../../base/patches/image-automation-components-patch.yaml
   - ../../base/patches/kustomize-controller-patch.yaml
+  - ../../base/patches/gotk-components_v38_3.yaml
