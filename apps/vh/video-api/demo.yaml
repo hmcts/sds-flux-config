@@ -11,6 +11,7 @@ spec:
       image: sdshmctspublic.azurecr.io/vh/video-api:prod-230fa2d-202212211002 #{"$imagepolicy": "flux-system:vh-video-api-prod"}
       ingressClass: traefik-private
       disableTraefikTls: false
+      disableIngressClassAnnotation: true
       keyVaults:
         vh-infra-core:
           excludeEnvironmentSuffix: false
