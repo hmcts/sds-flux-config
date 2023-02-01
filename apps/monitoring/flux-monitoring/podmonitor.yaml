@@ -1,11 +1,12 @@
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
-  name: flux-system
-  namespace: flux-system
+  name: flux-system-2
+  namespace: monitoring
   labels:
     app.kubernetes.io/part-of: flux
     app.kubernetes.io/component: monitoring
+    release: kube-prometheus-stack
 spec:
   namespaceSelector:
     matchNames:
