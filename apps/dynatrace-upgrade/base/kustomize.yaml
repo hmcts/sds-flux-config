@@ -7,11 +7,12 @@ spec:
   interval: 10m
   dependsOn:
     - name: dynatrace-crd
-  path: ./apps/dynatrace/${ENVIRONMENT}/${CLUSTER}
+  path: ./apps/dynatrace-upgrade/${ENVIRONMENT}/${CLUSTER}
   postBuild:
     substitute:
       NAMESPACE: "dynatrace"
       TEAM_NOTIFICATION_CHANNEL: "${ENV_MONITOR_CHANNEL}"
+      CLUSTER_FULL_NAME: "${ENVIRONMENT}-${CLUSTER}"
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
@@ -20,4 +21,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./apps/dynatrace/dynatrace-crds
+  path: ./apps/dynatrace-upgrade/dynatrace-crds
