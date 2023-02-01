@@ -17,7 +17,7 @@ spec:
         namespace: dynatrace
   values:
     apiUrl: https://yrk32651.live.dynatrace.com/api
-    networkZone: 'azure.cft' # uses Active Gates from CFT
+    networkZone: 'azure.sds' # uses Active Gates from SDS
     operator:
       tolerations:
         - effect: NoSchedule
