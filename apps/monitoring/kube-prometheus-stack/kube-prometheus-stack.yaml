@@ -35,7 +35,7 @@ spec:
         prometheusOperator: true
         time: true
     grafana:
-      enabled: false
+      enabled: true
       plugins:
         - grafana-kubernetes-app
         - camptocamp-prometheus-alertmanager-datasource
