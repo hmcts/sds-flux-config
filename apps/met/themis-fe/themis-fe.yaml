@@ -14,6 +14,9 @@ spec:
       applicationPort: 8082
       livenessDelay: 60
       startupDelay: 60
+      readinessPath: /services/themisgatewayapi?wsdl
+      startupPath: /services/themisgatewayapi?wsdl
+      livenessPath: /services/themisgatewayapi?wsdl
       ingressHost: 'gobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.1'
       replicas: 2
