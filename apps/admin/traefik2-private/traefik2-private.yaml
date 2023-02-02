@@ -4,7 +4,17 @@ metadata:
   name: traefik2
   namespace: admin
 spec:
+  chart:
+    spec:
+      chart: traefik
+      # update the crd version in traefik-crds when updating this
+      version: 20.8.0
+      sourceRef:
+        kind: HelmRepository
+        name: traefik
+        namespace: admin
   values:
+    instanceLabelOverride: traefik-private
     additionalArguments:
       - --providers.kubernetesingress.ingressclass=traefik-private
     providers:
@@ -15,4 +25,3 @@ spec:
     ingressClass:
       enabled: true
       isDefaultClass: false
-    instanceLabelOverride: traefik-private
