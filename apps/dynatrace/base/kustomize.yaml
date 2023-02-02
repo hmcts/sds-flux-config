@@ -7,7 +7,7 @@ spec:
   interval: 10m
   dependsOn:
     - name: dynatrace-crd
-  path: ./apps/dynatrace-upgrade/${ENVIRONMENT}/${CLUSTER}
+  path: ./apps/dynatrace/${ENVIRONMENT}/${CLUSTER}
   postBuild:
     substitute:
       NAMESPACE: "dynatrace"
@@ -21,4 +21,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./apps/dynatrace-upgrade/dynatrace-crds
+  path: ./apps/dynatrace/dynatrace-crds
