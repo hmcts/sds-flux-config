@@ -26,21 +26,35 @@ spec:
         THEMIS_DAC_LISTENERSENDERID: Themis_GW
         THEMIS_DAC_LISTENERQUEUENAME: LIBRAGOB_WRITERQUEUE
         THEMIS_DAC_WRITERQUEUENAME: LIBRAGOB_READERQUEUE
-        SPRING_CLOUD_AZURE_KEYVAULT_SECRET_PROPERTY-SOURCES[0]_ENDPOINT: https://libragob-test-kv.vault.azure.net/
-        SPRING_CLOUD_AZURE_KEYVAULT_SECRET_PROPERTY-SOURCES[0]_CREDENTIAL_MANAGED-IDENTITY-ENABLED: true
-        SPRING_CLOUD_AZURE_KEYVAULT_SECRET_PROPERTY-SOURCES[0]_CREDENTIAL_CLIENT-ID: f50fe277-9215-4519-a1d4-8b88e8f7cb92
-        SPRING_JMS_SERVICEBUS_CONNECTION-STRING: https://libragob-test.servicebus.windows.net:443/
         SPRING_JMS_SERVICEBUS_IDLE-timeout: 30000
-        SPRING_CLOUD_AZURE_CLIENT-ID: f50fe277-9215-4519-a1d4-8b88e8f7cb92
-        SPRING_CLOUD_AZURE_SERVICEBUS_NAMESPACE: https://libragob-test.servicebus.windows.net:443/
+        SPRING_CONFIG_LOCATION: /mnt/secrets/libragob-test-kv
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
           secrets:
-            - db-connection-url-ThemisGatewayDS
-            - db-connection-url-ThemisDacDS
-            - db-connection-url-dasDS
-            - db-connection-url-confDS
-            - db-connection-url-finesDS
-            - db-connection-url-maintenanceDS
-            - db-connection-url-ThemisJmsDS
+            - themis-gateway-keystorebase64
+            - themis-gateway-dbpassword
+            - themis-gateway-dbusername
+            - themis-gateway-datasourceurl
+            - dac-datasource-password
+            - dac-datasource-username
+            - dac-datasource-url
+            - event-datasource-password
+            - event-datasource-username
+            - event-datasource-url
+            - fines-datasource-password
+            - fines-datasource-username
+            - fines-datasource-url
+            - maintenance-datasource-password
+            - maintenance-datasource-username
+            - maintenance-datasource-url
+            - confiscation-datasource-password
+            - confiscation-datasource-username
+            - confiscation-datasource-url
+            - servicebus-connectionstring
+
+
+
+
+
+
