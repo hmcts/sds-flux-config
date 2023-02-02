@@ -17,7 +17,7 @@ spec:
         namespace: dynatrace
   values:
     apiUrl: https://yrk32651.live.dynatrace.com/api
-    networkZone: 'azure.sds' # uses Active Gates from SDS
+    networkZone: "azure.sds" # uses Active Gates from SDS
     operator:
       tolerations:
         - effect: NoSchedule
@@ -33,3 +33,4 @@ spec:
           key: CriticalAddonsOnly
           operator: Equal
           value: "true"
+      priorityClassName: system-node-critical
