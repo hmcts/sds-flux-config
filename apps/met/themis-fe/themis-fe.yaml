@@ -12,6 +12,7 @@ spec:
       aadpodidbinding: met-schema-binding
     nodejs:
       applicationPort: 8082
+      livenessDelay: 60
       ingressHost: 'gobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.1'
       replicas: 2
