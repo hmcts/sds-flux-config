@@ -12,7 +12,6 @@ namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/stg/secret-provider.yaml
   - ../../keda/stg/identity.yaml
-  - ../../traefik2/temp_upgrade_20-8-0.yaml
 patches:
   - path: ../../aad-pod-identity/stg/azure-identity-patch.yaml
     target:
