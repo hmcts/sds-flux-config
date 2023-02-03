@@ -6,7 +6,8 @@ resources:
   - ../../../apps/dynatrace/base/kustomize.yaml
   - ../../../apps/mi/base/kustomize.yaml
   - ../../../apps/azure-devops/base/kustomize.yaml
-  - ../../../apps/admin/base/kustomize.yaml
+#  - ../../../apps/admin/base/kustomize.yaml
+  - ../../../apps/admin/base/kustomize_temp_traefik_upgrade.yaml
   - ../../../apps/neuvector/base/kustomize.yaml
   - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml
