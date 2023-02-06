@@ -6,7 +6,7 @@ spec:
   releaseName: pip-account-management-media-reporting-cron
   values:
     job:
-      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-d428b9b-20230131150345 # {"$imagepolicy": "flux-system:pip-account-management-media-reporting-cron"}
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-9b4b64e-20230206144333 # {"$imagepolicy": "flux-system:pip-account-management-media-reporting-cron"}
       disableTraefikTls: true
   chart:
     spec:
