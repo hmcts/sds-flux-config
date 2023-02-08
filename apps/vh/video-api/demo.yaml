@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-video-api.demo.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/video-api:prod-230fa2d-202212211002 #{"$imagepolicy": "flux-system:vh-video-api-prod"}
+      image: sdshmctspublic.azurecr.io/vh/video-api:prod-be24715-202302081106 #{"$imagepolicy": "flux-system:vh-video-api-prod"}
       ingressClass: traefik-private
       disableTraefikTls: false
       disableIngressClassAnnotation: true
