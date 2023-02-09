@@ -1,0 +1,7 @@
+apiVersion: image.toolkit.fluxcd.io/v1alpha2
+kind: ImagePolicy
+metadata:
+  name: pip-account-management-clear-audit-cron
+spec:
+  imageRepositoryRef:
+    name: pip-account-management-clear-audit-cron
