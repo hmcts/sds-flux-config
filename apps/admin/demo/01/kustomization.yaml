@@ -5,7 +5,6 @@ resources:
   - ../../traefik-auth-proxy
   - ../../traefik-no-proxy
   - ../../oauth2-proxy
-  - ../../external-dns
   - ../../traefik2-auth-middlewares
   - ../../traefik2/demo
   - ../../traefik2-private
@@ -16,6 +15,4 @@ patchesStrategicMerge:
   - ../../traefik2/demo/01-traefik2.yaml
   - ../../traefik-no-proxy/demo/01-traefik-no-proxy.yaml
   - ../../traefik-auth-proxy/demo/01-traefik-auth-proxy.yaml
-  - ../../external-dns/demo/01-external-dns-private.yaml
-  - ../../external-dns/demo/01-external-dns.yaml
   - ../../oauth2-proxy/demo/01-oauth2-proxy.yaml
