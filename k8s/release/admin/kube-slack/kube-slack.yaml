@@ -4,8 +4,6 @@ kind: HelmRelease
 metadata:
   name: kube-slack
   namespace: admin
-  annotations:
-    flux.weave.works/automated: "false"
 spec:
   releaseName: kube-slack
   chart:
