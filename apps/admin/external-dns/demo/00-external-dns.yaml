@@ -8,3 +8,7 @@ spec:
   values:
     logLevel: debug
     txtOwnerId: sds-demo-aks-inactive
+    domainFilters:
+      - demo.platform.hmcts.net
+    azure:
+      userAssignedIdentityID: 04561461-0f92-42b3-9328-8b0c1bba4641
