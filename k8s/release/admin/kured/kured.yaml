@@ -4,9 +4,6 @@ kind: HelmRelease
 metadata:
   name: kured
   namespace: admin
-  annotations:
-    flux.weave.works/ignore: "false"
-    flux.weave.works/automated: "false"
 spec:
   releaseName: kured
   chart:

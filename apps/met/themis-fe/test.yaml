@@ -7,14 +7,48 @@ metadata:
 spec:
   values:
     nodejs:
+      environment:
+        THEMIS_GATEWAY_LISTENERSENDERID: Themis_DAC
+        THEMIS_GATEWAY_WRITERSENDERID: Themis_GW
+        THEMIS_GATEWAY_PERSISTMESSAGEAUDITCONTENTFORNONUIFLOW: true
+        THEMIS_GATEWAY_RESPONSESMAXCONCURRENTPROCESSED: 20
+        THEMIS_GATEWAY_CONNECTIONTIMEOUT: 720000
+        THEMIS_GATEWAY_RECEIVETIMEOUT: 720000
+        THEMIS_GATEWAY_MESSAGEAUDITSUPPRESSION: OFF
+        THEMIS_GATEWAY_WRITERQUEUENAME: LIBRAGOB_WRITERQUEUE
+        THEMIS_GATEWAY_LISTENERQUEUENAME: LIBRAGOB_READERQUEUE
+        THEMIS_GATEWAY_HOLDERCLEANUPCRON: 0 0,30 * * * ?
+        THEMIS_GATEWAY_JKSLOCATION: /opt/jks/ThemisAzureKeyStore.jks
+        DAC_KEY_EXPIRE_TIME_SECONDS: 1800
+        DAC_NUMBER_OF_INSTANCES: 5
+        CONFISCATION_SCHEMAS: 110,45,97,116,66,109
+        MAINTENANCE_SCHEMAS: 111,67,44
+        THEMIS_DAC_LISTENERSENDERID: Themis_GW
+        THEMIS_DAC_LISTENERQUEUENAME: LIBRAGOB_WRITERQUEUE
+        THEMIS_DAC_WRITERQUEUENAME: LIBRAGOB_READERQUEUE
+        SPRING_JMS_SERVICEBUS_IDLE-timeout: 30000
+        KV_CONFIG_TREE: /mnt/secrets/libragob-test-kv/
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
           secrets:
-            - db-connection-url-ThemisGatewayDS
-            - db-connection-url-ThemisDacDS
-            - db-connection-url-dasDS
-            - db-connection-url-confDS
-            - db-connection-url-finesDS
-            - db-connection-url-maintenanceDS
-            - db-connection-url-ThemisJmsDS
+            - themis-gateway-keystorebase64
+            - themis-gateway-dbpassword
+            - themis-gateway-dbusername
+            - themis-gateway-datasourceurl
+            - dac-datasource-password
+            - dac-datasource-username
+            - dac-datasource-url
+            - event-datasource-password
+            - event-datasource-username
+            - event-datasource-url
+            - fines-datasource-password
+            - fines-datasource-username
+            - fines-datasource-url
+            - maintenance-datasource-password
+            - maintenance-datasource-username
+            - maintenance-datasource-url
+            - confiscation-datasource-password
+            - confiscation-datasource-username
+            - confiscation-datasource-url
+            - servicebus-connectionstring

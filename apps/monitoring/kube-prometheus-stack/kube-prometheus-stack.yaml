@@ -35,7 +35,7 @@ spec:
         prometheusOperator: true
         time: true
     grafana:
-      enabled: false
+      enabled: true
       plugins:
         - grafana-kubernetes-app
         - camptocamp-prometheus-alertmanager-datasource
@@ -258,7 +258,7 @@ spec:
     spec:
       chart: kube-prometheus-stack
       # update crds in kube-prometheus-stack-crds when changing this version
-      version: 44.3.0
+      version: 44.3.1
       sourceRef:
         kind: HelmRepository
         name: prometheus

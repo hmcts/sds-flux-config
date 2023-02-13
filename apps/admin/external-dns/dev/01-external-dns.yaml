@@ -1,0 +1,13 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: admin 
+spec:
+  releaseName: external-dns
+  values:
+    txtOwnerId: sds-dev-aks-active
+    domainFilters:
+      - dev.platform.hmcts.net
+    azure:
+      userAssignedIdentityID: b86d64c4-ec90-451a-ab22-77cea15aeb68

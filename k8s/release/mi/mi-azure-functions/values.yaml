@@ -25,7 +25,7 @@ keyVaultCoreSecrets:
   - encryption-publicKey
   - encryption-private-key
   - encryption-private-phase
-
+  - aramis-encryption-secret
 secretsMountPath: '/mnt/kvmnt'
 
 internalPort: 7072

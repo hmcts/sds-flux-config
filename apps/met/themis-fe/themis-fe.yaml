@@ -11,8 +11,14 @@ spec:
     podLabels:
       aadpodidbinding: met-schema-binding
     nodejs:
-      ingressHost: 'gobgateway.test.platform.hmcts.net'
-      image: 'sdshmctspublic.azurecr.io/themis/themis_wildfly:1.0.0'
+      applicationPort: 8082
+      livenessDelay: 180
+      startupDelay: 180
+      readinessPath: /services/themisgatewayapi?wsdl
+      startupPath: /services/themisgatewayapi?wsdl
+      livenessPath: /services/themisgatewayapi?wsdl
+      ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
+      image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.1'
       replicas: 2
       autoscaling:
         enabled: true

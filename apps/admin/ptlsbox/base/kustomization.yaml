@@ -9,7 +9,7 @@ resources:
   - ../../traefik2
 patchesStrategicMerge:
   - ../../traefik2/ptlsbox/secret-provider.yaml
-
+  - ../../aad-pod-identity/ds-patch.yaml
 patches:
   - path: ../../aad-pod-identity/ptlsbox/azure-identity-patch.yaml
     target:

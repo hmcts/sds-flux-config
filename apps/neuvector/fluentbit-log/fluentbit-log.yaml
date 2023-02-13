@@ -4,8 +4,6 @@ kind: HelmRelease
 metadata:
   name: fluentbit-log
   namespace: neuvector
-  annotations:
-    flux.weave.works/automated: "false"
 spec:
   releaseName: fluentbit-log
   values:

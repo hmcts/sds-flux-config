@@ -14,7 +14,7 @@ spec:
       type: 0
     azureDevOps:
       url: https://dev.azure.com/hmcts
-    replicas: 1
+    replicas: 2
   chart:
     spec:
       chart: ./charts/azure-devops-agent/azure-devops-agent
