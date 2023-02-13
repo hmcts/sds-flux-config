@@ -17,7 +17,7 @@ spec:
     policy: sync
     podLabels:
       aadpodidbinding: external-dns
-    provider: azure
+    provider: azure-private-dns
     sources:
       - ingress
     annotationFilter: "kubernetes.io/ingress.class=traefik"
