@@ -2,17 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../base
-  - ../../traefik-auth-proxy
-  - ../../traefik-no-proxy
-  - ../../oauth2-proxy
-  - ../../traefik2-auth-middlewares
-  - ../../traefik2/demo
-  - ../../traefik2-private
 
 patchesStrategicMerge:
-  - ../../traefik2/demo/secret-provider.yaml
-  - ../../traefik2-private/demo/01-private.yaml
   - ../../traefik2/demo/01-traefik2.yaml
-  - ../../traefik-no-proxy/demo/01-traefik-no-proxy.yaml
-  - ../../traefik-auth-proxy/demo/01-traefik-auth-proxy.yaml
-  - ../../oauth2-proxy/demo/01-oauth2-proxy.yaml
