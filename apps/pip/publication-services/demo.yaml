@@ -9,7 +9,6 @@ spec:
     image: sdshmctspublic.azurecr.io/pip/publication-services:prod-99b8050-20230207112822 #{"$imagepolicy": "flux-system:pip-publication-services"}
     java:
       disableTraefikTls: false
-      ingressClass: traefik-no-proxy
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
         CHANNEL_MANAGEMENT_URL: https://pip-channel-management.demo.platform.hmcts.net

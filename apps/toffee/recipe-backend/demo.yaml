@@ -8,6 +8,5 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-d924344-20230214121512 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
       ingressHost: toffee-recipe-backend.demo.platform.hmcts.net
-      ingressClass: traefik-private
     global:
       environment: demo
