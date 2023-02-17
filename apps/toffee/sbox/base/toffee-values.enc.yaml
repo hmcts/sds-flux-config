@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+  values.yaml: ENC[AES256_GCM,data:4xGd+di5GcYRSYbgfwCmIj9AnsEe5wcFCVDFMokqNtzlYQMStmOJJ6rTIV4rY0CRegG0kB6g5Ype3oNgKp5Mlwkm5Ys3H1JnQra74C4je9FKseMy5dDBdC5GIsUjC1U+rqXL4elv0/RcmH9sqYNrLoqXr5+0nqGqk8VxcwQLg9YVu1hz,iv:1JGXQQy6tbS3VEDT9D1HyCPXSDcB46nASPF9REq9Uoo=,tag:fvh76wFYEYQ3My7vS6EXDQ==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: toffee-values
+  namespace: toffee
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicessboxkv.vault.azure.net
+      name: sops-key
+      version: 743d27d4b20644a6bd1936f3e55d1db3
+      created_at: "2023-02-16T15:52:25Z"
+      enc: fjJGjGYHxyLy8GhhgMBEOEoqVDlrwzXPCYjsp_0YC6mug2cIfIEBB52EzcK1xG5C1_vdHEU8bBV2dWvACmpCLN9yTTM7dm8kYX6WJv1vT_onXkbMgEujmbvU0jy1LkK92YpD_IBrPcbknA-ZgdxSRvGTgwtoETNbLqjqewFULTOyCWgUTH117pM8i4r2ck5-_Xk89IW7lUGKqylHUs9_RGsGFx5u5n1z3z3TTpkTvIG1jzAh_R4lD6EL2dcMMoZ1J7Gak8BJWgC64uMnXh7BiaeByRd4QwiKEowihRUvak6FBg9uuBNUuYkOYJjzR6HijIkqInppl9tP3cLEugGvgQ
+  hc_vault: []
+  age: []
+  lastmodified: "2023-02-16T15:52:26Z"
+  mac: ENC[AES256_GCM,data:bOg7gIeFHKzroYUIgixmDgwxc8RMenzOlqykaBF67c82MCtm99UD0xobO2KwTU53RcYbBUdp9kuXP2jxMk34rCv/M0yKpQxY4Q7Ty4c6AJp+Ld5qAziadEiauy5iEGOCaO4FfS9bXju3STOrYbpo0sCXsGF5AUSagRuPgmLbXPw=,iv:a9h38l3btM3AZ0xAYo8kG3rOTmNFujAGeE1+wm7I1Uc=,tag:mKzRbMstEWidqHsDOPCVPA==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3
