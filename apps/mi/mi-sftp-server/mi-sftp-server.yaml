@@ -1,5 +1,5 @@
 kind: Deployment
-apiVersion: apps/v1
+apiVersion: secrets-store.csi.x-k8s.io/v1alpha1
 metadata:
   name: mi-sftp-server
   namespace: mi
