@@ -7,6 +7,8 @@ resources:
   - ../../mi-reverse-proxy/mi-reverse-proxy.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
   - ../../../rbac/dev-role.yaml
+  - ../../mi-sftp-server/mi-sftp-server.yaml
+  - ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
 patchesStrategicMerge:
   - ../../identity/dev.yaml
 
@@ -24,3 +26,10 @@ patches:
       version: v1alpha1
       kind: SecretProviderClass
       name: mi-reverse-proxy-secret-provider
+  #overlays for mi-sftp-server-secret-provider
+  - path: ../../mi-sftp-server/dev-secret-provider-patch.yaml
+    target:
+      group: secrets-store.csi.x-k8s.io
+      version: v1alpha1
+      kind: SecretProviderClass
+      name: mi-sftp-server-secret-provider

@@ -4,6 +4,9 @@ metadata:
   name: toffee-frontend
   namespace: toffee
 spec:
+  valuesFrom:
+    - name: "toffee-values"
+      kind: Secret
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/toffee/frontend:prod-df595c5-20230214122146 #{"$imagepolicy": "flux-system:toffee-frontend"}
@@ -13,9 +16,9 @@ spec:
     global:
       environment: sandbox
     volumes:
-    - name: azurekeyvault
-      csi:
-        driver: secrets-store.csi.k8s.io
-        readOnly: true
-        volumeAttributes:
-          secretProviderClass: "default-cert"
+      - name: azurekeyvault
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "default-cert"
