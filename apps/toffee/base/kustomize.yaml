@@ -4,6 +4,9 @@ metadata:
   name: toffee
   namespace: flux-system
 spec:
+  valuesFrom:
+    - name: "toffee-values"
+      kind: Secret
   path: ./apps/toffee/${ENVIRONMENT}/base
   postBuild:
     substitute:
