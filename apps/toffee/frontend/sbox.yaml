@@ -4,6 +4,9 @@ metadata:
   name: toffee-frontend
   namespace: toffee
 spec:
+  valuesFrom:
+    - name: "prometheus-values"
+      kind: Secret
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/toffee/frontend:prod-53a538f-20230220094116 #{"$imagepolicy": "flux-system:toffee-frontend"}
