@@ -3,6 +3,9 @@ kind: HelmRelease
 metadata:
   name: toffee-frontend
 spec:
+  valuesFrom:
+    - kind: Secret
+      name: toffee-values
   interval: 5m
   releaseName: toffee-frontend
   chart:
