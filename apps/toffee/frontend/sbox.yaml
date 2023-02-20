@@ -5,7 +5,7 @@ metadata:
   namespace: toffee
 spec:
   valuesFrom:
-    - name: "prometheus-values"
+    - name: "toffee-values"
       kind: Secret
   values:
     nodejs:
