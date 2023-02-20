@@ -4,8 +4,8 @@ metadata:
   name: toffee-frontend
 spec:
   valuesFrom:
-    - kind: Secret
-      name: "toffee-values"
+    - name: "toffee-values"
+      kind: Secret
   interval: 5m
   releaseName: toffee-frontend
   chart:
