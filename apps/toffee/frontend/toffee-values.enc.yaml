@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+  values.yaml: ENC[AES256_GCM,data:lR7lKGl0jq65CcCbLS+lLlmwGOkrfN06T22Ssvjmdvi+M8zHJrfotX8Xbl8tWMKlDJ6a5lkHjgh2iH2cqtlpwQISdvllcXMpBbrEE8I/byWS3NRD9Q/RU5xiJIFpMwHU8l4yXck6HXOxdLydO5eJn7o0VAK65jvlVexpGon4Z6bMiSht,iv:gSaoQ6KHVey/z21G3CrvRbhnUONveIjEAecC/Q+NguQ=,tag:p0akJA0xXlqF/hnMLFxU+Q==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: toffee-values
+  namespace: toffee
+type: Opaque
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dcdcftappssboxkv.vault.azure.net
+      name: sops-key
+      version: 4dfa9dd4b0444f03bd64e2128e347537
+      created_at: "2023-02-20T10:07:20Z"
+      enc: FL2ztX2LLb_stO2ibbV6L7VDZ9LDgcXKMl6S5eVF--g_rFAAeI-3BP6658m68-jDuHNnWTXdD5b5yswA6AllXX7MBD3QCoYKIUsn9-GhuQ2nMW8lOn2UrA2nsFnFEHYCXdmDWXYA1V5pYgbXa9s5bU6IjVSQIAuj3kbO-vM0y_69r_pjjWuQI8WzN40frx0QmoDkcg-_lqOh_76AqjINks5bVsdRP-FpHwzPdWNcRY8UI_T5UpKAfiq1x4o2ZAKr5cIOE_W8qTEs1HAPKU-PH-1bMUs7uSVCNwW-dSXjoB48dCHJqsYS7fW1jZAKIOe3e6BHhYiuDbeNfHvFAXGnEg
+  hc_vault: []
+  age: []
+  lastmodified: "2023-02-20T10:07:21Z"
+  mac: ENC[AES256_GCM,data:GZWZa2zjP4dfrx6Nb8BgboYvk0IM1mV6o4/OZ2dskUta2GSXiqGZZwHQj+jB7EzAJqhoaouYmit+usxmlTOEBkjYZxlru958gGyLME+WB9ubkIRMmtPvYFJ57rxZS/VpZ+maVy0ePIG4733uhawRVLlyqcUZvyEKLF+6rEcP/Q4=,iv:uz9eNN3AY3NLBkx+14nJHo/tEgAsyGmdW+i4Wo1xEb4=,tag:eAAx0FkRq+AcOD/PEFLXHQ==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3
