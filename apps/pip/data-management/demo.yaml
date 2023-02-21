@@ -8,7 +8,6 @@ spec:
   values:
     image: sdshmctspublic.azurecr.io/pip/data-management:prod-e6605ca-20230221092053 #{"$imagepolicy": "flux-system:pip-data-management"}
     java:
-      disableTraefikTls: false
       ingressClass: traefik-no-proxy
       environment:
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.demo.platform.hmcts.net
