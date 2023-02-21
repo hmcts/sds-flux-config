@@ -8,6 +8,5 @@ spec:
   values:
     image: sdshmctspublic.azurecr.io/my-time/api:latest #{"$imagepolicy": "flux-system:my-time-api"}
     java:
-      disableTraefikTls: false
       ingressClass: traefik-no-proxy
       environment:
