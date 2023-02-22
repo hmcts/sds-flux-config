@@ -1,7 +1,7 @@
 {{- $jobKind := (default .Values.kind  .Values.global.jobKind) -}}
 {{ if (and $jobKind (eq $jobKind "CronJob")) }}
 ---
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 {{ include "job.metadata" .}}
 spec:
