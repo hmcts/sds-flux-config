@@ -8,5 +8,4 @@ spec:
   values:
     image: sdshmctspublic.azurecr.io/my-time/frontend:latest #{"$imagepolicy": "flux-system:my-time-frontend"}
     nodejs:
-      ingressClass: traefik-no-proxy
       environment:

@@ -1,11 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../identity-binding.yaml
-  - ../secret-provider.yaml
-  - ../tlsoptions.yaml
-  - ../tlsstore.yaml
-  - ../traefik2-helmrepo.yaml
-  
+  - ../../base
 patchesStrategicMerge:
   - secret-provider.yaml

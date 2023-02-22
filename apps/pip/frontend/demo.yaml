@@ -8,7 +8,6 @@ spec:
   values:
     image: sdshmctspublic.azurecr.io/pip/frontend:prod-d700a9b-20230221161127 #{"$imagepolicy": "flux-system:pip-frontend"}
     nodejs:
-      ingressClass: traefik-no-proxy
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.demo.platform.hmcts.net

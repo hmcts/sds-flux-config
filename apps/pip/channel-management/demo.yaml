@@ -8,7 +8,6 @@ spec:
   values:
     image: sdshmctspublic.azurecr.io/pip/channel-management:prod-7fe502f-20230214140428 #{"$imagepolicy": "flux-system:pip-channel-management"}
     java:
-      ingressClass: traefik-no-proxy
       environment:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.demo.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.demo.platform.hmcts.net
