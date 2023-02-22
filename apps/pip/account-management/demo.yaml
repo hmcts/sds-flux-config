@@ -6,6 +6,5 @@ metadata:
 spec:
   releaseName: pip-account-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/data-management:prod-9f0de7c-20230214122029 #{"$imagepolicy": "flux-system:pip-data-management"}
+    image: sdshmctspublic.azurecr.io/pip/data-management:prod-e6605ca-20230221092053 #{"$imagepolicy": "flux-system:pip-data-management"}
     java:
-      disableTraefikTls: false

@@ -6,6 +6,8 @@ resources:
   - ../../base
   - mi-adf-auth-values.enc.yaml
   - ../../../rbac/nonprod-role.yaml
+  - ../../mi-sftp-server/mi-sftp-server.yaml
+  - ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
 
 patchesStrategicMerge:
   - ../../identity/ithc.yaml
@@ -17,3 +19,10 @@ patches:
   - path: ../../mi-adf-shir/ithc.yaml
   #overlays for mi-house-keeping-service
   - path: ../../mi-house-keeping-service/ithc.yaml
+  #overlays for mi-sftp-server-secret-provider
+  - path: ../../mi-sftp-server/ithc-secret-provider-patch.yaml
+    target:
+      group: secrets-store.csi.x-k8s.io
+      version: v1alpha1
+      kind: SecretProviderClass
+      name: mi-sftp-server-secret-provider

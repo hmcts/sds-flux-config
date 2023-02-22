@@ -11,12 +11,12 @@ spec:
   selector:
     matchLabels:
       app: mi-sftp-server
-      aadpodidbinding: mi-extraction-service
+      aadpodidbinding: mi-azure-functions
   template:
     metadata:
       labels:
         app: mi-sftp-server
-        aadpodidbinding: mi-extraction-service
+        aadpodidbinding: mi-azure-functions
     spec:
       initContainers:
         - name: install
@@ -53,7 +53,7 @@ spec:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: "mi-extraction-service-job-vault-secret-provider"
+              secretProviderClass: "mi-sftp-server-secret-provider"
         - name: config-cache
           emptyDir: {}
 
