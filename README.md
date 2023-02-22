@@ -4,7 +4,7 @@ All SDS applications are now being managed by Flux v2.
 
 ## Encrypting Secrets With Sops
 
-(docs/secrets-sops-encryption.md)
+[Sops setup](docs/secrets-sops-encryption.md)
 
 
 ### SOPs
