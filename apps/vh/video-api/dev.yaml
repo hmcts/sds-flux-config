@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-video-api.dev.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/video-api:staging-d0a9087-202302161029 #{"$imagepolicy": "flux-system:vh-video-api"}
+      image: sdshmctspublic.azurecr.io/vh/video-api:staging-7b3c3ae-202302221837 #{"$imagepolicy": "flux-system:vh-video-api"}
       keyVaults:
         vh-infra-core:
           excludeEnvironmentSuffix: false
