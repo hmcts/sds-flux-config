@@ -7,7 +7,6 @@ resources:
   - ../../../rbac/reader-clusterrole.yaml
   - ../../keda
   - ../../traefik2
-  - ../../reply-urls-operator/demo
 namespace: admin
 patchesStrategicMerge:
   - ../../keda/demo/identity.yaml
