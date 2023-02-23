@@ -9,4 +9,5 @@ resources:
   - aks-identity.yaml
   - aks-binding.yaml
 patchesStrategicMerge:
-  - aad-pod-id-patch.yaml
+  - aad-pod-id-deployment-patch.yaml
+  - aad-pod-id-ds-patch.yaml
