@@ -77,11 +77,9 @@ spec:
         enabled: true
         hosts:
           - sds-prometheus-01.dev.platform.hmcts.net
-          - sds-loki-01.dev.platform.hmcts.net
         tls:
           - hosts:
               - sds-prometheus-01.dev.platform.hmcts.net
-              - sds-loki-01.dev.platform.hmcts.net
     alertmanager:
       alertmanagerSpec:
         tolerations:
