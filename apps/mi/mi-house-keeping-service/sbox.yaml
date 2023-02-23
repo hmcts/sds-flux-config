@@ -8,6 +8,7 @@ spec:
   values:
     image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-81cd5db-20230213110237 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
     userAssignedIdentityID: "f74e3f17-9785-480b-8bd4-fcac2b53c682"
+    aadIdentityName: mi-house-keeping-service
     schedule: "*/5 * * * *"
     environment:
       MI_CLIENT_ID: f74e3f17-9785-480b-8bd4-fcac2b53c682
