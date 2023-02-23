@@ -119,13 +119,3 @@ spec:
                 title: 'SDS-dev-01 - {{ template "slack.default.title" . }}'
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
-    loki:
-      ingress:
-        annotations:
-          traefik.ingress.kubernetes.io/router.tls: "true"
-        enabled: true
-      hosts:
-        - sds-loki-01.dev.platform.hmcts.net
-      tls:
-        - hosts:
-            - sds-loki-01.dev.platform.hmcts.net
