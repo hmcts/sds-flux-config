@@ -21,5 +21,6 @@ resources:
   - video-web-gitrepo.yaml
   - exim-relay-gitrepo.yaml
   - toffee-recipe-receiver-gitrepo.yaml
+  - chart-job-gitrepo.yaml
 patchesStrategicMerge:
   - patches/kustomize-controller-patch.yaml
