@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: pip-frontend
   values:
-    image: sdshmctspublic.azurecr.io/pip/frontend:prod-d700a9b-20230221161127 #{"$imagepolicy": "flux-system:pip-frontend"}
+    image: sdshmctspublic.azurecr.io/pip/frontend:prod-353267e-20230223100924 #{"$imagepolicy": "flux-system:pip-frontend"}
     nodejs:
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
