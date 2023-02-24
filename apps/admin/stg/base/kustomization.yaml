@@ -12,7 +12,6 @@ namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/stg/secret-provider.yaml
   - ../../keda/stg/identity.yaml
-  - https://raw.githubusercontent.com/Azure/aad-pod-identity/v1.8.9/deploy/infra/deployment-rbac.yaml
 patches:
   - path: ../../aad-pod-identity/stg/azure-identity-patch.yaml
     target:
