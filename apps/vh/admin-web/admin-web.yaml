@@ -8,7 +8,7 @@ spec:
   values:
     java:
       disableTraefikTls: true
-      image: sdshmctspublic.azurecr.io/vh/admin-web:staging-5102554-202302211251 # {"$imagepolicy": "flux-system:vh-admin-web"}
+      image: sdshmctspublic.azurecr.io/vh/admin-web:staging-33b0a00-202302241816 # {"$imagepolicy": "flux-system:vh-admin-web"}
   chart:
     spec:
       chart: ./stable/vh-admin-web/non-prod
