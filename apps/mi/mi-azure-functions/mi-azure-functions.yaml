@@ -7,7 +7,7 @@ spec:
   interval: 5m
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-d69915c-20230220164639 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-1905f2b-20230224095121 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     keyVaultSecrets:
       - encryption-publicKey
   chart:

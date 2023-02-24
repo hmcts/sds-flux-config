@@ -7,7 +7,7 @@ spec:
   releaseName: vh-bookings-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/bookings-api:staging-5674d6d-202302221139 # {"$imagepolicy": "flux-system:vh-bookings-api"}
+      image: sdshmctspublic.azurecr.io/vh/bookings-api:staging-db9d4b3-202302231724 # {"$imagepolicy": "flux-system:vh-bookings-api"}
       disableTraefikTls: true
   chart:
     spec:
