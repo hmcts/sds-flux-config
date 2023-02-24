@@ -11,6 +11,7 @@ spec:
     aadIdentityName: mi-house-keeping-service
     environment:
       MI_CLIENT_ID: f74e3f17-9785-480b-8bd4-fcac2b53c682
+    schedule: "45 * * * *"
     global:
       subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
       environment: "sbox"
