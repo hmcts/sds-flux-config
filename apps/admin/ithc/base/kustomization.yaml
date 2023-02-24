@@ -13,7 +13,6 @@ patchesStrategicMerge:
   - ../../traefik2/ithc/secret-provider.yaml
   - ../../keda/ithc/identity.yaml
   - ../../aad-pod-identity/ds-patch.yaml
-  - https://raw.githubusercontent.com/Azure/aad-pod-identity/v1.8.9/deploy/infra/deployment-rbac.yaml
 patches:
   - path: ../../aad-pod-identity/ithc/azure-identity-patch.yaml
     target:
