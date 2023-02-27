@@ -4,4 +4,6 @@ resources:
   - ../../base
   - ../../kube-prometheus-stack/dev/prometheus-values.enc.yaml
   - ../../flux-monitoring
+  - ../../loki
+  - ../../promtail
 namespace: monitoring
