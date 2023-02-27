@@ -6,9 +6,8 @@ metadata:
 spec:
   releaseName: pip-frontend
   values:
-    image: sdshmctspublic.azurecr.io/pip/frontend:prod-3d2b5ce-20230221095604 #{"$imagepolicy": "flux-system:pip-frontend"}
+    image: sdshmctspublic.azurecr.io/pip/frontend:prod-2c12bb7-20230224130457 #{"$imagepolicy": "flux-system:pip-frontend"}
     nodejs:
-      ingressClass: traefik-no-proxy
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.demo.platform.hmcts.net

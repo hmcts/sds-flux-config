@@ -6,9 +6,8 @@ metadata:
 spec:
   releaseName: pip-subscription-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-df9469b-20230214122040 #{"$imagepolicy": "flux-system:pip-subscription-management"}
+    image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-7aab20b-20230224113530 #{"$imagepolicy": "flux-system:pip-subscription-management"}
     java:
-      ingressClass: traefik-no-proxy
       environment:
         DATA_MANAGEMENT_URL: 'https://pip-data-management.demo.platform.hmcts.net'
         ACCOUNT_MANAGEMENT_URL: 'https://pip-account-management.demo.platform.hmcts.net'

@@ -6,9 +6,10 @@ resources:
   - ../../kured/demo/kured-values.enc.yaml
   - ../../../rbac/reader-clusterrole.yaml
   - ../../keda
-  - ../../reply-urls-operator/demo
+  - ../../traefik2
 namespace: admin
 patchesStrategicMerge:
+  - ../../traefik2/demo/secret-provider.yaml
   - ../../keda/demo/identity.yaml
   - ../../aad-pod-identity/ds-patch.yaml
 patches:
