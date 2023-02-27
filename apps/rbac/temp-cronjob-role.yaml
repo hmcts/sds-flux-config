@@ -1,0 +1,21 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: temp-cronjob-role
+rules:
+- apiGroups: ['batch']
+  resources: ['cronjobs']
+  verbs: ['get', 'list', 'patch', 'update', 'watch']
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: temp-cronjob-role
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: temp-cronjob-role
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: "${TEAM_AAD_GROUP_ID:=7bde62e7-b39f-487c-95c9-b4c794fdbb96}"
