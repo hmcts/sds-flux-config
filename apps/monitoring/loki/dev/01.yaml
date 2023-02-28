@@ -16,3 +16,4 @@ spec:
         tls:
           - hosts:
               - sds-loki-01.dev.platform.hmcts.net
+            secretName: loki-distributed-tls
