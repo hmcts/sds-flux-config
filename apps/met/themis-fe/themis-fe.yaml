@@ -19,10 +19,10 @@ spec:
       livenessPath: /services/themisgatewayapi?wsdl
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.1'
-      replicas: 2
+      replicas: 5
       autoscaling:
         enabled: true
-        maxReplicas: 5
+        maxReplicas: 8
         targetCPUUtilizationPercentage: 80
   chart:
     spec:
