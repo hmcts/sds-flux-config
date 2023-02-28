@@ -7,14 +7,12 @@ metadata:
 spec:
   values:
     loki:
-      gateway:
+      ingress:
         enabled: true
-        ingress:
-          annotations:
-            traefik.ingress.kubernetes.io/router.tls: "true"
-          enabled: true
-          hosts:
-            - sds-loki-01.dev.platform.hmcts.net
-          tls:
-            - hosts:
-                - sds-loki-01.dev.platform.hmcts.net
+        annotations:
+          traefik.ingress.kubernetes.io/router.tls: "true"
+        hosts:
+          - sds-loki-01.dev.platform.hmcts.net
+        tls:
+          - hosts:
+              - sds-loki-01.dev.platform.hmcts.net
