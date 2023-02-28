@@ -7,7 +7,7 @@ metadata:
 spec:
   values:
     controller:
-      tag: 2.375-222
+      tag: 2.391-328
       containerSecurityContext:
         runAsUser: 0
         runAsGroup: 0
@@ -313,7 +313,7 @@ spec:
                         existingStorageAccountName: "hmctsjenkinssdssbox"
                         imageReference:
                           galleryImageDefinition: "jenkins-ubuntu"
-                          galleryImageVersion: "1.4.34"
+                          galleryImageVersion: "1.4.36"
                           galleryName: "hmcts"
                           galleryResourceGroup: "hmcts-image-gallery-rg"
                           gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
