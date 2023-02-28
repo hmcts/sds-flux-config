@@ -11,6 +11,7 @@ spec:
         enabled: true
         annotations:
           traefik.ingress.kubernetes.io/router.tls: "true"
+        ingressClassName: traefik
         hosts:
           - sds-loki-01.dev.platform.hmcts.net
         tls:
