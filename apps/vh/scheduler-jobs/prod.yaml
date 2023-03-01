@@ -15,7 +15,6 @@ spec:
         args:
           - AnonymiseHearingsConferencesAndDeleteAadUsersJob
       - cronJobName: vh-clear-conference-message-history-job
-        suspend: true
         schedule: "0 * * * *"
         concurrencyPolicy: Forbid
         args:
@@ -27,25 +26,21 @@ spec:
         args:
           - ClearHearingsJob
       - cronJobName: vh-delete-audio-recording-applications-job
-        suspend: true
         schedule: "0 22 * * *"
         concurrencyPolicy: Forbid
         args:
           - DeleteAudioRecordingApplicationsJob
       - cronJobName: vh-get-judiciary-users-job
-        suspend: true
         schedule: "0 2 * * *"
         concurrencyPolicy: Forbid
         args:
           - GetJudiciaryUsersJob
       - cronJobName: vh-reconcile-hearing-audio-with-storage-job
-        suspend: true
         schedule: "0 22 * * *"
         concurrencyPolicy: Forbid
         args:
           - ReconcileHearingAudioWithStorageJob
       - cronJobName: vh-remove-heartbeats-for-conferences-job
-        suspend: true
         schedule: "40 5 * * *"
         concurrencyPolicy: Forbid
         args:
@@ -57,7 +52,6 @@ spec:
         args:
           - SendHearingNotificationsJob
       - cronJobName: vh-hearing-allocations-job
-        suspend: true
         schedule: "0 3 * * *"
         concurrencyPolicy: Forbid
         args:
