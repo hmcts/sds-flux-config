@@ -20,10 +20,10 @@ spec:
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.1'
       replicas: 4
-      memoryRequests: 128Mi
-      cpuRequests: 50m
-      memoryLimits: 1024Mi
-      cpuLimits: 1000m
+      memoryRequests: "128Mi"
+      cpuRequests: "50m"
+      memoryLimits: "1024Mi"
+      cpuLimits: "1000m"
       autoscaling:
         enabled: true
         maxReplicas: 8
