@@ -12,9 +12,9 @@ spec:
       - encryption-publicKey
   chart:
     spec:
-      chart: ./k8s/release/mi/mi-azure-functions
+      chart: mi-azure-functions 
+      version: 1.0.0
       sourceRef:
-        kind: GitRepository
-        name: flux-config
+        kind: HelmRepository
+        name: hmctspublic
         namespace: flux-system
-      interval: 1m
