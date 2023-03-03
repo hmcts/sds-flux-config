@@ -9,6 +9,10 @@ spec:
     spec:
       chart: jenkins
       version: 4.3.0
+      sourceRef:
+        kind: HelmRepository
+        name: jenkins
+        namespace: jenkins
   values:
     controller:
       ingress:
