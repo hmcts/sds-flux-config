@@ -7,7 +7,7 @@ spec:
   interval: 5m
   releaseName: mi-house-keeping-service-job
   values:
-    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-81cd5db-20230213110237 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
+    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-c94a38c-20230303103607 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
     job:
       suspend: false
       kind: CronJob
