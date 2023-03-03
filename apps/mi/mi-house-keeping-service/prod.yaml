@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     job:
-      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-c94a38c-20230303103607 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
+      image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-071296c-20230303130617 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
       suspend: false
       schedule: '45 2 * * *'
       activeDeadlineSeconds: 82800
@@ -15,7 +15,7 @@ spec:
       environment:
         MI_CLIENT_ID: "12d8c94d-2d49-48d8-9e1b-0bc9937c6670"
       smoketests:
-        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-c94a38c-20230303103607 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
+        image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-071296c-20230303130617 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
         enabled: true
       testsConfig:
         environment:
