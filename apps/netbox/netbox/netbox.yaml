@@ -7,14 +7,6 @@ metadata:
 spec:
   timeout: 420s
   releaseName: netbox
-  chart:
-    spec:
-      chart: ./k8s/charts/netbox-chart
-      sourceRef:
-        kind: GitRepository
-        name: flux-config
-        namespace: flux-system
-      interval: 1m
   values:
     ingress:
       enabled: true
