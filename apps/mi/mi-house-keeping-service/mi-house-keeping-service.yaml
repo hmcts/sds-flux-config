@@ -17,9 +17,9 @@ spec:
       resourcegroup: "genesis_resource_group"
   chart:
     spec:
-      chart: ./k8s/release/mi/mi-house-keeping-service
+      chart: job
       sourceRef:
         kind: GitRepository
-        name: flux-config
+        name: chart-job
         namespace: flux-system
       interval: 1m

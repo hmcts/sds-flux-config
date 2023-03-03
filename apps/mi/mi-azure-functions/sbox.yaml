@@ -4,14 +4,6 @@ metadata:
   name: mi-azure-functions-deployment
   namespace: mi
 spec:
-  chart:
-    spec:
-      chart: mi-azure-functions 
-      version: 1.0.0
-      sourceRef:
-        kind: HelmRepository
-        name: hmctspublic
-        namespace: flux-system
   releaseName: mi-azure-functions
   values:
     image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-7a432e4-20230303103615 #{"$imagepolicy": "flux-system:mi-azure-functions"}
