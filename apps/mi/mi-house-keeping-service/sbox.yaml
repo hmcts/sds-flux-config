@@ -4,14 +4,6 @@ metadata:
   name: mi-house-keeping-service
   namespace: mi
 spec:
-  chart:
-    spec:
-      chart: mi-house-keeping-service
-      version: 1.0.0
-      sourceRef:
-        kind: HelmRepository
-        name: hmctspublic
-        namespace: flux-system
   releaseName: mi-house-keeping-service-job
   values:
     kind: CronJob
