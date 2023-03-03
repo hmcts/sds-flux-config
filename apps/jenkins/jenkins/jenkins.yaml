@@ -9,13 +9,6 @@ spec:
   rollback:
     timeout: 600s
   timeout: 600s
-  chart:
-    spec:
-      chart: jenkins
-      sourceRef:
-        kind: HelmRepository
-        name: jenkins
-        namespace: jenkins
   values:
     controller:
       # Used for label app.kubernetes.io/component
