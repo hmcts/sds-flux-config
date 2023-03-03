@@ -5,6 +5,10 @@ metadata:
   name: jenkins
   namespace: jenkins
 spec:
+  chart:
+    spec:
+      chart: jenkins
+      version: 4.3.0
   values:
     controller:
       tag: 2.391-328
