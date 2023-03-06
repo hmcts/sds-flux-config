@@ -26,3 +26,11 @@ spec:
         idleReplicaCount: 1
         maxReplicaCount: 2
         minReplicaCount: 1
+  chart:
+    spec:
+      chart: ./charts/vh-booking-queue-subscriber
+      sourceRef:
+        kind: GitRepository
+        name: vh-booking-queue-subscriber-branch
+        namespace: flux-system
+      interval: 5m

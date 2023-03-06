@@ -1,0 +1,17 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: vh-booking-queue-subscriber-branch
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: ssh://github.com/hmcts/vh-booking-queue-subscriber
+  ref:
+    branch: DTSPO-12091/update-chart
+  secretRef:
+    name: git-credentials
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/charts/
