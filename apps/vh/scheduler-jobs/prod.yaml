@@ -56,6 +56,11 @@ spec:
         concurrencyPolicy: Forbid
         args:
           - HearingsAllocationJob
+    environment:
+      VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
+      VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.platform.hmcts.net/
+      VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
+      VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
   chart:
     spec:
       chart: ./stable/vh-scheduler-jobs/prod

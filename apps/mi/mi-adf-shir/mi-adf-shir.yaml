@@ -18,9 +18,10 @@ spec:
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
   chart:
     spec:
-      chart: ./k8s/release/mi/mi-adf-shir
+      chart: mi-adf-shir
+      version: 1.0.6
       sourceRef:
-        kind: GitRepository
-        name: flux-config
+        kind: HelmRepository
+        name: hmctspublic
         namespace: flux-system
       interval: 1m

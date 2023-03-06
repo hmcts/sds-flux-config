@@ -55,9 +55,9 @@ spec:
                       - key: PTL_AKS_RESOURCE_GROUP
                         value: ss-ptl-00-rg
                       - key: STG_AKS_CLUSTER_NAME
-                        value: ss-stg-01-aks
+                        value: ss-stg-00-aks
                       - key: STG_AKS_RESOURCE_GROUP
-                        value: ss-stg-01-rg
+                        value: ss-stg-00-rg
                       - key: DEV_AKS_CLUSTER_NAME
                         value: ss-dev-01-aks
                       - key: DEV_AKS_RESOURCE_GROUP
@@ -445,6 +445,6 @@ spec:
                         uamiID: /subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptl-mi
                         usageMode: NORMAL
                         usePrivateIP: true
-                        virtualMachineSize: "Standard_D4s_v3"
+                        virtualMachineSize: "Standard_D4ds_v5"
                         virtualNetworkName: "ss-ptl-vnet"
                         virtualNetworkResourceGroupName: "ss-ptl-network-rg"

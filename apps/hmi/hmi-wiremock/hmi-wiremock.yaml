@@ -28,11 +28,3 @@ spec:
       #   periodSeconds: 30
       #   failureThreshold: 6
       #   timeoutSeconds: 5
-  chart:
-    spec:
-      chart: ./k8s/release/hmi/hmi-wiremock
-      sourceRef:
-        kind: GitRepository
-        name: flux-config
-        namespace: flux-system
-      interval: 1m
