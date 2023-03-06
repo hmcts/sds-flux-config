@@ -5,4 +5,9 @@
   "flux": {
     "fileMatch": ["\\.yaml$"]
   }
+  "packageRules": [
+    {
+      "additionalBranchPrefix": "{{parentDir}}-"
+    }
+  ]
 }
