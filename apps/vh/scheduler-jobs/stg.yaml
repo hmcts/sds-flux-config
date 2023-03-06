@@ -7,3 +7,8 @@ spec:
   releaseName: vh-scheduler-jobs
   values:
     image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:staging-41cb868-202302091000 #{"$imagepolicy": "flux-system:vh-scheduler-jobs"}
+    environment:
+      VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
+      VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.staging.platform.hmcts.net/
+      VHSERVICES__USERAPIURL: https://vh-user-api.staging.platform.hmcts.net/
+      VHSERVICES__VIDEOAPIURL: https://vh-video-api.staging.platform.hmcts.net/
