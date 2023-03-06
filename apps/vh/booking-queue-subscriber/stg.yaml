@@ -7,7 +7,7 @@ spec:
   releaseName: vh-booking-queue-subscriber
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:pr-169-202303061353-1
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-aaf481a-202303061208 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
       environment:
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
         VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.staging.platform.hmcts.net/
@@ -26,11 +26,3 @@ spec:
         idleReplicaCount: 1
         maxReplicaCount: 2
         minReplicaCount: 1
-  chart:
-    spec:
-      chart: ./charts/vh-booking-queue-subscriber
-      sourceRef:
-        kind: GitRepository
-        name: vh-booking-queue-subscriber-branch
-        namespace: flux-system
-      interval: 5m
