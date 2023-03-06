@@ -5,6 +5,14 @@ metadata:
   name: hmi-wiremock
   namespace: hmi
 spec:
+  chart:
+    spec:
+      chart: hmi-wiremock
+      version: 0.0.5
+      sourceRef:
+        kind: HelmRepository
+        name: hmctspublic
+        namespace: flux-system
   releaseName: hmi-wiremock
   values:
     image:
