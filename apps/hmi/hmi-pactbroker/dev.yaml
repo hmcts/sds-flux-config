@@ -5,6 +5,14 @@ metadata:
   name: hmi-pactbroker
   namespace: hmi
 spec:
+  chart:
+    spec:
+      chart: hmi-pactbroker
+      version: 0.0.5
+      sourceRef:
+        kind: HelmRepository
+        name: hmctspublic
+        namespace: flux-system
   releaseName: hmi-pactbroker
   values:
     aadIdentityName: "aks-dev-mi"
