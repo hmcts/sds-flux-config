@@ -14,3 +14,5 @@ spec:
         ingressClassName: traefik
         hosts:
           - host: sds-loki-01.dev.platform.hmcts.net
+            paths:
+              - path: /
