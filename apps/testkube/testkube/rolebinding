@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: AppTesting
+  labels:
+    role-type: AdminAppTesting
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: 'eaa77304-6fd5-49f7-b2a1-da3a21ef83dc'  # DTS AKS APP Testing
