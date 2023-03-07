@@ -6,13 +6,11 @@ metadata:
     release: kube-prometheus-stack
 spec:
   values:
-    ingress:
-      enabled: true
-      annotations:
-        traefik.ingress.kubernetes.io/router.tls: "true"
-      ingressClassName: traefik
-      hosts:
-        - sds-loki-01.dev.platform.hmcts.net
-      tls:
-        - hosts:
-            - sds-loki-01.dev.platform.hmcts.net
+    gateway:
+      ingress:
+        enabled: true
+        annotations:
+          traefik.ingress.kubernetes.io/router.tls: "true"
+        ingressClassName: traefik
+        hosts:
+          - host: sds-loki-01.dev.platform.hmcts.net
