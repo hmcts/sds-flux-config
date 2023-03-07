@@ -1,0 +1,11 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: testkube
+  namespace: flux-system
+spec:
+  path: ./apps/testkube/${ENVIRONMENT}/${CLUSTER}
+  postBuild:
+    substitute:
+      NAMESPACE: "testkube"
+      TEAM_NOTIFICATION_CHANNEL: "platops-build-notices"
