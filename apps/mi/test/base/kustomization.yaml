@@ -24,13 +24,11 @@ patches:
   - path: ../../mi-reverse-proxy/test-secret-provider-patch.yaml
     target:
       group: secrets-store.csi.x-k8s.io
-      version: v1alpha1
       kind: SecretProviderClass
       name: mi-reverse-proxy-secret-provider
   #overlays for mi-sftp-server-secret-provider
   - path: ../../mi-sftp-server/test-secret-provider-patch.yaml
     target:
       group: secrets-store.csi.x-k8s.io
-      version: v1alpha1
       kind: SecretProviderClass
       name: mi-sftp-server-secret-provider
