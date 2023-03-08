@@ -44,4 +44,4 @@ jobs:
         run: testkube get tests -o json | jq -r '.[].latestExecution.status'
       - name: delete netbox test resource
         run: testkube delete test netbox
-      
+
