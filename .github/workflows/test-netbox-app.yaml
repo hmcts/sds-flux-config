@@ -40,7 +40,6 @@ jobs:
         run: |
               /usr/bin/env bash
               [[ testkube get test netbox ]] && [[ testkube delete test netbox ]]
-
       - name: Create a test resource for netbox
         run: testkube create test --file pipeline-testkube/testkube-netbox.json --name netbox --type "curl/test"
       - name: Run test
