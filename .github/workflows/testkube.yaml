@@ -1,0 +1,25 @@
+name: testkube
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  testkube:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Install testkube
+        run: brew install testkube
+
+      - name: Create testkube test
+        run: testkube create test curl-test --type curl/test --test-content-type file-uri --file curl-test.json
+
+      - name: Run testkube test
+        run: testkube run test curl-test
