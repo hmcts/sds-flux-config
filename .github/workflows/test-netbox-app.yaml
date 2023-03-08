@@ -40,8 +40,8 @@ jobs:
         run: testkube create test --file pipeline-testkube/testkube-netbox.json --name netbox --type "curl/test"
       - name: Run test
         run: testkube run test netbox
-      - name: test netbox application
-        run: testkube get tests -o json | jq -r '.[].latestExecution.status'
+      - name: Get status
+        run: testkube get test netbox -o json | jq -r '.[].latestExecution.status'
       - name: delete netbox test resource
         run: testkube delete test netbox
 
