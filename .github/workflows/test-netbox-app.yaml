@@ -37,7 +37,10 @@ jobs:
       - name: install testkube
         run: wget -qO - https://repo.testkube.io/key.pub | sudo apt-key add - && echo "deb https://repo.testkube.io/linux linux main" | sudo tee -a /etc/apt/sources.list && sudo apt-get update && sudo apt-get install -y testkube
       - name: delete netbox test resource
-        run: testkube delete test netbox  
+        run: |
+              /usr/bin/env bash
+              [[ testkube get test netbox ]] && [[ testkube delete test netbox ]]
+
       - name: Create a test resource for netbox
         run: testkube create test --file pipeline-testkube/testkube-netbox.json --name netbox --type "curl/test"
       - name: Run test
@@ -48,4 +51,3 @@ jobs:
         run: testkube get execution --test netbox  -o json --limit 1 | jq -r '.results[].status'
       - name: delete netbox test resource
         run: testkube delete test netbox
-
