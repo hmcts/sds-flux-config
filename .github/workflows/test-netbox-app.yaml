@@ -54,40 +54,51 @@ jobs:
         run: echo "status=$(testkube get execution --test netbox  -o json --limit 1 | jq -r '.results[].status')" >> $GITHUB_ENV
       - name: delete netbox test resource
         run: testkube delete test netbox
+
+      - run: echo  $GITHUB_SHA
+      
+      - name: Set env
+        run: echo "GH_SHA=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+        
+      - run: echo   ${{ env.GH_SHA }}
+      
+      - name: get PR number
+        if: "contains(env.status, 'passed')"
+        uses: octokit/request-action@v2.x
+        id: get_pr_number
+        with:
+          route: GET /repos/hmcts/sds-flux-config/commits/${{ env.GH_SHA }}/pulls
+          owner: octokit
+          repo: request-action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Install jq tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install jq
+          
+      - name: Set env 
+        if: "!contains(env.status, 'passed')"
+        run: | 
+            echo PR_TITLE=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].title' ) >>   $GITHUB_ENV
+   
       - name: label open PRs
         if: contains(env.status, 'passed')
         run: |
           #!/usr/bin/env bash
-            for pr in $(gh search prs --match title --repo hmcts/sds-flux-config --state open --json number,title --jq  '.[] | select(.title | contains("netbox"))| .number')
+            for pr in $(gh search prs --match title --repo hmcts/sds-flux-config --state open --json number,title --jq  '.[] | select(.title | contains("${{ env.PR_TITLE }}"))| .number')
             do
               gh pr edit $pr --add-label "ApplicationTestPassed" --repo hmcts/sds-flux-config
               echo "updated PR $pr with the label"
             done 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#       - run: echo  $GITHUB_SHA
-#       - name: Set env
-#         run: echo "GH_SHA=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
-#       - run: echo   ${{ env.GH_SHA }}
-#       - name: get PR number
-#         if: "!contains(env.status, 'passed')"
-#         uses: octokit/request-action@v2.x
-#         id: get_pr_number
-#         with:
-#           route: GET /repos/hmcts/sds-flux-config/commits/${{ env.GH_SHA }}/pulls
-#           owner: octokit
-#           repo: request-action
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#       - name: Install jq tool
-#         run: |
-#           sudo apt-get update
-#           sudo apt-get install jq
-#       - name: Set env 
-#         if: "!contains(env.status, 'passed')"
-#         run: | 
-#             echo PR_NUM=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].number' ) >>   $GITHUB_ENV
-#       - run: echo ${{ env.PR_NUM }} 
+          
+          
+          
+          
+          
 #       - name: revert PR
 #         if: "!contains(env.status, 'passed')"
 #         uses: k1LoW/pr-revert-action@v0
