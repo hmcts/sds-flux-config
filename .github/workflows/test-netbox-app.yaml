@@ -61,6 +61,10 @@ jobs:
               gh pr edit $pr --add-label "ApplicationTestPassed" --repo hmcts/sds-flux-config
               echo "updated PR $pr with the label"
             done 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Reverting merged PR
         if: "!contains(env.status, 'passed')"
         run: echo "reverting changes"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
