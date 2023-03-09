@@ -10,6 +10,7 @@ on:
       - "main"
     paths:
       - /apps/netbox/ptlsbox/netbox.yaml
+      - DeleteAfterTesting
   workflow_dispatch:
 jobs:
   netbox:
