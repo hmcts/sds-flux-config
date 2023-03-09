@@ -79,6 +79,10 @@ jobs:
           repo: request-action
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install jq tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install jq
       - run: echo TEST=$(echo '${{ steps.get_pr_number.outputs.data }}') >> $GITHUB_ENV
       - run: "echo ${{ env.TEST }} "
       - run: "echo ${{ env.TEST }}| jq -r . "
