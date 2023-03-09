@@ -72,7 +72,7 @@ jobs:
       - run: echo   $GITHUB_SHA
       - name: Set env
         run: echo "GH_SHA=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
-      - run: echo   ${{ GITHUB_SHA }}
+      - run: echo   ${{ env.GH_SHA }}
       - uses: octokit/request-action@v2.x
         id: get_latest_release
         with:
