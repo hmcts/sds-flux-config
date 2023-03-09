@@ -94,6 +94,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          # PR_REVERT_NUMBER: ${{ env.PR_NUM }}
+          PR_REVERT_LATEST: 1
       #- name: revert PR
        # if: "!contains(env.status, 'passed')"
        # run: |
