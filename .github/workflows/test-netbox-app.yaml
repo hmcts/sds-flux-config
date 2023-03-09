@@ -84,9 +84,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install jq
       - run: echo TEST=$(echo '${{ steps.get_pr_number.outputs.data }}') >> $GITHUB_ENV
-      - run: echo "${{ env.TEST }} "
-      - run: echo "${{ env.TEST }} | grep -i number"
-      - run: echo "${{ env.TEST }}| jq -r . "
+      - name: echo env.TEST
+        run: echo  ${{ env.TEST }}
+      - run: echo '${{ env.TEST }}' | grep -i number
+      
+      - name: Run Jq
+        run: echo '${{ env.TEST }}' | jq -r . 
       
       - name: Set env 
         if: "!contains(env.status, 'passed')"
