@@ -62,5 +62,5 @@ jobs:
               echo "updated PR $pr with the label"
             done 
       - name: label open PRs
-        if: contains(${{ env.status }}, 'passed' )
+        if: !contains(${{ env.status }}, 'passed' )
         run: echo "reverting changes"
