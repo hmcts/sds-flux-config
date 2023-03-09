@@ -53,7 +53,7 @@ jobs:
       - name: delete netbox test resource
         run: testkube delete test netbox
       - name: label open PRs
-        if: contains(${{ env.status }}, 'passed' )
+        if: contains(env.status, 'passed')
         run: |
           #!/usr/bin/env bash
             for pr in $(gh search prs --match title --repo hmcts/sds-flux-config --state open --json number,title --jq  '.[] | select(.title | contains("netbox"))| .number')
@@ -62,5 +62,5 @@ jobs:
               echo "updated PR $pr with the label"
             done 
       - name: label open PRs
-        if: !contains(${{ env.status }}, 'passed' )
+        if: "!contains(env.status, 'passed')"
         run: echo "reverting changes"
