@@ -99,6 +99,8 @@ jobs:
       - name: revert PR
         if: "!contains(env.status, 'passed')"
         run: |
+              git config --global user.email "<>"
+              git config --global user.name "GitHub Actions Bot"
               git checkout -b revert-commit-${{ env.PR_NUM }} 
               git revert -m 1 ${{ env.GH_SHA }} --no-edit
               git add .
