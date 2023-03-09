@@ -79,7 +79,7 @@ jobs:
           sudo apt-get install jq
           
       - name: Set env 
-        if: "!contains(env.status, 'passed')"
+        if: "contains(env.status, 'passed')"
         run: | 
             echo PR_TITLE=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].title' ) >>   $GITHUB_ENV
    
