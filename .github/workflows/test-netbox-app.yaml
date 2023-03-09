@@ -69,11 +69,11 @@ jobs:
         run: echo "reverting changes"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+      - run: echo   ${{ env.GITHUB_SHA }} 
       - uses: octokit/request-action@v2.x
         id: get_latest_release
         with:
-          route: GET /repos/hmcts/sds-flux-config/commits/27d6866316c8bd2bbc2bb5218b9feb729b980afb/pulls
+          route: GET /repos/hmcts/sds-flux-config/commits/${{ env.GITHUB_SHA }}/pulls
           owner: octokit
           repo: request-action
         env:
