@@ -79,7 +79,7 @@ jobs:
           repo: request-action
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo TEST=$(echo '${{ steps.get_pr_number.outputs.data }}) >>   $GITHUB_ENV
+      - run: echo TEST=$(echo '${{ steps.get_pr_number.outputs.data }}') >> $GITHUB_ENV
       - run: "echo ${{ env.TEST}} "
       - run: "echo ${{ env.TEST}}| grep -i number "
       - name: Set env 
