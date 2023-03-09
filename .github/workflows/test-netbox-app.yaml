@@ -82,7 +82,7 @@ jobs:
       - name: Set env 
         if: "!contains(env.status, 'passed')"
         run: | 
-            echo PR_NUM=$(jq -n ${{ steps.get_pr_number.outputs.data }} | jq -r '.[].number') >>   $GITHUB_ENV
+            echo PR_NUM=$(echo ${{ steps.get_pr_number.outputs.data }} | grep number: | awk '{print $2}' | cut -d, -f1) >>   $GITHUB_ENV
       - run: echo ${{ env.PR_NUM }} 
       - name: revert PR
         if: "!contains(env.status, 'passed')"
