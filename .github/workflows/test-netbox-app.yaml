@@ -89,7 +89,7 @@ jobs:
       - run: echo '${{ env.TEST }}' | grep -i number
       
       - name: Run Jq
-        run: echo '${{ env.TEST }}' | jq -r . 
+        run: echo '${{ env.TEST }}' | jq -r '.[].number' 
       
       - name: Set env 
         if: "!contains(env.status, 'passed')"
