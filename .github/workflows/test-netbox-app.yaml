@@ -83,18 +83,18 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install jq
-      - run: echo TEST=$(echo '${{ steps.get_pr_number.outputs.data }}') >> $GITHUB_ENV
-      - name: echo env.TEST
-        run: echo  ${{ env.TEST }}
-      - run: echo '${{ env.TEST }}' | grep -i number
+#       - run: echo TEST=$(echo '${{ steps.get_pr_number.outputs.data }}') >> $GITHUB_ENV
+#       - name: echo env.TEST
+#         run: echo  ${{ env.TEST }}
+#       - run: echo '${{ env.TEST }}' | grep -i number
       
-      - name: Run Jq
-        run: echo '${{ env.TEST }}' | jq -r '.[].number' 
+#       - name: Run Jq
+#         run: echo '${{ env.TEST }}' | jq -r '.[].number' 
       
       - name: Set env 
         if: "!contains(env.status, 'passed')"
         run: | 
-            echo PR_NUM=$(echo ${{ steps.get_pr_number.outputs.data }} | grep number: | awk '{print $2}' | cut -d, -f1) >>   $GITHUB_ENV
+            echo PR_NUM=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].number' ) >>   $GITHUB_ENV
       - run: echo ${{ env.PR_NUM }} 
       - name: revert PR
         if: "!contains(env.status, 'passed')"
