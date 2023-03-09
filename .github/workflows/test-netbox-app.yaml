@@ -49,6 +49,18 @@ jobs:
       - name: sleep
         run:  sleep 10
       - name: Get status
-        run: testkube get execution --test netbox  -o json --limit 1 | jq -r '.results[].status'
+        run: echo "status=$(testkube get execution --test netbox  -o json --limit 1 | jq -r '.results[].status')" >> $GITHUB_ENV
       - name: delete netbox test resource
         run: testkube delete test netbox
+      - name: label open PRs
+        if: contains(env.status, 'passed')
+        run: |
+          #!/usr/bin/env bash
+            for pr in $(gh search prs --match title --repo hmcts/sds-flux-config --state open --json number,title --jq  '.[] | select(.title | contains("netbox"))| .number')
+            do
+              gh pr edit $pr --add-label "ApplicationTestPassed" --repo hmcts/sds-flux-config
+              echo "updated PR $pr with the label"
+            done 
+      - name: label open PRs
+        if: "!contains(env.status, 'passed')"
+        run: echo "reverting changes"
