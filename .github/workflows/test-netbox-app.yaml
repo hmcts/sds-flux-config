@@ -79,7 +79,7 @@ jobs:
           repo: request-action
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo '${{ steps.get_pr_number.outputs.data }}'"
+      - run: "echo ${{ steps.get_pr_number.outputs.data.[].number }}"
       
       - name: Set env 
         if: "!contains(env.status, 'passed')"
