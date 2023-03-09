@@ -61,6 +61,6 @@ jobs:
               gh pr edit $pr --add-label "ApplicationTestPassed" --repo hmcts/sds-flux-config
               echo "updated PR $pr with the label"
             done 
-      - name: label open PRs
+      - name: Reverting merged PR
         if: "!contains(env.status, 'passed')"
         run: echo "reverting changes"
