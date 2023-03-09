@@ -9,7 +9,7 @@ on:
     branches:
       - "master"
     paths:
-      - apps/netbox/ptlsbox/netbox.yaml
+      - apps/netbox/netbox/ptlsbox/netbox.yaml
       - DeleteAfterTesting
   workflow_dispatch:
 jobs:
