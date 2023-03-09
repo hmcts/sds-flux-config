@@ -81,7 +81,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: echo TEST=$(echo '${{ steps.get_pr_number.outputs.data }}') >> $GITHUB_ENV
       - run: "echo ${{ env.TEST }} "
-      - run: "echo ${{ env.TEST }}| jq -r '.[].number"
+      - run: "echo ${{ env.TEST }}| jq -r . "
       - name: Set env 
         if: "!contains(env.status, 'passed')"
         run: | 
