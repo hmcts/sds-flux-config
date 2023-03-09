@@ -65,22 +65,32 @@ jobs:
             done 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Reverting merged PR
-        if: "!contains(env.status, 'passed')"
-        run: echo "reverting changes"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo   $GITHUB_SHA
+      - run: echo  $GITHUB_SHA
       - name: Set env
         run: echo "GH_SHA=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
       - run: echo   ${{ env.GH_SHA }}
-      - uses: octokit/request-action@v2.x
-        id: get_latest_release
+      - name: get PR number
+        if: "!contains(env.status, 'passed')"
+        uses: octokit/request-action@v2.x
+        id: get_pr_number
         with:
           route: GET /repos/hmcts/sds-flux-config/commits/${{ env.GH_SHA }}/pulls
           owner: octokit
           repo: request-action
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo latest release: '${{ steps.get_latest_release.outputs.data }}'"
-
+      - name: Set env 
+        if: "!contains(env.status, 'passed')"
+        run: | 
+            echo PR_NUM=$(${{ steps.get_pr_number.outputs.data }} | jq -r .[].number) >>   $GITHUB_ENV
+      - run: echo ${{ env.PR_NUM }} 
+      - name: revert PR
+        if: "!contains(env.status, 'passed')"
+        run: |
+              git checkout -b revert-commit-${{ env.PR_NUM }} 
+              git revert -m 1 ${{ env.GH_SHA }} --no-edit
+              git add .
+              git commit -m "Reverting pull request #${{ env.PR_NUM }}"
+              gh pr create -f -t "Revert PR#${{ env.PR_NUM }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
