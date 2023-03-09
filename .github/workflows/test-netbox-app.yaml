@@ -70,10 +70,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: echo   $GITHUB_SHA
+      - name: Set env
+        run: echo "GH_SHA=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+      - run: echo   ${{ GITHUB_SHA }}
       - uses: octokit/request-action@v2.x
         id: get_latest_release
         with:
-          route: GET /repos/hmcts/sds-flux-config/commits/$GITHUB_SHA/pulls
+          route: GET /repos/hmcts/sds-flux-config/commits/${{ env.GH_SHA }}/pulls
           owner: octokit
           repo: request-action
         env:
