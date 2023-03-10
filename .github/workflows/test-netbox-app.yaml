@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: '0'
       - name: Set up kubelogin for non-interactive login
         uses: azure/use-kubelogin@v1
         with:
@@ -62,8 +64,7 @@ jobs:
         
       - run: echo   ${{ env.GH_SHA }}
       
-      - name: get PR number
-        if: "contains(env.status, 'passed')"
+      - name: get PR details 
         uses: octokit/request-action@v2.x
         id: get_pr_number
         with:
@@ -78,11 +79,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install jq
           
-      - name: Set env 
-        if: "contains(env.status, 'passed')"
+      - name: Set env variable PR_TITLE
         run: | 
             echo PR_TITLE=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].title' ) >>   $GITHUB_ENV
-   
+      - run: echo PR_TITLE ${{ env.PR_TITLE }} 
+      
+      - name: Set env 
+        run: | 
+            echo PR_NUM=$(echo '${{ steps.get_pr_number.outputs.data }}' | jq -r '.[].number' ) >>   $GITHUB_ENV
+      - run: echo PR_NUM ${{ env.PR_NUM }}
+      
       - name: label open PRs
         if: contains(env.status, 'passed')
         run: |
@@ -94,28 +100,40 @@ jobs:
             done 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Slack Notification
+        if: contains(env.status, 'passed') 
+        uses: rtCamp/action-slack-notify@v2
+        env:
+            SLACK_CHANNEL: slack_msg_format_testing
+            SLACK_COLOR: ${{ job.status }}
+            SLACK_ICON: ':smiley:'
+            SLACK_MESSAGE: '${{ env.PR_TITLE }}'
+            SLACK_TITLE: upgrade was successful
+            SLACK_USERNAME: netbox
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}      
           
+      - name: Slack Notification
+        if: "!contains(env.status, 'passed')"
+        uses: rtCamp/action-slack-notify@v2
+        env:
+            SLACK_CHANNEL: slack_msg_format_testing
+            SLACK_COLOR: ${{ job.status }} 
+            SLACK_ICON: ':sign-warning:'
+            SLACK_MESSAGE: '${{ env.PR_TITLE }}'
+            SLACK_TITLE: upgrade was Unsuccessful
+            SLACK_USERNAME: netbox
+            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}       
           
-          
-          
-          
-#       - name: revert PR
-#         if: "!contains(env.status, 'passed')"
-#         uses: k1LoW/pr-revert-action@v0
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          # PR_REVERT_NUMBER: ${{ env.PR_NUM }}
-#           PR_REVERT_LATEST: 1
-#       - name: revert PR
-#         if: "!contains(env.status, 'passed')"
-#         run: |
+      - name: revert PR
+        if: "!contains(env.status, 'passed')"
+        run: |
               
-#               git config --global user.email "<>"
-#               git config --global user.name "GitHub Actions Bot"
-#               git checkout -b revert-commit-${{ env.PR_NUM }} 
-#               git revert -m 1 ${{ env.GH_SHA }} --no-edit
-#               #git add .
-#               #git commit -m "Reverting pull request #${{ env.PR_NUM }}"
-#               gh pr create -f -t "Revert PR#${{ env.PR_NUM }}"
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+               git config --global user.email "<>"
+               git config --global user.name "GitHub Actions Bot"
+               git pull
+               git revert -m 1 ${{ env.GH_SHA }} --no-edit
+               git checkout -b revert-commit-${{ env.PR_NUM }} 
+               git push --set-upstream origin revert-commit-${{ env.PR_NUM }}
+               gh pr create -f -t "Revert PR#${{ env.PR_NUM }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
