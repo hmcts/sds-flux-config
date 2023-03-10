@@ -1,19 +1,6 @@
 # sds-flux-config
 
-All SDS applications are now being managed by Flux v2.
+## Flux
+    `GitOps` leverages Git as the single source of truth to define every part of a cloud-native system. `Flux`is a tool for keeping Kubernetes clusters in sync with sources of configuration (like Git repositories and OCI artifacts), and automating updates to configuration when there is new code to deploy. Flux v2 is constructed with the GitOps Toolkit, a set of composable APIs and specialized tools for building Continuous Delivery on top of Kubernetes.
 
-## Encrypting Secrets With Sops
-
-[Sops setup](docs/secrets-sops-encryption.md)
-
-
-### SOPs
-
-Sops fails linting by default as we require 2 spaces while it uses 4 spaces.
-You can use `yq` to fix this:
-
-```
-yq eval -I 2 --inplace apps/mi/mi-adf-shir/sbox/mi-adf-auth-values.enc.yaml
-```
-
-upstream issue: https://github.com/mozilla/sops/issues/900
+    Please follow [cnp-flux-config](https://github.com/hmcts/cnp-flux-config) for documentation as both repos use `Flux` tool.  
