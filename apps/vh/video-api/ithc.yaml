@@ -1,0 +1,76 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-video-api
+  namespace: vh
+spec:
+  releaseName: vh-video-api
+  values:
+    java:
+      ingressHost: vh-video-api.ithc.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/vh/video-api:staging-285694d-202303011729 #{"$imagepolicy": "flux-system:vh-video-api"}
+      keyVaults:
+        vh-infra-core:
+          excludeEnvironmentSuffix: false
+          resourceGroup: vh-infra-core-{{ .Values.global.environment }}
+          usePodIdentity: true
+          secrets:
+          - azuread--tenantid
+          - applicationinsights--instrumentationkey
+          - CvpConfiguration--StorageAccountName
+          - CvpConfiguration--StorageAccountKey
+          - CvpConfiguration--StorageContainerName
+          - CvpConfiguration--StorageEndpoint
+          - name: wowzaconfiguration--managedidentityclientid
+            alias: CvpConfiguration--ManagedIdentityClientId
+          - name: wowzaconfiguration--restPassword
+            alias: wowzaconfiguration--Password
+          - wowzaconfiguration--storageaccountkey
+          - wowzaconfiguration--managedidentityclientid
+          - name: wowzaconfiguration--wowza-storage-directory
+            alias: wowzaconfiguration--StorageDirectory
+          - name: wowzaconfiguration--azure-storage-directory
+            alias: wowzaconfiguration--AzureStorageDirectory
+          - name: wowzaconfiguration--endpoint-https
+            alias: wowzaconfiguration--LoadBalancer
+          - name: wowzaconfiguration--endpoint-rtmps
+            alias: wowzaconfiguration--StreamingEndpoint
+          - name: wowzaconfiguration--storage-account
+            alias: wowzaconfiguration--StorageAccountName
+          - name: wowzaconfiguration--storage-account-endpoint
+            alias: wowzaconfiguration--StorageEndpoint
+          - name: wowzaconfiguration--storage-account-container
+            alias: wowzaconfiguration--StorageContainerName
+          - wowzaconfiguration--username
+          - wowzaconfiguration--ServerName
+          - wowzaconfiguration--HostName
+          - connectionstrings--videoapi
+          - name: wowzaconfiguration--restendpoint--0
+            alias: WowzaConfiguration--RestApiEndpoints--0
+          - name: wowzaconfiguration--restendpoint--0
+            alias: WowzaConfiguration--RestApiEndpoints--1
+        vh-video-api:
+          excludeEnvironmentSuffix: false
+          resourceGroup: vh-infra-core-{{ .Values.global.environment }}
+          usePodIdentity: true
+          secrets:
+          - azuread--clientsecret
+          - azuread--clientid
+          - name: azuread--identifieruri
+            alias: services--videoapiresourceid
+          - kinlyconfiguration--apisecret
+          - kinlyconfiguration--callbacksecret
+          - kinlyconfiguration--selftestapisecret
+          - name: kinlyconfiguration--telephoneconferencenumber
+            alias: kinlyconfiguration--conferencephonenumber
+          - name: kinlyconfiguration--telephoneconferencenumberwelsh
+            alias: kinlyconfiguration--conferencephonenumberwelsh
+          - kinlyconfiguration--kinlyapiurl
+          - kinlyconfiguration--kinlyselftestapiurl
+          - kinlyconfiguration--conferenceusername
+          - kinlyconfiguration--pexipnode
+          - kinlyconfiguration--pexipselftestnode
+          - kinlyconfiguration--selftestapisecret
+          - QuickLinks--Issuer
+          - QuickLinks--RsaPrivateKey
+          - QuickLinks--ValidAudience
