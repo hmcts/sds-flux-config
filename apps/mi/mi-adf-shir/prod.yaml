@@ -10,6 +10,7 @@ spec:
       app.kubernetes.io/name: mi-adf-shir-deployment
     image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-552c219-20230309085836 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     replicaCount: 4
+    memoryRequests: '2048Mi'
     memoryLimits: '8192Mi'
     resourceGroup: "mi-prod-rg"
     subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
