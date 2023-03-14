@@ -19,6 +19,7 @@ spec:
       interval: 1m
   values:
     aadIdentityName: mailrelay
+    usePodIdentity: "true"
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
       tag: 0.4
