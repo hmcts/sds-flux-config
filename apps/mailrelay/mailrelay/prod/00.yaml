@@ -9,3 +9,5 @@ spec:
     service:
       type: LoadBalancer
       loadBalancerIP: "10.144.15.15"
+    prometheus:
+      enabled: false
