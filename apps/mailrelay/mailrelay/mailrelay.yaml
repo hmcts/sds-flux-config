@@ -18,7 +18,6 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    usePodIdentity: "true"
     image:
       repository: sdshmctspublic.azurecr.io/exim-relay
       tag: 0.4
