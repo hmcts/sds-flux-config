@@ -7,6 +7,8 @@ metadata:
 spec:
   values:
     workload: StatefulSet
+    aadIdentityName: mailrelay
+    usePodIdentity: "true"
 
     volumeClaim:
       storageClass: "managed-premium"
