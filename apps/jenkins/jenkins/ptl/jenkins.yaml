@@ -197,6 +197,12 @@ spec:
                     name: Legacy
                     recurse: true
                     title: DTS Legacy Apps
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/darts-api.*\/master
+                    name: DARTS-API
+                    recurse: true
+                    title: DARTS Modernisastion API
           authentication: |
             jenkins:
               securityRealm:
