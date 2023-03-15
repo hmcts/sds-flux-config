@@ -4,8 +4,6 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../../rbac/temp-cronjob-role.yaml
-  - ../../test-api/test-api.yaml
-  - ../../test-web/test-web.yaml
 namespace: vh
 patchesStrategicMerge:
   - ../../identity/vh-aad-identity.yaml
