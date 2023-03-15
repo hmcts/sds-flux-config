@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-house-keeping-service-job
   values:
-    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-071296c-20230303130617 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
+    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-4875ce0-20230315120048 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
     environment:
       MI_CLIENT_ID: 5793ad47-8629-4723-82dc-78b1b49ed280
     global:

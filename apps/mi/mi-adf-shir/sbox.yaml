@@ -7,14 +7,14 @@ spec:
   chart:
     spec:
       chart: mi-adf-shir
-      version: 1.0.6
+      version: 1.0.7
       sourceRef:
         kind: HelmRepository
         name: hmctspublic
         namespace: flux-system
   releaseName: mi-adf-shir
   values:
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-3daead1-20230307162529 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-552c219-20230309085836 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     environment: "sbox"
     resourceGroup: "mi-sbox-rg"
     subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"

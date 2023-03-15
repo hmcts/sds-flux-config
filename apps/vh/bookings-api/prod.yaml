@@ -7,8 +7,9 @@ spec:
   releaseName: vh-bookings-api
   values:
     java:
+      replicas: 2
       ingressHost: vh-bookings-api.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/bookings-api:prod-7b98ffc-202302281039 #{"$imagepolicy": "flux-system:vh-bookings-api-prod"}
+      image: sdshmctspublic.azurecr.io/vh/bookings-api:prod-517a9c4-202303091853 #{"$imagepolicy": "flux-system:vh-bookings-api-prod"}
   chart:
     spec:
       chart: ./stable/vh-bookings-api/prod
