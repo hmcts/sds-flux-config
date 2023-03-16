@@ -12,3 +12,11 @@ spec:
     global:
       subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"
       environment: "dev"
+  chart:
+    spec:
+      chart: job
+      sourceRef:
+        kind: GitRepository
+        name: chart-job
+        namespace: flux-system
+      interval: 1m
