@@ -3,8 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
-  - ../../test-api/test-api.yaml
-  - ../../test-web/test-web.yaml
 namespace: vh
 patchesStrategicMerge:
   - ../../identity/vh-aad-identity.yaml
@@ -13,9 +11,7 @@ patchesStrategicMerge:
   - ../../user-api/test.yaml
   - ../../notification-api/test.yaml
   - ../../video-api/test.yaml
-  - ../../test-api/test.yaml
   - ../../admin-web/test.yaml
   - ../../scheduler-jobs/test.yaml
   - ../../video-web/test.yaml
-  - ../../test-web/test.yaml
   - ../../booking-queue-subscriber/test.yaml
