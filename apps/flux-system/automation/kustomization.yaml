@@ -13,6 +13,7 @@ resources:
   - aks-kubelet-binding.yaml
   - aks-kubelet-identity.yaml
   - ../../c100/automation
+  - ../../darts-modernisation/automation
 patches:
   - path: sdshmctspublic-image-repo.yaml
     target:
