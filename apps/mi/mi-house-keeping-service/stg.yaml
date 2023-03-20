@@ -9,10 +9,10 @@ spec:
     kind: CronJob
     aadIdentityName: mi-house-keeping-service
     schedule: "45 * * * *"
-    userAssignedIdentityID: "f74e3f17-9785-480b-8bd4-fcac2b53c682"
+    userAssignedIdentityID: "6ad9dea6-326e-4b34-9ccf-f7785b1ddb58"
     image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-4875ce0-20230315120048 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
     environment:
-      MI_CLIENT_ID: f74e3f17-9785-480b-8bd4-fcac2b53c682
+      MI_CLIENT_ID: 6ad9dea6-326e-4b34-9ccf-f7785b1ddb58
     global:
       subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"
       environment: "stg"
