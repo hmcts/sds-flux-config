@@ -11,7 +11,7 @@ spec:
       image: sdshmctspublic.azurecr.io/darts/web:prod-503f6e9-20220923094351 #{"$imagepolicy": "flux-system:darts-api"}
   chart:
     spec:
-      chart: ./stable/lgy-iac-web
+      chart: ./stable/darts-api
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
