@@ -5,3 +5,5 @@ metadata:
   namespace: pip
 spec:
   releaseName: pip-data-management
+  values:
+    image: sdshmctspublic.azurecr.io/pip/data-management:prod-fc0b2ee-20230320160549 #{"$imagepolicy": "flux-system:pip-data-management"}
