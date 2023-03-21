@@ -1,6 +1,22 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
+  name: vh-booking-queue-subscriber-dev
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+spec:
+  filterTags:
+    extract: $ts
+    pattern: '^dev-[a-f0-9]+-(?P<ts>[0-9]+)'
+  imageRepositoryRef:
+    name: vh-booking-queue-subscriber
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
   name: vh-booking-queue-subscriber
   annotations:
     hmcts.github.com/prod-automated: disabled
