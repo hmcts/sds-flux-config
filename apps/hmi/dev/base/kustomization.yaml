@@ -1,10 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
-  - ../../../rbac/dev-role.yaml
+  - ../../../base/namespace.yaml
+  - ../../identity/hmi-azure-identity.yaml
+  - ../../identity/apple-azure-identity.yaml
 namespace: hmi
 patchesStrategicMerge:
-  - ../../hmi-pactbroker/dev.yaml
-  - ../../hmi-wiremock/dev.yaml
   - ../../identity/dev.yaml

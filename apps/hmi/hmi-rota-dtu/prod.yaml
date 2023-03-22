@@ -1,0 +1,8 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hmi-rota-dtu
+spec:
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/hmi/rota-dtu:latest  #{"$imagepolicy": "flux-system:hmi-rota-dtu"}

@@ -4,7 +4,7 @@ metadata:
   name: hmi
   namespace: flux-system
 spec:
-  path: ./apps/hmi/${ENVIRONMENT}
+  path: ./apps/hmi/${ENVIRONMENT}/base
   postBuild:
     substitute:
       NAMESPACE: "hmi"

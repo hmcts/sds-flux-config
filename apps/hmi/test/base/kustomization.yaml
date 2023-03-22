@@ -5,5 +5,5 @@ resources:
   - ../../identity/apple-azure-identity.yaml
 namespace: hmi
 patchesStrategicMerge:
-  - ../../identity/sbox.yaml
-  - ../../recipe-backend/sbox.yaml
+  - ../../identity/test.yaml
+  - ../../recipe-backend/test.yaml

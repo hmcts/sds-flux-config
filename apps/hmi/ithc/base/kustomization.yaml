@@ -2,8 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - ../../identity/apple-azure-identity.yaml
 namespace: hmi
 patchesStrategicMerge:
-  - ../../identity/sbox.yaml
-  - ../../recipe-backend/sbox.yaml
+  - ../../identity/ithc.yaml
+  - ../../recipe-backend/ithc.yaml

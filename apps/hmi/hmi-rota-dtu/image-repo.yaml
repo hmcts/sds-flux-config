@@ -1,6 +1,6 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
-  name: hmi-wiremock
+  name: hmi-rota-dtu
 spec:
-  image: sdshmctspublic.azurecr.io/hmi/apim-tests-wiremock
+  image: sdshmctspublic.azurecr.io/hmi/rota-dtu
