@@ -14,7 +14,7 @@ spec:
         namespace: flux-system
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-4b1e6d7-20230322142440 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-99fd463-20230322152700 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     env:
       ADF_RESOURCEGROUP: mi-ingestion-sbox-rg
       ADF_NAME: mi-ingestion-adf-sbox
