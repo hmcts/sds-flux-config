@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: darts-portal
+spec:
+  releaseName: darts-portal
+  values:
+    java:
+      replicas: 1
+      useInterpodAntiAffinity: true
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-9122ac4-20230321120724 #{"$imagepolicy": "flux-system:darts-portal"}
+  chart:
+    spec:
+      chart: ./stable/darts-portal
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 8m
