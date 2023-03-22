@@ -7,7 +7,7 @@ spec:
   releaseName: vh-notification-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/notification-api:staging-a710a82-202303221155 # {"$imagepolicy": "flux-system:vh-notification-api"}
+      image: sdshmctspublic.azurecr.io/vh/notification-api:staging-c4c87b0-202303221502 # {"$imagepolicy": "flux-system:vh-notification-api"}
       disableTraefikTls: true
   chart:
     spec:
