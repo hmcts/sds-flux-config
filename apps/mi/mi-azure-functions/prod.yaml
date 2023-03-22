@@ -8,7 +8,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-02f6cf3-20230322161344 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-19ae312-20230322170732 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     replicaCount: 4
     env:
       ADF_RESOURCEGROUP: mi-ingestion-prod-rg
