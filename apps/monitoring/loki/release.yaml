@@ -14,16 +14,16 @@ spec:
         kind: HelmRepository
         name: grafana-charts
       interval: 60m
-  values:
-    loki:
-      auth_enabled: false
-      server:
-        http_listen_port: 3100
-      commonConfig:
-        replication_factor: 1
-    write:
-      replicas: 1
-    read:
-      replicas: 1
-    gateway:
-      enabled: true
+  # values:
+  #   loki:
+  #     auth_enabled: false
+  #     server:
+  #       http_listen_port: 3100
+  #     commonConfig:
+  #       replication_factor: 1
+  #   write:
+  #     replicas: 1
+  #   read:
+  #     replicas: 1
+  #   gateway:
+  #     enabled: true
