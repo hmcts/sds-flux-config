@@ -13,6 +13,7 @@ resources:
   - ../../../apps/met/base/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml
   - ../../../apps/darts-modernisation/base/kustomize.yaml
+  - ../../../apps/hmi/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:

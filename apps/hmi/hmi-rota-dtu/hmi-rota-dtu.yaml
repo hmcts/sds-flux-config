@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: ./charts/recipe-receiver
+      chart: ./stable/hmi-rota-dtu
       interval: 1m
       reconcileStrategy: ChartVersion
       sourceRef:
@@ -15,7 +15,7 @@ spec:
         namespace: flux-system
       version: '*'
   interval: 5m
-  releaseName: toffee-recipe-receiver
+  releaseName: hmi-rota-dtu
   values:
     function:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-receiver:prod-1100a0e-20220609130124
+      image: sdshmctspublic.azurecr.io/hmi/rota-dtu:latest
