@@ -7,5 +7,5 @@ spec:
   releaseName: darts-api
   values:
     java:
-      ingressHost: darts-api.prod.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/darts/api:prod-272ebc2-20230322092842 # {"$imagepolicy": "flux-system:darts-api-prod"}
+      ingressHost: darts-api.stg.platform.hmcts.net
+      
