@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: darts-portal
+  namespace: darts-modernisation
+spec:
+  releaseName: darts-portal
+  values:
+    java:
+      ingressHost: darts-api.portal.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-272ebc2-20230322092842 # {"$imagepolicy": "flux-system:darts-portal"}
