@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../kube-prometheus-stack/dev/prometheus-values.enc.yaml
-  - ../../loki
-  - ../../promtail
+  # - ../../loki
+  # - ../../promtail
 namespace: monitoring
