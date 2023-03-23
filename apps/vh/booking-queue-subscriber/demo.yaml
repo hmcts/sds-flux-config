@@ -20,3 +20,6 @@ spec:
         idleReplicaCount: 1
         maxReplicaCount: 2
         minReplicaCount: 1
+  chart:
+    spec:
+      chart: ./stable/vh-booking-queue-subscriber/prod

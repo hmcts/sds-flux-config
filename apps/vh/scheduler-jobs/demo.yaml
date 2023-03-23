@@ -7,3 +7,6 @@ spec:
   releaseName: vh-scheduler-jobs
   values:
     image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:prod-eac6632-202303221126 #{"$imagepolicy": "flux-system:vh-scheduler-jobs-prod"}
+  chart:
+    spec:
+      chart: ./stable/vh-scheduler-jobs/prod
