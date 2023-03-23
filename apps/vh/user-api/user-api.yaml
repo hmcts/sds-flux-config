@@ -7,7 +7,7 @@ spec:
   releaseName: vh-user-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/user-api:staging-8e78132-202303141005 # {"$imagepolicy": "flux-system:vh-user-api"}
+      image: sdshmctspublic.azurecr.io/vh/user-api:staging-607d086-202303230931 # {"$imagepolicy": "flux-system:vh-user-api"}
       disableTraefikTls: true
   chart:
     spec:
