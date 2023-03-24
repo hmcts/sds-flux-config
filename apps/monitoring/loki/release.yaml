@@ -12,7 +12,7 @@ spec:
       chart: loki
       sourceRef:
         kind: HelmRepository
-        name: grafana-charts
+        name: grafana-charts-loki
       interval: 60m
   values:
     loki:
