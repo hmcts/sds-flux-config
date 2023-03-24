@@ -12,6 +12,17 @@ spec:
       storageClass: "managed-premium"
       storageSize: 100Gi
 
+    certificate:
+      serverName: "mailrelay.platform.hmcts.net"
+      KeyVault: "acmedtssdsprod"
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      inboundCert:
+        name: "prod"
+        objectName: "prod-mailrelay-platform-hmcts-net"
+      outboundCert:
+        name: "prod"
+        objectName: "prod-mailrelay-platform-hmcts-net"
+
     resources:
       requests:
         cpu: 50m
@@ -22,3 +33,4 @@ spec:
 
     global:
       environment: prod
+      enableAuth: true
