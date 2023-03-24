@@ -10,8 +10,6 @@ spec:
     schedule: '45 2 * * *'
     activeDeadlineSeconds: 82800
     aadIdentityName: mi-house-keeping-service
-    labels:
-      app.kubernetes.io/instance: mi-house-keeping-service
     environment:
       MI_CLIENT_ID: "12d8c94d-2d49-48d8-9e1b-0bc9937c6670"
     global:
