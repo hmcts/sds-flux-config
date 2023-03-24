@@ -8,7 +8,7 @@ spec:
     java:
       replicas: 1
       useInterpodAntiAffinity: true
-      image: sdshmctspublic.azurecr.io/darts/api:prod-0f9176f-20230324094037 #{"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-8af60e4-20230324100423 #{"$imagepolicy": "flux-system:darts-api"}
   chart:
     spec:
       chart: ./stable/darts-api
