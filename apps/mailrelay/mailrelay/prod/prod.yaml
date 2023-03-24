@@ -7,6 +7,8 @@ metadata:
 spec:
   values:
     workload: StatefulSet
+    smtp:
+      relayHostNameKeyVaultSecretName: relayHostname-v1
 
     volumeClaim:
       storageClass: "managed-premium"
