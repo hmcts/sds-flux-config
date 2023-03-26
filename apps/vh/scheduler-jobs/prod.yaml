@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: vh-scheduler-jobs
   values:
-    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:prod-eac6632-202303221126 #{"$imagepolicy": "flux-system:vh-scheduler-jobs-prod"}
+    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:prod-41cb868-202303261023 #{"$imagepolicy": "flux-system:vh-scheduler-jobs-prod"}
     crons:
       - cronJobName: vh-anonymise-hearings-and-conferences-job
         suspend: true
