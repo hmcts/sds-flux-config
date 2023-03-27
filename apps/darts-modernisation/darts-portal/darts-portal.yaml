@@ -18,6 +18,3 @@ spec:
     nodejs:
       image: sdshmctspublicsbox.azurecr.io/darts/portal:latest # {"$imagepolicy": "flux-system:darts-portal"}
       disableTraefikTls: true
-    global:
-      environment: demo
-      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
