@@ -17,5 +17,4 @@ spec:
   values:
     java:
       image: sdshmctspublicsbox.azurecr.io/darts/api:latest # {"$imagepolicy": "flux-system:darts-api"}
-      ingressHost: darts-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
       disableTraefikTls: true
