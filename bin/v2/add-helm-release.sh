@@ -65,9 +65,6 @@ spec:
       image: sdshmctspublicsbox.azurecr.io/${PRODUCT}/${COMPONENT}:latest # {"\$imagepolicy": "flux-system:${PRODUCT}-${COMPONENT}"}
       ingressHost: ${INGRESS_HOST}
       disableTraefikTls: true
-    global:
-      environment: ${FULL_ENVIRONMENT_NAME}
-      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
 EOF
 ) > "${COMPONENT_DIR}/${PRODUCT}-${COMPONENT}.yaml"
 
