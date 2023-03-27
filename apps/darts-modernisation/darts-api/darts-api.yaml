@@ -1,4 +1,3 @@
----
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -16,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublicsbox.azurecr.io/darts/api:latest # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-8af60e4-20230324100423 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
