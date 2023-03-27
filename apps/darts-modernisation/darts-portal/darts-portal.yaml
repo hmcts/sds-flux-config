@@ -17,7 +17,6 @@ spec:
   values:
     nodejs:
       image: sdshmctspublicsbox.azurecr.io/darts/portal:latest # {"$imagepolicy": "flux-system:darts-portal"}
-      ingressHost: darts-portal-{{ .Values.global.environment }}.platform.hmcts.net
       disableTraefikTls: true
     global:
       environment: demo
