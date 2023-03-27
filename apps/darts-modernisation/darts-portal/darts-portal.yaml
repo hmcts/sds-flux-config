@@ -1,9 +1,7 @@
----
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: darts-portal
-  namespace: darts-modernisation
 spec:
   releaseName: darts-portal
   chart:
@@ -16,5 +14,5 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: sdshmctspublicsbox.azurecr.io/darts/portal:latest # {"$imagepolicy": "flux-system:darts-portal"}
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-d49025d-20230324195842 # {"$imagepolicy": "flux-system:darts-portal"}
       disableTraefikTls: true
