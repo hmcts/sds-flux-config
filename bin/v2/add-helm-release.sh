@@ -55,7 +55,6 @@ spec:
   values:
     ${LANGUAGE}:
       image: sdshmctspublicsbox.azurecr.io/${PRODUCT}/${COMPONENT}:latest # {"\$imagepolicy": "flux-system:${PRODUCT}-${COMPONENT}"}
-      ingressHost: ${INGRESS_HOST}
       disableTraefikTls: true
     global:
       environment: ${FULL_ENVIRONMENT_NAME}
