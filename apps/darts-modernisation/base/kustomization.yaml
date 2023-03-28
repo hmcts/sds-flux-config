@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../identity/identity.yaml
-  - ../darts-api/darts-gateway.yaml
+  - ../darts-api/darts-api.yaml
   - ../darts-portal/darts-portal.yaml
-  - ../darts-portal/darts-gateway.yaml
+  - ../darts-gateway/darts-gateway.yaml
 namespace: darts-modernisation
