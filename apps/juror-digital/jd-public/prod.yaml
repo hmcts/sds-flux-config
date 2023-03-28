@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: 'reply-jury-summons.service.gov.uk'
-      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:3.2.96
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:3.3.70
       environment:
         NODE_ENV: production
         TRACKING_CODE: GTM-W4F5BLC
