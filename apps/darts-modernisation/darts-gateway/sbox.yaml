@@ -1,7 +1,9 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: ImagePolicy
+kind: HelmRelease
 metadata:
   name: darts-gateway
+  namespace: darts-modernisation
 spec:
-  imageRepositoryRef:
-    name: darts-gateway
+  releaseName: darts-gateway
+  values:
+    java:
