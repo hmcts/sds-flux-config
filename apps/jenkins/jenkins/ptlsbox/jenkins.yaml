@@ -61,12 +61,18 @@ spec:
                       - key: SBOX_AKS_RESOURCE_GROUP
                         value: ss-sbox-00-rg
                       - key: AKS_PREVIEW_SUBSCRIPTION_NAME
+                        value: DTS-SHAREDSERVICES-SBOX
+                      - key: AKS_PREVIEW_SUBSCRIPTION_ID
                         value: a8140a9e-f1b0-481f-a4de-09e2ee23f7ab
                       - key: AKS_AAT_SUBSCRIPTION_NAME
+                        value: DTS-SHAREDSERVICES-SBOX
+                      - key: AKS_AAT_SUBSCRIPTION_ID
                         value: a8140a9e-f1b0-481f-a4de-09e2ee23f7ab
                       - key : AAT_AKS_KEY_VAULT
                         value: dtssharedservicessboxkv
                       - key: AKS_PROD_SUBSCRIPTION_NAME
+                        value: DTS-SHAREDSERVICES-SBOX
+                      - key: AKS_PROD_SUBSCRIPTION_ID
                         value: a8140a9e-f1b0-481f-a4de-09e2ee23f7ab
                       - key: PIPELINE_METRICS_URL
                         value: https://sds-jenkins-pipeline-metrics-sbox.documents.azure.com/
