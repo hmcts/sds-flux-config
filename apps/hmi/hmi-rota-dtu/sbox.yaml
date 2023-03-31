@@ -5,4 +5,26 @@ metadata:
 spec:
   values:
     function:
-      image: sdshmctspublic.azurecr.io/hmi/rota-dtu:prod-d5f425c-20230327092405 #{"$imagepolicy": "flux-system:hmi-rota-dtu"}
+      image: sdshmctspublic.azurecr.io/hmi/rota-dtu:pr-22-e33dd13-20230331095516
+      aadIdentityName: hmi
+      keyVaults:
+        hmi-kv:
+          excludeEnvironmentSuffix: false
+          resourceGroup: hmi-sharedinfra-{{ .Values.global.environment }}-rg
+          usePodIdentity: true
+          secrets:
+            - name: sa-connection-string
+              alias: CONNECTION_STRING
+            - name: poc-url
+              alias: URL
+      scaleType: Job
+      triggerAuth:
+        create: true
+        enabled: true
+        triggerPodIdentityProvider: "azure"
+      triggers:
+        - type: azure-blob
+          blobContainerName: rota
+          blobCount: 1
+          accountName: "hmisa{{ .Values.global.environment }}"
+          blobDelimiter: "/"
