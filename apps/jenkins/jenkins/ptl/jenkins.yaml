@@ -215,6 +215,13 @@ spec:
                     name: DARTS-Modernisation
                     recurse: true
                     title: DARTS Modernisastion API
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/darts-shared.*\/master
+                    name: Darts Shared Infrastructure
+                    recurse: true
+                    title: Darts Shared Infrastructure
+
           authentication: |
             jenkins:
               securityRealm:
