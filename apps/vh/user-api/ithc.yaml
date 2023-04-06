@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: vh-user-api
+  namespace: vh
+spec:
+  releaseName: vh-user-api
+  values:
+    java:
+      ingressHost: vh-user-api.ithc.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/vh/user-api:staging-04ffd60-202303231009 #{"$imagepolicy": "flux-system:vh-user-api"}

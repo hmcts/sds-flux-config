@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../darts-api/image-repo.yaml
+  - ../darts-api/image-policy.yaml
+  - ../darts-portal/image-repo.yaml
+  - ../darts-portal/image-policy.yaml
+  - ../darts-gateway/image-repo.yaml
+  - ../darts-gateway/image-policy.yaml

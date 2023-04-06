@@ -1,0 +1,11 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: darts-modernisation
+  namespace: flux-system
+spec:
+  path: ./apps/darts-modernisation/${ENVIRONMENT}/base
+  postBuild:
+    substitute:
+      NAMESPACE: "darts-modernisation"
+      TEAM_NOTIFICATION_CHANNEL: "darts-builds"

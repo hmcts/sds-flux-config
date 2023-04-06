@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ../../../rbac/nonprod-role.yaml
+  - ../../../rbac/temp-cronjob-role.yaml
+namespace: vh
+patchesStrategicMerge:
+  - ../../identity/vh-aad-identity.yaml
+  - ../../identity/ithc.yaml
+  - ../../user-api/ithc.yaml
+  - ../../bookings-api/ithc.yaml
+  - ../../notification-api/ithc.yaml
+  - ../../video-api/ithc.yaml
+  - ../../admin-web/ithc.yaml
+  - ../../scheduler-jobs/ithc.yaml
+  - ../../video-web/ithc.yaml
+  - ../../booking-queue-subscriber/ithc.yaml

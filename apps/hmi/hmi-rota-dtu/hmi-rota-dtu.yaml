@@ -1,0 +1,21 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: hmi-rota-dtu
+spec:
+  chart:
+    spec:
+      chart: ./stable/hmi-rota-dtu
+      interval: 1m
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      version: '*'
+  interval: 5m
+  releaseName: hmi-rota-dtu
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/hmi/rota-dtu:latest
