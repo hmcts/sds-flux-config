@@ -197,6 +197,12 @@ spec:
                     name: Legacy
                     recurse: true
                     title: DTS Legacy Apps
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/darts.*\/master
+                    name: Darts Shared Infrastructure
+                    recurse: true
+                    title: Darts Shared Infrastructure
           authentication: |
             jenkins:
               securityRealm:
