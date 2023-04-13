@@ -5,6 +5,7 @@ metadata:
   namespace: admin
 spec:
   values:
+    priorityClassName: system-cluster-critical
     service:
       spec:
         loadBalancerIP: "10.140.15.250"
