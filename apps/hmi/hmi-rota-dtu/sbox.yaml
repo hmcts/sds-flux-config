@@ -27,5 +27,4 @@ spec:
           blobContainerName: rota
           blobCount: 1
           accountName: "hmisa{{ .Values.global.environment }}"
-          blobDelimiter: "_"
-          blobPrefix: lja
+          blobDelimiter: "/"
