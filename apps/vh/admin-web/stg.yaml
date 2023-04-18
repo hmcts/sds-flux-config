@@ -17,6 +17,8 @@ spec:
         VHSERVICES__USERAPIURL: https://vh-user-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.staging.platform.hmcts.net/
         VHSERVICES__VIDEOWEBURL: https://video.staging.hearings.reform.hmcts.net/
+        DOM1__POSTLOGOUTREDIRECTURI: https://admin.staging.hearings.reform.hmcts.net/logout
+        DOM1__REDIRECTURI: https://admin.staging.hearings.reform.hmcts.net/home
   chart:
     spec:
       chart: ./stable/vh-admin-web/staging
