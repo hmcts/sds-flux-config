@@ -15,7 +15,7 @@ spec:
         namespace: jenkins
   values:
     controller:
-      tag: 2.395-358
+      tag: 2.400-387
       containerSecurityContext:
         runAsUser: 0
         runAsGroup: 0
@@ -62,12 +62,20 @@ spec:
                         value: ss-sbox-00-rg
                       - key: AKS_PREVIEW_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-SBOX
+                      - key: AKS_PREVIEW_SUBSCRIPTION_ID
+                        value: a8140a9e-f1b0-481f-a4de-09e2ee23f7ab
                       - key: AKS_AAT_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-SBOX
+                      - key: AKS_AAT_SUBSCRIPTION_ID
+                        value: a8140a9e-f1b0-481f-a4de-09e2ee23f7ab
                       - key : AAT_AKS_KEY_VAULT
                         value: dtssharedservicessboxkv
                       - key: AKS_PROD_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-SBOX
+                      - key: AKS_SBOX_SUBSCRIPTION_ID
+                        value: a8140a9e-f1b0-481f-a4de-09e2ee23f7ab
+                      - key: AKS_PROD_SUBSCRIPTION_ID
+                        value: a8140a9e-f1b0-481f-a4de-09e2ee23f7ab
                       - key: PIPELINE_METRICS_URL
                         value: https://sds-jenkins-pipeline-metrics-sbox.documents.azure.com/
                       - key: TF_STATE_STORAGE_TEMPLATE

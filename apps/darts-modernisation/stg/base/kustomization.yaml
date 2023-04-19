@@ -3,3 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
 namespace: darts-modernisation
+patchesStrategicMerge:
+  - ../../darts-api/stg.yaml
+  - ../../darts-portal/stg.yaml
+  - ../../darts-gateway/stg.yaml

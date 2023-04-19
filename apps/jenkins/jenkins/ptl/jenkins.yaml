@@ -76,20 +76,32 @@ spec:
                         value: ss-test-00-rg
                       - key: AKS_PTL_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICESPTL
+                      - key: AKS_PTL_SUBSCRIPTION_ID
+                        value: 6c4d2513-a873-41b4-afdd-b05a33206631
                       - key: AKS_DEMO_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-DEMO
+                      - key: AKS_DEMO_SUBSCRIPTION_ID
+                        value: c68a4bed-4c3d-4956-af51-4ae164c1957c
                       - key: AKS_ITHC_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-ITHC
+                      - key: AKS_ITHC_SUBSCRIPTION_ID
+                        value: ba71a911-e0d6-4776-a1a6-079af1df7139
                       - key: AKS_PERFTEST_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-TEST
+                      - key: AKS_PERFTEST_SUBSCRIPTION_ID
+                        value: 3eec5bde-7feb-4566-bfb6-805df6e10b90
                       - key: AKS_PREVIEW_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-DEV
                       - key: AKS_AAT_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-STG
+                      - key: AKS_AAT_SUBSCRIPTION_ID
+                        value: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
                       - key : AAT_AKS_KEY_VAULT
                         value: dtssharedservicesstgkv
                       - key: AKS_PROD_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICES-PROD
+                      - key: AKS_PROD_SUBSCRIPTION_ID
+                        value: 5ca62022-6aa2-4cee-aaa7-e7536c8d566c
                       - key: PIPELINE_METRICS_URL
                         value: https://sds-jenkins-pipeline-metrics.documents.azure.com/
                       - key: TF_STATE_STORAGE_TEMPLATE
@@ -203,6 +215,12 @@ spec:
                     name: DARTS-Modernisation
                     recurse: true
                     title: DARTS Modernisastion
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/darts-shared.*\/master
+                    name: Darts Shared Infrastructure
+                    recurse: true
+                    title: Darts Shared Infrastructure
           authentication: |
             jenkins:
               securityRealm:

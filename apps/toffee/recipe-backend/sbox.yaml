@@ -8,5 +8,14 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-dc3d1d5-20230327092805 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
       ingressHost: toffee-recipe-backend.sandbox.platform.hmcts.net
+      keyVaults:
+        "toffeesi":
+          secrets:
+            - name: recipe-backend-POSTGRES-HOST-v14
+              alias: POSTGRES_HOST
+            - name: recipe-backend-POSTGRES-USER-v14
+              alias: POSTGRES_USER
+            - name: recipe-backend-POSTGRES-PASS-v14
+              alias: POSTGRES_PASSWORD
     global:
       environment: sandbox

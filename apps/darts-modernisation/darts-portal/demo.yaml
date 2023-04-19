@@ -7,5 +7,3 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
-      ingressHost: darts-portal.demo.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/darts/portal:prod-d49025d-20230324195842 # {"$imagepolicy": "flux-system:darts-portal"}
