@@ -5,5 +5,8 @@ metadata:
   namespace: darts-modernisation
 spec:
   releaseName: darts-gateway
+  values:
+    java:
+      ingressHost: darts-gateway.platform.hmcts.net
   
       
