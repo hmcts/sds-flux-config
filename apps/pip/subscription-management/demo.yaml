@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: pip-subscription-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-1e17e58-20230417113420 #{"$imagepolicy": "flux-system:pip-subscription-management"}
+    image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-6f2c712-20230420154457 #{"$imagepolicy": "flux-system:pip-subscription-management"}
     java:
       environment:
         DATA_MANAGEMENT_URL: 'https://pip-data-management.demo.platform.hmcts.net'
