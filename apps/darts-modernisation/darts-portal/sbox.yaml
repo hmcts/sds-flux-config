@@ -8,3 +8,5 @@ spec:
   values:
     nodejs:
       ingressHost: darts-portal.sandbox.platform.hmcts.net
+      environment:
+        DARTS_API_URL: https://darts-api.sandbox.platform.hmcts.net
