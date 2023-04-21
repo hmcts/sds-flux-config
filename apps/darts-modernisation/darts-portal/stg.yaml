@@ -8,3 +8,5 @@ spec:
   values:
     nodejs:
       ingressHost: darts-portal.staging.platform.hmcts.net
+      environment:
+        DARTS_API_URL: https://darts-api.staging.platform.hmcts.net
