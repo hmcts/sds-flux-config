@@ -9,7 +9,6 @@ spec:
     image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:prod-41cb868-202303261023 #{"$imagepolicy": "flux-system:vh-scheduler-jobs-prod"}
     crons:
       - cronJobName: vh-anonymise-hearings-and-conferences-job
-        suspend: true
         schedule: "30 5 * * *"
         concurrencyPolicy: Forbid
         args:
@@ -20,7 +19,6 @@ spec:
         args:
           - ClearConferenceInstantMessageHistoryJob
       - cronJobName: vh-clear-hearings-job
-        suspend: true
         schedule: "0 23 * * *"
         concurrencyPolicy: Forbid
         args:
@@ -46,7 +44,6 @@ spec:
         args:
           - RemoveHeartbeatsForConferencesJob
       - cronJobName: vh-send-hearing-notifications-job
-        suspend: true
         schedule: "0 10 * * *"
         concurrencyPolicy: Forbid
         args:
