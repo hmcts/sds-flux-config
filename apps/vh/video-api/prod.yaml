@@ -9,8 +9,8 @@ spec:
     java:
       ingressHost: vh-video-api.platform.hmcts.net
       environment:
-        KINLYCONFIGURATION__CALLBACKURI: https://video-sds.hearings.reform.hmcts.net/callback
-        SERVICES__CALLBACKURI: https://video-sds.hearings.reform.hmcts.net/callback
+        KINLYCONFIGURATION__CALLBACKURI: https://video.hearings.reform.hmcts.net/callback
+        SERVICES__CALLBACKURI: https://video.hearings.reform.hmcts.net/callback
       image: sdshmctspublic.azurecr.io/vh/video-api:prod-58c76e8-202303261027 #{"$imagepolicy": "flux-system:vh-video-api-prod"}
   chart:
     spec:
