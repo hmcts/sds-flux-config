@@ -6,56 +6,48 @@ metadata:
 spec:
   releaseName: vh-scheduler-jobs
   values:
-    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:prod-41cb868-202303261023 #{"$imagepolicy": "flux-system:vh-scheduler-jobs-prod"}
+    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:prod-2c86857-202304241619 #{"$imagepolicy": "flux-system:vh-scheduler-jobs-prod"}
     crons:
       - cronJobName: vh-anonymise-hearings-and-conferences-job
         schedule: "30 5 * * *"
         concurrencyPolicy: Forbid
         args:
           - AnonymiseHearingsConferencesAndDeleteAadUsersJob
-
       - cronJobName: vh-clear-conference-message-history-job
         schedule: "0 * * * *"
         concurrencyPolicy: Forbid
         args:
           - ClearConferenceInstantMessageHistoryJob
-
       - cronJobName: vh-clear-hearings-job
         schedule: "0 23 * * *"
         concurrencyPolicy: Forbid
         args:
           - ClearHearingsJob
-
       - cronJobName: vh-delete-audio-recording-applications-job
         schedule: "0 22 * * *"
         concurrencyPolicy: Forbid
         args:
           - DeleteAudioRecordingApplicationsJob
-
       - cronJobName: vh-get-judiciary-users-job
         schedule: "0 2 * * *"
         concurrencyPolicy: Forbid
         args:
           - GetJudiciaryUsersJob
-
       - cronJobName: vh-reconcile-hearing-audio-with-storage-job
         schedule: "0 22 * * *"
         concurrencyPolicy: Forbid
         args:
           - ReconcileHearingAudioWithStorageJob
-
       - cronJobName: vh-remove-heartbeats-for-conferences-job
         schedule: "40 5 * * *"
         concurrencyPolicy: Forbid
         args:
           - RemoveHeartbeatsForConferencesJob
-
       - cronJobName: vh-send-hearing-notifications-job
         schedule: "0 10 * * *"
         concurrencyPolicy: Forbid
         args:
           - SendHearingNotificationsJob
-          
       - cronJobName: vh-hearing-allocations-job
         schedule: "0 3 * * *"
         concurrencyPolicy: Forbid
