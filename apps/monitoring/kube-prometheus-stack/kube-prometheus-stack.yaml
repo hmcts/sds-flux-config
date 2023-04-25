@@ -10,7 +10,7 @@ spec:
       kind: Secret
   interval: 5m
   releaseName: kube-prometheus-stack
-  upgrade: 
+  upgrade:
     force: true
   values:
     defaultRules:
