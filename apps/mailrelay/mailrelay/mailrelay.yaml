@@ -28,7 +28,7 @@ spec:
       port: 25
 
     eximExporterService:
-      type: ClusterIP 
+      type: ClusterIP
       port: 9636
 
     workload: Deployment
@@ -64,7 +64,7 @@ spec:
         ports:
           - name: eximexporter
             containerPort: 9636
-          
+
     prometheus:
       enabled: true
 

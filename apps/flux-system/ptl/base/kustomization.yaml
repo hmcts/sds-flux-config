@@ -18,7 +18,7 @@ patches:
         path: /spec/template/spec/containers/0/args/-
         value: --azure-autologin-for-acr
         # Add this if you are using aad pod identity with managed identity
-      - op: add 
+      - op: add
         path: /spec/template/metadata/labels/aadpodidbinding
         value: aks-kubelet-identity-mi
 

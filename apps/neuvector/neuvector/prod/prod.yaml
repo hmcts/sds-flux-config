@@ -6,13 +6,13 @@ metadata:
   namespace: neuvector
 spec:
   values:
-    keyvault: 
+    keyvault:
       name: sdsneuvector
       licensesecretname: neuvector-license
     keyVaults:
       sdsneuvector:
         secrets:
-          - neuvector-admin-password  
+          - neuvector-admin-password
           - neuvector-license
           - neuvector-slack-webhook
           - neuvector-new-admin-password
