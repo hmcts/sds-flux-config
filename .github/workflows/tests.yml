@@ -19,6 +19,8 @@ jobs:
           sudo apt-get install -y yamllint
       - name: Install yq
         run: ./tests/install-yq.sh
+      - name: Static File checks
+        run: ./tests/static-file-checks.sh
       - name: Kustomize Tests v2
         run: ./tests/test-kustomize-v2.sh
       - name: Lint Tests
