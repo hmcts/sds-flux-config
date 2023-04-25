@@ -6,8 +6,6 @@ rules:
   document-start: disable
   new-line-at-end-of-file: disable
   comments-indentation: disable
-  # sealed secrets adds these automatically, just turn it off so we aren't fighting it
-  trailing-spaces: disable
   empty-lines:
     max-end: 1
   comments:
