@@ -10,6 +10,7 @@ spec:
     crons:
       - cronJobName: vh-anonymise-hearings-and-conferences-job
         schedule: "30 5 * * *"
+        suspend: true
         concurrencyPolicy: Forbid
         args:
           - AnonymiseHearingsConferencesAndDeleteAadUsersJob
@@ -20,6 +21,7 @@ spec:
           - ClearConferenceInstantMessageHistoryJob
       - cronJobName: vh-clear-hearings-job
         schedule: "0 23 * * *"
+        suspend: true
         concurrencyPolicy: Forbid
         args:
           - ClearHearingsJob
@@ -45,6 +47,7 @@ spec:
           - RemoveHeartbeatsForConferencesJob
       - cronJobName: vh-send-hearing-notifications-job
         schedule: "0 10 * * *"
+        suspend: true
         concurrencyPolicy: Forbid
         args:
           - SendHearingNotificationsJob
