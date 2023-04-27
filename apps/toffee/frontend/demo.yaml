@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-e93febe-20230425170512 #{"$imagepolicy": "flux-system:toffee-frontend"}
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-6fe3a98-20230427090124 #{"$imagepolicy": "flux-system:toffee-frontend"}
       ingressHost: toffee.demo.platform.hmcts.net
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.demo.platform.hmcts.net
