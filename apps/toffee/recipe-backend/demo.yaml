@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-7d00c3d-20230501063001 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-165a6cf-20230501094716 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
       ingressHost: toffee-recipe-backend.demo.platform.hmcts.net
     global:
       environment: demo
