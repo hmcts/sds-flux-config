@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: darts-shared-infrastructure
+  namespace: darts-modernisation
+spec:
+  releaseName: darts-shared-infrastructure
+  chart:
+    spec:
+      chart: ./stable/darts-shared-infrastructure
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/darts/gateway:prod-6a10560-20230425114654 # {"$imagepolicy": "flux-system:darts-gateway"}
+      disableTraefikTls: true
