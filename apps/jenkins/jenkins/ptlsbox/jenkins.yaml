@@ -15,7 +15,7 @@ spec:
         namespace: jenkins
   values:
     controller:
-      tag: 2.400-387
+      tag: 2.403-400
       containerSecurityContext:
         runAsUser: 0
         runAsGroup: 0
@@ -317,7 +317,7 @@ spec:
                     resourceGroupReferenceType: "new"
                     maxVirtualMachinesLimit: 10
                     vmTemplates:
-                      - agentLaunchMethod: "SSH"
+                      - launcher: "ssh"
                         agentWorkspace: "/opt/jenkins"
                         builtInImage: "Windows Server 2016"
                         credentialsId: "vm_agent_creds"
