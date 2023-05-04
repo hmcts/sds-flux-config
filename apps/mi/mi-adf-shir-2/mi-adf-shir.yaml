@@ -12,6 +12,8 @@ spec:
       app.kubernetes.io/instance: mi-adf-shir-deployment-2
       app.kubernetes.io/name: mi-adf-shir-deployment-2
     image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-c3ee127-20230504091908 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    additionalEnv:
+      AUTH_KEY_SECRET_NAME: mi-adf-auth-key-2
     keyVaultSecrets:
       - mi-adf-auth-key-2
       - cgi-tec-tns-descriptor
