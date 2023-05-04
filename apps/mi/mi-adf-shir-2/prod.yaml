@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mi-adf-shir-deployment-2
+  namespace: mi
+spec:
+  values:
+    labels:
+      app.kubernetes.io/instance: mi-adf-shir-deployment-2
+      app.kubernetes.io/name: mi-adf-shir-deployment-2
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-552c219-20230403232719 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    replicaCount: 2
+    memoryLimits: '4096Mi'
+    cpuLimits: '4000m'
+    resourceGroup: "mi-prod-rg"
+    subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    environment: "prod"
+    managedIdentityClientId: "ee31a18f-45e9-41db-881d-5976695188fb"
+    shirNodeName: ''
+    hostAliases:
+    - ip: 51.141.129.74
+      hostnames:
+      - mcmshmctsproddataextract.blob.core.windows.net
