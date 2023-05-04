@@ -10,7 +10,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment
       app.kubernetes.io/name: mi-adf-shir-deployment
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-552c219-20230503102851 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-c3ee127-20230504091908 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     keyVaultSecrets:
       - mi-adf-auth-key
       - cgi-tec-tns-descriptor
