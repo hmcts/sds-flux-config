@@ -7,6 +7,7 @@ spec:
   interval: 5m
   releaseName: mi-adf-shir-2
   values:
+    appName: mi-adf-shir-2
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment-2
       app.kubernetes.io/name: mi-adf-shir-deployment-2
