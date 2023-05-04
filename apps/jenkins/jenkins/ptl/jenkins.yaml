@@ -407,7 +407,7 @@ spec:
                     resourceGroupReferenceType: "new"
                     maxVirtualMachinesLimit: 10
                     vmTemplates:
-                      - agentLaunchMethod: "SSH"
+                      - launcher: "ssh"
                         agentWorkspace: "/opt/jenkins"
                         builtInImage: "Windows Server 2016"
                         credentialsId: "vm_agent_creds"
