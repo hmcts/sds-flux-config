@@ -8,7 +8,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment-2
       app.kubernetes.io/name: mi-adf-shir-deployment-2
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-552c219-20230403232719 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-c3ee127-20230504091908 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     replicaCount: 2
     memoryLimits: '4096Mi'
     cpuLimits: '4000m'
