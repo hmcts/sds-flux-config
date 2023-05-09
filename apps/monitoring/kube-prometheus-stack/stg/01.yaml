@@ -76,10 +76,10 @@ spec:
           traefik.ingress.kubernetes.io/router.tls: "true"
         enabled: true
         hosts:
-          - sds-prometheus-01.stg.platform.hmcts.net
+          - sds-prometheus-01.staging.platform.hmcts.net
         tls:
           - hosts:
-              - sds-prometheus-01.stg.platform.hmcts.net
+              - sds-prometheus-01.staging.platform.hmcts.net
     alertmanager:
       alertmanagerSpec:
         tolerations:
@@ -102,20 +102,20 @@ spec:
           traefik.ingress.kubernetes.io/router.tls: "true"
         enabled: true
         hosts:
-          - sds-alertmanager-01.stg.platform.hmcts.net
+          - sds-alertmanager-01.staging.platform.hmcts.net
         tls:
           - hosts:
-              - sds-alertmanager-01.stg.platform.hmcts.net
+              - sds-alertmanager-01.staging.platform.hmcts.net
       config:
         receivers:
           - name: "slack_alerting"
             slack_configs:
               - channel: prometheus-alerting
-                title: 'SDS-stg-01 - {{ template "slack.default.title" . }}'
+                title: 'SDS-staging-01 - {{ template "slack.default.title" . }}'
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "slack_critical"
             slack_configs:
               - channel: prometheus-critical
-                title: 'SDS-stg-01 - {{ template "slack.default.title" . }}'
+                title: 'SDS-staging-01 - {{ template "slack.default.title" . }}'
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
