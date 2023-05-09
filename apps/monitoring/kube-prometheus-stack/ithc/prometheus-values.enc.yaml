@@ -1,0 +1,24 @@
+apiVersion: v1
+data:
+  values.yaml: ENC[AES256_GCM,data:FjL/VojvTVfbSnUcNGnHfrtEunUUC3nZzyHMg0BoouVYnKBHhYDASVSQolBvimjM8cF1nc0lp6gmMNsyyrwVskAX+LXW+qBsDIRVppPBrgrCk6ejeHzDV9/qvTA1Q0s3d/oeyDTnOQ3bo8i59Rq/6iTRghyn4cTvgHI0dbmy65bJlYFQTGpu7T5lnXf1odcw0lvYyZWz7A+Hb+PGfkexc+CdDYBlqEpcXL4YNB7m72lOCpGVXyJm2j28SIgtFSCA,iv:Efd3RW/3B9AM8ok/9u+K1y5khilo5011t2N8KOLTYh8=,tag:vk7Tym8qkOK/eGhaMxqn8A==,type:str]
+kind: Secret
+metadata:
+  name: prometheus-values
+  namespace: monitoring
+type: Opaque
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicesithckv.vault.azure.net
+      name: sops-key
+      version: 96812ee192044e6daabee8d3621b456f
+      created_at: "2023-05-09T07:32:55Z"
+      enc: J6mKq70tXO0SRPYCj27-VHLWG5R9kwb9vNTzFOZIEkQutsJg09xjwnxj-JnDwmmbOaUKLvrPJK7UF-3NAVGJRVfc4TfFxtsWG3O9fjOPf1qyuvxBEoDFsXqHs9ZJzoywoPshdipsrgPmpBMBGnPSh_2xB12i-xRSvf8f96AiuvsfIfXVyuJPGf7S4j3ISfMUrTxEca7AchmyOAxyd__B_U18cWBwNTfTLdT1FMmdvStGFLWKWV6d-zoxSN4c7Ole8NCFhf4cO9nHG6eDBglMWe9PrhBsvDgcAmvW17K819UNi-6pIDeGHuhPQ2fiL59Lyy8wxvpa_Uwg2Eg4zeEnvg
+  hc_vault: []
+  age: [] 
+  lastmodified: "2023-05-09T07:32:56Z"
+  mac: ENC[AES256_GCM,data:uj41PoY0IuipOaQXnfQUNrLsP5KnnHa7GeZBP9mAeAJYqQo+6GB/Fqs8d8z98VP12l+9N1u72HgLvoBIDx8U2scRDW0AmHZ9iq0RDP1GKrrvJKdzhCFKunm6IeJRcC+J4AA1VT8kbTeIz6R7EjaCEk7Zz0SXUtvr5fZjLA1elXQ=,iv:7tvAZ+EpLXnPrAVbwPuM/GhySLRVSuj/oGEVPI8IaZc=,tag:J1ZkQDiRvGrzBiHoFNgjhA==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3
