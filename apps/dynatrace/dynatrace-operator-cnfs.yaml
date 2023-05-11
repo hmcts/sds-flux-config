@@ -16,8 +16,9 @@ spec:
         kind: HelmRepository
         namespace: dynatrace
   values:
+    installCRD: true
     csidriver:
-      enabled: false
+      enabled: true
     operator:
       tolerations:
         - effect: NoSchedule
