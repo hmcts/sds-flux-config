@@ -16,8 +16,8 @@ spec:
         kind: HelmRepository
         namespace: dynatrace
   values:
-    apiUrl: https://yrk32651.live.dynatrace.com/api
-    networkZone: "azure.sds" # uses Active Gates from SDS
+    csidriver:
+      enabled: false
     operator:
       tolerations:
         - effect: NoSchedule

@@ -9,4 +9,4 @@ resources:
   - ../base/dynakube-secret.enc.yaml
 
 patchesStrategicMerge:
-  - ../base/dynakube.yaml
+  - ./dynakube-cnfs.yaml
