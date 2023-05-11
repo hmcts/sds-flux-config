@@ -16,7 +16,7 @@ spec:
         kind: HelmRepository
         namespace: dynatrace
   values:
-    installCRD: true
+#    installCRD: true
     csidriver:
       enabled: true
     operator:
