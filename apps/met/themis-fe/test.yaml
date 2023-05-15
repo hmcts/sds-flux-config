@@ -28,6 +28,7 @@ spec:
         THEMIS_DAC_WRITERQUEUENAME: LIBRAGOB_READERQUEUE
         SPRING_JMS_SERVICEBUS_IDLE-timeout: 30000
         KV_CONFIG_TREE: /mnt/secrets/libragob-test-kv/
+        LOG4J_DEBUG: true
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
