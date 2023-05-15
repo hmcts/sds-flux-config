@@ -10,7 +10,7 @@ spec:
   values:
     nodejs:
       ingressHost: 'jdbureau.dev.platform.hmcts.net'
-      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:3.3.70
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:3.4.59
       replicas: 2
       autoscaling:
         enabled: true
