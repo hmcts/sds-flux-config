@@ -33,5 +33,9 @@ spec:
           key: CriticalAddonsOnly
           operator: Equal
           value: "true"
+        - effect: NoSchedule
+          key: kubernetes.io/os
+          operator: Equal
+          value: "windows"
       nodeSelector:
         agentpool: system
