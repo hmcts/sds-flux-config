@@ -92,6 +92,10 @@ spec:
         - effect: NoSchedule
           key: node-role.kubernetes.io/control-plane
           operator: Exists
+        - effect: NoSchedule
+          key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
 
       # Optional: Adds resource settings for OneAgent container
       # Consumption of the OneAgent heavily depends on the workload to monitor
