@@ -10,7 +10,7 @@ spec:
   values:
     nodejs:
       ingressHost: 'jdfrontend.dev.platform.hmcts.net'
-      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:3.3.70
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:3.4.59
       replicas: "2"
       memoryRequests: "248Mi"
       cpuRequests: "200m"
