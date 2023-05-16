@@ -1,11 +1,4 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../../base
-  - ../../dynakube-cnfs.yaml
-  - ../../dynatrace-operator-cnfs.yaml
-  - ../../dynatrace-operator-helmrepo.yaml
-  - ../base/dynakube-secret.enc.yaml
-
-patchesStrategicMerge:
-  - ../base/dynakube-cnfs.yaml
+  - ../base
