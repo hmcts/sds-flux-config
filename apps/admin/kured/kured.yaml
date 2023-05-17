@@ -19,6 +19,8 @@ spec:
         namespace: admin
   interval: 1m
   values:
+    serviceAccount:
+      create: false
     image:
       repository: ghcr.io/kubereboot/kured
       tag: 1.12.0
