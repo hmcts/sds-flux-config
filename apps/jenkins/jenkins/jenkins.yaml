@@ -10,6 +10,8 @@ spec:
     timeout: 600s
   timeout: 600s
   values:
+    serviceAccount:
+      create: false
     controller:
       # Used for label app.kubernetes.io/component
       componentName: "jenkins-controller"
