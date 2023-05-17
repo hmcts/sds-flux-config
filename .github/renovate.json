@@ -1,16 +1,7 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
-  ],
-  "flux": {
-    "fileMatch": ["\\.yaml$"]
-  },
-  "packageRules": [
-    {
-      "additionalBranchPrefix": "{{parentDir}}-",
-      "matchPackagePatterns": [".*"]
-    }
-  ],
-  "prHourlyLimit": 15,
-  "prConcurrentLimit": 15
+    "local>hmcts/.github:renovate-config",
+    "local>hmcts/.github//renovate/flux"
+  ]
 }

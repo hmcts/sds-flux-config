@@ -15,6 +15,7 @@ spec:
         namespace: jenkins
   values:
     controller:
+      # renovate: datasource=docker depName=hmctspublic.azurecr.io/jenkins/jenkins versioning=maven
       tag: 2.403-400
       containerSecurityContext:
         runAsUser: 0
