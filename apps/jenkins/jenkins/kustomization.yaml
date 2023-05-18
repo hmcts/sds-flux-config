@@ -5,6 +5,4 @@ resources:
   - disk.yaml
   - logging.yaml
   - helmrepo.yaml
-
-patchesStrategicMerge::
   - jenkins-controller-version.yaml

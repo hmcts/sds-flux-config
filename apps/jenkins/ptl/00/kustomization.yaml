@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../base
+  - ../../jenkins/ptl/jenkins-azure-vm-agent.yaml
 
 patchesStrategicMerge:
   - ../../jenkins/ptl/disk.yaml
   - ../../jenkins/ptl/jenkins.yaml
-  - ../../jenkins/ptl/jenkins-azure-vm-agent.yaml
   - ../../identity/ptl.yaml
