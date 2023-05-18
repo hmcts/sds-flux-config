@@ -6,4 +6,6 @@ resources:
 patchesStrategicMerge:
   - ../../jenkins/ptlsbox/disk.yaml
   - ../../jenkins/ptlsbox/jenkins.yaml
+  - ../../jenkins/ptlsbox/jenkins-controller-version.yaml
+  - ../../jenkins/ptlsbox/jenkins-azure-vm-agent.yaml
   - ../../identity/ptlsbox.yaml

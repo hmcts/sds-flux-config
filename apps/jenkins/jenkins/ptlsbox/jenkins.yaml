@@ -15,7 +15,7 @@ spec:
         namespace: jenkins
   values:
     controller:
-      tag: 2.405-409
+      # image version is managed in jenkins-controller-version.yaml
       containerSecurityContext:
         runAsUser: 0
         runAsGroup: 0
