@@ -60,3 +60,7 @@ apps/darts-modernisation/ @hmcts/darts
 
 apps/**/kustomization.yaml @hmcts/platform-operations
 apps/**/kustomize.yaml @hmcts/platform-operations
+
+### Disabled rules for renovate automerge
+jenkins-azure-vm-agent.yaml
+jenkins-controller-version.yaml
