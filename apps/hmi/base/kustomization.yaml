@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../hmi-rota-dtu/hmi-rota-dtu.yaml
+  - ../hmi-libra-dtu/hmi-libra-dtu.yaml
   - ../identity/hmi-azure-identity.yaml
 namespace: hmi
