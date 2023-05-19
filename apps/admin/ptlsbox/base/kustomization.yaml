@@ -4,10 +4,12 @@ namespace: admin
 resources:
   - ../../base
   - ../../kube-slack/ptlsbox/kube-slack-values.enc.yaml
+  - ../../keda
   - ../../kured/ptlsbox/kured-values.enc.yaml
   - ../../../rbac/reader-clusterrole.yaml
   - ../../traefik2
 patchesStrategicMerge:
+  - keda-identity.yaml
   - ../../traefik2/ptlsbox/secret-provider.yaml
   - ../../aad-pod-identity/ds-patch.yaml
 patches:
