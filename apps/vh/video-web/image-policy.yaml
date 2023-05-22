@@ -17,7 +17,7 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: vh-video-web
+  name: vh-video-web-staging
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
@@ -33,7 +33,7 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: vh-video-web-prod
+  name: vh-video-web
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:

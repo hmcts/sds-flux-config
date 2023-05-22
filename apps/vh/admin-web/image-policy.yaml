@@ -23,7 +23,7 @@ metadata:
 spec:
   filterTags:
     extract: $ts
-    pattern: '^staging-[a-f0-9]+-(?P<ts>[0-9]+)'
+    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'
   imageRepositoryRef:
     name: vh-admin-web
   policy:
@@ -33,13 +33,13 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: vh-admin-web-prod
+  name: vh-admin-web-staging
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
   filterTags:
     extract: $ts
-    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'
+    pattern: '^staging-[a-f0-9]+-(?P<ts>[0-9]+)'
   imageRepositoryRef:
     name: vh-admin-web
   policy:
