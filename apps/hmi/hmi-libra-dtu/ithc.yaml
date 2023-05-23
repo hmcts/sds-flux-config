@@ -5,4 +5,4 @@ metadata:
 spec:
   values:
     function:
-      image:  #{"$imagepolicy": "flux-system:hmi-libra-dtu"}
+      image: sdshmctspublic.azurecr.io/hmi/libra-dtu:latest #{"$imagepolicy": "flux-system:hmi-libra-dtu"}
