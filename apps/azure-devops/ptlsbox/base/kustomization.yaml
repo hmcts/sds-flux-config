@@ -4,5 +4,6 @@ namespace: azure-devops
 resources:
   - ../../base
   - azure-devops-token.yaml
+  - ../azure-devops-agent/azure-devops-agent-keda.yaml
 patchesStrategicMerge:
   - ../../azure-devops-agent/ptlsbox.yaml
