@@ -29,10 +29,10 @@ spec:
       AZP_TOKEN:
         secretRef: azure-devops-token
         key: token
-    memoryRequests: 1024Mi
-    cpuRequests: 250m
-    memoryLimits: 4096Mi
-    cpuLimits: 2000m
+    memoryRequests: 512Mi
+    cpuRequests: 25m
+    memoryLimits: 2Gi
+    cpuLimits: 1
     successfulJobsHistoryLimit: 5
     failedJobsHistoryLimit: 5
   chart:
