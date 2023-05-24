@@ -22,7 +22,7 @@ spec:
     environment:
       AZP_URL: https://dev.azure.com/hmcts
       CMD_ARGS: "--once"
-      AZP_POOL: hmcts-sdsptl-agent-pool
+      AZP_POOL: hmcts-sds-ptlsbox
     job:
       activeDeadlineSeconds: 10800
     secrets:
