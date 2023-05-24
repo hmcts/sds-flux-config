@@ -9,7 +9,7 @@ resources:
   - ../../../rbac/reader-clusterrole.yaml
   - ../../traefik2
 patchesStrategicMerge:
-  - keda-identity.yaml
+  - ../../keda/ptlsbox/identity.yaml
   - ../../traefik2/ptlsbox/secret-provider.yaml
   - ../../aad-pod-identity/ds-patch.yaml
 patches:
