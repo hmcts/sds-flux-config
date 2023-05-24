@@ -1,0 +1,27 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: monitoring-alerts
+  labels:
+    app: kube-prometheus-stack
+    release: kube-prometheus-stack
+spec:
+  groups:
+  - name: PodDisruptionBudgets
+    rules:
+    - alert: FailedPDB
+      expr: kube_pod_disruption_budget_status_disruptions_healthy == 0
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        description: 'PodDisruptionBudget {{ $labels.namespace }}/{{ $labels.poddisruptionbudget }} has no healthy disruptions.'
+  - name: Deployments
+    rules:
+    - alert: FailingDeployment
+      expr: kube_deployment_status_replicas_unavailable > 0
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        description: 'Deployment {{ $labels.namespace }}/{{ $labels.deployment }} has unavailable replicas.'
