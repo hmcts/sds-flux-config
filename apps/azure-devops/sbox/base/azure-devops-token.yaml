@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+  token: ENC[AES256_GCM,data:lQN/MKUMwyhcEJTivZ0Lo+5zq+wMAcDsV3Sid6z8PSNGiU3mYDpV0S8x+ex1pQoabMHTeSlrT4+gRnh6DKmvrgfoeju2BBNB,iv:BDhkNGaMKjKoFnLAKfKvHaibFiWB/V3NO2uxBvIO/Sk=,tag:lhpBNM9fK3BLlqprDd0/jw==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: azure-devops-token
+  namespace: azure-devops
+type: Opaque
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssdsptlsbox.vault.azure.net
+      name: sops-key
+      version: a443393a134b4e33ae9f541d2f14747e
+      created_at: "2023-05-25T08:57:57Z"
+      enc: FFyxhYGyDQ69m8LMEQpiN49KmN1E3Jk0dOGMNv5jrEFJycR0trSBjy8qWgrWKa8i9SuHeV8k1psp7SYuYGrjyj2UpKkOwKhzPWRVZMRZuf_BTh8Dtt-OzBJjoUqBIy7inw69_MKKI22aaIy5gfDXsW6di5ECfPyFCQWUQGHmWztL9zWJoyjhSV_jCyOxyGLmVlmapi9CdrbZU74lFX_gx5y5-Vasy-bgd61z_CpXzgNNMRdG96Lq_J-K8BFVK_j-21jls0ocTj_i-joFj1H55h7su2GB6hKatCQwPpQ3Rs5n4uUOimAfCZRHWEeNT1eKj06cBwfscGfvLrQjpH1jTg
+  hc_vault: []
+  age: []
+  lastmodified: "2023-05-25T08:57:58Z"
+  mac: ENC[AES256_GCM,data:qGDaDdYwRJvXCoqetF4NxZOM+ODavZkLlikkzpzz5j81qpvKdbI7wxP5UKMj2IoMO3SaJkT98JPgwByFRlYBZTl4wH/xbFFBse7spSSgcAuh6CUdUOv5GDewve+oH5UQ8hYYdJ2t4DL6slrYCmJilMvVtcXuVXvtwvgBa3vI/t0=,iv:B/CCkSUi3k/o6xK5bH8r5N+ASLLForU0A83UjCAq0KI=,tag:9h0WfiBtKQM3KRfUOm1SIg==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3
