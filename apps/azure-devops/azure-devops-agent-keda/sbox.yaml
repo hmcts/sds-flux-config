@@ -12,7 +12,7 @@ spec:
     cpuRequests: 100m
     memoryLimits: 1000Mi
     cpuLimits: 1
-    maxReplicaCount: 5
+    maxReplicaCount: 3
     triggers:
       - type: azure-pipelines
         poolID: "40"
