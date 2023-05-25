@@ -33,6 +33,7 @@ spec:
     cpuRequests: 25m
     memoryLimits: 2Gi
     cpuLimits: 1
+    maxReplicaCount: 3
     successfulJobsHistoryLimit: 5
     failedJobsHistoryLimit: 5
   chart:

@@ -7,9 +7,9 @@ metadata:
 spec:
   values:
     environment:
-      AZP_POOL: hmcts-sds-ptlsbox
+      AZP_POOL: hmcts-ss-sbox
     triggers:
       - type: azure-pipelines
-        poolID: "46"
+        poolID: "40"
         organizationURLFromEnv: "AZP_URL"
         personalAccessTokenFromEnv: "AZP_TOKEN"
