@@ -8,11 +8,6 @@ spec:
   values:
     environment:
       AZP_POOL: hmcts-sds-ptlsbox
-    memoryRequests: 512Mi
-    cpuRequests: 25m
-    memoryLimits: 2Gi
-    cpuLimits: 1
-    maxReplicaCount: 5
     triggers:
       - type: azure-pipelines
         poolID: "46"

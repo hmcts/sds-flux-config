@@ -8,11 +8,6 @@ spec:
   values:
     environment:
       AZP_POOL: hmcts-ss-sbox
-    memoryRequests: 100Mi
-    cpuRequests: 100m
-    memoryLimits: 1000Mi
-    cpuLimits: 1
-    maxReplicaCount: 3
     triggers:
       - type: azure-pipelines
         poolID: "40"
