@@ -16,7 +16,7 @@ spec:
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
         VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
-      image: sdshmctspublic.azurecr.io/vh/video-web:prod-5106ca0-202303261026 # {"$imagepolicy": "flux-system:vh-video-web-prod"}
+      image: sdshmctspublic.azurecr.io/vh/video-web:prod-5106ca0-202303261026 # {"$imagepolicy": "flux-system:vh-video-web"}
   chart:
     spec:
       chart: ./stable/vh-video-web/prod
