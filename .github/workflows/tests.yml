@@ -32,9 +32,9 @@ jobs:
         environment: [sbox, ptlsbox, dev, ptl, ithc, test, demo, stg, prod]
         cluster: ["00", "01"]
         exclude:
-          - environment: sbox-intsvc
+          - environment: ptlsbox
             cluster: "01"
-          - environment: ptl-intsvc
+          - environment: ptl
             cluster: "01"
     steps:
       - uses: actions/checkout@v3
