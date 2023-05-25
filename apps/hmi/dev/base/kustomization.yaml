@@ -1,8 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../../base/namespace.yaml
-  - ../../../base/service-account.yaml
+  - ../../../base # This is apps/base instead of apps/bsp/base as preview doesn't install everything
   - ../../identity/hmi-azure-identity.yaml
 namespace: hmi
 patchesStrategicMerge:
