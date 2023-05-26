@@ -17,7 +17,7 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: vh-booking-queue-subscriber
+  name: vh-booking-queue-subscriber-staging
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
@@ -33,7 +33,7 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: vh-booking-queue-subscriber-prod
+  name: vh-booking-queue-subscriber
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
