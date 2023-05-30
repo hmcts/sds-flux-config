@@ -1,6 +1,6 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
-  name: c100-application
+  name: hmi-libra-dtu
 spec:
-  image: sdshmctspublic.azurecr.io/c100/application
+  image: sdshmctspublic.azurecr.io/hmi/libra-dtu

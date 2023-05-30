@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: c100-application
+  name: hmi-libra-dtu
 spec:
   imageRepositoryRef:
-    name: c100-application
+    name: hmi-libra-dtu
