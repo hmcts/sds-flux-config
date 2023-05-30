@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: azure-devops
 resources:
   - ../../base
-  - azure-devops-token.yaml
-  - ../../azure-devops-agent-keda/azure-devops-agent.yaml
+  - ../../azure-devops-agent/azure-devops-agent.yaml
+namespace: azure-devops
 patchesStrategicMerge:
-  - ../../azure-devops-agent-keda/ptl.yaml
+  - ../../azure-devops-agent/ptl.yaml
