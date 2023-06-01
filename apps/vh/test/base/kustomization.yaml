@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../../rbac/temp-cronjob-role.yaml
 namespace: vh
 patchesStrategicMerge:
   - ../../identity/vh-aad-identity.yaml
