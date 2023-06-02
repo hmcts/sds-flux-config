@@ -6,3 +6,5 @@ spec:
   values:
     function:
       image: sdshmctspublic.azurecr.io/hmi/rota-dtu:prod-f9fcce1-20230531153745 #{"$imagepolicy": "flux-system:hmi-rota-dtu"}
+      environment:
+        DESTINATION_SYSTEM: MOCK
