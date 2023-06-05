@@ -5,8 +5,8 @@ metadata:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.tls: "true"
   labels:
-  name: jenkinstest
-  namespace: jenkins
+    name: jenkinstest
+    namespace: jenkins
 spec:
   rules:
   - host: sds-sandbox-build-test.platform.hmcts.net
