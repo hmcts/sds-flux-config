@@ -5,7 +5,7 @@ metadata:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.tls: "true"
   labels:
-  name: jenkins
+  name: jenkinstest
   namespace: jenkins
 spec:
   rules:
