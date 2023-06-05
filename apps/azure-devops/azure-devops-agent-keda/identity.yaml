@@ -1,0 +1,17 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: azure-devops-agent
+  namespace: azure-devops
+spec:
+  type: 0
+
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: azure-devops-agent-binding
+  namespace: azure-devops
+spec:
+  azureIdentity: azure-devops-agent
+  selector: azure-devops-agent

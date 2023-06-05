@@ -4,5 +4,7 @@ resources:
   - ../base
   - ../base/azure-devops-token.yaml
   - ../../azure-devops-agent-keda/azure-devops-agent.yaml
+  - ../../azure-devops-agent-keda/identity.yaml
 patchesStrategicMerge:
   - ../../azure-devops-agent-keda/prod.yaml
+  - ../../azure-devops-agent-keda/prod/identity.yaml
