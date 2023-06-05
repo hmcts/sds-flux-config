@@ -9,6 +9,9 @@ spec:
     scaleType: Job
     image: hmctspublic.azurecr.io/azure-devops-agent:prod-cb09685d-1678281568 # {"$imagepolicy": "flux-system:azure-devops-agent"}
     runAsRoot: true
+    aadIdentity:
+      name: azure-devops-agent
+      type: 0
     affinity:
       podAntiAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
