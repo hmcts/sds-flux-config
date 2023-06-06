@@ -6,6 +6,7 @@ metadata:
   namespace: azure-devops
 spec:
   values:
+    aadIdentityName: azure-devops-agent
     environment:
       AZP_POOL: hmcts-ss-sbox
     triggers:
