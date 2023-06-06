@@ -19,6 +19,7 @@ spec:
                   values:
                     - jenkins-master
             topologyKey: "kubernetes.io/hostname"
+    aadIdentityName: azure-devops-agent
     environment:
       AZP_URL: https://dev.azure.com/hmcts
       CMD_ARGS: "--once"
