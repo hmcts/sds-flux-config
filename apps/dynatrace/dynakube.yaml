@@ -67,7 +67,7 @@ spec:
 
   namespaceSelector:
     matchExpressions:
-      - key: kustomize.toolkit.fluxcd.io/name
+      - key: kubernetes.io/metadata.name
         operator: NotIn
         values:
           - mi
