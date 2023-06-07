@@ -65,13 +65,13 @@ spec:
   #      operator: In
   #      values: [my-frontend, my-backend, my-database]
 
-  namespaceSelector:
-    matchLabels:
-      app: mi-adf-shir-2
-    matchExpressions:
-     - key: app
-       operator: NotIn
-       values: [mi-adf-shir-2]
+namespaceSelector:
+  matchLabels:
+    app: mi-adf-shir-2
+  matchExpressions:
+    - key: app
+      operator: NotIn
+      values: [mi-adf-shir-2]
 
   # Configuration for OneAgent instances
   #
