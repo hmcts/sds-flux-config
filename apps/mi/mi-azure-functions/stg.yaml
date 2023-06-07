@@ -13,6 +13,7 @@ spec:
       ADF_STORAGEACCOUNTNAME: miauditstg
       MI_METADATA_SERVER: mi-metadata-server-stg.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-stg
+      ADF_INTEGRATIONRUNTIMENAME: IR-Self-hosted,IR-Self-hosted-2
     environment: "stg"
     resourceGroup: "mi-stg-rg"
     subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
