@@ -69,7 +69,8 @@ namespaceSelector:
   matchExpressions:
     - key: namespace
       operator: NotIn
-      values: [mi]
+      values:
+        - mi
 
   # Configuration for OneAgent instances
   #
