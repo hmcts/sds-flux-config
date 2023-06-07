@@ -67,7 +67,7 @@ spec:
 
   namespaceSelector:
     matchExpressions:
-      - key: namespace
+      - key: kubernetes.io/metadata.name
         operator: NotIn
         values:
           - mi
