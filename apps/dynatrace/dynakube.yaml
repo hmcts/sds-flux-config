@@ -65,6 +65,13 @@ spec:
   #      operator: In
   #      values: [my-frontend, my-backend, my-database]
 
+namespaceSelector:
+  matchExpressions:
+    - key: namespace
+      operator: NotIn
+      values:
+        - mi
+
   # Configuration for OneAgent instances
   #
   oneAgent:
