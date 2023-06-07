@@ -67,7 +67,7 @@ spec:
 
   namespaceSelector:
     matchExpressions:
-      - key: namespace
+      - key: kustomize.toolkit.fluxcd.io/name
         operator: NotIn
         values:
           - mi
