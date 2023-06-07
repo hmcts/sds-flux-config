@@ -3,6 +3,9 @@ kind: HelmRelease
 metadata:
   name: mi-adf-shir-deployment-2
   namespace: mi
+  annotations:
+    oneagent.dynatrace.com/inject: "false"
+    data-ingest.dynatrace.com/inject: "false"
 spec:
   values:
     labels:
