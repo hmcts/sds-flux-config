@@ -67,7 +67,7 @@ spec:
 
   namespaceSelector:
     matchExpressions:
-      - key: kubernetes.io/metadata.labels.ignored-by-dynatrace
+      - key: ignored-by-dynatrace
         operator: NotIn
         values:
           - "true"
