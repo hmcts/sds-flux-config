@@ -18,3 +18,7 @@ patches:
   - path: ../../mi-adf-shir-2/prod.yaml
   #overlays for mi-house-keeping-service
   - path: ../../mi-house-keeping-service/prod.yaml
+  #overlays for mi-labels dynatrace
+  - path: ../../mi-adf-shir/prod-deployment-label-patch.yaml
+  #overlays for mi-labels dynatrace
+  - path: ../../mi-adf-shir-2/prod-deployment-2-label-patch.yaml

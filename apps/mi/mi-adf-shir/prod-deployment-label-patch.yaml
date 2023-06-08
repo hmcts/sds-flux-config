@@ -1,0 +1,14 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mi-adf-shir-deployment
+  namespace: mi
+spec:
+  selector:
+    matchLabels:
+      app: mi-adf-shir-deployment
+  template:
+    metadata:
+      labels:
+        ignored-by-dynatrace: "true"
