@@ -67,10 +67,10 @@ spec:
 
   namespaceSelector:
     matchExpressions:
-      - key: ignored-by-dynatrace
+      - key: kubernetes.io/metadata.name
         operator: NotIn
         values:
-          - yes
+          - mi
 
   # Configuration for OneAgent instances
   #
