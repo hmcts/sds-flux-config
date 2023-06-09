@@ -31,11 +31,5 @@ spec:
             slack_configs:
               - channel: prometheus-critical
                 title: 'SDS-prod-01 - {{ template "slack.default.title" . }}'
-                text: |
-                    *Alert: {{ .Labels.alertname }}*
-                    *Severity*: {{ .Labels.severity }}
-                    *Description*: {{ .Annotations.description }}
-                    *Namespace*: {{ .Labels.namespace }}
-                    *PodDisruptionBudget*: {{ .Labels.poddisruptionbudget }}
-                    *FailingDeployment*: {{.Labels.failingdeployment}}
+                text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
