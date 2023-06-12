@@ -12,14 +12,14 @@ spec:
       aadpodidbinding: met-schema-binding
     nodejs:
       applicationPort: 8082
-      livenessDelay: 180
-      startupDelay: 180
+      livenessDelay: 360
+      startupDelay: 360
       readinessPath: /services/themisgatewayapi?wsdl
       startupPath: /services/themisgatewayapi?wsdl
       livenessPath: /services/themisgatewayapi?wsdl
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.7'
-      replicas: 4
+      replicas: 1
       memoryRequests: "128Mi"
       cpuRequests: "50m"
       memoryLimits: "1024Mi"
