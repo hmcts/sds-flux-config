@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: pip-channel-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/channel-management:prod-ac32ea7-20230612123023 #{"$imagepolicy": "flux-system:pip-channel-management"}
+    image: sdshmctspublic.azurecr.io/pip/channel-management:prod-6b3b9c9-20230613111133 #{"$imagepolicy": "flux-system:pip-channel-management"}
     java:
       environment:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.demo.platform.hmcts.net
