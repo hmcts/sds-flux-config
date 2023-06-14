@@ -22,3 +22,11 @@ spec:
       effect: "NoSchedule"
     - key: "CriticalAddonsOnly"
       operator: "Exists"
+  chart:
+    spec:
+      chart: ./charts/dotnet4.8
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+      interval: 1m
