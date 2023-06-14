@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../dotnet4.8/dotnet4.8.yaml
 namespace: aspnet
