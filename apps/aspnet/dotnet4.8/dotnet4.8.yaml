@@ -22,11 +22,3 @@ spec:
       effect: "NoSchedule"
     - key: "CriticalAddonsOnly"
       operator: "Exists"
-  chart:
-    spec:
-      chart: ./charts/aspnet
-      sourceRef:
-        kind: GitRepository
-        name: sds-helm-charts
-        namespace: flux-system
-      interval: 1m
