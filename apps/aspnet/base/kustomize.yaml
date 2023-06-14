@@ -1,0 +1,11 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: aspnet
+  namespace: flux-system
+spec:
+  path: ./apps/aspnet/${ENVIRONMENT}/base
+  postBuild:
+    substitute:
+      NAMESPACE: "aspnet"
+      TEAM_NOTIFICATION_CHANNEL: "hackthon-logicapp"
