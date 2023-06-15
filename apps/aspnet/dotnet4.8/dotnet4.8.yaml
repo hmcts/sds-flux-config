@@ -24,9 +24,9 @@ spec:
       operator: "Exists"
   chart:
     spec:
-      chart: ./charts/dotnet4.8
+      chart: ./stable/dotnet4.8
       sourceRef:
         kind: GitRepository
-        name: sds-helm-charts
+        name: hmcts-charts
         namespace: flux-system
       interval: 1m
