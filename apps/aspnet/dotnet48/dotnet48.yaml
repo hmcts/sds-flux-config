@@ -16,12 +16,17 @@ spec:
         maxReplicas: 5
         targetCPUUtilizationPercentage: 80
     tolerations:
-    - key: "kubernetes.io/os"
-      operator: "Equal"
-      value: "windows"
-      effect: "NoSchedule"
-    - key: "CriticalAddonsOnly"
-      operator: "Exists"
+      - key: CriticalAddonsOnly
+        operator: Equal
+        value: "true"
+        effect: NoSchedule
+      - key: "kubernetes.io/os"
+        operator: Equal
+        value: "windows"
+        effect: NoSchedule
+    service:
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
   chart:
     spec:
       chart: ./charts/dotnet48
