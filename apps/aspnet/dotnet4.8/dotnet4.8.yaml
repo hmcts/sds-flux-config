@@ -24,7 +24,7 @@ spec:
       operator: "Exists"
   chart:
     spec:
-      chart: ./charts/aspnet
+      chart: ./charts/dotnet4.8
       sourceRef:
         kind: GitRepository
         name: sds-helm-charts
