@@ -8,6 +8,8 @@ spec:
   interval: 5m
   releaseName: aspnet-dotnet48
   values:
+    nodeSelector:
+      kubernetes.io/os: windows
     java:
       image: 'sdshmctspublicsbox.azurecr.io/aspnetapp:v1'
       replicas: 1
