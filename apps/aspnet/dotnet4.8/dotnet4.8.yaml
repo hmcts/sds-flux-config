@@ -27,6 +27,6 @@ spec:
       chart: ./charts/aspnet
       sourceRef:
         kind: GitRepository
-        name: sds-helm-charts
+        name: hmcts-charts
         namespace: flux-system
       interval: 1m
