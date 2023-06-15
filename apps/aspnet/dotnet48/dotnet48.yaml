@@ -2,11 +2,11 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: dotnet4.8
+  name: dotnet48
   namespace: aspnet
 spec:
   interval: 5m
-  releaseName: aspnet-dotnet4.8
+  releaseName: aspnet-dotnet48
   values:
     java:
       image: 'sdshmctspublicsbox.azurecr.io/aspnetapp:v1'
@@ -24,7 +24,7 @@ spec:
       operator: "Exists"
   chart:
     spec:
-      chart: ./charts/dotnet4.8
+      chart: ./charts/dotnet48
       sourceRef:
         kind: GitRepository
         name: sds-helm-charts
