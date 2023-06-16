@@ -5,6 +5,6 @@ metadata:
 spec:
   values:
     function:
-      image: sdshmctspublic.azurecr.io/hmi/rota-dtu:prod-1e7b453-20230613134225 #{"$imagepolicy": "flux-system:hmi-rota-dtu"}
+      image: sdshmctspublic.azurecr.io/hmi/rota-dtu:prod-3be8769-20230616104155 #{"$imagepolicy": "flux-system:hmi-rota-dtu"}
       environment:
         DESTINATION_SYSTEM: MOCK
