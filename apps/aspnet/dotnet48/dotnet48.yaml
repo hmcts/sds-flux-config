@@ -8,8 +8,18 @@ spec:
   interval: 5m
   releaseName: aspnet-dotnet48
   values:
-    nodeSelector:
-      kubernetes.io/os: windows
+    operator:
+      tolerations:
+        - effect: NoSchedule
+          key: CriticalAddonsOnly
+          operator: Equal
+          value: "true"
+        - effect: NoSchedule
+          key: kubernetes.io/os
+          operator: Equal
+          value: "windows"
+      nodeSelector:
+        kubernetes.io/os: windows
     java:
       image: 'sdshmctspublicsbox.azurecr.io/aspnetapp:v1'
       replicas: 1
@@ -17,15 +27,6 @@ spec:
         enabled: true
         maxReplicas: 5
         targetCPUUtilizationPercentage: 80
-    tolerations:
-      - key: CriticalAddonsOnly
-        operator: Equal
-        value: "true"
-        effect: NoSchedule
-      - key: "kubernetes.io/os"
-        operator: Equal
-        value: "windows"
-        effect: NoSchedule
     service:
       annotations:
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
