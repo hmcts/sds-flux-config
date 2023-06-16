@@ -14,9 +14,9 @@ spec:
           secrets:
             - name: session-key
               alias: SESSION_SECRET
-            - name: auto-pip-<ENV>-pip-frontend-<ENV>-id
+            - name: auto-pip-test-pip-frontend-test-id
               alias: CLIENT_ID
-            - name: auto-pip-<ENV>-pip-frontend-<ENV>-pwd
+            - name: auto-pip-test-pip-frontend-test-pwd
               alias: CLIENT_SECRET
             - name: b2c-config-endpoint
               alias: CONFIG_ENDPOINT
