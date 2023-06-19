@@ -19,7 +19,7 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: mi-adf-shir-dev-2022
+  name: mi-adf-shir-dev
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
