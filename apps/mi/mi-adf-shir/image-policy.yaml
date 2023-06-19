@@ -27,7 +27,7 @@ spec:
     name: mi-adf-shir
   filterTags:
     extract: $ts
-    pattern: '^dev-2022-[a-f0-9]+-(?P<ts>[0-9]+)'
+    pattern: '^dev-[a-f0-9]+-(?P<ts>[0-9]+)'
   policy:
     alphabetical:
       order: asc
