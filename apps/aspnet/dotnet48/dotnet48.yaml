@@ -13,6 +13,8 @@ spec:
         key: kubernetes.io/os
         operator: Equal
         value: "windows"
+    nodeSelector:
+      kubernetes.io/os: windows
     image: "sdshmctspublicsbox.azurecr.io/aspnetapp:v1"
     replicas: 1
     autoscaling:
@@ -30,5 +32,3 @@ spec:
         name: sds-helm-charts
         namespace: flux-system
       interval: 1m
-    nodeSelector:
-      kubernetes.io/os: windows
