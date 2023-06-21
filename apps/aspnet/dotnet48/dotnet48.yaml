@@ -2,33 +2,22 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: dotnet48
+  name: aspnet-dotnet48
   namespace: aspnet
 spec:
   interval: 5m
   releaseName: aspnet-dotnet48
   values:
-    tolerations:
-      - effect: NoSchedule
-        key: kubernetes.io/os
-        operator: Equal
-        value: "windows"
-    nodeSelector:
-      kubernetes.io/os: windows
-    image: "sdshmctspublicsbox.azurecr.io/aspnetapp:v1"
-    replicas: 1
-    autoscaling:
-      enabled: true
-      maxReplicas: 5
-      targetCPUUtilizationPercentage: 80
-    service:
-      annotations:
-        service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+    labels:
+      app.kubernetes.io/instance: aspnet-dotnet48
+      app.kubernetes.io/name: aspnet-dotnet48
+    image: sdshmctspublicsbox.azurecr.io/aspnetapp:v1
   chart:
     spec:
-      chart: ./charts/dotnet48
+      chart: aspnet-dotnet48
+      version: 1.0.0
       sourceRef:
-        kind: GitRepository
-        name: sds-helm-charts
+        kind: HelmRepository
+        name: hmctspublic
         namespace: flux-system
       interval: 1m
