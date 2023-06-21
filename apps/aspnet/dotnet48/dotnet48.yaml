@@ -15,13 +15,12 @@ spec:
         value: "windows"
     nodeSelector:
       kubernetes.io/os: windows
-    java:
-      image: "sdshmctspublicsbox.azurecr.io/aspnetapp:v1"
-      replicas: 1
-      autoscaling:
-        enabled: true
-        maxReplicas: 5
-        targetCPUUtilizationPercentage: 80
+    image: "sdshmctspublicsbox.azurecr.io/aspnetapp:v1"
+    replicas: 1
+    autoscaling:
+      enabled: true
+      maxReplicas: 5
+      targetCPUUtilizationPercentage: 80
     service:
       annotations:
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
