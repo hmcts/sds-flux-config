@@ -8,16 +8,15 @@ spec:
   interval: 5m
   releaseName: aspnet-dotnet48
   values:
-    operator:
-      tolerations:
-        - effect: NoSchedule
-          key: kubernetes.io/os
-          operator: Equal
-          value: "windows"
-      nodeSelector:
-        kubernetes.io/os: windows
+    tolerations:
+      - effect: NoSchedule
+        key: kubernetes.io/os
+        operator: Equal
+        value: "windows"
+    nodeSelector:
+      kubernetes.io/os: windows
     java:
-      image: 'sdshmctspublicsbox.azurecr.io/aspnetapp:v1'
+      image: "sdshmctspublicsbox.azurecr.io/aspnetapp:v1"
       replicas: 1
       autoscaling:
         enabled: true
