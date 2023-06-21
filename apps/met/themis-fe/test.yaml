@@ -29,6 +29,7 @@ spec:
         SPRING_JMS_SERVICEBUS_IDLE-timeout: 30000
         KV_CONFIG_TREE: /mnt/secrets/libragob-test-kv/
         LOG4J_DEBUG: true
+        PRING_JMS_SERVICEBUS_PRICING-TIER: PREMIUM
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
