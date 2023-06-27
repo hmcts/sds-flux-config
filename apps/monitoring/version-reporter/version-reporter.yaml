@@ -6,7 +6,7 @@ metadata:
   labels:
     app: version-reporter-service
 spec:
-  schedule: "*1 * * * *"
+  schedule: "*/2 * * * *"
   concurrencyPolicy: "Forbid"
   failedJobsHistoryLimit: 5
   startingDeadlineSeconds: 300
