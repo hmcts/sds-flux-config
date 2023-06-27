@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: netbox
-      version: 5.0.7
+      version: 5.0.9
       sourceRef:
         kind: HelmRepository
         name: hmctspublic
@@ -21,7 +21,7 @@ spec:
     nginx:
       image:
         repository: nginx
-        tag: 1.25.1-alpine
+        tag: 1.25.1
 
     ingress:
       hosts:
@@ -64,12 +64,12 @@ spec:
     webhooksRedis:
       database: 0
       timeout: 300
-      ssl: false
+      ssl: true
 
       # Used only when redis.enabled is false. host and port are not used if
       # sentinels are given.
       host: netbox-ptlsbox.redis.cache.windows.net
-      port: 6379
+      port: 6380
       sentinels: []
       #  - mysentinel:26379
       #sentinelService: netbox-redis
@@ -80,12 +80,12 @@ spec:
     cachingRedis:
       database: 1
       timeout: 300
-      ssl: false
+      ssl: true
 
       #Used only when redis.enabled is false. host and port are not used if
       #sentinels are given.
       host: netbox-ptlsbox.redis.cache.windows.net
-      port: 6379
+      port: 6380
       sentinels: []
       #  - mysentinel:26379
       #sentinelService: netbox-redis
