@@ -13,9 +13,9 @@ spec:
         pip-ss-kv:
           resourceGroup: pip-ss-test-rg
           secrets:
-            - name: auto-pip-<ENV>-pip-account-management-<ENV>-id
+            - name: auto-pip-test-pip-account-management-test-id
               alias: CLIENT_ID_B2C
-            - name: auto-pip-<ENV>-pip-account-management-<ENV>-pwd
+            - name: auto-pip-test-pip-account-management-test-pwd
               alias: CLIENT_SECRET_B2C
             - name: b2c-tenant-id
               alias: TENANT_GUID_B2C
