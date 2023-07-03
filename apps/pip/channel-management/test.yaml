@@ -9,6 +9,30 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/pip/channel-management:pr-202-971e081-20230630154804
       ingressHost: pip-channel-management.test.platform.hmcts.net
+      keyVaults:
+        pip-ss-kv:
+          resourceGroup: pip-ss-test-rg
+          secrets:
+            - name: app-pip-channel-management-id
+              alias: CLIENT_ID
+            - name: app-tenant-id
+              alias: TENANT_ID
+            - name: app-pip-channel-management-scope
+              alias: APP_URI
+            - name: app-pip-channel-management-pwd
+              alias: CLIENT_SECRET
+            - name: app-pip-account-management-scope
+              alias: ACCOUNT_MANAGEMENT_AZ_API
+            - name: app-pip-data-management-scope
+              alias: DATA_MANAGEMENT_AZ_API
+            - name: app-insights-java-instrumentation-key
+              alias: INSTRUMENTATION_KEY
+            - name: auto-pip-<ENV>-courtel-api
+              alias: COURTEL_API
+            - name: shared-storageaccount-connection-string
+              alias: CONNECTION_STRING
+            - name: shared-storageaccount-name
+              alias: STORAGE_ACCOUNT_NAME
       environment:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
