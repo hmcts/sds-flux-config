@@ -7,9 +7,11 @@ spec:
   releaseName: pip-data-management
   values:
     java:
+      image: sdshmctspublic.azurecr.io/pip/data-management:pr-389-b5d0347-20230630154817
       ingressHost: pip-data-management.test.platform.hmcts.net
       environment:
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
         PUBLICATION_SERVICES_URL: https://pip-publication-services.test.platform.hmcts.net
         CHANNEL_MANAGEMENT_URL: https://pip-channel-management.test.platform.hmcts.net
+        MANAGED_IDENTITY_CLIENT_ID: 0e0c8682-a038-4aa8-9619-bb88a7ba9357
