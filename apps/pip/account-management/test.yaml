@@ -15,9 +15,9 @@ spec:
           resourceGroup: pip-ss-{{ .Values.global.environment }}-rg
           usePodIdentity: true
           secrets:
-            - name: auto-pip-<ENV>-pip-account-management-<ENV>-id
+            - name: auto-pip-test-pip-account-management-test-id
               alias: CLIENT_ID_B2C
-            - name: auto-pip-<ENV>-pip-account-management-<ENV>-pwd
+            - name: auto-pip-test-pip-account-management-test-pwd
               alias: CLIENT_SECRET_B2C
             - name: b2c-tenant-id
               alias: TENANT_GUID_B2C
@@ -25,6 +25,8 @@ spec:
               alias: EXTENSION_ID
             - name: shared-storageaccount-connection-string
               alias: CONNECTION_STRING
+            - name: shared-storageaccount-name
+              alias: STORAGE_ACCOUNT_NAME
             - name: account-management-POSTGRES-DATABASE
               alias: DB_NAME
             - name: account-management-POSTGRES-PASS
