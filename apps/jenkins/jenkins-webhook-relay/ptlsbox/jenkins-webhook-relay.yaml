@@ -15,8 +15,6 @@ spec:
         name: jenkins-webhook-relay
         namespace: flux-system
       version: '*'
-      valuesFiles:
-        - ./charts/jenkins-webhook-relay/values.yaml
   interval: 5m
   releaseName: jenkins-webhook-relay
   values:
@@ -32,5 +30,5 @@ spec:
           key: servicebus-connectionstring
           disabled: false
       environment:
-        CONNECTION_URL: "jenkins.jenkins.svc.cluster.local"
+        CONNECTION_URL: "jenkins.jenkins.svc.cluster.local/github-webhook/"
         SERVICE_BUS_QUEUE_NAME: "jenkins"
