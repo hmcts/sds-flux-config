@@ -3,3 +3,6 @@ kind: Kustomization
 namespace: jenkins
 resources:
   - ../../base
+  - ../../jenkins-webhook-relay/ptl/jenkins-webhook-relay.enc.yaml
+patchesStrategicMerge:
+  - ../../jenkins-webhook-relay/ptl/jenkins-webhook-relay.yaml

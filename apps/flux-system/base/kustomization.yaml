@@ -22,5 +22,6 @@ resources:
   - exim-relay-gitrepo.yaml
   - toffee-recipe-receiver-gitrepo.yaml
   - chart-job-gitrepo.yaml
+  - jenkins-webhook-relay-gitrepo.yaml
 patchesStrategicMerge:
   - patches/kustomize-controller-patch.yaml
