@@ -1,0 +1,26 @@
+apiVersion: v1
+data:
+    cosmos_key: ENC[AES256_GCM,data:9rTGsupNGYa/TNEDCNDd3GmsXyTWMPZtQtRqJZTehlUs44KP297CNEQk9oF4Ra8P5DSJtvAzgQHpcQQi2Keha70E8PtOq+carqGWBjayfmJ8zLkoJ+tXZqH6LEqH3r0yM7koyLGgAu4YzC8rrJA7UxtrTSuqnIVW,iv:H0LLcyLH/5I8WqWfwpBpSemEFLbmNZYVFQuEHDEfVps=,tag:CzzHVjoWXZ/qzTCdKp9Z6A==,type:str]
+    tenant_id: ENC[AES256_GCM,data:YwLRf1J2+10VOEtez94hyKE0NSRRVjkqgh86Hke2dOJI5F3CzEeEbcypSbTY/7/n/OtUvaAyYl0=,iv:t5RP1sKW96E6mzo/BE5zDGLMWTMG/vHuIfjhCsKdeE8=,tag:flHmTxmUbLAf61zRuMOGmQ==,type:str]
+    client_id: ENC[AES256_GCM,data:si00h1WSi1M41Ka+pk0Xt/2brz2kGtOBg501V/yaIUed0Rt8U3xO3wvWh3MTLlwo,iv:Hgj6C40GJ08hf38JNuAC9SU/dixHcDkxsgnVem723Zc=,tag:ax2ZQSs/d8us8nebSXXnVA==,type:str]
+    client_secret: ENC[AES256_GCM,data:KLZOKDuDIQ1KN844mfW0fsEy8SVNW9hamjFVeR1nH4XS85/JhTWJdQAAhKA6a997ZeS+fhANLtE=,iv:HGhdr0UcBFAhxYlhYepcqBfgq+PW54U7EW8c1c/dX+Y=,tag:UBwvRJrAA/qrZ0ktG687aQ==,type:str]
+kind: Secret
+metadata:
+    name: version-reporter
+    namespace: monitoring
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssharedservicesdevkv.vault.azure.net
+          name: sops-key
+          version: 2beba064ddfe454482ad0133af2cf0fd
+          created_at: "2023-07-11T18:18:44Z"
+          enc: LdZ-hYHkLxosWCjG_hMwSxwrtnppJ1KMawp6eqI-jW9yNvMQAeL_uX5EdF-gph953bDnQ7o8oyk5sKEfewKfHpveDgJk_cjQa1jfbtf8Zf2kj1bEiAyv_cumn-ViK01OdH_AJ5Unefoi7xxV8Wlx18qJsiwYaTAVquUDu7ZA5MbT_v2NptPfeYjPIuQAWxFAeK9QSfLlnPBLHhTGxGLFh-EO7xeG5A25tCKIpyQ3fcqtUOGCZY_BNLoJn8zcJZ_o3bug4a0ieZCtsl-LFnNVzgZ0Pbf7mxA2WLcFvLCDyMUtsZbsLKnmQnooXLDfyyZKiAk8n3nPLCzgvf70CHwM4w
+    hc_vault: []
+    age: []
+    lastmodified: "2023-07-11T18:18:45Z"
+    mac: ENC[AES256_GCM,data:ssJERW91Goz/bjXVXZG0He/Yj5ihfInWky++N/1g+lm8dzxI9Oi0TqLo70JDqf3gv7eXhrj1x4TzA+0mKhOdmPwqZoHmuQ1bsm7tfYZ1PJBULe+VYh/xoyiVvIHqJKlZhG2cIUCItw3ukmH+7J25Bk6oZPDeFuOSMVpegMDeueE=,iv:BXyd65aJul2AGlad1kRhNHwP3jBGXwK/yGigf9D6C7o=,tag:cHuE21gAk3SsctqytfHcTQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
