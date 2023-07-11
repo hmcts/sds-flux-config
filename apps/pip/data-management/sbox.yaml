@@ -2,9 +2,5 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: pip-data-management
-  namespace: pip
 spec:
   releaseName: pip-data-management
-  values:
-    java:
-      ingressHost: pip-data-management.sbox.platform.hmcts.net
