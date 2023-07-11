@@ -3,9 +3,9 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
-  - ../../data-management/pip-data-management.yaml
+  # - ../../data-management/pip-data-management.yaml
 namespace: pip
 patchesStrategicMerge:
   - ../../identity/pip-azure-identity.yaml
   - ../../identity/sbox.yaml
-  - ../../data-management/sbox.yaml
+  # - ../../data-management/sbox.yaml
