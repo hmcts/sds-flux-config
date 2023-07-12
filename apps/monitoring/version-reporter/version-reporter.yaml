@@ -22,3 +22,24 @@ spec:
             - name: version-reporter-service
               image: sdshmctspublic.azurecr.io/hmcts/version-reporter-services:paloalto-master #{"$imagepolicy": "flux-system:version-reporter"}
               imagePullPolicy: Always
+              env:
+                - name: COSMOS_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: version-reporter
+                      key: cosmos_key
+                - name: AZURE_TENANT_ID
+                  valueFrom:
+                    secretKeyRef:
+                      name: version-reporter
+                      key: tenant_id
+                - name: AZURE_CLIENT_ID
+                  valueFrom:
+                    secretKeyRef:
+                      name: version-reporter
+                      key: client_id
+                - name: AZURE_CLIENT_SECRET
+                  valueFrom:
+                    secretKeyRef:
+                      name: version-reporter
+                      key: client_secret
