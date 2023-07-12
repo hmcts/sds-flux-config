@@ -4,3 +4,5 @@ namespace: monitoring
 resources:
   - ../../base
   - ../../kube-prometheus-stack/ptl/prometheus-values.enc.yaml
+  - ../../version-reporter
+  - version-reporter.enc.yaml
