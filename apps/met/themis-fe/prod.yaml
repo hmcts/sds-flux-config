@@ -7,7 +7,7 @@ metadata:
 spec:
   values:
     nodejs:
-      ingressHost: 'cloudgobgateway.prod.platform.hmcts.net'
+      ingressHost: 'cloudgobgateway.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.10'
       environment:
         KV_CONFIG_TREE: /mnt/secrets/libragob-prod-kv/
