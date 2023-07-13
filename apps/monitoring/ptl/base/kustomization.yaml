@@ -6,3 +6,5 @@ resources:
   - ../../kube-prometheus-stack/ptl/prometheus-values.enc.yaml
   - ../../version-reporter
   - version-reporter.enc.yaml
+patchesStrategicMerge:
+  - version-reporter.yaml

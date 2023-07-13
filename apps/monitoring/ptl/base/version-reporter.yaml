@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: version-reporter-service
+  namespace: monitoring
+  labels:
+    app: version-reporter-service
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: version-reporter-service
+              env:
+                - name: ENVIRONMENT
+                  value: "prod"
+                - name: SERVER_IP
+                  value: "10.50.10.132"
+                - name: HUB_SUBSCRIPTION_ID
+                  value: "0978315c-75fe-4ada-9d11-1eb5e0e0b214"
