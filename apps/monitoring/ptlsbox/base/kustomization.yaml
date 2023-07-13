@@ -5,6 +5,6 @@ resources:
   - ../../base
   - ../../kube-prometheus-stack/ptlsbox/prometheus-values.enc.yaml
   - ../../version-reporter
-  - version-reporter.enc.yaml
+  - ../../version-reporter/ptlsbox/version-reporter.enc.yaml
 patchesStrategicMerge:
-  - ../../version-reporter/ptlsbox.yaml
+  - ../../version-reporter/ptlsbox/ptlsbox.yaml
