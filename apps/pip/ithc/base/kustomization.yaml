@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../data-management/pip-data-management.yaml
+  - ../../frontend/pip-frontend.yaml
 namespace: pip
 patchesStrategicMerge:
   - ../../identity/pip-azure-identity.yaml

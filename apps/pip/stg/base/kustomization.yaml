@@ -12,6 +12,7 @@ resources:
   - ../../account-management-clear-audit-cron/pip-account-management-clear-audit-cron.yaml
   - ../../refresh-views-cron/pip-refresh-views-cron.yaml
   - ../../data-management/pip-data-management.yaml
+  - ../../frontend/pip-frontend.yaml
 namespace: pip
 patchesStrategicMerge:
   - ../../identity/pip-azure-identity.yaml
