@@ -6,5 +6,41 @@ spec:
   values:
     function:
       image: sdshmctspublic.azurecr.io/hmi/rota-dtu:pr-62-9d7111b-20230714092600
+      keyVaults:
+        hmi-kv:
+          excludeEnvironmentSuffix: false
+          resourceGroup: hmi-sharedinfra-{{ .Values.global.environment }}-rg
+          usePodIdentity: true
+          secrets:
+            - name: sa-name
+              alias: STORAGE_ACCOUNT_NAME
+            - name: app-insights-rota-dtu-connection-string
+              alias: AZURE_APPLICATIONINSIGHTS_CONNECTION_STRING
+            - name: hmi-url
+              alias: HMI_APIM
+            - name: tenant-id
+              alias: TENANT_ID
+            - name: hmi-dtu-id
+              alias: CLIENT_ID
+            - name: hmi-dtu-pwd
+              alias: CLIENT_SECRET
+            - name: hmi-gateway-scope
+              alias: HMI_APIM_AZ_API
+            - name: sn-url
+              alias: SN_URL
+            - name: sn-username
+              alias: SN_USERNAME
+            - name: sn-password
+              alias: SN_PASSWORD
+            - name: sn-assignment-group
+              alias: SN_ASSIGNMENT_GROUP
+            - name: sn-caller-id
+              alias: SN_CALLER_ID
+            - name: sn-service-offering
+              alias: SN_SERVICE_OFFERING
+            - name: sn-role-type
+              alias: SN_ROLE_TYPE
+            - name: mi-id
+              alias: MANAGED_IDENTITY_CLIENT_ID
       environment:
         DESTINATION_SYSTEM: MOCK
