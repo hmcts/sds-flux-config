@@ -23,6 +23,8 @@ spec:
               image: sdshmctspublic.azurecr.io/hmcts/version-reporter-services:paloalto-master #{"$imagepolicy": "flux-system:version-reporter"}
               imagePullPolicy: Always
               env:
+                - name: DESIRED_VERSION
+                  value: "10.2.0"
                 - name: COSMOS_DB_URI
                   value: "https://sds-platform-version-reporter.documents.azure.com:443/"
                 - name: COSMOS_DB_NAME
