@@ -7,13 +7,13 @@ metadata:
 spec:
   values:
     nodejs:
-      ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
+      ingressHost: 'cloudgobgateway.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.10'
       environment:
-        KV_CONFIG_TREE: /mnt/secrets/libragob-test-kv/
+        KV_CONFIG_TREE: /mnt/secrets/libragob-prod-kv/
         LOG4J_DEBUG: true
       keyVaults:
-        libragob-test-kv:
+        libragob-prod-kv:
           excludeEnvironmentSuffix: true
           secrets:
             - themis-gateway-keystorebase64
