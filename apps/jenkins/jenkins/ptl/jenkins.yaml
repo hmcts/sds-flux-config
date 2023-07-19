@@ -223,6 +223,12 @@ spec:
                     name: Darts Shared Infrastructure
                     recurse: true
                     title: Darts Shared Infrastructure
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/pdda.*\/master
+                    name: PDDA
+                    recurse: true
+                    title: PDDA
           authentication: |
             jenkins:
               securityRealm:
