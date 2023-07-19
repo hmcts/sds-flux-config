@@ -6,7 +6,7 @@ metadata:
   labels:
     app: version-reporter-service
 spec:
-  schedule: "0 2 * * *"
+  schedule: "0 16 1,14 * *" #Every 1st and 14th day of the month at 4pm
   concurrencyPolicy: "Forbid"
   failedJobsHistoryLimit: 5
   startingDeadlineSeconds: 300
