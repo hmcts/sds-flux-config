@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: version-reporter-service-palo-alto
+  namespace: monitoring
+  labels:
+    app: version-reporter-service
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: version-reporter-service
+              env:
+                - name: ENVIRONMENT
+                  value: "sbox"
+                - name: SERVER_IP
+                  value: "10.48.0.71"
+                - name: HUB_SUBSCRIPTION_ID
+                  value: "ea3a8c1e-af9d-4108-bc86-a7e2d267f49c"

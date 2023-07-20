@@ -1,12 +1,12 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: version-reporter-service
+  name: version-reporter-service-hello-world
   namespace: monitoring
   labels:
     app: version-reporter-service
 spec:
-  schedule: "0 9 * * *"
+  schedule: "*/10 * * * *"
   concurrencyPolicy: "Forbid"
   failedJobsHistoryLimit: 5
   startingDeadlineSeconds: 300
@@ -19,6 +19,6 @@ spec:
           restartPolicy: Never
           serviceAccountName: version-reporter-service-sa
           containers:
-            - name: version-reporter-service
-              image: sdshmctspublic.azurecr.io/hmcts/version-reporter-services:paloalto-master #{"$imagepolicy": "flux-system:version-reporter"}
+            - name: version-reporter-service-hello-world
+              image: sdshmctspublic.azurecr.io/hmcts/version-reporter-services:master #{"$imagepolicy": "flux-system:version-reporter"}
               imagePullPolicy: Always

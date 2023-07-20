@@ -1,0 +1,38 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: themis-fe
+  namespace: met
+spec:
+  values:
+    nodejs:
+      ingressHost: 'cloudgobgateway.platform.hmcts.net'
+      image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.10'
+      environment:
+        KV_CONFIG_TREE: /mnt/secrets/libragob-prod-kv/
+        LOG4J_DEBUG: true
+      keyVaults:
+        libragob-prod-kv:
+          excludeEnvironmentSuffix: true
+          secrets:
+            - themis-gateway-keystorebase64
+            - themis-gateway-dbpassword
+            - themis-gateway-dbusername
+            - themis-gateway-datasourceurl
+            - dac-datasource-password
+            - dac-datasource-username
+            - dac-datasource-url
+            - event-datasource-password
+            - event-datasource-username
+            - event-datasource-url
+            - fines-datasource-password
+            - fines-datasource-username
+            - fines-datasource-url
+            - maintenance-datasource-password
+            - maintenance-datasource-username
+            - maintenance-datasource-url
+            - confiscation-datasource-password
+            - confiscation-datasource-username
+            - confiscation-datasource-url
+            - servicebus-connectionstring

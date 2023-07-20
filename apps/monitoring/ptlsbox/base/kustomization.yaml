@@ -4,3 +4,7 @@ namespace: monitoring
 resources:
   - ../../base
   - ../../kube-prometheus-stack/ptlsbox/prometheus-values.enc.yaml
+  - ../../version-reporter
+  - ../../version-reporter/ptlsbox/version-reporter.enc.yaml
+patchesStrategicMerge:
+  - ../../version-reporter/ptlsbox/ptlsbox.yaml
