@@ -50,6 +50,10 @@ spec:
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: REGISTRY_NAME
                         value: sdshmctspublic
+                      - key: PTL_AKS_CLUSTER_NAME
+                        value: ss-ptl-00-aks
+                      - key: PTL_AKS_RESOURCE_GROUP
+                        value: ss-ptl-00-rg
                       - key: STG_AKS_CLUSTER_NAME
                         value: ss-stg-01-aks
                       - key: STG_AKS_RESOURCE_GROUP
