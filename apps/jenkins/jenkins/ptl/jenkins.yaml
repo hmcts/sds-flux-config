@@ -50,10 +50,6 @@ spec:
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: REGISTRY_NAME
                         value: sdshmctspublic
-                      - key: PTL_AKS_CLUSTER_NAME
-                        value: ss-ptl-00-aks
-                      - key: PTL_AKS_RESOURCE_GROUP
-                        value: ss-ptl-00-rg
                       - key: STG_AKS_CLUSTER_NAME
                         value: ss-stg-01-aks
                       - key: STG_AKS_RESOURCE_GROUP
@@ -62,18 +58,6 @@ spec:
                         value: ss-dev-01-aks
                       - key: DEV_AKS_RESOURCE_GROUP
                         value: ss-dev-01-rg
-                      - key: DEMO_AKS_CLUSTER_NAME
-                        value: ss-demo-01-aks
-                      - key: DEMO_AKS_RESOURCE_GROUP
-                        value: ss-demo-01-rg
-                      - key: ITHC_AKS_CLUSTER_NAME
-                        value: ss-ithc-00-aks
-                      - key: ITHC_AKS_RESOURCE_GROUP
-                        value: ss-ithc-00-rg
-                      - key: PERFTEST_AKS_CLUSTER_NAME
-                        value: ss-test-00-aks
-                      - key: PERFTEST_AKS_RESOURCE_GROUP
-                        value: ss-test-00-rg
                       - key: AKS_PTL_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICESPTL
                       - key: AKS_PTL_SUBSCRIPTION_ID
