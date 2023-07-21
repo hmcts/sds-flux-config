@@ -4,7 +4,7 @@ metadata:
   name: azure-devops
   namespace: flux-system
 spec:
-  path: ./apps/azure-devops/${ENVIRONMENT}
+  path: ./apps/azure-devops/${ENVIRONMENT}/${CLUSTER}
   postBuild:
     substitute:
       NAMESPACE: "azure-devops"

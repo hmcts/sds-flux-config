@@ -6,13 +6,14 @@ metadata:
 spec:
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-04c8e93-20230331134627 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-0aeee88-20230710100135 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     env:
       ADF_RESOURCEGROUP: mi-ingestion-stg-rg
       ADF_NAME: mi-ingestion-adf-stg
       ADF_STORAGEACCOUNTNAME: miauditstg
       MI_METADATA_SERVER: mi-metadata-server-stg.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-stg
+      ADF_INTEGRATIONRUNTIMENAME: IR-Self-hosted,IR-Self-hosted-2
     environment: "stg"
     resourceGroup: "mi-stg-rg"
     subscriptionId: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"

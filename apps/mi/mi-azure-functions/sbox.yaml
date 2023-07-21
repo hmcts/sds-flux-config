@@ -14,13 +14,14 @@ spec:
         namespace: flux-system
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-04c8e93-20230331134627 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-0aeee88-20230710100135 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     env:
       ADF_RESOURCEGROUP: mi-ingestion-sbox-rg
       ADF_NAME: mi-ingestion-adf-sbox
       ADF_STORAGEACCOUNTNAME: miauditsbox
       MI_METADATA_SERVER: mi-metadata-server-sbox.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-sbox
+      ADF_INTEGRATIONRUNTIMENAME: IR-Self-hosted,IR-Self-hosted-2
     environment: "sbox"
     resourceGroup: "mi-sbox-rg"
     subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"

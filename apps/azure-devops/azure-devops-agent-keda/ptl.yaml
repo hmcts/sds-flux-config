@@ -1,0 +1,15 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: azure-devops-agent
+  namespace: azure-devops
+spec:
+  values:
+    environment:
+      AZP_POOL: hmcts-sds-ptl
+    triggers:
+      - type: azure-pipelines
+        poolID: "45"
+        organizationURLFromEnv: "AZP_URL"
+        personalAccessTokenFromEnv: "AZP_TOKEN"

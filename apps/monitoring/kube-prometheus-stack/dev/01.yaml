@@ -105,7 +105,7 @@ spec:
           - sds-alertmanager-01.dev.platform.hmcts.net
         tls:
           - hosts:
-              - sds-alertmanager-00.dev.platform.hmcts.net
+              - sds-alertmanager-01.dev.platform.hmcts.net
       config:
         receivers:
           - name: "slack_alerting"

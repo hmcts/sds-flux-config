@@ -9,10 +9,10 @@ resources:
   - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/vh/base/kustomize.yaml
   - ../../../apps/kube-system/base/kustomize.yaml
-  - ../../../apps/c100/base/kustomize.yaml
   - ../../../apps/met/base/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml
-  - ../../../apps/darts-modernisation/base/kustomize.yaml
+  # error looking up service account darts-modernisation/darts-portal-nodejs: serviceaccount "darts-portal-nodejs" not found (stopping AKS version upgrade)
+  #- ../../../apps/darts-modernisation/base/kustomize.yaml
   - ../../../apps/hmi/base/kustomize.yaml
   - ../../../apps/monitoring/base/kustomize.yaml
 patches:
