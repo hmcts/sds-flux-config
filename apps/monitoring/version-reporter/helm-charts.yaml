@@ -20,7 +20,7 @@ spec:
           serviceAccountName: version-reporter-service-sa
           containers:
             - name: version-reporter-service-helmcharts
-              image: sdshmctspublic.azurecr.io/hmcts/version-reporter-services:master-helmcharts #{"$imagepolicy": "flux-system:version-reporter"}
+              image: sdshmctspublic.azurecr.io/hmcts/version-reporter-services:helmcharts #{"$imagepolicy": "flux-system:version-reporter"}
               imagePullPolicy: Always
               env:
                 - name: ENVIRONMENT
