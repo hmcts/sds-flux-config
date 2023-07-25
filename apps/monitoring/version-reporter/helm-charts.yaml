@@ -23,8 +23,6 @@ spec:
               image: sdshmctspublic.azurecr.io/hmcts/version-reporter-services:helmcharts #{"$imagepolicy": "flux-system:version-reporter"}
               imagePullPolicy: Always
               env:
-                - name: ENVIRONMENT
-                  value: "ptlsbox"
                 - name: CLUSTER_NAME
                   value: "ss-${CLUSTER_FULL_NAME}-aks"
                 - name: MAX_VERSIONS_AWAY
