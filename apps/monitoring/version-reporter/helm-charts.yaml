@@ -4,7 +4,7 @@ metadata:
   name: version-reporter-service-helmcharts
   namespace: monitoring
   labels:
-    app: version-reporter-service
+    app: helmcharts-report
 spec:
   schedule: "*/10 * * * *" # interval would be reviewed after testing complete
   concurrencyPolicy: "Forbid"
@@ -26,7 +26,7 @@ spec:
                 - name: ENVIRONMENT
                   value: "ptlsbox"
                 - name: CLUSTER_NAME
-                  value: "ss-ptlsbox-00-aks"
+                  value: "ss-${CLUSTER_FULL_NAME}-aks"
                 - name: MAX_VERSIONS_AWAY
                   value: "2"
                 - name: COSMOS_DB_URI
