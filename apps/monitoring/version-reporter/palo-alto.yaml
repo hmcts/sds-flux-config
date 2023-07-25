@@ -4,7 +4,7 @@ metadata:
   name: version-reporter-service-palo-alto
   namespace: monitoring
   labels:
-    app: paloalto-report
+    app: version-reporter-service-palo-alto
 spec:
   schedule: "0 16 1,14 * *" #Every 1st and 14th day of the month at 4pm
   concurrencyPolicy: "Forbid"

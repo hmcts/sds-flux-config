@@ -4,7 +4,7 @@ metadata:
   name: version-reporter-service-helmcharts
   namespace: monitoring
   labels:
-    app: helmcharts-report
+    app: version-reporter-service-helmcharts
 spec:
   schedule: "*/10 * * * *" # interval would be reviewed after testing complete
   concurrencyPolicy: "Forbid"
