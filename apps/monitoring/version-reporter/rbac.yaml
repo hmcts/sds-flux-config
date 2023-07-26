@@ -26,6 +26,9 @@ rules:
   - apiGroups: ['source.toolkit.fluxcd.io']
     resources: ['helmrepositories']
     verbs: ['list', 'get']
+  - apiGroups: ['']
+    resources: ['secrets']
+    verbs: ['list', 'get']
 
 ---
 apiVersion: v1
