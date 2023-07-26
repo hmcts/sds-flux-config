@@ -4,7 +4,7 @@ metadata:
   name: version-reporter-service-palo-alto
   namespace: monitoring
   labels:
-    app: version-reporter-service
+    app: version-reporter-service-palo-alto
 spec:
   schedule: "0 16 1,14 * *" #Every 1st and 14th day of the month at 4pm
   concurrencyPolicy: "Forbid"
@@ -20,7 +20,7 @@ spec:
           serviceAccountName: version-reporter-service-sa
           containers:
             - name: version-reporter-service
-              image: sdshmctspublic.azurecr.io/hmcts/version-reporter-services:paloalto-master #{"$imagepolicy": "flux-system:version-reporter"}
+              image: sdshmctspublic.azurecr.io/hmcts/version-reporter-services:paloalto-48b86e2-20230726111107 #{"$imagepolicy": "flux-system:version-reporter"}
               imagePullPolicy: Always
               env:
                 - name: DESIRED_VERSION

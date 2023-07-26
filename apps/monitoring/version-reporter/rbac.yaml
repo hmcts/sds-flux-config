@@ -20,6 +20,9 @@ rules:
   - apiGroups: ['']
     resources: ['namespaces']
     verbs: ['list', 'get']
+  - apiGroups: ['source.toolkit.fluxcd.io']
+    resources: ['helmcharts']
+    verbs: ['list', 'get']
 
 ---
 apiVersion: v1
