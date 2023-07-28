@@ -15,6 +15,7 @@ resources:
   - aks-kubelet-identity.yaml
   - ../../darts-modernisation/automation
   - ../../jenkins/automation
+  - ../../monitoring/automation
 patches:
   - path: sdshmctspublic-image-repo.yaml
     target:
