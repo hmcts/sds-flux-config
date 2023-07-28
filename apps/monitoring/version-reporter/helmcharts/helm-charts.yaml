@@ -6,7 +6,7 @@ metadata:
   labels:
     app: version-reporter-service-helmcharts
 spec:
-  schedule: "*/10 * * * *" # interval would be reviewed after testing complete
+  schedule: "45 8 * * *" # interval 8:45am just before play
   concurrencyPolicy: "Forbid"
   failedJobsHistoryLimit: 5
   startingDeadlineSeconds: 300
