@@ -6,7 +6,7 @@ spec:
   releaseName: pip-data-management-subscriptions-cron
   values:
     job:
-      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-511e8d8-20230707143057 # {"$imagepolicy": "flux-system:pip-data-management-subscriptions-cron"}
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-ca04703-20230731120723 # {"$imagepolicy": "flux-system:pip-data-management-subscriptions-cron"}
       disableTraefikTls: true
   chart:
     spec:
