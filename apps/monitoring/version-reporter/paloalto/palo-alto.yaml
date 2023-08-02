@@ -20,7 +20,7 @@ spec:
           serviceAccountName: version-reporter-service-sa
           containers:
             - name: version-reporter-service
-              image: sdshmctspublic.azurecr.io/version-reporter-service/paloalto:prod-36d5146-20230801215033 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
+              image: sdshmctspublic.azurecr.io/version-reporter-service/paloalto:prod-89f7f11-20230802080736 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
               imagePullPolicy: Always
               env:
                 - name: DESIRED_VERSION
