@@ -73,7 +73,6 @@ spec:
                 usePrivateIP: true
                 virtualNetworkName: "ss-ptlsbox-vnet"
                 virtualNetworkResourceGroupName: "ss-ptlsbox-network-rg"
-
             jenkins:
               clouds:
                 - azureVM:
@@ -104,7 +103,6 @@ spec:
                         maxVirtualMachinesLimit: 10
                         usageMode: "NORMAL"
                         virtualMachineSize: "Standard_D4ds_v5"
-
                         <<: *vm_template_values_anchor
                       - templateName: "cnp-jenkins-arm-builders"
                         templateDesc: "Jenkins build agents running on ARM64 CPUs"
