@@ -6,7 +6,6 @@ metadata:
   namespace: azure-devops
 spec:
   values:
-    image: hmctspublic.azurecr.io/azure-devops-agent:pr-34-c117a320-1690989006
     environment:
       AZP_POOL: hmcts-sds-ptlsbox
     triggers:
