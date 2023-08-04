@@ -30,4 +30,4 @@ spec:
             - name: hung-pod-script
               configMap:
                 name: delete-hung-pods
-                defaultMode: 777
+                defaultMode: 0777
