@@ -1,3 +1,4 @@
+---
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -7,26 +8,26 @@ spec:
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 2
   concurrencyPolicy: Forbid
-  schedule: '*/5 * * * *'
+  schedule: "*/5 * * * *"
   jobTemplate:
     spec:
-      backoffLimit: 2 
-      activeDeadlineSeconds: 600 
+      backoffLimit: 2
+      activeDeadlineSeconds: 600
       template:
         spec:
           restartPolicy: Never
           containers:
             - name: kubectl
-              image: bitnami/kubectl 
+              image: bitnami/kubectl
               command:
-              - /bin/sh
-              - -c
-              - /mnt/delete-hung-pods.sh
+                - /bin/sh
+                - -c
+                - /mnt/delete-hung-pods.sh
               volumeMounts:
                 - mountPath: /mnt
                   name: hung-pod-script
           volumes:
-          - name: hung-pod-script
-            configMap:
-              name: delete-hung-pods
-              defaultMode: 0777
+            - name: hung-pod-script
+              configMap:
+                name: delete-hung-pods
+                defaultMode: 777
