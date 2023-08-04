@@ -12,6 +12,8 @@ spec:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.sandbox.platform.hmcts.net
     global:
       environment: sandbox
+    nodeSelector: 
+      agentpool: arm
     volumes:
       - name: azurekeyvault
         csi:
