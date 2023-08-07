@@ -10,7 +10,7 @@ spec:
     spec:
       chart: dynatrace-operator
       # update the CRDs in dynatrace-crds when changing this value
-      version: 0.10.4
+      version: 0.12.1
       sourceRef:
         name: dynatrace-operator
         kind: HelmRepository
@@ -27,6 +27,8 @@ spec:
           key: kubernetes.io/os
           operator: Equal
           value: "windows"
+      nodeSelector:
+        kubernetes.io/os: linux
     operator:
       tolerations:
         - effect: NoSchedule

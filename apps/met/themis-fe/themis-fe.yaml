@@ -14,8 +14,8 @@ spec:
       applicationPort: 8082
       livenessDelay: 90
       startupDelay: 90
-      readinessPath: /services/themisgatewayapi?wsdl
-      startupPath: /services/themisgatewayapi?wsdl
+      readinessPath: /healthCheck
+      startupPath: /healthCheck
       livenessPath: /services/themisgatewayapi?wsdl
       replicas: 4
       memoryRequests: "128Mi"
@@ -46,7 +46,7 @@ spec:
         THEMIS_DAC_LISTENERQUEUENAME: LIBRAGOB_WRITERQUEUE
         THEMIS_DAC_WRITERQUEUENAME: LIBRAGOB_READERQUEUE
         SPRING_JMS_SERVICEBUS_IDLE-timeout: 30000
-
+        UPDATES_FIXEDRATE_IN_MILLISECONDS: 2000
         SPRING_JMS_SERVICEBUS_PRICING-TIER: PREMIUM
   chart:
     spec:

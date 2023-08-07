@@ -9,3 +9,6 @@ spec:
     java:
       ingressHost: vh-user-api.test.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/vh/user-api:staging-8d0482e-202306121316 #{"$imagepolicy": "flux-system:vh-user-api-staging"}
+  chart:
+    spec:
+      chart: ./stable/vh-user-api/staging

@@ -8,6 +8,7 @@ resources:
   - ../../keda
   - ../../traefik2
   - ../../external-dns/
+  - ../../delete-hung-pods
 namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/dev/secret-provider.yaml

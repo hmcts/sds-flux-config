@@ -8,3 +8,5 @@ spec:
   values:
     java:
       ingressHost: darts-api.staging.platform.hmcts.net
+      environment:
+        DARTS_GATEWAY_URL: https://darts-gateway.staging.platform.hmcts.net

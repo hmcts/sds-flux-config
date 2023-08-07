@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: jenkins
-      version: 4.3.23
+      version: 4.5.0
       sourceRef:
         kind: HelmRepository
         name: jenkins
@@ -211,6 +211,12 @@ spec:
                     name: Darts Shared Infrastructure
                     recurse: true
                     title: Darts Shared Infrastructure
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/pdda.*\/master
+                    name: PDDA
+                    recurse: true
+                    title: PDDA
           authentication: |
             jenkins:
               securityRealm:

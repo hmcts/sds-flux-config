@@ -7,6 +7,7 @@ resources:
   - ../../../rbac/reader-clusterrole.yaml
   - ../../keda
   - ../../traefik2
+  - ../../delete-hung-pods
 namespace: admin
 patchesStrategicMerge:
   - ../../traefik2/demo/secret-provider.yaml
