@@ -27,6 +27,8 @@ spec:
           key: kubernetes.io/os
           operator: Equal
           value: "windows"
+      nodeSelector:
+        kubernetes.io/os: linux
     operator:
       tolerations:
         - effect: NoSchedule
