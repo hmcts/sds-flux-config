@@ -1,0 +1,45 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: version-reporter-service-renovate
+  namespace: monitoring
+  labels:
+    app: version-reporter-service-renovate
+spec:
+  schedule: "0 16 1,14 * *" #Every 1st and 14th day of the month at 4pm
+  concurrencyPolicy: "Forbid"
+  failedJobsHistoryLimit: 5
+  startingDeadlineSeconds: 300
+  successfulJobsHistoryLimit: 5
+  jobTemplate:
+    spec:
+      backoffLimit: 3
+      template:
+        spec:
+          restartPolicy: Never
+          serviceAccountName: version-reporter-service-sa
+          containers:
+            - name: version-reporter-service
+              image: sdshmctspublic.azurecr.io/version-reporter-service/renovate:prod-5715614-20230804091150 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
+              imagePullPolicy: Always
+              env:
+                - name: MAX_DAYS_AWAY
+                  value: "3"
+                - name: MAX_REPOS
+                  value: "300"
+                - name: COSMOS_DB_URI
+                  value: "https://sds-platform-version-reporter.documents.azure.com:443/"
+                - name: COSMOS_DB_NAME
+                  value: "reports"
+                - name: COSMOS_DB_CONTAINER
+                  value: "renovate"
+                - name: COSMOS_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: version-reporter
+                      key: cosmos_key
+                - name: GITHUB_TOKEN
+                  valueFrom:
+                    secretKeyRef:
+                      name: version-reporter-github-token
+                      key: github_token

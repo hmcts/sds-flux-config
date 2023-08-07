@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - paloalto/palo-alto.yaml
   - helmcharts/helm-charts.yaml
+  - renovate/renovate.yaml
   - rbac.yaml
