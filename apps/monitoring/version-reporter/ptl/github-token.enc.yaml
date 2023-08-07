@@ -3,7 +3,7 @@ data:
   github_token: ENC[AES256_GCM,data:RMpPXG3FCnKYiTWkla8geXErS4r3BrexDadBE7aNxLuTmIWaoPYv8DR8B3Lx0E/hR6dH+E3qb5c=,iv:TgULFxQYfMbnypWMbARPwaNnr8LzinK5D4j/XJLL1fA=,tag:rlcZd+D+Yy7649AnIXFvcQ==,type:str]
 kind: Secret
 metadata:
-  name: version-reporter
+  name: version-reporter-github-token
   namespace: monitoring
 sops:
   kms: []
