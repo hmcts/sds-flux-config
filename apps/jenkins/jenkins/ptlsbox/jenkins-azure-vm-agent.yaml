@@ -68,11 +68,11 @@ spec:
               usePrivateIP: true
               virtualNetworkName: "ss-ptlsbox-vnet"
               virtualNetworkResourceGroupName: "ss-ptlsbox-network-rg"
-            x-imageReference-values: &image_reference_values_anchor
               imageReference:
                 galleryName: "hmcts"
                 galleryResourceGroup: "hmcts-image-gallery-rg"
                 gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
+              x-imageReference-values: &image_reference_values_anchor
             jenkins:
               clouds:
                 - azureVM:
@@ -101,10 +101,9 @@ spec:
                         usageMode: "NORMAL"
                         virtualMachineSize: "Standard_D4ds_v5"
                         <<: *vm_template_values_anchor
-                        imageReference:
-                          galleryImageDefinition: "jenkins-ubuntu"
-                          galleryImageVersion: "1.4.62"
-                          <<: *image_reference_values_anchor
+                        galleryImageDefinition: "jenkins-ubuntu"
+                        galleryImageVersion: "1.4.62"
+                        <<: *image_reference_values_anchor
                       - templateName: "cnp-jenkins-arm-builders"
                         templateDesc: "Jenkins build agents running on ARM64 CPUs"
                         labels: "arm"
@@ -112,7 +111,6 @@ spec:
                         usageMode: EXCLUSIVE
                         virtualMachineSize: "Standard_D4pds_v5"
                         <<: *vm_template_values_anchor
-                        imageReference:
-                          galleryImageDefinition: "jenkins-ubuntu-arm"
-                          galleryImageVersion: "1.0.1"
-                          <<: *image_reference_values_anchor
+                        galleryImageDefinition: "jenkins-ubuntu-arm"
+                        galleryImageVersion: "1.0.1"
+                        <<: *image_reference_values_anchor
