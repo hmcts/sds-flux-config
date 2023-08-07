@@ -25,3 +25,4 @@ resources:
   - jenkins-webhook-relay-gitrepo.yaml
 patchesStrategicMerge:
   - patches/kustomize-controller-patch.yaml
+  - patches/gotk-components_v41.2.yaml
