@@ -6,7 +6,7 @@ metadata:
   labels:
     app: version-reporter-service-renovate
 spec:
-  schedule: "0 16 1,14 * *" #Every 1st and 14th day of the month at 4pm
+  schedule: "*/10 * * * *" # Would be updated to 4 times a day, Monday through Friday i.e. */5 */8,11,14,17 * * 1-5
   concurrencyPolicy: "Forbid"
   failedJobsHistoryLimit: 5
   startingDeadlineSeconds: 300
@@ -24,9 +24,9 @@ spec:
               imagePullPolicy: Always
               env:
                 - name: MAX_DAYS_AWAY
-                  value: "3"
+                  value: 3
                 - name: MAX_REPOS
-                  value: "300"
+                  value: 300
                 - name: COSMOS_DB_URI
                   value: "https://sds-platform-version-reporter.documents.azure.com:443/"
                 - name: COSMOS_DB_NAME
