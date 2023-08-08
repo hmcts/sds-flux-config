@@ -5,6 +5,7 @@ resources:
   - ../../base
   - ../../kube-prometheus-stack/ptl/prometheus-values.enc.yaml
   - ../../version-reporter
+  - ../../version-reporter/paloalto
   - ../../version-reporter/ptl/version-reporter.enc.yaml
   - ../../version-reporter/ptl/github-token.enc.yaml
 patchesStrategicMerge:
