@@ -20,7 +20,7 @@ spec:
           serviceAccountName: version-reporter-service-sa
           containers:
             - name: version-reporter-service
-              image: sdshmctspublic.azurecr.io/version-reporter-service/renovate:prod-5715614-20230804091150 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
+              image: sdshmctspublic.azurecr.io/version-reporter-service/renovate:prod-288fd13-20230808104328 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
               imagePullPolicy: Always
               env:
                 - name: MAX_DAYS_AWAY
