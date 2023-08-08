@@ -4,9 +4,7 @@ namespace: monitoring
 resources:
   - ../../base
   - ../../kube-prometheus-stack/ptl/prometheus-values.enc.yaml
-  - ../../version-reporter/paloalto
-  - ../../version-reporter/helmcharts
-  - ../../version-reporter/renovate
+  - ../../version-reporter
   - ../../version-reporter/ptl/version-reporter.enc.yaml
   - ../../version-reporter/ptl/github-token.enc.yaml
 patchesStrategicMerge:
