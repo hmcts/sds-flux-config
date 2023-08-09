@@ -1,25 +1,24 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
-  - ../../../rbac/nonprod-role.yaml
-  - ../../data-management-no-match-artefacts-cron/pip-data-management-no-match-artefacts-cron.yaml
-  - ../../data-management-expired-artefacts-cron/pip-data-management-expired-artefacts-cron.yaml
-  - ../../data-management-subscriptions-cron/pip-data-management-subscriptions-cron.yaml
-  - ../../account-management-inactive-verification-cron/pip-account-management-inactive-verification-cron.yaml
-  - ../../account-management-media-reporting-cron/pip-account-management-media-reporting-cron.yaml
-  - ../../publication-services-mi-reporting-cron/pip-publication-services-mi-reporting-cron.yaml
-  - ../../account-management-clear-audit-cron/pip-account-management-clear-audit-cron.yaml
-  - ../../refresh-views-cron/pip-refresh-views-cron.yaml
-  - ../../data-management/pip-data-management.yaml
-  - ../../frontend/pip-frontend.yaml
+- ../../base
+- ../../../rbac/nonprod-role.yaml
+- ../../data-management-no-match-artefacts-cron/pip-data-management-no-match-artefacts-cron.yaml
+- ../../data-management-expired-artefacts-cron/pip-data-management-expired-artefacts-cron.yaml
+- ../../data-management-subscriptions-cron/pip-data-management-subscriptions-cron.yaml
+- ../../account-management-inactive-verification-cron/pip-account-management-inactive-verification-cron.yaml
+- ../../account-management-media-reporting-cron/pip-account-management-media-reporting-cron.yaml
+- ../../publication-services-mi-reporting-cron/pip-publication-services-mi-reporting-cron.yaml
+- ../../account-management-clear-audit-cron/pip-account-management-clear-audit-cron.yaml
+- ../../refresh-views-cron/pip-refresh-views-cron.yaml
+- ../../data-management/pip-data-management.yaml
+- ../../frontend/pip-frontend.yaml
 namespace: pip
-patchesStrategicMerge:
-  - ../../identity/pip-azure-identity.yaml
-  - ../../identity/stg.yaml
-  - ../../account-management/stg.yaml
-  - ../../channel-management/stg.yaml
-  - ../../data-management/stg.yaml
-  - ../../frontend/stg.yaml
-  - ../../publication-services/stg.yaml
-  - ../../subscription-management/stg.yaml
+patches:
+- path: ../../identity/stg.yaml
+- path: ../../account-management/stg.yaml
+- path: ../../channel-management/stg.yaml
+- path: ../../data-management/stg.yaml
+- path: ../../frontend/stg.yaml
+- path: ../../publication-services/stg.yaml
+- path: ../../subscription-management/stg.yaml
