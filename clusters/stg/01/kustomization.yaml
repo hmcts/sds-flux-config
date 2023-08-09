@@ -4,5 +4,5 @@ resources:
 - ../base
 #- ../../../apps/toffee/base/kustomize.yaml
 
-patchesStrategicMerge:
-- ../../../apps/flux-system/stg/01/kustomize.yaml
+patches:
+- path: ../../../apps/flux-system/stg/01/kustomize.yaml

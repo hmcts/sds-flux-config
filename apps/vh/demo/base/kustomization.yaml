@@ -1,17 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
-  - ../../../rbac/dev-role.yaml
+- ../../base
+- ../../../rbac/dev-role.yaml
 namespace: vh
-patchesStrategicMerge:
-  - ../../identity/vh-aad-identity.yaml
-  - ../../identity/demo.yaml
-  - ../../user-api/demo.yaml
-  - ../../bookings-api/demo.yaml
-  - ../../notification-api/demo.yaml
-  - ../../video-api/demo.yaml
-  - ../../admin-web/demo.yaml
-  - ../../scheduler-jobs/demo.yaml
-  - ../../video-web/demo.yaml
-  - ../../booking-queue-subscriber/demo.yaml
+patches:
+- path: ../../identity/demo.yaml
+- path: ../../user-api/demo.yaml
+- path: ../../bookings-api/demo.yaml
+- path: ../../notification-api/demo.yaml
+- path: ../../video-api/demo.yaml
+- path: ../../admin-web/demo.yaml
+- path: ../../scheduler-jobs/demo.yaml
+- path: ../../video-web/demo.yaml
+- path: ../../booking-queue-subscriber/demo.yaml

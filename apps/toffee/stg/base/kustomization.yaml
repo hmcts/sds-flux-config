@@ -1,10 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
+- ../../base
 namespace: toffee
-patchesStrategicMerge:
-  - ../../identity/stg.yaml
-  - ../../recipe-receiver/stg.yaml
-  - ../../frontend/stg.yaml
-  - ../../recipe-backend/stg.yaml
+patches:
+- path: ../../identity/stg.yaml
+- path: ../../recipe-receiver/stg.yaml
+- path: ../../frontend/stg.yaml
+- path: ../../recipe-backend/stg.yaml

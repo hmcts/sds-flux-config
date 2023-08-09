@@ -1,28 +1,27 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
-  - ../../kube-slack/demo/kube-slack-values.enc.yaml
-  - ../../kured/demo/kured-values.enc.yaml
-  - ../../../rbac/reader-clusterrole.yaml
-  - ../../keda
-  - ../../traefik2
-  - ../../delete-hung-pods
+- ../../base
+- ../../kube-slack/demo/kube-slack-values.enc.yaml
+- ../../kured/demo/kured-values.enc.yaml
+- ../../../rbac/reader-clusterrole.yaml
+- ../../keda
+- ../../traefik2
+- ../../delete-hung-pods
 namespace: admin
-patchesStrategicMerge:
-  - ../../traefik2/demo/secret-provider.yaml
-  - ../../keda/demo/identity.yaml
-  - ../../aad-pod-identity/ds-patch.yaml
 patches:
-  - path: ../../aad-pod-identity/demo/azure-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: aks-pod-identity-mi
-  - path: ../../aad-pod-identity/demo/azure-kubelet-identity-patch.yaml
-    target:
-      group: aadpodidentity.k8s.io
-      version: v1
-      kind: AzureIdentity
-      name: aks-kubelet-identity-mi
+- path: ../../aad-pod-identity/demo/azure-identity-patch.yaml
+  target:
+    group: aadpodidentity.k8s.io
+    kind: AzureIdentity
+    name: aks-pod-identity-mi
+    version: v1
+- path: ../../aad-pod-identity/demo/azure-kubelet-identity-patch.yaml
+  target:
+    group: aadpodidentity.k8s.io
+    kind: AzureIdentity
+    name: aks-kubelet-identity-mi
+    version: v1
+- path: ../../traefik2/demo/secret-provider.yaml
+- path: ../../keda/demo/identity.yaml
+- path: ../../aad-pod-identity/ds-patch.yaml
