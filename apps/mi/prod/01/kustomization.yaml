@@ -2,10 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: mi
 resources:
-- ../base
+  - ../base
 
-patches:
-- patch: |-
+patchesStrategicMerge:
+  - |-
     apiVersion: helm.toolkit.fluxcd.io/v2beta1
     kind: HelmRelease
     metadata:

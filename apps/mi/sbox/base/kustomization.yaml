@@ -3,20 +3,26 @@ kind: Kustomization
 namespace: mi
 
 resources:
-- ../../base
-- mi-adf-auth-values.enc.yaml
-- ../../../rbac/nonprod-role.yaml
-- ../../mi-sftp-server/mi-sftp-server.yaml
-- ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
+  - ../../base
+  - mi-adf-auth-values.enc.yaml
+  - ../../../rbac/nonprod-role.yaml
+  - ../../mi-sftp-server/mi-sftp-server.yaml
+  - ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
+patchesStrategicMerge:
+  - ../../identity/sbox.yaml
 
 patches:
-- path: ../../mi-azure-functions/sbox.yaml
-- path: ../../mi-adf-shir/sbox.yaml
-- path: ../../mi-adf-shir-2/sbox.yaml
-- path: ../../mi-house-keeping-service/sbox.yaml
-- path: ../../mi-sftp-server/sbox-secret-provider-patch.yaml
-  target:
-    group: secrets-store.csi.x-k8s.io
-    kind: SecretProviderClass
-    name: mi-sftp-server-secret-provider
-- path: ../../identity/sbox.yaml
+  #overlays for mi-azure-functions
+  - path: ../../mi-azure-functions/sbox.yaml
+  #overlays for mi-adf-shir
+  - path: ../../mi-adf-shir/sbox.yaml
+  #overlays for mi-adf-shir-2
+  - path: ../../mi-adf-shir-2/sbox.yaml
+  #overlays for mi-house-keeping-service
+  - path: ../../mi-house-keeping-service/sbox.yaml
+  #overlays for mi-sftp-server-secret-provider
+  - path: ../../mi-sftp-server/sbox-secret-provider-patch.yaml
+    target:
+      group: secrets-store.csi.x-k8s.io
+      kind: SecretProviderClass
+      name: mi-sftp-server-secret-provider

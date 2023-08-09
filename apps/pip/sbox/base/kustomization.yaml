@@ -1,11 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../../base
-- ../../../rbac/nonprod-role.yaml
-- ../../data-management/pip-data-management.yaml
+  - ../../base
+  - ../../../rbac/nonprod-role.yaml
+  - ../../data-management/pip-data-management.yaml
 namespace: pip
-patches:
-- path: ../../identity/pip-azure-identity.yaml
-- path: ../../identity/sbox.yaml
-- path: ../../data-management/sbox.yaml
+patchesStrategicMerge:
+  - ../../identity/pip-azure-identity.yaml
+  - ../../identity/sbox.yaml
+  - ../../data-management/sbox.yaml
