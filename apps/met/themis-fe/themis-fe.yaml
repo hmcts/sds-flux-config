@@ -14,8 +14,8 @@ spec:
       applicationPort: 8082
       livenessDelay: 90
       startupDelay: 90
-      readinessPath: /healthCheck
-      startupPath: /healthCheck
+      readinessPath: /services/themisgatewayapi?wsdl
+      startupPath: /services/themisgatewayapi?wsdl
       livenessPath: /services/themisgatewayapi?wsdl
       replicas: 4
       memoryRequests: "128Mi"
