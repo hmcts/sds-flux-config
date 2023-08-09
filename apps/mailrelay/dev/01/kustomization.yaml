@@ -5,5 +5,5 @@ namespace: mailrelay
 resources:
 - ../base
 
-patchesStrategicMerge:
-- ../../mailrelay/dev/01.yaml
+patches:
+- path: ../../mailrelay/dev/01.yaml

@@ -51,6 +51,6 @@ EOF
 ) > "apps/${NAMESPACE}/identity/${MI_ENV}.yaml"
 # -----------------------------------------------------------
 
-IDENTITY_PATH="../../identity/${MI_ENV}.yaml" yq eval -i '.patchesStrategicMerge += [env(IDENTITY_PATH)]' apps/${NAMESPACE}/${ENV}/base/kustomization.yaml
+IDENTITY_PATH="../../identity/${MI_ENV}.yaml" yq eval -i '.patches += -path: [env(IDENTITY_PATH)]' apps/${NAMESPACE}/${ENV}/base/kustomization.yaml
 
 

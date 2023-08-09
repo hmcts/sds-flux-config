@@ -1,17 +1,17 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
-  - ../../../rbac/temp-cronjob-role.yaml
+- ../../base
+- ../../../rbac/temp-cronjob-role.yaml
 namespace: vh
-patchesStrategicMerge:
-  - ../../identity/vh-aad-identity.yaml
-  - ../../identity/prod.yaml
-  - ../../bookings-api/prod.yaml
-  - ../../user-api/prod.yaml
-  - ../../notification-api/prod.yaml
-  - ../../video-api/prod.yaml
-  - ../../admin-web/prod.yaml
-  - ../../scheduler-jobs/prod.yaml
-  - ../../video-web/prod.yaml
-  - ../../booking-queue-subscriber/prod.yaml
+patches:
+- path: ../../identity/vh-aad-identity.yaml
+- path: ../../identity/prod.yaml
+- path: ../../bookings-api/prod.yaml
+- path: ../../user-api/prod.yaml
+- path: ../../notification-api/prod.yaml
+- path: ../../video-api/prod.yaml
+- path: ../../admin-web/prod.yaml
+- path: ../../scheduler-jobs/prod.yaml
+- path: ../../video-web/prod.yaml
+- path: ../../booking-queue-subscriber/prod.yaml

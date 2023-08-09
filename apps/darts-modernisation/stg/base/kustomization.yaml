@@ -1,10 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
+- ../../base
 namespace: darts-modernisation
-patchesStrategicMerge:
-  - ../../darts-api/stg.yaml
-  - ../../darts-portal/stg.yaml
-  - ../../darts-gateway/stg.yaml
-  - ../../identity/stg.yaml
+patches:
+- path: ../../darts-api/stg.yaml
+- path: ../../darts-portal/stg.yaml
+- path: ../../darts-gateway/stg.yaml
+- path: ../../identity/stg.yaml

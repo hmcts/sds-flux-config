@@ -1,18 +1,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
-  - ../../../rbac/nonprod-role.yaml
-  - ../../../rbac/temp-cronjob-role.yaml
+- ../../base
+- ../../../rbac/nonprod-role.yaml
+- ../../../rbac/temp-cronjob-role.yaml
 namespace: vh
-patchesStrategicMerge:
-  - ../../identity/vh-aad-identity.yaml
-  - ../../identity/stg.yaml
-  - ../../bookings-api/stg.yaml
-  - ../../user-api/stg.yaml
-  - ../../notification-api/stg.yaml
-  - ../../video-api/stg.yaml
-  - ../../admin-web/stg.yaml
-  - ../../scheduler-jobs/stg.yaml
-  - ../../video-web/stg.yaml
-  - ../../booking-queue-subscriber/stg.yaml
+patches:
+- path: ../../identity/vh-aad-identity.yaml
+- path: ../../identity/stg.yaml
+- path: ../../bookings-api/stg.yaml
+- path: ../../user-api/stg.yaml
+- path: ../../notification-api/stg.yaml
+- path: ../../video-api/stg.yaml
+- path: ../../admin-web/stg.yaml
+- path: ../../scheduler-jobs/stg.yaml
+- path: ../../video-web/stg.yaml
+- path: ../../booking-queue-subscriber/stg.yaml

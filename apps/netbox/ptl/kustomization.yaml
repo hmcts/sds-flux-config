@@ -5,6 +5,6 @@ resources:
 - netbox-redis.enc.yaml
 - netbox-postgresql.enc.yaml
 
-patchesStrategicMerge:
-- ../netbox/ptl/netbox.yaml
-- ../netbox/ptl/traefik-netbox.yaml
+patches:
+- path: ../netbox/ptl/netbox.yaml
+- path: ../netbox/ptl/traefik-netbox.yaml

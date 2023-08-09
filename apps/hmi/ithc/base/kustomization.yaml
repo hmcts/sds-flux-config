@@ -1,9 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
+- ../../base
 namespace: hmi
-patchesStrategicMerge:
-  - ../../identity/ithc.yaml
-  - ../../hmi-rota-dtu/ithc.yaml
-  - ../../hmi-libra-dtu/ithc.yaml
+patches:
+- path: ../../identity/ithc.yaml
+- path: ../../hmi-rota-dtu/ithc.yaml
+- path: ../../hmi-libra-dtu/ithc.yaml

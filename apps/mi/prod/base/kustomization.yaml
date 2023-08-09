@@ -3,18 +3,12 @@ kind: Kustomization
 namespace: mi
 
 resources:
-  - ../../base
-  - mi-adf-auth-values.enc.yaml
-
-patchesStrategicMerge:
-  - ../../identity/prod.yaml
+- ../../base
+- mi-adf-auth-values.enc.yaml
 
 patches:
-  #overlays for mi-azure-functions
-  - path: ../../mi-azure-functions/prod.yaml
-  #overlays for mi-adf-shir
-  - path: ../../mi-adf-shir/prod.yaml
-  #overlays for mi-adf-shir-2
-  - path: ../../mi-adf-shir-2/prod.yaml
-  #overlays for mi-house-keeping-service
-  - path: ../../mi-house-keeping-service/prod.yaml
+- path: ../../mi-azure-functions/prod.yaml
+- path: ../../mi-adf-shir/prod.yaml
+- path: ../../mi-adf-shir-2/prod.yaml
+- path: ../../mi-house-keeping-service/prod.yaml
+- path: ../../identity/prod.yaml
