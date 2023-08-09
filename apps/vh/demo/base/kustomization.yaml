@@ -5,7 +5,6 @@ resources:
 - ../../../rbac/dev-role.yaml
 namespace: vh
 patches:
-- path: ../../identity/vh-aad-identity.yaml
 - path: ../../identity/demo.yaml
 - path: ../../user-api/demo.yaml
 - path: ../../bookings-api/demo.yaml

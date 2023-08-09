@@ -5,7 +5,6 @@ resources:
 - ../../../rbac/temp-cronjob-role.yaml
 namespace: vh
 patches:
-- path: ../../identity/vh-aad-identity.yaml
 - path: ../../identity/prod.yaml
 - path: ../../bookings-api/prod.yaml
 - path: ../../user-api/prod.yaml
