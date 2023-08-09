@@ -87,7 +87,7 @@ spec:
                     deploymentTimeout: 1200
                     newResourceGroupName: "vm-agents-rg"
                     resourceGroupReferenceType: "new"
-                    maxVirtualMachinesLimit: 20
+                    maxVirtualMachinesLimit: 0
                     vmTemplates:
                     - templateName: "cnp-jenkins-builders"
                       templateDesc: "Jenkins build agents for HMCTS"
