@@ -5,10 +5,4 @@ resources:
   - ../base
 
 patches:
-  - |-
-    apiVersion: helm.toolkit.fluxcd.io/v2beta1
-    kind: HelmRelease
-    metadata:
-      name: mi-house-keeping-service
-      namespace: mi
-    $patch: delete
+  - path: remove-house-keeping-patch.yaml
