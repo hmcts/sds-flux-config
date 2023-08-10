@@ -3,6 +3,5 @@ kind: Kustomization
 resources:
 - git-credentials.enc.yaml
 - ../../base/gotk-components.yaml
-- git-credentials.enc.yaml
 patches:
 - path: ../../base/patches/kustomize-controller-patch.yaml
