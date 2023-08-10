@@ -10,9 +10,6 @@ resources:
   - ../../../rbac/nonprod-role.yaml
   - ../../mi-sftp-server/mi-sftp-server.yaml
   - ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
-patchesStrategicMerge:
-  - ../../identity/test.yaml
-
 patches:
   #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/test.yaml
@@ -34,3 +31,6 @@ patches:
       group: secrets-store.csi.x-k8s.io
       kind: SecretProviderClass
       name: mi-sftp-server-secret-provider
+  - path: ../../identity/mi-azure-functions-identity-test.yaml
+  - path: ../../identity/mi-house-keeping-service-identity-test.yaml
+  - path: ../../identity/mi-integration-service-identity-test.yaml

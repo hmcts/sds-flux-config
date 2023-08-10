@@ -1,0 +1,9 @@
+---
+apiVersion: aadpodidentity.k8s.io/v1
+kind: AzureIdentity
+metadata:
+  name: mi-azure-functions
+  namespace: mi
+spec:
+  resourceID: /subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/managed-identities-test-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mi-azure-functions-test-mi
+  clientID: 4531cfbf-c944-4025-bcac-9126016baa4c
