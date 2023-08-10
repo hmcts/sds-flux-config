@@ -6,7 +6,7 @@ metadata:
   labels:
     app: version-reporter-service-renovate
 spec:
-  schedule: "* 8-17 * * 1-5" # Once every hour 8am to 5pm, Monday to Friday
+  schedule: "0 8-17 * * 1-5" # Once every hour 8am to 5pm, Monday to Friday
   concurrencyPolicy: "Forbid"
   failedJobsHistoryLimit: 5
   startingDeadlineSeconds: 300
