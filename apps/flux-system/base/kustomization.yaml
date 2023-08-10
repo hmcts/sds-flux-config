@@ -1,7 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- gotk-components.yaml
 - kustomize.yaml
 - flux-config-gitrepo.yaml
 - hmcts-charts-gitrepo.yaml
@@ -23,5 +22,3 @@ resources:
 - toffee-recipe-receiver-gitrepo.yaml
 - chart-job-gitrepo.yaml
 - jenkins-webhook-relay-gitrepo.yaml
-patches:
-- path: patches/kustomize-controller-patch.yaml
