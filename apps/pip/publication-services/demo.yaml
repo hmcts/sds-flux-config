@@ -6,8 +6,8 @@ metadata:
 spec:
   releaseName: pip-publication-services
   values:
-    image: sdshmctspublic.azurecr.io/pip/publication-services:prod-8a92d98-20230804111022 #{"$imagepolicy": "flux-system:pip-publication-services"}
     java:
+      ingressHost: pip-publication-services.demo.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
         CHANNEL_MANAGEMENT_URL: https://pip-channel-management.demo.platform.hmcts.net

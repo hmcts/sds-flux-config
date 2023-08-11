@@ -6,7 +6,6 @@ metadata:
 spec:
   releaseName: pip-account-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/data-management:prod-e08f633-20230810163019 #{"$imagepolicy": "flux-system:pip-data-management"}
     java:
       ingressHost: pip-account-management.demo.platform.hmcts.net
       environment:
