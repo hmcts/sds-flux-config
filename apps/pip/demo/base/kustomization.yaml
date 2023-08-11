@@ -12,6 +12,7 @@ resources:
 - ../../publication-services-mi-reporting-cron/pip-publication-services-mi-reporting-cron.yaml
 - ../../refresh-views-cron/pip-refresh-views-cron.yaml
 - ../../data-management/pip-data-management.yaml
+- ../../frontend/pip-frontend.yaml
 namespace: pip
 patches:
 - path: ../../identity/demo.yaml
