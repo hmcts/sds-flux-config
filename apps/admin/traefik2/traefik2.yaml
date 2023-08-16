@@ -16,6 +16,10 @@ spec:
         namespace: admin
   interval: 1m
   values:
+    image:
+      registry: hmctspublic.azurecr.io
+      # Image Tag defaults to AppVersion
+      repository: imported/traefik
     providers:
       kubernetesIngress:
         publishedService:
