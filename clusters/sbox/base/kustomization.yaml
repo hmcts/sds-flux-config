@@ -13,6 +13,7 @@ resources:
   - ../../../apps/darts-modernisation/base/kustomize.yaml
   - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/aspnet/base/kustomize.yaml
+  - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
