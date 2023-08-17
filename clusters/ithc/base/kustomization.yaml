@@ -13,6 +13,7 @@ resources:
   - ../../../apps/vh/base/kustomize.yaml
   - ../../../apps/hmi/base/kustomize.yaml
   - ../../../apps/monitoring/base/kustomize.yaml
+  - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
