@@ -8,6 +8,7 @@ spec:
   releaseName: neuvector
   timeout: "900s"
   values:
+    registry: hmctspublic.azurecr.io
     config:
       autoScan: true
     rules:
@@ -96,7 +97,6 @@ spec:
                       values:
                         - system
         image:
-          registry: hmctspublic.azurecr.io
           repository: imported/neuvector/controller
         replicas: 3
         azureFileShare:
@@ -106,7 +106,6 @@ spec:
           enabled: true
       enforcer:
         image:
-          registry: hmctspublic.azurecr.io
           repository: imported/neuvector/controller
       manager:
         tolerations:
@@ -136,7 +135,6 @@ spec:
                       values:
                         - system
         image:
-          registry: hmctspublic.azurecr.io
           repository: imported/neuvector/manager
         env:
           ssl: false
@@ -177,7 +175,6 @@ spec:
           # If false, cve updater will not be installed
           enabled: true
           image:
-            registry: hmctspublic.azurecr.io
             repository: imported/neuvector/updater
             tag: latest
           schedule: "0 0 * * *"
