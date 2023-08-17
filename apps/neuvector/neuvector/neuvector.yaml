@@ -106,7 +106,7 @@ spec:
           enabled: true
       enforcer:
         image:
-          repository: imported/neuvector/controller
+          repository: imported/neuvector/enforcer
       manager:
         tolerations:
           - key: "CriticalAddonsOnly"
