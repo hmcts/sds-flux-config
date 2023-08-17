@@ -12,7 +12,10 @@ set -ex
 ENVIRONMENT=$1
 CLUSTER=$2
 CURRENT_DIRECTORY=$(pwd)
+ASO_RESOURCE_URL=$(yq eval '.resources[0]' apps/azureserviceoperator-system/aso/kustomization.yaml)
+ASO_VERSION=$(echo "$ASO_RESOURCE_URL" | cut -d'/' -f8)
 kubeconform_config=("-strict" "-summary" "-n" "12" "-schema-location" "default" "-schema-location" "/tmp/schemas/$ENVIRONMENT/$CLUSTER/")
+ASO_URL="https://github.com/Azure/azure-service-operator/releases/download/"$ASO_VERSION"/azureserviceoperator_customresourcedefinitions_"$ASO_VERSION".yaml"
 CSI_URL="https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/deploy/secrets-store.csi.x-k8s.io_secretproviderclasses.yaml"
 
 curl -sL https://raw.githubusercontent.com/yannh/kubeconform/master/scripts/openapi2jsonschema.py > /tmp/openapi2jsonschema.py
@@ -59,6 +62,7 @@ if [[ -d "clusters/$ENVIRONMENT/$CLUSTER" ]]; then
     cd "$SCHEMAS_DIR"
     export FILENAME_FORMAT='{kind}-{group}-{version}'
 
+    curl -sL  "$ASO_URL" > CustomResourceDefinition-azureserviceoperator.yaml
     curl -sL  "$CSI_URL" > CustomResourceDefinition-secretproviderclasses.yaml
 
     python3 /tmp/openapi2jsonschema.py * > /dev/null
