@@ -17,3 +17,7 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/darts/api:prod-fadce44-20230818170204 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-e94f530-20230512084807 # {"$imagepolicy": "flux-system:darts-api"}
+      environment:
+        ATS_MODE: true
