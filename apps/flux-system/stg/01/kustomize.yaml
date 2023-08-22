@@ -8,6 +8,7 @@ spec:
   postBuild:
     substitute:
       ENVIRONMENT: "stg"
+      WI_ENVIRONMENT: "stg"
       CLUSTER: "01"
       ENV_MONITOR_CHANNEL: "aks-monitor-ss-stg"
       KEYVAULT_ENVIRONMENT: "stg"

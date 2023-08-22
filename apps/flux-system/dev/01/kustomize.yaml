@@ -8,6 +8,7 @@ spec:
   postBuild:
     substitute:
       ENVIRONMENT: "dev"
+      WI_ENVIRONMENT: "dev"
       CLUSTER: "01"
       ENV_MONITOR_CHANNEL: "aks-monitor-dev"
       KEYVAULT_ENVIRONMENT: "dev"
