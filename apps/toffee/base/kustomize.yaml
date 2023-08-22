@@ -8,5 +8,4 @@ spec:
   postBuild:
     substitute:
       NAMESPACE: "toffee"
-      WI_NAME: "toffee"
       TEAM_NOTIFICATION_CHANNEL: "platops-build-notices"
