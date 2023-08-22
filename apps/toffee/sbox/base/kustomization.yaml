@@ -3,9 +3,11 @@ kind: Kustomization
 resources:
 - ../../base
 - ../../identity/apple-azure-identity.yaml
+- ../../../base/workload-identity
 namespace: toffee
 patches:
 - path: ../../identity/sbox.yaml
 - path: ../../frontend/sbox.yaml
 - path: ../../recipe-backend/sbox.yaml
 - path: ../../recipe-receiver/sbox.yaml
+- path: workload-identity.yaml

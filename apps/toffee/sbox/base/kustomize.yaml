@@ -1,0 +1,10 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: toffee
+  namespace: flux-system
+spec:
+  path: ./apps/toffee/sbox/base
+  postBuild:
+    substitute:
+      WORKLOAD_IDENTITY_ID: "ba6224de-74d1-466d-9308-dc8d6ba58217"
