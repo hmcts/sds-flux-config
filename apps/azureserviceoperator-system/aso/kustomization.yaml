@@ -12,7 +12,7 @@ patches:
   - patch: |-
       - op: replace
         path: /spec/template/spec/nodeSelector
-        value: 
+        value:
           kubernetes.azure.com/agentpool: linux
     target:
       kind: Deployment
