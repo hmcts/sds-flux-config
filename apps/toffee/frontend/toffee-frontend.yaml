@@ -19,3 +19,5 @@ spec:
       disableTraefikTls: true
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.sandbox.platform.hmcts.net
+      useWorkloadIdentity: true
+      workloadClientID: ${WORKLOAD_IDENTITY_ID}

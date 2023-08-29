@@ -8,5 +8,7 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-b934162-20230814062019 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
       ingressHost: toffee-recipe-backend.test.platform.hmcts.net
+      useWorkloadIdentity: true
+      workloadClientID: ${WORKLOAD_IDENTITY_ID}
     global:
       environment: testing
