@@ -4,7 +4,7 @@ metadata:
   name: toffee
   namespace: flux-system
 spec:
-  path: ./apps/toffee/demo/base
+  path: ./apps/toffee/test/base
   postBuild:
     substitute:
       WORKLOAD_IDENTITY_ID: "875db762-dade-4150-ba72-d955ea89b35d"
