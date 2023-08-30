@@ -12,6 +12,8 @@ spec:
       ingressHost: toffee.staging.platform.hmcts.net
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.staging.platform.hmcts.net
+      useWorkloadIdentity: true
+      workloadClientID: ${WORKLOAD_IDENTITY_ID}
     global:
       environment: staging
     volumes:
