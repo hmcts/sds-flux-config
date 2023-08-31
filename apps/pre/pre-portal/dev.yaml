@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pre-portal
+  namespace: pre
+spec:
+  releaseName: pre-portal
+  values:
+    nodejs:
+      ingressHost: 'portal-dev.pre-recorded-evidence.justice.gov.uk'
+      image: sdshmctspublic.azurecr.io/pre/portal
