@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pre-portal
+spec:
+  releaseName: pre-portal
+  chart:
+    spec:
+      chart: ./stable/pre-portal
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/pre/portal # {"$imagepolicy": "flux-system:pre-portal"}
+      disableTraefikTls: true
