@@ -32,10 +32,10 @@ spec:
     ## External database settings
     # These are used if postgresql.enabled is false, and are ignored otherwise
     externalDatabase:
-      host: netbox-ptl-netboxazure.postgres.database.azure.com
+      host: netbox-v14-flexible-ptl.postgres.database.azure.com
       port: 5432
       database: netbox
-      username: netbox@netbox-ptl-netboxazure
+      username: pgadmin
       password: ""
       existingSecretName: netbox-postgresql
       existingSecretKey: postgresql-password
