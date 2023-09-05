@@ -51,14 +51,14 @@ spec:
     webhooksRedis:
       database: 0
       timeout: 300
-      ssl: false
+      ssl: true
 
       # Used only when redis.enabled is false. host and port are not used if
       # sentinels are given.
-      host: netbox-ptl-netboxazure-standard.redis.cache.windows.net
-      port: 6379
+      host: netbox-ptl.redis.cache.windows.net
+      port: 6380
       sentinels: []
-      #  - mysentinel:26379
+      #  - mysentinel:26380
       #sentinelService: netbox-redis
       password: ""
       existingSecretName: netbox-redis
@@ -67,14 +67,14 @@ spec:
     cachingRedis:
       database: 1
       timeout: 300
-      ssl: false
+      ssl: true
 
       #Used only when redis.enabled is false. host and port are not used if
       #sentinels are given.
-      host: netbox-ptl-netboxazure-standard.redis.cache.windows.net
-      port: 6379
+      host: netbox-ptl.redis.cache.windows.net
+      port: 6380
       sentinels: []
-      #  - mysentinel:26379
+      #  - mysentinel:26380
       #sentinelService: netbox-redis
       password: ""
       existingSecretName: netbox-redis
