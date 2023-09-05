@@ -8,18 +8,13 @@ spec:
   chart:
     spec:
       chart: netbox
-      version: 5.1.2
+      version: 5.1.3
       sourceRef:
         kind: HelmRepository
         name: hmctspublic
         namespace: flux-system
   releaseName: netbox
   values:
-    nginx:
-      image:
-        repository: nginx
-        tag: 1.25.1
-
     ingress:
       hosts:
         - host: netbox.platform.hmcts.net
@@ -30,14 +25,9 @@ spec:
         - hosts:
             - netbox.platform.hmcts.net
 
-    postgresql:
-      ## Deploy PostgreSQL using bundled chart
-      # To use an external database, set this to false and configure the settings
-      # under externalDatabase
-      enabled: false
-
-      postgresqlUsername: netbox
-      postgresqlDatabase: netbox
+    csrf:
+      trustedOrigins:
+        - https://netbox.platform.hmcts.net
 
     ## External database settings
     # These are used if postgresql.enabled is false, and are ignored otherwise
