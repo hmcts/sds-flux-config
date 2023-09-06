@@ -1,9 +1,0 @@
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentity
-metadata:
-  name: keda
-  namespace: admin
-spec:
-  type: 0
-  resourceID: "/subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourcegroups/managed-identities-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/keda-prod-mi"
-  clientID: "3ef542a6-e26f-44b2-9db1-6193b8894d6e"
