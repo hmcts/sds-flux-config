@@ -11,6 +11,7 @@ resources:
   # - ../../../apps/darts-modernisation/base/kustomize.yaml
   - ../../../apps/hmi/base/kustomize.yaml
   - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
+  - ../../../apps/keda/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
