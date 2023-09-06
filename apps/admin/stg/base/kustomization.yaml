@@ -5,7 +5,6 @@ resources:
 - ../../kube-slack/stg/kube-slack-values.enc.yaml
 - ../../kured/stg/kured-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
-- ../../keda
 - ../../traefik2
 - ../../delete-hung-pods
 namespace: admin
@@ -23,4 +22,3 @@ patches:
     name: aks-kubelet-identity-mi
     version: v1
 - path: ../../traefik2/stg/secret-provider.yaml
-- path: ../../keda/stg/identity.yaml
