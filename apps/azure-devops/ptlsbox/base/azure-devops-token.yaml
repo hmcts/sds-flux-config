@@ -1,25 +1,25 @@
 apiVersion: v1
 data:
-    token: ENC[AES256_GCM,data:z6qZVABzkh1SAovIPWzBZ6enqyaU1ww9VdC0MG2m8MKl96dIpLnsCD1Cy1wwHjD9xMligPNoIMfHoAt/TBnEJEunRVI=,iv:W2IaCQ6iQn2q3jKVBoOyW0ghfpCUp1+AmV8IiUM7Smc=,tag:EYlX4QmXozOEpBZNLNJxzA==,type:str]
+  token: ENC[AES256_GCM,data:z6qZVABzkh1SAovIPWzBZ6enqyaU1ww9VdC0MG2m8MKl96dIpLnsCD1Cy1wwHjD9xMligPNoIMfHoAt/TBnEJEunRVI=,iv:W2IaCQ6iQn2q3jKVBoOyW0ghfpCUp1+AmV8IiUM7Smc=,tag:EYlX4QmXozOEpBZNLNJxzA==,type:str]
 kind: Secret
 metadata:
-    creationTimestamp: null
-    name: token
-    namespace: monitoring
+  creationTimestamp: null
+  name: token
+  namespace: monitoring
 type: Opaque
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv:
-        - vault_url: https://dcdcftappssboxkv.vault.azure.net
-          name: sops-key
-          version: 4dfa9dd4b0444f03bd64e2128e347537
-          created_at: "2023-09-07T08:32:57Z"
-          enc: Bc91bNvjdkrVdjgQEhAEBsKHIaJnCFtCrqrhW5lgPs7YAzB7vhqr6WNWooWJJscYFsPvpO7YrhJyN6pJcxqioApPvHtjod4wJv-NLiEgA5aKUVC-WC8K-MUAeDXi_V56BK4qfgjYcnRsxCWVu93hTJOuq_4BDEyirX4RaTIBCO3vf-FmalxQgCLxEDWJImjwQYJLojoeB5DwkcRdnmMs--Qc_EXhw77jC-3YHdwxyN4_Hbci2Is79-u9VfwV8Lus5oN-7-uyjsZKy-7DRqlh-8Jh_ir9A7Nfr-f6tKu6q1MnuaS0W-EYkzAZ9jr_iaktYyA4HqV5M10I5ZCk3aK4Pg
-    hc_vault: []
-    age: []
-    lastmodified: "2023-09-07T08:32:59Z"
-    mac: ENC[AES256_GCM,data:IhrOO9BfISuT7kaAFBjybiLs1kSH4sFZgV0akmjGLY8/zfs2tSWm7ZkeGCXe8hKhB7x/ddZHyKv03IG34iuppz7Yy5QwBfIQvBcle48O92gDJdlTWHomcDn50pwr81EA+3kbaznFUyNTKN2l1sX6pvKmnu7hZ/TCtndaH5XzKW8=,iv:eRMiH2/5Xh4fPcGCeuDOtnY1LFCCfgVinJmzC+4IOHg=,tag:rRMSX/4+hRVwxRhDoLF6lQ==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.7.3
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dcdcftappssboxkv.vault.azure.net
+      name: sops-key
+      version: 4dfa9dd4b0444f03bd64e2128e347537
+      created_at: "2023-09-07T08:32:57Z"
+      enc: Bc91bNvjdkrVdjgQEhAEBsKHIaJnCFtCrqrhW5lgPs7YAzB7vhqr6WNWooWJJscYFsPvpO7YrhJyN6pJcxqioApPvHtjod4wJv-NLiEgA5aKUVC-WC8K-MUAeDXi_V56BK4qfgjYcnRsxCWVu93hTJOuq_4BDEyirX4RaTIBCO3vf-FmalxQgCLxEDWJImjwQYJLojoeB5DwkcRdnmMs--Qc_EXhw77jC-3YHdwxyN4_Hbci2Is79-u9VfwV8Lus5oN-7-uyjsZKy-7DRqlh-8Jh_ir9A7Nfr-f6tKu6q1MnuaS0W-EYkzAZ9jr_iaktYyA4HqV5M10I5ZCk3aK4Pg
+  hc_vault: []
+  age: []
+  lastmodified: "2023-09-07T08:32:59Z"
+  mac: ENC[AES256_GCM,data:IhrOO9BfISuT7kaAFBjybiLs1kSH4sFZgV0akmjGLY8/zfs2tSWm7ZkeGCXe8hKhB7x/ddZHyKv03IG34iuppz7Yy5QwBfIQvBcle48O92gDJdlTWHomcDn50pwr81EA+3kbaznFUyNTKN2l1sX6pvKmnu7hZ/TCtndaH5XzKW8=,iv:eRMiH2/5Xh4fPcGCeuDOtnY1LFCCfgVinJmzC+4IOHg=,tag:rRMSX/4+hRVwxRhDoLF6lQ==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3
