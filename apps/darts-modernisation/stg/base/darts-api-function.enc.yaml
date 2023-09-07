@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+  DB_CONNECTION_STRING: ENC[AES256_GCM,data:sXBh+RJCpmblZwsUvsjU48fmnyChs+NyaokNVgGVJghVYzmG1HAfxEL2VtZX9PuO1e6BrV6a26W90YfbNU9ZrPWQozlNFYzuQaSwwvVjHwH3QrfS+0o+lNly7CVXDwOBrdXcxU4Lc0gpKSr05zGoR2yXdCq/Co2L7kwlpA==,iv:9zzPVRweAZcooM2yU2PSBqYWtgVyTlB/Re+0L2UbxxU=,tag:liB1lXqFQDrKZhvDLhrRaw==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: darts-api-function
+  namespace: monitoring
+type: Opaque
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+  - vault_url: https://dtssharedservicesstgkv.vault.azure.net
+    name: sops-key
+    version: b63a642ce6b14537bcc33a500f90b0e9
+    created_at: "2023-09-07T09:25:42Z"
+    enc: HBsBqqg0Xw5GBMCx-aGV43tGzlUzj5WQ1mZ1lPyReHQVgZXNblZOhiMDFpUu3i-aUML_VtTXY4Fk1LovaPbNqh32doamSAwrk1d55i-lsn2o1rJHM7qnV-bDh-1l9ebfi9IuJuuwehvNDhip7iZblwOwKU7gbH_fu7zJztiDE37jfI9NQ3qrQl2n20CprYuCtACiAAjqBEQDJi4x61MqLEmLbiA--E_-t7sNpBNcf048nc5iqJJfMjPcKr-uCXmsrqBJZ6VkqrJ6oAbVZfXcsVbehi2_roQe7lFME-Y-bIYMG99GBYW1YJTjpoV2aLIBHSuIcXBXURKb_p3RymscPQ
+  hc_vault: []
+  age: []
+  lastmodified: "2023-09-07T09:25:42Z"
+  mac: ENC[AES256_GCM,data:kb2HzgLQwq+3RC5hao+7lJnoACPLQvmuWH7qA4zmEeRSPkmLA58bu53eyQ2glwWd+sIWrox60cDJnjVHOfFBVLNgAkWuja/1MZyX9vdFsr/ItzmD6CCl31lbJzVJdD6GJ+ys+V5vB2rwtpKm5z0AYngeIrbQBm+h6AXFUAnaS3E=,iv:U0WYwhOtx4OCLQzl36CP38XI3/PLt+W4TZRMl89bqSo=,tag:lgbT+sZmjlqy8RKaWTadMw==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3
