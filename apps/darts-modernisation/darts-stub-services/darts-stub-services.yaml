@@ -17,7 +17,3 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/darts/stub-services:prod-3d6481d-20230907150729
       disableTraefikTls: true
-    function:
-      image: sdshmctspublic.azurecr.io/darts/stub-services:prod-3d6481d-20230907150729
-      environment:
-        ATS_MODE: true
