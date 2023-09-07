@@ -19,3 +19,4 @@ spec:
   values:
     function:
       image: sdshmctspublic.azurecr.io/hmi/libra-dtu:latest
+      triggerPodIdentityProvider: azure-workload

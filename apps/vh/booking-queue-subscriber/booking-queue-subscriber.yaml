@@ -6,6 +6,8 @@ spec:
   interval: 10m
   releaseName: vh-booking-queue-subscriber
   values:
+    function:
+      triggerPodIdentityProvider: azure-workload
     java:
       disableTraefikTls: true
   chart:
