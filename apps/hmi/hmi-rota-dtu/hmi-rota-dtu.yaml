@@ -19,4 +19,5 @@ spec:
   values:
     function:
       image: sdshmctspublic.azurecr.io/hmi/rota-dtu:latest
-      triggerPodIdentityProvider: azure-workload
+      triggerAuth:
+        triggerPodIdentityProvider: azure-workload
