@@ -20,7 +20,7 @@ spec:
           serviceAccountName: version-reporter-service-sa
           containers:
             - name: version-reporter-service
-              image: sdshmctspublic.azurecr.io/version-reporter-service/docsoutdated:prod-556baf9-20230905080938 #{"$imagepolicy": "flux-system:version-reporter-docsoutdated"}
+              image: sdshmctspublic.azurecr.io/version-reporter-service/docsoutdated:prod-69b8ef7-20230907121313 #{"$imagepolicy": "flux-system:version-reporter-docsoutdated"}
               imagePullPolicy: Always
               env:
                 - name: COSMOS_DB_URI
