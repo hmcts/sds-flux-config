@@ -4,7 +4,7 @@ resources:
   - ../../../apps/flux-system/sbox/base
   - ../../../apps/toffee/base/kustomize.yaml
   - ../../../apps/azure-devops/base/kustomize.yaml
-  - ../../../apps/mi/base/kustomize.yaml
+  # - ../../../apps/mi/base/kustomize.yaml
   - ../../../apps/hmi/base/kustomize.yaml
   - ../../../apps/monitoring/base/kustomize.yaml
   - ../../../apps/admin/base/kustomize.yaml
@@ -15,7 +15,7 @@ resources:
   - ../../../apps/aspnet/base/kustomize.yaml
   - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
   - ../../../apps/keda/base/kustomize.yaml
-  - ../../../apps/pre/base/kustomize.yaml
+  # - ../../../apps/pre/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
