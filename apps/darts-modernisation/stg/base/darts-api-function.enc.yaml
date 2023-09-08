@@ -11,11 +11,11 @@ sops:
   kms: []
   gcp_kms: []
   azure_kv:
-      - vault_url: https://dtssharedservicesstgkv.vault.azure.net
-        name: sops-key
-        version: b63a642ce6b14537bcc33a500f90b0e9
-        created_at: "2023-09-08T09:12:30Z"
-        enc: R28WriNJX3YDEPgnhjAbDBSWnJT08-Kab0obWDYpyvHNBDgtsSZWHTUsRv7M7T42c9d4sMGlPnB_FDRJvzOWGbOhQPUr1VeCuzrhKxGQMPgEIfTLNZy7MI6j8L-uI1GdSsVRz_iHxLEiTAZHTVUwoZWHFILml_Im-YTPFjqxAycGK57SUYavv24a1_6r2bIUOafiID4n18UO18Fa1rXbBi_14yuKKZtI5zEkS7PthJdPe4KH6u13lwAst1Si5m5vJEV4LDVIvVOxbygvNx5WD8p_dUOF-V--gdNTqUFcbWJfTJu7AAoHRBtaJxW7XI5Am_MKj9e3LY6mTQh3VWoHfw
+    - vault_url: https://dtssharedservicesstgkv.vault.azure.net
+      name: sops-key
+      version: b63a642ce6b14537bcc33a500f90b0e9
+      created_at: "2023-09-08T09:12:30Z"
+      enc: R28WriNJX3YDEPgnhjAbDBSWnJT08-Kab0obWDYpyvHNBDgtsSZWHTUsRv7M7T42c9d4sMGlPnB_FDRJvzOWGbOhQPUr1VeCuzrhKxGQMPgEIfTLNZy7MI6j8L-uI1GdSsVRz_iHxLEiTAZHTVUwoZWHFILml_Im-YTPFjqxAycGK57SUYavv24a1_6r2bIUOafiID4n18UO18Fa1rXbBi_14yuKKZtI5zEkS7PthJdPe4KH6u13lwAst1Si5m5vJEV4LDVIvVOxbygvNx5WD8p_dUOF-V--gdNTqUFcbWJfTJu7AAoHRBtaJxW7XI5Am_MKj9e3LY6mTQh3VWoHfw
   hc_vault: []
   age: []
   lastmodified: "2023-09-08T09:12:35Z"
