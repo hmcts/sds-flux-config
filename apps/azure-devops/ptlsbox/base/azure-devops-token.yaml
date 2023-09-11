@@ -1,6 +1,6 @@
 apiVersion: v1
 data:
-  token: ENC[AES256_GCM,data:8Zghl6TqgiGOvT9cNIh4bwdQpUfZckgTHN+dq6w+CYbmG4QosiAgYrmK6Z/9KCCWku6PgzbouG4=,iv:cGrE/RyHl+aoYNRg44+LZf0H1WltzAoV5V7QHtI06qs=,tag:P7uJYXZR2dfGE+6ysiCvVg==,type:str]
+  token: ENC[AES256_GCM,data:aE4btKrInpxatdC7lW9NMlMJarpi/L6P3h92Aex++qcnuRbcp+07GS3larkFM6/u+gujKrWPQVk=,iv:FPTYv5pS6aZxz896iNZdNN5LyWclQNVRyed+l302wds=,tag:gFfxxBZdaJoMwvTbX8Rnzg==,type:str]
 kind: Secret
 metadata:
   creationTimestamp: null
@@ -14,12 +14,12 @@ sops:
     - vault_url: https://dtssdsptlsbox.vault.azure.net
       name: sops-key
       version: a443393a134b4e33ae9f541d2f14747e
-      created_at: "2023-09-11T13:52:39Z"
-      enc: QGWIQEZHEGlly_pvjwLRTAI5KPDtLve9tcnnUWCl8ovMmJHW6Nx7yTFJrcvHT8VcklnUn7W3EPu-Czb2S7tjjnF-pLlPk7tKBXAE9XYjaH-bQHYlj2crSIY1fEaUJCrq-DMnGKmbLV0_ITKK6RwFAdGooMhFh6fjb8dQ3SlxMwsQvjiHD1UMGyRRO2wi-4Wmtxgo75uHqVL4y4y0OtgNg-Pb2l1MDAFP_r0_0mFXJf9rtnF-F0boOBdYfsPnDLhdXvS0xPE8T6FKUwatHMm_351GphtfoObyYIv1G-8Vvke7UcUotuDxpKuipXEksWjZQZYyV1ptUUC_SnRd8_zwig
+      created_at: "2023-09-11T13:55:55Z"
+      enc: fu1lHsaJK-hqQsUu1L9Pjtv7DUyod5Gv_I9RdMiSG_HcT4jqNZ1nCOwYsaZsibiegu2DHEkPukialHfnjNjV2rVDvkp67Ja99tkkvvdxrszRpH_ZZhbbCHhQJ5j24R9X1zUjxs6DRcOKTKoQwHnD9Uw4VqE645Bou_fRY6wlEcUFVCCLintdWWlEXIaluXMuIXo8KKTsCbjuGkvHCQjctLRBfTfYOIX-YJxZUkI7eU0WQ6WMT0e6g2ETAXCu9vCOMIDxHJnyA_0l3CwAV8Z6JkUlOEZ1Bm55rCbV3r5zBzG_Ri9tnDRMpZI1uCOna24qt1D0_igzDtWKx8iY6UPtoA
   hc_vault: []
   age: []
-  lastmodified: "2023-09-11T13:52:40Z"
-  mac: ENC[AES256_GCM,data:yc5e8HyDyXWPSdEL/hYXkeg32niLEqdP2Z63AdhFLtYtkllIPnBKtJl5Uq1YcB0O/Mi72gYZQ3L1y9mtvhwqXAQO/DFj8neepeaecpnwc+TKD3nzvfy63gJ+7KfRgROAHl3Oc1VNzLrhzTHSI7Gz9ES67skADWtHybsZX8ivfzQ=,iv:16/nZkJEG95hI6w5rTLZ8SsK430FgC2uIVqJHKtIltg=,tag:2516cMoLynDydbqGBNjdZQ==,type:str]
+  lastmodified: "2023-09-11T13:55:56Z"
+  mac: ENC[AES256_GCM,data:+72aCIhvNtls8a4qzbT+CpsyTqTMmZCPkJW+x/RYLg3TCdojUKaPCRpxhIjUmldVwDPbpryVa+pL5zYlC0hEKCDtK+85wdAvt33NIIO7O5fEOyLTwYTELouSbnplnsJ3Tr9Bfl4VD2SZglTeF46TR5XS7Wgmgu9+jn5n4TEFGZg=,iv:ZzYcUSZp3cfeqwuYa/j36ZxK0YeDzxCBSF0MLlzLsuw=,tag:lj/Wk2jCAA0Nn/tp7syBtg==,type:str]
   pgp: []
-  encrypted_regex: ^(data|data)$
+  encrypted_regex: ^(data|stringData)$
   version: 3.7.3
