@@ -24,8 +24,6 @@ spec:
           serviceBusName: github-jenkins-sds-ptl
           queueName: "jenkins"
           queueLength: "5"
-      environment:
-        CONNECTION_URL: "https://sds-build.platform.hmcts.net"
       secrets:
         SERVICE_BUS_CONNECTION_STR:
           secretRef: jenkins-webhook-relay
