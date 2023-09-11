@@ -230,6 +230,11 @@ spec:
                           description: "GitHub APP Key - CNP"
                           id: "hmcts-jenkins-cnp"
                           privateKey: "$${hmcts-jenkins-cnp-ghapp}"
+                      - gitHubApp:
+                          appID: "388326"
+                          description: "GitHub APP Key - SDS"
+                          id: "hmcts-jenkins-sds"
+                          privateKey: "$${hmcts-jenkins-sds-ghapp}"
                       - azureCosmosDB:
                           credentialsId: "jenkins-managed-identity"
                           id: "cosmos-connection"

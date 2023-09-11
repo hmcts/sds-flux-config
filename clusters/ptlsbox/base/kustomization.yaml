@@ -10,6 +10,7 @@ resources:
   - ../../../apps/kube-system/base/kustomize.yaml
   - ../../../apps/testkube/base/kustomize.yaml
   - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
+  - ../../../apps/keda/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
