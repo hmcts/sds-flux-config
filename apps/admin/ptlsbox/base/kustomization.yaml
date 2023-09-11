@@ -4,7 +4,6 @@ namespace: admin
 resources:
 - ../../base
 - ../../kube-slack/ptlsbox/kube-slack-values.enc.yaml
-- ../../keda
 - ../../kured/ptlsbox/kured-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
 - ../../traefik2
@@ -22,5 +21,4 @@ patches:
     kind: AzureIdentity
     name: aks-kubelet-identity-mi
     version: v1
-- path: ../../keda/ptlsbox/identity.yaml
 - path: ../../traefik2/ptlsbox/secret-provider.yaml
