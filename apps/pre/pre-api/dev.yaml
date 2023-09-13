@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pre-api
+  namespace: pre
+spec:
+  releaseName: pre-api
+  values:
+    java:
+      ingressHost: pre-api.dev.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pre/api:latest #{"$imagepolicy": "flux-system:pre-api-dev"}
+

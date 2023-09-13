@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - ../pre-portal/image-repo.yaml
   - ../pre-portal/image-policy.yaml
+  - ../pre-api/image-repo.yaml
+  - ../pre-api/image-policy.yaml
