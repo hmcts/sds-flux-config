@@ -8,4 +8,4 @@ spec:
   values:
     java:
       ingressHost: pre-api.sandbox.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/pre/api:latest #{"$imagepolicy": "flux-system:pre-api-staging"}
+      image: sdshmctspublic.azurecr.io/pre/api:latest #{"$imagepolicy": "flux-system:pre-api-sandbox"}
