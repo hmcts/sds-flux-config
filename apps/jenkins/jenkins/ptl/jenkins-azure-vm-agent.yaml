@@ -84,7 +84,7 @@ spec:
                       - name: "environment"
                         value: "production"
                     azureCredentialsId: "jenkins-managed-identity"
-                    cloudName: "cnp-azure"
+                    name: "cnp-azure"
                     deploymentTimeout: 1200
                     newResourceGroupName: "vm-agents-rg"
                     resourceGroupReferenceType: "new"
