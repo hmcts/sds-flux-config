@@ -20,6 +20,8 @@ spec:
   releaseName: toffee-recipe-receiver
   values:
     function:
+      triggerAuth:
+        triggerPodIdentityProvider: azure-workload
       image: sdshmctspublic.azurecr.io/toffee/recipe-receiver:prod-1100a0e-20220609130124
       triggers:
         - type: azure-servicebus

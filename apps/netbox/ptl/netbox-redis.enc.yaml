@@ -1,6 +1,6 @@
 apiVersion: v1
 data:
-  redis-password: ENC[AES256_GCM,data:IkhWjHA0EszjGFeQiLZQm8E2cFqDykXKbF0XXHmi9uPOdd/ThViLmWKTy7TO6QhOyBJxteYUCyTtfVTc,iv:lysk8kOZQluatqBScW3mshry6gtEvb0OzGl7oZh0LOg=,tag:flELK8xfLsNSWU8f3Ev8ew==,type:str]
+  redis-password: ENC[AES256_GCM,data:ESq/VVVw0bzDiJI8ksu93V7HPDjNLS03HoWt1Dkm3R1G601mtHx52pDR5kiy359QHe/iMbhq+Gb5FlWx,iv:jbDuTUxhgAI8anlCwNrAh3Y1Ng/fDQyFSbKgG+MOkl8=,tag:7OebMyX1HW6PJ61UJl2p+g==,type:str]
 kind: Secret
 metadata:
   creationTimestamp: null
@@ -13,12 +13,12 @@ sops:
     - vault_url: https://dtssdsptl.vault.azure.net
       name: sops-key
       version: b047792919f74e6c875ba3a8945ed7a9
-      created_at: "2022-07-20T10:30:25Z"
-      enc: BP0gSHN-JfgHKvuRFJ5tVO5Xv7DxAmMIZBRQheSKy-oRXMcz1PY3W1wgnDazukPpRf7ITrywHJTlwJO0RO587730ry_iGHscWp0RYOcuxYQYyyeM5kAiXmHqPn8mQ6nycreIVKlQsCqrbRJbvBUXijSS-CxXYcow4T1tsfd2xO6i3H8z-mVdkXu5plO9HjpX1pwFV5prpWmlAz8v-XDrca8fl5Qh0Zwoeh-g_I0kLT9ocn04o-1WmtdjkwmAL6Ma9Fk-hU5k5HZiOis-N7lBYdROhoLLMMP3OHZYAJLZU52folunwPa2P8Zfx8gDPB5OW00JaSrurR1mAN0e7PoO2A
+      created_at: "2023-09-05T11:15:45Z"
+      enc: Vm7hr7MNGX_HLP5caNHHyR2GIEqpZclSKmP1EUtVMcvcSHBvI6d3UENDG_wxev2F4-k6Etm8MYab4ut0ZLQ1OJgMNQTEpLh3dl3mW5X2LRCA1eqZt1SWmuByF1Tvl5wU3SVP_ImR0jE9jj-mzF38VjsjXb-6hfFEtoaacuFA_5HCUg1cR9mLxJOV5QI3kNW1wZzqcmQh58DLww7H8r6gXXIPm90KDq8LLlGf745q7ZHuv01k2HVDy_IKp8RSmTHub7c63tHSNCESSnm19NeTR5jjR_JS6WIPwk1ZZmt4jAbiIq57REznBF4PluCBKjkJ9BFAdi_c6BHwi2Qjti8QdA
   hc_vault: []
   age: []
-  lastmodified: "2022-07-20T10:30:26Z"
-  mac: ENC[AES256_GCM,data:7LBt74hIWFnFHKNCMsUpqvzCKGrrPZ7EWgPrNEGS52N23x2f/XcHlOLH5gAoznV1H/cO/IbBC8/5wLdcYs7ph1wNjye7whfZjfQSsWO7SZPwGcKv2ADwFAQYPC3gAaMXBtDCHk0dflFsyLbKvUfrPZPAwl9kXrCdfCHWoftpjbk=,iv:Ab6nAbNGxF4XFvaRpeYD4RWqJGci42nARyuBKOR57wI=,tag:syp/5H1axR3SgjY03YDchg==,type:str]
+  lastmodified: "2023-09-05T11:15:46Z"
+  mac: ENC[AES256_GCM,data:RXfJ0eA7+eVSMT4rKmZrnN9HNo+PZ8r6enFlN63ycTB5YvDBiRXynUu76DDQv0xIuyO5lHD+BI7zDWhOyW9nr2zvzPg4YMgYeoWplXv91dVYzc20fADumTJM+JGtetPOtnT4FOEN7zDv2WFmQ/wiCsTlYrnJJ0vP9EOnpUNPGmQ=,iv:PVQjFqgRlwS/SHWbdRKQQvcXF2OqZhAqZqlLBu0gXcw=,tag:X2rc8/ORc0mjlrumaoJVJw==,type:str]
   pgp: []
   encrypted_regex: ^(data|stringData)$
   version: 3.7.3

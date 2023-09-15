@@ -5,7 +5,6 @@ resources:
 - ../../kube-slack/dev/kube-slack-values.enc.yaml
 - ../../kured/dev/kured-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
-- ../../keda
 - ../../traefik2
 - ../../external-dns/
 - ../../delete-hung-pods
@@ -24,4 +23,3 @@ patches:
     name: aks-kubelet-identity-mi
     version: v1
 - path: ../../traefik2/dev/secret-provider.yaml
-- path: ../../stg/keda-identity.yaml
