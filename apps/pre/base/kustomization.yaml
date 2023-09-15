@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../pre-portal/pre-portal.yaml
+  - ../pre-api/pre-api.yaml
   - ../identity/pre-azure-identity.yaml
 namespace: pre
