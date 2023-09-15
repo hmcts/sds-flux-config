@@ -19,6 +19,7 @@ spec:
   releaseName: jenkins-webhook-relay
   values:
     function:
+      image: hmctspublic.azurecr.io/jenkins/jenkins-webhook-relay:pr-23-4e258500-1694767419
       triggers:
         - type: azure-servicebus
           serviceBusName: github-jenkins-sds-ptlsbox
