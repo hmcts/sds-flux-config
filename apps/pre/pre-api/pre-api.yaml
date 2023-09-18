@@ -1,14 +1,14 @@
+---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: pre-api
 spec:
-  interval: 10m
-  releaseName: pre-api
   values:
     java:
       image: sdshmctspublic.azurecr.io/pre/api:latest # {"$imagepolicy": "flux-system:pre-api"}
       disableTraefikTls: true
+  releaseName: pre-api
   chart:
     spec:
       chart: ./stable/pre-api
