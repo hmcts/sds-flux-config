@@ -6,7 +6,6 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1111-4f834bb-20230911155929
       memoryLimits: 1024Mi
       cpuRequests: 300m
       ingressHost: pip-frontend.test.platform.hmcts.net
