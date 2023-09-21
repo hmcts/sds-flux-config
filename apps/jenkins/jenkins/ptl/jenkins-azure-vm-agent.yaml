@@ -105,7 +105,7 @@ spec:
                       <<: *vm_template_values_anchor
                     - templateName: "cnp-jenkins-arm-builders"
                       templateDesc: "Jenkins build agents running on ARM64 CPUs"
-                      labels: "daily arm"
+                      labels: "arm arm-daily"
                       maxVirtualMachinesLimit: 3
                       usageMode: EXCLUSIVE
                       virtualMachineSize: "Standard_D4pds_v5"
