@@ -4,7 +4,7 @@ metadata:
   name: darts-modernisation
   namespace: flux-system
 spec:
-  path: ./apps/darts-modernisation/${ENVIRONMENT}/base
+  path: ./apps/darts-modernisation/${ENVIRONMENT}/${CLUSTER}
   postBuild:
     substitute:
       NAMESPACE: "darts-modernisation"
