@@ -52,6 +52,7 @@ spec:
     rbac:
       enabled: true
     autoscaling:
+      enabled: true
       minReplicas: 2
       maxReplicas: 3
     ports:
