@@ -81,6 +81,13 @@ sops:
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
 ```
+Sops fails linting by default as we require 2 spaces while it uses 4 spaces.
+You can use `yq` to fix this:
+
+```
+yq eval -I 2 --inplace apps/mi/mi-adf-shir/sbox/mi-adf-auth-values.enc.yaml
+```
+
 You then need to edit the Kustomization.yaml file which corresponds with your environment adding prometheus-values.enc.yaml to the resources section.
 example: apps/monitoring/sbox/base
 ```
