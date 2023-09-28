@@ -52,8 +52,12 @@ spec:
     rbac:
       enabled: true
     autoscaling:
-      minReplicas: 1
+      enabled: true
+      minReplicas: 2
       maxReplicas: 3
+    podDisruptionBudget:
+      enabled: true
+      maxUnavailable: "50%"
     ports:
       websecure:
         tls:
@@ -64,14 +68,4 @@ spec:
         operator: Equal
         value: "true"
         effect: NoSchedule
-    affinity:
-      nodeAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-                - key: kubernetes.azure.com/mode
-                  operator: In
-                  values:
-                    - system
     priorityClassName: system-cluster-critical
