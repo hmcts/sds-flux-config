@@ -1,0 +1,9 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: azure-devops-agent
+  namespace: azure-devops
+spec:
+  type: 0
+  resourceID: "/subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourcegroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-ithc-mi"
+  clientID: "9bcd6a33-c10b-4a8b-a77d-7341592874de"
