@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: azure-devops
 resources:
   - ../../base
-  - ..azure-devops-token.yaml
+  - azure-devops-token.yaml
   - ../../azure-devops-agent-keda/azure-devops-agent.yaml
   - ../../azure-devops-agent-keda/identity.yaml
 patches:
