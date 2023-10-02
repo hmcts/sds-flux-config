@@ -7,5 +7,5 @@ resources:
   - ../../azure-devops-agent-keda/azure-devops-agent.yaml
   - ../../azure-devops-agent-keda/identity.yaml
 patches:
-- path: ../../azure-devops-agent-keda/prod.yaml
-- path: ../../azure-devops-agent-keda/prod/identity.yaml
+  - path: ../../azure-devops-agent-keda/prod.yaml
+  - path: ../../azure-devops-agent-keda/prod/identity.yaml
