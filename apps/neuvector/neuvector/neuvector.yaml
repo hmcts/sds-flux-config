@@ -95,8 +95,6 @@ spec:
                       operator: In
                       values:
                         - system
-        image:
-          repository: neuvector/controller
         replicas: 3
         azureFileShare:
           enabled: true
@@ -133,8 +131,6 @@ spec:
                       operator: In
                       values:
                         - system
-        image:
-          repository: neuvector/manager
         env:
           ssl: false
         ingress:
@@ -173,9 +169,6 @@ spec:
         updater:
           # If false, cve updater will not be installed
           enabled: true
-          image:
-            repository: neuvector/updater
-            tag: latest
           schedule: "0 0 * * *"
   chart:
     spec:
