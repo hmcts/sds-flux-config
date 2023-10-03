@@ -101,9 +101,6 @@ spec:
           secretName: nv-storage-secret
         configmap:
           enabled: true
-      enforcer:
-        image:
-          repository: neuvector/enforcer
       manager:
         tolerations:
           - key: "CriticalAddonsOnly"
