@@ -1,5 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../azure-devops-agent/image-repo.yaml
-  - ../azure-devops-agent/image-policy.yaml
+  - ../azure-devops-agent-keda/image-repo.yaml
+  - ../azure-devops-agent-keda/image-policy.yaml
