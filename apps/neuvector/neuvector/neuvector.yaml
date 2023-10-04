@@ -173,7 +173,7 @@ spec:
       # Make sure to update the CRDS when you change the version if required
       # https://github.com/hmcts/sds-flux-config/blob/master/apps/neuvector/crds/kustomization.yaml
       # see the versioned folders at https://github.com/neuvector/manifests/blob/main/kubernetes/
-      version: 1.4.1
+      version: 1.4.2
       sourceRef:
         kind: HelmRepository
         name: hmctspublic
