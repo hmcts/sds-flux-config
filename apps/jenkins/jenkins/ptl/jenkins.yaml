@@ -217,6 +217,12 @@ spec:
                     name: PDDA
                     recurse: true
                     title: PDDA
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/juror-.+\/master
+                    name: Juror
+                    recurse: true
+                    title: Juror Dashboard
           authentication: |
             jenkins:
               securityRealm:
