@@ -6,6 +6,7 @@ metadata:
   namespace: azure-devops
 spec:
   values:
+    maxReplicaCount: 6
     environment:
       AZP_POOL: hmcts-ss-ithc
     triggers:
