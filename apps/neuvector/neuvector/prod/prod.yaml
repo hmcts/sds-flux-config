@@ -6,10 +6,9 @@ metadata:
   namespace: neuvector
 spec:
   values:
-    neuvector:
-      rules:
-        admission:
-          enable: false
+    rules:
+      admission:
+        enable: false
     keyvault:
       name: sdsneuvector
       licensesecretname: neuvector-license
