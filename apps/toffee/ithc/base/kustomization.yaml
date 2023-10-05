@@ -1,11 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../../base
-- ../../../base/workload-identity
+  - ../../base
 namespace: toffee
 patches:
-- path: ../../identity/ithc.yaml
-- path: ../../frontend/ithc.yaml
-- path: ../../recipe-backend/ithc.yaml
-- path: ../../recipe-receiver/ithc.yaml
+  - path: ../../identity/ithc.yaml
+  - path: ../../frontend/ithc.yaml
+  - path: ../../recipe-backend/ithc.yaml
+  - path: ../../recipe-receiver/ithc.yaml
+  - path: ../../serviceaccount/ithc.yaml

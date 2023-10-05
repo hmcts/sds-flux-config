@@ -67,7 +67,7 @@ do
 
   if [ -d "apps/${NAMESPACE}/${ENVIRONMENT}" ]; then
     SA_PATH="path: ../../serviceaccount/${MI_ENV_SHORT_NAME}.yaml" yq eval -i '.patches += [env(SA_PATH)]' apps/${NAMESPACE}/${ENVIRONMENT}/base/kustomization.yaml
-    CLIENT_ID=$(az identity show --name ${WL_IDENTITY_NAME}-${MI_ENV_NAME}-mi --resource-group managed-identities-${MI_ENV_NAME}-rg --subscription DTS-SHAREDSERVICES-${ENVIRONMENT} --query clientId -o tsv)
+    CLIENT_ID=$(az identity show --name ${WL_IDENTITY_NAME}-${MI_ENV_NAME}-mi --resource-group managed-identities-${MI_ENV_NAME}-rg --subscription DTS-SHAREDSERVICES-${MI_ENV_NAME} --query clientId -o tsv)
 (
 cat <<EOF
 apiVersion: v1

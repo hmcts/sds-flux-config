@@ -1,9 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../../base
+  - ../../base
 namespace: pre
 patches:
-- path: ../../identity/sbox.yaml
-- path: ../../pre-portal/sbox.yaml
-- path: ../../pre-api/sbox.yaml
+  - path: ../../identity/sbox.yaml
+  - path: ../../pre-portal/sbox.yaml
+  - path: ../../pre-api/sbox.yaml
+  - path: ../../serviceaccount/sbox.yaml
