@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: jenkins
-      version: 4.6.4
+      version: 4.6.6
       sourceRef:
         kind: HelmRepository
         name: jenkins
@@ -217,6 +217,12 @@ spec:
                     name: PDDA
                     recurse: true
                     title: PDDA
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/juror-.+\/master
+                    name: Juror
+                    recurse: true
+                    title: Juror Dashboard
           authentication: |
             jenkins:
               securityRealm:

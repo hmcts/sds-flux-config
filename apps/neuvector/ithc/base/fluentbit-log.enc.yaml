@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  azure_log_workspace_id: ENC[AES256_GCM,data:b3avGLybFQq+SLGb42h7kT0PFGHAXZceLNxomfBwb4vNyq1NGJNOnIGLKKugk4Pg,iv:zf6FPKkR7n6ye7F6WLnfVYX31i0AJkuAg8fmdXeYXUo=,tag:8ZxGYJ8xsAoK/D9FPBpCaA==,type:str]
-  azure_log_workspace_shared_key: ENC[AES256_GCM,data:HH0L38TRV2TO++HNVl9IED7qPBVh0+PwWrke+szLMknA6+R3ro+JRCF+EtFY6/vfjQuYDW6qi+4RPvkSeg1BG7PA3ZcHdJArlMtdo0+SirivOz6P0SCzqegHF3ZzTYY3tq9LuaMnC/iTW6NacPlIcTEsQ+6ogrCf,iv:Ih1xeth37VvsV6SKufe+zTnYwrkp6B8hXVeqeoCVf/Q=,tag:H9fJuSyJFYeGs5++gB8o0Q==,type:str]
+  azure_log_workspace_id: ENC[AES256_GCM,data:dnlnb1atjmgycVtTskkUopsQwTPW5ZOrn0JEhRwIKYOiK7yxzKF8gxaYCI2cgR2k,iv:neLSVDHej67Dy5o4jW8irp6YsrZp6Te1k5TsMNNFR8Y=,tag:4JAQ/VGShOaeDZfkEK0KaQ==,type:str]
+  azure_log_workspace_shared_key: ENC[AES256_GCM,data:+Q2EYKvoFIwXI0UlK+Ck7qexZxgzkSccTfqPpWQ5sp//lz1uJizuui0p/rPXfBTrTZxPiGQxvuHJ+tQrN6cjiOMgez4PYVA6iVNhU10SbPqbkZAqgVE1ymPufd/0+ToiCAnGookrhWZ/eDHA0JCygrLy5IVCyMZb,iv:0hJbnRSgMGH8+GHr/cwCc/CF3C24A8JDWIitwBeV+Ug=,tag:MjPLiobj2XVtzu8uk41tNg==,type:str]
 kind: Secret
 metadata:
   creationTimestamp: null
@@ -11,13 +11,15 @@ sops:
   kms: []
   gcp_kms: []
   azure_kv:
-    -   vault_url: https://dtssharedservicesithckv.vault.azure.net
-        name: sops-key
-        version: 96812ee192044e6daabee8d3621b456f
-        created_at: '2021-02-17T15:27:28Z'
-        enc: YvGnym4hQRMqFv-8ZlGhU1lac_c-pgyyOMljGAL3XMpwj0mIU8Vii6njUBHMvnoyHUeORJHixsThdPDVyYSmxgs81uQmMR9QhuRxGvdRrzwAclsK-3jHwVCnlf5EmDYbFhKTxA8UTljHYvuUCrI34lUCvsgvgo4cj2_RwRKC3t7p_VCRTQOOWAkHkL0mRqcMRrF3Xy9abyJWM6ckUlW3aP00BGwD6-jiszTRBRJZjgFPIr9letIqSgM5Ry7-x2ncQ0whINqWoA7zjWVVJ0ucok0IC02_JaUDFXVyr_e9_1KuBJpw753SWNIRqFQ5r90o9piwVIWR198HKfFmoEisng
-  lastmodified: '2021-02-17T15:27:31Z'
-  mac: ENC[AES256_GCM,data:w+VCLZFO4ejJHS4oGh2Yc7599TY5FeLUQQEAYgOcb23H/qTnxD622Wq4xB93O49a7ePRr1pAkfN5lqn3kXXKS5gSnQnqJXZuEw60Yswuoa/NiHMxMD3w0l8QYsB5M0oPF1Oo5aiWA55H5Fm1xzcgkdYUMYtT5AkXVKfAu0Jzqq8=,iv:E2GLtKU941F8NZl9erWh/5aiLzGX4C20RFJG3VtKb+4=,tag:vy+HLk37+iPXP2iq25XK0g==,type:str]
+    - vault_url: https://dtssharedservicesithckv.vault.azure.net
+      name: sops-key
+      version: 96812ee192044e6daabee8d3621b456f
+      created_at: "2023-10-04T14:56:15Z"
+      enc: GybT6vpiuD2m-1WpnKcDCY3iWy3PqhqJAq-_BW_G1PivjDY4TdviHLWEKkpgH42gWTIpUiML7Asw-ANNcbTIcyrXLqtyuFcUpvs2pcw_lUKWXV8ARESNyqyzGJbhQVK-cpD0cem7x9J3QSvgjbib6oQNwIJY7mNthcWZfWf2NGB_YwmUzdsUP4UdzsM9nu3TupDVIh-8AaoTOfJanvTUzBjVz8_ppPc0gfafEyMTaQzCESWF0KdJBloIGucdTrVtn7jfooascXSe3WjwBdu-Xxy5H6A3FlEDpkLQrtcfP7UUghSMUQn2U3REof3Dxz6p-dftdHnO3ICwugGI9k2M7w
+  hc_vault: []
+  age: []
+  lastmodified: "2023-10-04T14:56:16Z"
+  mac: ENC[AES256_GCM,data:Oe6mBdiF83Z9k80l6IeVdqNJUG2uogMSWNPHzVyxwdzj/+DuwfpEZ9MadmXhNrhf/UnO8gv+EbvvIQIATm92+vWgChxQ/zFGDwDdPobMo4U849a2er7szhfMllTDzLt//uFFU+2/Cqm/bFKiH/jBLcztoHaisRZWc136K8sMXd8=,iv:48A8FRtZ05aWOvEqanzntBNfSylbqHdN61rTMFqkZiQ=,tag:mLXdmGjhr3RLVxk7NpGL7Q==,type:str]
   pgp: []
-  unencrypted_suffix: _unencrypted
-  version: 3.5.0
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3

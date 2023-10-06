@@ -54,6 +54,8 @@ spec:
                 - security-event
                 - audit
               Syslog_In_Json: false
+              Scan_Config:
+                Auto_Scan: true
               Cluster_Name: sds-stg01
       manager:
         ingress:

@@ -1,13 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../../base
-- ../../identity/apple-azure-identity.yaml
-- ../../../base/workload-identity
+  - ../../base
+  - ../../identity/apple-azure-identity.yaml
 namespace: toffee
 patches:
-- path: ../../identity/sbox.yaml
-- path: ../../frontend/sbox.yaml
-- path: ../../recipe-backend/sbox.yaml
-- path: ../../recipe-receiver/sbox.yaml
-- path: workload-identity.yaml
+  - path: ../../identity/sbox.yaml
+  - path: ../../frontend/sbox.yaml
+  - path: ../../recipe-backend/sbox.yaml
+  - path: ../../recipe-receiver/sbox.yaml
+  - path: workload-identity.yaml
+  - path: ../../serviceaccount/sbox.yaml

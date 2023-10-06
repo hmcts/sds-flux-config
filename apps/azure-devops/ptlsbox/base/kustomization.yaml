@@ -4,8 +4,6 @@ namespace: azure-devops
 resources:
 - ../../base
 - azure-devops-token.yaml
-- ../../azure-devops-agent-keda/azure-devops-agent.yaml
-- ../../azure-devops-agent-keda/identity.yaml
 patches:
 - path: ../../azure-devops-agent-keda/ptlsbox.yaml
 - path: ../../azure-devops-agent-keda/ptlsbox/identity.yaml
