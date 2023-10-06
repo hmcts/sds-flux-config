@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: juror
+  namespace: juror
+spec:
+  resourceID: "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourcegroups/managed-identities-stg-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/juror-sbox-mi"
+  clientID: "TBA"
