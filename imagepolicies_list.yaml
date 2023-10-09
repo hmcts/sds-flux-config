@@ -1,0 +1,1065 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: azure-devops-agent
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: azure-devops-agent
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: darts-api
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: darts-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: darts-gateway
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: darts-gateway
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: darts-portal
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: darts-portal
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: darts-stub-services
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: darts-stub-services
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: hmi-libra-dtu
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: hmi-libra-dtu
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: hmi-rota-dtu
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: hmi-rota-dtu
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: jenkins-webhook-relay
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: jenkins-webhook-relay
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: lgy-iac-web
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: lgy-iac-web
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: mailrelay
+  namespace: flux-system
+spec:
+  filterTags:
+    pattern: ^v[0-9].[0-9].[0-9]
+  imageRepositoryRef:
+    name: mailrelay
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: mi-adf-shir
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: mi-adf-shir
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: mi-adf-shir-dev
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: mi-adf-shir
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: mi-azure-functions
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: mi-azure-functions
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: mi-azure-functions-dev
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^pr-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)
+  imageRepositoryRef:
+    name: mi-azure-functions
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: mi-house-keeping-service
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: mi-house-keeping-service
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: my-time-api
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: my-time-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: my-time-frontend
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: my-time-frontend
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-account-management
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-account-management
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-account-management-clear-audit-cron
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-account-management-clear-audit-cron
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-account-management-inactive-verification-cron
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-account-management-inactive-verification-cron
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-account-management-media-reporting-cron
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-account-management-media-reporting-cron
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-channel-management
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-channel-management
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-data-management
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-data-management
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-data-management-expired-artefacts-cron
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-data-management-expired-artefacts-cron
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-data-management-no-match-artefacts-cron
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-data-management-no-match-artefacts-cron
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-data-management-subscriptions-cron
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-data-management-subscriptions-cron
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-frontend
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-frontend
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-publication-services
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-publication-services
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-publication-services-mi-reporting-cron
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-publication-services-mi-reporting-cron
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-refresh-views-cron
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-refresh-views-cron
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pip-subscription-management
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pip-subscription-management
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pre-api
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pre-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: pre-portal
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: pre-portal
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: toffee-frontend
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: toffee-frontend
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: toffee-recipe-backend
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: toffee-recipe-backend
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: toffee-recipe-receiver
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: toffee-recipe-receiver
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: version-reporter-docsoutdated
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: version-reporter-docsoutdated
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: version-reporter-helmcharts
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: version-reporter-helmcharts
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: version-reporter-paloalto
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: version-reporter-paloalto
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: version-reporter-renovate
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: version-reporter-renovate
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-admin-web
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-admin-web
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-admin-web-dev
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-admin-web
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-admin-web-staging
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^staging-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-admin-web
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-booking-queue-subscriber
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-booking-queue-subscriber
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-booking-queue-subscriber-dev
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-booking-queue-subscriber
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-booking-queue-subscriber-staging
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^staging-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-booking-queue-subscriber
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-bookings-api
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-bookings-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-bookings-api-dev
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-bookings-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-bookings-api-staging
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^staging-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-bookings-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-notification-api
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-notification-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-notification-api-dev
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-notification-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-notification-api-staging
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^staging-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-notification-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-scheduler-jobs
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-scheduler-jobs
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-scheduler-jobs-dev
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-scheduler-jobs
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-scheduler-jobs-staging
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^staging-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-scheduler-jobs
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-test-api
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^staging-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-test-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-test-api-prod
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-test-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-test-web
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^staging-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-test-web
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-user-api
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-user-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-user-api-dev
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-user-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-user-api-staging
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^staging-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-user-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-video-api
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-video-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-video-api-dev
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-video-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-video-api-staging
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^staging-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-video-api
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-video-web
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^prod-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-video-web
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-video-web-dev
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^dev-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-video-web
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+  name: vh-video-web-staging
+  namespace: flux-system
+spec:
+  filterTags:
+    extract: $ts
+    pattern: ^staging-[a-f0-9]+-(?P<ts>[0-9]+)
+  imageRepositoryRef:
+    name: vh-video-web
+  policy:
+    alphabetical:
+      order: asc
