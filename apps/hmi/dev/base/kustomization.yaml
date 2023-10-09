@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - ../../../base
 - ../../identity/hmi-azure-identity.yaml
+- ../../../base/workload-identity
 namespace: hmi
 patches:
 - path: ../../identity/dev.yaml
