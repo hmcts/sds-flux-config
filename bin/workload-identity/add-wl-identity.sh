@@ -44,11 +44,11 @@ else
   yq eval -i '.resources += "../../base/workload-identity"' apps/${NAMESPACE}/base/kustomization.yaml
 fi
 
-if [ -d "apps/${NAMESPACE}/preview" ]; then
-  if [[ $(yq eval '.resources[] | ( . == "../../../base/workload-identity")' apps/${NAMESPACE}/preview/base/kustomization.yaml) =~ "true" ]]; then
-    echo "Reference to ../../base/workload-identity already exists in preview, ignoring.."
+if [ -d "apps/${NAMESPACE}/dev" ]; then
+  if [[ $(yq eval '.resources[] | ( . == "../../../base/workload-identity")' apps/${NAMESPACE}/dev/base/kustomization.yaml) =~ "true" ]]; then
+    echo "Reference to ../../base/workload-identity already exists in dev, ignoring.."
   else
-    yq eval -i '.resources += "../../../base/workload-identity"' apps/${NAMESPACE}/preview/base/kustomization.yaml
+    yq eval -i '.resources += "../../../base/workload-identity"' apps/${NAMESPACE}/dev/base/kustomization.yaml
   fi
 fi
 

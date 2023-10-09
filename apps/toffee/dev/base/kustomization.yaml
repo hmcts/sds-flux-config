@@ -4,6 +4,7 @@ resources:
   - ../../../base
   - ../../identity/toffee-azure-identity.yaml
   - ../../identity/apple-azure-identity.yaml
+  - ../../../base/workload-identity
 namespace: toffee
 patches:
   - path: ../../identity/dev.yaml

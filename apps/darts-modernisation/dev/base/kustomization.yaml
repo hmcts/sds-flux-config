@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../../base
   - ../../identity/identity.yaml
+  - ../../../base/workload-identity
 namespace: darts-modernisation
 patches:
   - path: ../../identity/stg.yaml
