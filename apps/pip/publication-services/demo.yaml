@@ -7,7 +7,6 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      replicas: 0
       ingressHost: pip-publication-services.demo.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
