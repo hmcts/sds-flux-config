@@ -6,7 +6,7 @@ spec:
   releaseName: pip-subscription-management
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-db3bb45-20231010143615 # {"$imagepolicy": "flux-system:pip-subscription-management"}
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-9220961-20231010155356 # {"$imagepolicy": "flux-system:pip-subscription-management"}
       disableTraefikTls: true
   chart:
     spec:
