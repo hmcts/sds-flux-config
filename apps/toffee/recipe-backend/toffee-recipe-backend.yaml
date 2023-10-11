@@ -11,8 +11,6 @@ spec:
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest
       aadIdentityName: toffee
       disableTraefikTls: true
-      useWorkloadIdentity: true
-      workloadClientID: ${WORKLOAD_IDENTITY_ID}
   chart:
     spec:
       chart: ./stable/toffee-recipe-backend
