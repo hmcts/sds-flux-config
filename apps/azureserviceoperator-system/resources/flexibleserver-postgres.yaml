@@ -7,8 +7,8 @@ metadata:
     serviceoperator.azure.com/reconcile-policy: detach-on-delete
 spec:
   tags:
-    builtFrom: https://github.com/hmcts/cnp-flux-config
-    businessArea: CFT
+    builtFrom: https://github.com/hmcts/sds-flux-config
+    businessArea: Cross-Cutting
     environment: development
     autoShutdown: "true"
     application: "${APPLICATION_TAG:-not-set-yet}"
