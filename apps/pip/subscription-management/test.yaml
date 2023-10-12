@@ -7,10 +7,43 @@ spec:
   releaseName: pip-subscription-management
   values:
     java:
-      replicas: 0
       ingressHost: pip-subscription-management.test.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
         CHANNEL_MANAGEMENT_URL: https://pip-channel-management.test.platform.hmcts.net
         PUBLICATION_SERVICES_URL: https://pip-publication-services.test.platform.hmcts.net
+      keyVaults:
+        pip-ss-kv:
+          excludeEnvironmentSuffix: false
+          resourceGroup: pip-ss-test-rg
+          usePodIdentity: true
+          secrets:
+            - name: subscription-management-POSTGRES-FLEXIBLE-DATABASE
+              alias: DB_NAME
+            - name: subscription-management-POSTGRES-FLEXIBLE-PASS
+              alias: DB_PASS
+            - name: subscription-management-POSTGRES-FLEXIBLE-PORT
+              alias: DB_PORT
+            - name: subscription-management-POSTGRES-FLEXIBLE-USER
+              alias: DB_USER
+            - name: subscription-management-POSTGRES-FLEXIBLE-HOST
+              alias: DB_HOST
+            - name: app-pip-subscription-management-id
+              alias: CLIENT_ID
+            - name: app-pip-subscription-management-pwd
+              alias: CLIENT_SECRET
+            - name: app-tenant-id
+              alias: TENANT_ID
+            - name: app-pip-subscription-management-scope
+              alias: APP_URI
+            - name: app-pip-data-management-scope
+              alias: DATA_MANAGEMENT_AZ_API
+            - name: app-pip-account-management-scope
+              alias: ACCOUNT_MANAGEMENT_AZ_API
+            - name: app-pip-channel-management-scope
+              alias: CHANNEL_MANAGEMENT_AZ_API
+            - name: app-pip-publication-services-scope
+              alias: PUBLICATION_SERVICES_AZ_API
+            - name: app-insights-java-connection-string
+              alias: APP_INSIGHTS_CONNECTION_STRING
