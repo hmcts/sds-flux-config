@@ -12,3 +12,41 @@ spec:
         CHANNEL_MANAGEMENT_URL: https://pip-channel-management.demo.platform.hmcts.net
         PUBLICATION_SERVICES_URL: https://pip-publication-services.demo.platform.hmcts.net
         MANAGED_IDENTITY_CLIENT_ID: 2979592b-7abf-4461-b0d7-95fdfae46c91
+      keyVaults:
+        pip-ss-kv:
+          excludeEnvironmentSuffix: false
+          resourceGroup: pip-ss-demo-rg
+          usePodIdentity: true
+          secrets:
+            - name: shared-storageaccount-connection-string
+              alias: CONNECTION_STRING
+            - name: shared-storageaccount-name
+              alias: STORAGE_ACCOUNT_NAME
+            - name: data-management-POSTGRES-FLEXIBLE-DATABASE
+              alias: DB_NAME
+            - name: data-management-POSTGRES-FLEXIBLE-PASS
+              alias: DB_PASS
+            - name: data-management-POSTGRES-FLEXIBLE-PORT
+              alias: DB_PORT
+            - name: data-management-POSTGRES-FLEXIBLE-USER
+              alias: DB_USER
+            - name: data-management-POSTGRES-FLEXIBLE-HOST
+              alias: DB_HOST
+            - name: app-pip-data-management-id
+              alias: CLIENT_ID
+            - name: app-pip-data-management-pwd
+              alias: CLIENT_SECRET
+            - name: app-tenant-id
+              alias: TENANT_ID
+            - name: app-pip-data-management-scope
+              alias: APP_URI
+            - name: app-pip-subscription-management-scope
+              alias: SUBSCRIPTION_MANAGEMENT_AZ_API
+            - name: app-pip-account-management-scope
+              alias: ACCOUNT_MANAGEMENT_AZ_API
+            - name: app-pip-publication-services-scope
+              alias: PUBLICATION_SERVICES_AZ_API
+            - name: app-pip-channel-management-scope
+              alias: CHANNEL_MANAGEMENT_AZ_API
+            - name: app-insights-java-connection-string
+              alias: APP_INSIGHTS_CONNECTION_STRING
