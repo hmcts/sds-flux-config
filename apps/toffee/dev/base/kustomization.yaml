@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - ../../../base
   - ../../../base/workload-identity
+  - ../../identity/toffee-azure-identity.yaml
+  - ../../identity/apple-azure-identity.yaml
 namespace: toffee
 patches:
   - path: ../../serviceaccount/stg.yaml
