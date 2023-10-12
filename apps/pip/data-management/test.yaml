@@ -6,7 +6,6 @@ spec:
   releaseName: pip-data-management
   values:
     java:
-      replicas: 0
       ingressHost: pip-data-management.test.platform.hmcts.net
       environment:
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
@@ -14,3 +13,41 @@ spec:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.test.platform.hmcts.net
         CHANNEL_MANAGEMENT_URL: https://pip-channel-management.test.platform.hmcts.net
         MANAGED_IDENTITY_CLIENT_ID: 0e0c8682-a038-4aa8-9619-bb88a7ba9357
+      keyVaults:
+        pip-ss-kv:
+          excludeEnvironmentSuffix: false
+          resourceGroup: pip-ss-test-rg
+          usePodIdentity: true
+          secrets:
+            - name: shared-storageaccount-connection-string
+              alias: CONNECTION_STRING
+            - name: shared-storageaccount-name
+              alias: STORAGE_ACCOUNT_NAME
+            - name: data-management-POSTGRES-FLEXIBLE-DATABASE
+              alias: DB_NAME
+            - name: data-management-POSTGRES-FLEXIBLE-PASS
+              alias: DB_PASS
+            - name: data-management-POSTGRES-FLEXIBLE-PORT
+              alias: DB_PORT
+            - name: data-management-POSTGRES-FLEXIBLE-USER
+              alias: DB_USER
+            - name: data-management-POSTGRES-FLEXIBLE-HOST
+              alias: DB_HOST
+            - name: app-pip-data-management-id
+              alias: CLIENT_ID
+            - name: app-pip-data-management-pwd
+              alias: CLIENT_SECRET
+            - name: app-tenant-id
+              alias: TENANT_ID
+            - name: app-pip-data-management-scope
+              alias: APP_URI
+            - name: app-pip-subscription-management-scope
+              alias: SUBSCRIPTION_MANAGEMENT_AZ_API
+            - name: app-pip-account-management-scope
+              alias: ACCOUNT_MANAGEMENT_AZ_API
+            - name: app-pip-publication-services-scope
+              alias: PUBLICATION_SERVICES_AZ_API
+            - name: app-pip-channel-management-scope
+              alias: CHANNEL_MANAGEMENT_AZ_API
+            - name: app-insights-java-connection-string
+              alias: APP_INSIGHTS_CONNECTION_STRING
