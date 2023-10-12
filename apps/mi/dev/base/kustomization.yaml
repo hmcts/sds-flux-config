@@ -9,7 +9,7 @@ resources:
   - ../../../rbac/dev-role.yaml
   - ../../mi-sftp-server/mi-sftp-server.yaml
   - ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
-
+  - ../../../base/workload-identity
 patches:
   #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/dev.yaml
@@ -34,3 +34,4 @@ patches:
   - path: ../../identity/mi-azure-functions-identity-dev.yaml
   - path: ../../identity/mi-house-keeping-service-identity-dev.yaml
   - path: ../../identity/mi-integration-service-identity-dev.yaml
+  - path: ../../serviceaccount/dev.yaml
