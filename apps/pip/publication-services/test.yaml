@@ -7,6 +7,7 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
+      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-377-c05243f-20231012140019
       ingressHost: pip-publication-services.test.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
@@ -14,3 +15,5 @@ spec:
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
         NOTIFY_CFT_SIGN_IN_LINK: https://pip-frontend.test.platform.hmcts.net/cft-login
+
+
