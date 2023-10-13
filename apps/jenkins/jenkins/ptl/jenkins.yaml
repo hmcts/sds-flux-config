@@ -24,6 +24,8 @@ spec:
           value: "production"
         - name: AZURE_KEYVAULT_URL
           value: https://ptl.vault.azure.net
+      podLabels:
+        aadpodidbinding: jenkins
       JCasC:
         configScripts:
           welcome-message: |
