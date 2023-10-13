@@ -28,8 +28,6 @@ spec:
       enabled: true
       isDefaultClass: true
     deployment:
-      podLabels:
-        aadpodidbinding: traefik
       additionalVolumes:
         - name: traefik-default-cert
           csi:

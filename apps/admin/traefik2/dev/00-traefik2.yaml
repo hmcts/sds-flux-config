@@ -8,3 +8,6 @@ spec:
     service:
       spec:
         loadBalancerIP: "10.145.15.250"
+    deployment:
+      podLabels:
+        aadpodidbinding: traefik
