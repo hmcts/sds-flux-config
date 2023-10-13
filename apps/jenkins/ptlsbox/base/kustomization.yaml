@@ -4,7 +4,6 @@ namespace: jenkins
 resources:
 - ../../base
 - ../../jenkins-webhook-relay/ptlsbox/jenkins-webhook-relay.enc.yaml
-- ../../../base/workload-identity
 patches:
 - path: ../../jenkins-webhook-relay/ptlsbox/jenkins-webhook-relay.yaml
 - path: ../../serviceaccount/ptlsbox.yaml
