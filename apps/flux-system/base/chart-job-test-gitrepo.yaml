@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: ssh://github.com/hmcts/chart-job
+  url: ssh://github.com:hmcts/chart-job.git
   ref:
     branch: https://github.com/hmcts/chart-job/tree/DTSPO-15287-Add-tolerations-to-chart-job4
   secretRef:
