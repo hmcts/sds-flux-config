@@ -14,11 +14,7 @@ spec:
         name: jenkins
         namespace: jenkins
   values:
-    serviceAccount:
-      name: jenkins
     controller:
-      podLabels:
-        azure.workload.identity/use: "true"
       # image version is managed in jenkins-controller-version.yaml
       containerSecurityContext:
         runAsUser: 0

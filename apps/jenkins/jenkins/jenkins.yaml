@@ -12,11 +12,14 @@ spec:
   values:
     serviceAccount:
       create: false
+      name: jenkins
     controller:
       # Used for label app.kubernetes.io/component
       componentName: "jenkins-controller"
       # image version is managed in jenkins-controller-version.yaml
       image: "hmctspublic.azurecr.io/jenkins/jenkins"
+      podLabels:
+        azure.workload.identity/use: "true"
       containerSecurityContext:
         runAsUser: 0
         runAsGroup: 0
