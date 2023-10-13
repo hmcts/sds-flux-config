@@ -14,6 +14,8 @@ spec:
         name: jenkins
         namespace: jenkins
   values:
+    serviceAccount:
+      name: jenkins
     controller:
       podLabels:
         azure.workload.identity/use: "true"
