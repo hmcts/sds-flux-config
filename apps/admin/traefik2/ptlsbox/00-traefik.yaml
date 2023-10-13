@@ -13,4 +13,6 @@ spec:
         loadBalancerIP: "10.147.15.250"
     deployment:
       podLabels:
-        aadpodidbinding: traefik
+        useWorkloadIdentity: "true"
+    serviceAccount:
+      name: admin
