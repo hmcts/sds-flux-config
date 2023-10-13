@@ -14,9 +14,6 @@ spec:
         name: jenkins
         namespace: jenkins
   values:
-    serviceaccount:
-      annotations:
-        azure.workload.identity/client-id: 5709471c-6cb6-4f38-9bbb-3a4103429b62
     controller:
       statefulSetLabels:
         azure.workload.identity/use: "true"
