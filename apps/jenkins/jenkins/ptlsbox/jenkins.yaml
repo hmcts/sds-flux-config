@@ -15,7 +15,7 @@ spec:
         namespace: jenkins
   values:
     controller:
-      statefulSetLabels:
+      podLabels:
         azure.workload.identity/use: "true"
       # image version is managed in jenkins-controller-version.yaml
       containerSecurityContext:
