@@ -1,14 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: mi
-
 resources:
   - ../../base
   - mi-adf-auth-values.enc.yaml
   - ../../../rbac/nonprod-role.yaml
   - ../../mi-sftp-server/mi-sftp-server.yaml
   - ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
-
 patches:
   #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/ithc.yaml
