@@ -8,6 +8,8 @@ resources:
 - ../../traefik2
 - ../../external-dns/
 - ../../delete-hung-pods
+# Dev-specific workload identity resources
+- ../../base/workload-identity
 namespace: admin
 patches:
 - path: ../../aad-pod-identity/dev/azure-identity-patch.yaml
