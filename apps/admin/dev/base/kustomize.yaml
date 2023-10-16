@@ -1,0 +1,9 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: admin
+  namespace: flux-system
+spec:
+  postBuild:
+    substitute:
+      WORKLOAD_IDENTITY_ID: "5841b1d5-949c-43e3-884a-87787eb77f38"
