@@ -11,7 +11,7 @@ resources:
 - ../../traefik2
 - ../../external-dns/
 - ../../delete-hung-pods
-# Dev-specific workload identity resources
+# Dev-specific workload identity resources which uses ENVIRONMENT instead of WI_ENVIRONMENT
 - ../../base/workload-identity
 namespace: admin
 patches:
