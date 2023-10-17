@@ -7,7 +7,6 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      replicas: 0
       ingressHost: pip-publication-services.staging.platform.hmcts.net
       environment:
         NOTIFY_LINK_SUBSCRIPTION_PAGE: https://pip-frontend.staging.platform.hmcts.net/subscription-management
