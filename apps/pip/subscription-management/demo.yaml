@@ -17,7 +17,6 @@ spec:
         pip-ss-kv:
           excludeEnvironmentSuffix: false
           resourceGroup: pip-ss-demo-rg
-          usePodIdentity: true
           secrets:
             - name: subscription-management-POSTGRES-FLEXIBLE-DATABASE
               alias: DB_NAME
