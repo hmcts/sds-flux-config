@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../mailrelay2/dev/mailrelay-values.enc.yaml
-  - ../../../base/workload-identity
 namespace: mailrelay2
 patches:
   - path: ../../mailrelay2/dev/dev.yaml

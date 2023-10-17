@@ -6,7 +6,6 @@ resources:
   - dev-mailrelay-key.enc.yaml
   - internal-dev-mailrelay-tls.enc.yaml
   - mailrelay-values.enc.yaml
-  - ../../../base/workload-identity
 namespace: mailrelay
 patches:
   - path: ../../mailrelay/dev/dev.yaml

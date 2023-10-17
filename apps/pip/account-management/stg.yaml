@@ -14,3 +14,47 @@ spec:
         MAX_SYSTEM_ADMIN_ACCOUNTS: 20
         ENABLE_TESTING_SUPPORT_API: true
         MANAGED_IDENTITY_CLIENT_ID: 8d0ead51-3b31-44df-a78e-ada4eea9fe87
+      keyVaults:
+        pip-ss-kv:
+          excludeEnvironmentSuffix: false
+          resourceGroup: pip-ss-stg-rg
+          usePodIdentity: true
+          secrets:
+            - name: auto-pip-stg-pip-account-management-stg-id
+              alias: CLIENT_ID_B2C
+            - name: auto-pip-stg-pip-account-management-stg-pwd
+              alias: CLIENT_SECRET_B2C
+            - name: b2c-tenant-id
+              alias: TENANT_GUID_B2C
+            - name: b2c-extension-app-id
+              alias: EXTENSION_ID
+            - name: shared-storageaccount-connection-string
+              alias: CONNECTION_STRING
+            - name: shared-storageaccount-name
+              alias: STORAGE_ACCOUNT_NAME
+            - name: account-management-POSTGRES-FLEXIBLE-DATABASE
+              alias: DB_NAME
+            - name: account-management-POSTGRES-FLEXIBLE-PASS
+              alias: DB_PASS
+            - name: account-management-POSTGRES-FLEXIBLE-PORT
+              alias: DB_PORT
+            - name: account-management-POSTGRES-FLEXIBLE-USER
+              alias: DB_USER
+            - name: account-management-POSTGRES-FLEXIBLE-HOST
+              alias: DB_HOST
+            - name: app-pip-account-management-id
+              alias: CLIENT_ID
+            - name: app-pip-account-management-pwd
+              alias: CLIENT_SECRET
+            - name: app-tenant-id
+              alias: TENANT_ID
+            - name: app-pip-account-management-scope
+              alias: APP_URI
+            - name: app-pip-publication-services-scope
+              alias: PUBLICATION_SERVICES_AZ_API
+            - name: b2c-ad-url
+              alias: IDENTITY_ISSUER
+            - name: app-pip-subscription-management-scope
+              alias: SUBSCRIPTION_MANAGEMENT_AZ_API
+            - name: app-insights-java-connection-string
+              alias: APP_INSIGHTS_CONNECTION_STRING
