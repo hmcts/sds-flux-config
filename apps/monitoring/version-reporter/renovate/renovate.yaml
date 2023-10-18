@@ -1,45 +1,58 @@
-apiVersion: batch/v1
-kind: CronJob
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
 metadata:
   name: version-reporter-service-renovate
   namespace: monitoring
   labels:
     app: version-reporter-service-renovate
 spec:
-  schedule: "0 8-17 * * 1-5" # Once every hour 8am to 5pm, Monday to Friday
-  concurrencyPolicy: "Forbid"
-  failedJobsHistoryLimit: 5
-  startingDeadlineSeconds: 300
-  successfulJobsHistoryLimit: 5
-  jobTemplate:
+  releaseName: version-reporter-service-helmcharts
+  chart:
     spec:
-      backoffLimit: 3
-      template:
-        spec:
-          restartPolicy: Never
-          serviceAccountName: version-reporter-service-sa
-          containers:
-            - name: version-reporter-service
-              image: sdshmctspublic.azurecr.io/version-reporter-service/renovate:prod-69b8ef7-20230907121255 #{"$imagepolicy": "flux-system:version-reporter-renovate"}
-              imagePullPolicy: Always
-              env:
-                - name: MAX_DAYS_AWAY
-                  value: "3"
-                - name: MAX_REPOS
-                  value: "300"
-                - name: COSMOS_DB_URI
-                  value: "https://sds-platform-version-reporter.documents.azure.com:443/"
-                - name: COSMOS_DB_NAME
-                  value: "reports"
-                - name: COSMOS_DB_CONTAINER
-                  value: "renovate"
-                - name: COSMOS_KEY
-                  valueFrom:
-                    secretKeyRef:
-                      name: version-reporter
-                      key: cosmos_key
-                - name: GITHUB_TOKEN
-                  valueFrom:
-                    secretKeyRef:
-                      name: version-reporter-github-token
-                      key: github_token
+      chart: job
+      sourceRef:
+        kind: GitRepository
+        name: chart-job
+        namespace: flux-system
+      interval: 1m
+  interval: 5m
+  values:
+    schedule: "0 8-17 * * 1-5" # Once every hour 8am to 5pm, Monday to Friday
+    concurrencyPolicy: "Forbid"
+    failedJobsHistoryLimit: 5
+    startingDeadlineSeconds: 300
+    successfulJobsHistoryLimit: 5
+    backoffLimit: 3
+    restartPolicy: Never
+    serviceAccountName: version-reporter-service-sa
+        name: version-reporter-service
+        image: sdshmctspublic.azurecr.io/version-reporter-service/renovate:prod-69b8ef7-20230907121255 #{"$imagepolicy": "flux-system:version-reporter-renovate"}
+        imagePullPolicy: Always
+        env:
+          - name: MAX_DAYS_AWAY
+            value: "3"
+          - name: MAX_REPOS
+            value: "300"
+          - name: COSMOS_DB_URI
+            value: "https://sds-platform-version-reporter.documents.azure.com:443/"
+          - name: COSMOS_DB_NAME
+            value: "reports"
+          - name: COSMOS_DB_CONTAINER
+            value: "renovate"
+          - name: COSMOS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: version-reporter
+                key: cosmos_key
+          - name: GITHUB_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: version-reporter-github-token
+                key: github_token
+    nodeSelector:
+      agentpool: cronjob
+    tolerations:
+      - key: dedicated
+        effect: NoSchedule
+        operator: Equal
+        value: jobs

@@ -11,11 +11,19 @@ spec:
     global:
       job:
         kind: CronJob
+    nodeSelector:
+      agentpool: cronjob
+    tolerations:
+      - key: dedicated
+        effect: NoSchedule
+        operator: Equal
+        value: jobs
+  interval: 5m
   chart:
     spec:
-      chart: cronjobtest
-      version: 0.0.1
+      chart: job
       sourceRef:
-        kind: HelmRepository
-        name: hmctspublic
+        kind: GitRepository
+        name: chart-job
         namespace: flux-system
+      interval: 1m
