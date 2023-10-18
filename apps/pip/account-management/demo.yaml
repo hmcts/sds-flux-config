@@ -16,7 +16,6 @@ spec:
         pip-ss-kv:
           excludeEnvironmentSuffix: false
           resourceGroup: pip-ss-demo-rg
-          usePodIdentity: true
           secrets:
             - name: auto-pip-demo-pip-account-management-demo-id
               alias: CLIENT_ID_B2C
