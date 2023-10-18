@@ -18,7 +18,6 @@ spec:
         pip-ss-kv:
           excludeEnvironmentSuffix: false
           resourceGroup: pip-ss-stg-rg
-          usePodIdentity: true
           secrets:
             - name: auto-pip-stg-pip-account-management-stg-id
               alias: CLIENT_ID_B2C
