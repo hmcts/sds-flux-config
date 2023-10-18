@@ -26,6 +26,7 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
         name: version-reporter-service
+        kind: CronJob
         image: sdshmctspublic.azurecr.io/version-reporter-service/renovate:prod-69b8ef7-20230907121255 #{"$imagepolicy": "flux-system:version-reporter-renovate"}
         imagePullPolicy: Always
         env:
