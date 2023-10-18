@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: mailrelay
 resources:
-- ../../base
-- ../../mailrelay/prod/mailrelay-values.enc.yaml
-
+  - ../../base
+  - ../../mailrelay/prod/mailrelay-values.enc.yaml
 patches:
-- path: ../../mailrelay/prod/prod.yaml
-- path: ../../identity/prod.yaml
+  - path: ../../mailrelay/prod/prod.yaml
+  - path: ../../identity/prod.yaml
+  - path: ../../serviceaccount/prod.yaml
