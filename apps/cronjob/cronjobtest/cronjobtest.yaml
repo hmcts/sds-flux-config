@@ -4,6 +4,7 @@ metadata:
   name: crontabtest
 spec:
   releaseName: crontabtest
+  interval: 5m
   values:
     job:
       image: hmctspublic.azurecr.io/hmcts/plum-batch:latest
@@ -18,7 +19,6 @@ spec:
         effect: NoSchedule
         operator: Equal
         value: jobs
-  interval: 5m
   chart:
     spec:
       chart: job
