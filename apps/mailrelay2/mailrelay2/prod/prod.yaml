@@ -17,9 +17,6 @@ spec:
 
     workload: StatefulSet
 
-    aadIdentityName: mailrelay2
-    usePodIdentity: "true"
-    managedIdentityClientId: af6acaaa-1d4b-4909-9fac-2ffc77d54979
     authKeyVaultName: sds-mailrelay
     authKeyVaultSecrets:
       - "pcol"
