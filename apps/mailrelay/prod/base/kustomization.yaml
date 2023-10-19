@@ -6,4 +6,5 @@ resources:
   - ../../mailrelay/prod/mailrelay-values.enc.yaml
 patches:
   - path: ../../mailrelay/prod/prod.yaml
+  - path: ../../identity/prod.yaml
   - path: ../../serviceaccount/prod.yaml

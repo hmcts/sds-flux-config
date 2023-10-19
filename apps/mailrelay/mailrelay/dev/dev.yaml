@@ -32,3 +32,9 @@ spec:
     global:
       environment: dev
       enableOutboundTls: true
+
+    useWorkloadIdentity: true
+
+    serviceAccount:
+      create: false
+      name: mailrelay

@@ -2,6 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
+  - ../identity/mailrelay2-azure-identity.yaml
+  - ../identity/mailrelay2-azure-identity-binding.yaml
   - ../mailrelay2/mailrelay2.yaml
   - ../../base/workload-identity
 namespace: mailrelay2
