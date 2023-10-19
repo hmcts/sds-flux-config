@@ -34,3 +34,7 @@ spec:
       enableOutboundTls: true
 
     useWorkloadIdentity: true
+
+    serviceAccount:
+      create: false
+      name: mailrelay
