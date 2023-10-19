@@ -7,7 +7,7 @@ spec:
   interval: 5m
   url: ssh://github.com/hmcts/chart-job
   ref:
-    branch: DTSPO-15287-Add-tolerations-to-chart-job4
+    branch: DTSPO-15293-adding-volumes-to-pod-template
   secretRef:
     name: git-credentials
   ignore: |
