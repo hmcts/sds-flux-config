@@ -47,3 +47,7 @@ spec:
       enableAuth: true
 
     useWorkloadIdentity: true
+
+    serviceAccount:
+      create: false
+      name: mailrelay
