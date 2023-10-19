@@ -9,4 +9,5 @@ resources:
 namespace: mailrelay
 patches:
   - path: ../../mailrelay/dev/dev.yaml
+  - path: ../../identity/dev.yaml
   - path: ../../serviceaccount/stg.yaml

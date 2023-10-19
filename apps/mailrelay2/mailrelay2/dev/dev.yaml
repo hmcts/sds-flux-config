@@ -45,3 +45,9 @@ spec:
       enableInboundTls: true
       enableInternalTls: true
       enableAuth: true
+
+    useWorkloadIdentity: true
+
+    serviceAccount:
+      create: false
+      name: mailrelay
