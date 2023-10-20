@@ -1,11 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: mi
-
 resources:
   - ../../base
   - mi-adf-auth-values.enc.yaml
-
 patches:
   #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/prod.yaml
@@ -18,3 +16,4 @@ patches:
   - path: ../../identity/mi-azure-functions-identity-prod.yaml
   - path: ../../identity/mi-house-keeping-service-identity-prod.yaml
   - path: ../../identity/mi-integration-service-identity-prod.yaml
+  - path: ../../serviceaccount/prod.yaml
