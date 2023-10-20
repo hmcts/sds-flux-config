@@ -24,7 +24,7 @@ spec:
       ingress:
         hostName: sds-sandbox-build.hmcts.net
       secondaryingress:
-        hostName: static-sds-sandbox-build.platform.hmcts.net
+        hostName: static-sds-sandbox-build.hmcts.net
       containerEnv:
         - name: ENVIRONMENT
           value: "sandbox"
@@ -40,7 +40,7 @@ spec:
           resource-root: |
             unclassified:
               resourceRoot:
-                url: "https://static-sds-sandbox-build.platform.hmcts.net/"
+                url: "https://static-sds-sandbox-build.hmcts.net/"
           env-vars: |
             jenkins:
               globalNodeProperties:
