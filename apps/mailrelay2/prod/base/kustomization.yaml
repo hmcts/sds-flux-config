@@ -6,4 +6,5 @@ resources:
 namespace: mailrelay2
 patches:
   - path: ../../mailrelay2/prod/prod.yaml
+  - path: ../../identity/prod.yaml
   - path: ../../serviceaccount/prod.yaml
