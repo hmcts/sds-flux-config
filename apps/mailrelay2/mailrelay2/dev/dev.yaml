@@ -14,6 +14,8 @@ spec:
       type: LoadBalancer
       loadBalancerIP: "10.145.31.32"
     workload: StatefulSet
+    usePodIdentity: "false"
+    managedIdentityClientId: 8fb619a4-44cb-454e-ab38-fefb9bf49b94
     authKeyVaultName: sds-mailrelay
     authKeyVaultSecrets:
     - "v1test"
