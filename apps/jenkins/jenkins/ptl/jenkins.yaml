@@ -16,7 +16,7 @@ spec:
   values:
     controller:
       ingress:
-        hostName: sds-build.hmcts.net
+        hostName: sds-build.platform.hmcts.net
       secondaryingress:
         hostName: static-sds-build.platform.hmcts.net
       containerEnv:
@@ -34,7 +34,7 @@ spec:
           resource-root: |
             unclassified:
               resourceRoot:
-                url: "https://static-sds-build.hmcts.net/"
+                url: "https://static-sds-build.platform.hmcts.net/"
           env-vars: |
             jenkins:
               globalNodeProperties:
@@ -228,14 +228,14 @@ spec:
               securityRealm:
                 azure:
                   cacheDuration: 3600
-                  clientId: "07eea4fc-5659-4992-9037-1002d42ba205"
-                  clientSecret: "$${jenkins-client-secret}"
+                  clientId: "$${aad-auth-app-id}"
+                  clientSecret: "$${aad-auth-client-secret}"
                   tenant: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
           location: |
             unclassified:
               location:
                 adminAddress: jenkins-reform@hmcts.net
-                url: 'https://sds-build.hmcts.net'
+                url: 'https://sds-build.platform.hmcts.net'
           azure-key-vault: |
             unclassified:
               azureKeyVault:
