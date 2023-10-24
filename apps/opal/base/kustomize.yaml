@@ -1,0 +1,13 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: opal
+  namespace: flux-system
+spec:
+  path: ./apps/opal/${ENVIRONMENT}/base
+  postBuild:
+    substitute:
+      NAMESPACE: "opal"
+      TEAM_AAD_GROUP_ID: "e6e67c03-3a16-4881-a8c6-290ba01a9a99"
+      TEAM_NOTIFICATION_CHANNEL: "opal-builds"
+      WI_NAME: opal
