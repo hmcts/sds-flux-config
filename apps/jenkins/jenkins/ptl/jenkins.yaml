@@ -134,90 +134,120 @@ spec:
                 - all:
                     name: all
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/(sds-toffee-recipes-service|sds-toffee-frontend|sds-toffee-shared-infrastructure)\/master
                     name: Platform
                     recurse: true
                     title: Platform
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/(pip|pih)-.+\/master
                     name: PIP
                     recurse: true
                     title: Publishing & Information Dashboard
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/vh-.+\/master
                     name: VH
                     recurse: true
                     title: Video Hearings Dashboard
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/hmi-.+\/master
                     name: HMI
                     recurse: true
                     title: Hearing Management Interface
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/pre-.+\/master
                     name: PRE
                     recurse: true
                     title: Pre Recorded Evidence Dashboard
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/tax-tribunals.*\/master
                     name: TT
                     recurse: true
                     title: Tax Tribunals Dashboard
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/employment-tribunals.+\/master
                     name: ET
                     recurse: true
                     title: Employment Tribunals Dashboard
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/c100.*\/master
                     name: C100
                     recurse: true
                     title: Child Arrangement Service Dashboard
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/help-with-fees.*\/master
                     name: HWF
                     recurse: true
                     title: Help with Fees
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/libragob.*\/master
                     name: Libra GoB
                     recurse: true
                     title: Libra Green on Black Dashboard
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/lgy-.*\/master
                     name: Legacy
                     recurse: true
                     title: DTS Legacy Apps
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/darts.*\/master
                     name: DARTS-Modernisation
                     recurse: true
                     title: DARTS Modernisastion
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/darts-shared.*\/master
                     name: Darts Shared Infrastructure
                     recurse: true
                     title: Darts Shared Infrastructure
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/pdda.*\/master
                     name: PDDA
                     recurse: true
                     title: PDDA
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/juror-.+\/master
                     name: Juror
