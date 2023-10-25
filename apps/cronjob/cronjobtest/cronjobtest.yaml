@@ -4,18 +4,23 @@ metadata:
   name: crontabtest
 spec:
   releaseName: crontabtest
+  interval: 5m
   values:
-    job:
-      image: hmctspublic.azurecr.io/hmcts/plum-batch:latest
-      schedule: "*/1 * * * *"
-    global:
-      job:
-        kind: CronJob
+    image: hmctspublic.azurecr.io/hmcts/plum-batch:latest
+    schedule: "*/1 * * * *"
+    kind: CronJob
+    nodeSelector:
+      agentpool: cronjob
+    tolerations:
+      - key: dedicated
+        effect: NoSchedule
+        operator: Equal
+        value: jobs
   chart:
     spec:
-      chart: cronjobtest
-      version: 0.0.1
+      chart: job
       sourceRef:
-        kind: HelmRepository
-        name: hmctspublic
+        kind: GitRepository
+        name: chart-job
         namespace: flux-system
+      interval: 1m

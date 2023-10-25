@@ -104,30 +104,40 @@ spec:
                 - all:
                     name: all
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS_.*Platform.*\/(sds-toffee-recipes-service|sds-toffee-frontend|sds-toffee-shared-infrastructure)\/master
                     name: Platform
                     recurse: true
                     title: Platform
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS_.*PIP-.*\/.+\/master
                     name: PIP
                     recurse: true
                     title: Publishing & Information Dashboard
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS_.*VH-.*\/.+\/master
                     name: VH
                     recurse: true
                     title: Video Hearings Dashboard
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS_.*HMI-.*\/.+\/master
                     name: HMI
                     recurse: true
                     title: Hearing Management Interface
                 - buildMonitor:
+                    config:
+                      displayCommitters: false
                     includeRegex: >-
                       ^HMCTS.*\/lgy-.*\/master
                     name: Legacy
