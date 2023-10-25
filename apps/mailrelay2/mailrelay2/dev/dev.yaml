@@ -14,8 +14,6 @@ spec:
       type: LoadBalancer
       loadBalancerIP: "10.145.31.32"
     workload: StatefulSet
-    usePodIdentity: "false"
-    managedIdentityClientId: e7de80b8-4048-4b8e-babf-1a242a9ac5b7
     authKeyVaultName: sds-mailrelay
     authKeyVaultSecrets:
     - "v1test"
@@ -45,9 +43,3 @@ spec:
       enableInboundTls: true
       enableInternalTls: true
       enableAuth: true
-
-    useWorkloadIdentity: true
-
-    serviceAccount:
-      create: false
-      name: mailrelay2

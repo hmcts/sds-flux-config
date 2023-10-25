@@ -36,10 +36,3 @@ spec:
     global:
       environment: prod
       enableOutboundTls: true
-
-    useWorkloadIdentity: true
-    managedIdentityClientId: af6acaaa-1d4b-4909-9fac-2ffc77d54979
-
-    serviceAccount:
-      create: false
-      name: mailrelay
