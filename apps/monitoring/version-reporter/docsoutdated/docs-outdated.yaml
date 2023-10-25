@@ -36,8 +36,8 @@ spec:
       COSMOS_DB_CONTAINER: docsoutdated
     secrets:
       COSMOS_KEY:
-          secretRef: version-reporter
-          key: cosmos_key
+        secretRef: version-reporter
+        key: cosmos_key
     nodeSelector:
       agentpool: cronjob
     tolerations:
