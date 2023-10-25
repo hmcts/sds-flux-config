@@ -22,9 +22,9 @@ spec:
         readOnlyRootFilesystem: false
         allowPrivilegeEscalation: true
       ingress:
-        hostName: sds-sandbox-build.platform.hmcts.net
+        hostName: sds-sandbox-build.hmcts.net
       secondaryingress:
-        hostName: static-sds-sandbox-build.platform.hmcts.net
+        hostName: static-sds-sandbox-build.hmcts.net
       containerEnv:
         - name: ENVIRONMENT
           value: "sandbox"
@@ -40,7 +40,7 @@ spec:
           resource-root: |
             unclassified:
               resourceRoot:
-                url: "https://static-sds-sandbox-build.platform.hmcts.net/"
+                url: "https://static-sds-sandbox-build.hmcts.net/"
           env-vars: |
             jenkins:
               globalNodeProperties:
@@ -138,14 +138,14 @@ spec:
               securityRealm:
                 azure:
                   cacheDuration: 3600
-                  clientId: "$${aad-auth-app-id}"
-                  clientSecret: "$${aad-auth-client-secret}"
+                  clientId: "ff4a892c-e0f0-49b0-a8f7-3ab95a236562"
+                  clientSecret: "$${jenkins-client-secret}"
                   tenant: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
           location: |
             unclassified:
               location:
                 adminAddress: jenkins-reform@hmcts.net
-                url: 'https://sds-sandbox-build.platform.hmcts.net'
+                url: 'https://sds-sandbox-build.hmcts.net'
           azure-key-vault: |
             unclassified:
               azureKeyVault:
