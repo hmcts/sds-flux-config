@@ -1,8 +1,0 @@
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentity
-metadata:
-  name: mailrelay2
-  namespace: mailrelay2
-spec:
-  resourceID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourcegroups/managed-identities-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/mailrelay2-prod-mi
-  clientID: 525756a2-a14a-450c-a09e-f7e17a400da5
