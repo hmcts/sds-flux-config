@@ -38,11 +38,11 @@ spec:
       COSMOS_DB_CONTAINER: renovate
     secrets:
       COSMOS_KEY:
-          secretRef: version-reporter
-          key: cosmos_key
+        secretRef: version-reporter
+        key: cosmos_key
       GITHUB_TOKEN:
-          secretRef: version-reporter-github-token
-          key: github_token
+        secretRef: version-reporter-github-token
+        key: github_token
     nodeSelector:
       agentpool: cronjob
     tolerations:

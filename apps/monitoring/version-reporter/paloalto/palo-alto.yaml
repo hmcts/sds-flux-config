@@ -37,17 +37,17 @@ spec:
       COSMOS_DB_CONTAINER: paloalto
     secrets:
       COSMOS_KEY:
-          secretRef: version-reporter
-          key: cosmos_key
+        secretRef: version-reporter
+        key: cosmos_key
       AZURE_TENANT_ID:
-            secretRef: version-reporter
-            key: tenant_id
+        secretRef: version-reporter
+        key: tenant_id
       AZURE_CLIENT_ID:
-            secretRef: version-reporter
-            key: client_id
+        secretRef: version-reporter
+        key: client_id
       AZURE_CLIENT_SECRET:
-            secretRef: version-reporter
-            key: client_secret
+        secretRef: version-reporter
+        key: client_secret
     nodeSelector:
       agentpool: cronjob
     tolerations:
