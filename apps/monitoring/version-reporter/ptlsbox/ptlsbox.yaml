@@ -6,12 +6,9 @@ metadata:
   labels:
     app: version-reporter-service
 spec:
+  releaseName: version-reporter-service
   values:
-    name: version-reporter-service
-    env:
-      - name: ENVIRONMENT
-        value: "sbox"
-      - name: SERVER_IP
-        value: "10.48.0.71"
-      - name: HUB_SUBSCRIPTION_ID
-        value: "ea3a8c1e-af9d-4108-bc86-a7e2d267f49c"
+    environment:
+      ENVIRONMENT: sbox
+      SERVER_IP: 10.48.0.71
+      HUB_SUBSCRIPTION_ID: ea3a8c1e-af9d-4108-bc86-a7e2d267f49c

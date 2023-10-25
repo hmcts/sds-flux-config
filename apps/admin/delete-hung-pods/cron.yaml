@@ -11,11 +11,13 @@ spec:
       chart: job
       sourceRef:
         kind: GitRepository
-        name: chart-job
+        name: chart-jobs
         namespace: flux-system
       interval: 1m
   interval: 5m
   values:
+    global:
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     successfulJobsHistoryLimit: 1
     failedJobsHistoryLimit: 2
     concurrencyPolicy: Forbid
@@ -23,7 +25,6 @@ spec:
     backoffLimit: 2
     activeDeadlineSeconds: 600
     restartPolicy: Never
-    name: kubectl
     kind: CronJob
     image: bitnami/kubectl
     command:
@@ -31,13 +32,13 @@ spec:
       - -c
       - /mnt/delete-hung-pods.sh
     volumeMounts:
-      - mountPath: /mnt
-        name: hung-pod-script
+      - name: hung-pod-script
+        mountPath: /mnt
     volumes:
       - name: hung-pod-script
         configMap:
-        name: delete-hung-pods
-        defaultMode: 0777
+          name: delete-hung-pods
+          defaultMode: 0777
     nodeSelector:
       agentpool: cronjob
     tolerations:

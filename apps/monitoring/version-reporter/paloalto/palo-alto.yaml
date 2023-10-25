@@ -6,7 +6,7 @@ metadata:
   labels:
     app: version-reporter-service-palo-alto
 spec:
-  releaseName: restart-pods
+  releaseName: version-reporter-service-palo-alto
   chart:
     spec:
       chart: job
@@ -17,6 +17,8 @@ spec:
       interval: 1m
   interval: 5m
   values:
+    global:
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     schedule: "0 16 1,14 * *" #Every 1st and 14th day of the month at 4pm
     concurrencyPolicy: "Forbid"
     failedJobsHistoryLimit: 5
@@ -25,39 +27,27 @@ spec:
     backoffLimit: 3
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
-        name: version-reporter-service
-        kind: CronJob
-        image: sdshmctspublic.azurecr.io/version-reporter-service/paloalto:prod-69b8ef7-20230907121320 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
-        imagePullPolicy: Always
-        env:
-          - name: DESIRED_VERSION
-            value: "10.2.0"
-          - name: COSMOS_DB_URI
-            value: "https://sds-platform-version-reporter.documents.azure.com:443/"
-          - name: COSMOS_DB_NAME
-            value: "reports"
-          - name: COSMOS_DB_CONTAINER
-            value: "paloalto"
-          - name: COSMOS_KEY
-            valueFrom:
-              secretKeyRef:
-                name: version-reporter
-                key: cosmos_key
-          - name: AZURE_TENANT_ID
-            valueFrom:
-              secretKeyRef:
-                name: version-reporter
-                key: tenant_id
-          - name: AZURE_CLIENT_ID
-            valueFrom:
-              secretKeyRef:
-                name: version-reporter
-                key: client_id
-          - name: AZURE_CLIENT_SECRET
-            valueFrom:
-              secretKeyRef:
-                name: version-reporter
-                key: client_secret
+    kind: CronJob
+    image: sdshmctspublic.azurecr.io/version-reporter-service/paloalto:prod-69b8ef7-20230907121320 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
+    imagePullPolicy: Always
+    environment:
+      DESIRED_VERSION: 10.2.0
+      COSMOS_DB_URI: https://sds-platform-version-reporter.documents.azure.com:443/
+      COSMOS_DB_NAME: reports
+      COSMOS_DB_CONTAINER: paloalto
+    secrets:
+      COSMOS_KEY:
+          secretRef: version-reporter
+          key: cosmos_key
+      AZURE_TENANT_ID:
+            secretRef: version-reporter
+            key: tenant_id
+      AZURE_CLIENT_ID:
+            secretRef: version-reporter
+            key: client_id
+      AZURE_CLIENT_SECRET:
+            secretRef: version-reporter
+            key: client_secret
     nodeSelector:
       agentpool: cronjob
     tolerations:
