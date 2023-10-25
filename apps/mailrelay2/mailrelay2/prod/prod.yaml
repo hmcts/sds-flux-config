@@ -55,3 +55,11 @@ spec:
       enableOutboundTls: true
       enableInboundTls: true
       enableAuth: true
+
+    useWorkloadIdentity: true
+    usePodIdentity: "false"
+    managedIdentityClientId: 525756a2-a14a-450c-a09e-f7e17a400da5
+
+    serviceAccount:
+      create: false
+      name: mailrelay 
