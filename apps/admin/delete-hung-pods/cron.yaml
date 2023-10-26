@@ -21,7 +21,7 @@ spec:
     successfulJobsHistoryLimit: 1
     failedJobsHistoryLimit: 2
     concurrencyPolicy: Forbid
-    schedule: "*/1 * * * *"
+    schedule: "*/15 * * * *"
     backoffLimit: 2
     activeDeadlineSeconds: 600
     restartPolicy: Never
