@@ -6,7 +6,6 @@ resources:
 - ../../kured/demo/kured-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
 - ../../traefik2
-- ../../delete-hung-pods
 namespace: admin
 patches:
 - path: ../../aad-pod-identity/demo/azure-identity-patch.yaml
