@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - cron.yaml
   - hung-pod-script.yaml
-  - rbac.yaml
 namespace: admin
