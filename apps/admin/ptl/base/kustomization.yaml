@@ -7,6 +7,7 @@ resources:
 - ../../kured/ptl/kured-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
 - ../../traefik2
+- ../../delete-hung-pods
 
 patches:
 - path: ../../aad-pod-identity/ptl/azure-identity-patch.yaml
