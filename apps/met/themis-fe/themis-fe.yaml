@@ -49,6 +49,8 @@ spec:
         UPDATES_FIXEDRATE_IN_MILLISECONDS: 2000
         updates_fixedRate_in_milliseconds: 2000
         SPRING_JMS_SERVICEBUS_PRICING-TIER: PREMIUM
+        logging_level_root: ERROR
+        LOGGING_LEVEL_ROOT: ERROR
   chart:
     spec:
       chart: ./charts/met
