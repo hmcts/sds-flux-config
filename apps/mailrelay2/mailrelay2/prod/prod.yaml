@@ -55,3 +55,7 @@ spec:
       enableOutboundTls: true
       enableInboundTls: true
       enableAuth: true
+
+    serviceAccount:
+      create: false
+      name: mailrelay2
