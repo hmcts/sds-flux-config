@@ -11,7 +11,7 @@ spec:
       chart: job
       sourceRef:
         kind: GitRepository
-        name: chart-jobs
+        name: chart-job
         namespace: flux-system
       interval: 1m
   interval: 5m
