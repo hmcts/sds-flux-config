@@ -7,7 +7,6 @@ resources:
 - ../../../rbac/reader-clusterrole.yaml
 - ../../traefik2
 - ../../external-dns/
-- ../../delete-hung-pods
 namespace: admin
 patches:
 - path: ../../aad-pod-identity/dev/azure-identity-patch.yaml
