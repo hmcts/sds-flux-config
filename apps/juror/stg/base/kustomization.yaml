@@ -4,5 +4,6 @@ resources:
   - ../../base
 namespace: juror
 patches:
+  - path: ../../juror-public/stg.yaml
   - path: ../../juror-scheduler-api/stg.yaml
   - path: ../../serviceaccount/stg.yaml

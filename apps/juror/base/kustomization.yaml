@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../juror-scheduler-api/juror-scheduler-api.yaml
+  - ../juror-public/juror-public.yaml
   - ../../base/workload-identity
 namespace: juror
