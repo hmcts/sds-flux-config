@@ -6,9 +6,8 @@ spec:
   releaseName: pip-account-management-media-reporting-cron
   values:
     job:
-      schedule: "02 13 * * 1,3,5"
+      schedule: "0 8 * FEB,APR,JUN,AUG,OCT,DEC MON"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.staging.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.staging.platform.hmcts.net
         TRIGGER_TYPE: MEDIA_APPLICATION_REPORTING
-        TRIGGER: true
