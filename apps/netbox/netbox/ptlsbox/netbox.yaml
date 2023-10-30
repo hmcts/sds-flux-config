@@ -14,4 +14,9 @@ spec:
         name: hmctspublic
         namespace: flux-system
   releaseName: netbox
-# using default values from chart
+  values:
+    ingress:
+      hosts:
+        - host: netbox-sandbox.hmcts.net
+          paths:
+            - /
