@@ -6,7 +6,7 @@ spec:
   releaseName: pip-account-management-media-reporting-cron
   values:
     job:
-      schedule: "0 0 * JAN,MAR,MAY,JUL,SEP,NOV MON"
+      schedule: "10 10 * * 1,3,5"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
