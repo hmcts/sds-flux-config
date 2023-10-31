@@ -6,7 +6,6 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      replicas: 0
       ingressHost: www.court-tribunal-hearings.service.gov.uk
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
