@@ -17,17 +17,17 @@ spec:
   values:
     ingress:
       hosts:
-        - host: netbox.platform.hmcts.net
+        - host: netbox.hmcts.net
           paths:
             # NB: You may also want to set the basePath above
             - /
       tls:
         - hosts:
-            - netbox.platform.hmcts.net
+            - netbox.hmcts.net
 
     csrf:
       trustedOrigins:
-        - https://netbox.platform.hmcts.net
+        - https://netbox.hmcts.net
 
     ## External database settings
     # These are used if postgresql.enabled is false, and are ignored otherwise
