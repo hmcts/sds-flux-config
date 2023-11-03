@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: juror-public
+  namespace: juror
+spec:
+  releaseName: juror-public
+  values:
+    java:
+      ingressHost: juror-public.test.platform.hmcts.net

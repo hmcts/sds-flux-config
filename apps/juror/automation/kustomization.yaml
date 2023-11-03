@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - ../juror-scheduler-api/image-repo.yaml
   - ../juror-scheduler-api/image-policy.yaml
+  - ../juror-public/image-repo.yaml
+  - ../juror-public/image-policy.yaml
