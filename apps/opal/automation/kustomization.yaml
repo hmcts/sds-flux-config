@@ -1,0 +1,5 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../opal-account-enquiry/image-repo.yaml
+  - ../opal-account-enquiry/image-policy.yaml

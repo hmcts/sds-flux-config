@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: opal-account-enquiry
+spec:
+  releaseName: opal-account-enquiry
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/opal/account-enquiry:tbc #{"$imagepolicy": "flux-system:opal-account-enquiry"}
+      useInterpodAntiAffinity: true
+  chart:
+    spec:
+      chart: ./stable/opal-account-enquiry
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
