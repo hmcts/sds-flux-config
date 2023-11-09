@@ -1,0 +1,31 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: dc-purview-shir-deployment
+spec:
+  releaseName: dc-purview-shir
+  values:
+    disableTraefikTls: true
+    language: python
+    applicationPort: 8080
+    replicas: 2
+    useInterpodAntiAffinity: true
+    readinessPath: /api/ping
+    livenessPath: /api/ping
+    ingressSessionAffinity:
+      enabled: true
+    envFromSecret: purview-secret
+    image: sdshmctspublic.azurecr.io/dc/purview-integration-runtime:prod-844cca3-20230821092242 #{"$imagepolicy": "flux-system:docmosis"}
+    python:
+      memoryRequests: '1024Mi'
+      cpuRequests: '1000m'
+      memoryLimits: '3072Mi'
+      cpuLimits: '2000m'
+  chart:
+    spec:
+      chart: base
+      version: 1.1.0
+      sourceRef:
+        kind: HelmRepository
+        name: hmctspublic
+        namespace: flux-system
