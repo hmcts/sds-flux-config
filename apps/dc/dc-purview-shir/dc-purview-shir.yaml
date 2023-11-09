@@ -15,7 +15,7 @@ spec:
     ingressSessionAffinity:
       enabled: true
     envFromSecret: purview-secret
-    image: sdshmctspublic.azurecr.io/dc/purview-integration-runtime:prod-844cca3-20230821092242 #{"$imagepolicy": "flux-system:docmosis"}
+    image: sdshmctspublic.azurecr.io/dc/purview-integration-runtime:prod-844cca3-20230821092242 #{"$imagepolicy": "flux-system:dc-purview-shir"}
     python:
       memoryRequests: '1024Mi'
       cpuRequests: '1000m'
