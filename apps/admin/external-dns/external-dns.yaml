@@ -15,7 +15,7 @@ spec:
         namespace: admin
   values:
     extraArgs:
-      - --annotationFilter="external-dns.alpha.kubernetes.io/exclude notin (true)"
+      - "--annotation-filter=external-dns.alpha.kubernetes.io/exclude notin (true)"
     policy: sync
     serviceAccount:
       create: false
