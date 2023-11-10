@@ -4,7 +4,6 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  serviceAccountName: kustomize-controller
   path: ./clusters/sbox/01
   postBuild:
     substitute:
