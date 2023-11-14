@@ -16,6 +16,8 @@ spec:
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
         VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
+        DOM1__POSTLOGOUTREDIRECTURI: https://admin.hearings.reform.hmcts.net/logout
+        DOM1__REDIRECTURI: https://admin.hearings.reform.hmcts.net/home
       image: sdshmctspublic.azurecr.io/vh/video-web:prod-0d2b0a2-202311141722 # {"$imagepolicy": "flux-system:vh-video-web"}
   chart:
     spec:
