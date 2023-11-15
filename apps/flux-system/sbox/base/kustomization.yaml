@@ -5,6 +5,7 @@ resources:
 - ../../base/gotk-components.yaml
 # - git-credentials.enc.yaml
 - https://raw.githubusercontent.com/Azure/aad-pod-identity/master/charts/aad-pod-identity/crds/crd.yaml
+- identity-patch.yaml
 patches:
 - path: ../../base/patches/kustomize-controller-patch.yaml
-- path: identity-patch.yaml
+# - path: identity-patch.yaml
