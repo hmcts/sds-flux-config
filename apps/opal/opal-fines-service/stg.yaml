@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: opal-fines-service
+  namespace: opal
+spec:
+  releaseName: opal-fines-service
+  values:
+    java:
+      environment:
+        DUMMY_VAR: 0
+      disableTraefikTls: true
