@@ -3,8 +3,4 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../base/workload-identity
-  - ../opal-fines-service/image-repo.yaml
-  - ../opal-fines-service/image-policy.yaml
-  - ../opal-frontend/image-repo.yaml
-  - ../opal-frontend/image-policy.yaml
 namespace: opal
