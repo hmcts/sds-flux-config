@@ -6,7 +6,6 @@ metadata:
 spec:
   releaseName: opal-frontend
   values:
-    java:
+    nodejs:
       environment:
         DUMMY_VAR: 0
-      disableTraefikTls: true

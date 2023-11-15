@@ -14,5 +14,6 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    java:
+    nodejs:
       image: sdshmctspublic.azurecr.io/opal/frontend:prod-15268fc-20231114094123 # {"$imagepolicy": "flux-system:opal-frontend"}
+      disableTraefikTls: true

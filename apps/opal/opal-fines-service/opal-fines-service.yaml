@@ -16,3 +16,4 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/opal/fines-service:prod-f65deef-20231115153102 # {"$imagepolicy": "flux-system:opal-fines-service"}
+      disableTraefikTls: true
