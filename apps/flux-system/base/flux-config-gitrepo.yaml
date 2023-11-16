@@ -9,6 +9,4 @@ spec:
   timeout: 3m0s
   ref:
     branch: DTSPO-8700
-  secretRef:
-    name: git-credentials
-  url: ssh://git@github.com/hmcts/sds-flux-config
+  url: https://github.com/hmcts/sds-flux-config
