@@ -7,7 +7,7 @@ spec:
   path: ./clusters/sbox/01
   postBuild:
     substitute:
-      WI_NAME: "flux-system"
+      WI_NAME: "flux"
       ENVIRONMENT: "sbox"
       WI_ENVIRONMENT: "sbox"
       WI_CLUSTER: "01"
