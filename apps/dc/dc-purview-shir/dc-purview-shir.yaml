@@ -7,13 +7,9 @@ spec:
   interval: 5m
   releaseName: dc-purview-shir
   values:
-    labels:
-      app.kubernetes.io/instance: dc-purview-shir-deployment
-      app.kubernetes.io/name: dc-purview-shir-deployment
     image: sdshmctspublic.azurecr.io/dc/purview-integration-runtime:prod-844cca3-20230821092242 #{"$imagepolicy": "flux-system:dc-purview-shir"}
     keyVaults:
-      dc-vault-prod:
-        excludeEnvironmentSuffix: true
+      dc-vault:
         secrets:
         - dc-purview-auth-key
     secretsMountPath: 'C:\kvmnt'
