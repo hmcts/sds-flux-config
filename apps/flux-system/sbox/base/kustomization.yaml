@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - ../../base
 - ../../base/gotk-components.yaml
+- service-account.yaml
 - workload-identity.yaml
 # - git-credentials.enc.yaml
 - https://raw.githubusercontent.com/Azure/aad-pod-identity/master/charts/aad-pod-identity/crds/crd.yaml
