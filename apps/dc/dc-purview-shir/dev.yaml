@@ -6,11 +6,7 @@ metadata:
 spec:
   releaseName: dc-purview-shir
   values:
-    image: sdshmctspublic.azurecr.io/dc/dc-purview-integration-runtime:dev-d3daaf9-20231103094138 #{"$imagepolicy": "flux-system:dc-purview-shir-dev"}
-    replicaCount: 4
-    memoryLimits: '4096Mi'
-    environment: "dev"
-    resourceGroup: "dc-dev-rg"
-    subscriptionId: "867a878b-cb68-4de5-9741-361ac9e178b6"
-    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    managedIdentityClientId: "e9269bef-5b35-454b-b302-8ed1ba014375"
+    base:
+      image: sdshmctspublic.azurecr.io/dc/dc-purview-integration-runtime:dev-d3daaf9-20231103094138 #{"$imagepolicy": "flux-system:dc-purview-shir-dev"}
+      replicaCount: 4
+      memoryLimits: '4096Mi'
