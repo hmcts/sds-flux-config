@@ -11,7 +11,7 @@ spec:
       dc-vault-dev:
         excludeEnvironmentSuffix: true
         secrets:
-          - dc-purview-auth-key
+        - dc-purview-auth-key
     replicaCount: 4
     memoryLimits: '4096Mi'
     environment: "dev"
