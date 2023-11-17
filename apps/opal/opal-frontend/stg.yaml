@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: opal-frontend
+  namespace: opal
+spec:
+  releaseName: opal-frontend
+  values:
+    nodejs:
+      environment:
+        DUMMY_VAR: 0
