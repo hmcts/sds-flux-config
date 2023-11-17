@@ -223,6 +223,12 @@ spec:
                     name: Juror
                     recurse: true
                     title: Juror Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/opal-.*\/master
+                    name: GoB-OPAL
+                    recurse: true
+                    title: Green on Black/OPAL Dashboard
           authentication: |
             jenkins:
               securityRealm:
