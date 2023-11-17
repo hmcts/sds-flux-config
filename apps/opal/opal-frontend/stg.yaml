@@ -7,5 +7,6 @@ spec:
   releaseName: opal-frontend
   values:
     nodejs:
+      ingressHost: opal-frontend.staging.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
