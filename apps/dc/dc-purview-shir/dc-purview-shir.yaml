@@ -11,8 +11,11 @@ spec:
       app.kubernetes.io/instance: dc-purview-shir-deployment
       app.kubernetes.io/name: dc-purview-shir-deployment
     image: sdshmctspublic.azurecr.io/dc/purview-integration-runtime:prod-844cca3-20230821092242 #{"$imagepolicy": "flux-system:dc-purview-shir"}
-    keyVaultSecrets:
-      - dc-purview-auth-key
+    keyVaults:
+        dc-vault-prod:
+          excludeEnvironmentSuffix: true
+          secrets:
+            - dc-purview-auth-key
     secretsMountPath: 'C:\kvmnt'
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
   chart:

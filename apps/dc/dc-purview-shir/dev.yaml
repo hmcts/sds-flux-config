@@ -7,6 +7,11 @@ spec:
   releaseName: dc-purview-shir
   values:
     image: sdshmctspublic.azurecr.io/dc/dc-purview-integration-runtime:dev-d3daaf9-20231103094138 #{"$imagepolicy": "flux-system:dc-purview-shir-dev"}
+    keyVaults:
+        dc-vault-dev:
+          excludeEnvironmentSuffix: true
+          secrets:
+            - dc-purview-auth-key
     replicaCount: 4
     memoryLimits: '4096Mi'
     environment: "dev"
