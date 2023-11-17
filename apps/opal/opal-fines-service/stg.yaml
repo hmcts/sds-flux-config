@@ -7,5 +7,6 @@ spec:
   releaseName: opal-fines-service
   values:
     java:
+      ingressHost: opal-fines-service.staging.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
