@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: dc-purview-shir-deployment
+  namespace: dc
+spec:
+  releaseName: dc-purview-shir
+  values:
+    base:
+      image: sdshmctspublic.azurecr.io/dc/dc-purview-integration-runtime:dev-d3daaf9-20231103094138 #{"$imagepolicy": "flux-system:dc-purview-shir-dev"}
+      replicaCount: 4
+      memoryLimits: '4096Mi'
