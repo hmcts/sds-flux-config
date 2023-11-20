@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: opal-fines-service
-  namespace: opal
+  name: juror-pnc
+  namespace: juror
 spec:
-  releaseName: opal-fines-service
+  releaseName: juror-pnc
   chart:
     spec:
-      chart: ./stable/opal-fines-service
+      chart: ./stable/juror-pnc
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/opal/fines-service:prod-1dae739-20231120092323 # {"$imagepolicy": "flux-system:opal-fines-service"}
+      image: sdshmctspublic.azurecr.io/juror/pnc:TBC # {"$imagepolicy": "flux-system:juror-pnc"}
       disableTraefikTls: true
