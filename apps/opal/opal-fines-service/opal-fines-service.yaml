@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: darts-gateway
-  namespace: darts-modernisation
+  name: opal-fines-service
+  namespace: opal
 spec:
-  releaseName: darts-gateway
+  releaseName: opal-fines-service
   chart:
     spec:
-      chart: ./stable/darts-gateway
+      chart: ./stable/opal-fines-service
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/gateway:prod-c44565c-20231120083128 # {"$imagepolicy": "flux-system:darts-gateway"}
+      image: sdshmctspublic.azurecr.io/opal/fines-service:prod-3354fd8-20231117132254 # {"$imagepolicy": "flux-system:opal-fines-service"}
       disableTraefikTls: true

@@ -3,6 +3,10 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../opal-fines-service/opal-fines-service.yaml
+  - ../../opal-frontend/opal-frontend.yaml
 namespace: opal
 patches:
   - path: ../../serviceaccount/stg.yaml
+  - path: ../../opal-fines-service/stg.yaml
+  - path: ../../opal-frontend/stg.yaml
