@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: juror-pnc
+  namespace: juror
+spec:
+  releaseName: juror-pnc
+  values:
+    java:
+      ingressHost: juror-pnc.staging.platform.hmcts.net
