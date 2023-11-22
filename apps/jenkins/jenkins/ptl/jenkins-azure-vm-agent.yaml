@@ -59,9 +59,6 @@ spec:
               osDiskSize: 60
               osDiskStorageAccountType: "Standard_LRS"
               osType: "Linux"
-              retentionStrategy:
-                azureVMCloudRetentionStrategy:
-                  idleTerminationMinutes: 5
               storageAccountNameReferenceType: "existing"
               storageAccountType: "Standard_LRS"
               subnetName: "iaas"
@@ -93,6 +90,9 @@ spec:
                     - templateName: "cnp-jenkins-builders"
                       templateDesc: "Jenkins build agents for HMCTS"
                       labels: "daily"
+                      retentionStrategy:
+                        azureVMCloudRetentionStrategy:
+                          idleTerminationMinutes: 5
                       maxVirtualMachinesLimit: 10
                       usageMode: "NORMAL"
                       virtualMachineSize: "Standard_D4ds_v5"
@@ -106,6 +106,9 @@ spec:
                     - templateName: "cnp-jenkins-arm-builders"
                       templateDesc: "Jenkins build agents running on ARM64 CPUs"
                       labels: "arm arm-daily"
+                      retentionStrategy:
+                        azureVMCloudRetentionStrategy:
+                          idleTerminationMinutes: 60
                       maxVirtualMachinesLimit: 3
                       usageMode: EXCLUSIVE
                       virtualMachineSize: "Standard_D4pds_v5"

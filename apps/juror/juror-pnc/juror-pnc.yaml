@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: darts-gateway
-  namespace: darts-modernisation
+  name: juror-pnc
+  namespace: juror
 spec:
-  releaseName: darts-gateway
+  releaseName: juror-pnc
   chart:
     spec:
-      chart: ./stable/darts-gateway
+      chart: ./stable/juror-pnc
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/gateway:prod-2971e9e-20231121130000 # {"$imagepolicy": "flux-system:darts-gateway"}
+      image: sdshmctspublic.azurecr.io/juror/pnc:prod-58fd4c8-20231122044221 # {"$imagepolicy": "flux-system:juror-pnc"}
       disableTraefikTls: true
