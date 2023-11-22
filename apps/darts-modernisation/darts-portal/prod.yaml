@@ -7,7 +7,7 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
-      ingressHost: darts-portal.platform.hmcts.net
+      ingressHost: darts.apps.hmcts.net
       environment:
         DARTS_API_URL: https://darts-api.platform.hmcts.net
-        DARTS_PORTAL_URL: https://darts-portal.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts.apps.hmcts.net

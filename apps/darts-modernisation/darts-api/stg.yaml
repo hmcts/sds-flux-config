@@ -10,7 +10,7 @@ spec:
       ingressHost: darts-api.staging.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: https://darts-gateway.staging.platform.hmcts.net
-        DARTS_PORTAL_URL: https://darts-portal.staging.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts.staging.platform.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
         RESTART_ME: '007'
     function:
