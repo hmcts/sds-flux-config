@@ -10,8 +10,8 @@ spec:
       ingressHost: darts-api.staging.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: https://darts-gateway.staging.platform.hmcts.net
-        DARTS_PORTAL_URL: https://darts-portal.staging.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts.staging.platform.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
         RESTART_ME: '007'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-ba28f9f-20231121115943 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-e56d150-20231122172025 # {"$imagepolicy": "flux-system:darts-api"}
