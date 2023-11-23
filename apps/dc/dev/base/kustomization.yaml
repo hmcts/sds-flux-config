@@ -3,6 +3,8 @@ kind: Kustomization
 namespace: dc
 resources:
   - ../../base
+  - ../../../base/workload-identity
 patches:
   #overlays for dc-purview-shir
   - path: ../../dc-purview-shir/dev.yaml
+  - path: ../../serviceaccount/stg.yaml
