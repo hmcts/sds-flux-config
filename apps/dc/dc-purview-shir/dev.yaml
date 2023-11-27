@@ -6,6 +6,6 @@ spec:
   releaseName: dc-purview-shir
   values:
     base:
-      image: sdshmctspublic.azurecr.io/dc/dc-purview-integration-runtime:dev-d3daaf9-20231103094138 #{"$imagepolicy": "flux-system:dc-purview-shir-dev"}
+      image: sdshmctspublic.azurecr.io/dc/dc-purview-integration-runtime:dev-d3daaf9-20231103094138 #{"$imagepolicy": "flux-system:dev-dc-purview-shir"}
       replicaCount: 4
       memoryLimits: '4096Mi'
