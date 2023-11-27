@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: version-reporter-service-palo-alto
+  name: version-reporter-service-hourlyusage
   namespace: monitoring
   labels:
-    app: version-reporter-service-palo-alto
+    app: version-reporter-service-hourlyusage
 spec:
-  releaseName: version-reporter-service-palo-alto
+  releaseName: version-reporter-service-hourlyusage
   chart:
     spec:
       chart: job
@@ -19,7 +19,7 @@ spec:
   values:
     global:
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    schedule: "0 16 1,14 * *" #Every 1st and 14th day of the month at 4pm
+    schedule: "*/5 */1 * * *" # 5min past every hour, every day
     concurrencyPolicy: "Forbid"
     failedJobsHistoryLimit: 5
     startingDeadlineSeconds: 300
@@ -28,13 +28,15 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: sdshmctspublic.azurecr.io/version-reporter-service/paloalto:prod-69b8ef7-20230907121320 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
+    image: sdshmctspublic.azurecr.io/version-reporter-service/hourlyusage:prod-db15650-20231127145742 #{"$imagepolicy": "flux-system:version-reporter-hourlyusage"}
     imagePullPolicy: Always
     environment:
-      DESIRED_VERSION: 11.0.2
+      CLUSTER_NAME: ss-ptl-00-aks
+      AZURE_STORAGE_CONTAINER: hmctshourlydatasource
+      AZURE_STORAGE_URL: https://finopsdataptlsa.blob.core.windows.net
       COSMOS_DB_URI: https://sds-platform-version-reporter.documents.azure.com:443/
       COSMOS_DB_NAME: reports
-      COSMOS_DB_CONTAINER: paloalto
+      COSMOS_DB_CONTAINER: hourlyusage
     secrets:
       COSMOS_KEY:
         secretRef: version-reporter
@@ -48,6 +50,9 @@ spec:
       AZURE_CLIENT_SECRET:
         secretRef: version-reporter
         key: client_secret
+      AZURE_STORAGE_ACCESS_KEY:
+        secretRef: version-reporter-hourlyusage
+        key: access_key
     nodeSelector:
       agentpool: cronjob
     tolerations:
