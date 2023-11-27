@@ -3,17 +3,17 @@ data:
   access_key: ENC[AES256_GCM,data:dAZBcDYMfuhcTWtjOI4MJ+h2PrXm7F0Q2wPYfcyTsSthFdlR94ezArPHlUNfpBJNZF5HUZxe6Vs3vhaor5+BOh4ipnsfeG4Or0wqNueOiY0PrtOM2Va663+WfzoLg1iNNrKAVAkA1cjyXghNSzQIqMmJHW7HBm4h,iv:D1s3FcXvWQEz74508gFobZQZL5F8hcGVJl6k5WYES2k=,tag:PnK6GVPWUT2PN2sBmj9Fyg==,type:str]
 kind: Secret
 metadata:
-    name: version-reporter
-    namespace: monitoring
+  name: version-reporter
+  namespace: monitoring
 sops:
   kms: []
   gcp_kms: []
   azure_kv:
-      - vault_url: https://dtssdsptl.vault.azure.net
-        name: sops-key
-        version: b047792919f74e6c875ba3a8945ed7a9
-        created_at: "2023-11-27T10:32:58Z"
-        enc: lOc5hLSVqFxx7nHUkab_CccM3uM8MDOMTGmfDIC5chnHlBRGkpU7LE5pSVJcS8ZI8wkiE2cp-nJfbe_j2-a8CDndkCzREotbOPv2erNRycHts21GUTKTxMRiES4n92N5ngYXU25eGv8c4eFLvKpkee1pIrOXpTygXhAROchIn_jrzW5cRpuQWPpmGSfpCOsJIowH0aDF-sRo52GcDXofS-N4Lku59-zBR5msjfCfTIPpYveAzdzSGE15il88i1rIRZiUC21ZQ8mE1s0fHX8BQx_EFHlYxTEe3Qy33J96IfgTv_oq3XLRVXGixnbbZsG1RBKBOIS6sHGN3JXeRwXn6w
+    - vault_url: https://dtssdsptl.vault.azure.net
+      name: sops-key
+      version: b047792919f74e6c875ba3a8945ed7a9
+      created_at: "2023-11-27T10:32:58Z"
+      enc: lOc5hLSVqFxx7nHUkab_CccM3uM8MDOMTGmfDIC5chnHlBRGkpU7LE5pSVJcS8ZI8wkiE2cp-nJfbe_j2-a8CDndkCzREotbOPv2erNRycHts21GUTKTxMRiES4n92N5ngYXU25eGv8c4eFLvKpkee1pIrOXpTygXhAROchIn_jrzW5cRpuQWPpmGSfpCOsJIowH0aDF-sRo52GcDXofS-N4Lku59-zBR5msjfCfTIPpYveAzdzSGE15il88i1rIRZiUC21ZQ8mE1s0fHX8BQx_EFHlYxTEe3Qy33J96IfgTv_oq3XLRVXGixnbbZsG1RBKBOIS6sHGN3JXeRwXn6w
   hc_vault: []
   age: []
   lastmodified: "2023-11-27T10:33:00Z"
