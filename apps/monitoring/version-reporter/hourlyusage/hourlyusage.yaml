@@ -32,7 +32,8 @@ spec:
     imagePullPolicy: Always
     environment:
       CLUSTER_NAME: ss-ptl-00-aks
-      MAX_VERSIONS_AWAY: 2
+      AZURE_STORAGE_CONTAINER: hmctshourlydatasource
+      AZURE_STORAGE_URL: https://finopsdataptlsa.blob.core.windows.net
       COSMOS_DB_URI: https://sds-platform-version-reporter.documents.azure.com:443/
       COSMOS_DB_NAME: reports
       COSMOS_DB_CONTAINER: hourlyusage
@@ -40,6 +41,9 @@ spec:
       COSMOS_KEY:
         secretRef: version-reporter
         key: cosmos_key
+      AZURE_STORAGE_ACCESS_KEY:
+        secretRef: version-reporter
+        key: access_key
     nodeSelector:
       agentpool: cronjob
     tolerations:
