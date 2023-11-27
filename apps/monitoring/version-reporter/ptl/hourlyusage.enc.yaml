@@ -3,7 +3,7 @@ data:
   access_key: ENC[AES256_GCM,data:dAZBcDYMfuhcTWtjOI4MJ+h2PrXm7F0Q2wPYfcyTsSthFdlR94ezArPHlUNfpBJNZF5HUZxe6Vs3vhaor5+BOh4ipnsfeG4Or0wqNueOiY0PrtOM2Va663+WfzoLg1iNNrKAVAkA1cjyXghNSzQIqMmJHW7HBm4h,iv:D1s3FcXvWQEz74508gFobZQZL5F8hcGVJl6k5WYES2k=,tag:PnK6GVPWUT2PN2sBmj9Fyg==,type:str]
 kind: Secret
 metadata:
-  name: version-reporter
+  name: version-reporter-hourlyusage
   namespace: monitoring
 sops:
   kms: []

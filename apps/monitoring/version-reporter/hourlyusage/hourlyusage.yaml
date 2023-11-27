@@ -41,8 +41,17 @@ spec:
       COSMOS_KEY:
         secretRef: version-reporter
         key: cosmos_key
-      AZURE_STORAGE_ACCESS_KEY:
+      AZURE_TENANT_ID:
         secretRef: version-reporter
+        key: tenant_id
+      AZURE_CLIENT_ID:
+        secretRef: version-reporter
+        key: client_id
+      AZURE_CLIENT_SECRET:
+        secretRef: version-reporter
+        key: client_secret
+      AZURE_STORAGE_ACCESS_KEY:
+        secretRef: version-reporter-hourlyusage
         key: access_key
     nodeSelector:
       agentpool: cronjob
