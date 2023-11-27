@@ -31,7 +31,7 @@ spec:
     image: sdshmctspublic.azurecr.io/version-reporter-service/paloalto:prod-69b8ef7-20230907121320 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
     imagePullPolicy: Always
     environment:
-      DESIRED_VERSION: 10.2.0
+      DESIRED_VERSION: 11.0.2
       COSMOS_DB_URI: https://sds-platform-version-reporter.documents.azure.com:443/
       COSMOS_DB_NAME: reports
       COSMOS_DB_CONTAINER: paloalto
