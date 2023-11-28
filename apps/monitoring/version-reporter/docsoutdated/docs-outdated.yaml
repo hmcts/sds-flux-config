@@ -28,7 +28,7 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: sdshmctspublic.azurecr.io/version-reporter-service/docsoutdated:prod-69b8ef7-20230907121313 #{"$imagepolicy": "flux-system:version-reporter-docsoutdated"}
+    image: sdshmctspublic.azurecr.io/version-reporter-service/docsoutdated:prod-eb74249-20231128092345 #{"$imagepolicy": "flux-system:version-reporter-docsoutdated"}
     imagePullPolicy: Always
     environment:
       COSMOS_DB_URI: https://sds-platform-version-reporter.documents.azure.com:443/
