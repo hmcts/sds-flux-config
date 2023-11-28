@@ -5,15 +5,14 @@ metadata:
 spec:
   releaseName: dc-purview-shir
   values:
-    base:
-      interval: 5m
-      image: sdshmctspublic.azurecr.io/dc/purview-integration-runtime:prod-844cca3-20230821092242 #{"$imagepolicy": "flux-system:dc-purview-shir"}
-      keyVaults:
-        dc-vault:
-          secrets:
-          - dc-purview-auth-key
-      secretsMountPath: 'C:\kvmnt'
-      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    interval: 5m
+    image: sdshmctspublic.azurecr.io/dc/purview-integration-runtime:prod-844cca3-20230821092242 #{"$imagepolicy": "flux-system:dc-purview-shir"}
+    keyVaults:
+      dc-vault:
+        secrets:
+        - dc-purview-auth-key
+    secretsMountPath: 'C:\kvmnt'
+    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
   chart:
     spec:
       chart: base
