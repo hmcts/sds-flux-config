@@ -28,7 +28,7 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: sdshmctspublic.azurecr.io/version-reporter-service/paloalto:prod-69b8ef7-20230907121320 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
+    image: sdshmctspublic.azurecr.io/version-reporter-service/paloalto:prod-eb74249-20231128092351 #{"$imagepolicy": "flux-system:version-reporter-paloalto"}
     imagePullPolicy: Always
     environment:
       DESIRED_VERSION: 11.0.2
