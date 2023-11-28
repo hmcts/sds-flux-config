@@ -22,3 +22,10 @@ spec:
         name: hmctspublic
         namespace: flux-system
       interval: 1m
+  volumes:
+    - name: azurekeyvault
+      csi:
+        driver: secrets-store.csi.k8s.io
+        readOnly: true
+        volumeAttributes:
+          secretProviderClass: "dc-purview-shir-secret-provider"

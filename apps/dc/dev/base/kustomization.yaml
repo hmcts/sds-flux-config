@@ -7,3 +7,9 @@ patches:
   #overlays for dc-purview-shir
   - path: ../../dc-purview-shir/dev.yaml
   - path: ../../serviceaccount/dev.yaml
+  #overlays for dc-purview-shir-secret-provider
+  - path: ../../dc-purview-shir/dev-dc-purview-shir-secret-provider.yaml
+    target:
+      group: secrets-store.csi.x-k8s.io
+      kind: SecretProviderClass
+      name: dc-purview-shir-secret-provider
