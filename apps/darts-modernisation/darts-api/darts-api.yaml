@@ -15,9 +15,9 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-d35234b-20231128132652 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-5f7414b-20231128153520 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-d35234b-20231128132652 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-5f7414b-20231128153520 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ATS_MODE: true
