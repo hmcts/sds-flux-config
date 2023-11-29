@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- kustomize.yaml
+# - kustomize.yaml
 - flux-config-gitrepo.yaml
 - hmcts-charts-gitrepo.yaml
 - sds-helm-charts-gitrepo.yaml
