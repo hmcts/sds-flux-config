@@ -6,7 +6,7 @@ spec:
   releaseName: dc-purview-shir
   values:
     interval: 5m
-    image: sdshmctspublic.azurecr.io/dc/purview-integration-runtime:prod-844cca3-20230821092242 #{"$imagepolicy": "flux-system:dc-purview-shir"}
+    image: sdshmctspublic.azurecr.io/dc/purview-integration-runtime:prod-f8feca7-20231103100616 #{"$imagepolicy": "flux-system:dc-purview-shir"}
     keyVaults:
       dc-vault:
         secrets:
