@@ -5,6 +5,7 @@ metadata:
   namespace: monitoring
   labels:
     app: vm-hourlyusage
+    ignored-by-dynatrace: "true"
 spec:
   releaseName: vm-hourlyusage
   chart:
