@@ -4,6 +4,7 @@ resources:
 - ../base
 - ../../vm-hourlyusage
 - hourlyusage.enc.yaml
+- version-reporter.enc.yaml
 
 patches:
 - path: ../../kube-prometheus-stack/prod/00.yaml
