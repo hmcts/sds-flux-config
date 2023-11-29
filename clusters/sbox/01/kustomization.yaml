@@ -5,8 +5,8 @@ resources:
 
 patches:
 - patch: |
-    - op: add
-      path: ./clusters/sbox/01
+    - op: replace
+      path: /spec/postBuild
       value:
         postBuild:
           substitute:
