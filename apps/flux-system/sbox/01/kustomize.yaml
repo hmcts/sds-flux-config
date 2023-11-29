@@ -15,7 +15,7 @@ spec:
       ENV_MONITOR_CHANNEL: "aks-monitor-sbox"
       KEYVAULT_ENVIRONMENT: "sbox"
   target:
-      group: kustomize.toolkit.fluxcd.io
-      version: v1
-      kind: Kustomization
-      name: microsoft-flux-configuration-flux-system
+    group: kustomize.toolkit.fluxcd.io
+    version: v1
+    kind: Kustomization
+    name: microsoft-flux-configuration-flux-system
