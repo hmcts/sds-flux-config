@@ -3,6 +3,10 @@ kind: Kustomization
 metadata:
   name: microsoft-flux-configuration-flux-system
   namespace: flux-system
+  labels:
+    clusterconfig.azure.com/is-managed: "true"
+    clusterconfig.azure.com/name: microsoft-flux-configuration
+    clusterconfig.azure.com/namespace: flux-system
 spec:
   path: ./clusters/sbox/01
   postBuild:
