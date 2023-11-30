@@ -5,11 +5,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: ssh://github.com/hmcts/vh-booking-queue-subscriber
+  url: https://github.com/hmcts/vh-booking-queue-subscriber
   ref:
     branch: master
-  secretRef:
-    name: git-credentials
   ignore: |
     # exclude all
     /*

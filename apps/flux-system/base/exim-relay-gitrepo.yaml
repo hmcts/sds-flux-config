@@ -5,11 +5,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: ssh://github.com/hmcts/exim-relay
+  url: https://github.com/hmcts/exim-relay
   ref:
     branch: master
-  secretRef:
-    name: git-credentials
   ignore: |
     # exclude all
     /*

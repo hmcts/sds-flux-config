@@ -5,11 +5,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: ssh://github.com/hmcts/vh-test-api
+  url: https://github.com/hmcts/vh-test-api
   ref:
     branch: VIH-7245-test-api
-  secretRef:
-    name: git-credentials
+  
   ignore: |
     # exclude all
     /*

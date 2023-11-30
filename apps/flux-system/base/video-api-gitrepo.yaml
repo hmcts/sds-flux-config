@@ -5,11 +5,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: ssh://github.com/hmcts/vh-video-api
+  url: https://github.com/hmcts/vh-video-api
   ref:
     branch: feature/VIH-7205_video-api
-  secretRef:
-    name: git-credentials
+  
   ignore: |
     # exclude all
     /*

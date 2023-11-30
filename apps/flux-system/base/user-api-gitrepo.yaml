@@ -5,11 +5,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: ssh://github.com/hmcts/vh-user-api
+  url: https://github.com/hmcts/vh-user-api
   ref:
     branch: feature/VIH-7155_AksSecretFileProvider
-  secretRef:
-    name: git-credentials
+  
   ignore: |
     # exclude all
     /*
