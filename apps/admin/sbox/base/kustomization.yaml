@@ -6,6 +6,12 @@ resources:
 - ../../traefik2
 - ../../delete-hung-pods
 patches:
+- path: ../../aad-pod-identity/sbox/azure-identity-patch.yaml
+  target:
+    group: aadpodidentity.k8s.io
+    kind: AzureIdentity
+    name: aks-pod-identity-mi
+    version: v1
 - path: ../../aad-pod-identity/sbox/azure-kubelet-identity-patch.yaml
   target:
     group: aadpodidentity.k8s.io
