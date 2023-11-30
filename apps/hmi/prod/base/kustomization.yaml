@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../../base
-  - ../../../base/workload-identity
+  - ../../base
 namespace: hmi
 patches:
-  - path: ../../serviceaccount/stg.yaml
+  - path: ../../hmi-rota-dtu/prod.yaml
+  - path: ../../serviceaccount/prod.yaml
