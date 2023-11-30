@@ -3,10 +3,6 @@ kind: Deployment
 metadata:
   name: kustomize-controller
   namespace: flux-system
-  labels:
-      app.kubernetes.io/component: kustomize-controller
-      app.kubernetes.io/instance: microsoft-flux-extension
-      app.kubernetes.io/name: microsoft.flux
 spec:
   template:
     metadata:
