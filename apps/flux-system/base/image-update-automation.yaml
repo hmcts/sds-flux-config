@@ -19,6 +19,6 @@ spec:
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
       branch: master
-  update: 
+  update:
     path: .
     strategy: Setters
