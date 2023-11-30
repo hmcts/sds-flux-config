@@ -7,7 +7,7 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-389-1cb1846-20231129113614
+      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-389-65fb375-20231130140848
       ingressHost: pip-publication-services.test.platform.hmcts.net
       keyVaults:
         pip-ss-kv:
