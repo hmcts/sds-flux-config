@@ -11,12 +11,13 @@ spec:
   git:
     checkout:
       ref:
-        branch: master  commit:
+        branch: master
+    commit:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: masterupdate:
+      branch: master
     path: .
     strategy: Setters
