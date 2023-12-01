@@ -19,6 +19,7 @@ resources:
   - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
   - ../../../apps/keda/base/kustomize.yaml
   - ../../../apps/pre/base/kustomize.yaml
+  - ../../../apps/hmi/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
