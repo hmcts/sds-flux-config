@@ -5,7 +5,7 @@ resources:
 namespace: juror
 patches:
   - path: ../../juror-scheduler-api/prod.yaml
-  - path: ../../juror-scheduler-execution/juror-scheduler-execution.yaml
+  - path: ../../juror-scheduler-execution/prod.yaml
   - path: ../../juror-public/prod.yaml
   - path: ../../juror-pnc/prod.yaml
   - path: ../../serviceaccount/prod.yaml
