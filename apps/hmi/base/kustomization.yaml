@@ -3,6 +3,5 @@ kind: Kustomization
 resources:
   - ../../base
   - ../hmi-rota-dtu/hmi-rota-dtu.yaml
-  - ../hmi-libra-dtu/hmi-libra-dtu.yaml
   - ../../base/workload-identity
 namespace: hmi
