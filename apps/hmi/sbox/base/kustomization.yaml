@@ -4,7 +4,5 @@ resources:
   - ../../base
 namespace: hmi
 patches:
-  - path: ../../identity/sbox.yaml
   - path: ../../hmi-rota-dtu/sbox.yaml
-  - path: ../../hmi-libra-dtu/sbox.yaml
   - path: ../../serviceaccount/sbox.yaml
