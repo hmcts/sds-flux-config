@@ -11,3 +11,5 @@ spec:
       environment:
         DARTS_API_URL: https://darts-api.demo.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.demo.apps.hmcts.net
+      image: sdshmctspublic.azurecr.io/darts/portal:staging #removed flux update link, see darts-portal.yaml
+      disableTraefikTls: true
