@@ -4,7 +4,7 @@ metadata:
   name: pip-publication-services
   namespace: pip
 spec:
-  replica: 0
+  replicas: 0
   releaseName: pip-publication-services
   values:
     image: sdshmctspublic.azurecr.io/pip/publication-services:prod-109f970-20231214144634 #{"$imagepolicy": "flux-system:pip-publication-services"}
