@@ -4,6 +4,7 @@ metadata:
   name: pip-subscription-management
   namespace: pip
 spec:
+  replica: 0
   releaseName: pip-subscription-management
   values:
     image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-6d4f5ad-20231214142741 #{"$imagepolicy": "flux-system:pip-subscription-management"}
