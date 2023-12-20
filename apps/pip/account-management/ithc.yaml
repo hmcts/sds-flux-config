@@ -4,7 +4,7 @@ metadata:
   name: pip-account-management
   namespace: pip
 spec:
-  replica: 0
+  replicas: 0
   releaseName: pip-account-management
   values:
     image: sdshmctspublic.azurecr.io/pip/account-management:prod-e0e7ffb-20231214142751 #{"$imagepolicy": "flux-system:pip-account-management"}
