@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: darts-automated-tasks
+  namespace: darts-modernisation
+spec:
+  releaseName: darts-api
+  values:
+    java:
+      environment:
+        DARTS_GATEWAY_URL: https://darts-gateway.staging.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        RESTART_ME: '007'
+        AUTOMATED_TASK_MODE: true
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-30bbc27-20240104132003 # {"$imagepolicy": "flux-system:darts-api"}
