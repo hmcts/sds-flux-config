@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - azure-devops-token.yaml
-  - ../../../base/workload-identity
 patches:
   - path: ../../azure-devops-agent-keda/dev.yaml
   - path: ../../azure-devops-agent-keda/dev/identity.yaml
