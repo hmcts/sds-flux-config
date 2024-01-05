@@ -7,6 +7,7 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-cc0fa5e-20240105110335
       ingressHost: darts.demo.apps.hmcts.net
       environment:
         DARTS_API_URL: https://darts-api.demo.platform.hmcts.net
