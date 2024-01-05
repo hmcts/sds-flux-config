@@ -15,10 +15,10 @@ spec:
         organizationURLFromEnv: "AZP_URL"
         personalAccessTokenFromEnv: "AZP_TOKEN"
   chart:
-  spec:
-    chart: function
-    version: 2.5.1
-    sourceRef:
-      kind: HelmRepository
-      name: hmctspublic
-      namespace: flux-system
+    spec:
+      chart: function
+      version: 2.5.1
+      sourceRef:
+        kind: HelmRepository
+        name: hmctspublic
+        namespace: flux-system
