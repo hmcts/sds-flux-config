@@ -4,7 +4,7 @@ metadata:
   name: darts-automated-tasks
   namespace: darts-modernisation
 spec:
-  releaseName: automated-tasks
+  releaseName: darts-automated-tasks
   values:
     java:
       environment:
@@ -13,5 +13,3 @@ spec:
         DARTS_LOG_LEVEL: DEBUG
         RESTART_ME: '007'
         AUTOMATED_TASK_MODE: true
-    function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-70342a6-20240105170412 # {"$imagepolicy": "flux-system:darts-api"}
