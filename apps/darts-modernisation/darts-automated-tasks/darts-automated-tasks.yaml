@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: opal-fines-service
-  namespace: opal
+  name: darts-automated-tasks
+  namespace: darts-modernisation
 spec:
-  releaseName: opal-fines-service
+  releaseName: automated-tasks
   chart:
     spec:
-      chart: ./stable/opal-fines-service
+      chart: ./stable/darts-api
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/opal/fines-service:prod-7a41754-20240105171143 # {"$imagepolicy": "flux-system:opal-fines-service"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-70342a6-20240105170412 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
