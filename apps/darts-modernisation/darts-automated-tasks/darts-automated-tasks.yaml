@@ -4,7 +4,7 @@ metadata:
   name: darts-automated-tasks
   namespace: darts-modernisation
 spec:
-  releaseName: automated-tasks
+  releaseName: darts-automated-tasks
   chart:
     spec:
       chart: ./stable/darts-api
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-70342a6-20240105170412 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-2db240d-20240108184753 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
