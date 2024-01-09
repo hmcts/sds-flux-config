@@ -17,3 +17,5 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/darts/api:prod-f1f9a2b-20240109123643 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
+      memoryRequests: '2G'
+      memoryLimits: '3G'
