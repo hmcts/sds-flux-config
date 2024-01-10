@@ -16,12 +16,12 @@ spec:
   values:
     java:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/darts/api:prod-36c3bb2-20240109161658 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-5665939-20240109201955 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
       memoryRequests: '2G'
       memoryLimits: '3G'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-36c3bb2-20240109161658 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-5665939-20240109201955 # {"$imagepolicy": "flux-system:darts-api"}
       aadIdentityName: darts
       pollingInterval: 60
       minReplicaCount: 0
