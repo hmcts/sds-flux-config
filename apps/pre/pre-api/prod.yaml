@@ -8,5 +8,18 @@ spec:
   values:
     java:
       ingressHost: pre-api.platform.hmcts.net
-    keyvault:
-      name: pre-hmctskv-prod
+      keyvaults:
+        "pre-hmctskv":
+          secrets:
+            - name: api-POSTGRES-HOST
+              alias: POSTGRES_HOST
+            - name: api-POSTGRES-PORT
+              alias: POSTGRES_PORT
+            - name: api-POSTGRES-DATABASE
+              alias: POSTGRES_DATABASE
+            - name: api-POSTGRES-PASS
+              alias: POSTGRES_PASSWORD
+            - name: api-POSTGRES-USER
+              alias: POSTGRES_USER
+            - name: AppInsightsInstrumentationKey
+              alias: APPINSIGHTS_INSTRUMENTATIONKEY
