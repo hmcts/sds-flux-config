@@ -8,6 +8,7 @@ spec:
   releaseName: toffee-recipe-backend
   values:
     java:
+      memoryRequests: "768Mi"
       image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest
       disableTraefikTls: true
   chart:
