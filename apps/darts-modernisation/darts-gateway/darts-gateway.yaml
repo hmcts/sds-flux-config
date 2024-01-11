@@ -15,5 +15,6 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/gateway:prod-97f364c-20240105175151 # {"$imagepolicy": "flux-system:darts-gateway"}
+      replicas: 2
+      image: sdshmctspublic.azurecr.io/darts/gateway:prod-6ef1878-20240111110047 # {"$imagepolicy": "flux-system:darts-gateway"}
       disableTraefikTls: true
