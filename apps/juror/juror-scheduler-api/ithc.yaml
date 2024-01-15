@@ -7,4 +7,6 @@ spec:
   releaseName: juror-scheduler-api
   values:
     java:
+      # Uncomment and edit the line below to fix the environment at a specific image
+      # image: sdshmctspublic.azurecr.io/juror/scheduler-api:prod-d424461-20240115073134
       ingressHost: juror-scheduler-api.ithc.platform.hmcts.net
