@@ -43,3 +43,7 @@ spec:
       enableInboundTls: true
       enableInternalTls: true
       enableAuth: true
+
+    serviceAccount:
+      create: false
+      name: mailrelay2
