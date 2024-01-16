@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../juror-scheduler-api/juror-scheduler-api.yaml
+  - ../juror-scheduler-execution/juror-scheduler-execution.yaml
   - ../juror-public/juror-public.yaml
   - ../juror-pnc/juror-pnc.yaml
   - ../../base/workload-identity
