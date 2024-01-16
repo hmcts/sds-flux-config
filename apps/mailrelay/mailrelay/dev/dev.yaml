@@ -32,3 +32,7 @@ spec:
     global:
       environment: dev
       enableOutboundTls: true
+
+    serviceAccount:
+      create: false
+      name: mailrelay
