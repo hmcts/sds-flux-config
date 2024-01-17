@@ -18,9 +18,9 @@ spec:
       startupPath: /services/themisgatewayapi?wsdl
       livenessPath: /services/themisgatewayapi?wsdl
       replicas: 4
-      memoryRequests: "128Mi"
+      memoryRequests: "512Mi"
       cpuRequests: "50m"
-      memoryLimits: "1024Mi"
+      memoryLimits: "2048Mi"
       cpuLimits: "1000m"
       autoscaling:
         enabled: true
