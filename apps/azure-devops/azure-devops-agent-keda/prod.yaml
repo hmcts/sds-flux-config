@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: azure-devops-agent
@@ -8,6 +8,7 @@ spec:
   values:
     environment:
       AZP_POOL: hmcts-ss-prod
+    memoryRequests: 1024Mi
     triggers:
       - type: azure-pipelines
         poolID: "41"

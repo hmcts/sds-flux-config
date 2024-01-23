@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: vh-bookings-api
@@ -8,4 +8,4 @@ spec:
   values:
     java:
       ingressHost: vh-bookings-api.dev.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/bookings-api:dev-e9f4064-202401101450 #{"$imagepolicy": "flux-system:vh-bookings-api-dev"}
+      image: sdshmctspublic.azurecr.io/vh/bookings-api:dev-e73b304-202401222136 #{"$imagepolicy": "flux-system:vh-bookings-api-dev"}

@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: juror-public
@@ -14,6 +14,6 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    java:
-      image: sdshmctspublic.azurecr.io/juror/public:prod-ded0145-20240111115756 # {"$imagepolicy": "flux-system:juror-public"}
+    nodejs:
+      image: sdshmctspublic.azurecr.io/juror/public:prod-d33dfb0-20240117093659 # {"$imagepolicy": "flux-system:juror-public"}
       disableTraefikTls: true

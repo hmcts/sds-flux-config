@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: themis-fe
@@ -18,9 +18,9 @@ spec:
       startupPath: /services/themisgatewayapi?wsdl
       livenessPath: /services/themisgatewayapi?wsdl
       replicas: 4
-      memoryRequests: "128Mi"
+      memoryRequests: "2560Mi"
       cpuRequests: "50m"
-      memoryLimits: "1024Mi"
+      memoryLimits: "3072Mi"
       cpuLimits: "1000m"
       autoscaling:
         enabled: true
@@ -49,8 +49,8 @@ spec:
         UPDATES_FIXEDRATE_IN_MILLISECONDS: 2000
         updates_fixedRate_in_milliseconds: 2000
         SPRING_JMS_SERVICEBUS_PRICING-TIER: PREMIUM
-        logging_level_root: ERROR
-        LOGGING_LEVEL_ROOT: ERROR
+        logging_level_root: DEBUG
+        LOGGING_LEVEL_ROOT: DEBUG
   chart:
     spec:
       chart: ./charts/met

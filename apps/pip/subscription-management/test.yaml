@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: pip-subscription-management
@@ -7,6 +7,7 @@ spec:
   releaseName: pip-subscription-management
   values:
     java:
+      replicas: 2
       ingressHost: pip-subscription-management.test.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
