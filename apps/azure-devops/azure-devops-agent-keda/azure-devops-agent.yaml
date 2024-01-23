@@ -19,7 +19,6 @@ spec:
                   values:
                     - jenkins-master
             topologyKey: "kubernetes.io/hostname"
-    aadIdentityName: azure-devops-agent
     environment:
       AZP_URL: https://dev.azure.com/hmcts
       CMD_ARGS: "--once"
@@ -40,7 +39,7 @@ spec:
   chart:
     spec:
       chart: function
-      version: 2.3.4
+      version: 2.5.1
       sourceRef:
         kind: HelmRepository
         name: hmctspublic
