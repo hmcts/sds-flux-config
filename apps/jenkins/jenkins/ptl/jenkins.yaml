@@ -219,6 +219,12 @@ spec:
                     title: PDDA
                 - buildMonitor:
                     includeRegex: >-
+                      ^HMCTS.*\/pdm.*\/master
+                    name: PDM
+                    recurse: true
+                    title: PDM
+                - buildMonitor:
+                    includeRegex: >-
                       ^HMCTS.*\/juror-.+\/master
                     name: Juror
                     recurse: true
