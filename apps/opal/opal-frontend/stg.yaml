@@ -8,6 +8,13 @@ spec:
   values:
     nodejs:
       ingressHost: opal-frontend.staging.platform.hmcts.net
+      keyVaults:
+        opal:
+          secrets:
+            - AppInsightsInstrumentationKey
+            - name: redis-connection-string
+              alias: REDIS_CONNECTION_STRING
+            - opal-frontend-session-secret
       environment:
         DUMMY_VAR: 0
         FRONTEND_HOSTNAME: https://opal-frontend.staging.platform.hmcts.net
