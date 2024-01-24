@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../base
+  - ../base
 
 patches:
-- path: ../../../apps/flux-system/sbox/00/kustomize.yaml
-- path: ../../../apps/admin/traefik-crds-upgrade/kustomize.yaml
+  - path: ../../../apps/flux-system/sbox/00/kustomize.yaml
+  - path: ../../../apps/admin/traefik-crds-upgrade/kustomize.yaml
