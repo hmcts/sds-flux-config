@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ipam-engine
+  name: ipam-engine
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ipam-engine
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ipam-engine
+    spec:
+      containers:
+      - image: azureipam.azurecr.io/ipam-engine:latest
+        name: ipam-engine
+        resources: {}
+status: {}
