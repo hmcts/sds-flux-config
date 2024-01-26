@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ipam-ui
+  name: ipam-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ipam-ui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ipam-ui
+    spec:
+      containers:
+      - image: azureipam.azurecr.io/ipam-ui:latest
+        name: ipam-ui
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: ipam
+  name: ipam-ui-service
+  namespace: ipam
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  selector:
+    app: ipam-ui
+status:
+  loadBalancer: {}
