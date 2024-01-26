@@ -26,14 +26,16 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
-  name: ipam-ui-service
-  namespace: ipam
   labels:
     app: ipam
-specification:
+  name: ipam-ui-service
+  namespace: ipam
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
   selector:
     app: ipam-ui
-  ports:
-    - name: http
-      port: 80
-      targetPort: 80
+status:
+  loadBalancer: {}
