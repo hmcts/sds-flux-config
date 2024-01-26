@@ -3,4 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../ipam-engine.yaml
+  - ../../ipam-ui.yaml
 namespace: ipam

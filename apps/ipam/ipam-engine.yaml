@@ -22,3 +22,19 @@ spec:
         name: ipam-engine
         resources: {}
 status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ipam-engine-service
+  namespace: ipam
+  labels:
+    app: ipam
+    service: engine-ui
+specification:
+  selector:
+    app: ipam-engine
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
