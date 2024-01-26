@@ -7,7 +7,6 @@ spec:
   releaseName: pip-subscription-management
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/subscription-management:pr-328-d6bce1d-20240123135221
       replicas: 2
       ingressHost: pip-subscription-management.test.platform.hmcts.net
       environment:
