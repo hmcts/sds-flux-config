@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    meta.helm.sh/release-name: kube-prometheus-stack
+    meta.helm.sh/release-namespace: ipam
+    traefik.ingress.kubernetes.io/router.tls: "false"
+  creationTimestamp: "2023-12-01T14:32:15Z"
+  generation: 1
+  labels:
+    app: ipam
+    helm.toolkit.fluxcd.io/namespace: ipam
+  name: ipam-ingress
+  namespace: ipam
+  resourceVersion: "648192689"
+spec:
+  rules:
+  - host: ipam.platform.hmcts.net
+    http:
+      paths:
+      - backend:
+          service:
+            name: ipam-ui-service
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - ip: 10.0.174.232
