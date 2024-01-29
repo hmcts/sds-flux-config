@@ -6,4 +6,8 @@ resources:
   - ../../ipam-engine.yaml
   - ../../ipam-ui.yaml
   - ../../ipam-ingress.yaml
+  - ../../../azureserviceoperator-system/resources/resource-group.yaml
+  - ../../../azureserviceoperator-system/resources/cosmos-db.yaml
 namespace: ipam
+patches:
+  - path: ../aso/ipam-cosmosdb.yaml
