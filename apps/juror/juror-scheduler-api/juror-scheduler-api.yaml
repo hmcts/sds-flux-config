@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/juror/scheduler-api:prod-e4df643-20240126084404 # {"$imagepolicy": "flux-system:juror-scheduler-api"}
+      image: sdshmctspublic.azurecr.io/juror/scheduler-api:prod-d3852ed-20240130100955 # {"$imagepolicy": "flux-system:juror-scheduler-api"}
       disableTraefikTls: true
