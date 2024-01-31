@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+    PASSWORD: ENC[AES256_GCM,data:7Ez44R3hdtP+rjwiErfLW0ZsOFLjTrAChPoNdIQDr4U1He4BLyNe/Z0+KtruDCa5,iv:dPI7FPsuuHqVVsUYdiNAYQbuNXVtYHTFC76M/nylO3I=,tag:px+AEtCXPC/eMprJIihZ8Q==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: engine-id
+    namespace: ipam
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssdsptl.vault.azure.net
+          name: sops-key
+          version: b047792919f74e6c875ba3a8945ed7a9
+          created_at: "2024-01-31T10:09:49Z"
+          enc: kALR_gKe0BCCGESylAnRUkIltVPNK1YN6a2GY2176UJjPTxZU1kXXwoUhaQIbw-774Qq803rXU_eYGQ5g2ZPSbZnLa89p7hE26HHyQ8V3hHXyVEb1Ngr9wkltZe20FIxXjknXF5JoIOdMHyNoZXeImpj77UG03Kne5glPPoiKzpg7CmaPAtGQL5HpxGg1-hisE-Ujw48PYxh_Nw2vYDFfM5v7yv3wDp4b8cBFiN4vijVI3sQLeBcbh__x5D9uZL3Jbal_Lv6C2-nV5eU0jEK55ZpIGkM-mi01Mxh_tqqe_TYVhxPPrz8-YTl8JNBaM_EiqXmMkZ0JlmsoT7jGItuWg
+    hc_vault: []
+    age: []
+    lastmodified: "2024-01-31T10:09:52Z"
+    mac: ENC[AES256_GCM,data:yg9aYUa6bb5finnuWiT3UzxGgIpH4Z2StjogfR1WtxAMiBhnmK96dJMxAmo60aZtwsyas3sL1DdhKju6YRKT1W5M8wgq7vO00kvAQOhFZR1iHmtYOcf5TOcvibOFtNpR8RJFFYB/npAzgYSmSj5e5Hn2aq2C+2+UQw5akJVDW0o=,iv:9nHXY6Wn9iEFGuVc5OYU8Rg90DcuXh2xrUhaHEkUCXE=,tag:VzptXwiTyrrMkJVEdOQ3uw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
