@@ -17,7 +17,7 @@ spec:
     java:
       replicas: 2
       # pin the version of the container image from the commit build here - update string removed
-      image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812 
+      image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812
       disableTraefikTls: true
       memoryRequests: '2G'
       memoryLimits: '3G'
