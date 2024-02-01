@@ -20,6 +20,37 @@ spec:
       containers:
       - image: azureipam.azurecr.io/ipam-engine:latest
         name: ipam-engine
+        env:
+        - name: COSMOS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: ipam-ptl-cosmos-connection-settings
+              key: key
+        - name: COSMOS_URL
+          valueFrom:
+            secretKeyRef:
+              name: ipam-ptl-cosmos-connection-settings
+              key: documentEndpoint
+        - name: ENGINE_APP_ID
+          valueFrom:
+            secretKeyRef:
+              name: ipam-sop-secrets
+              key: ENGINE-ID
+        - name: ENGINE_APP_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: ipam-sop-secrets
+              key: ENGINE-SECRET
+        - name: TENANT_ID
+          valueFrom:
+            secretKeyRef:
+              name: ipam-sop-secrets
+              key: TENANT-ID
+        - name: UI_APP_ID
+          valueFrom:
+            secretKeyRef:
+              name: ipam-sop-secrets
+              key: UI-ID
         resources: {}
 status: {}
 ---
