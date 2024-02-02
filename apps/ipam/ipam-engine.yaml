@@ -51,6 +51,10 @@ spec:
             secretKeyRef:
               name: ipam-sop-secrets
               key: UI-ID
+        - name: AZURE_ENV
+          value: "AZURE_PUBLIC"
+        - name: KEYVAULT_URL
+          value: "https://ipam-keyvault-poc.vault.azure.net/"
         resources: {}
 status: {}
 ---
