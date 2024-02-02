@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     java:
-      replicas: 1
+      replicas: 0
       # pin the version of the container image from the commit build here - update string removed
       image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812
       disableTraefikTls: true
