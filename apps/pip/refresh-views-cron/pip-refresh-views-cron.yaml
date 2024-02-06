@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: pip-refresh-views-cron
@@ -6,7 +6,7 @@ spec:
   releaseName: pip-refresh-views-cron
   values:
     job:
-      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-170019a-20240108102335 # {"$imagepolicy": "flux-system:pip-data-management-expired-artefacts-cron"}
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-152e86c-20240122134925 # {"$imagepolicy": "flux-system:pip-data-management-expired-artefacts-cron"}
       disableTraefikTls: true
   chart:
     spec:

@@ -5,8 +5,10 @@ resources:
   - ../../../rbac/nonprod-role.yaml
   - ../../opal-fines-service/opal-fines-service.yaml
   - ../../opal-frontend/opal-frontend.yaml
+  - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
 namespace: opal
 patches:
   - path: ../../serviceaccount/stg.yaml
   - path: ../../opal-fines-service/stg.yaml
   - path: ../../opal-frontend/stg.yaml
+  - path: ../../opal-legacy-db-stub/stg.yaml

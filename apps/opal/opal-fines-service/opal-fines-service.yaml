@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: opal-fines-service
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/opal/fines-service:prod-1fea577-20240119134757 # {"$imagepolicy": "flux-system:opal-fines-service"}
+      image: sdshmctspublic.azurecr.io/opal/fines-service:prod-ea2e2ae-20240206112417 # {"$imagepolicy": "flux-system:opal-fines-service"}
       disableTraefikTls: true
