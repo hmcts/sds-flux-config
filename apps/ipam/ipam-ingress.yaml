@@ -23,6 +23,13 @@ spec:
               number: 80
         path: /
         pathType: Prefix
+      - backend:
+          service:
+            name: ipam-engine-service
+            port:
+              number: 80
+        path: /api
+        pathType: Prefix
 status:
   loadBalancer:
     ingress:
