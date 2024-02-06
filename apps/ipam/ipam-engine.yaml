@@ -46,11 +46,8 @@ spec:
             secretKeyRef:
               name: ipam-sop-secrets
               key: TENANT-ID
-        # - name: UI_APP_ID
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: ipam-sop-secrets
-        #       key: UI-ID
+        - name: IPAM_UI_URL
+          value: "http://ipam-ui-service"
         - name: AZURE_ENV
           value: "AZURE_PUBLIC"
         - name: KEYVAULT_URL
