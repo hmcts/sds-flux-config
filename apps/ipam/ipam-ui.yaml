@@ -39,7 +39,7 @@ spec:
               name: ipam-sop-secrets
               key: TENANT-ID
         - name: REACT_APP_IPAM_ENGINE_URL
-          value: "http://ipam-engine-service"
+          value: "http://ipam.platform.hmcts.net/api"
         resources: {}
 status: {}
 ---
