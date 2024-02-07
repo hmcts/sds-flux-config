@@ -25,10 +25,6 @@ spec:
               alias: DARTS_API_DB_USERNAME
             - name: migration-POSTGRES-PASS
               alias: DARTS_API_DB_PASSWORD
-            - name: migration-POSTGRES-HOST
-              alias: DARTS_API_DB_HOST
-            - name: migration-POSTGRES-DATABASE
-              alias: DARTS_API_DB_NAME
     function:
       #pin the release version as per darts-api-migration.yaml
       image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812
