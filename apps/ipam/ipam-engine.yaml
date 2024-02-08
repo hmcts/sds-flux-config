@@ -31,12 +31,12 @@ spec:
             secretKeyRef:
               name: ipam-ptl-cosmos-connection-settings
               key: documentEndpoint
-        - name: ENGINE_APP_ID
+        - name: CLIENT_ID
           valueFrom:
             secretKeyRef:
               name: ipam-sop-secrets
               key: ENGINE-ID
-        - name: ENGINE_APP_SECRET
+        - name: CLIENT_SECRET
           valueFrom:
             secretKeyRef:
               name: ipam-sop-secrets
