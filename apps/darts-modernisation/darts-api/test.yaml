@@ -9,9 +9,6 @@ spec:
     java:
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
-        DARTS_GATEWAY_URL: https://darts-gateway.test.platform.hmcts.net
-        DARTS_PORTAL_URL: https://darts.test.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART_ME: '007'
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-c3fd2e8-20240209101947 # {"$imagepolicy": "flux-system:darts-api"}
