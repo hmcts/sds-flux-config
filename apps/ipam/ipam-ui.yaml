@@ -50,6 +50,8 @@ metadata:
     app: ipam
   name: ipam-ui-service
   namespace: ipam
+  annotations:
+    traefik.ingress.kubernetes.io/affinity: "true"
 spec:
   ports:
   - name: http
