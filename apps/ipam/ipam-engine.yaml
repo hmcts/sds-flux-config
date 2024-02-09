@@ -62,6 +62,8 @@ metadata:
     app: ipam
   name: ipam-engine-service
   namespace: ipam
+  annotations:
+    traefik.ingress.kubernetes.io/affinity: "true"
 spec:
   ports:
   - name: http
