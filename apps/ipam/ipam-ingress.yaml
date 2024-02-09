@@ -2,8 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    meta.helm.sh/release-name: kube-prometheus-stack
     meta.helm.sh/release-namespace: ipam
+    kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.tls: "true"
   generation: 1
   labels:
