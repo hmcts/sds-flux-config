@@ -9,10 +9,15 @@ App Registration X 2  - details listed below
 
 ### AKS resources
 ipam engine deployment
+
 ipam ui deployment
+
 services X 2
+
 ingress
+
 cosmos DB using ASO
+
 ipam-sop-secrets
 
 #### ipam-sop-secrets
