@@ -5,6 +5,15 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      # Update kube-prometheus-stack-crds/kustomization.yaml when updating this
+      version: 56.6.2
+      sourceRef:
+        kind: HelmRepository
+        name: prometheus
+        namespace: monitoring
   values:
     kube-state-metrics:
       tolerations:
@@ -113,12 +122,3 @@ spec:
                 title: 'SDS-Sbox-01 - {{ template "slack.default.title" . }}'
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
-  chart:
-    spec:
-      chart: kube-prometheus-stack
-      # Update kube-prometheus-stack-crds/kustomization.yaml when updating this
-      version: 56.6.2
-      sourceRef:
-        kind: HelmRepository
-        name: prometheus
-        namespace: monitoring
