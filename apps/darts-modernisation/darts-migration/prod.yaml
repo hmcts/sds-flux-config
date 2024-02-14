@@ -17,7 +17,7 @@ spec:
         DARTS_GATEWAY_URL: https://darts-migration-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts-migration.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART_ME: '007'
+        RESTART_ME: '008'
       keyVaults:
         "darts":
           secrets:
@@ -27,4 +27,4 @@ spec:
               alias: DARTS_API_DB_PASSWORD
     function:
       #pin the release version as per darts-api-migration.yaml
-      image: sdshmctspublic.azurecr.io/darts/api:prod-45cdfc3-20240213170857
+      image: sdshmctspublic.azurecr.io/darts/api:prod-2b4f7a7-20240214140310
