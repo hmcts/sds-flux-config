@@ -1,0 +1,7 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: opal-legacy-db-stub
+spec:
+  imageRepositoryRef:
+    name: opal-legacy-db-stub

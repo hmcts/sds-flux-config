@@ -12,7 +12,7 @@ resources:
   - ../../../apps/met/base/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml
   # error looking up service account darts-modernisation/darts-portal-nodejs: serviceaccount "darts-portal-nodejs" not found (stopping AKS version upgrade)
-  # - ../../../apps/darts-modernisation/base/kustomize.yaml
+  - ../../../apps/darts-modernisation/base/kustomize.yaml
   - ../../../apps/hmi/base/kustomize.yaml
   - ../../../apps/monitoring/base/kustomize.yaml
   - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
@@ -26,4 +26,3 @@ patches:
       annotationSelector: hmcts.github.com/kustomize-defaults != disabled
   - path: ../../../apps/toffee/test/base/kustomize.yaml
   - path: ../../../apps/admin/test/base/kustomize.yaml
-  - path: ../../../apps/admin/traefik-crds-upgrade-v26/kustomize.yaml

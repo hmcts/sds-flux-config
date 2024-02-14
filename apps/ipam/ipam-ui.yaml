@@ -20,6 +20,26 @@ spec:
       containers:
       - image: azureipam.azurecr.io/ipam-ui:latest
         name: ipam-ui
+        env:
+        - name: VITE_UI_ID
+          valueFrom:
+            secretKeyRef:
+              name: ipam-sop-secrets
+              key: UI-ID
+        - name: VITE_AZURE_ENV
+          value: "AZURE_PUBLIC"
+        - name: VITE_ENGINE_ID
+          valueFrom:
+            secretKeyRef:
+              name: ipam-sop-secrets
+              key: ENGINE-ID
+        - name: VITE_TENANT_ID
+          valueFrom:
+            secretKeyRef:
+              name: ipam-sop-secrets
+              key: TENANT-ID
+        - name: REACT_APP_IPAM_ENGINE_URL
+          value: "https://ipam.hmcts.net/api"
         resources: {}
 status: {}
 ---
@@ -30,6 +50,8 @@ metadata:
     app: ipam
   name: ipam-ui-service
   namespace: ipam
+  annotations:
+    traefik.ingress.kubernetes.io/affinity: "true"
 spec:
   ports:
   - name: http

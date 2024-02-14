@@ -1,0 +1,20 @@
+apiVersion: v1
+data:
+  DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:fCCTNr5leN/Ee6yELaEhjheSuAeid09Q/3FbWNVflpX1LDvUBByHP2UkMLyHm6JEV7GlXas2nnRc4KrttOAogKQ9b++yK9tHAZvf8ut8Zn2U61TRictiug21TduU/NiEj3M3dl7ytZ7qfU1U/2Xw6mJ54br2mIv0tvdMSK/UkTslHzTta/krN93434f4Hi0vhuOG3SVt2OByMiYG,iv:Qrnr/ChiW6sTJ9ntOlsiAAs4oUG5fwVvlsQ9qx2g2vI=,tag:nyvR+bOohAFJHq0pdGGn5Q==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: darts-api-function-values
+  namespace: monitoring
+type: Opaque
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicestestkv.vault.azure.net
+      name: sops-key
+      version: 6d094e08ab7240ea8a64ec77f7f734b7
+      created_at: "2024-02-05T13:44:56Z"
+      enc: Z7z3QEhUii88jwXnk4VTfbu3PVw8Y4-f-JGU2R9xtzJTGLZld3raiLVbmf4V8nVwK2vp0bPczxoyQmbd-iJJbVCKUaz2XSYun_D0qszbwcTH67hButIg_iArYxC4KgI-i1_unYuI0_OGrqRUVEmC_wl91lGh0xG-3iLcP7NaRkArOhdOp-p9QTY6jxDHM31fX2P_oMTBrm21a5YkT4FDVJE5M7_kUUhM2vnyCpPR4fB7j7DJXZ4OViuWBFHMlbVEJB0Aloh6KGTNZRCQdaoqCFYIWawN4qa7B7Fx9St84GFL9rTXSiPpWG4fmWHTzUjYptTFZKVuyTT75eABMZeqTg
+  hc_vault: []
+  age: []
