@@ -23,3 +23,6 @@ spec:
       memoryLimits: '3G'
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812
+      minReplicaCount: 0
+      maxReplicaCount: 0
+      triggers:
