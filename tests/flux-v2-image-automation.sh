@@ -53,9 +53,10 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
             if [ $IMAGE_AUTOMATION_CHECK == false ]
             then
-                echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
+                echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+                exit 1
             fi
-        done
+            done
 
     done
 
