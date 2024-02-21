@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: darts
+  namespace: darts-modernisation
+spec:
+  resourceID: "/subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourceGroups/managed-identities-ithc-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/darts-ithc-mi"
+  clientID: "d9619f85-1eb1-4063-ae9b-2dbf287ad96c"

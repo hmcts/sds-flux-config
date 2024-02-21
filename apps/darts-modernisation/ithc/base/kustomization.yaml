@@ -4,3 +4,9 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
 namespace: darts-modernisation
+patches:
+  - path: ../../darts-api/demo.yaml
+  - path: ../../darts-portal/demo.yaml
+  - path: ../../darts-gateway/demo.yaml
+  - path: ../../identity/ithc.yaml
+  - path: ../../serviceaccount/ithc.yaml
