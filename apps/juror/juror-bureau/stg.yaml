@@ -8,3 +8,5 @@ spec:
   values:
     nodejs:
       ingressHost: juror.staging.apps.hmcts.net
+    environment:
+      API_ENDPOINT: https://juror-api.staging.platform.hmcts.net/v1
