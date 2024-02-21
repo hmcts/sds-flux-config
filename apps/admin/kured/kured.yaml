@@ -21,9 +21,6 @@ spec:
   values:
     serviceAccount:
       create: false
-    image:
-      repository: ghcr.io/kubereboot/kured
-      tag: 1.15.0
     extraArgs:
       slack-username: ${ENVIRONMENT}-${CLUSTER}-aks
       slack-channel: aks-monitor-ss
