@@ -43,24 +43,22 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
 
 
-                    if [ "$IMAGE_AUTOMATION" == "" ]
-                    then
-                        echo "No ImagePolicy for $IMAGE_POLICY in clusters/ptl-intsvc/base" && exit 1
-                    fi
+            if [ "$IMAGE_AUTOMATION" == "" ]
+            then
+                echo "No ImagePolicy for $IMAGE_POLICY in clusters/ptl-intsvc/base" && exit 1
+            fi
 
-                    IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
-                    IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern == "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
+            IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
+            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern == "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
 
-                    if [ $IMAGE_AUTOMATION_CHECK == false ]
-                    then
-                        echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
-                    fi
-
-                    if [ "$IMAGE_AUTOMATION_CHECK" == false ] && [ "$image" == false ]; then
-                        echo "Error: Image is false and does not match the whitelisted pattern."
-                    fi
-                done
-            done
+            if [ $IMAGE_AUTOMATION_CHECK == false ]
+            then
+                if [ $IMAGE_AUTOMATION_CHECK == false ]; then
+                    echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+                    exit 1
+                fi
+            fi
+        done
 
     done
 
