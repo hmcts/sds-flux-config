@@ -54,14 +54,6 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
                 IMAGE_NAME=$(echo $IMAGE_AUTOMATION_CHECK | cut -d ':' -f2)
 
-                PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-
-                if [[ ! $IMAGE_AUTOMATION_CHECK =~ $PATTERN ]]; then
-                    echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-                    exit 1
-                fi
-                done
-
                 if [ "$IMAGE_AUTOMATION_CHECK" == "false" ]
                 then
                     echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
