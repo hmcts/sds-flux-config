@@ -56,7 +56,6 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
             PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
 
-            # Check if the image name matches the pattern
             if [[ ! $IMAGE_NAME =~ $PATTERN ]]; then
                 echo "Image name does not match the pattern: $IMAGE_NAME"
                 exit 1
