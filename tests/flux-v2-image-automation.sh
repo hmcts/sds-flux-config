@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -x
 set -ex -o pipefail
 
 EXCLUSIONS_LIST=(
@@ -53,19 +52,15 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern == "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
 
 
-                if [[ $IMAGE_AUTOMATION_CHECK != $IMAGE_POLICY ]]; then
-                    echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
+                if [ "$IMAGE_AUTOMATION_CHECK" == "false" ]
+                then
+                    echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+                    exit 1
                 fi
-                done
-
-            #     if [ "$IMAGE_AUTOMATION_CHECK" == "false" ]
-            #     then
-            #         echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-            #         exit 1
-            #     fi
-            # done
+            done
 
     done
 
 done
+
 
