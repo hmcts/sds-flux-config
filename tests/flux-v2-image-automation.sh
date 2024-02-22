@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -x
 set -ex -o pipefail
 
 EXCLUSIONS_LIST=(
@@ -51,18 +52,24 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
             IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern == "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
 
+            IMAGE_NAME=$(echo $IMAGE_AUTOMATION_CHECK | cut -d ':' -f2)
 
-                if [[ ! $IMAGE_AUTOMATION_CHECK =~ $IMAGE_POLICY_NAME ]]; then
+                PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+
+                if [[ $IMAGE_AUTOMATION_CHECK != $PATTERN ]]; then
                     echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
                     exit 1
                 fi
+                done
 
-            # if [ $IMAGE_AUTOMATION_CHECK == false ]
-            # then
-            #     echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
-            # fi
-        done
+            #     if [ "$IMAGE_AUTOMATION_CHECK" == "false" ]
+            #     then
+            #         echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+            #         exit 1
+            #     fi
+            # done
 
     done
 
-  done
+done
+
