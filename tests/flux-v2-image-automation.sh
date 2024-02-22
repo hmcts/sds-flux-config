@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -x 
+set -x
 set -ex -o pipefail
 
 EXCLUSIONS_LIST=(
@@ -52,6 +52,16 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
             IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern == "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
 
+            IMAGE_NAME=$(echo $IMAGE_AUTOMATION_CHECK | cut -d ':' -f2)
+
+            PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+
+            # Check if the image name matches the pattern
+            if [[ ! $IMAGE_NAME =~ $PATTERN ]]; then
+                echo "Image name does not match the pattern: $IMAGE_NAME"
+                exit 1
+            fi
+
             if [ $IMAGE_AUTOMATION_CHECK == false ]
             then
                 echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
@@ -61,4 +71,4 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
     done
 
-  done
+done
