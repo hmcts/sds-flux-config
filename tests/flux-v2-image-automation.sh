@@ -59,7 +59,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
             IMAGE_REPOSITORY_REF=$(yq e '.spec.imageRepositoryRef.name' imagepolicies_list.yaml)
             PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-            FILE="clusters/ptl/base/yourfile.yaml"  # replace with your actual file path
+            FILE="./apps/juror/juror-api/juror-api.yaml"  # replace with your actual file path
 
             IMAGE_TAG=$(yq eval ".spec.values.image" "$FILE")
             PART_AFTER_PROD=${IMAGE_TAG##*prod-}
