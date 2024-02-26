@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# set -ex -o pipefail
+set -ex -o pipefail
 
 EXCLUSIONS_LIST=(
   apps/flux-system/*
@@ -59,7 +59,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
             IMAGE_REPOSITORY_REF=$(yq e '.spec.imageRepositoryRef.name' imagepolicies_list.yaml)
             PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-            DIR="clusters/prod/base"
+            DIR="/Users/nicholas.chang/Documents/HMCTS/sds-flux-config/apps/juror/juror-api"
 
             for file in $DIR/*.yaml; do
 
