@@ -63,7 +63,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
             # for file in "$DIR"/*.yaml; do
 
-                IMAGE_TAG=$(yq eval ".spec.values.image" "$FILE")
+                IMAGE_TAG=$(yq eval ".spec.values.image" "$file")
                 PART_AFTER_PROD=${IMAGE_TAG##*prod-}
 
                 if [[ $PART_AFTER_PROD =~ $PATTERN ]]; then
