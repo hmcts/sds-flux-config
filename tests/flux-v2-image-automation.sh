@@ -57,17 +57,22 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                 fi
             done
 
-            IMAGE_TAG="sdshmctspublic.azurecr.io/juror/api:prod-dc1e2cb-20240226101624"
-            PATTERN=$(yq e '.spec.filterTags.pattern' imagepolicies_list.yaml)
+            IMAGE_REPOSITORY_REF=$(yq e '.spec.imageRepositoryRef.name' imagepolicies_list.yaml)
+            PATTERN="^prod-[a-f0-9]+-[0-9]+"
+            DIR="clusters/ptl/base"
 
             PART_AFTER_PROD=${IMAGE_TAG##*prod-}
 
-            if [[ $PART_AFTER_PROD =~ $PATTERN ]]; then
-                echo "The image tag matches the pattern."
-            else
-                echo "The image tag does not match the pattern."
-            fi
+            for file in $DIR/*.yaml; do
+                IMAGE_TAG=$(yq e ".spec.values.image" $file)
 
+                PART_AFTER_PROD=${IMAGE_TAG##*prod-}
+
+                if [[ $PART_AFTER_PROD =~ $PATTERN ]]; then
+                    echo "The image tag in $file matches the pattern."
+                else
+                    echo "The image tag in $file does not match the pattern."
+                fi
             done
 
     done
