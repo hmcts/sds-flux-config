@@ -61,7 +61,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
             FILE="./apps/juror/juror-api/juror-api.yaml"
 
-            IMAGE_TAG=$(yq eval ".spec.values.image" "$FILE")
+            IMAGE_TAG=yq eval '.spec.values.java.image' $FILE
 
             if [[ $IMAGE_TAG =~ $PATTERN ]]; then
                 echo "The image tag in $FILE matches the pattern."
