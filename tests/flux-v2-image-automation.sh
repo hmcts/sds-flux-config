@@ -62,8 +62,8 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             DIR="clusters/ptl/base"
 
             for file in $DIR/*.yaml; do
-                IMAGE_TAG=$(yq e ".spec.values.image" $file)
 
+                IMAGE_TAG=$(yq eval ".spec.values.image" $file)
                 PART_AFTER_PROD=${IMAGE_TAG##*prod-}
 
                 if [[ $PART_AFTER_PROD =~ $PATTERN ]]; then
