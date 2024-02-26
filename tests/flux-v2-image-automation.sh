@@ -63,7 +63,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
             IMAGE_TAG=$(yq eval '.spec.values.java.image' $FILE)
 
-            if [[ $IMAGE_TAG =~ $PATTERN ]]; then
+            if [[ $IMAGE_TAG == $PATTERN ]]; then
                 echo "The image tag in $FILE matches the pattern."
             else
                 echo "The image tag in $FILE does not match the pattern."
