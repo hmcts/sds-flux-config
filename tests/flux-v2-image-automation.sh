@@ -58,10 +58,8 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             done
 
             IMAGE_REPOSITORY_REF=$(yq e '.spec.imageRepositoryRef.name' imagepolicies_list.yaml)
-            PATTERN="^prod-[a-f0-9]+-[0-9]+"
+            PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
             DIR="clusters/ptl/base"
-
-            PART_AFTER_PROD=${IMAGE_TAG##*prod-}
 
             for file in $DIR/*.yaml; do
                 IMAGE_TAG=$(yq e ".spec.values.image" $file)
