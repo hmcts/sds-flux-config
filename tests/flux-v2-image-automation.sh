@@ -61,7 +61,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
             DIR="./apps/juror/juror-api/juror-api.yaml"
 
-            for file in $DIR/*.yaml; do
+            for file in $DIR do
 
                 IMAGE_TAG=$(yq eval ".spec.values.image" $file)
                 PART_AFTER_PROD=${IMAGE_TAG##*prod-}
