@@ -58,7 +58,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             done
 
             IMAGE_TAG="sdshmctspublic.azurecr.io/juror/api:prod-dc1e2cb-20240226101624"
-            PATTERN="^prod-[^-]+-(?P<ts>[0-9]+)"
+            PATTERN=$(yq e '.spec.filterTags.pattern' imagepolicies_list.yaml)
 
             PART_AFTER_PROD=${IMAGE_TAG##*prod-}
 
