@@ -59,12 +59,11 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
             IMAGE_REPOSITORY_REF=$(yq e '.spec.imageRepositoryRef.name' imagepolicies_list.yaml)
             PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-            FILE="./apps/juror/juror-api/juror-api.yaml"  # replace with your actual file path
+            FILE="./apps/juror/juror-api/juror-api.yaml"
 
             IMAGE_TAG=$(yq eval ".spec.values.image" "$FILE")
-            PART_AFTER_PROD=${IMAGE_TAG##*prod-}
 
-            if [[ $PART_AFTER_PROD =~ $PATTERN ]]; then
+            if [[ $IMAGE_TAG =~ $PATTERN ]]; then
                 echo "The image tag in $FILE matches the pattern."
             else
                 echo "The image tag in $FILE does not match the pattern."
