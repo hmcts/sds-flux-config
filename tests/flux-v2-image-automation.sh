@@ -29,7 +29,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
     done
 
-    ./kustomize build --load-restrictor LoadRestrictionsNone "clusters/ptl/base" | yq eval 'select(.metadata and .kind == "ImagePolicy")' -  > imagepolicies_list.yaml
+    kustomize build --load-restrictor LoadRestrictionsNone "clusters/ptl/base" | yq eval 'select(.metadata and .kind == "ImagePolicy")' -  > imagepolicies_list.yaml
     [ $? -eq 0 ] || (echo "Kustomize build has failed" && exit 1)
 
     for IMAGE_POLICY in "${IMAGE_POLICIES[@]}"; do
@@ -42,22 +42,32 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         IMAGE_POLICY_NAME="${vh-admin-web-dev}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' -)
 
 
+
             if [ "$IMAGE_AUTOMATION" == "" ]
             then
                 echo "No ImagePolicy for $IMAGE_POLICY in clusters/ptl-intsvc/base" && exit 1
             fi
 
-            # IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
-            # # IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern | "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
-            # IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern | test("^prod-[a-f0-9]+-(?P<ts>[0-9]+)")' -)
+            IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
+            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern | "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
 
-            #     if [[ $IMAGE_AUTOMATION_CHECK == "true" ]]; then
-            #         echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-            #         exit 1
-            #     fi
-            export IMAGE_POLICY_NAME="juror-api"
-            IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern | "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
-            echo $IMAGE_AUTOMATION_CHECK
+                if [[ $IMAGE_AUTOMATION_CHECK == "true" ]]; then
+                    echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+                    exit 1
+                fi
+            done
+
+            IMAGE_TAG="sdshmctspublic.azurecr.io/juror/api:prod-dc1e2cb-20240226101624"
+            PATTERN="^prod-[^-]+-(?P<ts>[0-9]+)"
+
+            PART_AFTER_PROD=${IMAGE_TAG##*prod-}
+
+            if [[ $PART_AFTER_PROD =~ $PATTERN ]]; then
+                echo "The image tag matches the pattern."
+            else
+                echo "The image tag does not match the pattern."
+            fi
+
             done
 
     done
