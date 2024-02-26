@@ -72,6 +72,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                     echo "The image tag in $file matches the pattern."
                 else
                     echo "The image tag in $file does not match the pattern."
+                    exit 1
                 fi
             done
 
