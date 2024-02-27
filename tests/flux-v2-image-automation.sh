@@ -61,9 +61,8 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             FILE="./clusters/ptl/base"
             # FILE="./apps/juror/juror-api/juror-api.yaml"
 
-            for file in $FILE/*.yaml; do
-
-            IMAGE_TAG=$(yq eval '.spec.values.java.image' "$FILE")
+            for file in $FILE/*; do
+            IMAGE_TAG=$(yq eval '.spec.values.java.image' "$file")
 
             if [[ $IMAGE_TAG == $PATTERN ]]; then
                 echo "The image tag in $FILE matches the pattern."
