@@ -57,12 +57,11 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             fi
         done
 
-            # IMAGE_REPOSITORY_REF=$(yq e '.spec.imageRepositoryRef.name' imagepolicies_list.yaml)
             PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-            # FILE="clusters/prod/base /cluster/ptl/base"
-            FILE="./apps/juror/juror-api/juror-api.yaml"
+            FILE="/cluster/ptl/base"
+            # FILE="./apps/juror/juror-api/juror-api.yaml"
 
-            # for file in $FILE/*.yaml; do
+            for file in $FILE/*.yaml; do
 
             IMAGE_TAG=$(yq eval '.spec.values.java.image' "$FILE")
 
