@@ -49,17 +49,17 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             fi
 
             IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
-            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern | "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
+            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern == "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
 
-                if [[ $IMAGE_AUTOMATION_CHECK == "true" ]]; then
-                    echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-                    exit 1
-                fi
-            done
+            if [ $IMAGE_AUTOMATION_CHECK == false ]
+            then
+                echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
+            fi
+        done
 
             # IMAGE_REPOSITORY_REF=$(yq e '.spec.imageRepositoryRef.name' imagepolicies_list.yaml)
             PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-            # FILE="clusters/prod/base"
+            # FILE="clusters/prod/base /cluster/ptl/base"
             FILE="./apps/juror/juror-api/juror-api.yaml"
 
             # for file in $FILE/*.yaml; do
