@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: opal-fines-service
@@ -10,3 +10,4 @@ spec:
       ingressHost: opal-fines-service.staging.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
+        OPAL_FRONTEND_URL: https://opal-frontend.staging.platform.hmcts.net

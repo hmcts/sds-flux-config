@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: juror-pnc
@@ -7,4 +7,6 @@ spec:
   releaseName: juror-pnc
   values:
     java:
+      # Uncomment and edit the line below to fix the environment at a specific image
+      # image: sdshmctspublic.azurecr.io/juror/pnc:prod-ec3e6f5-20240115073737
       ingressHost: juror-pnc.demo.platform.hmcts.net

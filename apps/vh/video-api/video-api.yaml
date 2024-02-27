@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: vh-video-api
@@ -7,7 +7,7 @@ spec:
   releaseName: vh-video-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/video-api:prod-1413949-202401081727 # {"$imagepolicy": "flux-system:vh-video-api"}
+      image: sdshmctspublic.azurecr.io/vh/video-api:prod-ceca202-202402071722 # {"$imagepolicy": "flux-system:vh-video-api"}
       disableTraefikTls: true
   chart:
     spec:

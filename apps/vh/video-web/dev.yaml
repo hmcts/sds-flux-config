@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: vh-video-web
@@ -10,4 +10,4 @@ spec:
       ingressHost: vh-video-web.dev.platform.hmcts.net
       ingressAnnotations:
         external-dns.alpha.kubernetes.io/exclude: "true"
-      image: sdshmctspublic.azurecr.io/vh/video-web:dev-cea087d-202401091029 # {"$imagepolicy": "flux-system:vh-video-web-dev"}
+      image: sdshmctspublic.azurecr.io/vh/video-web:dev-12dff08-202402201226 # {"$imagepolicy": "flux-system:vh-video-web-dev"}

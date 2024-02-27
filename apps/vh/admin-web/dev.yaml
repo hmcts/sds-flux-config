@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: vh-admin-web
@@ -10,4 +10,4 @@ spec:
       ingressHost: vh-admin-web.dev.platform.hmcts.net
       ingressAnnotations:
         external-dns.alpha.kubernetes.io/exclude: "true"
-      image: sdshmctspublic.azurecr.io/vh/admin-web:dev-1328eaa-202401121007 #{"$imagepolicy": "flux-system:vh-admin-web-dev"}
+      image: sdshmctspublic.azurecr.io/vh/admin-web:dev-b25de92-202402271008 #{"$imagepolicy": "flux-system:vh-admin-web-dev"}
