@@ -5,6 +5,9 @@ metadata:
   name: neuvector
   namespace: neuvector
 spec:
+  chart:
+    spec:
+      version: 1.5.3
   values:
     keyvault:
       name: sdsneuvector
