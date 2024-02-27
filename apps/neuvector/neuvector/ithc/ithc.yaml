@@ -7,7 +7,12 @@ metadata:
 spec:
   chart:
     spec:
-      version: 1.5.3
+      chart: ./neuvector-azure-keyvault
+      sourceRef:
+        kind: GitRepository
+        name: chart-neuvector
+        namespace: flux-system
+      interval: 5m
   values:
     keyvault:
       name: sdsneuvector
