@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
   token: ENC[AES256_GCM,data:FX18NleROmRYjlca8a0Xipkzpexj/X/qw44hAhr7S1hebz50hd6SNm0lRR5PC+HuMqU7beMdxYw=,iv:cLYQ5rXdYnFTHzoyVzHIK33e8DSx+mO2i+BwEc6+css=,tag:FzKC7O91zF/68McMutO8XA==,type:str]
+kind: Secret
 metadata:
   creationTimestamp: null
   name: azure-devops-token
