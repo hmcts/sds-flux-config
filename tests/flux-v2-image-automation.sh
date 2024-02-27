@@ -71,6 +71,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                 echo "The image tag in $FILE does not match the pattern."
                 exit 1
             fi
+            done 
 
     done
 
