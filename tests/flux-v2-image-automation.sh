@@ -58,7 +58,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
             PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-            FILE="/cluster/ptl/base"
+            FILE="/clusters/ptl/base"
             # FILE="./apps/juror/juror-api/juror-api.yaml"
 
             for file in $FILE/*.yaml; do
@@ -71,7 +71,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                 echo "The image tag in $FILE does not match the pattern."
                 exit 1
             fi
-            done 
+            done
 
     done
 
