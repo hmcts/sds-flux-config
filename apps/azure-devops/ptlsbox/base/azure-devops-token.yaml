@@ -1,7 +1,6 @@
 apiVersion: v1
 data:
-  token: ENC[AES256_GCM,data:gulH+/1Aq2h7hXDs1Q3PWMSWYvrOhUOml6KWxyXLXvPsptTeemVQu1nqgSh8aBdMNSYa9WVQ+PgxH/sqhy/PZcQzs0DQMEUT,iv:CwnWq/qnnNRVWWho327U4Ng1eGgd+cxaUTeCfQCuTNQ=,tag:q+s24XZZ5Iwkb+v9TFFW9A==,type:str]
-kind: Secret
+  token: ENC[AES256_GCM,data:FX18NleROmRYjlca8a0Xipkzpexj/X/qw44hAhr7S1hebz50hd6SNm0lRR5PC+HuMqU7beMdxYw=,iv:cLYQ5rXdYnFTHzoyVzHIK33e8DSx+mO2i+BwEc6+css=,tag:FzKC7O91zF/68McMutO8XA==,type:str]
 metadata:
   creationTimestamp: null
   name: azure-devops-token
@@ -14,12 +13,12 @@ sops:
     - vault_url: https://dtssdsptlsbox.vault.azure.net
       name: sops-key
       version: a443393a134b4e33ae9f541d2f14747e
-      created_at: "2023-05-25T06:50:51Z"
-      enc: TI67rpfD7tJS1y07Eaa_ubGwViSxuvCQtkMdT8BgLSdQVjGroa169aMEDUASOVRz3vegunguwhORnBYDPUBafIo7_3BsacCjwIrRy637zCgN3eZEpdJdHclzAvvGtz31lZnD-PYKDN3763mJLynNDaiX1IC8SxYOjhC2_mB9lJ0rLevseHYvwRn1zHwXcNhkQwg3dBfT_AZUWhyPp7HtuM0kyyuhtipeMmHWAhLmqzYDlj7_qoWxN8RGIZ2hUwl8EQt7nhE2JeuoY07ilErE0Kg-sFfm3ZGFjVe60JhGmqGNdpwT6wOIhfEYH8NBEmHoZSAc5AWHHMgj5kmMgRuLTA
+      created_at: "2024-02-27T09:41:07Z"
+      enc: fcyJwyokgoB3BWfaC_1eGSp45prwIJzYiXIVUAAfIp-9VANASS41nUsRBSBRmM9yCQpEXitDqj1iOcJpik4GF-33FXYMrqLSXinhBUr5ytW4rsQZ3E4j86oQrautZHSVQXLc9x1dtEnj5FSbgeowwPl3yCdHZiPeBu7_2eRMDvyVKwFrAgenMI2txhtT6NCfiPF-XtkqdezPv11pm_TZps8yh49GpdLrR6JQsGUr3tiCeyu0Oel-8Yi9owPm9W-z3yXiLmZwkGgwTYmXTGrYsVRiOZOkBnNt-MZE7MFSp038ITvC44f37BpxTTiL3yt7fPyUD3tdkqvBX58V4boF8A
   hc_vault: []
   age: []
-  lastmodified: "2023-05-25T06:50:53Z"
-  mac: ENC[AES256_GCM,data:WBUNybYQyNmW9J9EyDO7fYrrR5pTrR0hawNqzrGfsrn20jX+1kpzYZKfINd8Cp+NU9SfNcL2srQZkaTCzcOXKgBgLh28BQCibK8dS2jafjQlKNqYReOBW/hIJGFydzpzLs/P27OXyQryrJLfHhFF++RF7cno1/EklJLk9nZs6nc=,iv:cBzwEx0XmRfjwt1dmzKnV7W3T+JyWDpFy7DFTWDpmrg=,tag:5TKCmxTmI4gxNgbqt2Kweg==,type:str]
+  lastmodified: "2024-02-27T09:41:09Z"
+  mac: ENC[AES256_GCM,data:eJPb+xXo0PkOxTxmeZFE8Kdjzg6wM9l8dCVgQTEGkGt8kws69G6BTzX799UQ6OxM6WIvRQ90JHRa+NuAqAKjXtTyiSfl449/wTbmXevSDLCU72JKYO4NinYAWph/dG+MCGxAlr7TwCM00oxtUSnfh9DD7fB8y+wyXGCUA3VCmn8=,iv:N39Mt2SPtqnl/1r5ImTXASfHWaishDRlzIOMhOTCVr8=,tag:85sDx2dwvUyGQvQP86TB5Q==,type:str]
   pgp: []
   encrypted_regex: ^(data|stringData)$
   version: 3.7.3
