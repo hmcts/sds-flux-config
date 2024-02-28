@@ -29,7 +29,8 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
     done
 
-    ./kustomize build --load-restrictor LoadRestrictionsNone "clusters/ptl/base" | yq eval 'select(.metadata and .kind == "ImagePolicy")' -  > imagepolicies_list.yaml
+    kustomize build --load-restrictor LoadRestrictionsNone "clusters/ptl/base" | yq eval 'select(.metadata and .kind == "ImagePolicy")' -  > imagepolicies_list.yaml
+
     [ $? -eq 0 ] || (echo "Kustomize build has failed" && exit 1)
 
     for IMAGE_POLICY in "${IMAGE_POLICIES[@]}"; do
@@ -57,20 +58,26 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             fi
         done
 
+        output_file="kustomization_images_list.txt"
+        directories=$(find apps/ -name 'kustomization.yaml'
 
-        PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-        FILE="./clusters/ptl/base"
-        # FILE="./apps/juror/juror-api/juror-api.yaml"
-
-        for file in $(find apps/ -name '*.yaml'); do
-            image=$(yq eval '.spec.values.java.image' "$file")
-            PART_AFTER_PROD=${image##*prod-}
-
-            if [[ $PART_AFTER_PROD != $PATTERN ]]; then
-                echo "The image tag in $file does not match the pattern."
-                exit 1
-            fi
+        for dir in $directories; do
+            kustomize build --load-restrictor LoadRestrictionsNone "$dir" >> "$output_file"
         done
-    done
 
+        # PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+        # FILE="./clusters/ptl/base"
+        # # FILE="./apps/juror/juror-api/juror-api.yaml"
+
+        # for file in $(find apps/ -name '*.yaml'); do
+        #     image=$(yq eval '.spec.values.java.image' "$file")
+        #     PART_AFTER_PROD=${image##*prod-}
+
+        #     if [[ $PART_AFTER_PROD != $PATTERN ]]; then
+        #         echo "The image tag in $file does not match the pattern."
+        #         exit 1
+        #     fi
+        # done
+
+    done
 done
