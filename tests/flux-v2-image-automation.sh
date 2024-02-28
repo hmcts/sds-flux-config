@@ -57,23 +57,19 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             fi
         done
 
-            PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-            FILE="./clusters/ptl/base"
-            # FILE="./apps/juror/juror-api/juror-api.yaml"
 
-            for file in $FILE/*; do
-            IMAGE_TAG=$(yq eval '.spec.values.java.image' "$file")
+        PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+        FILE="./clusters/ptl/base"
+        # FILE="./apps/juror/juror-api/juror-api.yaml"
 
-            if [[ $IMAGE_TAG == $PATTERN ]]; then
-                echo "The image tag in $FILE matches the pattern."
-            else
+            for file in $(find apps/ -name '*.yaml'); do
+            image=$(yq eval '.spec.values.image' "$file")
+
+                if [[ $IMAGE_TAG != $PATTERN ]]; then
                 echo "The image tag in $FILE does not match the pattern."
                 exit 1
-            fi
+                fi
             done
-
     done
 
 done
-
-
