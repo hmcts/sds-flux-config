@@ -65,7 +65,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             for file in $(find apps/ -name '*.yaml'); do
             image=$(yq eval '.spec.values.image' "$file")
 
-                if [[ $IMAGE_TAG != $PATTERN ]]; then
+                if [[ $image != $PATTERN ]]; then
                 echo "The image tag in $FILE does not match the pattern."
                 exit 1
                 fi
