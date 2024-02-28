@@ -63,7 +63,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         # FILE="./apps/juror/juror-api/juror-api.yaml"
 
         for file in $(find apps/ -name '*.yaml'); do
-            image=$(yq eval '.spec.values.image' "$file")
+            image=$(yq eval '.spec.values.java.image' "$file")
             PART_AFTER_PROD=${image##*prod-}
 
             if [[ $PART_AFTER_PROD != $PATTERN ]]; then
