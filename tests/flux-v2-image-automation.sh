@@ -58,7 +58,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
         output_file="kustomization_images_list.txt"
-        directories=$(find apps/ -name 'kustomization.yaml'
+        directories=$(find apps/ -name 'kustomization.yaml'  -exec dirname {} \;)
 
         for dir in $directories; do
             kustomize build --load-restrictor LoadRestrictionsNone "$dir" >> "$output_file"
