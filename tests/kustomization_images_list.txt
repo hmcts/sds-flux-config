@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    hmcts.github.com/envInjector: ${ENV_INJECTOR:-enabled}
+    slackChannel: ${TEAM_NOTIFICATION_CHANNEL}
+  name: pdm
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ${NAMESPACE}
+  namespace: pdm
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tests-service-account
+  namespace: pdm
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  generation: 2
+  name: team-alerts
+  namespace: pdm
+spec:
+  eventSeverity: info
+  eventSources:
+  - kind: Kustomization
+    name: ${NAMESPACE}
+    namespace: flux-system
+  - kind: HelmRelease
+    name: '*'
+    namespace: ${NAMESPACE}
+  - kind: HelmChart
+    name: '*'
+    namespace: ${NAMESPACE}
+  providerRef:
+    name: slack
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: slack
+  namespace: pdm
+spec:
+  channel: ${TEAM_NOTIFICATION_CHANNEL}
+  secretRef:
+    name: slack-url
+  type: slack
+  username: ${CLUSTER_FULL_NAME}-aks

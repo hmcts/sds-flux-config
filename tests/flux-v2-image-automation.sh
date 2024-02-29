@@ -30,6 +30,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     done
 
     ./kustomize build --load-restrictor LoadRestrictionsNone "clusters/ptl/base" | yq eval 'select(.metadata and .kind == "ImagePolicy")' -  > imagepolicies_list.yaml
+
     [ $? -eq 0 ] || (echo "Kustomize build has failed" && exit 1)
 
     for IMAGE_POLICY in "${IMAGE_POLICIES[@]}"; do
@@ -58,11 +59,18 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
         output_file="kustomization_images_list.txt"
-        directories=$(find apps/ -name 'kustomization.yaml' )
+        directories=$(find apps -type d)
+        count=0
 
         for dir in $directories; do
-            kustomize build --load-restrictor LoadRestrictionsNone "$dir" >> "$output_file"
+            kustomize build --load-restrictor LoadRestrictionsNone "$dir"
+            count += 1
+            if [ $count = 1 ]; then
+                break
+            fi
         done
+
+
 
         # PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
         # FILE="./clusters/ptl/base"
