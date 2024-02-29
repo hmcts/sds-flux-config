@@ -1,0 +1,7 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: opal-print-service
+spec:
+  imageRepositoryRef:
+    name: opal-print-service

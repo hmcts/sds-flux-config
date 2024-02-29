@@ -10,4 +10,4 @@ spec:
       ingressHost: vh-admin-web.dev.platform.hmcts.net
       ingressAnnotations:
         external-dns.alpha.kubernetes.io/exclude: "true"
-      image: sdshmctspublic.azurecr.io/vh/admin-web:dev-67ad08e-202401221449 #{"$imagepolicy": "flux-system:vh-admin-web-dev"}
+      image: sdshmctspublic.azurecr.io/vh/admin-web:dev-b80f6cd-202402281611 #{"$imagepolicy": "flux-system:vh-admin-web-dev"}

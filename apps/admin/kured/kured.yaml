@@ -12,7 +12,7 @@ spec:
   chart:
     spec:
       chart: kured
-      version: 4.6.0
+      version: 5.4.2
       sourceRef:
         kind: HelmRepository
         name: kured
@@ -21,9 +21,6 @@ spec:
   values:
     serviceAccount:
       create: false
-    image:
-      repository: ghcr.io/kubereboot/kured
-      tag: 1.12.0
     extraArgs:
       slack-username: ${ENVIRONMENT}-${CLUSTER}-aks
       slack-channel: aks-monitor-ss

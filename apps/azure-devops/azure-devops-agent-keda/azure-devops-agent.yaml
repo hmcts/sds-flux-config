@@ -31,8 +31,8 @@ spec:
         key: token
     memoryRequests: 512Mi
     cpuRequests: 25m
-    memoryLimits: 2Gi
-    cpuLimits: 1
+    memoryLimits: 3Gi
+    cpuLimits: 2
     maxReplicaCount: 3
     successfulJobsHistoryLimit: 5
     failedJobsHistoryLimit: 5
