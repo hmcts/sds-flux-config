@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: darts-api
@@ -7,3 +7,8 @@ spec:
   releaseName: darts-api
   values:
     java:
+      ingressHost: darts-api.test.platform.hmcts.net
+      environment:
+        DARTS_LOG_LEVEL: DEBUG
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-bebf973-20240229134724 # {"$imagepolicy": "flux-system:darts-api"}

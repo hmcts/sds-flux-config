@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: toffee-frontend
@@ -15,6 +15,7 @@ spec:
       interval: 1m
   values:
     nodejs:
+      memoryRequests: "512Mi"
       image: sdshmctspublic.azurecr.io/toffee/frontend:latest
       disableTraefikTls: true
       environment:

@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: themis-fe
@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
-      image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.12'
+      image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.15.0'
       environment:
         KV_CONFIG_TREE: /mnt/secrets/libragob-test-kv/
         LOG4J_DEBUG: true
@@ -36,3 +36,5 @@ spec:
             - confiscation-datasource-username
             - confiscation-datasource-url
             - servicebus-connectionstring
+            - cacerts
+            - cacerts-password

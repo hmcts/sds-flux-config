@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: darts-api
@@ -10,4 +10,8 @@ spec:
       ingressHost: darts-api.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: https://darts-gateway.platform.hmcts.net
-        DARTS_PORTAL_URL: https://darts-portal.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts.apps.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        RESTART_ME: '007'
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-bebf973-20240229134724 # {"$imagepolicy": "flux-system:darts-api"}

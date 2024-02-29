@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: darts-api
@@ -10,4 +10,4 @@ spec:
       ingressHost: darts-api.sandbox.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: https://darts-gateway.sandbox.platform.hmcts.net
-        DARTS_PORTAL_URL: https://darts-portal.sandbox.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts.sandbox.apps.hmcts.net

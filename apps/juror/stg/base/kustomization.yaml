@@ -5,5 +5,9 @@ resources:
 namespace: juror
 patches:
   - path: ../../juror-scheduler-api/stg.yaml
+  - path: ../../juror-scheduler-execution/stg.yaml
   - path: ../../juror-public/stg.yaml
+  - path: ../../juror-pnc/stg.yaml
+  - path: ../../juror-bureau/stg.yaml
+  - path: ../../juror-api/stg.yaml
   - path: ../../serviceaccount/stg.yaml

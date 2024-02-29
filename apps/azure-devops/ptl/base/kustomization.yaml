@@ -6,4 +6,4 @@ resources:
 - azure-devops-token.yaml
 patches:
 - path: ../../azure-devops-agent-keda/ptl.yaml
-- path: ../../azure-devops-agent-keda/ptl/identity.yaml
+- path: ../../serviceaccount/ptl.yaml

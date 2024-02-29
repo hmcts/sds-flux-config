@@ -21,6 +21,7 @@ resources:
   - ../../../apps/pre/base/kustomize.yaml
   - ../../../apps/juror/base/kustomize.yaml
   - ../../../apps/opal/base/kustomize.yaml
+  - ../../../apps/pdda/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
@@ -28,3 +29,4 @@ patches:
       annotationSelector: hmcts.github.com/kustomize-defaults != disabled
   - path: ../../../apps/toffee/stg/base/kustomize.yaml
   - path: ../../../apps/admin/stg/base/kustomize.yaml
+  - path: ../../../apps/neuvector/patching-crds/kustomize.yaml

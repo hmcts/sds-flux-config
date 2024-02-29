@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: darts-gateway
@@ -15,5 +15,6 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/gateway:prod-52740b4-20231116140542 # {"$imagepolicy": "flux-system:darts-gateway"}
+      replicas: 2
+      image: sdshmctspublic.azurecr.io/darts/gateway:prod-1d12fbd-20240229134058 # {"$imagepolicy": "flux-system:darts-gateway"}
       disableTraefikTls: true

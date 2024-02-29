@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: pip-publication-services
@@ -7,6 +7,7 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
+      replicas: 2
       ingressHost: pip-publication-services.staging.platform.hmcts.net
       environment:
         NOTIFY_LINK_SUBSCRIPTION_PAGE: https://pip-frontend.staging.platform.hmcts.net/subscription-management
@@ -19,3 +20,5 @@ spec:
         NOTIFY_LINK_START_PAGE: https://pip-frontend.staging.platform.hmcts.net
         ADMIN_DASHBOARD_LINK: https://pip-frontend.staging.platform.hmcts.net/admin-dashboard
         NOTIFY_CFT_SIGN_IN_LINK: https://pip-frontend.staging.platform.hmcts.net/cft-login
+        STANDARD_MAX_EMAILS: 100
+        HIGH_CAPACITY_MAX_EMAILS: 1000

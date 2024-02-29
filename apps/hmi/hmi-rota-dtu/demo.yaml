@@ -1,8 +1,8 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: hmi-rota-dtu
 spec:
   values:
     function:
-      image: sdshmctspublic.azurecr.io/hmi/rota-dtu:prod-591a592-20230914143614 #{"$imagepolicy": "flux-system:hmi-rota-dtu"}
+      image: sdshmctspublic.azurecr.io/hmi/rota-dtu:prod-da9a971-20231201104510 #{"$imagepolicy": "flux-system:hmi-rota-dtu"}

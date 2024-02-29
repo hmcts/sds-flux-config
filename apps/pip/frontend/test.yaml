@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: pip-frontend
@@ -6,6 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
+      replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
@@ -23,3 +24,4 @@ spec:
         MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration
         B2C_URL: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
         B2C_ADMIN_URL: https://staff.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
+        SESSION_COOKIE_SAME_SITE: lax

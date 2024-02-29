@@ -1,6 +1,6 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
   name: dc-purview-shir
 spec:
-  image: sdshmctspublic.azurecr.io/dc/dc-purview-integration-runtime
+  image: sdshmctspublic.azurecr.io/dc/purview-integration-runtime
