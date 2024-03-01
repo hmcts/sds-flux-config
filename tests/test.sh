@@ -15,7 +15,7 @@ OUTPUTFILE="kustomization_images.txt"
 cd ../apps
 
 
-DIRECTORIES=$(find . -type d -not -path "$EXCLUSIONS_LIST")
+DIRECTORIES=$(find . -type d -not -path "${EXCLUSIONS[*]}")
 
 for dir in $DIRECTORIES; do
     find "$dir" -name "prod.yaml" -name "base.yaml" |

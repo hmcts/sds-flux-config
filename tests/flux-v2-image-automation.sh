@@ -57,33 +57,15 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             fi
         done
 
-        output_file="kustomization_images_list.txt"
-        directories=$(find apps -type d)
-        count=0
 
-        for dir in $directories; do
-            kustomize build --load-restrictor LoadRestrictionsNone "$dir"
-            count += 1
-            if [ $count = 1 ]; then
-                break
-            fi
+        OUTPUTFILE="kustomization_images.txt"
+        DIRECTORIES=$(find . -type d -not -path "${EXCLUSIONS[*]}")
+
+        for dir in $DIRECTORIES; do
+            find "$dir" -name "prod.yaml" -name "base.yaml" |
+            kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
         done
 
-
-
-        # PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-        # FILE="./clusters/ptl/base"
-        # # FILE="./apps/juror/juror-api/juror-api.yaml"
-
-        # for file in $(find apps/ -name '*.yaml'); do
-        #     image=$(yq eval '.spec.values.java.image' "$file")
-        #     PART_AFTER_PROD=${image##*prod-}
-
-        #     if [[ $PART_AFTER_PROD != $PATTERN ]]; then
-        #         echo "The image tag in $file does not match the pattern."
-        #         exit 1
-        #     fi
-        # done
 
     done
 done
