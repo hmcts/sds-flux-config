@@ -59,7 +59,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
 
         OUTPUTFILE="kustomization_images.txt"
-        DIRECTORIES=$(find $FILE_LOCATIONS -type d -not -path "${EXCLUSIONS[*]}")
+        DIRECTORIES=$(find $FILE_LOCATIONS -type d -not -path "$IFS")
 
         for dir in $DIRECTORIES; do
             find "$dir" -name "prod.yaml" -name "base.yaml" |
