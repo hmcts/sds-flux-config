@@ -1,19 +1,23 @@
 #!/usr/bin/env bash
 EXCLUSIONS_LIST=(
-    apps/flux-system/*
-    apps/vh/*/stg.yaml
-    .*demo.*.yaml
-    .*test.*.yaml
-    .*ithc.*.yaml
-    .*sbox.*.yaml
-    .*dev.*.yaml
+  /flux-system/*
+  /vh/*/stg.yaml
+  .*demo.*.yaml
+  .*test.*.yaml
+  .*ithc.*.yaml
+  .*sbox.*.yaml
+  .*dev.*.yaml
 )
 
-# EXCLUSIONS=$(IFS="|" ; echo "${EXCLUSIONS_LIST[*]}")
-# FILE_LOCATIONS="apps"
-OUTPUTFILE="kustomization_images_list.txt"
-DIRECTORIES=$(find ../apps -type d -not -path $EXCLUSIONS_LIST )
-# echo $DIRECTORIES
-    for dir in $DIRECTORIES; do
-        kustomize build --load-restrictor LoadRestrictionsNone "$dir" > $OUTPUTFILE
+EXCLUSIONS=$(IFS="|" ; echo "${EXCLUSIONS_LIST[*]}")
+OUTPUTFILE="kustomization_images.txt"
+
+cd ../apps
+
+
+DIRECTORIES=$(find . -type d -not -path "$EXCLUSIONS_LIST")
+
+for dir in $DIRECTORIES; do
+    find "$dir" -name "prod.yaml" -name "base.yaml" |
+    kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
 done
