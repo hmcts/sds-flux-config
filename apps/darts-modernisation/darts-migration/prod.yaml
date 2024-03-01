@@ -13,7 +13,7 @@ spec:
         ENABLE_FLYWAY: true
         RUN_DB_MIGRATION_ON_STARTUP: true
         DARTS_API_DB_HOST: "darts-migration-prod.postgres.database.azure.com"
-        DARTS_API_DB_NAME: "psql-prod-dartsmig-01"
+        DARTS_API_DB_NAME: "psql-prod-detsmig-01"
         DARTS_GATEWAY_URL: https://darts-migration-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts-migration.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
@@ -27,4 +27,4 @@ spec:
               alias: DARTS_API_DB_PASSWORD
     function:
       #pin the release version as per darts-api-migration.yaml
-      image: sdshmctspublic.azurecr.io/darts/api:prod-2b4f7a7-20240214140310
+      image: sdshmctspublic.azurecr.io/darts/api:prod-32bdc24-20240229110157
