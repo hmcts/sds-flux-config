@@ -18,3 +18,4 @@ spec:
       image: sdshmctspublic.azurecr.io/juror/public:prod-4cd4bb3-20240304100906 # {"$imagepolicy": "flux-system:juror-public"}
       disableTraefikTls: true
       memoryLimits: '768Mi'
+      startupPeriod: 30
