@@ -82,4 +82,4 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             # done
         done
     done
-donecann
+done
