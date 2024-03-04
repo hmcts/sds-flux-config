@@ -65,8 +65,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
         OUTPUTFILE="images.yaml"
-        DIRECTORIES=$(find apps -type d -not -path "$EXCLUSIONS")
-        cd ../apps
+        DIRECTORIES=$(find $GITHUB_WORKSPACE/apps -type d -not -path "$EXCLUSIONS")
 
         for dir in $DIRECTORIES; do
 
