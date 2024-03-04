@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: opal-print-service
+  namespace: opal
+spec:
+  releaseName: opal-print-service
+  values:
+    java:
+      ingressHost: opal-print-service.staging.platform.hmcts.net
+      environment:
+        DUMMY_VAR: 0

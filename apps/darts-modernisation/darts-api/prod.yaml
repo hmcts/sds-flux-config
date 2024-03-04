@@ -11,7 +11,7 @@ spec:
       environment:
         DARTS_GATEWAY_URL: https://darts-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
-        DARTS_LOG_LEVEL: DEBUG
+        DARTS_LOG_LEVEL: INFO
         RESTART_ME: '007'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-54e4927-20240126164206 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-dda6abe-20240304133533 # {"$imagepolicy": "flux-system:darts-api"}
