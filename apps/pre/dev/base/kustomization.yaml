@@ -3,8 +3,10 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../../base/workload-identity
 namespace: pre
 patches:
   - path: ../../identity/dev.yaml
   - path: ../../pre-portal/dev.yaml
+  - path: ../../serviceaccount/stg.yaml
   - path: ../../serviceaccount/stg.yaml
