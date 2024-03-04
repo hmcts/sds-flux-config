@@ -65,7 +65,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
         OUTPUTFILE="images.yaml"
-        DIRECTORIES=$(find $GITHUB_WORKSPACE/apps -type d -not -path "$EXCLUSIONS")
+        DIRECTORIES=$(find $GITHUB_WORKSPACE/apps -type d -not -path "$EXCLUSIONS" -printf "$GITHUB_WORKSPACE/%p\n")
 
         for dir in $DIRECTORIES; do
             echo "Checking HelmRelease in $dir"
