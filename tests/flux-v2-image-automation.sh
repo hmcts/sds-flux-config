@@ -72,4 +72,6 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             # fi
         done
     done
+
+    done
 done
