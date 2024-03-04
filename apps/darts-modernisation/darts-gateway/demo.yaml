@@ -10,4 +10,4 @@ spec:
       replicas: 2
       ingressHost: darts-gateway.demo.platform.hmcts.net
       environment:
-        RESTART_ME: '001'
+        DARTS_LOG_LEVEL: TRACE
