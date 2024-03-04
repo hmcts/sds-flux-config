@@ -47,7 +47,8 @@ spec:
               name: ipam-sop-secrets
               key: TENANT-ID
         - name: IPAM_UI_URL
-          value: "https://ipam.hmcts.net"
+          # value: "https://ipam.hmcts.net"
+          value: "http://localhost:8080/"
         - name: AZURE_ENV
           value: "AZURE_PUBLIC"
         - name: KEYVAULT_URL
