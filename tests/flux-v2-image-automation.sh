@@ -63,6 +63,13 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         for dir in $DIRECTORIES; do
             find "$dir" -not -name "*sbox*" -not -name "*ithc*" -not -name "*perftest*" -not -name "*test*" -not -name "*demo*" -not -name "*stg*" -not -name "*dev*" -not -name "*00*" -not -name "*aat*"  -not -name "*sandbox*"
             ./kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
+
+            IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+
+            if ! grep -q "$IMAGE_PATTERN" "$OUTPUTFILE"; then
+                echo "No match found in $OUTPUTFILE. Exiting with status 1."
+                exit 1
+            fi
         done
     done
 done
