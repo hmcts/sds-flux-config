@@ -68,9 +68,9 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         DIRECTORIES=$(find $GITHUB_WORKSPACE/apps -type d -not -path "$EXCLUSIONS")
 
         for dir in $DIRECTORIES; do
-
             echo "Checking HelmRelease in $dir"
-            kustomize build --load-restrictor LoadRestrictionsNone $GITHUB_WORKSPACE/"$dir" | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
+            kustomize build --load-restrictor LoadRestrictionsNone "$dir" | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' > $OUTPUTFILE
+        done
             # IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
 
             # while read -r output; do
