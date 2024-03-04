@@ -66,6 +66,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
         OUTPUTFILE="images.yaml"
         DIRECTORIES=$(find apps -type d -not -path "$EXCLUSIONS")
+        cd ../apps
 
         for dir in $DIRECTORIES; do
 
