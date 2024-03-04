@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-set -ex -o pipefail
+# set -ex -o pipefail
+set -x 
 
 EXCLUSIONS_LIST=(
     apps/flux-system/*
@@ -68,7 +69,9 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
         for dir in $DIRECTORIES; do
 
+
             kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
+            set -e
 
             IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
 
