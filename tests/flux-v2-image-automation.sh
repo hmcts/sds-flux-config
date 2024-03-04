@@ -67,7 +67,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
 
             if ! grep -q "$IMAGE_PATTERN" "$OUTPUTFILE"; then
-                echo "No match found in $OUTPUTFILE. Exiting with status 1."
+                echo "No match found in $OUTPUTFILE"
                 exit 1
             fi
         done
