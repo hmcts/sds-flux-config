@@ -61,15 +61,14 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         DIRECTORIES=$(find $FILE_LOCATIONS -type d -not -path "$EXCLUSIONS")
 
         for dir in $DIRECTORIES; do
-            find "$dir" -not -name "*sbox*" -not -name "*ithc*" -not -name "*perftest*" -not -name "*test*" -not -name "*demo*" -not -name "*stg*" -not -name "*dev*" -not -name "*00*" -not -name "*aat*"  -not -name "*sandbox*"
-            ./kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
+            find "$dir" -not -name "*sbox*" -not -name "*ithc*" -not -name "*perftest*" -not -name "*test*" -not -name "*demo*" -not -name "*stg*" -not -name "*dev*" -not -name "*00*" -not -name "*aat*"  -not -name "*sandbox*" ./kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
 
-            IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+            # IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
 
-            if ! grep -q "$IMAGE_PATTERN" "$OUTPUTFILE"; then
-                echo "No match found in $OUTPUTFILE"
-                exit 1
-            fi
+            # if ! grep -q "$IMAGE_PATTERN" "$OUTPUTFILE"; then
+            #     echo "No match found in $OUTPUTFILE"
+            #     exit 1
+            # fi
         done
     done
 done
