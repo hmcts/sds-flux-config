@@ -65,7 +65,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
         OUTPUTFILE="images.yaml"
-        DIRECTORIES=$(find $FILE_LOCATIONS -type d -not -path "*dev.*.yaml")
+        DIRECTORIES=$(find "$FILE_LOCATIONS" -type d -not -path "*dev.*.yaml")
 
         for dir in $DIRECTORIES; do
 
