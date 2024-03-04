@@ -69,7 +69,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
         for dir in $DIRECTORIES; do
 
-            ls -l $dir
+            ls
             # kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1
             # yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
 
