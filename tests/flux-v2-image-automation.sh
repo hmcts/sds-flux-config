@@ -2,13 +2,19 @@
 set -ex -o pipefail
 
 EXCLUSIONS_LIST=(
-  apps/flux-system/*
-  apps/vh/*/stg.yaml
-  .*demo.*.yaml
-  .*test.*.yaml
-  .*ithc.*.yaml
-  .*sbox.*.yaml
-  .*dev.*.yaml
+    apps/flux-system/*
+    apps/vh/*/stg.yaml
+    .*demo.*.yaml
+    .*test.*.yaml
+    .*ithc.*.yaml
+    .*sbox.*.yaml
+    .*dev.*.yaml
+    .*perftest*
+    .*sbox*
+    .*test*
+    .*stg*
+    .*dev*
+    .*aat*
 )
 
 EXCLUSIONS=$(IFS="|" ; echo "${EXCLUSIONS_LIST[*]}")
@@ -61,17 +67,19 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         DIRECTORIES=$(find $FILE_LOCATIONS -type d -not -path "$EXCLUSIONS")
 
         for dir in $DIRECTORIES; do
-        find "$dir" -not -name "*sbox*" -not -name "*ithc*" -not -name "*perftest*" -not -name "*test*" -not -name "*demo*" -not -name "*stg*" -not -name "*dev*" -not -name "*00*" -not -name "*aat*"  -not -name "*sandbox*" -type d -print | while read -r dir; do
             ./kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
 
-            # IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+            IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
 
-            # if ! grep -q "$IMAGE_PATTERN" "$OUTPUTFILE"; then
-            #     echo "No match found in $OUTPUTFILE"
-            #     exit 1
-            # fi
+            while IFS= read -r output; do
+                nodejs_image=$(echo "$output" | yq eval '.spec.values.nodejs.image' -)
+                java_image=$(echo "$output" | yq eval '.spec.values.java.image' -)
+
+                if [[ ! "$nodejs_image" && "$java_image"  != $IMAGE_PATTERN ]]; then
+                    echo "Error: No match found for image pattern in line: $output"
+                fi
+            done
         done
-    done
 
     done
 done
