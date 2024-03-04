@@ -55,7 +55,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             then
                 echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
             fi
-
+        done
 
         OUTPUTFILE="kustomization_images.txt"
         DIRECTORIES=$(find $FILE_LOCATIONS -type d -not -path "$IFS")
@@ -65,7 +65,6 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             ./kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
             exit 1
         done
-    done
 
     done
 done
