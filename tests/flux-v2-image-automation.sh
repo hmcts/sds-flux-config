@@ -60,7 +60,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         OUTPUTFILE="kustomization_images.txt"
         DIRECTORIES=$(find $FILE_LOCATIONS -type d -not -path "$EXCLUSIONS")
         for dir in $DIRECTORIES; do
-            find "$dir" -not -name "*sbox*" -not -name "*ithc*" -not -name "*perftest*" -not -name "*test*" -not -name "*demo*" \
+            find "$dir" -not -name "*sbox*" -not -name "*ithc*" -not -name "*perftest*" -not -name "*test*" -not -name "*demo*"
             ./kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
         done
     done
