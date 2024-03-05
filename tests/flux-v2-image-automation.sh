@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -ex -o pipefail
+set -x
 
 EXCLUSIONS_LIST=(
     apps/flux-system/*
