@@ -81,7 +81,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                 if [[ "$nodejs_image" && "$java_image" != $IMAGE_PATTERN ]]; then
                     echo "Error: No match found for image pattern in line: $output"
                 fi
-            done
+            done < $OUTPUTFILE
         done
     done
 done
