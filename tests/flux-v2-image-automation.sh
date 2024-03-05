@@ -2,7 +2,7 @@
 set -ex -o pipefail
 
 OUTPUTFILE="images.yaml"
-DIRECTORIES=$(find apps -type d -not -path '*dev*' -not -path '*stg*' -not -path '*test*' -not -path '*ithc*' -not -path '*demo*' -not -path '*sbox*' -not -path 'apps' -not -path '*dynatrace*' -not -path '*azureserviceoperator-system*' -not -path '*flux-system*' -not -path '*neuvector*')
+DIRECTORIES=$(find apps -type d -not -path '*dev*' -not -path '*stg*' -not -path '*test*' -not -path '*ithc*' -not -path '*demo*' -not -path '*sbox*' -not -path 'apps' -not -path '*dynatrace*' -not -path '*azureserviceoperator-system*' -not -path '*flux-system*' -not -path '*neuvector*' -not -path '*traefik2*')
 
 echo $DIRECTORIES
 for dir in $DIRECTORIES; do
