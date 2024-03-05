@@ -69,7 +69,8 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         DIRECTORIES=$(find apps -type d -not -path '*dev*' -not -path '*stg*' -not -path '*test*' -not -path '*ithc*' -not -path '*demo*' -not -path '*sbox*' -not -path 'apps' -not -path '*toffee*')
 
         for dir in $DIRECTORIES; do
-
+            dir_name=$(basename $dir)
+            echo "Processing $dir_name"
             ./kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
 
             # IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
