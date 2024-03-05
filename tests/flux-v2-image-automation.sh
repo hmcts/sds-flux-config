@@ -72,7 +72,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
             cat $OUTPUTFILE
         done
-            IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+            # IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
 
             # while read -r output; do
             #     nodejs_image=$(echo "$output" | yq eval '.spec.values.nodejs.image' -)
