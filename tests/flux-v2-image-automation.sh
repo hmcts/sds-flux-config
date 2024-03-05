@@ -65,9 +65,11 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
         OUTPUTFILE="images.yaml"
-        DIRECTORIES=$(find $FILE_LOCATIONS -type d -not -path "$EXCLUSIONS")
+        location= "apps"
+        DIRECTORIES=$(find . -type d -not -path "$EXCLUSIONS")
 
         for dir in $DIRECTORIES; do
+
             echo "Checking HelmRelease in $dir"
             kustomize build --load-restrictor LoadRestrictionsNone "$dir" | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' > $OUTPUTFILE
         done
