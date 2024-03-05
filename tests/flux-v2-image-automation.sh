@@ -69,7 +69,6 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
         for dir in $DIRECTORIES; do
 
-            echo "Checking HelmRelease in $dir"
             kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
         done
             IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
@@ -82,6 +81,5 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             #         echo "Error: No match found for image pattern in line: $output"
             #     fi
             # done < $OUTPUTFILE
-        # done
     done
 done
