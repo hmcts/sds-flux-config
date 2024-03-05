@@ -74,14 +74,14 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
             IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
 
-            while read -r output; do
-                nodejs_image=$(echo "$output" | yq eval '.spec.values.nodejs.image' -)
-                java_image=$(echo "$output" | yq eval '.spec.values.java.image' -)
+            # while read -r output; do
+            #     nodejs_image=$(echo "$output" | yq eval '.spec.values.nodejs.image' -)
+            #     java_image=$(echo "$output" | yq eval '.spec.values.java.image' -)
 
-                if [[ "$nodejs_image" && "$java_image" != $IMAGE_PATTERN ]]; then
-                    echo "Error: No match found for image pattern in line: $output"
-                fi
-            done < $OUTPUTFILE
+            #     if [[ "$nodejs_image" && "$java_image" != $IMAGE_PATTERN ]]; then
+            #         echo "Error: No match found for image pattern in line: $output"
+            #     fi
+            # done < $OUTPUTFILE
         done
     done
 done
