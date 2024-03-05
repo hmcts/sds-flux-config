@@ -16,6 +16,7 @@ EXCLUSIONS_LIST=(
     .*dev*
     .*aat*
     .*toffee*
+    .*apps*
 )
 
 EXCLUSIONS=$(IFS="|" ; echo "${EXCLUSIONS_LIST[*]}")
