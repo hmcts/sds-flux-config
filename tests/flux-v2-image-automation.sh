@@ -68,7 +68,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         DIRECTORIES=$(find apps -type d -not -path '*dev*' -not -path '*stg*' -not -path '*test*' -not -path '*ithc*' -not -path '*demo*' -not -path '*sbox*' -not -path 'apps')
         for dir in $DIRECTORIES; do
 
-            kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
+            ./kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
         done
             # IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
 
