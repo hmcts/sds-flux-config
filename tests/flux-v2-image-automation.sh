@@ -82,6 +82,6 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             #         echo "Error: No match found for image pattern in line: $output"
             #     fi
             # done < $OUTPUTFILE
-        done
+        # done
     done
 done
