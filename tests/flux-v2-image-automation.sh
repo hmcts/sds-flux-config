@@ -9,14 +9,13 @@ EXCLUSIONS_LIST=(
     .*ithc.*.yaml
     .*sbox.*.yaml
     .*dev.*.yaml
-    .*perftest*
-    .*sbox*
-    .*test*
-    .*stg*
-    .*dev*
-    .*aat*
-    .*toffee*
-    .*apps*
+    *dev*
+    *stg*
+    *test*
+    *ithc*
+    *demo*
+    *sbox*
+    apps
 )
 
 EXCLUSIONS=$(IFS="|" ; echo "${EXCLUSIONS_LIST[*]}")
@@ -66,7 +65,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
         OUTPUTFILE="images.yaml"
-        DIRECTORIES=$(find "apps" -type d -not -path "$EXCLUSIONS")
+        DIRECTORIES=$(find $FILE_LOCATIONS -type d -not -path "$EXCLUSIONS")
 
         for dir in $DIRECTORIES; do
 
