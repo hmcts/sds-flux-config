@@ -9,13 +9,13 @@ EXCLUSIONS_LIST=(
     .*ithc.*.yaml
     .*sbox.*.yaml
     .*dev.*.yaml
-    *dev*
-    *stg*
-    *test*
-    *ithc*
-    *demo*
-    *sbox*
-    apps
+    .*perftest*
+    .*sbox*
+    .*test*
+    .*stg*
+    .*dev*
+    .*aat*
+    .*toffee*
 )
 
 EXCLUSIONS=$(IFS="|" ; echo "${EXCLUSIONS_LIST[*]}")
@@ -65,10 +65,11 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
         OUTPUTFILE="images.yaml"
-        DIRECTORIES=$(find apps -type d -not -path '*dev*' -not -path '*stg*' -not -path '*test*' -not -path '*ithc*' -not -path '*demo*' -not -path '*sbox*' -not -path 'apps')
-        for dir in $DIRECTORIES; do
+        DIRECTORIES=$(find $FILE_LOCATIONS -type d -not -path "$EXCLUSIONS")
 
-            ./kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
+        for dir in $DIRECTORIES; do
+            echo "Checking HelmRelease in $dir"
+            kustomize build --load-restrictor LoadRestrictionsNone "$dir" | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' > $OUTPUTFILE
         done
             # IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
 
@@ -79,6 +80,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             #     if [[ "$nodejs_image" && "$java_image" != $IMAGE_PATTERN ]]; then
             #         echo "Error: No match found for image pattern in line: $output"
             #     fi
-            # done < $OUTPUTFILE
+            # done
+        done
     done
 done
