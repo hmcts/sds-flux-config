@@ -66,10 +66,10 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
         OUTPUTFILE="images.yaml"
-        DIRECTORIES=$(find apps -type d -not -path '*dev*' -not -path '*stg*' -not -path '*test*' -not -path '*ithc*' -not -path '*demo*' -not -path '*sbox*' -not -path 'apps' -not -path  '*toffee*')
+        DIRECTORIES=$(find apps -type d -not -path '*dev*' -not -path '*stg*' -not -path '*test*' -not -path '*ithc*' -not -path '*demo*' -not -path '*sbox*' -not -path 'apps' -not -path '*toffee*')
 
         for dir in $DIRECTORIES; do
-
+            echo "Processing $dir"
             ./kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 >> $OUTPUTFILE
 
             # IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
