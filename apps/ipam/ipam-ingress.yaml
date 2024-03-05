@@ -28,3 +28,20 @@ spec:
               number: 80
         path: /api
         pathType: Prefix
+  - host: ipam2.hmcts.net
+    http:
+      paths:
+      - backend:
+          service:
+            name: ipam-ui-service
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+      - backend:
+          service:
+            name: ipam-engine-service
+            port:
+              number: 80
+        path: /api
+        pathType: Prefix
