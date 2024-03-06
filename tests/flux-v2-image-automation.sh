@@ -49,11 +49,11 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         IMAGE_AUTOMATION=$(cat imagepolicies_list.yaml | \
         IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' -)
 
+
+
             if [ "$IMAGE_AUTOMATION" == "" ]
             then
-            echo "No ImagePolicy for $IMAGE_POLICY in clusters/ptl-intsvc/base"
-            exit 1
-
+                echo "No ImagePolicy for $IMAGE_POLICY in clusters/ptl-intsvc/base" && exit 1
             fi
 
             IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
