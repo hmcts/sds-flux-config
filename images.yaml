@@ -1,0 +1,2717 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: jd-bureau
+  namespace: jd
+spec:
+  chart:
+    spec:
+      chart: ./charts/jd-bureau
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+  interval: 5m
+  releaseName: jd-bureau
+  values:
+    nodejs:
+      autoscaling:
+        enabled: true
+        maxReplicas: 2
+        targetCPUUtilizationPercentage: 80
+      environment:
+        NODE_ENV: production
+        TRACKING_CODE: UA-91917174-1
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:3.5.61
+      ingressHost: juror-bureau.justice.gov.uk
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: jd-public
+  namespace: jd
+spec:
+  chart:
+    spec:
+      chart: ./charts/jd-public
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+  interval: 5m
+  releaseName: jd-public
+  values:
+    nodejs:
+      autoscaling:
+        enabled: true
+        maxReplicas: 2
+        targetCPUUtilizationPercentage: 80
+      cpuLimits: "1"
+      cpuRequests: 200m
+      environment:
+        NODE_ENV: production
+        TRACKING_CODE: GTM-W4F5BLC
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:3.5.61
+      ingressHost: reply-jury-summons.service.gov.uk
+      memoryLimits: 1Gi
+      memoryRequests: 248Mi
+      replicas: "2"
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: moj-reverse-proxy
+  namespace: jd
+spec:
+  chart:
+    spec:
+      chart: ./charts/moj-reverse-proxy
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+  interval: 5m
+  releaseName: moj-reverse-proxy
+  values:
+    nodejs:
+      autoscaling:
+        enabled: true
+        maxReplicas: 2
+        targetCPUUtilizationPercentage: 80
+      image: sdshmctspublic.azurecr.io/jd/juror-reverse-proxy:prod-db2b9
+      replicas: 2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: jd-bureau
+  namespace: jd
+spec:
+  chart:
+    spec:
+      chart: ./charts/jd-bureau
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+  interval: 5m
+  releaseName: jd-bureau
+  values:
+    nodejs:
+      autoscaling:
+        enabled: true
+        maxReplicas: 2
+        targetCPUUtilizationPercentage: 80
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_bureau_portal:3.5.61
+      ingressHost: jdbureau.dev.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: jd-public
+  namespace: jd
+spec:
+  chart:
+    spec:
+      chart: ./charts/jd-public
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+  interval: 5m
+  releaseName: jd-public
+  values:
+    nodejs:
+      autoscaling:
+        enabled: true
+        maxReplicas: 2
+        targetCPUUtilizationPercentage: 80
+      cpuLimits: "1"
+      cpuRequests: 200m
+      image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:3.5.61
+      ingressHost: jdfrontend.dev.platform.hmcts.net
+      memoryLimits: 1Gi
+      memoryRequests: 248Mi
+      replicas: "2"
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: moj-reverse-proxy
+  namespace: jd
+spec:
+  chart:
+    spec:
+      chart: ./charts/moj-reverse-proxy
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+  interval: 5m
+  releaseName: moj-reverse-proxy
+  values:
+    nodejs:
+      autoscaling:
+        enabled: true
+        maxReplicas: 2
+        targetCPUUtilizationPercentage: 80
+      image: sdshmctspublic.azurecr.io/jd/juror-reverse-proxy:nle-db26
+      replicas: 2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-admin-web
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-admin-web/prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-admin-web
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        AZUREAD__POSTLOGOUTREDIRECTURI: https://admin.hearings.reform.hmcts.net/logout
+        AZUREAD__REDIRECTURI: https://admin.hearings.reform.hmcts.net/home
+        DOM1__POSTLOGOUTREDIRECTURI: https://admin.hearings.reform.hmcts.net/logout
+        DOM1__REDIRECTURI: https://admin.hearings.reform.hmcts.net/home
+        VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
+        VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.platform.hmcts.net/
+        VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
+        VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
+        VHSERVICES__VIDEOWEBURL: https://video.hearings.reform.hmcts.net/
+      image: sdshmctspublic.azurecr.io/vh/admin-web:prod-67ad08e-202402071717
+      ingressHost: admin.hearings.reform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-booking-queue-subscriber
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-booking-queue-subscriber/prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-booking-queue-subscriber
+  upgrade:
+    disableWait: true
+  values:
+    function:
+      object:
+        cooldownPeriod: 600
+        idleReplicaCount: 1
+        maxReplicaCount: 2
+        minReplicaCount: 1
+        pollingInterval: 10
+      triggerAuth:
+        triggerPodIdentityProvider: azure-workload
+      triggers:
+        - messageCount: 1
+          queueName: booking
+          serviceBusName: vh-infra-core-prod
+          type: azure-servicebus
+    java:
+      disableTraefikTls: true
+      environment:
+        VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
+        VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.platform.hmcts.net/
+        VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
+        VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
+        VHSERVICES__VIDEOWEBURL: https://video.hearings.reform.hmcts.net/
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:prod-1b6c12e-202402071714
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-bookings-api
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-bookings-api/prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-bookings-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/vh/bookings-api:prod-61d01a4-202402071717
+      ingressHost: vh-bookings-api.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-notification-api
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-notification-api/prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-notification-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/vh/notification-api:prod-3b62151-202402071718
+      ingressHost: vh-notification-api.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-user-api
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-user-api/prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-user-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/vh/user-api:prod-89099c1-202311141719
+      ingressHost: vh-user-api.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-video-api
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-video-api/prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-video-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        KINLYCONFIGURATION__CALLBACKURI: https://video.hearings.reform.hmcts.net/callback
+        SERVICES__CALLBACKURI: https://video.hearings.reform.hmcts.net/callback
+      image: sdshmctspublic.azurecr.io/vh/video-api:prod-ceca202-202402071722
+      ingressHost: vh-video-api.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-video-web
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-video-web/prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-video-web
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        AZUREAD__POSTLOGOUTREDIRECTURI: https://video.hearings.reform.hmcts.net/logout
+        AZUREAD__REDIRECTURI: https://video.hearings.reform.hmcts.net/home
+        DOM1__POSTLOGOUTREDIRECTURI: https://video.hearings.reform.hmcts.net/logout
+        DOM1__REDIRECTURI: https://video.hearings.reform.hmcts.net/home
+        EJUDAD__POSTLOGOUTREDIRECTURI: https://video.hearings.reform.hmcts.net/logout
+        EJUDAD__REDIRECTURI: https://video.hearings.reform.hmcts.net/home
+        VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.platform.hmcts.net/
+        VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
+        VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
+      image: sdshmctspublic.azurecr.io/vh/video-web:prod-cea087d-202402071717
+      ingressHost: video.hearings.reform.hmcts.net
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-admin-web
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-admin-web/non-prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-admin-web
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/vh/admin-web:prod-67ad08e-202402071717
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-bookings-api
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-bookings-api/non-prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-bookings-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/vh/bookings-api:prod-61d01a4-202402071717
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-notification-api
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-notification-api/non-prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-notification-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/vh/notification-api:prod-3b62151-202402071718
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-user-api
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-user-api/non-prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-user-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/vh/user-api:prod-89099c1-202311141719
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-video-api
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-video-api/non-prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-video-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/vh/video-api:prod-ceca202-202402071722
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vh-video-web
+  namespace: vh
+spec:
+  chart:
+    spec:
+      chart: ./stable/vh-video-web/non-prod
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: vh-video-web
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/vh/video-web:prod-cea087d-202402071717
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: lgy-iac-web
+  namespace: dts-legacy
+spec:
+  chart:
+    spec:
+      chart: ./stable/lgy-iac-web
+      interval: 8m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: lgy-iac-web
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/lgy-iac/web:prod-503f6e9-20220923094351
+      replicas: 1
+      useInterpodAntiAffinity: true
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: my-time-api
+  namespace: my-time
+spec:
+  chart:
+    spec:
+      chart: ./stable/my-time-api
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: my-time-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/my-time/api:prod-564a3ad-20230411113310
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: my-time-frontend
+  namespace: my-time
+spec:
+  chart:
+    spec:
+      chart: ./stable/my-time-frontend
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: my-time-frontend
+  upgrade:
+    disableWait: true
+  values:
+    nodejs:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/my-time/frontend:latest
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: themis-fe
+  namespace: met
+spec:
+  chart:
+    spec:
+      chart: ./charts/met
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+  interval: 5m
+  releaseName: met-themis-fe
+  values:
+    nodejs:
+      applicationPort: 8082
+      autoscaling:
+        enabled: true
+        maxReplicas: 8
+        targetCPUUtilizationPercentage: 80
+      cpuLimits: 1000m
+      cpuRequests: 50m
+      environment:
+        CONFISCATION_SCHEMAS: 110,45,97,116,66,109,107,113
+        DAC_KEY_EXPIRE_TIME_SECONDS: 300
+        DAC_NUMBER_OF_INSTANCES: 13
+        KV_CONFIG_TREE: /mnt/secrets/libragob-prod-kv/
+        LOG4J_DEBUG: true
+        LOGGING_LEVEL_ROOT: DEBUG
+        MAINTENANCE_SCHEMAS: 111,67,44
+        SPRING_JMS_SERVICEBUS_IDLE-timeout: 30000
+        SPRING_JMS_SERVICEBUS_PRICING-TIER: PREMIUM
+        THEMIS_DAC_LISTENERQUEUENAME: LIBRAGOB_WRITERQUEUE
+        THEMIS_DAC_LISTENERSENDERID: Themis_GW
+        THEMIS_DAC_WRITERQUEUENAME: LIBRAGOB_READERQUEUE
+        THEMIS_GATEWAY_CONNECTIONTIMEOUT: 720000
+        THEMIS_GATEWAY_HOLDERCLEANUPCRON: 0 0,30 * * * ?
+        THEMIS_GATEWAY_JKSLOCATION: /opt/jks/ThemisAzureKeyStore.jks
+        THEMIS_GATEWAY_LISTENERQUEUENAME: LIBRAGOB_READERQUEUE
+        THEMIS_GATEWAY_LISTENERSENDERID: Themis_DAC
+        THEMIS_GATEWAY_MESSAGEAUDITSUPPRESSION: "OFF"
+        THEMIS_GATEWAY_PERSISTMESSAGEAUDITCONTENTFORNONUIFLOW: true
+        THEMIS_GATEWAY_RECEIVETIMEOUT: 720000
+        THEMIS_GATEWAY_RESPONSESMAXCONCURRENTPROCESSED: 20
+        THEMIS_GATEWAY_WRITERQUEUENAME: LIBRAGOB_WRITERQUEUE
+        THEMIS_GATEWAY_WRITERSENDERID: Themis_GW
+        UPDATES_FIXEDRATE_IN_MILLISECONDS: 2000
+        logging_level_root: DEBUG
+        updates_fixedRate_in_milliseconds: 2000
+      image: sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.10
+      ingressHost: cloudgobgateway.platform.hmcts.net
+      keyVaults:
+        libragob-prod-kv:
+          excludeEnvironmentSuffix: true
+          secrets:
+            - themis-gateway-keystorebase64
+            - themis-gateway-dbpassword
+            - themis-gateway-dbusername
+            - themis-gateway-datasourceurl
+            - dac-datasource-password
+            - dac-datasource-username
+            - dac-datasource-url
+            - event-datasource-password
+            - event-datasource-username
+            - event-datasource-url
+            - fines-datasource-password
+            - fines-datasource-username
+            - fines-datasource-url
+            - maintenance-datasource-password
+            - maintenance-datasource-username
+            - maintenance-datasource-url
+            - confiscation-datasource-password
+            - confiscation-datasource-username
+            - confiscation-datasource-url
+            - servicebus-connectionstring
+      livenessDelay: 90
+      livenessPath: /services/themisgatewayapi?wsdl
+      memoryLimits: 3072Mi
+      memoryRequests: 2560Mi
+      readinessPath: /services/themisgatewayapi?wsdl
+      replicas: 4
+      startupDelay: 90
+      startupPath: /services/themisgatewayapi?wsdl
+    podLabels:
+      aadpodidbinding: met-schema-binding
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: toffee-frontend
+  namespace: toffee
+spec:
+  chart:
+    spec:
+      chart: ./stable/toffee-frontend
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  interval: 5m
+  releaseName: toffee-frontend
+  values:
+    global:
+      environment: prod
+    nodejs:
+      autoscaling:
+        enabled: true
+        maxReplicas: 5
+      disableTraefikTls: true
+      environment:
+        RECIPE_BACKEND_URL: http://toffee-recipe-backend.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-4b5d043-20240219161355
+      ingressHost: toffee.platform.hmcts.net
+      memoryRequests: 512Mi
+      useWorkloadIdentity: true
+      workloadClientID: ${WORKLOAD_IDENTITY_ID}
+    volumes:
+      - csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: default-cert
+        name: azurekeyvault
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: toffee
+spec:
+  chart:
+    spec:
+      chart: ./stable/toffee-recipe-backend
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  interval: 5 min
+  releaseName: toffee-recipe-backend
+  values:
+    global:
+      environment: prod
+    java:
+      autoscaling:
+        enabled: true
+        maxReplicas: 5
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-1eea38f-20231120093254
+      ingressHost: toffee-recipe-backend.platform.hmcts.net
+      memoryRequests: 1Gi
+      useWorkloadIdentity: true
+      workloadClientID: ${WORKLOAD_IDENTITY_ID}
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: toffee-frontend
+  namespace: toffee
+spec:
+  chart:
+    spec:
+      chart: ./stable/toffee-frontend
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  interval: 5m
+  releaseName: toffee-frontend
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        RECIPE_BACKEND_URL: http://toffee-recipe-backend.sandbox.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/toffee/frontend:latest
+      memoryRequests: 512Mi
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: toffee-recipe-backend
+  namespace: toffee
+spec:
+  chart:
+    spec:
+      chart: ./stable/toffee-recipe-backend
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  interval: 5 min
+  releaseName: toffee-recipe-backend
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest
+      memoryRequests: 1Gi
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-account-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-account-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/account-management:prod-729d0c1-20240215151400
+      ingressHost: pip-account-management.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-channel-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-channel-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-89cdbe7-20240219105543
+      ingressHost: pip-channel-management.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-data-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-data-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/data-management:prod-5f61be5-20240219103007
+      ingressHost: pip-data-management.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-frontend
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-frontend
+  upgrade:
+    disableWait: true
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        ADMIN_AUTH_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/login/admin/return
+        AUTH_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/login/return
+        B2C_ADMIN_URL: https://staff.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk
+        B2C_URL: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk
+        CFT_IDAM_URL: https://hmcts-access.service.gov.uk
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        CONFIG_ADMIN_ENDPOINT: https://staff.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/B2C_1_SignInAdminUserFlow/v2.0/.well-known/openid-configuration
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        ENABLE_CFT: true
+        FRONTEND_URL: https://www.court-tribunal-hearings.service.gov.uk
+        MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration
+        MEDIA_VERIFICATION_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/media-verification/return
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-17f7934-20240220101354
+      ingressHost: www.court-tribunal-hearings.service.gov.uk
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-publication-services
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-publication-services
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        ADMIN_DASHBOARD_LINK: https://www.court-tribunal-hearings.service.gov.uk/admin-dashboard
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        MEDIA_VERIFICATION_PAGE_LINK: https://www.court-tribunal-hearings.service.gov.uk/media-verification?p=B2C_1_SignInMediaVerification
+        NOTIFY_CFT_SIGN_IN_LINK: https://www.court-tribunal-hearings.service.gov.uk/cft-login
+        NOTIFY_LINK_AAD_ADMIN_SIGNIN_LINK: https://www.court-tribunal-hearings.service.gov.uk/admin-dashboard
+        NOTIFY_LINK_AAD_RESET_PW_LINK_ADMIN: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=6ff73117-42b7-4bf4-bb74-e5a59ca5314e&nonce=defaultNonce&redirect_uri=https://www.court-tribunal-hearings.service.gov.uk/password-change-confirmation/true&scope=openid&response_type=code&prompt=login&response_mode=form_post
+        NOTIFY_LINK_AAD_RESET_PW_LINK_MEDIA: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=6ff73117-42b7-4bf4-bb74-e5a59ca5314e&nonce=defaultNonce&redirect_uri=https://www.court-tribunal-hearings.service.gov.uk/password-change-confirmation/false&scope=openid&response_type=code&prompt=login&response_mode=form_post
+        NOTIFY_LINK_AAD_SIGNIN_LINK: https://www.court-tribunal-hearings.service.gov.uk/login?p=B2C_1_SignInUserFlow
+        NOTIFY_LINK_GOV_GUIDANCE: https://www.gov.uk
+        NOTIFY_LINK_START_PAGE: https://www.court-tribunal-hearings.service.gov.uk
+        NOTIFY_LINK_SUBSCRIPTION_PAGE: https://www.court-tribunal-hearings.service.gov.uk/subscription-management
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/publication-services:prod-80850f5-20240221090919
+      ingressHost: pip-publication-services.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-subscription-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-subscription-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-9283bd1-20240216103949
+      ingressHost: pip-subscription-management.platform.hmcts.net
+      replicas: 2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-account-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-account-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/account-management:prod-729d0c1-20240215151400
+      ingressHost: pip-account-management.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-channel-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-channel-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-89cdbe7-20240219105543
+      ingressHost: pip-channel-management.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-data-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-data-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/data-management:prod-5f61be5-20240219103007
+      ingressHost: pip-data-management.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-frontend
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-frontend
+  upgrade:
+    disableWait: true
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        ADMIN_AUTH_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/login/admin/return
+        AUTH_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/login/return
+        B2C_ADMIN_URL: https://staff.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk
+        B2C_URL: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk
+        CFT_IDAM_URL: https://hmcts-access.service.gov.uk
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        CONFIG_ADMIN_ENDPOINT: https://staff.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/B2C_1_SignInAdminUserFlow/v2.0/.well-known/openid-configuration
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        ENABLE_CFT: true
+        FRONTEND_URL: https://www.court-tribunal-hearings.service.gov.uk
+        MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration
+        MEDIA_VERIFICATION_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/media-verification/return
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-17f7934-20240220101354
+      ingressHost: www.court-tribunal-hearings.service.gov.uk
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-publication-services
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-publication-services
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        ADMIN_DASHBOARD_LINK: https://www.court-tribunal-hearings.service.gov.uk/admin-dashboard
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        MEDIA_VERIFICATION_PAGE_LINK: https://www.court-tribunal-hearings.service.gov.uk/media-verification?p=B2C_1_SignInMediaVerification
+        NOTIFY_CFT_SIGN_IN_LINK: https://www.court-tribunal-hearings.service.gov.uk/cft-login
+        NOTIFY_LINK_AAD_ADMIN_SIGNIN_LINK: https://www.court-tribunal-hearings.service.gov.uk/admin-dashboard
+        NOTIFY_LINK_AAD_RESET_PW_LINK_ADMIN: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=6ff73117-42b7-4bf4-bb74-e5a59ca5314e&nonce=defaultNonce&redirect_uri=https://www.court-tribunal-hearings.service.gov.uk/password-change-confirmation/true&scope=openid&response_type=code&prompt=login&response_mode=form_post
+        NOTIFY_LINK_AAD_RESET_PW_LINK_MEDIA: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=6ff73117-42b7-4bf4-bb74-e5a59ca5314e&nonce=defaultNonce&redirect_uri=https://www.court-tribunal-hearings.service.gov.uk/password-change-confirmation/false&scope=openid&response_type=code&prompt=login&response_mode=form_post
+        NOTIFY_LINK_AAD_SIGNIN_LINK: https://www.court-tribunal-hearings.service.gov.uk/login?p=B2C_1_SignInUserFlow
+        NOTIFY_LINK_GOV_GUIDANCE: https://www.gov.uk
+        NOTIFY_LINK_START_PAGE: https://www.court-tribunal-hearings.service.gov.uk
+        NOTIFY_LINK_SUBSCRIPTION_PAGE: https://www.court-tribunal-hearings.service.gov.uk/subscription-management
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/publication-services:prod-80850f5-20240221090919
+      ingressHost: pip-publication-services.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-subscription-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-subscription-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-9283bd1-20240216103949
+      ingressHost: pip-subscription-management.platform.hmcts.net
+      replicas: 2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-account-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-account-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/account-management:prod-729d0c1-20240215151400
+      ingressHost: pip-account-management.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-channel-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-channel-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-89cdbe7-20240219105543
+      ingressHost: pip-channel-management.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-data-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-data-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-data-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/data-management:prod-5f61be5-20240219103007
+      ingressHost: pip-data-management.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-frontend
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-frontend
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-frontend
+  upgrade:
+    disableWait: true
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        ADMIN_AUTH_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/login/admin/return
+        AUTH_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/login/return
+        B2C_ADMIN_URL: https://staff.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk
+        B2C_URL: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk
+        CFT_IDAM_URL: https://hmcts-access.service.gov.uk
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        CONFIG_ADMIN_ENDPOINT: https://staff.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/B2C_1_SignInAdminUserFlow/v2.0/.well-known/openid-configuration
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        ENABLE_CFT: true
+        FRONTEND_URL: https://www.court-tribunal-hearings.service.gov.uk
+        MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration
+        MEDIA_VERIFICATION_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/media-verification/return
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-17f7934-20240220101354
+      ingressHost: www.court-tribunal-hearings.service.gov.uk
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-publication-services
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-publication-services
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        ADMIN_DASHBOARD_LINK: https://www.court-tribunal-hearings.service.gov.uk/admin-dashboard
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        MEDIA_VERIFICATION_PAGE_LINK: https://www.court-tribunal-hearings.service.gov.uk/media-verification?p=B2C_1_SignInMediaVerification
+        NOTIFY_CFT_SIGN_IN_LINK: https://www.court-tribunal-hearings.service.gov.uk/cft-login
+        NOTIFY_LINK_AAD_ADMIN_SIGNIN_LINK: https://www.court-tribunal-hearings.service.gov.uk/admin-dashboard
+        NOTIFY_LINK_AAD_RESET_PW_LINK_ADMIN: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=6ff73117-42b7-4bf4-bb74-e5a59ca5314e&nonce=defaultNonce&redirect_uri=https://www.court-tribunal-hearings.service.gov.uk/password-change-confirmation/true&scope=openid&response_type=code&prompt=login&response_mode=form_post
+        NOTIFY_LINK_AAD_RESET_PW_LINK_MEDIA: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=6ff73117-42b7-4bf4-bb74-e5a59ca5314e&nonce=defaultNonce&redirect_uri=https://www.court-tribunal-hearings.service.gov.uk/password-change-confirmation/false&scope=openid&response_type=code&prompt=login&response_mode=form_post
+        NOTIFY_LINK_AAD_SIGNIN_LINK: https://www.court-tribunal-hearings.service.gov.uk/login?p=B2C_1_SignInUserFlow
+        NOTIFY_LINK_GOV_GUIDANCE: https://www.gov.uk
+        NOTIFY_LINK_START_PAGE: https://www.court-tribunal-hearings.service.gov.uk
+        NOTIFY_LINK_SUBSCRIPTION_PAGE: https://www.court-tribunal-hearings.service.gov.uk/subscription-management
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/publication-services:prod-80850f5-20240221090919
+      ingressHost: pip-publication-services.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-subscription-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-subscription-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
+        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
+        DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-9283bd1-20240216103949
+      ingressHost: pip-subscription-management.platform.hmcts.net
+      replicas: 2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-account-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-account-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-account-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/pip/account-management:prod-729d0c1-20240215151400
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-channel-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-channel-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-channel-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/pip/channel-management:prod-89cdbe7-20240219105543
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-publication-services
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-publication-services
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-publication-services
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/pip/publication-services:prod-80850f5-20240221090919
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pip-subscription-management
+  namespace: pip
+spec:
+  chart:
+    spec:
+      chart: ./stable/pip-subscription-management
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  releaseName: pip-subscription-management
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-9283bd1-20240216103949
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pre-api
+  namespace: pre
+spec:
+  chart:
+    spec:
+      chart: ./stable/pre-api
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: pre-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/pre/api:prod-fdff359-20240221123231
+      ingressHost: pre-api.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pre-portal
+  namespace: pre
+spec:
+  chart:
+    spec:
+      chart: ./stable/pre-portal
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: pre-portal
+  values:
+    nodejs:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/pre/portal:prod-64b9011-20240220123656
+      ingressHost: pre-portal.platform.hmcts.net
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pre-api
+  namespace: pre
+spec:
+  chart:
+    spec:
+      chart: ./stable/pre-api
+      interval: 5m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  install:
+    disableWait: true
+  interval: 10m
+  releaseName: pre-api
+  upgrade:
+    disableWait: true
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/pre/api:prod-fdff359-20240221123231
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: pre-portal
+  namespace: pre
+spec:
+  chart:
+    spec:
+      chart: ./stable/pre-portal
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: pre-portal
+  values:
+    nodejs:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/pre/portal:prod-64b9011-20240220123656
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-api
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-api
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+    java:
+      disableTraefikTls: true
+      environment:
+        DARTS_GATEWAY_URL: https://darts-gateway.platform.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        DARTS_PORTAL_URL: https://darts.apps.hmcts.net
+        RESTART_ME: "007"
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      ingressHost: darts-api.platform.hmcts.net
+      memoryLimits: 3G
+      memoryRequests: 2G
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-api-migration
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-api-migration
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-2b4f7a7-20240214140310
+      maxReplicaCount: 0
+      minReplicaCount: 0
+    java:
+      disableTraefikTls: true
+      environment:
+        DARTS_API_DB_HOST: darts-migration-prod.postgres.database.azure.com
+        DARTS_API_DB_NAME: psql-prod-dartsmig-01
+        DARTS_GATEWAY_URL: https://darts-migration-gateway.platform.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        DARTS_PORTAL_URL: https://darts-migration.apps.hmcts.net
+        ENABLE_FLYWAY: true
+        RESTART_ME: "008"
+        RUN_DB_MIGRATION_ON_STARTUP: true
+      image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812
+      ingressHost: darts-api-migration.platform.hmcts.net
+      keyVaults:
+        darts:
+          secrets:
+            - alias: DARTS_API_DB_USERNAME
+              name: migration-POSGRES-USER
+            - alias: DARTS_API_DB_PASSWORD
+              name: migration-POSTGRES-PASS
+      memoryLimits: 3G
+      memoryRequests: 2G
+      replicas: 1
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-automated-tasks
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-automated-tasks
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      maxReplicaCount: 0
+      minReplicaCount: 0
+      triggers: null
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      memoryLimits: 3G
+      memoryRequests: 2G
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-gateway
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-gateway
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-gateway
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        DARTS_API_URL: https://darts-api.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/darts/gateway:prod-e702db0-20240220124054
+      ingressHost: darts-gateway.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-portal
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-portal
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-portal
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        DARTS_API_URL: https://darts-api.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts.apps.hmcts.net
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-750a2dd-20240221103808
+      ingressHost: darts.apps.hmcts.net
+      replicas: 2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-api
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-api
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+    java:
+      disableTraefikTls: true
+      environment:
+        DARTS_GATEWAY_URL: https://darts-gateway.platform.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        DARTS_PORTAL_URL: https://darts.apps.hmcts.net
+        RESTART_ME: "007"
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      ingressHost: darts-api.platform.hmcts.net
+      memoryLimits: 3G
+      memoryRequests: 2G
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-api-migration
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-api-migration
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-2b4f7a7-20240214140310
+      maxReplicaCount: 0
+      minReplicaCount: 0
+    java:
+      disableTraefikTls: true
+      environment:
+        DARTS_API_DB_HOST: darts-migration-prod.postgres.database.azure.com
+        DARTS_API_DB_NAME: psql-prod-dartsmig-01
+        DARTS_GATEWAY_URL: https://darts-migration-gateway.platform.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        DARTS_PORTAL_URL: https://darts-migration.apps.hmcts.net
+        ENABLE_FLYWAY: true
+        RESTART_ME: "008"
+        RUN_DB_MIGRATION_ON_STARTUP: true
+      image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812
+      ingressHost: darts-api-migration.platform.hmcts.net
+      keyVaults:
+        darts:
+          secrets:
+            - alias: DARTS_API_DB_USERNAME
+              name: migration-POSGRES-USER
+            - alias: DARTS_API_DB_PASSWORD
+              name: migration-POSTGRES-PASS
+      memoryLimits: 3G
+      memoryRequests: 2G
+      replicas: 1
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-automated-tasks
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-automated-tasks
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      maxReplicaCount: 0
+      minReplicaCount: 0
+      triggers: null
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      memoryLimits: 3G
+      memoryRequests: 2G
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-gateway
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-gateway
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-gateway
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        DARTS_API_URL: https://darts-api.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/darts/gateway:prod-e702db0-20240220124054
+      ingressHost: darts-gateway.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-portal
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-portal
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-portal
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        DARTS_API_URL: https://darts-api.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts.apps.hmcts.net
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-750a2dd-20240221103808
+      ingressHost: darts.apps.hmcts.net
+      replicas: 2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-api
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-api
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+    java:
+      disableTraefikTls: true
+      environment:
+        DARTS_GATEWAY_URL: https://darts-gateway.platform.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        DARTS_PORTAL_URL: https://darts.apps.hmcts.net
+        RESTART_ME: "007"
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      ingressHost: darts-api.platform.hmcts.net
+      memoryLimits: 3G
+      memoryRequests: 2G
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-api-migration
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-api-migration
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-2b4f7a7-20240214140310
+      maxReplicaCount: 0
+      minReplicaCount: 0
+    java:
+      disableTraefikTls: true
+      environment:
+        DARTS_API_DB_HOST: darts-migration-prod.postgres.database.azure.com
+        DARTS_API_DB_NAME: psql-prod-dartsmig-01
+        DARTS_GATEWAY_URL: https://darts-migration-gateway.platform.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        DARTS_PORTAL_URL: https://darts-migration.apps.hmcts.net
+        ENABLE_FLYWAY: true
+        RESTART_ME: "008"
+        RUN_DB_MIGRATION_ON_STARTUP: true
+      image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812
+      ingressHost: darts-api-migration.platform.hmcts.net
+      keyVaults:
+        darts:
+          secrets:
+            - alias: DARTS_API_DB_USERNAME
+              name: migration-POSGRES-USER
+            - alias: DARTS_API_DB_PASSWORD
+              name: migration-POSTGRES-PASS
+      memoryLimits: 3G
+      memoryRequests: 2G
+      replicas: 1
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-automated-tasks
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-automated-tasks
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      maxReplicaCount: 0
+      minReplicaCount: 0
+      triggers: null
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      memoryLimits: 3G
+      memoryRequests: 2G
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-gateway
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-gateway
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-gateway
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        DARTS_API_URL: https://darts-api.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/darts/gateway:prod-e702db0-20240220124054
+      ingressHost: darts-gateway.platform.hmcts.net
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-portal
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-portal
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-portal
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        DARTS_API_URL: https://darts-api.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts.apps.hmcts.net
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-750a2dd-20240221103808
+      ingressHost: darts.apps.hmcts.net
+      replicas: 2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-api
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-api
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      memoryLimits: 3G
+      memoryRequests: 2G
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-api-migration
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-api-migration
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812
+      maxReplicaCount: 0
+      minReplicaCount: 0
+      triggers: null
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812
+      memoryLimits: 3G
+      memoryRequests: 2G
+      replicas: 0
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-automated-tasks
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-automated-tasks
+  values:
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      maxReplicaCount: 0
+      minReplicaCount: 0
+      triggers: null
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b9fa406-20240221115745
+      memoryLimits: 3G
+      memoryRequests: 2G
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-gateway
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-gateway
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-gateway
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/darts/gateway:prod-e702db0-20240220124054
+      replicas: 2
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: darts-portal
+  namespace: darts-modernisation
+spec:
+  chart:
+    spec:
+      chart: ./stable/darts-portal
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: darts-portal
+  values:
+    nodejs:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-750a2dd-20240221103808
+      replicas: 2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-api
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-api
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        PNC_CHECK_SERVICE_HOST: juror-scheduler-execution.platform.hmcts.net
+        SCHEDULER_SERVICE_HOST: juror-scheduler-api.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/juror/api:prod-a6bc219-20240226123038
+      ingressHost: juror-api.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-bureau
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-bureau
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-bureau
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        API_ENDPOINT: https://juror-api.platform.hmcts.net/api/v1
+      image: sdshmctspublic.azurecr.io/juror/bureau:prod-8f4896a-20240221110312
+      ingressHost: juror.apps.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-pnc
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-pnc
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-pnc
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        PNC_SERVICE_GATEWAY_ID: JVJVS001
+        PNC_SERVICE_PNC_AUTHORISATION: 2K01JV01
+        PNC_SERVICE_PNC_MODE: LIVE
+        PNC_SERVICE_PNC_TERMINAL: LCRTS001
+        PNC_SERVICE_PNC_TRAN_CODE: '#LO'
+      image: sdshmctspublic.azurecr.io/juror/pnc:prod-6b3c1b2-20240221101954
+      ingressHost: juror-pnc.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-public
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-public
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-public
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        API_ENDPOINT: https://juror-api.platform.hmcts.net/api/v1
+      image: sdshmctspublic.azurecr.io/juror/public:prod-49d3ada-20240221110320
+      ingressHost: juror-public.apps.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-scheduler-api
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-scheduler-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-scheduler-api
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/juror/scheduler-api:prod-5376560-20240221080718
+      ingressHost: juror-scheduler-api.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-scheduler-execution
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-scheduler-execution
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-scheduler-execution
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        JUROR_SERVICE_HOST: juror-api.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-48652fd-20240221134855
+      ingressHost: juror-scheduler-execution.platform.hmcts.net
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-api
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-api
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        PNC_CHECK_SERVICE_HOST: juror-scheduler-execution.platform.hmcts.net
+        SCHEDULER_SERVICE_HOST: juror-scheduler-api.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/juror/api:prod-a6bc219-20240226123038
+      ingressHost: juror-api.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-bureau
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-bureau
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-bureau
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        API_ENDPOINT: https://juror-api.platform.hmcts.net/api/v1
+      image: sdshmctspublic.azurecr.io/juror/bureau:prod-8f4896a-20240221110312
+      ingressHost: juror.apps.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-pnc
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-pnc
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-pnc
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        PNC_SERVICE_GATEWAY_ID: JVJVS001
+        PNC_SERVICE_PNC_AUTHORISATION: 2K01JV01
+        PNC_SERVICE_PNC_MODE: LIVE
+        PNC_SERVICE_PNC_TERMINAL: LCRTS001
+        PNC_SERVICE_PNC_TRAN_CODE: '#LO'
+      image: sdshmctspublic.azurecr.io/juror/pnc:prod-6b3c1b2-20240221101954
+      ingressHost: juror-pnc.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-public
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-public
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-public
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        API_ENDPOINT: https://juror-api.platform.hmcts.net/api/v1
+      image: sdshmctspublic.azurecr.io/juror/public:prod-49d3ada-20240221110320
+      ingressHost: juror-public.apps.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-scheduler-api
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-scheduler-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-scheduler-api
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/juror/scheduler-api:prod-5376560-20240221080718
+      ingressHost: juror-scheduler-api.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-scheduler-execution
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-scheduler-execution
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-scheduler-execution
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        JUROR_SERVICE_HOST: juror-api.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-48652fd-20240221134855
+      ingressHost: juror-scheduler-execution.platform.hmcts.net
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-api
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-api
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        PNC_CHECK_SERVICE_HOST: juror-scheduler-execution.platform.hmcts.net
+        SCHEDULER_SERVICE_HOST: juror-scheduler-api.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/juror/api:prod-a6bc219-20240226123038
+      ingressHost: juror-api.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-bureau
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-bureau
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-bureau
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        API_ENDPOINT: https://juror-api.platform.hmcts.net/api/v1
+      image: sdshmctspublic.azurecr.io/juror/bureau:prod-8f4896a-20240221110312
+      ingressHost: juror.apps.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-pnc
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-pnc
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-pnc
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        PNC_SERVICE_GATEWAY_ID: JVJVS001
+        PNC_SERVICE_PNC_AUTHORISATION: 2K01JV01
+        PNC_SERVICE_PNC_MODE: LIVE
+        PNC_SERVICE_PNC_TERMINAL: LCRTS001
+        PNC_SERVICE_PNC_TRAN_CODE: '#LO'
+      image: sdshmctspublic.azurecr.io/juror/pnc:prod-6b3c1b2-20240221101954
+      ingressHost: juror-pnc.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-public
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-public
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-public
+  values:
+    nodejs:
+      disableTraefikTls: true
+      environment:
+        API_ENDPOINT: https://juror-api.platform.hmcts.net/api/v1
+      image: sdshmctspublic.azurecr.io/juror/public:prod-49d3ada-20240221110320
+      ingressHost: juror-public.apps.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-scheduler-api
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-scheduler-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-scheduler-api
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/juror/scheduler-api:prod-5376560-20240221080718
+      ingressHost: juror-scheduler-api.platform.hmcts.net
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-scheduler-execution
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-scheduler-execution
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-scheduler-execution
+  values:
+    java:
+      disableTraefikTls: true
+      environment:
+        JUROR_SERVICE_HOST: juror-api.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-48652fd-20240221134855
+      ingressHost: juror-scheduler-execution.platform.hmcts.net
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-api
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-api
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/juror/api:prod-a6bc219-20240226123038
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-bureau
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-bureau
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-bureau
+  values:
+    nodejs:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/juror/bureau:prod-8f4896a-20240221110312
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-pnc
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-pnc
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-pnc
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/juror/pnc:prod-6b3c1b2-20240221101954
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-public
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-public
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-public
+  values:
+    nodejs:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/juror/public:prod-49d3ada-20240221110320
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-scheduler-api
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-scheduler-api
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-scheduler-api
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/juror/scheduler-api:prod-5376560-20240221080718
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-scheduler-execution
+  namespace: juror
+spec:
+  chart:
+    spec:
+      chart: ./stable/juror-scheduler-execution
+      interval: 1m
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+  releaseName: juror-scheduler-execution
+  values:
+    java:
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-48652fd-20240221134855
