@@ -72,7 +72,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                 extract_nodejs_image=$(echo $nodejs_image | cut -d ':' -f 2-)
                 extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
 
-                if ! echo "\"$extract_nodejs_image\"" | jq --arg pattern "^prod-[a-f0-9]+-([0-9]+)" 'test($pattern)' > /dev/null || ! echo "\"$extract_java_image\"" | jq --arg pattern "^prod-[a-f0-9]+-([0-9]+)" 'test($pattern)'; then
+                if ! echo "\"$extract_nodejs_image\"" | jq  'test("^prod-[a-f0-9]+-([0-9]+)")' || ! echo "\"$extract_java_image\"" | jq 'test("^prod-[a-f0-9]+-([0-9]+)")'; then
                     echo "image do not match"
                     exit 1
                 fi
