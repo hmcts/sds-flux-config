@@ -19,7 +19,7 @@
 # done
 
 IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-image="sdshmctspublic.azurecr.io/vh/admin-web:prod-67ad08e-202123191717"
+image="prod-67ad08e-202123191717"
 extract_image=$(echo $image | cut -d ':' -f 2-)
 # echo $extract_image
 
