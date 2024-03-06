@@ -16,9 +16,9 @@ spec:
   values:
     java:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/darts/api:prod-7dd8b55-20240306094821 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-ee9e274-20240306110426 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
       memoryRequests: '2G'
       memoryLimits: '3G'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-7dd8b55-20240306094821 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-ee9e274-20240306110426 # {"$imagepolicy": "flux-system:darts-api"}
