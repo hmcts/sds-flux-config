@@ -77,8 +77,6 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                     exit 1
             fi
 
-        done
-
     done
 
   done
