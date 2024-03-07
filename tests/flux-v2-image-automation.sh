@@ -89,7 +89,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     OUTPUTFILE="images.yaml"
     DIRECTORIES=("apps")  # Define DIRECTORIES as an array
 
-    for dir in "${DIRECTORIES[@]}"; do
+    for dir in $DIRECTORIES; do
         exclude=false
         for EXCLUDED_PATH in "${HELMRELEASES[@]}"; do
             if [[ $dir == $EXCLUDED_PATH* ]]; then
@@ -97,6 +97,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                 break
             fi
         done
+
         if ! $exclude && ls "$dir" | grep -q -E 'kustomization\.ya?ml'; then
             kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.image or .spec.values.*.image != null))' >> $OUTPUTFILE
         fi
