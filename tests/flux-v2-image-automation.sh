@@ -29,6 +29,13 @@ FILE_LOCATIONS="apps"
 
 for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
+    ##############################################################################################################
+    # This section compiles a list of files that contains `imagepolicy` and stores them in an array IMAGE_POLICIES
+    # Only files that follow these rules will be added to the array:
+    # - Contains the `imagepolicy` string 
+    # - Is NOT in the exclusions list
+    # - Is not HelmRelease type document
+    ##############################################################################################################
     IMAGE_POLICIES=()
     for FILE in $(grep -lr "imagepolicy" $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
 
@@ -43,9 +50,21 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
     done
 
-    kustomize build --load-restrictor LoadRestrictionsNone "clusters/ptl/base" | yq eval 'select(.metadata and .kind == "ImagePolicy")' -  > imagepolicies_list.yaml
+    ##############################################################################################################
+    # This section will scan the PTL cluster to find all ImagePolicy configs and add them to temporary yaml file
+    # Only scans `clusters/ptl/base` because thats where Image Policies are found, scanning other clusters will
+    # result in no output
+    ##############################################################################################################
+    ./kustomize build --load-restrictor LoadRestrictionsNone "clusters/ptl/base" | yq eval 'select(.metadata and .kind == "ImagePolicy")' -  > imagepolicies_list.yaml
     [ $? -eq 0 ] || (echo "Kustomize build has failed" && exit 1)
 
+    ##############################################################################################################
+    # This section loops over each file in the IMAGE_POLICIES array and compares the file with the documents added 
+    # to the temporary file imagepolicies_list.yaml
+    # If a document is found in the temporary file with the matching name of a policy it is then checked to see
+    # if its pattern value matches the specified Prod regex.
+    # If this results in a false (i.e. it doesnt match) the script will fail and print the offending Policy name.
+    ##############################################################################################################
     for IMAGE_POLICY in "${IMAGE_POLICIES[@]}"; do
 
         for path in $(echo "clusters/ptl/base"); do
@@ -55,7 +74,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
             if [ "$IMAGE_AUTOMATION" == "" ]
             then
-                echo "No ImagePolicy for $IMAGE_POLICY in clusters/ptl-intsvc/base" && exit 1
+                echo "No ImagePolicy for $IMAGE_POLICY in clusters/ptl/base" && exit 1
             fi
 
             IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
@@ -68,8 +87,17 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
     done
 
+    ##############################################################################################################
+    # Print success if ALL image policies are clean
+    ##############################################################################################################
     printf "\n\n########## Image Policy documents checked and passing ########## \n\n"
 
+    ##############################################################################################################
+    # This section compiles a list of files that contains `image:` and stores them in an array HELMRELEASES
+    # Only files that follow these rules will be added to the array:
+    # - Contains the `image:` string 
+    # - Is HelmRelease type document
+    ##############################################################################################################
     HELMRELEASES=()
     for FILE in $(grep -lr "image:" $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
         while read -r doc; do
@@ -80,10 +108,17 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done < <(yq eval '.kind' $FILE)
     done
 
+    ##############################################################################################################
+    # This section loops over each file in the HELMRELEASES array and checks that it contains an image
+    # field that is not null.
+    # If not null the image field value is then stripped out and the image Tag value is stored in a variable TAG
+    # If that value is not null we then check if the value matches the specificed Prod regex pattern
+    # If this results in a false (i.e. it doesnt match) the script will fail and print the offending Policy name.
+    ##############################################################################################################
 
     for RELEASE in "${HELMRELEASES[@]}"; do
     
-        IMAGE_TAG_FOUND=$(yq eval 'select(.spec.values) or (.spec.values.*.image) != null' $RELEASE)
+        IMAGE_TAG_FOUND=$(yq eval 'select(.spec.values.image) or (.spec.values.*.image) != null' $RELEASE)
         
         if [ "$IMAGE_TAG_FOUND" != "" ]
         then
@@ -99,6 +134,9 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         fi
     done
 
+    ##############################################################################################################
+    # Print success if ALL Helm Release image fields are valid
+    ##############################################################################################################
     printf "\n\n ########## Helm Release documents checked and passing ########## \n\n"
 
 done
