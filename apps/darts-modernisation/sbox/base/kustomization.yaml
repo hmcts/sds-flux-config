@@ -5,6 +5,7 @@ resources:
 namespace: darts-modernisation
 patches:
   - path: ../../darts-api/sbox.yaml
+  - path: ../../darts-automated-tasks/sbox.yaml
   - path: ../../darts-portal/sbox.yaml
   - path: ../../darts-gateway/sbox.yaml
   - path: ../../serviceaccount/sbox.yaml
