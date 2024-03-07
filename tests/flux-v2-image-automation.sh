@@ -108,7 +108,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         extract_nodejs_image=$(echo $nodejs_image | cut -d ':' -f 2-)
         extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
 
-        if [ "$(echo "\"$extract_nodejs_image\"" | jq -r 'test("^prod-[a-f0-9]+-([0-9]+)")')" = "false" ] || [ "$(echo "\"$extract_java_image\"" | jq -r 'test("^prod-[a-f0-9]+-([0-9]+)")')" = "false" ]; then
+        if [ "$(yq eval 'test("^prod-[a-f0-9]+-([0-9]+)")' <<< "$extract_nodejs_image")" = "false" ] || [ "$(yq eval 'test("^prod-[a-f0-9]+-([0-9]+)")' <<< "$extract_java_image")" = "false" ]; then
             echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
         fi
     done
