@@ -2,16 +2,29 @@
 set -ex -o pipefail
 
 EXCLUSIONS_LIST=(
-  apps/flux-system/*
-  apps/vh/*/stg.yaml
-  .*demo.*.yaml
-  .*test.*.yaml
-  .*ithc.*.yaml
-  .*sbox.*.yaml
-  .*dev.*.yaml
+    apps/flux-system/*
+    apps/vh/*/stg.yaml
+    apps/juror-digital/*
+    apps/my-time/my-time-frontend/my-time-frontend.yaml
+    apps/met/themis-fe/prod.yaml
+    apps/aspnet/dotnet48/dotnet48.yaml
+    apps/hmi/hmi-rota-dtu/hmi-rota-dtu.yaml
+    .*demo.*.yaml
+    .*test.*.yaml
+    .*ithc.*.yaml
+    .*sbox.*.yaml
+    .*dev.*.yaml
+    .*perftest*
+    .*sbox*
+    .*test*
+    .*stg*
+    .*dev*
+    .*aat*
+    .*toffee*
 )
 
 EXCLUSIONS=$(IFS="|" ; echo "${EXCLUSIONS_LIST[*]}")
+
 FILE_LOCATIONS="apps"
 
 for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
@@ -34,14 +47,10 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
     for IMAGE_POLICY in "${IMAGE_POLICIES[@]}"; do
 
-        echo "Checking image policy: $IMAGE_POLICY"
-
         for path in $(echo "clusters/ptl/base"); do
 
-        IMAGE_AUTOMATION=$(cat imagepolicies_list.yaml | \
-        IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' -)
-
-
+            IMAGE_AUTOMATION=$(cat imagepolicies_list.yaml | \
+            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' -)
 
             if [ "$IMAGE_AUTOMATION" == "" ]
             then
@@ -56,7 +65,41 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                 echo "Non whitelisted pattern found in ImagePolicy: $IMAGE_POLICY it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
             fi
         done
-
     done
 
-  done
+    printf "\n\n########## Image Policy documents checked and passing ########## \n\n"
+
+    HELMRELEASES=()
+    for FILE in $(grep -lr "image:" $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
+        while read -r doc; do
+            if [ "$doc" == "HelmRelease" ]; then
+                IFS=$'\n'
+                HELMRELEASES+=("$FILE")
+            fi
+        done < <(yq eval '.kind' $FILE)
+    done
+
+
+    for RELEASE in "${HELMRELEASES[@]}"; do
+    
+        IMAGE_TAG_FOUND=$(yq eval 'select(.spec.values) or (.spec.values.*.image) != null' $RELEASE)
+        
+        if [ "$IMAGE_TAG_FOUND" != "" ]
+        then
+            TAG=$(grep -o "image:.*" $RELEASE | cut -d ':' -f3 | cut -d ' ' -f1  | tr -d \')
+            if [ "$TAG" != "" ]
+            then
+
+                MATCH_FOUND=$(yq '((.spec.values.image) or (.spec.values.*.image) | test("prod-[a-f0-9]+-(?P<ts>[0-9]+)"))' $RELEASE)
+                if [ $MATCH_FOUND == false ]
+                then
+                    echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
+                fi
+            fi
+        fi
+    done
+
+    printf "\n\n ########## Helm Release documents checked and passing ########## \n\n"
+
+done
+
