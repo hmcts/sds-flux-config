@@ -113,29 +113,28 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         OUTPUTFILE="images.yaml"
         DIRECTORIES="apps"
 
-            for EXCLUDED_PATH in "${HELMRELEASES[@]}"; do
-            DIRECTORIES=$(find $DIRECTORIES -type d -not -path "$EXCLUDED_PATH")
+        for EXCLUDED_PATH in "${HELMRELEASES[@]}"; do
+        DIRECTORIES=$(find $DIRECTORIES -type d -not -path "$EXCLUDED_PATH")
 
         for dir in $DIRECTORIES; do
             if ls "$dir" | grep -q -E 'kustomization\.ya?ml'; then
-
                 kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
+            fi
+        done
 
+        for OUTPUTFILE in "${HELMRELEASES[@]}"; do
                 IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
                 nodejs_image=$(yq eval '.spec.values.nodejs.image' $OUTPUTFILE) && java_image=$(yq eval '.spec.values.java.image' $OUTPUTFILE)
                 extract_nodejs_image=$(echo $nodejs_image | cut -d ':' -f 2-)
                 extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
 
                 if [ "$(echo "\"$extract_nodejs_image\"" | jq -r 'test("^prod-[a-f0-9]+-([0-9]+)")')" = "false" ] || [ "$(echo "\"$extract_java_image\"" | jq -r 'test("^prod-[a-f0-9]+-([0-9]+)")')" = "false" ]; then
-                    echo "image do not match"
+                    echo "!! Non whitelisted pattern found in HelmRelease: $OUTPUTFILE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
                     exit 1
                 fi
-            fi
-       done
     done
     ##############################################################################################################
     # Print success if ALL Helm Release image fields are valid
     ##############################################################################################################
     printf "\n\n ########## Helm Release documents checked and passing ########## \n\n"
-    done
 done
