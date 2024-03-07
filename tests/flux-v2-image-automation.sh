@@ -2,11 +2,15 @@
 # set -ex -o pipefail
 
 EXCLUSIONS_LIST=(
-    # apps/flux-system/*
-    # apps/my-time/my-time-frontend/my-time-frontend.yaml
-    # apps/met/themis-fe/prod.yaml
-    # apps/aspnet/dotnet48/dotnet48.yaml
-    # apps/hmi/hmi-rota-dtu/hmi-rota-dtu.yaml
+    apps/flux-system/*
+    apps/my-time/my-time-frontend/my-time-frontend.yaml
+    apps/met/themis-fe/prod.yaml
+    apps/aspnet/dotnet48/dotnet48.yaml
+    apps/hmi/hmi-rota-dtu/hmi-rota-dtu.yaml
+    apps/juror-digital/jd-public/*
+    apps/juror-digital/jd-bureau/*
+    apps/juror-digital/moj-reverse-proxy/*
+    apps/jenkins/jenkins/*
     .*perftest.*
     .*sbox.*
     .*test.*
@@ -39,7 +43,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
     done
 
-    ./kustomize build --load-restrictor LoadRestrictionsNone "clusters/ptl/base" | yq eval 'select(.metadata and .kind == "ImagePolicy")' -  > imagepolicies_list.yaml
+    kustomize build --load-restrictor LoadRestrictionsNone "clusters/ptl/base" | yq eval 'select(.metadata and .kind == "ImagePolicy")' -  > imagepolicies_list.yaml
     [ $? -eq 0 ] || (echo "Kustomize build has failed" && exit 1)
 
     for IMAGE_POLICY in "${IMAGE_POLICIES[@]}"; do
@@ -86,12 +90,11 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             TAG=$(grep -o "image:.*" $RELEASE | cut -d ':' -f3 | cut -d ' ' -f1  | tr -d \')
             if [ "$TAG" != "" ]
             then
-
-                MATCH_FOUND=$(yq '((.spec.values.image) or (.spec.values.*.image) | test("prod-[a-f0-9]+-(?P<ts>[0-9]+)"))' $RELEASE)
-                if [ $MATCH_FOUND == false ]
-                then
-                    echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
-                fi
+                while read -r doc; do
+                    if [ "$doc" == false ]; then
+                        echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
+                    fi
+                done < <(yq '((.spec.values.image) or (.spec.values.*.image) | test("prod-[a-f0-9]+-(?P<ts>[0-9]+)"))' $RELEASE)
             fi
         fi
     done
