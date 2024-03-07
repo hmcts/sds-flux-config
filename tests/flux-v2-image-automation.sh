@@ -1,24 +1,22 @@
 #!/usr/bin/env bash
-set -ex -o pipefail
+# set -ex -o pipefail
 
 EXCLUSIONS_LIST=(
-    apps/flux-system/*
-    apps/my-time/my-time-frontend/my-time-frontend.yaml
-    apps/met/themis-fe/prod.yaml
-    apps/aspnet/dotnet48/dotnet48.yaml
-    apps/hmi/hmi-rota-dtu/hmi-rota-dtu.yaml
-    .*demo.*.yaml
-    .*test.*.yaml
-    .*ithc.*.yaml
-    .*sbox.*.yaml
-    .*dev.*.yaml
-    .*perftest*
-    .*sbox*
-    .*test*
-    .*stg*
-    .*dev*
-    .*aat*
-    .*toffee*
+    # apps/flux-system/*
+    # apps/my-time/my-time-frontend/my-time-frontend.yaml
+    # apps/met/themis-fe/prod.yaml
+    # apps/aspnet/dotnet48/dotnet48.yaml
+    # apps/hmi/hmi-rota-dtu/hmi-rota-dtu.yaml
+    .*perftest.*
+    .*sbox.*
+    .*test.*
+    .*stg.*
+    .*staging.*
+    .**dev.*
+    .*aat.*
+    .*demo.*
+    .*ithc.*
+    .*toffee.*
 )
 
 EXCLUSIONS=$(IFS="|" ; echo "${EXCLUSIONS_LIST[*]}")
@@ -30,10 +28,11 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     IMAGE_POLICIES=()
     for FILE in $(grep -lr "imagepolicy" $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
 
-        if [ $(yq eval '.kind' $FILE) != "HelmRelease" ]
-        then
-            continue
-        fi
+        while read -r doc; do
+            if [ "$doc" != "HelmRelease" ]; then
+                continue
+            fi
+        done < <(yq eval '.kind' $FILE)
 
         IFS=$'\n'
         IMAGE_POLICIES+=($(grep -o "flux-system:.*" $FILE | cut -d ':' -f2 | sed 's/..$//'))
