@@ -64,20 +64,17 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             if ls "$dir" | grep -q -E 'kustomization\.ya?ml'; then
 
                 kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
-            fi
-                IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-                nodejs_image=$(echo "$OUTPUTFILE" | yq eval '.spec.values.nodejs.image' -)
-                java_image=$(echo "$OUTPUTFILE" | yq eval '.spec.values.java.image' -)
-                echo $OUTPUTFILE
 
-                extract_nodejs_image=$(echo $nodejs_image | cut -d ':' -f 2-)
+                IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+                nodejs_image=$(yq eval '.spec.values.nodejs.image' $OUTPUTFILE) && java_image=$(yq eval '.spec.values.java.image' $OUTPUTFILE)
+                extract_nodejs_image=$(echo $image | cut -d ':' -f 2-)
                 extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
 
-                if ! echo "\"$extract_nodejs_image\"" | jq  'test("^prod-[a-f0-9]+-([0-9]+)")' || ! echo "\"$extract_java_image\"" | jq 'test("^prod-[a-f0-9]+-([0-9]+)")'; then
+                if ! echo "\"$extract_nodejs_image\"" | jq  'test("^prod-[a-f0-9]+-([0-9]+)")' || ! echo "\"$extract_java_image\"" | jq  'test("^prod-[a-f0-9]+-([0-9]+)")'; then
                     echo "image do not match"
                     exit 1
                 fi
-
+            fi
        done
     done
 done
