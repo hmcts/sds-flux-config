@@ -87,6 +87,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     done
 
     OUTPUTFILE="images.yaml"
+    DIRECTORIES=$FILE_LOCATIONS
 
     for dir in $DIRECTORIES; do
         exclude=false
