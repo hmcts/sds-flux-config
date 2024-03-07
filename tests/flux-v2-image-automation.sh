@@ -87,24 +87,18 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     done
 
     OUTPUTFILE="images.yaml"
-    DIRECTORIES=$FILE_LOCATIONS
 
     for dir in $DIRECTORIES; do
         exclude=false
         for EXCLUDED_PATH in "${HELMRELEASES[@]}"; do
-            if [[ $dir == $EXCLUDED_PATH* ]]; then
+        if [[ -f "$dir/$(basename $EXCLUDED_PATH)" ]]; then
                 exclude=true
                 break
             fi
         done
 
-        if ! $exclude && ls "$dir" | grep -q -E 'kustomization\.ya?ml'; then
-            kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.image or .spec.values.*.image != null))' >> $OUTPUTFILE
-        fi
-    done
-
     for RELEASE in "${HELMRELEASES[@]}"; do
-        nodejs_image=$(yq eval '.spec.values.nodejs.image' $RELEASE) && java_image=$(yq eval '.spec.values.java.image' $RELEASE)
+        nodejs_image=$(yq eval 'select(.spec.values.image) or (.spec.values.*.image) != null' $RELEASE)
         extract_nodejs_image=$(echo $nodejs_image | cut -d ':' -f 2-)
         extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
 
