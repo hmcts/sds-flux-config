@@ -66,8 +66,8 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                 kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
             fi
                 IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-                nodejs_image=$(echo "$output" | yq eval '.spec.values.nodejs.image' -)
-                java_image=$(echo "$output" | yq eval '.spec.values.java.image' -)
+                nodejs_image=$(echo "$OUTPUTFILE" | yq eval '.spec.values.nodejs.image' -)
+                java_image=$(echo "$OUTPUTFILE" | yq eval '.spec.values.java.image' -)
 
                 extract_nodejs_image=$(echo $nodejs_image | cut -d ':' -f 2-)
                 extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
