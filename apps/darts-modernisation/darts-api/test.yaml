@@ -10,5 +10,7 @@ spec:
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
         DARTS_LOG_LEVEL: DEBUG
+        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
+        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-aac6c07-20240307144021 # {"$imagepolicy": "flux-system:darts-api"}
