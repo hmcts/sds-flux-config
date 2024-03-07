@@ -3,8 +3,6 @@ set -ex -o pipefail
 
 EXCLUSIONS_LIST=(
     apps/flux-system/*
-    apps/vh/*/stg.yaml
-    apps/juror-digital/*
     apps/my-time/my-time-frontend/my-time-frontend.yaml
     apps/met/themis-fe/prod.yaml
     apps/aspnet/dotnet48/dotnet48.yaml
