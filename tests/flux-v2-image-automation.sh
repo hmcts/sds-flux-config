@@ -87,7 +87,6 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     done
 
     OUTPUTFILE="images.yaml"
-    DIRECTORIES=("apps")  # Define DIRECTORIES as an array
 
     for dir in $DIRECTORIES; do
         exclude=false
