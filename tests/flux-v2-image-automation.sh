@@ -92,12 +92,13 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
         for EXCLUDED_PATH in "${HELMRELEASES[@]}"; do
         DIRECTORIES=$(find $DIRECTORIES -type d -not -path "$EXCLUDED_PATH")
+        done
 
         for dir in $DIRECTORIES; do
             if ls "$dir" | grep -q -E 'kustomization\.ya?ml'; then
                 kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
             fi
-
+        done
         for OUTPUTFILE in "${HELMRELEASES[@]}"; do
                 IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
                 nodejs_image=$(yq eval '.spec.values.nodejs.image' $OUTPUTFILE) && java_image=$(yq eval '.spec.values.java.image' $OUTPUTFILE)
@@ -109,7 +110,6 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                     exit 1
                 fi
         done
-    done
     ##############################################################################################################
     # Print success if ALL Helm Release image fields are valid
     ##############################################################################################################
