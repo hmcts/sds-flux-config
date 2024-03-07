@@ -15,6 +15,7 @@ spec:
       interval: 1m
   values:
     java:
+      ingressHost: darts-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/darts/api:prod-aac6c07-20240307144021 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
       memoryRequests: '2G'
