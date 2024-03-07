@@ -39,7 +39,7 @@ metadata:
 spec:
   filterTags:
     extract: $ts
-    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'
+    pattern: '^prod-TBC'
   imageRepositoryRef:
     name: vh-video-web
   policy:
