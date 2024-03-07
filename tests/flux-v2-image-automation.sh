@@ -9,6 +9,16 @@ EXCLUSIONS_LIST=(
   .*ithc.*.yaml
   .*sbox.*.yaml
   .*dev.*.yaml
+  .*perftest.*
+  .*sbox.*
+  .*test.*
+  .*stg.*
+  .*staging.*
+  .**dev.*
+  .*aat.*
+  .*demo.*
+  .*ithc.*
+  .*toffee.*
 )
 
 EXCLUSIONS=$(IFS="|" ; echo "${EXCLUSIONS_LIST[*]}")
@@ -70,7 +80,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                 extract_nodejs_image=$(echo $image | cut -d ':' -f 2-)
                 extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
 
-                if ! echo "\"$extract_nodejs_image\"" | jq  'test("^prod-[a-f0-9]+-([0-9]+)")' || ! echo "\"$extract_java_image\"" | jq  'test("^prod-[a-f0-9]+-([0-9]+)")'; then
+                if [ "$(echo "\"$extract_nodejs_image\"" | jq -r 'test("^prod-[a-f0-9]+-([0-9]+)")')" = "false" ] || [ "$(echo "\"$extract_java_image\"" | jq -r 'test("^prod-[a-f0-9]+-([0-9]+)")')" = "false" ]; then
                     echo "image do not match"
                     exit 1
                 fi
