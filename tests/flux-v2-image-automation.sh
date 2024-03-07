@@ -68,6 +68,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
                 IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
                 nodejs_image=$(echo "$OUTPUTFILE" | yq eval '.spec.values.nodejs.image' -)
                 java_image=$(echo "$OUTPUTFILE" | yq eval '.spec.values.java.image' -)
+                echo $OUTPUTFILE
 
                 extract_nodejs_image=$(echo $nodejs_image | cut -d ':' -f 2-)
                 extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
