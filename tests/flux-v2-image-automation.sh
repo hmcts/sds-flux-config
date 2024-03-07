@@ -77,27 +77,29 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     ##############################################################################################################
 
     HELMRELEASES=()
-        for FILE in $(grep -lr "image:" $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
-            while read -r doc; do
-                if [ "$doc" == "HelmRelease" ]; then
-                    IFS=$'\n'
-                    HELMRELEASES+=("$FILE")
-                fi
-            done < <(yq eval '.kind' $FILE)
-        done
-
+    for FILE in $(grep -lr "image:" $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
+        while read -r doc; do
+            if [ "$doc" == "HelmRelease" ]; then
+                IFS=$'\n'
+                HELMRELEASES+=("$FILE")
+            fi
+        done < <(yq eval '.kind' $FILE)
+    done
 
     OUTPUTFILE="images.yaml"
-    DIRECTORIES="apps"
+    DIRECTORIES=("apps")  # Define DIRECTORIES as an array
 
-    for dir in $DIRECTORIES; do
+    for dir in "${DIRECTORIES[@]}"; do
+        exclude=false
         for EXCLUDED_PATH in "${HELMRELEASES[@]}"; do
-            if [[ $dir != $EXCLUDED_PATH* ]]; then
-                if ls "$dir" | grep -q -E 'kustomization\.ya?ml'; then
-                    kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
-                fi
+            if [[ $dir == $EXCLUDED_PATH* ]]; then
+                exclude=true
+                break
             fi
         done
+        if ! $exclude && ls "$dir" | grep -q -E 'kustomization\.ya?ml'; then
+            kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.image or .spec.values.*.image != null))' >> $OUTPUTFILE
+        fi
     done
 
     for RELEASE in "${HELMRELEASES[@]}"; do
