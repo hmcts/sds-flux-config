@@ -87,29 +87,28 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done
 
 
-        OUTPUTFILE="images.yaml"
-        DIRECTORIES="apps"
+    OUTPUTFILE="images.yaml"
+    DIRECTORIES="apps"
 
+    for dir in $DIRECTORIES; do
         for EXCLUDED_PATH in "${HELMRELEASES[@]}"; do
-        DIRECTORIES=$(find $DIRECTORIES -type d -not -path "$EXCLUDED_PATH")
-        done
-
-        for dir in $DIRECTORIES; do
-            if ls "$dir" | grep -q -E 'kustomization\.ya?ml'; then
-                kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
+            if [[ $dir != $EXCLUDED_PATH* ]]; then
+                if ls "$dir" | grep -q -E 'kustomization\.ya?ml'; then
+                    kustomize build --load-restrictor LoadRestrictionsNone "$dir" 2>&1 | yq eval 'select(.kind == "HelmRelease" and (.spec.values.nodejs.image != null or .spec.values.java.image != null))' >> $OUTPUTFILE
+                fi
             fi
         done
-        for OUTPUTFILE in "${HELMRELEASES[@]}"; do
-                IMAGE_PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
-                nodejs_image=$(yq eval '.spec.values.nodejs.image' $OUTPUTFILE) && java_image=$(yq eval '.spec.values.java.image' $OUTPUTFILE)
-                extract_nodejs_image=$(echo $nodejs_image | cut -d ':' -f 2-)
-                extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
+    done
 
-                if [ "$(echo "\"$extract_nodejs_image\"" | jq -r 'test("^prod-[a-f0-9]+-([0-9]+)")')" = "false" ] || [ "$(echo "\"$extract_java_image\"" | jq -r 'test("^prod-[a-f0-9]+-([0-9]+)")')" = "false" ]; then
-                    echo "!! Non whitelisted pattern found in HelmRelease: $OUTPUTFILE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
-                    exit 1
-                fi
-        done
+    for RELEASE in "${HELMRELEASES[@]}"; do
+        nodejs_image=$(yq eval '.spec.values.nodejs.image' $RELEASE) && java_image=$(yq eval '.spec.values.java.image' $RELEASE)
+        extract_nodejs_image=$(echo $nodejs_image | cut -d ':' -f 2-)
+        extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
+
+        if [ "$(echo "\"$extract_nodejs_image\"" | jq -r 'test("^prod-[a-f0-9]+-([0-9]+)")')" = "false" ] || [ "$(echo "\"$extract_java_image\"" | jq -r 'test("^prod-[a-f0-9]+-([0-9]+)")')" = "false" ]; then
+            echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
+        fi
+    done
     ##############################################################################################################
     # Print success if ALL Helm Release image fields are valid
     ##############################################################################################################
