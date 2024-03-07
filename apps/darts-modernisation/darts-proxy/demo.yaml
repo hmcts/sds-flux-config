@@ -7,7 +7,7 @@ spec:
   releaseName: darts-proxy
   values:
     java:
-      ingressHost: darts-proxy.staging.platform.hmcts.net
+      ingressHost: darts-proxy.demo.platform.hmcts.net
       replicas: 1
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
