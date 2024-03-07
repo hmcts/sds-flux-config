@@ -13,5 +13,7 @@ spec:
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
         RESTART_ME: '007'
+        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
+        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-03ff864-20240306141138 # {"$imagepolicy": "flux-system:darts-api"}
