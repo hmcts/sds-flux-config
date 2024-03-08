@@ -94,8 +94,8 @@ done
                 if [ "$doc" == "false" ]; then
                     echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
                 fi
-            done < <(yq eval '(.spec.values.image) or (.spec.values.*.image) | test("prod-[a-f0-9]+-(?P<ts>[0-9]+)")' $RELEASE)
-
+            done < <(yq eval '(.spec.values.image) or (.spec.values.*.image) | test("prod-[a-f0-9]+-(?P<ts>[0-9]+)")' $extracted_image)
+    done
     ##############################################################################################################
     # Print success if ALL Helm Release image fields are valid
     ##############################################################################################################
