@@ -86,23 +86,21 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done < <(yq eval '.kind' $FILE)
     done
 
-    OUTPUTFILE="images.yaml"
-
-    for dir in $DIRECTORIES; do
+    for dir in $FILE_LOCATION; do
         exclude=false
-        for EXCLUDED_PATH in "${HELMRELEASES[@]}"; do
-        if [[ -f "$dir/$(basename $EXCLUDED_PATH)" ]]; then
+        for HELMRELEASE_PATH in "${HELMRELEASES[@]}"; do
+        if [[ -f "$HELMRELEASE_PATH" ]]; then
                 exclude=true
                 break
             fi
         done
+
     if ! $exclude; then
         for RELEASE in "${HELMRELEASES[@]}"; do
-            nodejs_image=$(yq eval 'select(.spec.values.image) or (.spec.values.*.image) != null' $RELEASE)
-            extract_nodejs_image=$(echo $nodejs_image | cut -d ':' -f 2-)
-            extract_java_image=$(echo $java_image | cut -d ':' -f 2-)
+            image=$(yq eval 'select(.spec.values.image) or (.spec.values.*.image) != null' $RELEASE)
+            extracted_image=$(echo $image | cut -d ':' -f 2-)
 
-            if [ "$(yq eval 'test("^prod-[a-f0-9]+-([0-9]+)")' <<< "$extract_nodejs_image")" = "false" ] || [ "$(yq eval 'test("^prod-[a-f0-9]+-([0-9]+)")' <<< "$extract_java_image")" = "false" ]; then
+            if [ "$(yq eval 'test("^prod-[a-f0-9]+-([0-9]+)")' <<< "$extracted_image")" = "false" ] ; then
                 echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
             fi
         done
