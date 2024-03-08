@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
-  name: darts-api
+  name: darts-proxy
   namespace: darts-modernisation
 spec:
-  releaseName: darts-api
+  releaseName: darts-proxy
   chart:
     spec:
-      chart: ./stable/darts-api
+      chart: ./stable/darts-proxy
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
@@ -15,10 +15,10 @@ spec:
       interval: 1m
   values:
     java:
-      replicas: 2
-      image: sdshmctspublic.azurecr.io/darts/api:prod-70725ae-20240308141409 # {"$imagepolicy": "flux-system:darts-api"}
+      replicas: 1
+      image: sdshmctspublic.azurecr.io/darts/proxy:prod-a51cd5e-20240307115229 # {"$imagepolicy": "flux-system:darts-proxy"}
       disableTraefikTls: true
       memoryRequests: '2G'
       memoryLimits: '3G'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-70725ae-20240308141409 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/proxy:prod-a51cd5e-20240307115229 # {"$imagepolicy": "flux-system:darts-proxy"}

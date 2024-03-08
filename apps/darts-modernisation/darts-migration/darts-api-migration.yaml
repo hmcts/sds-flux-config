@@ -15,6 +15,7 @@ spec:
       interval: 1m
   values:
     java:
+      ingressHost: darts-api-migration.{{ .Values.global.environment }}.platform.hmcts.net
       replicas: 0
       # pin the version of the container image from the commit build here - update string removed
       image: sdshmctspublic.azurecr.io/darts/api:prod-32bdc24-20240229110157
