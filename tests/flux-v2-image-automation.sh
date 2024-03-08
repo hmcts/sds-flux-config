@@ -87,7 +87,7 @@ for FILE in $(grep -lr "image:" $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
 done
 
         for RELEASE in "${HELMRELEASES[@]}"; do
-            image=$(yq eval 'select(.spec.values.image) or (.spec.values.*.image) != null' $RELEASE)
+            image=$(yq eval 'select(.spec.values.image) or (.spec.values.*.image) != null' $RELEASE) 2>&1
             extracted_image=$(echo $image | cut -d ':' -f 2-)
 
             while read -r doc; do
@@ -96,6 +96,7 @@ done
                 fi
         done < <(yq eval 'test("^prod-[a-f0-9]+-([0-9]+)")' <<< "$extracted_image")
     done
+
     ##############################################################################################################
     # Print success if ALL Helm Release image fields are valid
     ##############################################################################################################
