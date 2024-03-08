@@ -87,7 +87,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     done
 
             for RELEASE in "${HELMRELEASES[@]}"; do
-                image=$(yq eval 'select(.spec.values.image) or (.spec.values.*.image) != null' $RELEASE)
+                image=$(yq eval 'select((.spec.values.image) or (.spec.values.*.image) | tostring != "null")' $RELEASE)
                 extracted_image=$(echo $image | cut -d ':' -f 2-)
 
                 if [ "$(yq eval 'test("^prod-[a-f0-9]+-([0-9]+)")' <<< "$extracted_image")" = "false" ] ; then
