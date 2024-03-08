@@ -87,15 +87,14 @@ for FILE in $(grep -lr "image:" $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
 done
 
         for RELEASE in "${HELMRELEASES[@]}"; do
-            image=$(yq eval 'select(.spec.values.image) or (.spec.values.*.image) != null' $RELEASE) 2>&1
+            image=$(yq eval 'select(.spec.values.image) or (.spec.values.*.image) != null' $RELEASE)
             extracted_image=$(echo $image | cut -d ':' -f 2-)
 
             while read -r doc; do
                 if [ "$doc" == "false" ]; then
                     echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
                 fi
-        done < <(yq eval 'test("^prod-[a-f0-9]+-([0-9]+)")' <<< "$extracted_image")
-    done
+            done < <(yq eval '(.spec.values.image) or (.spec.values.*.image) | test("prod-[a-f0-9]+-(?P<ts>[0-9]+)")' $RELEASE)
 
     ##############################################################################################################
     # Print success if ALL Helm Release image fields are valid
