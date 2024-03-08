@@ -86,14 +86,16 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         done < <(yq eval '.kind' $FILE)
     done
 
-            for RELEASE in "${HELMRELEASES[@]}"; do
-                image=$(yq eval 'select((.spec.values.image) or (.spec.values.*.image) | tostring != "null")' $RELEASE)
-                extracted_image=$(echo $image | cut -d ':' -f 2-)
+        for RELEASE in "${HELMRELEASES[@]}"; do
+            image=$(yq eval 'select(.spec.values.image) or (.spec.values.*.image) != null' $RELEASE)
+            extracted_image=$(echo $image | cut -d ':' -f 2-)
 
-                if [ "$(yq eval 'test("^prod-[a-f0-9]+-([0-9]+)")' <<< "$extracted_image")" = "false" ] ; then
+            while read -r doc; do
+                if [ "$doc" == false ]; then
                     echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
                 fi
-            done
+            done < <(yq eval 'test("^prod-[a-f0-9]+-([0-9]+)")' <<< "$extracted_image")
+        done
   done
     ##############################################################################################################
     # Print success if ALL Helm Release image fields are valid
