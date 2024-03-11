@@ -7,7 +7,7 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-422-087b1b0-20240311092548
+      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-423-697e6af-20240311110546
       replicas: 2
       ingressHost: pip-publication-services.test.platform.hmcts.net
       environment:
