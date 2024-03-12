@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: libragob-batch-housekeeping
+  namespace: met
+spec:
+  releaseName: libragob-batch-housekeeping-job
+  values:
+    kind: CronJob
+    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-f41d0947-1710249695 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
+    schedule: "*/1 * * * *"
+  chart:
+    spec:
+      chart: job
+      sourceRef:
+        kind: GitRepository
+        name: chart-job
+        namespace: flux-system
+      interval: 1m
