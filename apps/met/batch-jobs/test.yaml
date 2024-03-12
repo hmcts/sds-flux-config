@@ -7,8 +7,8 @@ spec:
   releaseName: libragob-batch-housekeeping
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-42c627ac-1710271722 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
-    schedule: "32 19 12 3 *"
+    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-23a505fe-1710272309 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
+    schedule: "42 19 12 3 *"
     suspend: false
     keyVaults:
       libragob-test-kv:
@@ -17,6 +17,9 @@ spec:
           - event-datasource-username
           - event-datasource-password
           - event-datasource-url
+          - themis-gateway-dbusername
+          - themis-gateway-dbpassword
+          - themis-gateway-datasourceurl
     environment:
       KV_NAME: libragob-test-kv
     backoffLimit: 1
