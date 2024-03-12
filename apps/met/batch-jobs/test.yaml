@@ -10,6 +10,15 @@ spec:
     image: hmctspublic.azurecr.io/libragob/housekeeping:prod-a4ba5c7c-1710250654 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
     schedule: "0 */6 * * *"
     suspend: true
+    keyVaults:
+      libragob-test-kv:
+        excludeEnvironmentSuffix: true
+        secrets:
+          - event-datasource-username
+          - event-datasource-password
+          - event-datasource-url
+    environment:
+      KV_NAME: libragob-test-kv
   chart:
     spec:
       chart: job
