@@ -5,6 +5,7 @@ resources:
 namespace: darts-modernisation
 patches:
   - path: ../../darts-api/prod.yaml
+  - path: ../../darts-automated-tasks/prod.yaml
   - path: ../../darts-portal/prod.yaml
   - path: ../../darts-gateway/prod.yaml
   - path: ../../serviceaccount/prod.yaml
