@@ -23,7 +23,6 @@ spec:
           - libragob-pg-admin-password
     environment:
       KV_NAME: libragob-test-kv
-    backoffLimit: 1
   chart:
     spec:
       chart: job
@@ -54,7 +53,6 @@ spec:
           - event-datasource-url
     environment:
       KV_NAME: libragob-test-kv
-    backoffLimit: 1
   chart:
     spec:
       chart: job
