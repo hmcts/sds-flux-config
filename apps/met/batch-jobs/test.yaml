@@ -7,7 +7,7 @@ spec:
   releaseName: libragob-batch-housekeeping
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-890580d0-1710329685 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
+    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-431a9fc8-1710332409 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
     schedule: "52 19 12 3 *"
     suspend: true
     keyVaults:
