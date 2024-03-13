@@ -9,7 +9,7 @@ spec:
     kind: CronJob
     image: hmctspublic.azurecr.io/libragob/housekeeping:prod-7108d5f8-1710327805 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
     schedule: "52 19 12 3 *"
-    suspend: false
+    suspend: true
     keyVaults:
       libragob-test-kv:
         excludeEnvironmentSuffix: true
@@ -21,6 +21,37 @@ spec:
           - themis-gateway-dbpassword
           - themis-gateway-datasourceurl
           - libragob-pg-admin-password
+    environment:
+      KV_NAME: libragob-test-kv
+    backoffLimit: 1
+  chart:
+    spec:
+      chart: job
+      sourceRef:
+        kind: GitRepository
+        name: chart-job
+        namespace: flux-system
+      interval: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: libragob-batch-ams-reporting
+  namespace: met
+spec:
+  releaseName: libragob-batch-ams-reporting
+  values:
+    kind: CronJob
+    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-7108d5f8-1710327803 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
+    schedule: "25 11 13 3 *"
+    suspend: false
+    keyVaults:
+      libragob-test-kv:
+        excludeEnvironmentSuffix: true
+        secrets:
+          - event-datasource-username
+          - event-datasource-password
+          - event-datasource-url
     environment:
       KV_NAME: libragob-test-kv
     backoffLimit: 1
