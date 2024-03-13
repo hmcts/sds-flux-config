@@ -43,7 +43,7 @@ spec:
   values:
     kind: CronJob
     image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-7108d5f8-1710327803 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
-    schedule: "20 11 13 3 *"
+    schedule: "25 11 13 3 *"
     suspend: false
     keyVaults:
       libragob-test-kv:
@@ -63,4 +63,3 @@ spec:
         name: chart-job
         namespace: flux-system
       interval: 1m
-
