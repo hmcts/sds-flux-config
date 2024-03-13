@@ -8,8 +8,8 @@ spec:
   values:
     kind: CronJob
     image: hmctspublic.azurecr.io/libragob/housekeeping:prod-a78e2739-1710333476 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
-    schedule: "52 19 12 3 *"
-    suspend: true
+    schedule: "*/5 * * * *"
+    suspend: false
     keyVaults:
       libragob-test-kv:
         excludeEnvironmentSuffix: true
@@ -43,7 +43,7 @@ spec:
     kind: CronJob
     image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-a78e2739-1710333475 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
     schedule: "*/5 * * * *"
-    suspend: false
+    suspend: true
     keyVaults:
       libragob-test-kv:
         excludeEnvironmentSuffix: true
