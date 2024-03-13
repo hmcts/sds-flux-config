@@ -4,7 +4,7 @@ metadata:
   name: libragob-batch-housekeeping
 spec:
   imageRepositoryRef:
-    name: libragob/housekeeping
+    name: libragob-batch-housekeeping
   filterTags:
     extract: $ts
     pattern: "^prod-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)"
@@ -18,7 +18,7 @@ metadata:
   name: libragob-batch-ams-reporting
 spec:
   imageRepositoryRef:
-    name: libragob/ams-reporting
+    name: libragob-batch-ams-reporting
   filterTags:
     extract: $ts
     pattern: "^prod-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)"
