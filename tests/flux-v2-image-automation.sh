@@ -51,7 +51,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     done
 
     ##############################################################################################################
-    # This section will scan the PTL cluster to find all ImagePolicy configs and add them to temporary yaml file
+    # This section will scan the PTL cluster to find all ImagePolicy configs and add them to temporary yaml files
     # Only scans `clusters/ptl/base` because thats where Image Policies are found, scanning other clusters will
     # result in no output
     ##############################################################################################################
@@ -70,7 +70,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         for path in $(echo "clusters/ptl/base"); do
 
             IMAGE_AUTOMATION=$(cat imagepolicies_list.yaml | \
-            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' -)
+            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'selqect(.kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' -)
 
             if [ "$IMAGE_AUTOMATION" == "" ]
             then
@@ -78,7 +78,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             fi
 
             IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
-            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern == "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
+            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern == "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
 
             if [ $IMAGE_AUTOMATION_CHECK == false ]
             then
@@ -90,7 +90,52 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     ##############################################################################################################
     # Print success if ALL image policies are clean
     ##############################################################################################################
-    printf "\n\n########## Image Policy documents checked and passing ########## \n\n"
+    printf "\n\n########## All Image Policy documents checked and passing ########## \n\n"
+
+    ##############################################################################################################
+    # This section will scan the PTL cluster to find all ImagePolicy configs that are kind == ImagePolicy AND 
+    # do not contain the override annotation: hmcts.github.com/prod-automated = disabled OR annotations are null
+    # add them to temporary yaml file.
+    # Only scans `clusters/ptl/base` because thats where Image Policies are found, scanning other clusters will
+    # result in no output
+    ##############################################################################################################
+    ./kustomize build --load-restrictor LoadRestrictionsNone "clusters/ptl/base"  | yq eval 'select(.kind == "ImagePolicy" and ((.metadata.annotations | has("hmcts.github.com/prod-automated") | not) or (.metadata.annotations == null)))' > imagepolicies_defaults_with_patterns.yaml
+    [ $? -eq 0 ] || (echo "Kustomize build has failed" && exit 1)
+
+    ##############################################################################################################
+    # Find total number of documents found using the kustomize command above
+    ##############################################################################################################
+
+    doc_count=$(yq 'document_index' imagepolicies_defaults_with_patterns.yaml | tail -1)
+
+    ##############################################################################################################
+    # This section loops over each file in the imagepolicies_overriding_defaults.yaml file and compares the value of
+    # `.spec.filterTags.pattern` with the expected regex `"^prod-[a-f0-9]+-(?P<ts>[0-9]+)"`.
+    # If a policy is found in the temporary file that does not match this expected regex it will fail and
+    # print the offending policy name.
+    ##############################################################################################################
+
+    for ((i=0; i<$doc_count; i++)); do
+    POLICY_NAME=$(yq e "select(di == $i) | .metadata.name" imagepolicies_defaults_with_patterns.yaml)
+
+        for FILE in $(grep -lr $POLICY_NAME $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
+            export POLICY_NAME
+            HASFILTER=$(yq e 'select(.kind == "ImagePolicy" and .metadata.name == env(POLICY_NAME) and (.spec | has("filterTags")))' $FILE)
+            if [ "${HASFILTER}"  != "" ]; then
+                while read -r pattern; do
+                    if [ $pattern != true ]; then
+                        echo "Non whitelisted pattern found in ImagePolicy: $POLICY_NAME located in: $FILE -- it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+) -- found $(echo "${HASFILTER}" | yq eval '.spec.filterTags.pattern' -)"
+                        exit 1
+                    fi
+                done < <(echo "${HASFILTER}" | yq e '.spec.filterTags.pattern | contains("^prod-[a-f0-9]+-(?P<ts>[0-9]+)")' -)
+            fi
+        done
+    done
+
+    ##############################################################################################################
+    # Print success if ALL image policies are clean
+    ##############################################################################################################
+    printf "\n\n########## Image Policy documents using defaults found with non-matching patterns ########## \n\n"
 
     ##############################################################################################################
     # This section compiles a list of files that contains `image:` and stores them in an array HELMRELEASES
