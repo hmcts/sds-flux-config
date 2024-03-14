@@ -70,7 +70,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
         for path in $(echo "clusters/ptl/base"); do
 
             IMAGE_AUTOMATION=$(cat imagepolicies_list.yaml | \
-            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'selqect(.kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' -)
+            IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' -)
 
             if [ "$IMAGE_AUTOMATION" == "" ]
             then
