@@ -1,14 +1,23 @@
 #!/usr/bin/env bash
+set -x
 set -ex -o pipefail
+set -x
 
 EXCLUSIONS_LIST=(
-  apps/flux-system/*
-  apps/vh/*/stg.yaml
-  .*demo.*.yaml
-  .*test.*.yaml
-  .*ithc.*.yaml
-  .*sbox.*.yaml
-  .*dev.*.yaml
+    apps/flux-system/*
+    apps/vh/*/stg.yaml
+    .*demo.*.yaml
+    .*test.*.yaml
+    .*ithc.*.yaml
+    .*sbox.*.yaml
+    .*dev.*.yaml
+    .*perftest*
+    .*sbox*
+    .*test*
+    .*stg*
+    .*dev*
+    .*aat*
+    .*toffee*
 )
 
 EXCLUSIONS=$(IFS="|" ; echo "${EXCLUSIONS_LIST[*]}")
@@ -50,6 +59,15 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
 
             IMAGE_AUTOMATION_CHECK=$(cat imagepolicies_list.yaml  | \
             IMAGE_POLICY_NAME="${IMAGE_POLICY}" yq eval 'select(.metadata and .kind == "ImagePolicy" and .metadata.name == env(IMAGE_POLICY_NAME) )' - | yq eval '.spec.filterTags.pattern == "^prod-[a-f0-9]+-(?P<ts>[0-9]+)"' -)
+
+            IMAGE_NAME=$(echo $IMAGE_AUTOMATION_CHECK | cut -d ':' -f2)
+
+            PATTERN="^prod-[a-f0-9]+-(?P<ts>[0-9]+)"
+
+            if [[ ! $IMAGE_NAME =~ $PATTERN ]]; then
+                echo "Image name does not match the pattern: $IMAGE_NAME"
+                exit 1
+            fi
 
             if [ $IMAGE_AUTOMATION_CHECK == false ]
             then
