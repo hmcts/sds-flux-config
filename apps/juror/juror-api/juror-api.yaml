@@ -16,4 +16,9 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/juror/api:prod-86466df-20240313131247 # {"$imagepolicy": "flux-system:juror-api"}
+      memoryRequests: '2048Mi'
+      cpuRequests: '500m'
+      memoryLimits: '4096Mi'
+      cpuLimits: '3000m'
+      replicas: 2
       disableTraefikTls: true
