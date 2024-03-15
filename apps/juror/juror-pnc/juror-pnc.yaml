@@ -17,3 +17,4 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/juror/pnc:prod-3fe40c7-20240315093547 # {"$imagepolicy": "flux-system:juror-pnc"}
       disableTraefikTls: true
+      replicas: 2

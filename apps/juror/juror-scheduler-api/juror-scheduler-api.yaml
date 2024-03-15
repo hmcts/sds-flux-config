@@ -17,3 +17,4 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/juror/scheduler-api:prod-a8465bd-20240315092909 # {"$imagepolicy": "flux-system:juror-scheduler-api"}
       disableTraefikTls: true
+      replicas: 2
