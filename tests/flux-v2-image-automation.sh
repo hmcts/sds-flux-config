@@ -199,7 +199,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
             then
                 while read -r doc; do
                     if [ "$doc" == false ]; then
-                        echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
+                        echo "!! Non whitelisted pattern found in HelmRelease: $RELEASE -- it should be prod-[a-f0-9]+-(?P<ts>[0-9]+)" && exit 1
                     fi
                 done < <(yq '((.spec.values.image) or (.spec.values.*.image) | test("prod-[a-f0-9]+-(?P<ts>[0-9]+)"))' $RELEASE)
             fi
