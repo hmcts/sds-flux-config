@@ -103,31 +103,58 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     [ $? -eq 0 ] || (echo "Kustomize build has failed" && exit 1)
 
     ##############################################################################################################
-    # Find total number of documents found using the kustomize command above
+    # This section uses the kustomize output to capture names of each document found and stores them in an array 
+    # POLICY_NAMES
+    # Only files that follow these rules will be added to the array:
+    # - is kind == ImagePolicy
+    # - has .metadata.name field
+    ##############################################################################################################
+    POLICY_NAMES=()
+    while read -r doc; do
+        if [ "$doc" == "---" ]; then
+            continue
+        fi
+
+        IFS=$'\n'
+        POLICY_NAMES+=($doc)
+    done < <(yq e '. | select(.kind == "ImagePolicy") | .metadata.name' imagepolicies_defaults_with_patterns.yaml)
+
+    ##############################################################################################################
+    # This section uses grep to find all files containing "kind: ImagePolicy" then checks if they also have a
+    # filterTags key set. If they do they are added to the array POLICY_FILES
+    # Only files that follow these rules will be added to the array:
+    # - is kind == ImagePolicy
+    # - has .spec.filterTags field
+    ##############################################################################################################
+    POLICY_FILES=()
+    for FILE in $(grep -lr "kind: ImagePolicy" $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
+        while read -r doc; do
+            if [ "$doc" == true ]; then
+                IFS=$'\n'
+                POLICY_FILES+=("$FILE")
+            fi
+        done < <(yq e '(.spec | has("filterTags"))' $FILE)
+    done
+
+    ##############################################################################################################
+    # This section loops over each POLICY in POLICY_NAMES and then loops over each file in POLICY_FILES
+    # For each FILE it checks if the file has a name that matches the POLICY and if so, takes the yaml content and
+    # stores this in MATCH variable.
+    # If MATCH variable is not empty it then checks the key `.spec.filterTags.pattern` matches the expected 
+    # regex `"^prod-[a-f0-9]+-(?P<ts>[0-9]+)"`.
+    # If no match log the policy name, file and regex found then exit the script
     ##############################################################################################################
 
-    doc_count=$(yq 'document_index' imagepolicies_defaults_with_patterns.yaml | tail -1)
-
-    ##############################################################################################################
-    # This section loops over each file in the imagepolicies_overriding_defaults.yaml file and compares the value of
-    # `.spec.filterTags.pattern` with the expected regex `"^prod-[a-f0-9]+-(?P<ts>[0-9]+)"`.
-    # If a policy is found in the temporary file that does not match this expected regex it will fail and
-    # print the offending policy name.
-    ##############################################################################################################
-
-    for ((i=0; i<$doc_count; i++)); do
-    POLICY_NAME=$(yq e "select(di == $i) | .metadata.name" imagepolicies_defaults_with_patterns.yaml)
-
-        for FILE in $(grep -lr $POLICY_NAME $FILE_LOCATION | grep -Ev "$EXCLUSIONS" ); do
-            export POLICY_NAME
-            HASFILTER=$(yq e 'select(.kind == "ImagePolicy" and .metadata.name == env(POLICY_NAME) and (.spec | has("filterTags")))' $FILE)
-            if [ "${HASFILTER}"  != "" ]; then
-                while read -r pattern; do
-                    if [ $pattern != true ]; then
-                        echo "Non whitelisted pattern found in ImagePolicy: $POLICY_NAME located in: $FILE -- it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+) -- found $(echo "${HASFILTER}" | yq eval '.spec.filterTags.pattern' -)"
-                        exit 1
-                    fi
-                done < <(echo "${HASFILTER}" | yq e '.spec.filterTags.pattern | contains("^prod-[a-f0-9]+-(?P<ts>[0-9]+)")' -)
+    for POLICY_NAME in "${POLICY_NAMES[@]}"; do
+        export POLICY_NAME=$POLICY_NAME
+        for FILE in "${POLICY_FILES[@]}"; do
+            MATCH=$(yq e 'select(.metadata.name == env(POLICY_NAME))' "$FILE")
+            if [ -n "$MATCH" ]; then
+                PATTERN=$(echo "$MATCH" | yq e '.spec.filterTags.pattern' -)
+                if [[ $PATTERN != "^prod-[a-f0-9]+-(?P<ts>[0-9]+)" ]]; then
+                    echo "Non whitelisted pattern found in ImagePolicy: $POLICY_NAME located in: $FILE -- it should be ^prod-[a-f0-9]+-(?P<ts>[0-9]+) -- found $PATTERN"
+                    exit 1
+                fi
             fi
         done
     done
@@ -135,7 +162,7 @@ for FILE_LOCATION in $(echo ${FILE_LOCATIONS}); do
     ##############################################################################################################
     # Print success if ALL image policies are clean
     ##############################################################################################################
-    printf "\n\n########## Image Policy documents using defaults found with non-matching patterns ########## \n\n"
+    printf "\n\n########## Image Policy documents using defaults checked and passing ########## \n\n"
 
     ##############################################################################################################
     # This section compiles a list of files that contains `image:` and stores them in an array HELMRELEASES
