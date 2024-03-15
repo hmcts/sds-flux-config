@@ -23,7 +23,7 @@ metadata:
 spec:
   filterTags:
     extract: $ts
-    pattern: '^dev-2122+-(?P<ts>[0-9]+)'
+    pattern: '^dev-2122-(?P<ts>[0-9]+)'
   imageRepositoryRef:
     name: vh-video-web
   policy:
