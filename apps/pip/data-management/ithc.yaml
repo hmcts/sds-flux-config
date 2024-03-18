@@ -7,7 +7,6 @@ spec:
   releaseName: pip-data-management
   values:
     java:
-      replicas: 1
       ingressHost: pip-data-management.ithc.platform.hmcts.net
       environment:
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.ithc.platform.hmcts.net
