@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-video-web.demo.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/video-web:prod-7a4f327-202403061710 # {"$imagepolicy": "flux-system:vh-video-web"}
+      image: sdshmctspublic.azurecr.io/vh/video-web:prod-7a4f327-202403061710 # {"$imagepolicy": "flux-system:vh-video-web-demo"}
   chart:
     spec:
       chart: ./stable/vh-video-web/prod
