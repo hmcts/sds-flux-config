@@ -3,7 +3,6 @@ kind: HelmRelease
 metadata:
   name: pip-data-management
 spec:
-  replicas: 0
   releaseName: pip-data-management
   values:
     java:
