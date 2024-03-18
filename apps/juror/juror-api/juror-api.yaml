@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/juror/api:prod-7abb74c-20240318093719 # {"$imagepolicy": "flux-system:juror-api"}
+      image: sdshmctspublic.azurecr.io/juror/api:prod-dfedb34-20240318100745 # {"$imagepolicy": "flux-system:juror-api"}
       memoryRequests: '2048Mi'
       cpuRequests: '500m'
       memoryLimits: '4096Mi'
