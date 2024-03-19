@@ -15,6 +15,6 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/juror/pnc:prod-e060e6c-20240318170929 # {"$imagepolicy": "flux-system:juror-pnc"}
+      image: sdshmctspublic.azurecr.io/juror/pnc:prod-7661f7e-20240319132812 # {"$imagepolicy": "flux-system:juror-pnc"}
       disableTraefikTls: true
       replicas: 2
