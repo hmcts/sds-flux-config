@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/juror/bureau:prod-cb5994a-20240320161159 # {"$imagepolicy": "flux-system:juror-bureau"}
+      image: sdshmctspublic.azurecr.io/juror/bureau:prod-e63be7d-20240320162736 # {"$imagepolicy": "flux-system:juror-bureau"}
       disableTraefikTls: true
       memoryLimits: '768Mi'
       startupPeriod: 30
