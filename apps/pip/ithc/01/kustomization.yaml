@@ -4,3 +4,13 @@ namespace: pip
 
 resources:
   - ../base
+
+patches:
+  - path: ../../data-management-no-match-artefacts-cron/ithc/01.yaml
+  - path: ../../data-management-expired-artefacts-cron/ithc/01.yaml
+  - path: ../../data-management-subscriptions-cron/ithc/01.yaml
+  - path: ../../account-management-inactive-verification-cron/ithc/01.yaml
+  - path: ../../account-management-media-reporting-cron/ithc/01.yaml
+  - path: ../../account-management-clear-audit-cron/ithc/01.yaml
+  - path: ../../publication-services-mi-reporting-cron/ithc/01.yaml
+  - path: ../../refresh-views-cron/ithc/01.yaml
