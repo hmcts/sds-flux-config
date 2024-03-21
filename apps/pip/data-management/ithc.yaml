@@ -8,6 +8,7 @@ spec:
     java:
       ingressHost: pip-data-management.ithc.platform.hmcts.net
       environment:
+        DB_UPDATE: update
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.ithc.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.ithc.platform.hmcts.net
         PUBLICATION_SERVICES_URL: https://pip-publication-services.ithc.platform.hmcts.net
