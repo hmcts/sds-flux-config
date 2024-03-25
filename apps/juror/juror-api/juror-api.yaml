@@ -15,5 +15,10 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/juror/api:prod-6e7ce20-20240305153912 # {"$imagepolicy": "flux-system:juror-api"}
+      image: sdshmctspublic.azurecr.io/juror/api:prod-8bbe41d-20240325120433 # {"$imagepolicy": "flux-system:juror-api"}
+      memoryRequests: '2048Mi'
+      cpuRequests: '500m'
+      memoryLimits: '4096Mi'
+      cpuLimits: '3000m'
+      replicas: 2
       disableTraefikTls: true
