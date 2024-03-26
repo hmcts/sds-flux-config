@@ -23,7 +23,7 @@ metadata:
 spec:
   filterTags:
     extract: $ts
-    pattern: '^pr-633-(?P<ts>[0-9]+)-[0-9]'
+    pattern:   '^dev-[a-f0-9]+-(?P<ts>[0-9]+)'  #'^pr-633-(?P<ts>[0-9]+)-[0-9]'
   imageRepositoryRef:
     name: vh-video-api
   policy:
