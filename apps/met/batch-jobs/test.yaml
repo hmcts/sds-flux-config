@@ -8,7 +8,7 @@ spec:
   values:
     kind: CronJob
     image: hmctspublic.azurecr.io/libragob/housekeeping:prod-c1c25a4a-1711395691 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
-    schedule: "58 19 * * *"
+    schedule: "52 08 * * *"
     suspend: false
     keyVaults:
       libragob-test-kv:
@@ -20,6 +20,9 @@ spec:
           - themis-gateway-dbusername
           - themis-gateway-dbpassword
           - themis-gateway-datasourceurl
+          - dac-datasource-username
+          - dac-datasource-password
+          - dac-datasource-url
     environment:
       KV_NAME: libragob-test-kv
   chart:

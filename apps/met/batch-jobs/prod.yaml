@@ -20,7 +20,9 @@ spec:
           - themis-gateway-dbusername
           - themis-gateway-dbpassword
           - themis-gateway-datasourceurl
-          - libragob-pg-admin-password
+          - dac-datasource-username
+          - dac-datasource-password
+          - dac-datasource-url
     environment:
       KV_NAME: libragob-prod-kv
   chart:
