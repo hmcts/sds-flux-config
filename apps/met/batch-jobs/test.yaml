@@ -7,8 +7,8 @@ spec:
   releaseName: libragob-batch-housekeeping
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-04f58d36-1711396470 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
-    schedule: "50 19 * * *"
+    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-d46bc812-1711445413 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
+    schedule: "45 09 * * *"
     suspend: false
     keyVaults:
       libragob-test-kv:
@@ -20,6 +20,9 @@ spec:
           - themis-gateway-dbusername
           - themis-gateway-dbpassword
           - themis-gateway-datasourceurl
+          - dac-datasource-username
+          - dac-datasource-password
+          - dac-datasource-url
     environment:
       KV_NAME: libragob-test-kv
   chart:
@@ -40,7 +43,7 @@ spec:
   releaseName: libragob-batch-ams-reporting
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-04f58d36-1711396470 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
+    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-d46bc812-1711445413 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
     schedule: "*/5 * * * *"
     suspend: false
     keyVaults:
