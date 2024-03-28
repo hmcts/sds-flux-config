@@ -7,7 +7,7 @@ spec:
   releaseName: pre-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pre/api:prod-2706947-20240328105254 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-215e951-20240328152901 # {"$imagepolicy": "flux-system:pre-api"}
       disableTraefikTls: true
   chart:
     spec:
