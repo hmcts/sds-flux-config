@@ -2,8 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
+  - ../../batch-jobs/batch-jobs.yaml
 namespace: met
 patches:
   - path: ../../identity/prod.yaml
   - path: ../../themis-fe/prod.yaml
   - path: ../../serviceaccount/prod.yaml
+  - path: ../../batch-jobs/prod.yaml
