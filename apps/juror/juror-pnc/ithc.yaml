@@ -11,7 +11,7 @@ spec:
       image: sdshmctspublic.azurecr.io/juror/pnc:prod-6b4d6c1-20240321091705
       ingressHost: juror-pnc.ithc.platform.hmcts.net
       environment:
-        PNC_SERVICE_PNC_TRAN_CODE: '#LO'
+        PNC_SERVICE_PNC_TRAN_CODE: '#L0'
         PNC_SERVICE_PNC_TERMINAL: LCRTS001
         PNC_SERVICE_PNC_AUTHORISATION: 2K01JV01
         PNC_SERVICE_GATEWAY_ID: JVJVS001
