@@ -15,6 +15,6 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-32279b3-20240401093143 # {"$imagepolicy": "flux-system:juror-scheduler-execution"}
+      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-f3719e2-20240402061240 # {"$imagepolicy": "flux-system:juror-scheduler-execution"}
       disableTraefikTls: true
       replicas: 2
