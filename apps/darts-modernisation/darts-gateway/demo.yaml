@@ -7,7 +7,7 @@ spec:
   releaseName: darts-gateway
   values:
     java:
-      replicas: 4
+      replicas: 2
       ingressHost: darts-gateway.demo.platform.hmcts.net
       environment:
         DARTS_LOG_LEVEL: TRACE
@@ -15,3 +15,4 @@ spec:
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
         ACTIVE_DIRECTORY_B2C_ON_MICROSOFT_URI: https://hmctsstgextid.onmicrosoft.com
+        RESTART_ME: true
