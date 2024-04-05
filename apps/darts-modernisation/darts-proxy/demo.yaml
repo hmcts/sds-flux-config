@@ -1,10 +1,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
-  name: darts-portal
+  name: darts-proxy
   namespace: darts-modernisation
 spec:
-  releaseName: darts-portal
+  releaseName: darts-proxy
   values:
     nodejs:
       replicas: 2
