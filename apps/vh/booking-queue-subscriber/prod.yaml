@@ -14,6 +14,7 @@ spec:
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
         VHSERVICES__VIDEOWEBURL: https://video.hearings.reform.hmcts.net/
         VHSERVICES__USERAPIURL: https://vh-user-api.platform.hmcts.net/
+        DUMMY_VAR: 1
     function:
       triggers:
       - type: azure-servicebus
