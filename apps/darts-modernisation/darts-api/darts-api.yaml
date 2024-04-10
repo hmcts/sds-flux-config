@@ -22,3 +22,5 @@ spec:
       memoryLimits: '3G'
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-0962a0b-20240410113003 # {"$imagepolicy": "flux-system:darts-api"}
+      memoryRequests: '2G'
+      memoryLimits: '3G'
