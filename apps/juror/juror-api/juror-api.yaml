@@ -16,9 +16,18 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/juror/api:prod-33b9b6a-20240409174332 # {"$imagepolicy": "flux-system:juror-api"}
-      memoryRequests: '2048Mi'
+      memoryRequests: '2Gi'
       cpuRequests: '500m'
-      memoryLimits: '4096Mi'
+      memoryLimits: '4Gi'
       cpuLimits: '3000m'
       replicas: 2
+      autoscaling:
+        enabled: true
+        maxReplicas: 4
+        cpu:
+          enabled: true
+          averageUtilization: 90
+        memory:
+          enabled: true
+          averageUtilization: 80
       disableTraefikTls: true
