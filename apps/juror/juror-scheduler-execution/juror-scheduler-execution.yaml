@@ -16,7 +16,6 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-0fd5af8-20240409180023 # {"$imagepolicy": "flux-system:juror-scheduler-execution"}
-      disableTraefikTls: true
       memoryRequests: '1Gi'
       cpuRequests: '500m'
       memoryLimits: '2Gi'

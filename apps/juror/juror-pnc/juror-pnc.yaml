@@ -16,7 +16,6 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/juror/pnc:prod-4acbf61-20240410113609 # {"$imagepolicy": "flux-system:juror-pnc"}
-      disableTraefikTls: true
       memoryRequests: '1Gi'
       cpuRequests: '500m'
       memoryLimits: '2Gi'

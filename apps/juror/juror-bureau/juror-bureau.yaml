@@ -16,7 +16,6 @@ spec:
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/juror/bureau:prod-6926da7-20240410103404 # {"$imagepolicy": "flux-system:juror-bureau"}
-      disableTraefikTls: true
       startupPeriod: 30
       memoryRequests: '1Gi'
       cpuRequests: '500m'
