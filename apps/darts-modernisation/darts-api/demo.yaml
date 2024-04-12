@@ -7,7 +7,6 @@ spec:
   releaseName: darts-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-1ce887e-20240409091835
       ingressHost: darts-api.demo.platform.hmcts.net
       replicas: 2
       environment:
