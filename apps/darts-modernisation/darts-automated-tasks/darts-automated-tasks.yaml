@@ -18,8 +18,8 @@ spec:
       ingressHost: darts-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/darts/api:prod-5f9dd38-20240416083758 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
-      memoryRequests: '2G'
-      memoryLimits: '3G'
+      memoryRequests: '3G'
+      memoryLimits: '4G'
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-5f9dd38-20240416083758 # {"$imagepolicy": "flux-system:darts-api"}
       minReplicaCount: 0
