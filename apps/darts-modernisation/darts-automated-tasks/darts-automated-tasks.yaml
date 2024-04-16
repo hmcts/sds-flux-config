@@ -25,3 +25,7 @@ spec:
       minReplicaCount: 0
       maxReplicaCount: 0
       triggers:
+      memoryRequests: 2Gi
+      cpuRequests: 1
+      memoryLimits: 4Gi
+      cpuLimits: 2
