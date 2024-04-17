@@ -10,3 +10,5 @@ spec:
       ingressHost: opal-log-audit-service.staging.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
+      pdb:
+        enabled: false
