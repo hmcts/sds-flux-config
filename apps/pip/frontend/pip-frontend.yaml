@@ -6,7 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-05e5dd9-20240416163006 # {"$imagepolicy": "flux-system:pip-frontend"}
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-95cab58-20240417104031 # {"$imagepolicy": "flux-system:pip-frontend"}
       disableTraefikTls: true
   chart:
     spec:
