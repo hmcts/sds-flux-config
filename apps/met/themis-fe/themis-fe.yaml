@@ -19,7 +19,7 @@ spec:
       livenessPath: /services/themisgatewayapi?wsdl
       replicas: 4
       memoryRequests: "2560Mi"
-      cpuRequests: "50m"
+      cpuRequests: "75m"
       memoryLimits: "3072Mi"
       cpuLimits: "1000m"
       autoscaling:
