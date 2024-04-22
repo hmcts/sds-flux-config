@@ -12,6 +12,7 @@ spec:
       environment:
         KV_CONFIG_TREE: /mnt/secrets/libragob-test-kv/
         LOG4J_DEBUG: true
+        TEMP_VAR: 1
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
