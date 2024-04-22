@@ -16,7 +16,5 @@ spec:
         ARM_PROPERTY_FILE_ENVIRONMENT: live
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsextid.b2clogin.com/hmctsextid.onmicrosoft.com
-      pdb:
-        enabled: false
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-c9bef0d-20240422154124 # {"$imagepolicy": "flux-system:darts-api"}
