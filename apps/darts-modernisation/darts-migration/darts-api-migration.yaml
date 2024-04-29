@@ -22,8 +22,6 @@ spec:
       disableTraefikTls: true
       memoryRequests: '2G'
       memoryLimits: '3G'
-      pdb:
-        enabled: false
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-32bdc24-20240229110157
       minReplicaCount: 0
