@@ -16,12 +16,12 @@ spec:
   values:
     java:
       ingressHost: darts-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/darts/api:prod-07f9db4-20240430072708 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-eeed47a-20240430144940 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-07f9db4-20240430072708 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-eeed47a-20240430144940 # {"$imagepolicy": "flux-system:darts-api"}
       minReplicaCount: 0
       maxReplicaCount: 0
       triggers:
