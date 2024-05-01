@@ -3,8 +3,9 @@ data:
   DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:WitBIwHv/kDMqTfMR/fBi97hfVrOcBAdHA36tQeEgCTfQhPZw9o3iyiDC/85rqBT4k/ktCOqPUuQtshvhVWBRimQlchDezAnTNPLPXx7P3pVx/D6vmbzJ2oOB9iFOVdRMNPQHtte2BjOd7QnEFh4uE0GbCcdzGcCM1+F/g==,iv:+niTv1uk0GFyDWOF6ycvkDesHGP/apkJPd3MiyXft8I=,tag:2Q/zmRJSZ8I6V+4r86oXdg==,type:str]
 kind: Secret
 metadata:
+  creationTimestamp: null
   name: darts-api-function-values
-  namespace: darts-modernisation
+  namespace: monitoring
 type: Opaque
 sops:
   kms: []
@@ -13,7 +14,7 @@ sops:
     - vault_url: https://dtssharedservicesdemokv.vault.azure.net
       name: sops-key
       version: 0657d01a616f4a0abb44e8b4ff26ac71
-      created _at: "2024-05-01T13:58:54Z"
+      created_at: "2024-05-01T13:58:54Z"
       enc: iyxhdvZO2Lhby3cB_ngCP8lg7T0qfJFLmfUB8pgV0JkLhiisiNWTs71osRDCfgxCGsD12Fhu3pZVroJuSfdql0UT7QUBjkJBHeD99Djk6r-hrYMSdZgxI5A5OvLKZmi4w-Zt436eXfABQ9BXmidefRv4UYbMeuuXhUrl4xs6EDcenzORTAftaBvzyBAqYrQ5OzUI62E-nKSR-DtPTjJEwdQKm2HF52WucaIVaiu-mrqxurXx3qti6z-aILMn1Y6RFMNSPurwvcmoxf2P_wR3aLdEtP_EOaiQqSttCP1LdGk-9V3m_Gfqm9u5D3L50O9xm6VOOdvtoeKnkYsSVggNbA
   hc_vault: []
   age: []
