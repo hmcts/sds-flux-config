@@ -9,6 +9,7 @@ spec:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
       # image: sdshmctspublic.azurecr.io/juror/pnc:prod-10c0313-20240329071325
+      image: sdshmctspublic.azurecr.io/juror/pnc:pr-146-525e7e8-20240502114446
       ingressHost: juror-pnc.ithc.platform.hmcts.net
       environment:
         PNC_SERVICE_PNC_TRAN_CODE: '#L0'
