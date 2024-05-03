@@ -14,11 +14,12 @@ spec:
         name: traefik
         namespace: admin
   values:
-    web:
-      transport:
-        respondingTimeouts:
-          readTimeout: 360
-          writeTimeout: 0
+    ports:
+      web:
+        transport:
+          respondingTimeouts:
+            readTimeout: 360
+            writeTimeout: 0
     logs:
       general:
         level: DEBUG
