@@ -15,10 +15,10 @@ spec:
         namespace: admin
   values:
     additionalArguments:
-      - "--entryPoints.web.transport.respondingTimeouts.writeTimeout=360"
-      - "--entryPoints.websecure.transport.respondingTimeouts.writeTimeout=360"
-      - "--entryPoints.web.transport.respondingTimeouts.readTimeout=360"
-      - "--entryPoints.websecure.transport.respondingTimeouts.readTimeout=360"
+      - "--entryPoints.web.transport.respondingTimeouts.writeTimeout=600"
+      - "--entryPoints.websecure.transport.respondingTimeouts.writeTimeout=600"
+      - "--entryPoints.web.transport.respondingTimeouts.readTimeout=600"
+      - "--entryPoints.websecure.transport.respondingTimeouts.readTimeout=600"
     logs:
       general:
         level: DEBUG
