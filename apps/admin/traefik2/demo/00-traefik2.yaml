@@ -14,12 +14,11 @@ spec:
         name: traefik
         namespace: admin
   values:
-    ports:
-      web:
-        transport:
-          respondingTimeouts:
-            readTimeout: 360
-            writeTimeout: 0
+    additionalArguments:
+      - "--entryPoints.web.transport.respondingTimeouts.writeTimeout=360"
+      - "--entryPoints.websecure.transport.respondingTimeouts.writeTimeout=360"
+      - "--entryPoints.web.transport.respondingTimeouts.readTimeout=360"
+      - "--entryPoints.websecure.transport.respondingTimeouts.readTimeout=360"
     logs:
       general:
         level: DEBUG
