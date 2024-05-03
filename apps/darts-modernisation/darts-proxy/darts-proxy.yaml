@@ -18,7 +18,9 @@ spec:
       replicas: 1
       image: sdshmctspublic.azurecr.io/darts/proxy:prod-8f240ae-20240503083701 # {"$imagepolicy": "flux-system:darts-proxy"}
       disableTraefikTls: true
-      memoryRequests: '2G'
-      memoryLimits: '3G'
+      memoryRequests: '4G'
+      memoryLimits: '8G'
+      cpuRequests: '3000m'
+      cpuLimits: '6000m'
     function:
       image: sdshmctspublic.azurecr.io/darts/proxy:prod-8f240ae-20240503083701 # {"$imagepolicy": "flux-system:darts-proxy"}
