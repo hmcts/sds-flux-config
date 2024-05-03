@@ -14,6 +14,9 @@ spec:
         name: traefik
         namespace: admin
   values:
+    logs:
+      general:
+        level: DEBUG
     service:
       spec:
         loadBalancerIP: "10.51.79.250"
