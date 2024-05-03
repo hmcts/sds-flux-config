@@ -7,7 +7,6 @@ spec:
   releaseName: pre-portal
   values:
     nodejs:
-      replicas: 2
       ingressHost: pre-portal.staging.platform.hmcts.net
       environment:
         PRE_API_URL: https://sds-api-mgmt.staging.platform.hmcts.net/pre-api
