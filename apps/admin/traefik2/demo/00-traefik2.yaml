@@ -16,8 +16,8 @@ spec:
   values:
     autoscaling:
       enabled: true
-        minReplicas: 1
-        maxReplicas: 1
+      minReplicas: 1
+      maxReplicas: 1
     additionalArguments:
       - "--entryPoints.web.transport.respondingTimeouts.writeTimeout=600"
       - "--entryPoints.websecure.transport.respondingTimeouts.writeTimeout=600"
