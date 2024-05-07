@@ -10,5 +10,7 @@ spec:
       ingressHost: darts-proxy.demo.platform.hmcts.net
       replicas: 1
       environment:
+        APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
+        DARTS_MODERNISED_API_URL: http://darts-api.demo.platform.hmcts.net
         DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
