@@ -8,8 +8,8 @@ spec:
   values:
     nodejs:
       replicas: 2
-      ingressHost: pre-portal.platform.hmcts.net
+      ingressHost: www.portal.pre-recorded-evidence.justice.gov.uk
       environment:
         PRE_API_URL: https://sds-api-mgmt.platform.hmcts.net/pre-api
-        PORTAL_URL: https://pre-portal.platform.hmcts.net
+        PORTAL_URL: https://www.portal.pre-recorded-evidence.justice.gov.uk
         B2C_APP_CLIENT_ID: 95370927-9b25-4530-88e8-a1af7a9f0a48
