@@ -8,6 +8,8 @@ spec:
   values:
     java:
       ingressHost: darts-proxy.demo.platform.hmcts.net
+      autoscaling:
+        enabled: false
       replicas: 1
       environment:
         APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
