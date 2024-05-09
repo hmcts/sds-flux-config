@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
-      image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.20.0'
+      image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.22.0'
       replicas: 1
       autoscaling:
         enabled: false
@@ -17,6 +17,7 @@ spec:
         LOG4J_DEBUG: true
         TEMP_VAR: 1
         DAC_NUMBER_OF_INSTANCES: 3
+        ALIAS_NAME: libra-onpremise-gob-gateway.staging.internal.hmcts.net
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
