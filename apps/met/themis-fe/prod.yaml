@@ -15,7 +15,7 @@ spec:
       environment:
         KV_CONFIG_TREE: /mnt/secrets/libragob-prod-kv/
         LOG4J_DEBUG: true
-        DAC_NUMBER_OF_INSTANCES: 3
+        DAC_NUMBER_OF_INSTANCES: 4
       keyVaults:
         libragob-prod-kv:
           excludeEnvironmentSuffix: true
