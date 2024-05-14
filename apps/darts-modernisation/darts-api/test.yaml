@@ -12,6 +12,6 @@ spec:
         DARTS_LOG_LEVEL: DEBUG
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
-        ARM_URL: https://darts-stub-services-test.platform.hmcts.net
+        ARM_URL: http://darts-stub-services.test.platform.hmcts.net
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-bf24c89-20240510160259 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-8afba54-20240514123342 # {"$imagepolicy": "flux-system:darts-api"}
