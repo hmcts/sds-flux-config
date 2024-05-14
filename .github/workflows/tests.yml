@@ -9,7 +9,7 @@ jobs:
   static_tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install pre-reqs
         run: |
           sudo apt update
@@ -39,7 +39,7 @@ jobs:
           - environment: ptl
             cluster: "01"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install yq
         env:
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
