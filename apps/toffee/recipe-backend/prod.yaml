@@ -13,5 +13,7 @@ spec:
       autoscaling:
         enabled: true
         maxReplicas: 5 # Required setting
+      environment:
+        DUMMY_VAR: true
     global:
       environment: prod
