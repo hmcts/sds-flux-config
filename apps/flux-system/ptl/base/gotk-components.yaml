@@ -5988,7 +5988,7 @@ spec:
           name: Status
           type: string
       deprecated: true
-      deprecationWarning: v2beta1 HelmRelease is deprecated, upgrade to v2beta2
+      deprecationWarning: v2beta1 HelmRelease is deprecated, upgrade to v2
       name: v2beta1
       schema:
         openAPIV3Schema:
@@ -6185,7 +6185,7 @@ spec:
                     "DriftDetection holds the configuration for detecting
                     and handling differences between the manifest in the Helm storage
                     and the resources currently existing in the cluster. \n Note: this
-                    field is provisional to the v2beta2 API, and not actively used by
+                    field is provisional to the v2 API, and not actively used by
                     v2beta1 HelmReleases."
                   properties:
                     ignore:
@@ -7058,7 +7058,7 @@ spec:
                   description:
                     "History holds the history of Helm releases performed
                     for this HelmRelease up to the last successfully completed release.
-                    \n Note: this field is provisional to the v2beta2 API, and not actively
+                    \n Note: this field is provisional to the v2 API, and not actively
                     used by v2beta1 HelmReleases."
                   items:
                     description:
@@ -7175,14 +7175,14 @@ spec:
                   description:
                     "LastAttemptedConfigDigest is the digest for the config
                     (better known as \"values\") of the last reconciliation attempt.
-                    \n Note: this field is provisional to the v2beta2 API, and not actively
+                    \n Note: this field is provisional to the v2 API, and not actively
                     used by v2beta1 HelmReleases."
                   type: string
                 lastAttemptedGeneration:
                   description:
                     "LastAttemptedGeneration is the last generation the controller
                     attempted to reconcile. \n Note: this field is provisional to the
-                    v2beta2 API, and not actively used by v2beta1 HelmReleases."
+                    v2 API, and not actively used by v2beta1 HelmReleases."
                   format: int64
                   type: integer
                 lastAttemptedReleaseAction:
@@ -7190,7 +7190,7 @@ spec:
                     "LastAttemptedReleaseAction is the last release action
                     performed for this HelmRelease. It is used to determine the active
                     remediation strategy. \n Note: this field is provisional to the
-                    v2beta2 API, and not actively used by v2beta1 HelmReleases."
+                    v2 API, and not actively used by v2beta1 HelmReleases."
                   type: string
                 lastAttemptedRevision:
                   description:
@@ -7206,7 +7206,7 @@ spec:
                   description:
                     "LastHandledForceAt holds the value of the most recent
                     force request value, so a change of the annotation value can be
-                    detected. \n Note: this field is provisional to the v2beta2 API,
+                    detected. \n Note: this field is provisional to the v2 API,
                     and not actively used by v2beta1 HelmReleases."
                   type: string
                 lastHandledReconcileAt:
@@ -7219,7 +7219,7 @@ spec:
                   description:
                     "LastHandledResetAt holds the value of the most recent
                     reset request value, so a change of the annotation value can be
-                    detected. \n Note: this field is provisional to the v2beta2 API,
+                    detected. \n Note: this field is provisional to the v2 API,
                     and not actively used by v2beta1 HelmReleases."
                   type: string
                 lastReleaseRevision:
@@ -7235,7 +7235,7 @@ spec:
                   description:
                     "StorageNamespace is the namespace of the Helm release
                     storage for the current release. \n Note: this field is provisional
-                    to the v2beta2 API, and not actively used by v2beta1 HelmReleases."
+                    to the v2 API, and not actively used by v2beta1 HelmReleases."
                   type: string
                 upgradeFailures:
                   description:
@@ -7259,7 +7259,7 @@ spec:
         - jsonPath: .status.conditions[?(@.type=="Ready")].message
           name: Status
           type: string
-      name: v2beta2
+      name: v2
       schema:
         openAPIV3Schema:
           description: HelmRelease is the Schema for the helmreleases API
