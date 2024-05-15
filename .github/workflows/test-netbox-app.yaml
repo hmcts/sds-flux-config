@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: '0'
       - name: Set up kubelogin for non-interactive login
@@ -26,12 +26,12 @@ jobs:
         with:
           kubelogin-version: 'v0.0.24'
       - name: Azure Login
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           client-id: ae4401e2-f8e6-4bbd-9ced-f42c4dfaea70 
           tenant-id: 531ff96d-0ae9-462a-8d2d-bec7c0b42082 
           allow-no-subscriptions: true
-      - uses: azure/aks-set-context@v3
+      - uses: azure/aks-set-context@v4
         name: Get Aks context
         with:
           resource-group: 'ss-ptlsbox-00-rg'

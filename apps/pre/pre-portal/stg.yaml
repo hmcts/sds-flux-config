@@ -8,3 +8,11 @@ spec:
   values:
     nodejs:
       ingressHost: pre-portal.staging.platform.hmcts.net
+      environment:
+        PRE_API_URL: https://sds-api-mgmt.staging.platform.hmcts.net/pre-api
+        PORTAL_URL: https://pre-portal.staging.platform.hmcts.net
+#        B2C_APP_CLIENT_ID: d20a7462-f222-46b8-a363-d2e30eb274eb
+#        Remove below here once migrated dev => stg
+        B2C_APP_CLIENT_ID: c8deb898-d595-4fb2-8ba5-52fffa8db064
+        B2C_BASE_URL: https://hmctsdevextid.b2clogin.com/hmctsdevextid.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1A_SIGNUP_SIGNIN
+        B2C_END_SESSION_ENDPOINT: https://hmctsdevextid.b2clogin.com/hmctsdevextid.onmicrosoft.com/b2c_1a_signup_signin/oauth2/v2.0/logout

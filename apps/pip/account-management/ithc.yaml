@@ -6,5 +6,9 @@ metadata:
 spec:
   releaseName: pip-account-management
   values:
-    image: sdshmctspublic.azurecr.io/pip/account-management:prod-d9d5ee6-20240126103222 #{"$imagepolicy": "flux-system:pip-account-management"}
-    replicas: 0
+    java:
+      ingressHost: pip-account-management.ithc.platform.hmcts.net
+      environment:
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.ithc.platform.hmcts.net
+        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.ithc.platform.hmcts.net
+        MANAGED_IDENTITY_CLIENT_ID: 6eadcd84-611f-4d93-b2c4-5e3ff2dc239e

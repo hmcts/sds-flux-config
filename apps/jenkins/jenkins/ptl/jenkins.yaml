@@ -213,6 +213,12 @@ spec:
                     title: Darts Shared Infrastructure
                 - buildMonitor:
                     includeRegex: >-
+                      ^HMCTS.*\/opal.*\/master
+                    name: Opal
+                    recurse: true
+                    title: Opal
+                - buildMonitor:
+                    includeRegex: >-
                       ^HMCTS.*\/pdda.*\/master
                     name: PDDA
                     recurse: true

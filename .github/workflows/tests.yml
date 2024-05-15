@@ -9,12 +9,14 @@ jobs:
   static_tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install pre-reqs
         run: |
           sudo apt update
           sudo apt-get install -y yamllint
       - name: Install yq
+        env:
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
         run: ./tests/install-tools.sh
       - name: Verify CODEOWNERs
         run: ./tests/code-owner-check.sh
@@ -37,8 +39,10 @@ jobs:
           - environment: ptl
             cluster: "01"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install yq
+        env:
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
         run: ./tests/install-tools.sh
       - name: Install Flux CLI
         uses: nick-fields/retry@v3

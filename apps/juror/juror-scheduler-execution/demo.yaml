@@ -7,7 +7,6 @@ spec:
   releaseName: juror-scheduler-execution
   values:
     java:
-      replicas: 2
       # Uncomment and edit the line below to fix the environment at a specific image
-      # image: sdshmctspublic.azurecr.io/juror/scheduler-execution:TBC
+      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-df71ad4-20240510154702
       ingressHost: juror-scheduler-execution.demo.platform.hmcts.net

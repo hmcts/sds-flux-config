@@ -7,10 +7,12 @@ spec:
   releaseName: darts-api
   values:
     java:
-      replicas: 2
       ingressHost: darts-api.demo.platform.hmcts.net
+      replicas: 2
       environment:
-        DARTS_GATEWAY_URL: https://darts-gateway.demo.platform.hmcts.net
-        DARTS_PORTAL_URL: https://darts.demo.apps.hmcts.net
+        DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART_ME: '008'
+        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
+        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
+        APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk

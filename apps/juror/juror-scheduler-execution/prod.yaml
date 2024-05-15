@@ -8,3 +8,7 @@ spec:
   values:
     java:
       ingressHost: juror-scheduler-execution.platform.hmcts.net
+      environment:
+        JUROR_SERVICE_HOST: juror-api.platform.hmcts.net
+        SCHEDULER_SERVICE_HOST: juror-scheduler-api.platform.hmcts.net
+        POLICE_NATIONAL_COMPUTER_CHECK_SERVICE_HOST: juror-pnc.platform.hmcts.net

@@ -10,3 +10,10 @@ spec:
       ingressHost: darts-gateway.platform.hmcts.net
       environment:
         DARTS_API_URL: https://darts-api.platform.hmcts.net
+        DARTS_LOG_LEVEL: INFO
+        DAR_NOTIFY_ENABLED: true
+        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsextid.b2clogin.com
+        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsextid.b2clogin.com/hmctsextid.onmicrosoft.com
+        ACTIVE_DIRECTORY_B2C_ON_MICROSOFT_URI: https://hmctsextid.onmicrosoft.com
+      pdb:
+        enabled: false

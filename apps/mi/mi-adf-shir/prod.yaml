@@ -9,7 +9,7 @@ spec:
       ignored-by-dynatrace: "true"
       app.kubernetes.io/instance: mi-adf-shir-deployment
       app.kubernetes.io/name: mi-adf-shir-deployment
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-f6ce04e-20231213101345 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-91ba39e-20240312133745 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     replicaCount: 2
     memoryLimits: '4096Mi'
     cpuLimits: '4000m'
@@ -20,6 +20,6 @@ spec:
     managedIdentityClientId: "ee31a18f-45e9-41db-881d-5976695188fb"
     shirNodeName: ''
     hostAliases:
-    - ip: 51.141.129.74
+    - ip: 20.209.88.225
       hostnames:
       - mcmshmctsproddataextract.blob.core.windows.net

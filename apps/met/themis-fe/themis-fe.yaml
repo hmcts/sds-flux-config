@@ -19,7 +19,7 @@ spec:
       livenessPath: /services/themisgatewayapi?wsdl
       replicas: 4
       memoryRequests: "2560Mi"
-      cpuRequests: "50m"
+      cpuRequests: "75m"
       memoryLimits: "3072Mi"
       cpuLimits: "1000m"
       autoscaling:
@@ -40,17 +40,20 @@ spec:
         THEMIS_GATEWAY_JKSLOCATION: /opt/jks/ThemisAzureKeyStore.jks
         DAC_KEY_EXPIRE_TIME_SECONDS: 300
         DAC_NUMBER_OF_INSTANCES: 13
-        CONFISCATION_SCHEMAS: 110,45,97,116,66,109
+        CONFISCATION_SCHEMAS: 110,45,97,116,66,109,107,113
         MAINTENANCE_SCHEMAS: 111,67,44
         THEMIS_DAC_LISTENERSENDERID: Themis_GW
         THEMIS_DAC_LISTENERQUEUENAME: LIBRAGOB_WRITERQUEUE
         THEMIS_DAC_WRITERQUEUENAME: LIBRAGOB_READERQUEUE
         SPRING_JMS_SERVICEBUS_IDLE-timeout: 30000
-        UPDATES_FIXEDRATE_IN_MILLISECONDS: 2000
-        updates_fixedRate_in_milliseconds: 2000
+        UPDATES_FIXEDRATE_IN_MILLISECONDS: 500
+        updates_fixedRate_in_milliseconds: 500
         SPRING_JMS_SERVICEBUS_PRICING-TIER: PREMIUM
         logging_level_root: DEBUG
         LOGGING_LEVEL_ROOT: DEBUG
+        THEMIS_DAC_RESEND_COOLDOWN_IN_SECONDS: 30
+        MESSAGE_AUDIT_SUPPRESSION: OFF
+        TEMP_VAR: 1
   chart:
     spec:
       chart: ./charts/met

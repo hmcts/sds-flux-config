@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: opal-log-audit-service
+  namespace: opal
+spec:
+  releaseName: opal-log-audit-service
+  values:
+    java:
+      ingressHost: opal-log-audit-service.staging.platform.hmcts.net
+      environment:
+        DUMMY_VAR: 0
+      pdb:
+        enabled: false

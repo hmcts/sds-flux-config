@@ -9,9 +9,15 @@ spec:
     java:
       ingressHost: darts-api.platform.hmcts.net
       environment:
-        DARTS_GATEWAY_URL: https://darts-gateway.platform.hmcts.net
+        DARTS_GATEWAY_URL: http://darts-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
-        DARTS_LOG_LEVEL: DEBUG
+        DARTS_LOG_LEVEL: INFO
         RESTART_ME: '007'
+        ARM_PROPERTY_FILE_ENVIRONMENT: live
+        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsextid.b2clogin.com
+        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsextid.b2clogin.com/hmctsextid.onmicrosoft.com
+        ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
+      pdb:
+        enabled: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-b43cc94-20240131175258 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-902fe66-20240515112121 # {"$imagepolicy": "flux-system:darts-api"}

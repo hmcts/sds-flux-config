@@ -4,4 +4,5 @@ metadata:
   name: traefik-crd
   namespace: flux-system
 spec:
-  path: ./apps/admin/traefik-crds-upgrade-v26
+  interval: 10m
+  path: ./apps/admin/traefik-crds-upgrade-v27.0.2

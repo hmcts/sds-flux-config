@@ -7,7 +7,13 @@ spec:
   releaseName: juror-pnc
   values:
     java:
-      replicas: 2
       # Uncomment and edit the line below to fix the environment at a specific image
-      # image: sdshmctspublic.azurecr.io/juror/pnc:prod-ec3e6f5-20240115073737
+      image: sdshmctspublic.azurecr.io/juror/pnc:prod-0cd46a8-20240507174617
       ingressHost: juror-pnc.demo.platform.hmcts.net
+      environment:
+        PNC_SERVICE_PNC_TRAN_CODE: '#L0'
+        PNC_SERVICE_PNC_TERMINAL: LCRTS001
+        PNC_SERVICE_PNC_AUTHORISATION: 2K01JV01
+        PNC_SERVICE_GATEWAY_ID: JVJVS001
+        PNC_SERVICE_HOST: juror-dev-psnp.pnc.pnn.police.uk
+        PNC_SERVICE_POST: 7103

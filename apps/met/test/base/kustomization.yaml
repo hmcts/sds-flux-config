@@ -3,8 +3,10 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../batch-jobs/batch-jobs.yaml
 namespace: met
 patches:
   - path: ../../identity/test.yaml
   - path: ../../themis-fe/test.yaml
   - path: ../../serviceaccount/test.yaml
+  - path: ../../batch-jobs/test.yaml

@@ -1,0 +1,13 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: juror-api
+  namespace: juror
+spec:
+  releaseName: juror-api
+  values:
+    java:
+      ingressHost: juror-api.staging.platform.hmcts.net
+      environment:
+        SCHEDULER_SERVICE_HOST: juror-scheduler-api.staging.platform.hmcts.net
+        PNC_CHECK_SERVICE_HOST: juror-pnc.staging.platform.hmcts.net

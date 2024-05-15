@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-bookings-api.staging.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/bookings-api:staging-61d01a4-202401261438 # {"$imagepolicy": "flux-system:vh-bookings-api-staging"}
+      image: sdshmctspublic.azurecr.io/vh/bookings-api:staging-da7e3fc-202404231325 # {"$imagepolicy": "flux-system:vh-bookings-api-staging"}
   chart:
     spec:
       chart: ./stable/vh-bookings-api/staging

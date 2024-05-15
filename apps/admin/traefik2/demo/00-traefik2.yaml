@@ -8,12 +8,20 @@ spec:
     spec:
       chart: traefik
       # update the crd version in traefik-crds when updating this
-      version: 26.0.0
+      version: 27.0.2
       sourceRef:
         kind: HelmRepository
         name: traefik
         namespace: admin
   values:
+    additionalArguments:
+      - "--entryPoints.web.transport.respondingTimeouts.writeTimeout=600"
+      - "--entryPoints.websecure.transport.respondingTimeouts.writeTimeout=600"
+      - "--entryPoints.web.transport.respondingTimeouts.readTimeout=600"
+      - "--entryPoints.websecure.transport.respondingTimeouts.readTimeout=600"
+    logs:
+      general:
+        level: DEBUG
     service:
       spec:
         loadBalancerIP: "10.51.79.250"

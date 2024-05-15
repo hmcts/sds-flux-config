@@ -8,3 +8,12 @@ spec:
   values:
     java:
       ingressHost: juror-pnc.staging.platform.hmcts.net
+      environment:
+        JUROR_SERVICE_HOST: juror-api.staging.platform.hmcts.net
+        JOB_EXECUTION_SERVICE_HOST: juror-scheduler-execution.staging.platform.hmcts.net
+        PNC_SERVICE_PNC_TRAN_CODE: '#L0'
+        PNC_SERVICE_PNC_TERMINAL: LCRTS001
+        PNC_SERVICE_PNC_AUTHORISATION: 2K01JV01
+        PNC_SERVICE_GATEWAY_ID: JVJVS001
+        PNC_SERVICE_HOST: juror-dev-psnp.pnc.pnn.police.uk
+        PNC_SERVICE_POST: 7103

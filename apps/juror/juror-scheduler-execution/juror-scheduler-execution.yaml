@@ -15,5 +15,12 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-7cde984-20240201072405 # {"$imagepolicy": "flux-system:juror-scheduler-execution"}
+      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-2c863e4-20240515114346 # {"$imagepolicy": "flux-system:juror-scheduler-execution"}
+      memoryRequests: '1Gi'
+      cpuRequests: '500m'
+      memoryLimits: '2Gi'
+      cpuLimits: '1000m'
+      replicas: 2
+      autoscaling:
+        enabled: false
       disableTraefikTls: true

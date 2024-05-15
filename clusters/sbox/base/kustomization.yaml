@@ -4,14 +4,14 @@ resources:
   - ../../../apps/flux-system/sbox/base
   - ../../../apps/toffee/base/kustomize.yaml
   - ../../../apps/azure-devops/base/kustomize.yaml
-  - ../../../apps/mi/base/kustomize.yaml
+  # - ../../../apps/mi/base/kustomize.yaml
   - ../../../apps/hmi/base/kustomize.yaml
   - ../../../apps/monitoring/base/kustomize.yaml
   - ../../../apps/admin/base/kustomize.yaml
   - ../../../apps/kube-system/base/kustomize.yaml
   - ../../../apps/cronjob/base/kustomize.yaml
   # - ../../../apps/darts-modernisation/base/kustomize.yaml
-  - ../../../apps/pip/base/kustomize.yaml
+  # - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/aspnet/base/kustomize.yaml
   - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
   - ../../../apps/keda/base/kustomize.yaml
@@ -23,3 +23,4 @@ patches:
       annotationSelector: hmcts.github.com/kustomize-defaults != disabled
   - path: ../../../apps/toffee/sbox/base/kustomize.yaml
   - path: ../../../apps/admin/sbox/base/kustomize.yaml
+  - path: ../../../apps/admin/traefik-crds-upgrade-v27.0.2/kustomize.yaml

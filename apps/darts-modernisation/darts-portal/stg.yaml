@@ -11,3 +11,6 @@ spec:
       environment:
         DARTS_API_URL: https://darts-api.staging.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
+        DARTS_AZUREAD_B2C_ORIGIN_HOST: https://hmctsstgextid.b2clogin.com
+        DARTS_DYNATRACE_SCRIPT_URL: https://js-cdn.dynatrace.com/jstag/17177a07246/bf24054dsx/274641a9600eefc2_complete.js
+        DARTS_PORTAL_ALLOW_STUB_DATA: true

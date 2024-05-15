@@ -1,0 +1,17 @@
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: pdda-public-display-data-aggregator
+  namespace: pdda
+spec:
+  type: 0
+---
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentityBinding
+metadata:
+  name: pdda-binding
+  namespace: pdda
+spec:
+  azureIdentity: pdda
+  selector: pdda

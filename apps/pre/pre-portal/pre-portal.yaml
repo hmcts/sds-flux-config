@@ -14,5 +14,14 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pre/portal:prod-f6c152d-20231106102054 # {"$imagepolicy": "flux-system:pre-portal"}
+      replicas: 2
+      image: sdshmctspublic.azurecr.io/pre/portal:prod-4a80137-20240430075557 # {"$imagepolicy": "flux-system:pre-portal"}
       disableTraefikTls: true
+      cpuRequests: '50m'
+      cpuLimits: '500m'
+      memoryRequests: '768Mi'
+      memoryLimits: '768Mi'
+      autoscaling:
+        maxReplicas: 4
+        memory:
+          averageUtilization: 90

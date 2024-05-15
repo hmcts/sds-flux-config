@@ -9,4 +9,8 @@ spec:
     java:
       ingressHost: darts-gateway.test.platform.hmcts.net
       environment:
-        DARTS_API_URL: https://darts-api.test.platform.hmcts.net
+        RESTART_ME: '001'
+        DAR_NOTIFY_ENABLED: true
+        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
+        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
+        ACTIVE_DIRECTORY_B2C_ON_MICROSOFT_URI: https://hmctsstgextid.onmicrosoft.com
