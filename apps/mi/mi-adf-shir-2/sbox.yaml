@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: mi-adf-shir-deployment-2
@@ -13,6 +13,6 @@ spec:
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     managedIdentityClientId: "9278a876-6f8a-489d-9053-01c996a7b6f6"
     hostAliases:
-    - ip: 20.209.128.129
-      hostnames:
-      - mcmshmctssitdataextract.blob.core.windows.net
+      - ip: 20.209.128.129
+        hostnames:
+          - mcmshmctssitdataextract.blob.core.windows.net
