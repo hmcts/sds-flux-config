@@ -29,7 +29,7 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: sdshmctspublic.azurecr.io/version-reporter-service/hourlyusage:prod-75ac799-20240513221144 #{"$imagepolicy": "flux-system:vm-hourlyusage"}
+    image: sdshmctspublic.azurecr.io/version-reporter-service/hourlyusage:prod-d5ad6f1-20240515151939 #{"$imagepolicy": "flux-system:vm-hourlyusage"}
     imagePullPolicy: Always
     environment:
       CLUSTER_NAME: ss-prod-00-aks
