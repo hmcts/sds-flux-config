@@ -18,9 +18,9 @@ spec:
     global:
       environment: prod
     volumes:
-    - name: azurekeyvault
-      csi:
-        driver: secrets-store.csi.k8s.io
-        readOnly: true
-        volumeAttributes:
-          secretProviderClass: "default-cert"
+      - name: azurekeyvault
+        csi:
+          driver: secrets-store.csi.k8s.io
+          readOnly: true
+          volumeAttributes:
+            secretProviderClass: "default-cert"

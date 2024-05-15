@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: toffee-recipe-receiver
@@ -13,7 +13,7 @@ spec:
         kind: GitRepository
         name: toffee-recipe-receiver
         namespace: flux-system
-      version: '*'
+      version: "*"
       valuesFiles:
         - ./charts/recipe-receiver/values-sds.yaml
   interval: 5m
