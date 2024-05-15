@@ -11,7 +11,7 @@ spec:
       environment:
         KINLYCONFIGURATION__CALLBACKURI: https://video.hearings.reform.hmcts.net/callback
         SERVICES__CALLBACKURI: https://video.hearings.reform.hmcts.net/callback
-      image: sdshmctspublic.azurecr.io/vh/video-api:prod-ceca202-202402071722 #{"$imagepolicy": "flux-system:vh-video-api"}
+      image: sdshmctspublic.azurecr.io/vh/video-api:prod-c355c51-202405150952 #{"$imagepolicy": "flux-system:vh-video-api"}
   chart:
     spec:
       chart: ./stable/vh-video-api/prod
