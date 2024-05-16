@@ -9,6 +9,8 @@ spec:
     java:
       ingressHost: juror-pnc.platform.hmcts.net
       environment:
+        JUROR_SERVICE_HOST: juror-api.platform.hmcts.net
+        JOB_EXECUTION_SERVICE_HOST: juror-scheduler-execution.platform.hmcts.net
         PNC_SERVICE_PNC_TRAN_CODE: '#L0'
         PNC_SERVICE_PNC_TERMINAL: LCRTS001
         PNC_SERVICE_PNC_MODE: LIVE
