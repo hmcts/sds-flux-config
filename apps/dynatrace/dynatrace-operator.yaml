@@ -10,14 +10,14 @@ spec:
     spec:
       chart: dynatrace-operator
       # update the CRDs in dynatrace-crds when changing this value
-      version: 0.15.0
+      version: 1.0.0
       sourceRef:
         name: dynatrace-operator
         kind: HelmRepository
         namespace: dynatrace
   values:
     csidriver:
-      enabled: true
+      enabled: false
       tolerations:
         - effect: NoSchedule
           key: CriticalAddonsOnly
