@@ -18,7 +18,7 @@ spec:
         TEMP_VAR: 1
         DAC_NUMBER_OF_INSTANCES: 3
         UPDATES_FIXEDRATE_IN_MILLISECONDS: 1000
-        UPDATES_FIXEDRATE_LOW_PRIORITY: 30000
+        UPDATES_FIXEDRATE_LOW_PRIORITY_IN_MILLISECONDS: 30000
         HIGH_PRIORITY_KEYS_PER_DAC: 1
         ALIAS_NAME: libra-onpremise-gob-gateway.staging.internal.hmcts.net
       keyVaults:
