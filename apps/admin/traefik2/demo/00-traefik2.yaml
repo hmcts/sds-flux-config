@@ -21,8 +21,6 @@ spec:
       - "--entryPoints.websecure.transport.respondingTimeouts.readTimeout=600s"
       - "--entryPoints.web.transport.respondingTimeouts.idleTimeout=600s"
       - "--entryPoints.websecure.transport.respondingTimeouts.idleTimeout=600s"
-      - "--entryPoints.web.transport.respondingTimeouts.responseHeaderTimeout=600s"
-      - "--entryPoints.websecure.transport.respondingTimeouts.responseHeaderTimeout=600s"
       - "--serversTransport.forwardingTimeouts.dialTimeout=30s"
       - "--serversTransport.forwardingTimeouts.responseHeaderTimeout=600s"
       - "--serversTransport.forwardingTimeouts.idleConnTimeout=600s"
