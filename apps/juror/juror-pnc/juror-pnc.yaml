@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/juror/pnc:prod-a1f4494-20240516085302 # {"$imagepolicy": "flux-system:juror-pnc"}
+      image: sdshmctspublic.azurecr.io/juror/pnc:prod-5e336a2-20240516090148 # {"$imagepolicy": "flux-system:juror-pnc"}
       memoryRequests: '1Gi'
       cpuRequests: '500m'
       memoryLimits: '2Gi'
