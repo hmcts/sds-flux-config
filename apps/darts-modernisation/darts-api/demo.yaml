@@ -8,7 +8,6 @@ spec:
   values:
     java:
       ingressHost: darts-api.demo.platform.hmcts.net
-      replicas: 2
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
         DARTS_LOG_LEVEL: DEBUG

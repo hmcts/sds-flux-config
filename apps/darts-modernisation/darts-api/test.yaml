@@ -9,9 +9,11 @@ spec:
     java:
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
+        DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
+        APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
         ARM_URL: http://darts-stub-services.test.platform.hmcts.net
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-ca4f563-20240522151923 # {"$imagepolicy": "flux-system:darts-api"}
