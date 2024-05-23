@@ -7,7 +7,6 @@ spec:
   releaseName: darts-gateway
   values:
     java:
-      replicas: 2
       ingressHost: darts-gateway.demo.platform.hmcts.net
       environment:
         DARTS_LOG_LEVEL: TRACE

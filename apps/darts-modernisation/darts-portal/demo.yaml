@@ -7,7 +7,6 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
-      replicas: 2
       ingressHost: darts.demo.apps.hmcts.net
       environment:
         RESTART_ME: '001'
