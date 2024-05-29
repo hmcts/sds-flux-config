@@ -20,6 +20,7 @@ spec:
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
+      terminationGracePeriodSeconds: 120
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-131a40e-20240529110123 # {"$imagepolicy": "flux-system:darts-api"}
       minReplicaCount: 0

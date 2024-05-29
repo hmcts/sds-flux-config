@@ -14,5 +14,6 @@ spec:
         AUTOMATED_TASK_MODE: true
         API_MODE: false
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
+        GRACEFUL_SHUTDOWN_TIMEOUT: 2m
       pdb:
         enabled: false
