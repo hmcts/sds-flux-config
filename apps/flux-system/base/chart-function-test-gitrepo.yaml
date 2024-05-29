@@ -1,0 +1,17 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: chart-function-test
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: ssh://github.com/hmcts/chart-function
+  ref:
+    branch: DTSPO-13833-testing-azure-devops-image
+  secretRef:
+    name: git-credentials
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/function/
