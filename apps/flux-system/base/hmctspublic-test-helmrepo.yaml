@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: hmctspublic-test
+  namespace: flux-system
+spec:
+  url: https://hmctspublic.azurecr.io/helm/v1/repo/
+  interval: 10m
+  ref:
+    branch: DTSPO-13833-testing-azure-devops-image
