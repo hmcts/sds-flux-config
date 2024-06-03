@@ -1,0 +1,60 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: azure-devops-agent-test-chirag
+  namespace: azure-devops
+spec:
+  interval: 5m0s
+  releaseName: azure-devops-agent-test-chirag
+  values:
+    scaleType: Job
+    image: hmctspublic.azurecr.io/azure-devops-agent:prod-97ab16c3-1693560380
+    runAsRoot: true
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+                - key: app.kubernetes.io/component
+                  operator: In
+                  values:
+                    - jenkins-master
+            topologyKey: "kubernetes.io/hostname"
+    environment:
+      AZP_URL: https://dev.azure.com/hmcts
+      CMD_ARGS: "--once"
+      AZP_POOL: hmcts-sds-ptlsbox
+    triggerAuth:
+      enabled: true
+      create: true
+      triggerPodIdentityProvider: "azure"
+      triggerPodIdentityIdentityId: "cb5f1754-3267-44d3-a129-4dd38c02e5fd"
+    triggers:
+      - type: azure-pipelines
+        poolID: "46"
+        organizationURLFromEnv: "AZP_URL"
+        personalAccessTokenFromEnv: "AZP_TOKEN"
+    job:
+      activeDeadlineSeconds: 10800
+    secrets:
+    #   AZP_TOKEN:
+    #     secretRef: azure-devops-test-token-tm
+    #     key: token
+      # AZP_TOKEN:
+      #   secretRef: chirag-token
+      #   key: token
+    memoryRequests: 512Mi
+    cpuRequests: 25m
+    memoryLimits: 3Gi
+    cpuLimits: 2
+    maxReplicaCount: 3
+    successfulJobsHistoryLimit: 5
+    failedJobsHistoryLimit: 5
+  chart:
+    spec:
+      chart: function
+      sourceRef:
+        kind: GitRepository
+        name: chart-function-test
+        namespace: flux-system
+        

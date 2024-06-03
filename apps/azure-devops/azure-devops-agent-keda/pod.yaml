@@ -1,0 +1,80 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ labels:
+  app.kubernetes.io/instance: azure-devops-agent
+  app.kubernetes.io/name: azure-devops-agent-function
+  azure.workload.identity/use: "true"
+ name: azure-devops-test-pod-chirag
+ namespace: azure-devops
+spec:
+  containers:
+  - env:
+    - name: AZP_TOKEN
+      value: "chiragtest"
+      # valueFrom:
+      #   secretKeyRef:
+      #     key: token
+      #     name: azure-devops-test-token-tm
+    - name: AZP_POOL
+      value: hmcts-sds-ptlsbox
+    - name: AZP_URL
+      value: https://dev.azure.com/hmcts
+    - name: CMD_ARGS
+      value: --once
+    - name: AZURE_CLIENT_ID
+      value: cb5f1754-3267-44d3-a129-4dd38c02e5fd
+    - name: AZURE_TENANT_ID
+      value: 531ff96d-0ae9-462a-8d2d-bec7c0b42082
+    - name: AZURE_FEDERATED_TOKEN_FILE
+      value: /var/run/secrets/azure/tokens/azure-identity-token
+    - name: AZURE_AUTHORITY_HOST
+      value: https://login.microsoftonline.com/
+    image: hmctspublic.azurecr.io/azure-devops-agent:prod-97ab16c3-1693560380
+    imagePullPolicy: IfNotPresent
+    name: azure-devops-test-pod-chirag
+    resources:
+      limits:
+        cpu: "2"
+        memory: 3Gi
+      requests:
+        cpu: 25m
+        memory: 512Mi
+    securityContext:
+      allowPrivilegeEscalation: false
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/azure/tokens
+      name: azure-identity-token
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: OnFailure
+  schedulerName: default-scheduler
+  serviceAccount: azure-devops
+  serviceAccountName: azure-devops
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoSchedule
+    key: node.kubernetes.io/memory-pressure
+    operator: Exists
+  volumes:
+  - name: azure-identity-token
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          audience: api://AzureADTokenExchange
+          expirationSeconds: 3600
+          path: azure-identity-token
