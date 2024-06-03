@@ -27,8 +27,8 @@ spec:
     triggerAuth:
       enabled: true
       create: true
-      triggerPodIdentityProvider: "azure"
-      triggerPodIdentityIdentityId: "cb5f1754-3267-44d3-a129-4dd38c02e5fd"
+      triggerPodIdentityProvider: "azure-workload"
+      triggerPodIdentityIdentityId: "4cc379a4-06b4-435e-8e61-a410aa241d6b" # keda-ptlsbox-mi
     triggers:
       - type: azure-pipelines
         poolID: "46"
