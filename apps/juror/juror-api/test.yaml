@@ -10,6 +10,8 @@ spec:
       # Uncomment and edit the line below to fix the environment at a specific image
       image: sdshmctspublic.azurecr.io/juror/api:prod-da25f68-20240603155311
       ingressHost: juror-api.test.platform.hmcts.net
+      environment:
+        FLYWAY_LOC_OVERRIDE: db/migrationv2
       keyVaults:
         juror:
           secrets:

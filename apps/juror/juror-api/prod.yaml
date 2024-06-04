@@ -11,3 +11,4 @@ spec:
       environment:
         SCHEDULER_SERVICE_HOST: juror-scheduler-api.platform.hmcts.net
         PNC_CHECK_SERVICE_HOST: juror-pnc.platform.hmcts.net
+        FLYWAY_LOC_OVERRIDE: db/migrationv2
