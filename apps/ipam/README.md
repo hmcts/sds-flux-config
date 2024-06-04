@@ -1,7 +1,7 @@
 # IPAM
 We have deployed ipam following some of the documetation here - https://azure.github.io/ipam/#/  , please note that there is no official documentation on ipam on AKS so we manage to deploy it by doing some research and then some help from the ipam support team.
 
-ipam is available here, you would NOT need VPN as we have configured it behind app proxy - https://ipam.platform.hmcts.net/
+ipam is available here, you would NOT need VPN as we have configured it behind app proxy - https://ipam.hmcts.net/
 
 ## IPAM resources
 This are the resources deployed part of the ipam deployment on AKS.

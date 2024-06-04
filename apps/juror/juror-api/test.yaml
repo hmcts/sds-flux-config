@@ -8,5 +8,48 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: sdshmctspublic.azurecr.io/juror/api:prod-80aa422-20240515120635
+      image: sdshmctspublic.azurecr.io/juror/api:prod-f4402b3-20240603102107
       ingressHost: juror-api.test.platform.hmcts.net
+      keyVaults:
+        juror:
+          secrets:
+            - name: AppInsightsInstrumentationKey
+              alias: azure.application-insights.instrumentation-key
+            - name: app-insights-connection-string
+              alias: app-insights-connection-string
+            - name: api-POSTGRES-CONNECTION-STRING-TEMP
+              alias: DB_URL
+            - name: api-POSTGRES-USER
+              alias: DB_USERNAME
+            - name: api-POSTGRES-PASS-TEMP
+              alias: DB_PASSWORD
+            - name: api-JWT-SECRET-BUREAU
+              alias: JWT_SECRET_BUREAU
+            - name: api-JWT-SECRET-PUBLIC
+              alias: JWT_SECRET_PUBLIC
+            - name: api-JWT-SECRET-HMAC
+              alias: JWT_SECRET_HMAC
+            - name: api-NOTIFY-KEY
+              alias: NOTIFY_KEY
+            - name: api-NOTIFY-REGION-KEY-1
+              alias: NOTIFY_REGION_KEY_1
+            - name: api-NOTIFY-REGION-KEY-2
+              alias: NOTIFY_REGION_KEY_2
+            - name: api-NOTIFY-REGION-KEY-3
+              alias: NOTIFY_REGION_KEY_3
+            - name: api-NOTIFY-REGION-KEY-4
+              alias: NOTIFY_REGION_KEY_4
+            - name: api-NOTIFY-REGION-KEY-5
+              alias: NOTIFY_REGION_KEY_5
+            - name: api-NOTIFY-REGION-KEY-6
+              alias: NOTIFY_REGION_KEY_6
+            - name: api-NOTIFY-REGION-KEY-7
+              alias: NOTIFY_REGION_KEY_7
+            - name: scheduler-api-SECRET
+              alias: SCHEDULER_SERVICE_SECRET
+            - name: api-SMART-SURVEY-TOKEN
+              alias: SMART_SURVEY_TOKEN
+            - name: api-SMART-SURVEY-SECRET
+              alias: SMART_SURVEY_SECRET
+            - name: pnc-SECRET
+              alias: PNC_CHECK_SERVICE_SECRET
