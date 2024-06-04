@@ -8,8 +8,10 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: sdshmctspublic.azurecr.io/juror/api:prod-da25f68-20240603155311
+      image: sdshmctspublic.azurecr.io/juror/api:prod-94d3366-20240604132235
       ingressHost: juror-api.test.platform.hmcts.net
+      environment:
+        FLYWAY_LOC_OVERRIDE: db/migrationv2
       keyVaults:
         juror:
           secrets:
