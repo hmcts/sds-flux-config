@@ -3,6 +3,8 @@ kind: HelmRelease
 metadata:
   name: dynatrace-operator
   namespace: dynatrace
+  labels:
+    app.kubernetes.io/managed-by: Helm
 spec:
   releaseName: dynatrace-operator
   interval: 5m
