@@ -11,33 +11,3 @@ spec:
       chart: dynatrace-operator
       # update the CRDs in dynatrace-crds when changing this value
       version: 1.1.0
-      sourceRef:
-        name: dynatrace-operator
-        kind: HelmRepository
-        namespace: dynatrace
-  values:
-    csidriver:
-      enabled: true
-      tolerations:
-        - effect: NoSchedule
-          key: CriticalAddonsOnly
-          operator: Equal
-          value: "true"
-        - effect: NoSchedule
-          key: kubernetes.io/os
-          operator: Equal
-          value: "windows"
-      nodeSelector:
-        kubernetes.io/os: linux
-    operator:
-      tolerations:
-        - effect: NoSchedule
-          key: CriticalAddonsOnly
-          operator: Equal
-          value: "true"
-        - effect: NoSchedule
-          key: kubernetes.io/os
-          operator: Equal
-          value: "windows"
-      nodeSelector:
-        agentpool: system
