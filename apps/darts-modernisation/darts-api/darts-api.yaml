@@ -24,3 +24,4 @@ spec:
       image: sdshmctspublic.azurecr.io/darts/api:prod-8c7fe5c-20240605083203 # {"$imagepolicy": "flux-system:darts-api"}
       memoryRequests: '2G'
       memoryLimits: '3G'
+      maxReplicaCount: 5
