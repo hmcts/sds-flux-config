@@ -28,9 +28,19 @@ spec:
     logs:
       general:
         level: DEBUG
+    ports:
+      traefik:
+        expose:
+          default: false
+          internal: true
     service:
       spec:
         loadBalancerIP: "10.51.79.250"
+      additionalServices:
+        internal:
+          type: ClusterIP
+          labels:
+            traefik-service-label: internal
     deployment:
       podLabels:
         useWorkloadIdentity: "true"
