@@ -6,6 +6,7 @@ resources:
 - ../../kured/sbox/kured-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
 - ../../traefik2
+- ../../traefik2/sbox/traefik-ping-ingress.yaml
 - ../../delete-hung-pods
 patches:
 - path: ../../aad-pod-identity/sbox/azure-identity-patch.yaml
