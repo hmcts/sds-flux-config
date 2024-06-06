@@ -6,10 +6,23 @@ metadata:
   namespace: azure-devops
 spec:
   values:
+    image: hmctspublic.azurecr.io/azure-devops-agent:pr-34-6afbd78f-1717672466
     environment:
       AZP_POOL: hmcts-sds-ptlsbox
+    triggerAuth:
+      enabled: true
+      create: true
+      triggerPodIdentityProvider: "azure-workload"
+      triggerPodIdentityIdentityId: "4cc379a4-06b4-435e-8e61-a410aa241d6b" # keda-ptlsbox-mi
     triggers:
       - type: azure-pipelines
         poolID: "46"
         organizationURLFromEnv: "AZP_URL"
         personalAccessTokenFromEnv: "AZP_TOKEN"
+  chart:
+    spec:
+      chart: function
+      sourceRef:
+        kind: GitRepository
+        name: chart-function-test
+        namespace: flux-system
