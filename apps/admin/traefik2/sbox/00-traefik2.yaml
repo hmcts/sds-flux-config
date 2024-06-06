@@ -17,6 +17,16 @@ spec:
     service:
       spec:
         loadBalancerIP: "10.140.15.250"
+      additionalServices:
+        internal:
+          type: ClusterIP
+          labels:
+            traefik-service-label: internal
+          ports:
+            traefik:
+              expose:
+                default: false
+                internal: true
     deployment:
       podLabels:
         useWorkloadIdentity: "true"
