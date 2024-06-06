@@ -6,6 +6,7 @@ resources:
 - ../../kured/demo/kured-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
 - ../../traefik2
+- ../../traefik2/demo/traefik-ping-ingress.yaml
 - ../../delete-hung-pods
 namespace: admin
 patches:
