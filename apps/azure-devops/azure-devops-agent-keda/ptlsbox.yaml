@@ -6,7 +6,6 @@ metadata:
   namespace: azure-devops
 spec:
   values:
-    image: hmctspublic.azurecr.io/azure-devops-agent:pr-34-7212de02-1717688337
     environment:
       AZP_POOL: hmcts-sds-ptlsbox
     triggerAuth:
@@ -19,10 +18,3 @@ spec:
         poolID: "46"
         organizationURLFromEnv: "AZP_URL"
         personalAccessTokenFromEnv: "AZP_TOKEN"
-  chart:
-    spec:
-      chart: function
-      sourceRef:
-        kind: GitRepository
-        name: chart-function-test
-        namespace: flux-system
