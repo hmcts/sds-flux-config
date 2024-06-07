@@ -25,10 +25,6 @@ spec:
       AZP_POOL: hmcts-sds-ptlsbox
     job:
       activeDeadlineSeconds: 10800
-    secrets:
-      AZP_TOKEN:
-        secretRef: azure-devops-token
-        key: token
     memoryRequests: 512Mi
     cpuRequests: 25m
     memoryLimits: 3Gi

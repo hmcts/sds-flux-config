@@ -8,6 +8,10 @@ spec:
   values:
     environment:
       AZP_POOL: hmcts-ss-dev
+    secrets:
+      AZP_TOKEN:
+        secretRef: azure-devops-token
+        key: token
     triggers:
       - type: azure-pipelines
         poolID: "36"

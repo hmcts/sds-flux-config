@@ -9,6 +9,10 @@ spec:
     maxReplicaCount: 6
     environment:
       AZP_POOL: hmcts-sds-ptl
+    secrets:
+      AZP_TOKEN:
+        secretRef: azure-devops-token
+        key: token
     triggers:
       - type: azure-pipelines
         poolID: "45"

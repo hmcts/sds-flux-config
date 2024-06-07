@@ -8,6 +8,10 @@ spec:
   values:
     environment:
       AZP_POOL: hmcts-ss-prod
+    secrets:
+      AZP_TOKEN:
+        secretRef: azure-devops-token
+        key: token
     memoryRequests: 1024Mi
     triggers:
       - type: azure-pipelines
