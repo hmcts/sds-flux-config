@@ -9,10 +9,6 @@ spec:
     image: hmctspublic.azurecr.io/azure-devops-agent:pr-34-7212de02-1717688337
     environment:
       AZP_POOL: hmcts-sds-ptlsbox
-    # secrets:
-    #   AZP_TOKEN:
-    #     secretRef: azure-devops-token
-    #     key: token
     triggerAuth:
       enabled: true
       create: true
