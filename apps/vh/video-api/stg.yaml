@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-video-api.staging.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/video-api:staging-ceca202-202402061018 #{"$imagepolicy": "flux-system:vh-video-api-staging"}
+      image: sdshmctspublic.azurecr.io/vh/video-api:staging-9cd673b-202406071357 #{"$imagepolicy": "flux-system:vh-video-api-staging"}
       environment:
         KINLYCONFIGURATION__CALLBACKURI: https://video.staging.hearings.reform.hmcts.net/callback
         SERVICES__CALLBACKURI: https://video.staging.hearings.reform.hmcts.net/callback
