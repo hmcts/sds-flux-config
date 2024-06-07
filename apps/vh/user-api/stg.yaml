@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-user-api.staging.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/user-api:staging-89099c1-202311061530 #{"$imagepolicy": "flux-system:vh-user-api-staging"}
+      image: sdshmctspublic.azurecr.io/vh/user-api:staging-0171edd-202406071247 #{"$imagepolicy": "flux-system:vh-user-api-staging"}
   chart:
     spec:
       chart: ./stable/vh-user-api/staging
