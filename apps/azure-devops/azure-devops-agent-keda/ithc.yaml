@@ -8,10 +8,11 @@ spec:
   values:
     environment:
       AZP_POOL: hmcts-ss-ithc
-    secrets:
-      AZP_TOKEN:
-        secretRef: azure-devops-token
-        key: token
+    triggerAuth:
+      enabled: true
+      create: true
+      triggerPodIdentityProvider: "azure-workload"
+      triggerPodIdentityIdentityId: "1c06d74a-45b1-45ca-86ac-612ea167cdd2" # keda-ithc-mi
     triggers:
       - type: azure-pipelines
         poolID: "39"

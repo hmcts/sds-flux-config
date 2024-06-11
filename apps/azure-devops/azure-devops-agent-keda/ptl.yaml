@@ -9,10 +9,11 @@ spec:
     maxReplicaCount: 6
     environment:
       AZP_POOL: hmcts-sds-ptl
-    secrets:
-      AZP_TOKEN:
-        secretRef: azure-devops-token
-        key: token
+    triggerAuth:
+      enabled: true
+      create: true
+      triggerPodIdentityProvider: "azure-workload"
+      triggerPodIdentityIdentityId: "e5cc98d4-6190-430d-8904-6f74b731e5ad" # keda-ptl-mi
     triggers:
       - type: azure-pipelines
         poolID: "45"
