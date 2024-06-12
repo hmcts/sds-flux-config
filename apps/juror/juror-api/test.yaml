@@ -10,3 +10,5 @@ spec:
       # Uncomment and edit the line below to fix the environment at a specific image
       image: sdshmctspublic.azurecr.io/juror/api:prod-cb992f6-20240612090650
       ingressHost: juror-api.test.platform.hmcts.net
+      environment:
+        TOKEN_EXPIRY: 36000000
