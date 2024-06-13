@@ -11,4 +11,4 @@ spec:
       image: sdshmctspublic.azurecr.io/juror/api:prod-30515bf-20240612152625
       ingressHost: juror-api.test.platform.hmcts.net
       environment:
-        TOKEN_EXPIRY: 36000000
+        TOKEN_EXPIRY: 5h
