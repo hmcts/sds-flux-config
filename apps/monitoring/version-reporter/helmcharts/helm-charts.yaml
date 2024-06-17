@@ -34,6 +34,7 @@ spec:
     imagePullPolicy: Always
     environment:
       CLUSTER_NAME: ss-ptl-00-aks
+      ENVIRONMENT: ss-ptl-00
       MAX_VERSIONS_AWAY: 2
       COSMOS_DB_URI: https://sds-platform-version-reporter.documents.azure.com:443/
       COSMOS_DB_NAME: reports
