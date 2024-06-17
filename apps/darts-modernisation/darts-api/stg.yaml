@@ -18,3 +18,5 @@ spec:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-44d8a90-20240614153515 # {"$imagepolicy": "flux-system:darts-api"}
+      environment:
+        ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
