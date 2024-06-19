@@ -8,7 +8,7 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: sdshmctspublic.azurecr.io/juror/api:prod-e7cd1c1-20240618085838
+      # image: sdshmctspublic.azurecr.io/juror/api:prod-e7cd1c1-20240618085838
       ingressHost: juror-api.ithc.platform.hmcts.net
       environment:
         EMPTY_VAR: one
