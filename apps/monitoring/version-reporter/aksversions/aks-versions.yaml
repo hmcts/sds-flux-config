@@ -30,7 +30,7 @@ spec:
     customServiceAccountName: version-reporter-service-sa
     runAsRoot: true
     kind: CronJob
-    image: sdshmctspublic.azurecr.io/version-reporter-service/aksversions:prod-2835015-20240620083514 #{"$imagepolicy": "flux-system:version-reporter-aksversions"}
+    image: sdshmctspublic.azurecr.io/version-reporter-service/aksversions:prod-5f0fa0d-20240620101400 #{"$imagepolicy": "flux-system:version-reporter-aksversions"}
     imagePullPolicy: Always
     environment:
       COSMOS_DB_URI: https://sds-platform-version-reporter.documents.azure.com:443/
