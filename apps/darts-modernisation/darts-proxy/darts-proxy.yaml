@@ -16,9 +16,9 @@ spec:
   values:
     java:
       replicas: 1
-      image: sdshmctspublic.azurecr.io/darts/proxy:prod-3edcd6b-20240620161443 # {"$imagepolicy": "flux-system:darts-proxy"}
+      image: sdshmctspublic.azurecr.io/darts/proxy:prod-78af359-20240620162500 # {"$imagepolicy": "flux-system:darts-proxy"}
       disableTraefikTls: true
       memoryRequests: '2G'
       memoryLimits: '3G'
     function:
-      image: sdshmctspublic.azurecr.io/darts/proxy:prod-3edcd6b-20240620161443 # {"$imagepolicy": "flux-system:darts-proxy"}
+      image: sdshmctspublic.azurecr.io/darts/proxy:prod-78af359-20240620162500 # {"$imagepolicy": "flux-system:darts-proxy"}
