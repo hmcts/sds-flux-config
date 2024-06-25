@@ -7,6 +7,7 @@ spec:
   releaseName: darts-automated-tasks
   values:
     java:
+      replicas: 1
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net

@@ -6,6 +6,8 @@ resources:
   - ../base
   - ../../darts-stub-services/darts-stub-services.yaml
   - ../../darts-proxy/darts-proxy.yaml
+  - ../../darts-automated-tasks/darts-automated-tasks.yaml
 patches:
-  - path: ../../darts-stub-services/demo.yaml
-  - path: ../../darts-proxy/demo.yaml
+  - path: ../../darts-stub-services/stg.yaml
+  - path: ../../darts-proxy/stg.yaml
+  - path: ../../darts-automated-tasks/stg.yaml
