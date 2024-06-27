@@ -5,7 +5,7 @@ metadata:
   namespace: mi
 spec:
   values:
-    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-4875ce0-20230315120048 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
+    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-16875e5-20240627115638 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
     suspend: false
     schedule: '45 2 * * *'
     activeDeadlineSeconds: 82800
