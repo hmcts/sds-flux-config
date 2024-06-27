@@ -15,3 +15,7 @@ spec:
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
         APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-44d8a90-20240614153515 # {"$imagepolicy": "flux-system:darts-api"}
+      environment:
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
