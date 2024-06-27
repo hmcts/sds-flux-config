@@ -5,7 +5,7 @@ namespace: darts-modernisation
 resources:
   - ../base
   - ../../darts-stub-services/darts-stub-services.yaml
-  - ../../darts-proxy/darts-proxy.yaml
+  #- ../../darts-proxy/darts-proxy.yaml
 patches:
   - path: ../../darts-stub-services/stg.yaml
-  - path: ../../darts-proxy/stg.yaml
+#  - path: ../../darts-proxy/stg.yaml
