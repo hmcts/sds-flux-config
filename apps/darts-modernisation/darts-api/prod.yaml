@@ -21,3 +21,5 @@ spec:
         enabled: false
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-21f7497-20240627084445 # {"$imagepolicy": "flux-system:darts-api"}
+      environment:
+        ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
