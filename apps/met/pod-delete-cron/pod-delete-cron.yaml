@@ -16,7 +16,7 @@ spec:
     args:
       - delete
       - pod
-      - -l name=met-themis-fe-nodejs
+      - -l app.kubernetes.io/name=met-themis-fe-nodejs
     global:
       jobKind: CronJob
   chart:
