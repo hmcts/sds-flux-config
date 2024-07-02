@@ -10,7 +10,8 @@ spec:
     image: bitnami/kubectl:latest
     schedule: "50 22 * * *"
     suspend: true
-    command: kubectl
+    command:
+      - kubectl
     args:
       - delete
       - pod
