@@ -3,9 +3,12 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../batch-jobs/batch-jobs.yaml
+  - ../../pod-delete-cron/pod-delete-cron-rbac.yaml
+  - ../../pod-delete-cron/pod-delete-cron.yaml
 namespace: met
 patches:
   - path: ../../identity/prod.yaml
   - path: ../../themis-fe/prod.yaml
   - path: ../../serviceaccount/prod.yaml
   - path: ../../batch-jobs/prod.yaml
+  - path: ../../pod-delete-cron/prod.yaml
