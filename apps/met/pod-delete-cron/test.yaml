@@ -1,0 +1,12 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: libragob-pod-delete-nightly
+  namespace: met
+spec:
+  releaseName: libragob-pod-delete-nightly
+  interval: 5m
+  values:
+    schedule: "10 11 * * *"
+    suspend: false

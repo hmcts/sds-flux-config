@@ -1,0 +1,28 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: libragob-pod-delete-nightly
+  namespace: met
+spec:
+  releaseName: libragob-pod-delete-nightly
+  interval: 5m
+  values:
+    image: bitnami/kubectl:latest
+    schedule: "50 22 * * *"
+    suspend: true
+    command: kubectl
+    args: 
+      - delete
+      - pod
+      - -l name=met-themis-fe-nodejs
+    global:
+      jobKind: CronJob
+  chart:
+    spec:
+      chart: job
+      sourceRef:
+        kind: GitRepository
+        name: chart-job
+        namespace: flux-system
+      interval: 1m
