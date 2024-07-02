@@ -10,7 +10,7 @@ spec:
     image: bitnami/kubectl:latest
     schedule: "50 22 * * *"
     suspend: true
-    serviceAccountName: libragob-pod-delete-svc
+    disableActiveClusterCheck: true
     command:
       - kubectl
     args:
