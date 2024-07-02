@@ -11,7 +11,7 @@ spec:
     schedule: "50 22 * * *"
     suspend: true
     command: kubectl
-    args: 
+    args:
       - delete
       - pod
       - -l name=met-themis-fe-nodejs
