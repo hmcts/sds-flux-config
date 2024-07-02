@@ -65,8 +65,21 @@ spec:
             alias: kinlyconfiguration--conferencephonenumber
           - name: kinlyconfiguration--telephoneconferencenumberwelsh
             alias: kinlyconfiguration--conferencephonenumberwelsh
-          - kinlyconfiguration--kinlyapiurl
-          - kinlyconfiguration--kinlyselftestapiurl
+          - name: kinlyconfiguration--kinlyapiurl
+            alias: kinlyconfiguration--apiurl
+          - name: kinlyconfiguration--kinlyselftestapiurl
+            alias: kinlyconfiguration--selftestapiurl
+          - vodafoneconfiguration--apisecret
+          - vodafoneconfiguration--selftestapikey
+          - vodafoneconfiguration--apiurl
+          - vodafoneconfiguration--selftestapiurl
+          - vodafoneconfiguration--pexipnode
+          - vodafoneconfiguration--pexipselftestnode     
+          - vodafoneconfiguration--callbacksecret   
+          - name: kinlyconfiguration--telephoneconferencenumber
+            alias: vodafoneconfiguration--conferencephonenumber
+          - name: kinlyconfiguration--telephoneconferencenumberwelsh
+            alias: vodafoneconfiguration--conferencephonenumberwelsh
           - kinlyconfiguration--conferenceusername
           - kinlyconfiguration--pexipnode
           - kinlyconfiguration--pexipselftestnode
