@@ -17,6 +17,6 @@ spec:
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-a6ae6bc-20240702160623 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-84b2228-20240702165101 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
