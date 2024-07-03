@@ -22,6 +22,9 @@ spec:
       memoryLimits: '4G'
       terminationGracePeriodSeconds: 120
       environment:
+        AUTOMATED_TASK_MODE: true
+        API_MODE: false
+        GRACEFUL_SHUTDOWN_TIMEOUT: 2m
         # disable notification scheduler on automated tasks pod
         NOTIFICATION_SCHEDULER_ENABLED: false
         NOTIFICATION_SCHEDULER_CRON: '-'

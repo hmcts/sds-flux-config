@@ -11,9 +11,6 @@ spec:
         DARTS_GATEWAY_URL: http://darts-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        AUTOMATED_TASK_MODE: true
-        API_MODE: false
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
-        GRACEFUL_SHUTDOWN_TIMEOUT: 2m
       pdb:
         enabled: false
