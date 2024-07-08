@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: opal-fines-service
+  name: opal-auth-service
   namespace: opal
 spec:
-  releaseName: opal-fines-service
+  releaseName: opal-auth-service
   chart:
     spec:
-      chart: ./stable/opal-fines-service
+      chart: ./stable/opal-auth-service
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/opal/fines-service:prod-b03f626-20240708144003 # {"$imagepolicy": "flux-system:opal-fines-service"}
+      image: sdshmctspublic.azurecr.io/opal/auth-service
       disableTraefikTls: true
