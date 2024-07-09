@@ -7,7 +7,7 @@ metadata:
 spec:
   values:
     nodejs:
-      ingressHost: 'jdfrontend.prod.platform.hmcts.net'
+      # ingressHost: 'reply-jury-summons.service.gov.uk'
       image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:3.5.61
       environment:
         NODE_ENV: production
