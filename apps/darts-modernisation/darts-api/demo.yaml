@@ -16,6 +16,6 @@ spec:
         APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-9874fd1-20240709102347 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-3733e13-20240709115918 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
