@@ -1,19 +1,19 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: opal-frontend
+  name: opal-auth-service
   namespace: opal
 spec:
-  releaseName: opal-frontend
+  releaseName: opal-auth-service
   chart:
     spec:
-      chart: ./stable/opal-frontend
+      chart: ./stable/opal-auth-service
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
         namespace: flux-system
       interval: 1m
   values:
-    nodejs:
-      image: sdshmctspublic.azurecr.io/opal/frontend:prod-34cda83-20240709082623 # {"$imagepolicy": "flux-system:opal-frontend"}
+    java:
+      image: sdshmctspublic.azurecr.io/opal/auth-service
       disableTraefikTls: true
