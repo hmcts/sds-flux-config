@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: pdda-interfaces
+  name: pdda-public-display-data-aggregator
 spec:
   imageRepositoryRef:
-    name: pdda-interfaces
+    name: pdda-public-display-data-aggregator
