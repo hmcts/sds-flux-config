@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pdda-interfaces
+  namespace: pdda
+spec:
+  releaseName: pdda-interfaces
+  chart:
+    spec:
+      chart: ./stable/pdda-interfaces
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pdda/interfaces:prod-1fc6691-20240711120627 # {"$imagepolicy": "flux-system:pdda-interfaces"}
+      disableTraefikTls: true
