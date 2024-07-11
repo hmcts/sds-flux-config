@@ -1,0 +1,13 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: opal-external-api
+  namespace: opal
+spec:
+  releaseName: opal-external-api
+  values:
+    java:
+      ingressHost: opal-external-api.staging.platform.hmcts.net
+      environment:
+        DUMMY_VAR: 0
+        OPAL_FRONTEND_URL: https://opal-frontend.staging.platform.hmcts.net

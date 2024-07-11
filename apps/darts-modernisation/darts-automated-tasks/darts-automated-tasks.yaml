@@ -16,13 +16,20 @@ spec:
   values:
     java:
       ingressHost: darts-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/darts/api:prod-db59964-20240606075331 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-facb4c5-20240711084237 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
       terminationGracePeriodSeconds: 120
+      environment:
+        AUTOMATED_TASK_MODE: true
+        API_MODE: false
+        GRACEFUL_SHUTDOWN_TIMEOUT: 2m
+        # disable notification scheduler on automated tasks pod
+        NOTIFICATION_SCHEDULER_ENABLED: false
+        NOTIFICATION_SCHEDULER_CRON: '-'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-db59964-20240606075331 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-facb4c5-20240711084237 # {"$imagepolicy": "flux-system:darts-api"}
       minReplicaCount: 0
       maxReplicaCount: 0
       triggers:

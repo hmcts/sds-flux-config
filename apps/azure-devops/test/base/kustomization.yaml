@@ -2,7 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../../base
-- azure-devops-token.yaml
 patches:
 - path: ../../azure-devops-agent-keda/test.yaml
 - path: ../../serviceaccount/test.yaml

@@ -8,16 +8,13 @@ spec:
   values:
     environment:
       AZP_POOL: hmcts-ss-ithc
+    triggerAuth:
+      enabled: true
+      create: true
+      triggerPodIdentityProvider: "azure-workload"
+      triggerPodIdentityIdentityId: "1c06d74a-45b1-45ca-86ac-612ea167cdd2" # keda-ithc-mi
     triggers:
       - type: azure-pipelines
         poolID: "39"
         organizationURLFromEnv: "AZP_URL"
         personalAccessTokenFromEnv: "AZP_TOKEN"
-  chart:
-    spec:
-      chart: function
-      version: 2.5.1
-      sourceRef:
-        kind: HelmRepository
-        name: hmctspublic
-        namespace: flux-system

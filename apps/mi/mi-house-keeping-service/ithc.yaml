@@ -7,12 +7,8 @@ spec:
   releaseName: mi-house-keeping-service-job
   values:
     kind: CronJob
-    aadIdentityName: mi-house-keeping-service
     schedule: "45 * * * *"
-    userAssignedIdentityID: "baf8db11-a87e-4212-8c85-d72622dc26c9"
-    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-4875ce0-20230315120048 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
-    environment:
-      MI_CLIENT_ID: baf8db11-a87e-4212-8c85-d72622dc26c9
+    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-16875e5-20240627115638 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
     global:
       subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
       environment: "ithc"

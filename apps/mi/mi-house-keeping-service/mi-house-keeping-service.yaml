@@ -7,10 +7,15 @@ spec:
   interval: 5m
   releaseName: mi-house-keeping-service-job
   values:
-    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-4875ce0-20230315120048 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
+    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-16875e5-20240627115638 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
     suspend: false
     kind: CronJob
     schedule: '45 * * * *'
+    environment:
+      STORAGE_LANDING_NAME: milanding{{ .Values.global.environment }}
+      STORAGE_EXPORT_NAME: miexport{{ .Values.global.environment }}
+      STORAGE_PERSISTENT_NAME: mipersistent{{ .Values.global.environment }}
+      STORAGE_AUDIT_NAME: miaudit{{ .Values.global.environment }}
     global:
       jobKind: CronJob
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

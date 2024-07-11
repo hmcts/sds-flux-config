@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-admin-web.demo.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/admin-web:prod-7c9343e-202405221656 #{"$imagepolicy": "flux-system:vh-admin-web"}
+      image: sdshmctspublic.azurecr.io/vh/admin-web:prod-816b2c7-202407041628 #{"$imagepolicy": "flux-system:vh-admin-web"}
   chart:
     spec:
       chart: ./stable/vh-admin-web/prod

@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/opal/print-service:prod-866fc81-20240604111025 # {"$imagepolicy": "flux-system:opal-print-service"}
+      image: sdshmctspublic.azurecr.io/opal/log-audit-service:prod-aa11bc1-20240226152244 # {"$imagepolicy": "flux-system:opal-log-audit-service"}
       disableTraefikTls: true

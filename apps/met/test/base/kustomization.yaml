@@ -4,9 +4,12 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../batch-jobs/batch-jobs.yaml
+  - ../../pod-delete-cron/pod-delete-cron-rbac.yaml
+  - ../../pod-delete-cron/pod-delete-cron.yaml
 namespace: met
 patches:
   - path: ../../identity/test.yaml
   - path: ../../themis-fe/test.yaml
   - path: ../../serviceaccount/test.yaml
   - path: ../../batch-jobs/test.yaml
+  - path: ../../pod-delete-cron/test.yaml
