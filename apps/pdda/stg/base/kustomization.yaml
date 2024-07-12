@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../pdda-interfaces/pdda-interfaces.yaml
 namespace: pdda
 patches:
   - path: ../../serviceaccount/stg.yaml
