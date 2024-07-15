@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: darts-automated-tasks
@@ -8,8 +8,7 @@ spec:
   values:
     java:
       environment:
-        DARTS_GATEWAY_URL: https://darts-gateway.staging.platform.hmcts.net
+        DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART_ME: '007'
-        AUTOMATED_TASK_MODE: true
+        ARM_URL: http://darts-stub-services.staging.platform.hmcts.net

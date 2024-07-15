@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: vm-hourlyusage
@@ -29,7 +29,7 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: sdshmctspublic.azurecr.io/version-reporter-service/hourlyusage:prod-4da4287-20231130145652 #{"$imagepolicy": "flux-system:vm-hourlyusage"}
+    image: sdshmctspublic.azurecr.io/version-reporter-service/hourlyusage:prod-1902c02-20240516160840 #{"$imagepolicy": "flux-system:vm-hourlyusage"}
     imagePullPolicy: Always
     environment:
       CLUSTER_NAME: ss-prod-00-aks

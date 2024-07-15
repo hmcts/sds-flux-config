@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: darts-gateway
+  namespace: darts-modernisation
+spec:
+  releaseName: darts-gateway
+  values:
+    java:
+      replicas: 2
+      ingressHost: darts-gateway.ithc.platform.hmcts.net
+      environment:
+        RESTART_ME: '001'
+        DAR_NOTIFY_ENABLED: true
+        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsithcextid.b2clogin.com
+        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsithcextid.b2clogin.com/hmctsithcextid.onmicrosoft.com
+        ACTIVE_DIRECTORY_B2C_ON_MICROSOFT_URI: https://hmctsithcextid.onmicrosoft.com

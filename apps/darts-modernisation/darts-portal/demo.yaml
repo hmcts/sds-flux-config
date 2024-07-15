@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: darts-portal
@@ -7,8 +7,8 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
-      replicas: 2
       ingressHost: darts.demo.apps.hmcts.net
       environment:
-        DARTS_API_URL: https://darts-api.demo.platform.hmcts.net
-        DARTS_PORTAL_URL: https://darts.demo.apps.hmcts.net
+        RESTART_ME: '001'
+        DARTS_AZUREAD_B2C_ORIGIN_HOST: https://hmctsstgextid.b2clogin.com
+        DARTS_PORTAL_ALLOW_STUB_DATA: true

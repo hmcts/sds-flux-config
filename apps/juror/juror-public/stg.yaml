@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: juror-public
@@ -8,3 +8,5 @@ spec:
   values:
     nodejs:
       ingressHost: juror-public.staging.apps.hmcts.net
+      environment:
+        API_ENDPOINT: https://juror-api.staging.platform.hmcts.net/api/v1

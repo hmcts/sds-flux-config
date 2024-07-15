@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: vh-video-api
@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-video-api.dev.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/video-api:dev-34cae0e-202401291125 #{"$imagepolicy": "flux-system:vh-video-api-dev"}
+      image: sdshmctspublic.azurecr.io/vh/video-api:dev-41e52b3-202407021618 #{"$imagepolicy": "flux-system:vh-video-api-dev"}
       keyVaults:
         vh-infra-core:
           excludeEnvironmentSuffix: false
@@ -65,8 +65,21 @@ spec:
             alias: kinlyconfiguration--conferencephonenumber
           - name: kinlyconfiguration--telephoneconferencenumberwelsh
             alias: kinlyconfiguration--conferencephonenumberwelsh
-          - kinlyconfiguration--kinlyapiurl
-          - kinlyconfiguration--kinlyselftestapiurl
+          - name: kinlyconfiguration--kinlyapiurl
+            alias: kinlyconfiguration--apiurl
+          - name: kinlyconfiguration--kinlyselftestapiurl
+            alias: kinlyconfiguration--selftestapiurl
+          - vodafoneconfiguration--apisecret
+          - vodafoneconfiguration--selftestapikey
+          - vodafoneconfiguration--apiurl
+          - vodafoneconfiguration--selftestapiurl
+          - vodafoneconfiguration--pexipnode
+          - vodafoneconfiguration--pexipselftestnode
+          - vodafoneconfiguration--callbacksecret
+          - name: kinlyconfiguration--telephoneconferencenumber
+            alias: vodafoneconfiguration--conferencephonenumber
+          - name: kinlyconfiguration--telephoneconferencenumberwelsh
+            alias: vodafoneconfiguration--conferencephonenumberwelsh
           - kinlyconfiguration--conferenceusername
           - kinlyconfiguration--pexipnode
           - kinlyconfiguration--pexipselftestnode

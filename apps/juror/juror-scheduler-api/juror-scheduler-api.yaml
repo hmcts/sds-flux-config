@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: juror-scheduler-api
@@ -15,5 +15,12 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/juror/scheduler-api:prod-cdfc477-20240201081018 # {"$imagepolicy": "flux-system:juror-scheduler-api"}
+      image: sdshmctspublic.azurecr.io/juror/scheduler-api:prod-6093b74-20240703121913 # {"$imagepolicy": "flux-system:juror-scheduler-api"}
+      memoryRequests: '1Gi'
+      cpuRequests: '500m'
+      memoryLimits: '2Gi'
+      cpuLimits: '1000m'
+      replicas: 2
+      autoscaling:
+        enabled: false
       disableTraefikTls: true

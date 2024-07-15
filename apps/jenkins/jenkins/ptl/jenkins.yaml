@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: jenkins
@@ -211,6 +211,12 @@ spec:
                     name: Darts Shared Infrastructure
                     recurse: true
                     title: Darts Shared Infrastructure
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/opal.*\/master
+                    name: Opal
+                    recurse: true
+                    title: Opal
                 - buildMonitor:
                     includeRegex: >-
                       ^HMCTS.*\/pdda.*\/master

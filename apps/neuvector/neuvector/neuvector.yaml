@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: neuvector
@@ -95,7 +95,7 @@ spec:
       # Make sure to update the CRDS when you change the version if required
       # https://github.com/hmcts/sds-flux-config/blob/master/apps/neuvector/crds/kustomization.yaml
       # see the versioned folders at https://github.com/neuvector/manifests/blob/main/kubernetes/
-      version: 1.5.2
+      version: 1.5.8
       sourceRef:
         kind: HelmRepository
         name: hmctspublic

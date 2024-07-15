@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: pre-api
@@ -7,4 +7,10 @@ spec:
   releaseName: pre-api
   values:
     java:
+      replicas: 2
       ingressHost: pre-api.demo.platform.hmcts.net
+      environment:
+        AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamsdemo
+        AZURE_RESOURCE_GROUP: pre-demo
+        AZURE_SUBSCRIPTION_ID: c68a4bed-4c3d-4956-af51-4ae164c1957c
+        PLATFORM_ENV_TAG: Demo

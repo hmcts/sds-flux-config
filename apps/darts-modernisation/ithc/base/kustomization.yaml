@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ../../../rbac/nonprod-role.yaml
+  - ../../darts-stub-services/darts-stub-services.yaml
+namespace: darts-modernisation
+patches:
+  - path: ../../darts-api/ithc.yaml
+  - path: ../../darts-automated-tasks/ithc.yaml
+  - path: ../../darts-portal/ithc.yaml
+  - path: ../../darts-gateway/ithc.yaml
+  - path: ../../darts-stub-services/ithc.yaml
+  - path: ../../identity/ithc.yaml
+  - path: ../../serviceaccount/ithc.yaml

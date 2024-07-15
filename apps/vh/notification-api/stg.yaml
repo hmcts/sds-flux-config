@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: vh-notification-api
@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-notification-api.staging.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/notification-api:staging-3b62151-202401241611 # {"$imagepolicy": "flux-system:vh-notification-api-staging"}
+      image: sdshmctspublic.azurecr.io/vh/notification-api:staging-f3bea10-202406071252 # {"$imagepolicy": "flux-system:vh-notification-api-staging"}
   chart:
     spec:
       chart: ./stable/vh-notification-api/staging

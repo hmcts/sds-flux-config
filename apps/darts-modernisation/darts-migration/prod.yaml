@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: darts-api-migration
@@ -7,16 +7,17 @@ spec:
   releaseName: darts-api-migration
   values:
     java:
+      replicas: 1
       ingressHost: darts-api-migration.platform.hmcts.net
       environment:
         ENABLE_FLYWAY: true
         RUN_DB_MIGRATION_ON_STARTUP: true
         DARTS_API_DB_HOST: "darts-migration-prod.postgres.database.azure.com"
-        DARTS_API_DB_NAME: "darts-migration-prod"
+        DARTS_API_DB_NAME: "psql-prod-detsmig-01"
         DARTS_GATEWAY_URL: https://darts-migration-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts-migration.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART_ME: '007'
+        RESTART_ME: '008'
       keyVaults:
         "darts":
           secrets:
@@ -24,10 +25,6 @@ spec:
               alias: DARTS_API_DB_USERNAME
             - name: migration-POSTGRES-PASS
               alias: DARTS_API_DB_PASSWORD
-            - name: migration-POSTGRES-HOST
-              alias: DARTS_API_DB_HOST
-            - name: migration-POSTGRES-DATABASE
-              alias: DARTS_API_DB_NAME
     function:
       #pin the release version as per darts-api-migration.yaml
-      image: sdshmctspublic.azurecr.io/darts/api:prod-ab41541-20240130140812
+      image: sdshmctspublic.azurecr.io/darts/api:prod-32bdc24-20240229110157

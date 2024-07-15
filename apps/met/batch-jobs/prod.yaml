@@ -1,0 +1,65 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: libragob-batch-housekeeping
+  namespace: met
+spec:
+  releaseName: libragob-batch-housekeeping
+  values:
+    kind: CronJob
+    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-367e687f-1720607403 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
+    schedule: "0 19 * * *"
+    suspend: false
+    keyVaults:
+      libragob-prod-kv:
+        excludeEnvironmentSuffix: true
+        secrets:
+          - event-datasource-username
+          - event-datasource-password
+          - event-datasource-url
+          - themis-gateway-dbusername
+          - themis-gateway-dbpassword
+          - themis-gateway-datasourceurl
+          - dac-datasource-username
+          - dac-datasource-password
+          - dac-datasource-url
+    environment:
+      KV_NAME: libragob-prod-kv
+  chart:
+    spec:
+      chart: job
+      sourceRef:
+        kind: GitRepository
+        name: chart-job
+        namespace: flux-system
+      interval: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: libragob-batch-ams-reporting
+  namespace: met
+spec:
+  releaseName: libragob-batch-ams-reporting
+  values:
+    kind: CronJob
+    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-367e687f-1720607402 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
+    schedule: "*/5 * * * *"
+    suspend: true
+    keyVaults:
+      libragob-prod-kv:
+        excludeEnvironmentSuffix: true
+        secrets:
+          - event-datasource-username
+          - event-datasource-password
+          - event-datasource-url
+    environment:
+      KV_NAME: libragob-prod-kv
+  chart:
+    spec:
+      chart: job
+      sourceRef:
+        kind: GitRepository
+        name: chart-job
+        namespace: flux-system
+      interval: 1m

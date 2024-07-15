@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../base
+  - ../base
 #- ../../../apps/toffee/base/kustomize.yaml
 
 patches:
-- path: ../../../apps/flux-system/stg/00/kustomize.yaml
+  - path: ../../../apps/flux-system/stg/00/kustomize.yaml

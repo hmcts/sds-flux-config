@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: my-time-api
@@ -8,6 +8,8 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/my-time/api:prod-564a3ad-20230411113310 # {"$imagepolicy": "flux-system:my-time-api"}
       disableTraefikTls: true
+      pdb:
+        enabled: false
   chart:
     spec:
       chart: ./stable/my-time-api

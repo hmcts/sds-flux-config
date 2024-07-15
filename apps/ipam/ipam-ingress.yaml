@@ -2,9 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    meta.helm.sh/release-name: kube-prometheus-stack
-    meta.helm.sh/release-namespace: ipam
-    traefik.ingress.kubernetes.io/router.tls: "false"
+    traefik.ingress.kubernetes.io/router.tls: "true"
   generation: 1
   labels:
     app: ipam
@@ -13,7 +11,7 @@ metadata:
   namespace: ipam
 spec:
   rules:
-  - host: ipam.platform.hmcts.net
+  - host: ipam.hmcts.net
     http:
       paths:
       - backend:
@@ -23,7 +21,10 @@ spec:
               number: 80
         path: /
         pathType: Prefix
-status:
-  loadBalancer:
-    ingress:
-    - ip: 10.0.174.232
+      - backend:
+          service:
+            name: ipam-engine-service
+            port:
+              number: 80
+        path: /api
+        pathType: Prefix

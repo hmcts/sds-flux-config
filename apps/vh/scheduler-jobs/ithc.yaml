@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: vh-scheduler-jobs
@@ -6,4 +6,4 @@ metadata:
 spec:
   releaseName: vh-scheduler-jobs
   values:
-    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:staging-98ce093-202312051740 #{"$imagepolicy": "flux-system:vh-scheduler-jobs-staging"}
+    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:staging-c1ce65e-202406050917 #{"$imagepolicy": "flux-system:vh-scheduler-jobs-staging"}

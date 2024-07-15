@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: darts-api
@@ -9,9 +9,17 @@ spec:
     java:
       ingressHost: darts-api.platform.hmcts.net
       environment:
-        DARTS_GATEWAY_URL: https://darts-gateway.platform.hmcts.net
+        DARTS_GATEWAY_URL: http://darts-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
-        DARTS_LOG_LEVEL: DEBUG
+        DARTS_LOG_LEVEL: INFO
         RESTART_ME: '007'
+        ARM_PROPERTY_FILE_ENVIRONMENT: live
+        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsextid.b2clogin.com
+        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsextid.b2clogin.com/hmctsextid.onmicrosoft.com
+        ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
+      pdb:
+        enabled: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-25baff1-20240202105453 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-3ceed6c-20240715143101 # {"$imagepolicy": "flux-system:darts-api"}
+      environment:
+        ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk

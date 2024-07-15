@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: darts-proxy
+  namespace: darts-modernisation
+spec:
+  releaseName: darts-proxy
+  values:
+    java:
+      ingressHost: darts-proxy.demo.platform.hmcts.net
+      autoscaling:
+        enabled: false
+      replicas: 1
+      environment:
+        APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
+        DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG

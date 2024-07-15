@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: darts-gateway
@@ -7,3 +7,4 @@ spec:
   releaseName: darts-gateway
   values:
     java:
+      ingressHost: darts-stub-services.test.platform.hmcts.net

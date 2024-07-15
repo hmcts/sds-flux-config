@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: darts-automated-tasks
+  namespace: darts-modernisation
+spec:
+  releaseName: darts-automated-tasks
+  values:
+    java:
+      environment:
+        DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts.demo.apps.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk

@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: jenkins
@@ -98,24 +98,8 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu"
-                        galleryImageVersion: "1.4.120"
+                        galleryImageVersion: "1.4.165"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                      <<: *vm_template_values_anchor
-                    - templateName: "cnp-jenkins-arm-builders"
-                      templateDesc: "Jenkins build agents running on ARM64 CPUs"
-                      labels: "arm arm-daily"
-                      retentionStrategy:
-                        azureVMCloudRetentionStrategy:
-                          idleTerminationMinutes: 60
-                      maxVirtualMachinesLimit: 3
-                      usageMode: EXCLUSIVE
-                      virtualMachineSize: "Standard_D4pds_v5"
-                      imageReference:
-                          galleryName: "hmcts"
-                          galleryResourceGroup: "hmcts-image-gallery-rg"
-                          gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                          galleryImageDefinition: "jenkins-ubuntu-arm"
-                          galleryImageVersion: "1.4.120"
                       <<: *vm_template_values_anchor

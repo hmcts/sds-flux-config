@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: juror-public
@@ -7,4 +7,6 @@ spec:
   releaseName: juror-public
   values:
     nodejs:
-      ingressHost: juror-public.apps.hmcts.net
+      ingressHost: reply-jury-summons.service.gov.uk
+      environment:
+        API_ENDPOINT: https://juror-api.platform.hmcts.net/api/v1

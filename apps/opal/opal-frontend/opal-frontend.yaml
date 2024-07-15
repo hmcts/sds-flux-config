@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: opal-frontend
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/opal/frontend:prod-c6308ee-20240201165709 # {"$imagepolicy": "flux-system:opal-frontend"}
+      image: sdshmctspublic.azurecr.io/opal/frontend:prod-4bb4466-20240715125150 # {"$imagepolicy": "flux-system:opal-frontend"}
       disableTraefikTls: true

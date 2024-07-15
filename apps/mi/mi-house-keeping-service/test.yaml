@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: mi-house-keeping-service
@@ -6,15 +6,10 @@ metadata:
 spec:
   releaseName: mi-house-keeping-service-job
   values:
-    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-4875ce0-20230315120048 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
+    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-16875e5-20240627115638 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
     suspend: false
     kind: CronJob
     schedule: '45 1 * * *'
-    userAssignedIdentityID: "b97f7ade-7db0-41b0-bac2-22effc9d79b5"
-    aadIdentityName: mi-house-keeping-service
-    environment:
-      MI_CLIENT_ID: b97f7ade-7db0-41b0-bac2-22effc9d79b5
-      STORAGE_DATA_EXTRACTOR_RETENTION: "14"
     global:
       subscriptionId: "3eec5bde-7feb-4566-bfb6-805df6e10b90"
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

@@ -3,9 +3,23 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../data-management-no-match-artefacts-cron/pip-data-management-no-match-artefacts-cron.yaml
+  - ../../data-management-expired-artefacts-cron/pip-data-management-expired-artefacts-cron.yaml
+  - ../../data-management-subscriptions-cron/pip-data-management-subscriptions-cron.yaml
+  - ../../account-management-inactive-verification-cron/pip-account-management-inactive-verification-cron.yaml
+  - ../../account-management-media-reporting-cron/pip-account-management-media-reporting-cron.yaml
+  - ../../account-management-clear-audit-cron/pip-account-management-clear-audit-cron.yaml
+  - ../../publication-services-mi-reporting-cron/pip-publication-services-mi-reporting-cron.yaml
+  - ../../refresh-views-cron/pip-refresh-views-cron.yaml
   - ../../data-management/pip-data-management.yaml
   - ../../frontend/pip-frontend.yaml
 namespace: pip
 patches:
   - path: ../../identity/ithc.yaml
   - path: ../../serviceaccount/ithc.yaml
+  - path: ../../account-management/ithc.yaml
+  - path: ../../channel-management/ithc.yaml
+  - path: ../../data-management/ithc.yaml
+  - path: ../../frontend/ithc.yaml
+  - path: ../../publication-services/ithc.yaml
+  - path: ../../subscription-management/ithc.yaml

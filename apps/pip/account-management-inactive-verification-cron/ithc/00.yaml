@@ -1,0 +1,13 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pip-account-management-inactive-verify-cron
+spec:
+  releaseName: pip-account-management-inactive-verify-cron
+  values:
+    job:
+      schedule: "01 08 * * *"
+      environment:
+        DATA_MANAGEMENT_URL: https://pip-data-management.ithc.platform.hmcts.net
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.ithc.platform.hmcts.net
+        TRIGGER_TYPE: ACCOUNT_INACTIVE_VERIFICATION

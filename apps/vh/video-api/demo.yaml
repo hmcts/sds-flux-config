@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: vh-video-api
@@ -8,7 +8,8 @@ spec:
   values:
     java:
       ingressHost: vh-video-api.demo.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/video-api:prod-1413949-202401081727 #{"$imagepolicy": "flux-system:vh-video-api"}
+      image: sdshmctspublic.azurecr.io/vh/video-api:pr-633-202406281304-1 #{"$imagepolicy": "flux-system:vh-video-api-demo"}
+      #image: sdshmctspublic.azurecr.io/vh/video-api:pr-633-202403251634-1 #{"$imagepolicy": "flux-system:vh-video-api-demo"}
   chart:
     spec:
-      chart: ./stable/vh-video-api/prod
+      chart: ./stable/vh-video-api/demo

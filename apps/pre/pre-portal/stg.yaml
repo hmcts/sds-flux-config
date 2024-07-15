@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: pre-portal
@@ -8,3 +8,8 @@ spec:
   values:
     nodejs:
       ingressHost: pre-portal.staging.platform.hmcts.net
+      environment:
+        PRE_API_URL: https://sds-api-mgmt.staging.platform.hmcts.net/pre-api
+        PORTAL_URL: https://pre-portal.staging.platform.hmcts.net
+        B2C_APP_CLIENT_ID: d20a7462-f222-46b8-a363-d2e30eb274eb
+        ENABLE_MK_WATCH_PAGE: true

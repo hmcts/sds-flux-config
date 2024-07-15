@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: vh-admin-web
@@ -8,4 +8,4 @@ spec:
   values:
     java:
       ingressHost: vh-admin-web.ithc.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/admin-web:staging-67ad08e-202401241613 #{"$imagepolicy": "flux-system:vh-admin-web-staging"}
+      image: sdshmctspublic.azurecr.io/vh/admin-web:staging-aba5de8-202407151342 #{"$imagepolicy": "flux-system:vh-admin-web-staging"}

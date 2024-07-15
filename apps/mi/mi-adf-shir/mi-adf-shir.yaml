@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: mi-adf-shir-deployment
@@ -10,7 +10,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment
       app.kubernetes.io/name: mi-adf-shir-deployment
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-f6ce04e-20231213101345 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-91ba39e-20240607154028 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     keyVaultSecrets:
       - mi-adf-auth-key
       - cgi-tec-tns-descriptor

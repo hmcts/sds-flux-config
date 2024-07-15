@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: azure-devops-agent
@@ -8,6 +8,11 @@ spec:
   values:
     environment:
       AZP_POOL: hmcts-ss-dev
+    triggerAuth:
+      enabled: true
+      create: true
+      triggerPodIdentityProvider: "azure-workload"
+      triggerPodIdentityIdentityId: "8469c7cb-7be4-46c7-a76b-74674726520e" # keda-stg-mi
     triggers:
       - type: azure-pipelines
         poolID: "36"

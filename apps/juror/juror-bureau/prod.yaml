@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: juror-bureau
@@ -8,3 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: juror.apps.hmcts.net
+      environment:
+        API_ENDPOINT: https://juror-api.platform.hmcts.net/api/v1
+        CALLBACK_URL: https://juror.apps.hmcts.net/auth/internal/callback
+        LOGOUT_REDIRECT: https://juror.apps.hmcts.net

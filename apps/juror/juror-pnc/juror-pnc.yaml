@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: juror-pnc
@@ -15,5 +15,12 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/juror/pnc:prod-80076f4-20240202095039 # {"$imagepolicy": "flux-system:juror-pnc"}
+      image: sdshmctspublic.azurecr.io/juror/pnc:prod-c3a56f2-20240713175722 # {"$imagepolicy": "flux-system:juror-pnc"}
+      memoryRequests: '1Gi'
+      cpuRequests: '500m'
+      memoryLimits: '2Gi'
+      cpuLimits: '1000m'
+      replicas: 2
+      autoscaling:
+        enabled: false
       disableTraefikTls: true

@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: pip-data-management-subscriptions-cron
@@ -6,7 +6,7 @@ spec:
   releaseName: pip-data-management-subscriptions-cron
   values:
     job:
-      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-152e86c-20240122134925 # {"$imagepolicy": "flux-system:pip-data-management-subscriptions-cron"}
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-d7745d4-20240628111317 # {"$imagepolicy": "flux-system:pip-data-management-subscriptions-cron"}
       disableTraefikTls: true
   chart:
     spec:

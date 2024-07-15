@@ -1,0 +1,53 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: libragob-batch-housekeeping
+  namespace: met
+spec:
+  releaseName: libragob-batch-housekeeping
+  interval: 5m
+  values:
+    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-367e687f-1720607403 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
+    schedule: "*/1 * * * *"
+    suspend: false
+    kind: CronJob
+    aadIdentityName: met-schema
+    global:
+      jobKind: CronJob
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      enableKeyVaults: true
+  chart:
+    spec:
+      chart: job
+      sourceRef:
+        kind: GitRepository
+        name: chart-job
+        namespace: flux-system
+      interval: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: libragob-batch-ams-reporting
+  namespace: met
+spec:
+  releaseName: libragob-batch-ams-reporting
+  interval: 5m
+  values:
+    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-367e687f-1720607402 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
+    schedule: "*/1 * * * *"
+    suspend: false
+    kind: CronJob
+    aadIdentityName: met-schema
+    global:
+      jobKind: CronJob
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+      enableKeyVaults: true
+  chart:
+    spec:
+      chart: job
+      sourceRef:
+        kind: GitRepository
+        name: chart-job
+        namespace: flux-system
+      interval: 1m

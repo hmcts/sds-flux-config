@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pip-publication-services-mi-reporting-cron
+spec:
+  releaseName: pip-publication-services-mi-reporting-cron
+  values:
+    job:
+      schedule: "01 08 * * *"
+      environment:
+        PUBLICATION_SERVICES_URL: https://pip-publication-services.ithc.platform.hmcts.net
+        TRIGGER_TYPE: MI_DATA_REPORTING

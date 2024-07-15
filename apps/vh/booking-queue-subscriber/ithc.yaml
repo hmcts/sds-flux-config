@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: vh-booking-queue-subscriber
@@ -7,7 +7,7 @@ spec:
   releaseName: vh-booking-queue-subscriber
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-1b6c12e-202401241614 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-staging"}
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-e21477e-202407121039 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-staging"}
     function:
       triggers:
       - type: azure-servicebus

@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: mi-adf-shir-deployment-2
@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-adf-shir-2
   values:
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-f6ce04e-20231213101345 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-91ba39e-20240607154028 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     replicaCount: 2
     memoryLimits: '4096Mi'
     environment: "test"
@@ -15,6 +15,6 @@ spec:
     tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     managedIdentityClientId: "4b4479ac-2998-4353-b202-675df08389f5"
     hostAliases:
-    - ip: 51.141.130.100
+    - ip: 20.209.128.129
       hostnames:
       - mcmshmctssitdataextract.blob.core.windows.net

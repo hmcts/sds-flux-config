@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: themis-fe
@@ -8,10 +8,19 @@ spec:
   values:
     nodejs:
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
-      image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.0.12'
+      image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.26.1'
+      replicas: 1
+      autoscaling:
+        enabled: false
       environment:
         KV_CONFIG_TREE: /mnt/secrets/libragob-test-kv/
         LOG4J_DEBUG: true
+        TEMP_VAR: 1
+        DAC_NUMBER_OF_INSTANCES: 3
+        UPDATES_FIXEDRATE_IN_MILLISECONDS: 1000
+        UPDATES_FIXEDRATE_LOW_PRIORITY_IN_MILLISECONDS: 30000
+        HIGH_PRIORITY_KEYS_PER_DAC: 1
+        ALIAS_NAME: libra-onpremise-gob-gateway.staging.internal.hmcts.net
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
@@ -36,3 +45,5 @@ spec:
             - confiscation-datasource-username
             - confiscation-datasource-url
             - servicebus-connectionstring
+            - cacerts
+            - cacerts-password

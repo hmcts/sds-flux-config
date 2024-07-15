@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: opal-external-api
+  namespace: opal
+spec:
+  releaseName: opal-external-api
+  chart:
+    spec:
+      chart: ./stable/opal-external-api
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/opal/external-api
+      disableTraefikTls: true

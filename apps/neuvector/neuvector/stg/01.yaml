@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: neuvector
@@ -21,20 +21,20 @@ spec:
               Issuer: https://sts.windows.net/531ff96d-0ae9-462a-8d2d-bec7c0b42082/
               X509_Cert: |
                 -----BEGIN CERTIFICATE-----
-                MIIC8DCCAdigAwIBAgIQftgSDMtrdqdK+45Ez++0DDANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQD
-                EylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yMTAyMTYxMDEx
-                MDVaFw0yNDAyMTYxMDExMDVaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQg
-                U1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtCyc3LvRUu/4
-                ZFtZ8A0tZAyo13MWh2X2wTduBBLgH17i1MeGEOjumpkpxWR7tReLaWl+c5m1WTfUmqqknu2QTq/0
-                fB3hYhTJmRimsMgNShsPRTFgYt95OCB/0LF/s6p1KpXRK+rotPPCiV0XFgaUBAC0F35USoLfwzeK
-                InAlayq1bBrjx0+AcmNyucuiBQZS6mPtQUtvGKP7zeVDKCeuL5WyrwYDH36p22Ixtcnf+ZYJCT63
-                s/CDkABKgpmpMNHU9/3RNFo9hD2qDXTW9CnnoeVCeybGKl8GO6kogchQ2WEfz+NwkmVAPYQDoiYP
-                UNlNZrVZySoz2LRIu/x++ae06QIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQAvVQpPONIRjJDDGkEO
-                HkrefEyc2q7Ilb/PHNGoYxqHTT3geYHCyvlpTSFfltRseKwFUr6usstfkP/bbV+sr1yJBNFmExkv
-                KXPw8twyVQnsQWMVwHysuN/qemEjgJq3OUCanaeUp7oZMsVhTCkLulL2xkzqpyo+c4aunw6r4ZR6
-                f2AwdRSDOk1Dr2mZaZD/h3lDdSW3sPmmzZ+tMlFYQinjWeGcAXINlC2CrZvkHLuoAqXppWVA96Ml
-                CaAJrIpUWkWRQT0dOaDCOax/VYo1kqY3uG8G3YlPyg3yAxWIq0um516ka3NhNz1+gn0/mqjFC0qm
-                lBQgnMctCDnZZSvfjl6n
+                MIIC8DCCAdigAwIBAgIQJ5qApa8Z+pFAXZCBJWjPKzANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQD
+                EylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yNDAyMTIwODM1
+                NDlaFw0yNzAyMTIwODM1NDNaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQg
+                U1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1Lq8Hg4xVhDU
+                RGJpkjb2N6zUv4uwF3gKZS2VFfovUCe+qEirJWPGou/4jjvV/kk5V8mn9B7wtdIRlqGCDWBNO3d5
+                euehDJdPMeLHO3dSUcYEZ8cs1dP4U47kaTzYYXu7P9csQ9u6Lya6tn9zQqPapFRmBCVoJ6Tn9VbP
+                QgOKJBciuVbXnAXFm60yaUuoXYM5TTMlyXdKXfUbyNWyMwke5vuKNitfwnHGD8oRTJDe0dZbNIfw
+                ds0+Q8hgQ0Xnwzo32A/fuDpZZNgCDbefZRwPQfx03bvYN+i65pJQEXUpiyUWXB+Fx9vvWrKGumJW
+                ritdXdJBakPnt9I9tDX0Nv6IeQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBvKnthAp2KafRODWf5
+                w1VnttpG+qkb65jU9ZwDYv5Q9UyuyQpILdg1mouCxEjZEG5EhBg20B5az6theLThSEArJRP8SDJe
+                ddOg+6Pp9tifmFI/rKAEp6ZEr+1cHQMmFJZJLITvbnHBSjvIK17rXyw+KqM7Tf6Gv1iYnuTI225l
+                7WUjtCms6ZyrVpOqzJN7DjPQqtJRSIjUNXbhFhc5GtG/j6RVG29HANdEXblKUGfHk6hEYZuvcQDB
+                OG0cjQWUmvZ/0sN7Tnjw8R7/R7CzcvS+2FO3/qJSXY3VEAoqfBugOOds7hCWNzQnjspitkFO4ytK
+                Fq+b8UAhOm7Qc6C+FQ83
                 -----END CERTIFICATE-----
               Enable: true
               Default_Role: reader
