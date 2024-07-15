@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pdda-public-display-data-aggregator
+  namespace: pdda
+spec:
+  releaseName: pdda-public-display-data-aggregator
+  chart:
+    spec:
+      chart: ./stable/pdda-public-display-data-aggregator
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
+  values:
+    java:
+      image: sdshmctspublic.azurecr.io/pdda/pdda-public-display-data-aggregator:prod-14356d5-20240709111842 # {"$imagepolicy": "flux-system:pdda-public-display-data-aggregator"}
+      disableTraefikTls: true

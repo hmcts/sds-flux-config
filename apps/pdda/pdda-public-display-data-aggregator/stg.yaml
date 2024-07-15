@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pdda-public-display-data-aggregator
+  namespace: pdda
+spec:
+  releaseName: pdda-public-display-data-aggregator
+  values:
+    java:
+      ingressHost: pdda-public-display-data-aggregator.staging.platform.hmcts.net
