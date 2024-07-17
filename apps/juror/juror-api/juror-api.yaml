@@ -5,6 +5,7 @@ metadata:
   namespace: juror
 spec:
   releaseName: juror-api
+  timeout: 30m
   chart:
     spec:
       chart: ./stable/juror-api
