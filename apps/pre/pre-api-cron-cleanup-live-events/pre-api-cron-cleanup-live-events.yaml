@@ -17,7 +17,7 @@ spec:
         MEDIA_KIND_SUBSCRIPTION: "pre-mediakind-{{ .Values.global.environment }}"
         AZURE_INGEST_SA: "preingestsa{{ .Values.global.environment }}"
         PLATFORM_ENV_TAG: Production
-      image: sdshmctspublic.azurecr.io/pre/api:prod-ef3bff9-20240716132932 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-92b7f73-20240717074835 # {"$imagepolicy": "flux-system:pre-api"}
     keyVaults:
       pre-hmctskv:
         secrets:
