@@ -7,7 +7,7 @@ spec:
   releaseName: juror-api
   values:
     java:
-      startupDelay: 600
+      startupDelay: 1200
       ingressHost: juror-api.platform.hmcts.net
       environment:
         SCHEDULER_SERVICE_HOST: juror-scheduler-api.platform.hmcts.net
