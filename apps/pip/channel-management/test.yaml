@@ -7,6 +7,7 @@ spec:
   releaseName: pip-channel-management
   values:
     java:
+      image: sdshmctspublic.azurecr.io/pip/channel-management:pr-366-6968457-20240716065415
       replicas: 2
       ingressHost: pip-channel-management.test.platform.hmcts.net
       environment:
