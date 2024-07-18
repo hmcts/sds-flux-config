@@ -4,7 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../opal-fines-service/opal-fines-service.yaml
-  - ../../opal-auth-service/opal-auth-service.yaml
+  - ../../opal-user-service/opal-user-service.yaml
   - ../../opal-file-handler/opal-file-handler.yaml
   - ../../opal-external-api/opal-external-api.yaml
   - ../../opal-frontend/opal-frontend.yaml
@@ -15,7 +15,7 @@ namespace: opal
 patches:
   - path: ../../serviceaccount/stg.yaml
   - path: ../../opal-fines-service/stg.yaml
-  - path: ../../opal-auth-service/stg.yaml
+  - path: ../../opal-user-service/stg.yaml
   - path: ../../opal-file-handler/stg.yaml
   - path: ../../opal-external-api/stg.yaml
   - path: ../../opal-frontend/stg.yaml
