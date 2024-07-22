@@ -4,7 +4,9 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../pdda-public-display-data-aggregator/pdda-public-display-data-aggregator.yaml
+  - ../../pdda-public-display-manager/pdda-public-display-manager.yaml
 namespace: pdda
 patches:
   - path: ../../serviceaccount/stg.yaml
   - path: ../../pdda-public-display-data-aggregator/stg.yaml
+  - path: ../../pdda-public-display-manager/stg.yaml

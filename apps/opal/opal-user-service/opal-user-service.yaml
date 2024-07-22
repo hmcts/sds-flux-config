@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: opal-auth-service
+  name: opal-user-service
   namespace: opal
 spec:
-  releaseName: opal-auth-service
+  releaseName: opal-user-service
   chart:
     spec:
-      chart: ./stable/opal-auth-service
+      chart: ./stable/opal-user-service
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/opal/auth-service
+      image: sdshmctspublic.azurecr.io/opal/user-service
       disableTraefikTls: true

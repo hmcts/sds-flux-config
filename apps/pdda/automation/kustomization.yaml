@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - ../pdda-public-display-data-aggregator/image-repo.yaml
   - ../pdda-public-display-data-aggregator/image-policy.yaml
+  - ../pdda-public-display-manager/image-repo.yaml
+  - ../pdda-public-display-manager/image-policy.yaml
