@@ -7,6 +7,7 @@ spec:
   releaseName: vh-video-api
   values:
     java:
+      replicas: 0
       ingressHost: vh-video-api.demo.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/vh/video-api:pr-633-202406281304-1 #{"$imagepolicy": "flux-system:vh-video-api-demo"}
       #image: sdshmctspublic.azurecr.io/vh/video-api:pr-633-202403251634-1 #{"$imagepolicy": "flux-system:vh-video-api-demo"}
