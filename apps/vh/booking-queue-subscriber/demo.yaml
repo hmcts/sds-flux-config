@@ -7,7 +7,6 @@ spec:
   releaseName: vh-booking-queue-subscriber
   values:
     java:
-      replicas: 0
       image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:prod-f1badce-202407041625 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
     function:
       triggers:
