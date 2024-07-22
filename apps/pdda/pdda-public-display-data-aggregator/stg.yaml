@@ -8,4 +8,6 @@ spec:
   values:
     java:
       replicas: 0
+      autoscaling:
+        enabled: false
       ingressHost: pdda-public-display-data-aggregator.staging.platform.hmcts.net
