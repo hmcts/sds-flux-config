@@ -7,7 +7,6 @@ spec:
   releaseName: vh-video-web
   values:
     java:
-      replicas: 0
       ingressHost: vh-video-web.demo.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/vh/video-web:pr-2122-202406281156-1 # {"$imagepolicy": "flux-system:vh-video-web-demo"}
   chart:
