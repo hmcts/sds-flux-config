@@ -12,6 +12,3 @@ spec:
       ingressHost: juror-api.test.platform.hmcts.net
       environment:
         TOKEN_EXPIRY: 5h
-      replicas: 0
-      autoscaling:
-        enabled: false
