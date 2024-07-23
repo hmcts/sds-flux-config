@@ -1,25 +1,25 @@
 apiVersion: v1
 data:
-    values.yaml: ENC[AES256_GCM,data:ZTmHzISqcCzAhr8sT94xJV0lhak7nUz/Eo2s54P0Yl6OdPSqJILjlBLIeQimVWsxg9eHi8JpS5Yhg4XqLeKKTCGhK1KFbB8q1tKsSWMz5vdoQ9OS,iv:/nTpZGXApLWVhRfBwMso674ELNGN9vx2fbPJX22zDL0=,tag:qwpL1sZRp0DtSMB7MVh94w==,type:str]
+  values.yaml: ENC[AES256_GCM,data:ZTmHzISqcCzAhr8sT94xJV0lhak7nUz/Eo2s54P0Yl6OdPSqJILjlBLIeQimVWsxg9eHi8JpS5Yhg4XqLeKKTCGhK1KFbB8q1tKsSWMz5vdoQ9OS,iv:/nTpZGXApLWVhRfBwMso674ELNGN9vx2fbPJX22zDL0=,tag:qwpL1sZRp0DtSMB7MVh94w==,type:str]
 kind: Secret
 metadata:
-    creationTimestamp: null
-    name: slack-token
-    namespace: toffee
+  creationTimestamp: null
+  name: slack-token
+  namespace: toffee
 type: Opaque
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv:
-        - vault_url: https://dtssharedservicessboxkv.vault.azure.net
-          name: sops-key
-          version: 743d27d4b20644a6bd1936f3e55d1db3
-          created_at: "2024-07-23T13:54:35Z"
-          enc: BMZBRQwwVsnzrWG83e5V1vAx8-RjOLar_h43-3EsNCeScW2QB_XN9ihL3ZheAiY1CO-M077QS7u4YyP9eXHxM82ycD9Z4qIfB2MHuvIxHCY8-Atw2ke4miCgoQjHX941ip1KXbQ5W6Gh4n2BHqcMrqRWar9Z5MKNUJXwjAj7lp2WDQJCITmHKicGBkKuuIj02I1wtPRLEc-4Bvry68DvKhmVXW1E228hEkLIADAm_s8utrrxJ4fGVYQBdXsHxhUqdmulNNW5Onz2VPff7GMN0kha7X3GGGsfBX98MxOqvtm2LdeC32TDcpLOzpzSWIRyKlkPwKkOPHxdcMtz_MOkEQ
-    hc_vault: []
-    age: []
-    lastmodified: "2024-07-23T13:54:42Z"
-    mac: ENC[AES256_GCM,data:bKxAbTiPe/hQCNUrQtbXY7mqEJIBbP77y3HMj5OFy3NDoX7jJ8tLCFvr1Akg9jupYGpQ1ygqA79Fh9kkhqb7RCeX+rAkL7uVZSigOej8a7gTxlX0iq8JZr3h8aa4IHyvPjTZxTHGsdWGpq1sCr4hqBq3uh/WAJJbrZcTq2WEOZ4=,iv:N0dvVuzUpoMTmbTK8oe+sjntfIrIJMfG8LZDvDNAy54=,tag:iUJMb2I4PaVyUg2dzcFMRQ==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.7.3
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicessboxkv.vault.azure.net
+      name: sops-key
+      version: 743d27d4b20644a6bd1936f3e55d1db3
+      created_at: "2024-07-23T13:54:35Z"
+      enc: BMZBRQwwVsnzrWG83e5V1vAx8-RjOLar_h43-3EsNCeScW2QB_XN9ihL3ZheAiY1CO-M077QS7u4YyP9eXHxM82ycD9Z4qIfB2MHuvIxHCY8-Atw2ke4miCgoQjHX941ip1KXbQ5W6Gh4n2BHqcMrqRWar9Z5MKNUJXwjAj7lp2WDQJCITmHKicGBkKuuIj02I1wtPRLEc-4Bvry68DvKhmVXW1E228hEkLIADAm_s8utrrxJ4fGVYQBdXsHxhUqdmulNNW5Onz2VPff7GMN0kha7X3GGGsfBX98MxOqvtm2LdeC32TDcpLOzpzSWIRyKlkPwKkOPHxdcMtz_MOkEQ
+  hc_vault: []
+  age: []
+  lastmodified: "2024-07-23T13:54:42Z"
+  mac: ENC[AES256_GCM,data:bKxAbTiPe/hQCNUrQtbXY7mqEJIBbP77y3HMj5OFy3NDoX7jJ8tLCFvr1Akg9jupYGpQ1ygqA79Fh9kkhqb7RCeX+rAkL7uVZSigOej8a7gTxlX0iq8JZr3h8aa4IHyvPjTZxTHGsdWGpq1sCr4hqBq3uh/WAJJbrZcTq2WEOZ4=,iv:N0dvVuzUpoMTmbTK8oe+sjntfIrIJMfG8LZDvDNAy54=,tag:iUJMb2I4PaVyUg2dzcFMRQ==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3
