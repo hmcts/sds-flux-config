@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../identity/apple-azure-identity.yaml
+  - ./slack-token.enc.yaml
 namespace: toffee
 patches:
   - path: ../../identity/sbox.yaml
