@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../identity/apple-azure-identity.yaml
   - ./slack-token.enc.yaml
+  - ./broken-provider.yaml
 namespace: toffee
 patches:
   - path: ../../identity/sbox.yaml
