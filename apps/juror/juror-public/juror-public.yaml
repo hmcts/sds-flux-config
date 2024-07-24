@@ -22,7 +22,6 @@ spec:
       memoryLimits: '2Gi'
       cpuLimits: '1000m'
       replicas: 2
-      minReadySeconds: 30
       autoscaling:
         enabled: true
         maxReplicas: 4
