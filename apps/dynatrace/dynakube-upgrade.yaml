@@ -10,14 +10,15 @@ metadata:
 spec:
   apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
   networkZone: azure.sds
-  namespaceSelector:
-    matchExpressions:
-      - key: kubernetes.io/metadata.name
-        operator: NotIn
-        values:
-          - mi
-          - mailrelay2
-          - monitoring
+  metadataEnrichment:
+    namespaceSelector:
+      matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+            - mi
+            - mailrelay2
+            - monitoring
   oneAgent:
     cloudNativeFullStack:
       priorityClassName: system-node-critical
