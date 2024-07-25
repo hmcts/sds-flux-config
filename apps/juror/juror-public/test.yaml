@@ -10,4 +10,4 @@ spec:
       # Uncomment and edit the line below to fix the environment at a specific image
       image: sdshmctspublic.azurecr.io/juror/public:pr-231-f6a1491-20240724093521
       ingressHost: juror-public.test.apps.hmcts.net
-      minReadySeconds: 30
+      readinessDelay: 30
