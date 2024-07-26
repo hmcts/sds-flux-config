@@ -7,9 +7,6 @@ EXCLUSIONS_LIST=(
     apps/met/themis-fe/prod.yaml
     apps/aspnet/dotnet48/dotnet48.yaml
     apps/hmi/hmi-rota-dtu/hmi-rota-dtu.yaml
-    apps/juror-digital/jd-public/*
-    apps/juror-digital/jd-bureau/*
-    apps/juror-digital/moj-reverse-proxy/*
     apps/jenkins/jenkins/*
     .*perftest.*
     .*sbox.*
