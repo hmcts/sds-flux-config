@@ -7,9 +7,11 @@ spec:
   releaseName: juror-api
   values:
     java:
+      startupDelay: 600
       ingressHost: juror-api.platform.hmcts.net
       environment:
         SCHEDULER_SERVICE_HOST: juror-scheduler-api.platform.hmcts.net
         PNC_CHECK_SERVICE_HOST: juror-pnc.platform.hmcts.net
         FLYWAY_LOC_OVERRIDE: db/migrationv2
         TOKEN_EXPIRY: 12h
+
