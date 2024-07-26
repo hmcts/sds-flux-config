@@ -10,8 +10,6 @@ metadata:
 spec:
   apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
   networkZone: azure.sds
-  conversion:
-    strategy: None
   namespaceSelector:
     matchExpressions:
       - key: kubernetes.io/metadata.name
