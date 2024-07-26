@@ -1,8 +1,0 @@
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentity
-metadata:
-  name: juror-digital
-  namespace: jd
-spec:
-  resourceID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/managed-identities-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/juror-digital-prod-mi
-  clientID: 1119ed50-5f71-416e-bf94-670acdc328be
