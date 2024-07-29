@@ -12,3 +12,4 @@ spec:
       ingressHost: juror-api.ithc.platform.hmcts.net
       environment:
         EMPTY_VAR: one
+        RUN_DB_MIGRATION_ON_STARTUP: false
