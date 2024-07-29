@@ -13,3 +13,4 @@ spec:
       environment:
         TOKEN_EXPIRY: 5h
         RUN_DB_MIGRATION_ON_STARTUP: false
+        FLYWAY_LOC_OVERRIDE: db/migrationv2
