@@ -10,5 +10,3 @@ spec:
       # Uncomment and edit the line below to fix the environment at a specific image
       image: sdshmctspublic.azurecr.io/juror/api:pr-649-f83920d-20240729081305
       ingressHost: juror-api.demo.platform.hmcts.net
-      environment:
-        RUN_DB_MIGRATION_ON_STARTUP: false
