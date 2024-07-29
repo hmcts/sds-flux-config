@@ -12,3 +12,4 @@ spec:
       ingressHost: juror-api.test.platform.hmcts.net
       environment:
         TOKEN_EXPIRY: 5h
+        RUN_DB_MIGRATION_ON_STARTUP: false
