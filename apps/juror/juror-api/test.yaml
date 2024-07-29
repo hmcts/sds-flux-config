@@ -8,9 +8,7 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: sdshmctspublic.azurecr.io/juror/api:pr-654-0c1e055-20240729134749
+      # image: sdshmctspublic.azurecr.io/juror/api:pr-654-0c1e055-20240729134749
       ingressHost: juror-api.test.platform.hmcts.net
       environment:
         TOKEN_EXPIRY: 5h
-        RUN_DB_MIGRATION_ON_STARTUP: false
-        FLYWAY_LOC_OVERRIDE: db/migrationv2
