@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: sdshmctspublic.azurecr.io/juror/public:pr-234-ba89043-20240801115522
+      image: sdshmctspublic.azurecr.io/juror/public:pr-234-69f2ab0-20240801143733
       ingressHost: juror-public.test.apps.hmcts.net
       environment:
         DUMMY_ENV_VAR: 1
