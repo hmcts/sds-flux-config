@@ -25,7 +25,7 @@ spec:
       image: sdshmctspublic.azurecr.io/toffee/recipe-receiver:prod-1100a0e-20220609130124
       triggers:
         - type: azure-servicebus
-          namespace: toffee-servicebus-${ENVIRONMENT}
+          serviceBusName: toffee-servicebus-${ENVIRONMENT}
           queueName: recipes
           queueLength: "5"
       environment:
