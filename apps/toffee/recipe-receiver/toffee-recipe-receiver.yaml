@@ -22,7 +22,7 @@ spec:
     function:
       triggerAuth:
         triggerPodIdentityProvider: azure-workload
-      image: sdshmctspublic.azurecr.io/toffee/recipe-receiver:prod-1100a0e-20220609130124
+      image: sdshmctspublic.azurecr.io/toffee/recipe-receiver:prod-76b7900-20240731121522
       triggers:
         - type: azure-servicebus
           serviceBusName: toffee-servicebus-${ENVIRONMENT}
