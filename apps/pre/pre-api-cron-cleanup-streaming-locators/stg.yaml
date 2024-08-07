@@ -1,15 +1,15 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pre-api-cron-cleanup-live-events
+  name: pre-api-cron-cleanup-streaming-locators
   namespace: pre
 spec:
-  releaseName: pre-api-cron-cleanup-live-events
+  releaseName: pre-api-cron-cleanup-streaming-locators
   values:
     job:
       suspend: false
       disableActiveClusterCheck: true
-      schedule: "0 20 * * *"
+      schedule: "0 0 * * *"
       environment:
         AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamstest
         AZURE_RESOURCE_GROUP: pre-test

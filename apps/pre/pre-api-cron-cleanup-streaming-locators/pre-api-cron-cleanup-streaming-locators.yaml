@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pre-api-cron-cleanup-live-events
+  name: pre-api-cron-cleanup-streaming-locators
 spec:
-  releaseName: pre-api-cron-cleanup-live-events
+  releaseName: pre-api-cron-cleanup-streaming-locators
   values:
     job:
       environment:
-        TASK_NAME: CleanupLiveEvents
+        TASK_NAME: CleanupStreamingLocators
         RUN_DB_MIGRATION_ON_STARTUP: false
         APIM_ENABLED: true
         APIM_URI: https://sds-api-mgmt.platform.hmcts.net
@@ -44,7 +44,7 @@ spec:
             alias: AZ_AMS_CLIENT_SECRET
           - name: api-MKIO-TOKEN
             alias: MEDIA_KIND_TOKEN
-    schedule: 0 20 * * * # 8pm every day
+    schedule: 0 0 * * * # Midnight every day
   chart:
     spec:
       chart: ./stable/pre-api-cron
