@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: sdshmctspublic.azurecr.io/juror/bureau:pr-705-821ea80-20240807151520
+      image: sdshmctspublic.azurecr.io/juror/bureau:pr-705-5900b39-20240808105945
       ingressHost: juror.demo.apps.hmcts.net
       environment:
         SKIP_SSO: true
