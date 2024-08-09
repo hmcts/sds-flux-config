@@ -7,7 +7,7 @@ spec:
   releaseName: pip-channel-management
   values:
     java:
-      replicas: 2
+      replicas: 0
       ingressHost: pip-channel-management.test.platform.hmcts.net
       environment:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
