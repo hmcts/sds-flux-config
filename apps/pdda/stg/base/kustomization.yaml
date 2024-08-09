@@ -5,6 +5,7 @@ resources:
   - ../../../rbac/nonprod-role.yaml
   - ../../pdda-public-display-data-aggregator/pdda-public-display-data-aggregator.yaml
   - ../../pdda-public-display-manager/pdda-public-display-manager.yaml
+  - ../../../base/slack-provider/stg
 namespace: pdda
 patches:
   - path: ../../serviceaccount/stg.yaml
