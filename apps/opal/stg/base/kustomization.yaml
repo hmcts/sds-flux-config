@@ -10,7 +10,7 @@ resources:
   - ../../opal-frontend/opal-frontend.yaml
   - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
   - ../../opal-log-audit-service/opal-log-audit-service.yaml
-
+  - ../../../base/slack-provider/stg
 namespace: opal
 patches:
   - path: ../../serviceaccount/stg.yaml
