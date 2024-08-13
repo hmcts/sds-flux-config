@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
 - ../../base
 - ../../kube-slack/prod/kube-slack-values.enc.yaml
-- ../../kured/prod/kured-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
 - ../../traefik2
 
