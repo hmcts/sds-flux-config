@@ -9,22 +9,17 @@ resources:
   - ../../../rbac/nonprod-role.yaml
   - ../../mi-sftp-server/mi-sftp-server.yaml
   - ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
+  - ../../../base/slack-provider/test
 patches:
-  #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/test.yaml
-  #overlays for mi-adf-shir
   - path: ../../mi-adf-shir/test.yaml
-  #overlays for mi-adf-shir-2
   - path: ../../mi-adf-shir-2/test.yaml
-  #overlays for mi-house-keeping-service
   - path: ../../mi-house-keeping-service/test.yaml
-  #overlays for mi-reverse-proxy-secret-provider
   - path: ../../mi-reverse-proxy/test-secret-provider-patch.yaml
     target:
       group: secrets-store.csi.x-k8s.io
       kind: SecretProviderClass
       name: mi-reverse-proxy-secret-provider
-  #overlays for mi-sftp-server-secret-provider
   - path: ../../mi-sftp-server/test-secret-provider-patch.yaml
     target:
       group: secrets-store.csi.x-k8s.io

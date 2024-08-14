@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ./darts-api-function.enc.yaml
+  - ../../../base/slack-provider/stg
 namespace: darts-modernisation
 patches:
   - path: ../../darts-api/stg.yaml
