@@ -1,5 +1,5 @@
 # from: https://github.com/Dynatrace/dynatrace-operator/blob/v0.9.1/assets/samples/cloudNativeFullStack.yaml
-apiVersion: dynatrace.com/v1beta1
+apiVersion: dynatrace.com/v1beta2
 kind: DynaKube
 metadata:
   name: dynakube
@@ -10,14 +10,16 @@ metadata:
 spec:
   apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
   networkZone: azure.sds
-  namespaceSelector:
-    matchExpressions:
-      - key: kubernetes.io/metadata.name
-        operator: NotIn
-        values:
-          - mi
-          - mailrelay2
-          - monitoring
+  metadataEnrichment:
+    enabled: true
+    namespaceSelector:
+      matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+            - mi
+            - mailrelay2
+            - monitoring
   oneAgent:
     cloudNativeFullStack:
       priorityClassName: system-node-critical
