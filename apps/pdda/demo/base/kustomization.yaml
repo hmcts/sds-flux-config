@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/dev-role.yaml
   - ../../../base/workload-identity
+  - ../../../base/slack-provider/demo
 namespace: pdda
 patches:
   - path: ../../serviceaccount/demo.yaml
