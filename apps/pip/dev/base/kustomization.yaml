@@ -5,6 +5,7 @@ resources:
   - ../../identity/pip-azure-identity.yaml
   - ../../../rbac/dev-role.yaml
   - ../../../base/workload-identity
+  - ../../../base/slack-provider/dev
 namespace: pip
 patches:
   - path: ../../identity/dev.yaml

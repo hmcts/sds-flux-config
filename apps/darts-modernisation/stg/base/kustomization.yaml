@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ./darts-api-function.enc.yaml
+  - ../../../base/slack-provider/stg
   - ../../darts-ucf-test-harness/darts-ucf-test-harness.yaml
 
 namespace: darts-modernisation
