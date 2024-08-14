@@ -13,6 +13,7 @@ resources:
   - ../../refresh-views-cron/pip-refresh-views-cron.yaml
   - ../../data-management/pip-data-management.yaml
   - ../../frontend/pip-frontend.yaml
+  - ../../../base/slack-provider/stg
 namespace: pip
 patches:
   - path: ../../identity/stg.yaml
