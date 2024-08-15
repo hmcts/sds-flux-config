@@ -7,7 +7,7 @@ resources:
 - ../../traefik2
 - ../../traefik2/sbox/traefik-ping-ingress.yaml
 - ../../delete-hung-pods
-- ../../traefik2/tls/sbox
+- ../../traefik2/tls/30.0.2
 patches:
 - path: ../../aad-pod-identity/sbox/azure-identity-patch.yaml
   target:
