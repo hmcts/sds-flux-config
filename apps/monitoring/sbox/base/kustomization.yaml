@@ -4,3 +4,6 @@ resources:
   - ../../base
   - ../../kube-prometheus-stack/sbox/prometheus-values.enc.yaml
 namespace: monitoring
+patches:
+  - path: ../../kube-prometheus-stack/kube-prometheus-stack-upgrade.yaml
+  - path: ../../kube-prometheus-stack/kube-prometheus-stack-crds-upgrade
