@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/opal/service-auth-provider-app
+      image: sdshmctspublic.azurecr.io/opal/service-auth-provider:prod-fc7ec00-20240819114924 # {"$imagepolicy": "flux-system:opal-service-auth-provider"}
       disableTraefikTls: true
