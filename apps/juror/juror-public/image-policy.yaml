@@ -22,7 +22,7 @@ metadata:
     hmcts.github.com/prod-automated: disabled
 spec:
   imageRepositoryRef:
-    name: juror-public
+    name: juror-public-pr
   filterTags:
     extract: $ts
     pattern: '^pr-[a-f0-9]+-(?P<ts>[0-9]+-[0-9]+)'

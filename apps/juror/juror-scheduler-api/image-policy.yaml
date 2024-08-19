@@ -17,7 +17,7 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
-  name: juror-scheduler-api
+  name: juror-scheduler-api-pr
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
