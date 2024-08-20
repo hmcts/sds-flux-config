@@ -7,7 +7,7 @@ spec:
   releaseName: opal-service-auth-provider-app
   chart:
     spec:
-      chart: ./stable/opal-service-auth-provider-app
+      chart: ./stable/opal-service-auth-provider
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
