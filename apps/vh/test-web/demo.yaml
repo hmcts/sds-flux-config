@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: vh-test-web
+  namespace: vh
+spec:
+  releaseName: vh-test-web
+  values:
+    java:
+      ingressHost: vh-test-web.demo.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/vh/test-web:staging-235af6b-202303131005 # {"$imagepolicy": "flux-system:vh-test-web"}
