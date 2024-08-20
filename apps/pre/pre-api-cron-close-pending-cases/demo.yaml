@@ -7,7 +7,7 @@ spec:
   releaseName: pre-api-cron-close-pending-cases
   values:
     job:
-      suspend: false
+      suspend: true
       disableActiveClusterCheck: true
       schedule: "0 * * * *"
       environment:
