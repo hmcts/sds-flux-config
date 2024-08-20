@@ -1,0 +1,6 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: opal-service-auth-provider-app
+spec:
+  image: sdshmctspublic.azurecr.io/opal/service-auth-provider-app
