@@ -17,22 +17,6 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: vh-video-web-demo
-  annotations:
-    hmcts.github.com/prod-automated: disabled
-spec:
-  filterTags:
-    extract: $ts
-    pattern: '^pr-2122-(?P<ts>[0-9]+)-[0-9]'
-  imageRepositoryRef:
-    name: vh-video-web
-  policy:
-    alphabetical:
-      order: asc
----
-apiVersion: image.toolkit.fluxcd.io/v1beta1
-kind: ImagePolicy
-metadata:
   name: vh-video-web-staging
   annotations:
     hmcts.github.com/prod-automated: disabled
