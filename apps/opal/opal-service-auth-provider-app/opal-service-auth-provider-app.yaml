@@ -1,10 +1,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: opal-service-auth-provider-app
+  name: opal-service-auth-provider
   namespace: opal
 spec:
-  releaseName: opal-service-auth-provider-app
+  releaseName: opal-service-auth-provider
   chart:
     spec:
       chart: ./stable/opal-service-auth-provider
