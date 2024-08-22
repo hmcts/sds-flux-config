@@ -5,7 +5,6 @@ resources:
 - ../../kube-slack/prod/kube-slack-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
 - ../../traefik2
-- ../../traefik2/tls/base
 
 namespace: admin
 patches:

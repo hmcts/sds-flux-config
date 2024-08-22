@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/opal/external-api
+      image: sdshmctspublic.azurecr.io/opal/external-api:prod-21cc1df-20240822095136 # {"$imagepolicy": "flux-system:opal-external-api"}
       disableTraefikTls: true

@@ -7,7 +7,6 @@ resources:
 - ../../traefik2
 - ../../traefik2/demo/traefik-ping-ingress.yaml
 - ../../delete-hung-pods
-- ../../traefik2/tls/base
 namespace: admin
 patches:
 - path: ../../aad-pod-identity/demo/azure-identity-patch.yaml
