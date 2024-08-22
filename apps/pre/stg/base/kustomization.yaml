@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../../base/slack-provider/stg
+  - ../../pre-api-cron-cleanup-live-events/pre-api-cron-cleanup-live-events.yaml
 namespace: pre
 patches:
   - path: ../../identity/stg.yaml
