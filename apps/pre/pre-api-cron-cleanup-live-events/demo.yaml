@@ -7,7 +7,7 @@ spec:
   releaseName: pre-api-cron-cleanup-live-events
   values:
     job:
-      suspend: false
+      suspend: true
       disableActiveClusterCheck: true
       schedule: "0 20 * * *"
       environment:
