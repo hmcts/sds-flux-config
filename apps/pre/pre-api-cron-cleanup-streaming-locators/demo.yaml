@@ -7,7 +7,7 @@ spec:
   releaseName: pre-api-cron-cleanup-streaming-locators
   values:
     job:
-      suspend: false
+      suspend: true
       disableActiveClusterCheck: true
       schedule: "0 0 * * *"
       environment:
