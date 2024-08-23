@@ -13,11 +13,3 @@ metadata:
 spec:
   imageRepositoryRef:
     name: juror-api
----
-apiVersion: image.toolkit.fluxcd.io/v1beta2
-kind: ImagePolicy
-metadata:
-  name: juror-api-pr-ithc
-spec:
-  imageRepositoryRef:
-    name: juror-api
