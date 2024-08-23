@@ -10,6 +10,9 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: juror-api-pr
+filterTags:
+    extract: $ts
+    pattern: '^pr-734-[a-f0-9]+-(?P<ts>[0-9]+)'
 spec:
   imageRepositoryRef:
     name: juror-api
