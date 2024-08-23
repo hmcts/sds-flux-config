@@ -29,3 +29,19 @@ spec:
   policy:
     alphabetical:
       order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: juror-api-pr-ithc
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+spec:
+  imageRepositoryRef:
+    name: juror-api
+  filterTags:
+    extract: $ts
+    pattern: '^pr-740-[a-f0-9]+-(?P<ts>[0-9]+)'
+  policy:
+    alphabetical:
+      order: asc
