@@ -53,6 +53,21 @@ spec:
           - event-datasource-username
           - event-datasource-password
           - event-datasource-url
+          - themis-gateway-dbusername
+          - themis-gateway-dbpassword
+          - themis-gateway-datasourceurl
+          - dac-datasource-username
+          - dac-datasource-password
+          - dac-datasource-url
+          - fines-datasource-password
+          - fines-datasource-username
+          - fines-datasource-url
+          - maintenance-datasource-password
+          - maintenance-datasource-username
+          - maintenance-datasource-url
+          - confiscation-datasource-password
+          - confiscation-datasource-username
+          - confiscation-datasource-url
     environment:
       KV_NAME: libragob-test-kv
   chart:
