@@ -9,7 +9,7 @@ spec:
     job:
       suspend: false
       disableActiveClusterCheck: true
-      schedule: "0 18 * * *"
+      schedule: "0 13 * * *"
       environment:
         AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamstest
         AZURE_RESOURCE_GROUP: pre-test
