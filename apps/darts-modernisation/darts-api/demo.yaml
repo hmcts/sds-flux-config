@@ -19,3 +19,4 @@ spec:
       image: sdshmctspublic.azurecr.io/darts/api:prod-3a09f48-20240828132543 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+        FEIGN_LOG_LEVEL: full
