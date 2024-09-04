@@ -17,6 +17,6 @@ spec:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         FEIGN_LOG_LEVEL: full
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-9af19df-20240904104015 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-f31366e-20240904140025 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
