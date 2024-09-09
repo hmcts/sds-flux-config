@@ -11,6 +11,7 @@ spec:
       environment:
         DARTS_API_URL: https://darts-api.platform.hmcts.net
         DARTS_LOG_LEVEL: INFO
+        DARTS_SOAP_REQUEST_LOG_LEVEL: TRACE
         DAR_NOTIFY_ENABLED: true
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsprodextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsprodextid.b2clogin.com/hmctsprodextid.onmicrosoft.com

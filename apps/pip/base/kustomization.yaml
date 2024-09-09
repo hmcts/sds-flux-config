@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../account-management/pip-account-management.yaml
-  - ../channel-management/pip-channel-management.yaml
   - ../publication-services/pip-publication-services.yaml
   - ../subscription-management/pip-subscription-management.yaml
   - ../identity/pip-azure-identity.yaml
