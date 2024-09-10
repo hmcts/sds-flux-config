@@ -6,10 +6,11 @@ spec:
   releaseName: pip-data-management
   values:
     java:
-      enabled: true
-      maxReplicas: 5
-      minReplicas: 2
-      targetCPUUtilizationPercentage: 80
+      autoscaling:
+        enabled: true
+        maxReplicas: 5
+        minReplicas: 2
+        targetCPUUtilizationPercentage: 80
       ingressHost: pip-data-management.test.platform.hmcts.net
       environment:
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
