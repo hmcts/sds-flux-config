@@ -3,8 +3,6 @@ kind: Kustomization
 resources:
   - ../account-management/image-repo.yaml
   - ../account-management/image-policy.yaml
-  - ../channel-management/image-repo.yaml
-  - ../channel-management/image-policy.yaml
   - ../data-management/image-repo.yaml
   - ../data-management/image-policy.yaml
   - ../frontend/image-repo.yaml
