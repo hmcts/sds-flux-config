@@ -11,4 +11,5 @@ spec:
       environment:
         RESTART_ME: '001'
         DARTS_AZUREAD_B2C_ORIGIN_HOST: https://hmctsstgextid.b2clogin.com
-        DARTS_PORTAL_ALLOW_STUB_DATA: true
+        DARTS_PORTAL_ALLOW_STUB_DATA: true,
+        DARTS_PORTAL_URL: https://darts.demo.apps.hmcts.net
