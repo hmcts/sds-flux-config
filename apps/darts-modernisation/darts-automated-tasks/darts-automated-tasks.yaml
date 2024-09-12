@@ -32,8 +32,4 @@ spec:
       image: sdshmctspublic.azurecr.io/darts/api:prod-6acb8a1-20240911175949 # {"$imagepolicy": "flux-system:darts-api"}
       minReplicaCount: 0
       maxReplicaCount: 0
-      triggers:
-      memoryRequests: 2Gi
-      cpuRequests: 1
-      memoryLimits: 4Gi
-      cpuLimits: 2
+      triggers: []
