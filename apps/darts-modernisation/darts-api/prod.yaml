@@ -18,6 +18,7 @@ spec:
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsprodextid.b2clogin.com/hmctsprodextid.onmicrosoft.com
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
         MODERNISED_DARTS_START_DATE: '2099-01-01' # MODERNISED_DARTS_START_DATE to be updated before go-live
+        CASE_EXPIRY_DELETION_ENABLED: false
       pdb:
         enabled: false
     function:
