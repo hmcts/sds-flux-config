@@ -14,3 +14,7 @@ spec:
         DARTS_AZUREAD_B2C_ORIGIN_HOST: https://hmctsstgextid.b2clogin.com
         DARTS_DYNATRACE_SCRIPT_URL: https://js-cdn.dynatrace.com/jstag/17177a07246/bf24054dsx/274641a9600eefc2_complete.js
         DARTS_PORTAL_ALLOW_STUB_DATA: true
+        # this might seem strange, but it is intentional, see DMP-3863
+        # it's only used in the HTML template provided for Azure AD B2C customisation, and the staging B2C is used for staging and demo
+        # this means that the URL used for assets and hyperlink to the internal login will be the demo env
+        DARTS_AZUREAD_B2C_HOSTNAME: https://darts.demo.apps.hmcts.net

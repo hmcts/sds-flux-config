@@ -28,4 +28,6 @@ spec:
       image: sdshmctspublic.azurecr.io/darts/api:prod-32bdc24-20240229110157
       minReplicaCount: 0
       maxReplicaCount: 0
-      triggers:
+      # only poll every 24 hours, to prevent DB sessions
+      # it is set to 0 max replicas anyway
+      pollingInterval: 86400
