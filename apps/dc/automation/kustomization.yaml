@@ -1,6 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../dc-purview-shir/image-repo.yaml
-  - ../dc-purview-shir/image-policy.yaml
-  - ../dc-purview-shir/dev-image-policy.yaml
