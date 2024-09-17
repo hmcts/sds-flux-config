@@ -6,7 +6,11 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      replicas: 2
+      autoscaling:
+        enabled: true
+        maxReplicas: 5
+        minReplicas: 2
+        targetCPUUtilizationPercentage: 80
       ingressHost: pip-frontend.test.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
