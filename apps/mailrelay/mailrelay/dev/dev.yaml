@@ -26,7 +26,7 @@ spec:
         objectName: "dev-mailrelay-platform-hmcts-net"
 
     volumeClaim:
-      storageClass: "standard_ssd"
+      storageClass: "managed"
       storageSize: 64Gi
 
     global:
