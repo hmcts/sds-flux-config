@@ -7,11 +7,7 @@ spec:
   releaseName: pip-account-management
   values:
     java:
-      autoscaling:
-        enabled: true
-        maxReplicas: 5
-        minReplicas: 2
-        targetCPUUtilizationPercentage: 80
+      replicas: 2
       ingressHost: pip-account-management.test.platform.hmcts.net
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.test.platform.hmcts.net
