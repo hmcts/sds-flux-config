@@ -6,12 +6,11 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      replicas: 2
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1340-41d06b1-20240916121540
       ingressHost: pip-frontend.test.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
-        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.test.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
         AUTH_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/login/return
         MEDIA_VERIFICATION_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/media-verification/return

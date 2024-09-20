@@ -7,11 +7,10 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      replicas: 2
+      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-463-b7b6d55-20240904135827
       ingressHost: pip-publication-services.test.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
-        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.test.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
         NOTIFY_LINK_SUBSCRIPTION_PAGE: https://pip-frontend.test.platform.hmcts.net/subscription-management

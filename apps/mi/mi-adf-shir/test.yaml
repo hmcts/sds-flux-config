@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-adf-shir
   values:
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-91ba39e-20240607154028 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-91ba39e-20240912185058 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     replicaCount: 2
     memoryLimits: '4096Mi'
     environment: "test"
