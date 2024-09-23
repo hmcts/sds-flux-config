@@ -18,7 +18,7 @@ resources:
   - ../../../apps/monitoring/base/kustomize.yaml
   - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
   - ../../../apps/keda/base/kustomize.yaml
-  - ../../../apps/pre/base/kustomize.yaml
+  # - ../../../apps/pre/base/kustomize.yaml
   - ../../../apps/juror/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
