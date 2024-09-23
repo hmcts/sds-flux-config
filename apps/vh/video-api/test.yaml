@@ -8,4 +8,4 @@ spec:
   values:
     java:
       ingressHost: vh-video-api.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/video-api:dev-edfedb1-202409201440 #{"$imagepolicy": "flux-system:vh-video-api-dev"}
+      image: sdshmctspublic.azurecr.io/vh/video-api:dev-edfedb1-202409201440 #{"$imagepolicy": "flux-system:vh-video-api-test"}
