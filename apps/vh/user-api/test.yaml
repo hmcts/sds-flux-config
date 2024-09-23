@@ -8,4 +8,4 @@ spec:
   values:
     java:
       ingressHost: vh-user-api.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/user-api:dev-0d0f776-202409111332 #{"$imagepolicy": "flux-system:vh-user-api-dev"}
+      image: sdshmctspublic.azurecr.io/vh/user-api:dev-0d0f776-202409111332 #{"$imagepolicy": "flux-system:vh-user-api-test"}
