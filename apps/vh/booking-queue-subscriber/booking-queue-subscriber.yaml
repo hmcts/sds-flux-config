@@ -10,6 +10,15 @@ spec:
       triggerAuth:
         triggerPodIdentityProvider: azure-workload
     java:
+      autoscaling:
+        enabled: true
+        maxReplicas: 4
+        cpu:
+          enabled: true
+          averageUtilization: 60
+        memory:
+          enabled: true
+          averageUtilization: 60
       disableTraefikTls: true
   chart:
     spec:

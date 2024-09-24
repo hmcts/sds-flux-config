@@ -7,6 +7,15 @@ spec:
   releaseName: vh-bookings-api
   values:
     java:
+      autoscaling:
+        enabled: true
+        maxReplicas: 4
+        cpu:
+          enabled: true
+          averageUtilization: 60
+        memory:
+          enabled: true
+          averageUtilization: 60
       image: sdshmctspublic.azurecr.io/vh/bookings-api:prod-54a4fb0-202409041309 #{"$imagepolicy": "flux-system:vh-bookings-api"}
       disableTraefikTls: true
   chart:
