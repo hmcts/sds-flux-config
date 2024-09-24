@@ -7,5 +7,19 @@ spec:
   releaseName: vh-video-web
   values:
     java:
+      memoryRequests: '1Gi'
+      cpuRequests: '3000m'
+      memoryLimits: '2Gi'
+      cpuLimits: null
+      replicas: 8
+      autoscaling:
+        enabled: true
+        maxReplicas: 16
+        cpu:
+          enabled: true
+          averageUtilization: 60
+        memory:
+          enabled: true
+          averageUtilization: 60
       ingressHost: vh-video-web.test.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/vh/video-web:test-b454a11-202409240845 # {"$imagepolicy": "flux-system:vh-video-web-test"}
