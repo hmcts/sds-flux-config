@@ -7,6 +7,15 @@ spec:
   releaseName: vh-video-web
   values:
     java:
+      autoscaling:
+        enabled: true
+        maxReplicas: 4
+        cpu:
+          enabled: true
+          averageUtilization: 60
+        memory:
+          enabled: true
+          averageUtilization: 60
       disableTraefikTls: true
       image: sdshmctspublic.azurecr.io/vh/video-web:prod-7b9325c-202409041311 # {"$imagepolicy": "flux-system:vh-video-web"}
   chart:

@@ -7,6 +7,15 @@ spec:
   releaseName: vh-user-api
   values:
     java:
+      autoscaling:
+        enabled: true
+        maxReplicas: 4
+        cpu:
+          enabled: true
+          averageUtilization: 60
+        memory:
+          enabled: true
+          averageUtilization: 60
       image: sdshmctspublic.azurecr.io/vh/user-api:prod-1a3bef5-202409041306 # {"$imagepolicy": "flux-system:vh-user-api"}
       disableTraefikTls: true
   chart:
