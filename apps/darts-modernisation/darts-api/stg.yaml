@@ -18,6 +18,6 @@ spec:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
         CASE_EXPIRY_DELETION_ENABLED: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-6cf61d3-20240924130412 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-0780375-20240925083350 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
