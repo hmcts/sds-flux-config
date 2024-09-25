@@ -8,9 +8,9 @@ spec:
   values:
     java:
       memoryRequests: '1Gi'
-      cpuRequests: '3000m'
+      cpuRequests: '2000m'
       memoryLimits: '2Gi'
-      cpuLimits: '3000m'
+      cpuLimits: '2000m'
       replicas: 4
       autoscaling:
         enabled: true
