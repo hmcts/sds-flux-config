@@ -14,7 +14,7 @@ spec:
       replicas: 2
       autoscaling:
         enabled: true
-        maxReplicas: 16
+        maxReplicas: 8
         cpu:
           enabled: true
           averageUtilization: 60
