@@ -10,7 +10,7 @@ spec:
       memoryRequests: '1Gi'
       cpuRequests: '3000m'
       memoryLimits: '2Gi'
-      cpuLimits: null
+      cpuLimits: '3000m'
       replicas: 8
       autoscaling:
         enabled: true
