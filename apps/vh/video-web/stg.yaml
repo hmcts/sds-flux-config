@@ -7,6 +7,20 @@ spec:
   releaseName: vh-video-web
   values:
     java:
+      memoryRequests: '1Gi'
+      cpuRequests: '3000m'
+      memoryLimits: '2Gi'
+      cpuLimits: '3000m'
+      replicas: 4
+      autoscaling:
+        enabled: true
+        maxReplicas: 16
+        cpu:
+          enabled: true
+          averageUtilization: 60
+        memory:
+          enabled: true
+          averageUtilization: 60
       ingressHost: video.staging.hearings.reform.hmcts.net
       environment:
         AZUREAD__POSTLOGOUTREDIRECTURI: https://video.staging.hearings.reform.hmcts.net/logout
