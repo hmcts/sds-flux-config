@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-notification-api.demo.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/notification-api:dev-7c02966-202409240801 #{"$imagepolicy": "flux-system:vh-notification-api-dev"}
+      image: sdshmctspublic.azurecr.io/vh/notification-api:dev-a4b31ea-202409251235 #{"$imagepolicy": "flux-system:vh-notification-api-dev"}
   # chart:
   #   spec:
   #     chart: ./stable/vh-notification-api/prod

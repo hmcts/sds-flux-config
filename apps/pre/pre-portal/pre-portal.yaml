@@ -15,7 +15,7 @@ spec:
   values:
     nodejs:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/pre/portal:prod-fdfa37a-20240924120110 # {"$imagepolicy": "flux-system:pre-portal"}
+      image: sdshmctspublic.azurecr.io/pre/portal:prod-2b70560-20240926131459 # {"$imagepolicy": "flux-system:pre-portal"}
       disableTraefikTls: true
       cpuRequests: '50m'
       cpuLimits: '500m'
