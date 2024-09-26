@@ -6,6 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1334-11d87a1-20240926141159
       ingressHost: pip-frontend.ithc.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.ithc.platform.hmcts.net
