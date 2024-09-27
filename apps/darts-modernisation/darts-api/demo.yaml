@@ -18,6 +18,6 @@ spec:
         FEIGN_LOG_LEVEL: full
         CASE_EXPIRY_DELETION_ENABLED: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-c5a1686-20240925162308 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-3706f6a-20240927120116 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
