@@ -6,7 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:prod-2003b22-20240920151637 # REVERT BROKEN IMAGE - PUT BACK AFTER FIX
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-bff851f-20240927131931 # {"$imagepolicy": "flux-system:pip-frontend"}
       disableTraefikTls: true
   chart:
     spec:
