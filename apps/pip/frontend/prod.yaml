@@ -6,6 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
+      image: sdshmctspublic.azurecr.io/pip/frontend:prod-2003b22-20240920151637 # REVERT BROKEN IMAGE - PUT BACK AFTER FIX
       replicas: 2
       ingressHost: www.court-tribunal-hearings.service.gov.uk
       environment:
