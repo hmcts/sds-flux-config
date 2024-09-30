@@ -15,7 +15,7 @@ spec:
           averageUtilization: 75
         memory:
           enabled: true
-          averageUtilization: 80
+          averageUtilization: 75
       disableTraefikTls: true
       image: sdshmctspublic.azurecr.io/vh/admin-web:prod-5685a0d-202409041315 # {"$imagepolicy": "flux-system:vh-admin-web"}
   chart:
