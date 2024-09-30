@@ -16,6 +16,7 @@ spec:
         APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
         ARM_URL: http://darts-stub-services.test.platform.hmcts.net
         CASE_EXPIRY_DELETION_ENABLED: false
+        MANUAL_DELETION_ENABLED: false
         DARTS_API_DB_POOL_SIZE: 200
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-c5a1686-20240925162308 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-5abad1b-20240930123355 # {"$imagepolicy": "flux-system:darts-api"}

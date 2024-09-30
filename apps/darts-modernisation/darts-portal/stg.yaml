@@ -18,3 +18,4 @@ spec:
         # it's only used in the HTML template provided for Azure AD B2C customisation, and the staging B2C is used for staging and demo
         # this means that the URL used for assets and hyperlink to the internal login will be the demo env
         DARTS_AZUREAD_B2C_HOSTNAME: https://darts.demo.apps.hmcts.net
+        MANUAL_DELETION_ENABLED: true

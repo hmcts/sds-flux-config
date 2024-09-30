@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/pre/portal:prod-512e40f-20240927091841 # {"$imagepolicy": "flux-system:pre-portal"}
+      image: sdshmctspublic.azurecr.io/pre/portal:prod-ffcb2ed-20240930101216 # {"$imagepolicy": "flux-system:pre-portal"}
       ingressHost: pre-portal.demo.platform.hmcts.net
       environment:
         PRE_API_URL: https://sds-api-mgmt.demo.platform.hmcts.net/pre-api
@@ -16,3 +16,5 @@ spec:
         B2C_APP_CLIENT_ID: b2e28866-14cb-498e-a303-efc9880b8c78
         AMS_AZURE_MEDIA_SERVICES: https://preamsdemo-ukso1.streaming.media.azure.net
         AMS_AZURE_MEDIA_SERVICES_KEY_DELIVERY: https://preamsdemo.keydelivery.uksouth.media.azure.net
+        ENABLE_MK_WATCH_PAGE: true
+        USE_MK_ON_WATCH_PAGE: true
