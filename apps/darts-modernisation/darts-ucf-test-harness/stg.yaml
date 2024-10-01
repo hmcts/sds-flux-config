@@ -10,3 +10,5 @@ spec:
       ingressHost: darts-ucf-test-harness.staging.platform.hmcts.net
       environment:
         DARTS_LOG_LEVEL: DEBUG
+        TEST_HARNESS_AUTOMATION_ENABLED: true
+        TEST_HARNESS_PROXY_URL: http://darts-proxy.staging.platform.hmcts.net/service
