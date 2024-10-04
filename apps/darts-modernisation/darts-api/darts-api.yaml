@@ -18,8 +18,10 @@ spec:
       replicas: 2
       image: sdshmctspublic.azurecr.io/darts/api:prod-91aa942-20241003065425 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
-      memoryRequests: '2G'
-      memoryLimits: '3G'
+      memoryRequests: '3G'
+      memoryLimits: '4G'
+      cpuRequests: '2000m'
+      cpuLimits: '3000m'
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-91aa942-20241003065425 # {"$imagepolicy": "flux-system:darts-api"}
       memoryRequests: '2G'
