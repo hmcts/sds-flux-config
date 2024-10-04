@@ -19,6 +19,6 @@ spec:
         CASE_EXPIRY_DELETION_ENABLED: true
         MANUAL_DELETION_ENABLED: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-1fe1f8f-20241004141236 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-8bb14a2-20241004144805 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
