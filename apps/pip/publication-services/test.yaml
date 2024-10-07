@@ -7,7 +7,6 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-463-b7b6d55-20240904135827
       ingressHost: pip-publication-services.test.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
@@ -18,3 +17,8 @@ spec:
         NOTIFY_LINK_AAD_RESET_PW_LINK_ADMIN: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=7e6d47d3-ed02-4e32-a86c-7e01d74eb77a&nonce=defaultNonce&redirect_uri=https://pip-frontend.test.platform.hmcts.net/password-change-confirmation/true&scope=openid&response_type=code&prompt=login&response_mode=form_post
         NOTIFY_LINK_AAD_RESET_PW_LINK_MEDIA: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=7e6d47d3-ed02-4e32-a86c-7e01d74eb77a&nonce=defaultNonce&redirect_uri=https://pip-frontend.test.platform.hmcts.net/password-change-confirmation/false&scope=openid&response_type=code&prompt=login&response_mode=form_post
         NOTIFY_CRIME_SIGN_IN_LINK: https://pip-frontend.test.platform.hmcts.net/crime-login
+      autoscaling:
+        enabled: true
+        maxReplicas: 5
+        minReplicas: 2
+        targetCPUUtilizationPercentage: 40

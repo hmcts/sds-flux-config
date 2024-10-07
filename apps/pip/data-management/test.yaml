@@ -13,3 +13,8 @@ spec:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.test.platform.hmcts.net
         ENABLE_TESTING_SUPPORT_API: true
         MANAGED_IDENTITY_CLIENT_ID: 0e0c8682-a038-4aa8-9619-bb88a7ba9357
+      autoscaling:
+        enabled: true
+        maxReplicas: 5
+        minReplicas: 2
+        targetCPUUtilizationPercentage: 40
