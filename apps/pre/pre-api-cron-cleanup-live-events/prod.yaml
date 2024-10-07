@@ -9,4 +9,4 @@ spec:
       jobKind: CronJob
     job:
       schedule: "0 20 * * *" # 8pm every day
-      image: sdshmctspublic.azurecr.io/pre/api:prod-d4b3077-20241004100950 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-c75b068-20241007071652 # {"$imagepolicy": "flux-system:pre-api"}
