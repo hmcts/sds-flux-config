@@ -27,4 +27,9 @@ spec:
         enabled: true
         maxReplicas: 5
         minReplicas: 2
-        averageUtilization: 40
+        cpu:
+          enabled: true
+          averageUtilization: 40
+        memory:
+          enabled: true
+          averageUtilization: 40
