@@ -6,6 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
+      replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
@@ -23,17 +24,3 @@ spec:
         B2C_ADMIN_URL: https://staff.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
         SESSION_COOKIE_SAME_SITE: lax
         CRIME_IDAM_URL: https://login.sit.cjscp.org.uk
-      memoryRequests: 2048Mi
-      cpuRequests: 500m
-      memoryLimits: 2048Mi
-      cpuLimits: 500m
-      autoscaling:
-        enabled: true
-        maxReplicas: 5
-        minReplicas: 2
-        cpu:
-          enabled: true
-          averageUtilization: 40
-        memory:
-          enabled: true
-          averageUtilization: 40
