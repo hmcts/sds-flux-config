@@ -7,6 +7,7 @@ spec:
   releaseName: pip-account-management
   values:
     java:
+      replicas: 2
       ingressHost: pip-account-management.test.platform.hmcts.net
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.test.platform.hmcts.net
