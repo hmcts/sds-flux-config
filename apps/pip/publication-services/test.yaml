@@ -17,17 +17,3 @@ spec:
         NOTIFY_LINK_AAD_RESET_PW_LINK_ADMIN: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=7e6d47d3-ed02-4e32-a86c-7e01d74eb77a&nonce=defaultNonce&redirect_uri=https://pip-frontend.test.platform.hmcts.net/password-change-confirmation/true&scope=openid&response_type=code&prompt=login&response_mode=form_post
         NOTIFY_LINK_AAD_RESET_PW_LINK_MEDIA: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=7e6d47d3-ed02-4e32-a86c-7e01d74eb77a&nonce=defaultNonce&redirect_uri=https://pip-frontend.test.platform.hmcts.net/password-change-confirmation/false&scope=openid&response_type=code&prompt=login&response_mode=form_post
         NOTIFY_CRIME_SIGN_IN_LINK: https://pip-frontend.test.platform.hmcts.net/crime-login
-      memoryRequests: '2048Mi'
-      cpuRequests: '1500m'
-      memoryLimits: '2048Mi'
-      cpuLimits: '1500m'
-      autoscaling:
-        enabled: true
-        maxReplicas: 5
-        minReplicas: 2
-        cpu:
-          enabled: true
-          averageUtilization: 40
-        memory:
-          enabled: true
-          averageUtilization: 40
