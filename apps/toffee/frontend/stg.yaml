@@ -8,7 +8,7 @@ metadata:
 spec:
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-5e5db9b-20240903094108 #{"$imagepolicy": "flux-system:toffee-frontend"}
+      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-e558cf7-20241010161200 #{"$imagepolicy": "flux-system:toffee-frontend"}
       ingressHost: toffee.staging.platform.hmcts.net
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.staging.platform.hmcts.net
