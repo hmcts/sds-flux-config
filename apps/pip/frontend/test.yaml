@@ -6,7 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1365-d19b15a-20241011091052
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1365-7c84339-20241011101022
       keyVaults:
         pip-ss-kv:
           resourceGroup: pip-ss-test-rg
