@@ -93,7 +93,7 @@ spec:
                       retentionStrategy:
                         azureVMCloudRetentionStrategy:
                           idleTerminationMinutes: 5
-                      maxVirtualMachinesLimit: 10
+                      maxVirtualMachinesLimit: 20
                       usageMode: "NORMAL"
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
