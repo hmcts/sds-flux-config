@@ -9,6 +9,54 @@ spec:
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/pip/frontend:pr-1322-9a64cf7-20241014101143
+      keyVaults:
+        pip-ss-kv:
+          resourceGroup: pip-ss-test-rg
+          secrets:
+            - name: session-key
+              alias: SESSION_SECRET
+            - name: session-key-v2
+              alias: SESSION_SECRET_V2
+            - name: auto-pip-test-pip-frontend-test-id
+              alias: CLIENT_ID
+            - name: auto-pip-test-pip-frontend-test-pwd
+              alias: CLIENT_SECRET
+            - name: b2c-config-endpoint
+              alias: CONFIG_ENDPOINT
+            - name: b2c-config-admin-endpoint
+              alias: CONFIG_ADMIN_ENDPOINT
+            - name: b2c-tenant-id
+              alias: TENANT_GUID
+            - name: shared-storageaccount-connection-string
+              alias: CONNECTION_STRING
+            - name: REDIS-V6-HOST
+              alias: REDIS_HOST
+            - name: REDIS-V6-PASSWORD
+              alias: REDIS_PASSWORD
+            - name: REDIS-V6-PORT
+              alias: REDIS_PORT
+            - name: app-pip-frontend-id
+              alias: CLIENT_ID_INTERNAL
+            - name: app-pip-frontend-pwd
+              alias: CLIENT_SECRET_INTERNAL
+            - name: app-tenant-id
+              alias: TENANT_ID
+            - name: app-pip-data-management-scope
+              alias: DATA_MANAGEMENT_AZ_API
+            - name: app-pip-subscription-management-scope
+              alias: SUBSCRIPTION_MANAGEMENT_AZ_API
+            - name: app-pip-account-management-scope
+              alias: ACCOUNT_MANAGEMENT_AZ_API
+            - name: app-insights-nodejs-instrumentation-key
+              alias: INSTRUMENTATION_KEY
+            - name: b2c-url
+              alias: B2C_URL
+            - name: cft-idam-client-secret
+              alias: CFT_IDAM_CLIENT_SECRET
+            - name: crime-idam-client-id
+              alias: CRIME_IDAM_CLIENT_ID
+            - name: crime-idam-client-secret
+              alias: CRIME_IDAM_CLIENT_SECRET
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
