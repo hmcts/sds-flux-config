@@ -6,7 +6,9 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1367-0ff7351-20241011101653
+      replicas: 2
+      ingressHost: pip-frontend.test.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1322-28359e0-20241014134658
       keyVaults:
         pip-ss-kv:
           resourceGroup: pip-ss-test-rg
@@ -51,8 +53,10 @@ spec:
               alias: B2C_URL
             - name: cft-idam-client-secret
               alias: CFT_IDAM_CLIENT_SECRET
-      replicas: 2
-      ingressHost: pip-frontend.test.platform.hmcts.net
+            - name: crime-idam-client-id
+              alias: CRIME_IDAM_CLIENT_ID
+            - name: crime-idam-client-secret
+              alias: CRIME_IDAM_CLIENT_SECRET
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net

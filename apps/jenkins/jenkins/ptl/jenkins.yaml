@@ -235,6 +235,12 @@ spec:
                     name: Juror
                     recurse: true
                     title: Juror Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/master-reference-data-.*\/master
+                    name: MRD
+                    recurse: true
+                    title: Master and Reference Data Dashboard
           authentication: |
             jenkins:
               securityRealm:
