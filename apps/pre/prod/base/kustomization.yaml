@@ -2,14 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - ../../pre-api-cron-cleanup-live-events/pre-api-cron-cleanup-live-events.yaml
-  - ../../pre-api-cron-cleanup-streaming-locators/pre-api-cron-cleanup-streaming-locators.yaml
   - ../../../base/slack-provider/prod
 namespace: pre
 patches:
   - path: ../../identity/prod.yaml
   - path: ../../pre-portal/prod.yaml
   - path: ../../pre-api/prod.yaml
-  - path: ../../pre-api-cron-cleanup-streaming-locators/prod.yaml
-  - path: ../../pre-api-cron-cleanup-live-events/prod.yaml
   - path: ../../serviceaccount/prod.yaml
