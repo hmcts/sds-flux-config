@@ -19,6 +19,6 @@ spec:
         CASE_EXPIRY_DELETION_ENABLED: false
         MANUAL_DELETION_ENABLED: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-91752ee-20241016125928 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-7b0baa9-20241016135435 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
