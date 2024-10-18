@@ -25,6 +25,7 @@ spec:
           - dac-datasource-url
     environment:
       KV_NAME: libragob-test-kv
+      DUMMY_VAR_TO_RESTART: 0
   chart:
     spec:
       chart: job
@@ -70,6 +71,7 @@ spec:
           - confiscation-datasource-url
     environment:
       KV_NAME: libragob-test-kv
+      DUMMY_VAR_TO_RESTART: 0
   chart:
     spec:
       chart: job
