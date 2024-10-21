@@ -13,3 +13,5 @@ spec:
         DARTS_LOG_LEVEL: DEBUG
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         FEIGN_LOG_LEVEL: full
+        PROCESS_E2E_ARM_RPO: false
+        ARM_RPO_HOURS: 24h
