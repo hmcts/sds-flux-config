@@ -10,3 +10,5 @@ spec:
     job:
       schedule: "0 20 * * *" # 8pm every day
       image: sdshmctspublic.azurecr.io/pre/api:prod-efff4c2-20241022074331 # {"$imagepolicy": "flux-system:pre-api"}
+      environment:
+        MEDIA_SERVICE: MediaKind
