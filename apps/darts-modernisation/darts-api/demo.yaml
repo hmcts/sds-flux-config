@@ -19,7 +19,7 @@ spec:
         CASE_EXPIRY_DELETION_ENABLED: false
         MANUAL_DELETION_ENABLED: false
         PROCESS_E2E_ARM_RPO: false
-        ARM_RPO_HOURS: 24h
+        ARM_RPO_DURATION: 24h
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-9c7e1c3-20241018161032 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
