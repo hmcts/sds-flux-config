@@ -26,3 +26,6 @@ spec:
       image: sdshmctspublic.azurecr.io/darts/api:prod-c8ed93f-20241022103021 # {"$imagepolicy": "flux-system:darts-api"}
       memoryRequests: '2G'
       memoryLimits: '3G'
+    nodejs:
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-af0cb49-20241022083628 # {"$imagepolicy": "flux-system:darts-portal"}
+      replicas: 0
