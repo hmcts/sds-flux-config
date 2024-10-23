@@ -68,6 +68,14 @@ spec:
           - confiscation-datasource-password
           - confiscation-datasource-username
           - confiscation-datasource-url
+          - postgres-datasource-username
+          - postgres-datasource-password
+          - postgres-datasource-url
+          - sftp-username
+          - sftp-endpoint
+          - sftp-pvt-key
+          - themis-gateway-username
+          - themis-gateway-password
     environment:
       KV_NAME: libragob-test-kv
   chart:
