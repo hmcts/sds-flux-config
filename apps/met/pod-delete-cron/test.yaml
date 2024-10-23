@@ -8,5 +8,5 @@ spec:
   releaseName: libragob-pod-delete-nightly
   interval: 5m
   values:
-    schedule: "45 10 * * *"
+    schedule: "0-59/10 * * * *"
     suspend: false
