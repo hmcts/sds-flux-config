@@ -4,30 +4,7 @@ metadata:
   name: traefik2
   namespace: admin
 spec:
-  chart:
-    spec:
-      chart: traefik
-      # update the crd version in traefik-crds when updating this
-      version: 29.0.0
-      sourceRef:
-        kind: HelmRepository
-        name: traefik
-        namespace: admin
   values:
-    additionalArguments:
-      - "--entryPoints.web.transport.respondingTimeouts.writeTimeout=600s"
-      - "--entryPoints.websecure.transport.respondingTimeouts.writeTimeout=600s"
-      - "--entryPoints.web.transport.respondingTimeouts.readTimeout=600s"
-      - "--entryPoints.websecure.transport.respondingTimeouts.readTimeout=600s"
-      - "--entryPoints.web.transport.respondingTimeouts.idleTimeout=600s"
-      - "--entryPoints.websecure.transport.respondingTimeouts.idleTimeout=600s"
-      - "--serversTransport.forwardingTimeouts.dialTimeout=30s"
-      - "--serversTransport.forwardingTimeouts.responseHeaderTimeout=600s"
-      - "--serversTransport.forwardingTimeouts.idleConnTimeout=600s"
-      - "--log.level=DEBUG"
-    logs:
-      general:
-        level: DEBUG
     ports:
       traefik:
         expose:

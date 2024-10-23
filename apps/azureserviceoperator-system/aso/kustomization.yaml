@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - https://github.com/Azure/azure-service-operator/releases/download/v2.2.0/azureserviceoperator_v2.2.0.yaml
+  - https://github.com/Azure/azure-service-operator/releases/download/v2.9.0/azureserviceoperator_v2.9.0.yaml
 patches:
   - patch: |-
       - op: add
@@ -13,6 +13,9 @@ patches:
       - op: replace
         path: /spec/template/spec/nodeSelector
         value:
-          kubernetes.azure.com/agentpool: linux
+          kubernetes.azure.com/agentpool: system
     target:
       kind: Deployment
+  - target:
+      kind: Deployment
+    path: toleration_patch.yaml

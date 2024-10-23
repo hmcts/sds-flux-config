@@ -1,7 +1,0 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta1
-kind: ImagePolicy
-metadata:
-  name: darts-migration-api
-spec:
-  imageRepositoryRef:
-    name: darts-api

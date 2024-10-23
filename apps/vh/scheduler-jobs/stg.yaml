@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: vh-scheduler-jobs
   values:
-    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:staging-440f294-202408131540 # {"$imagepolicy": "flux-system:vh-scheduler-jobs-staging"}
+    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:staging-7657777-202410151704 # {"$imagepolicy": "flux-system:vh-scheduler-jobs-staging"}
     environment:
       VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
       VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.staging.platform.hmcts.net/

@@ -15,7 +15,12 @@ spec:
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
         APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+        FEIGN_LOG_LEVEL: full
+        CASE_EXPIRY_DELETION_ENABLED: false
+        MANUAL_DELETION_ENABLED: false
+        PROCESS_E2E_ARM_RPO: false
+        ARM_RPO_DURATION: 24h
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-25aefb9-20240813165248 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-62d418a-20241022155733 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk

@@ -18,7 +18,7 @@ spec:
         VHSERVICES__VIDEOAPIURL: https://vh-video-api.platform.hmcts.net/
         DOM1__POSTLOGOUTREDIRECTURI: https://video.hearings.reform.hmcts.net/logout
         DOM1__REDIRECTURI: https://video.hearings.reform.hmcts.net/home
-      image: sdshmctspublic.azurecr.io/vh/video-web:prod-ff117fb-202408140901 # {"$imagepolicy": "flux-system:vh-video-web"}
+      image: sdshmctspublic.azurecr.io/vh/video-web:prod-7b9325c-202409041311 # {"$imagepolicy": "flux-system:vh-video-web"}
   chart:
     spec:
       chart: ./stable/vh-video-web/prod

@@ -5,9 +5,11 @@ resources:
   - ../../../rbac/nonprod-role.yaml
   - ./darts-api-function.enc.yaml
   - ../../../base/slack-provider/stg
+
 namespace: darts-modernisation
 patches:
   - path: ../../darts-api/stg.yaml
+  - path: ../../darts-ucf-test-harness/stg.yaml
   - path: ../../darts-automated-tasks/stg.yaml
   - path: ../../darts-portal/stg.yaml
   - path: ../../darts-gateway/stg.yaml

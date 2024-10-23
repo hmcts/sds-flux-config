@@ -7,7 +7,7 @@ spec:
   releaseName: libragob-batch-housekeeping
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-8ebe47ba-1723456866 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
+    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-3468ea36-1729611100 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
     schedule: "0 19 * * *"
     suspend: true
     keyVaults:
@@ -43,8 +43,8 @@ spec:
   releaseName: libragob-batch-ams-reporting
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-8ebe47ba-1723456869 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
-    schedule: "*/15 * * * *"
+    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-3468ea36-1729611099 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
+    schedule: "*/3 * * * *"
     suspend: false
     keyVaults:
       libragob-test-kv:
@@ -53,6 +53,21 @@ spec:
           - event-datasource-username
           - event-datasource-password
           - event-datasource-url
+          - themis-gateway-dbusername
+          - themis-gateway-dbpassword
+          - themis-gateway-datasourceurl
+          - dac-datasource-username
+          - dac-datasource-password
+          - dac-datasource-url
+          - fines-datasource-password
+          - fines-datasource-username
+          - fines-datasource-url
+          - maintenance-datasource-password
+          - maintenance-datasource-username
+          - maintenance-datasource-url
+          - confiscation-datasource-password
+          - confiscation-datasource-username
+          - confiscation-datasource-url
     environment:
       KV_NAME: libragob-test-kv
   chart:

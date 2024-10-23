@@ -7,8 +7,22 @@ spec:
   releaseName: vh-video-web
   values:
     java:
+      memoryRequests: '1Gi'
+      cpuRequests: '1000m'
+      memoryLimits: '2Gi'
+      cpuLimits: '2000m'
+      replicas: 2
+      autoscaling:
+        enabled: true
+        maxReplicas: 4
+        cpu:
+          enabled: true
+          averageUtilization: 75
+        memory:
+          enabled: true
+          averageUtilization: 75
       disableTraefikTls: true
-      image: sdshmctspublic.azurecr.io/vh/video-web:prod-ff117fb-202408140901 # {"$imagepolicy": "flux-system:vh-video-web"}
+      image: sdshmctspublic.azurecr.io/vh/video-web:prod-7b9325c-202409041311 # {"$imagepolicy": "flux-system:vh-video-web"}
   chart:
     spec:
       chart: ./stable/vh-video-web/non-prod

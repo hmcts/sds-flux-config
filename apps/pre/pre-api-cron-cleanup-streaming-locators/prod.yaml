@@ -4,19 +4,11 @@ metadata:
   name: pre-api-cron-cleanup-streaming-locators
   namespace: pre
 spec:
-  releaseName: pre-api-cron-cleanup-streaming-locators
   values:
-    job:
-      suspend: true
-      disableActiveClusterCheck: true
-      schedule: "0 0 * * *"
-      environment:
-        AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamsprod
-        AZURE_RESOURCE_GROUP: pre-prod
-        AZURE_SUBSCRIPTION_ID: 5ca62022-6aa2-4cee-aaa7-e7536c8d566c
-        PLATFORM_ENV_TAG: Production
     global:
       jobKind: CronJob
-      enableKeyVaults: true
-      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      environment: prod
+    job:
+      schedule: "0 0 * * *" # 0:00 PM UTC
+      image: sdshmctspublic.azurecr.io/pre/api:prod-1f92c13-20241023071636 # {"$imagepolicy": "flux-system:pre-api"}
+      environment:
+        MEDIA_SERVICE: MediaKind

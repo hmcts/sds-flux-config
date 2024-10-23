@@ -10,14 +10,12 @@ spec:
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.ithc.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.ithc.platform.hmcts.net
-        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.ithc.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.ithc.platform.hmcts.net
         AUTH_RETURN_URL: https://pip-frontend.ithc.platform.hmcts.net/login/return
         MEDIA_VERIFICATION_RETURN_URL: https://pip-frontend.ithc.platform.hmcts.net/media-verification/return
         ADMIN_AUTH_RETURN_URL: https://pip-frontend.ithc.platform.hmcts.net/login/admin/return
         FRONTEND_URL: https://pip-frontend.ithc.platform.hmcts.net
         CFT_IDAM_URL: https://idam-web-public.ithc.platform.hmcts.net
-        ENABLE_CFT: true
         CONFIG_ENDPOINT: https://sign-in.pip-frontend.ithc.platform.hmcts.net/pip-frontend.ithc.platform.hmcts.net/B2C_1_SignInUserFlow/v2.0/.well-known/openid-configuration
         CONFIG_ADMIN_ENDPOINT: https://staff.pip-frontend.ithc.platform.hmcts.net/pip-frontend.ithc.platform.hmcts.net/B2C_1_SignInAdminUserFlow/v2.0/.well-known/openid-configuration
         MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.pip-frontend.ithc.platform.hmcts.net/pip-frontend.ithc.platform.hmcts.net/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration
