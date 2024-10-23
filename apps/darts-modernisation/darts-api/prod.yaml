@@ -26,6 +26,6 @@ spec:
       pdb:
         enabled: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-62d418a-20241022155733 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-9cd7443-20241023131927 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
