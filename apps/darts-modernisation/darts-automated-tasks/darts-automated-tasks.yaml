@@ -36,7 +36,7 @@ spec:
       # it is set to 0 max replicas anyway
       pollingInterval: 86400
     nodejs:
-      image: sdshmctspublic.azurecr.io/darts/portal:prod-8784bad-20241025141658 # {"$imagepolicy": "flux-system:darts-portal"}
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-9cfc318-20241025144826 # {"$imagepolicy": "flux-system:darts-portal"}
       replicas: 0
       autoscaling:
         enabled: false
