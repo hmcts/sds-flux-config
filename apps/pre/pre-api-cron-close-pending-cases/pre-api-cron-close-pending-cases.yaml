@@ -4,19 +4,19 @@ metadata:
   name: pre-api-cron-close-pending-cases
   namespace: pre
 spec:
-releaseName: pre-api-cron-close-pending-cases
-values:
-  java:
-    enabled: false
-  job:
-    enabled: true
-    environment:
-      TASK_NAME: ClosePendingCases
-chart:
-  spec:
-    chart: ./stable/pre-api
-    sourceRef:
-      kind: GitRepository
-      name: hmcts-charts
-      namespace: flux-system
-    interval: 1m
+  releaseName: pre-api-cron-close-pending-cases
+  values:
+    java:
+      enabled: false
+    job:
+      enabled: true
+      environment:
+        TASK_NAME: ClosePendingCases
+  chart:
+    spec:
+      chart: ./stable/pre-api
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
