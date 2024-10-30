@@ -19,6 +19,6 @@ spec:
         MANUAL_DELETION_ENABLED: false
         DARTS_API_DB_POOL_SIZE: 200
         PROCESS_E2E_ARM_RPO: false
-        MODERNISED_DARTS_START_DATE: 2024-10-01
+        MODERNISED_DARTS_START_DATE: '2024-10-01'
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-691a279-20241030094410 # {"$imagepolicy": "flux-system:darts-api"}
