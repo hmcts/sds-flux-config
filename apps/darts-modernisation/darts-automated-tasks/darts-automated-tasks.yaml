@@ -35,8 +35,3 @@ spec:
       # only poll every 24 hours, to prevent DB sessions
       # it is set to 0 max replicas anyway
       pollingInterval: 86400
-    nodejs:
-      image: sdshmctspublic.azurecr.io/darts/portal:prod-5aa8ef0-20241030081120 # {"$imagepolicy": "flux-system:darts-portal"}
-      replicas: 0
-      autoscaling:
-        enabled: false
