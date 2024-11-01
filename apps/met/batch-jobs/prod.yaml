@@ -65,6 +65,9 @@ spec:
           - sftp-endpoint
           - sftp-username
           - sftp-pvt-key
+          - themis-gateway-dbusername
+          - themis-gateway-dbpassword
+          - themis-gateway-datasourceurl
     environment:
       KV_NAME: libragob-prod-kv
   chart:
