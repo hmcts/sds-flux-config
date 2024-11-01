@@ -23,6 +23,18 @@ spec:
           - dac-datasource-username
           - dac-datasource-password
           - dac-datasource-url
+          - confiscation-datasource-password
+          - confiscation-datasource-url
+          - confiscation-datasource-username
+          - fines-datasource-username
+          - fines-datasource-password
+          - fines-datasource-url
+          - maintenance-datasource-username
+          - maintenance-datasource-password
+          - maintenance-datasource-url
+          - sftp-endpoint
+          - sftp-username
+          - sftp-pvt-key
     environment:
       KV_NAME: libragob-prod-kv
   chart:
