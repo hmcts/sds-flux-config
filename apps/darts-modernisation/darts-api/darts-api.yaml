@@ -27,7 +27,7 @@ spec:
       memoryRequests: '2G'
       memoryLimits: '3G'
     nodejs:
-      image: sdshmctspublic.azurecr.io/darts/portal:prod-8aea12a-20241101143428 # {"$imagepolicy": "flux-system:darts-portal"}
+      image: sdshmctspublic.azurecr.io/darts/portal:prod-daa7774-20241104074602 # {"$imagepolicy": "flux-system:darts-portal"}
       replicas: 0
       autoscaling:
         enabled: false
