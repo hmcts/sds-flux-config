@@ -8,7 +8,7 @@ spec:
     nodejs:
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1380-6990680-20241106114320
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1381-453e939-20241106143948
       keyVaults:
         pip-ss-kv:
           resourceGroup: pip-ss-test-rg
@@ -77,5 +77,5 @@ spec:
         MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration
         B2C_URL: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
         B2C_ADMIN_URL: https://staff.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
-        SESSION_COOKIE_SAME_SITE: ''
+        SESSION_COOKIE_SAME_SITE: lax
         CRIME_IDAM_URL: https://login.sit.cjscp.org.uk
