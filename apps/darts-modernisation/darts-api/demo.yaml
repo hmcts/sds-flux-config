@@ -18,6 +18,7 @@ spec:
         FEIGN_LOG_LEVEL: full
         CASE_EXPIRY_DELETION_ENABLED: false
         MANUAL_DELETION_ENABLED: false
+        EVENT_OBFUSCATION_ENABLED: false
         PROCESS_E2E_ARM_RPO: false
         ARM_RPO_DURATION: 24h
     function:
