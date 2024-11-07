@@ -11,13 +11,13 @@ spec:
       image: sdshmctspublic.azurecr.io/pip/frontend:pr-1379-67d2edc-20241107104349
       keyVaults:
         pip-ss-kv:
-          resourceGroup: pip-ss-test-rg
+          resourceGroup: pip-ss-stg-rg
           secrets:
             - name: session-key
               alias: SESSION_SECRET
-            - name: auto-pip-test-pip-frontend-test-id
+            - name: auto-pip-stg-pip-frontend-stg-id
               alias: CLIENT_ID
-            - name: auto-pip-test-pip-frontend-test-pwd
+            - name: auto-pip-stg-pip-frontend-stg-pwd
               alias: CLIENT_SECRET
             - name: b2c-config-endpoint
               alias: CONFIG_ENDPOINT
