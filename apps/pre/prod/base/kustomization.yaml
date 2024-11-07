@@ -5,6 +5,7 @@ resources:
   - ../../pre-api-cron-cleanup-live-events/pre-api-cron-cleanup-live-events.yaml
   - ../../pre-api-cron-cleanup-streaming-locators/pre-api-cron-cleanup-streaming-locators.yaml
   - ../../pre-api-cron-close-pending-cases/pre-api-cron-close-pending-cases.yaml
+  - ../../pre-api-cron-perform-edit-requests/pre-api-cron-perform-edit-requests.yaml
   - ../../../base/slack-provider/prod
 namespace: pre
 patches:
@@ -14,4 +15,5 @@ patches:
   - path: ../../pre-api-cron-cleanup-streaming-locators/prod.yaml
   - path: ../../pre-api-cron-cleanup-live-events/prod.yaml
   - path: ../../pre-api-cron-close-pending-cases/prod.yaml
+  - path: ../../pre-api-cron-perform-edit-requests/prod.yaml
   - path: ../../serviceaccount/prod.yaml
