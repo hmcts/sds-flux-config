@@ -21,6 +21,6 @@ spec:
         EVENT_OBFUSCATION_ENABLED: true
         PROCESS_E2E_ARM_RPO: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-6881c71-20241107125213 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-f950edc-20241107134547 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
