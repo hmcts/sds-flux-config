@@ -55,7 +55,7 @@ spec:
         secretRef: vm-hourlyusage
         key: access_key
     nodeSelector:
-      agentpool: cronjob
+      kubernetes.io/os: linux
     tolerations:
       - key: dedicated
         effect: NoSchedule
