@@ -32,7 +32,7 @@ spec:
     image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-e92ce54-20241106104306 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
     environment:
-      CLUSTER_NAME: ss-prod-00-aks
+      CLUSTER_NAME: ss-ptl-00-aks
       MAX_BATCH_SIZE: 1000
       COSMOS_DB_URI: https://version-reporter-ptl-cosmos.documents.azure.com:443/
       COSMOS_DB_NAME: reports
