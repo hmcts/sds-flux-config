@@ -1,0 +1,59 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cveinfo
+  namespace: monitoring
+  labels:
+    app: cveinfo
+    ignored-by-dynatrace: "true"
+spec:
+  releaseName: cveinfo
+  chart:
+    spec:
+      chart: job
+      sourceRef:
+        kind: GitRepository
+        name: chart-job
+        namespace: flux-system
+      interval: 1m
+  interval: 5m
+  values:
+    global:
+      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
+    schedule: "0 */4 * * 1-5" # Every 4 hours, week days
+    concurrencyPolicy: "Forbid"
+    failedJobsHistoryLimit: 5
+    startingDeadlineSeconds: 300
+    successfulJobsHistoryLimit: 5
+    backoffLimit: 3
+    restartPolicy: Never
+    serviceAccountName: version-reporter-service-sa
+    kind: CronJob
+    image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-830a535-20241108234836 #{"$imagepolicy": "flux-system:cveinfo"}
+    imagePullPolicy: Always
+    environment:
+      CLUSTER_NAME: ss-ptl-00-aks
+      MAX_BATCH_SIZE: 1000
+      COSMOS_DB_URI: https://version-reporter-ptl-cosmos.documents.azure.com:443/
+      COSMOS_DB_NAME: reports
+      COSMOS_DB_CONTAINER: cveinfo
+    secrets:
+      COSMOS_KEY:
+        secretRef: version-reporter
+        key: cosmos_key
+      AZURE_TENANT_ID:
+        secretRef: version-reporter
+        key: tenant_id
+      AZURE_CLIENT_ID:
+        secretRef: version-reporter
+        key: client_id
+      AZURE_CLIENT_SECRET:
+        secretRef: version-reporter
+        key: client_secret
+    nodeSelector:
+      agentpool: cronjob
+    tolerations:
+      - key: dedicated
+        effect: NoSchedule
+        operator: Equal
+        value: jobs
