@@ -26,5 +26,4 @@ patches:
       kind: Kustomization
       annotationSelector: hmcts.github.com/kustomize-defaults != disabled
   - path: ../../../apps/toffee/test/base/kustomize.yaml
-  - path: ../../../apps/admin/traefik-v33-crds/kustomize.yaml
   - path: ../../../apps/admin/test/base/kustomize.yaml
