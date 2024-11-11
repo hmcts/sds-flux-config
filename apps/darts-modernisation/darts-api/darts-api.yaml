@@ -26,3 +26,5 @@ spec:
       image: sdshmctspublic.azurecr.io/darts/api:prod-b33cec5-20241111142723 # {"$imagepolicy": "flux-system:darts-api"}
       memoryRequests: '2G'
       memoryLimits: '3G'
+    darts-portal:
+      ingressHost: darts-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
