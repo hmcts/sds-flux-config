@@ -16,7 +16,7 @@ spec:
   values:
     java:
       ingressHost: darts-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/darts/api:prod-1fe1f8f-20241004141236 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-f1e98d7-20241111145904 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
@@ -29,9 +29,15 @@ spec:
         NOTIFICATION_SCHEDULER_ENABLED: false
         NOTIFICATION_SCHEDULER_CRON: '-'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-1fe1f8f-20241004141236 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-f1e98d7-20241111145904 # {"$imagepolicy": "flux-system:darts-api"}
       minReplicaCount: 0
       maxReplicaCount: 0
       # only poll every 24 hours, to prevent DB sessions
       # it is set to 0 max replicas anyway
       pollingInterval: 86400
+    darts-portal:
+      enabled: false
+      ingressHost: darts-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
+      replicas: 0
+      autoscaling:
+        enabled: false

@@ -7,8 +7,9 @@ spec:
   releaseName: darts-ucf-test-harness
   values:
     java:
+      replicas: 0
       ingressHost: darts-ucf-test-harness.test.platform.hmcts.net
       environment:
         DARTS_LOG_LEVEL: DEBUG
-        TEST_HARNESS_AUTOMATION_ENABLED: false
+        TEST_HARNESS_AUTOMATION_ENABLED: true
         TEST_HARNESS_PROXY_URL: http://darts-proxy.test.platform.hmcts.net/service

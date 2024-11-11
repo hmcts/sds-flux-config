@@ -20,10 +20,13 @@ spec:
         MODERNISED_DARTS_START_DATE: '2099-01-01' # MODERNISED_DARTS_START_DATE to be updated before go-live
         CASE_EXPIRY_DELETION_ENABLED: false
         MANUAL_DELETION_ENABLED: false
+        EVENT_OBFUSCATION_ENABLED: false
         DARTS_API_DB_POOL_SIZE: 200
+        PROCESS_E2E_ARM_RPO: false
+        ARM_RPO_DURATION: 24h
       pdb:
         enabled: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-1fe1f8f-20241004141236 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-f1e98d7-20241111145904 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk

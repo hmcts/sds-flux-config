@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: admin.staging.hearings.reform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/admin-web:staging-2801414-202410031421 # {"$imagepolicy": "flux-system:vh-admin-web-staging"}
+      image: sdshmctspublic.azurecr.io/vh/admin-web:staging-c23f317-202410241447 # {"$imagepolicy": "flux-system:vh-admin-web-staging"}
       environment:
         AZUREAD__POSTLOGOUTREDIRECTURI: https://admin.staging.hearings.reform.hmcts.net/logout
         AZUREAD__REDIRECTURI: https://admin.staging.hearings.reform.hmcts.net/home
