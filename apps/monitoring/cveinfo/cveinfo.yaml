@@ -29,7 +29,7 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-e92ce54-20241106104306 #{"$imagepolicy": "flux-system:cveinfo"}
+    image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-830a535-20241108234836 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
     environment:
       CLUSTER_NAME: ss-ptl-00-aks
