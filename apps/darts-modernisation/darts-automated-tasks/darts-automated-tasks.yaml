@@ -36,6 +36,7 @@ spec:
       # it is set to 0 max replicas anyway
       pollingInterval: 86400
     darts-portal:
+      enabled: false
       ingressHost: darts-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
       replicas: 0
       autoscaling:
