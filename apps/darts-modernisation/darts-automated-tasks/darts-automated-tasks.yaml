@@ -35,3 +35,8 @@ spec:
       # only poll every 24 hours, to prevent DB sessions
       # it is set to 0 max replicas anyway
       pollingInterval: 86400
+    darts-portal:
+      ingressHost: darts-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
+      replicas: 0
+      autoscaling:
+        enabled: false

@@ -28,3 +28,6 @@ spec:
       memoryLimits: '3G'
     darts-portal:
       ingressHost: darts-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
+      replicas: 0
+      autoscaling:
+        enabled: false
