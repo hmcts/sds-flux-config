@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: azureserviceoperator-controller-manager
 spec:
-  replicas: 2
   template:
     spec:
       tolerations:
