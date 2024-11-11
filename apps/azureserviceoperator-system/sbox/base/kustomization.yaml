@@ -20,7 +20,3 @@ patches:
     target:
       kind: Deployment
       name: azureserviceoperator-controller-manager
-  - target:
-      kind: Deployment
-      name: azureserviceoperator-controller-manager
-    path: toleration_replicas_patch.yaml
