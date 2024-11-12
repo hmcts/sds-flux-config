@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: vm-fiveminuteusage
+  name: cveinfo
   namespace: monitoring
   labels:
-    app: vm-fiveminuteusage
+    app: cveinfo
     ignored-by-dynatrace: "true"
 spec:
-  releaseName: vm-fiveminuteusage
+  releaseName: cveinfo
   chart:
     spec:
       chart: job
@@ -20,7 +20,7 @@ spec:
   values:
     global:
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-    schedule: "*/5 * * * *" # Every 5 Mins, everyday
+    schedule: "0 */4 * * 1-5" # Every 4 hours, week days
     concurrencyPolicy: "Forbid"
     failedJobsHistoryLimit: 5
     startingDeadlineSeconds: 300
@@ -29,15 +29,14 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: hmctspublic.azurecr.io/version-reporter-service/hourlyusage:prod-e92ce54-20241106104306 #{"$imagepolicy": "flux-system:vm-hourlyusage"}
+    image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-830a535-20241108234836 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
     environment:
-      CLUSTER_NAME: ss-prod-00-aks
-      AZURE_STORAGE_CONTAINER: hmctsfiveminutedatasource
-      AZURE_STORAGE_URL: https://finopsdataptlsa.blob.core.windows.net
-      COSMOS_DB_URI: https://sds-platform-version-reporter.documents.azure.com:443/
+      CLUSTER_NAME: ss-ptl-00-aks
+      MAX_BATCH_SIZE: 1000
+      COSMOS_DB_URI: https://version-reporter-ptl-cosmos.documents.azure.com:443/
       COSMOS_DB_NAME: reports
-      COSMOS_DB_CONTAINER: hourlyusage
+      COSMOS_DB_CONTAINER: cveinfo
     secrets:
       COSMOS_KEY:
         secretRef: version-reporter
@@ -51,11 +50,8 @@ spec:
       AZURE_CLIENT_SECRET:
         secretRef: version-reporter
         key: client_secret
-      AZURE_STORAGE_ACCESS_KEY:
-        secretRef: vm-hourlyusage
-        key: access_key
     nodeSelector:
-      kubernetes.io/os: linux
+      agentpool: cronjob
     tolerations:
       - key: dedicated
         effect: NoSchedule
