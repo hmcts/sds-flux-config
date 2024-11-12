@@ -22,6 +22,6 @@ spec:
         PROCESS_E2E_ARM_RPO: false
         ARM_RPO_DURATION: 24h
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-ada27c8-20241112111030 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-f987011-20241112114903 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
