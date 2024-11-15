@@ -50,20 +50,20 @@ spec:
       libragob-test-kv:
         excludeEnvironmentSuffix: true
         secrets:
-          - amd-event-datasource-username
-          - amd-event-datasource-password
+          - amd-event-username
+          - amd-event-password
           - amd-event-datasource-url
-          - amd-postgres-datasource-username
-          - amd-postgres-datasource-password
+          - amd-postgres-username
+          - amd-postgres-password
           - amd-postgres-datasource-url
-          - amd-confiscation-datasource-password
-          - amd-confiscation-datasource-username
+          - amd-confiscation-password
+          - amd-confiscation-username
           - amd-confiscation-datasource-url
-          - amd-fines-datasource-password
-          - amd-fines-datasource-username
+          - amd-fines-password
+          - amd-fines-username
           - amd-fines-datasource-url
-          - amd-maintenance-datasource-password
-          - amd-maintenance-datasource-username
+          - amd-maintenance-password
+          - amd-maintenance-username
           - amd-maintenance-datasource-url
           - amd-sftp-username
           - amd-sftp-endpoint
