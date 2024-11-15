@@ -50,30 +50,24 @@ spec:
       libragob-test-kv:
         excludeEnvironmentSuffix: true
         secrets:
-          - event-datasource-username
-          - event-datasource-password
-          - event-datasource-url
-          - themis-gateway-dbusername
-          - themis-gateway-dbpassword
-          - themis-gateway-datasourceurl
-          - dac-datasource-username
-          - dac-datasource-password
-          - dac-datasource-url
-          - fines-datasource-password
-          - fines-datasource-username
-          - fines-datasource-url
-          - maintenance-datasource-password
-          - maintenance-datasource-username
-          - maintenance-datasource-url
-          - confiscation-datasource-password
-          - confiscation-datasource-username
-          - confiscation-datasource-url
-          - postgres-datasource-username
-          - postgres-datasource-password
-          - postgres-datasource-url
-          - sftp-username
-          - sftp-endpoint
-          - sftp-pvt-key
+          - amd-event-datasource-username
+          - amd-event-datasource-password
+          - amd-event-datasource-url
+          - amd-postgres-datasource-username
+          - amd-postgres-datasource-password
+          - amd-postgres-datasource-url
+          - amd-confiscation-datasource-password
+          - amd-confiscation-datasource-username
+          - amd-confiscation-datasource-url
+          - amd-fines-datasource-password
+          - amd-fines-datasource-username
+          - amd-fines-datasource-url
+          - amd-maintenance-datasource-password
+          - amd-maintenance-datasource-username
+          - amd-maintenance-datasource-url
+          - amd-sftp-username
+          - amd-sftp-endpoint
+          - amd-sftp-pvt-key
     environment:
       KV_NAME: libragob-test-kv
       DUMMY_VAR_TO_RESTART: 0
