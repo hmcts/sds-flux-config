@@ -33,7 +33,7 @@ spec:
     imagePullPolicy: Always
     resources:
       requests:
-        cpu: 250m
+        cpu: 500m
         memory: 1Gi
     environment:
       CLUSTER_NAME: ss-ptl-00-aks
