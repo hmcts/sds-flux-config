@@ -35,6 +35,9 @@ spec:
       requests:
         cpu: 500m
         memory: 1Gi
+      limits:
+        cpu: 500m
+        memory: 2Gi
     environment:
       CLUSTER_NAME: ss-ptl-00-aks
       MAX_BATCH_SIZE: 1000
