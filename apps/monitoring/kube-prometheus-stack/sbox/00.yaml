@@ -8,7 +8,7 @@ spec:
   chart:
   spec:
     chart: kube-prometheus-stack
-    # Update kube-prometheus-stack-crds/kustomization.yaml when updating this
+    # update crds in kube-prometheus-stack-crds when changing this version
     version: 66.2.1
     sourceRef:
       kind: HelmRepository
