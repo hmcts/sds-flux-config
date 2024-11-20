@@ -44,7 +44,7 @@ spec:
   values:
     kind: CronJob
     image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-b64bb4be-1732108311 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
-    schedule: "*/3 * * * *"
+    schedule: "*/15 * * * *"
     suspend: false
     keyVaults:
       libragob-test-kv:
@@ -56,18 +56,18 @@ spec:
           - amd-postgres-username
           - amd-postgres-password
           - amd-postgres-datasource-url
-          - amd-confiscation-password
           - amd-confiscation-username
+          - amd-confiscation-password
           - amd-confiscation-datasource-url
-          - amd-fines-password
           - amd-fines-username
+          - amd-fines-password
           - amd-fines-datasource-url
-          - amd-maintenance-password
           - amd-maintenance-username
+          - amd-maintenance-password
           - amd-maintenance-datasource-url
           - amd-sftp-username
-          - amd-sftp-endpoint
           - amd-sftp-pvt-key
+          - amd-sftp-endpoint
     environment:
       KV_NAME: libragob-test-kv
       DUMMY_VAR_TO_RESTART: 0
