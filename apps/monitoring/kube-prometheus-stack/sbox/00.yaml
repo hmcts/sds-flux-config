@@ -5,15 +5,6 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
-  chart:
-  spec:
-    chart: kube-prometheus-stack
-    # update crds in kube-prometheus-stack-crds when changing this version
-    version: 66.2.1
-    sourceRef:
-      kind: HelmRepository
-      name: prometheus
-      namespace: monitoring
   values:
     kube-state-metrics:
       tolerations:

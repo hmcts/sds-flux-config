@@ -2,7 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../base
-  - ../../../apps/monitoring/kube-prometheus-stack-crds-patch
 
 patches:
   - path: ../../../apps/flux-system/sbox/00/kustomize.yaml
