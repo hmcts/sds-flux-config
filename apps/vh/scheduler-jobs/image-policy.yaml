@@ -65,7 +65,7 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: vh-notification-api-demo
+  name: vh-scheduler-jobs-demo
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
@@ -73,7 +73,7 @@ spec:
     extract: $ts
     pattern: '^demo-[a-f0-9]+-(?P<ts>[0-9]+)'
   imageRepositoryRef:
-    name: vh-notification-api
+    name: vh-scheduler-jobs
   policy:
     alphabetical:
       order: asc
