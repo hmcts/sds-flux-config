@@ -8,15 +8,12 @@ spec:
     nodejs:
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1322-49f8b8d-20241016142122
       keyVaults:
         pip-ss-kv:
           resourceGroup: pip-ss-test-rg
           secrets:
             - name: session-key
               alias: SESSION_SECRET
-            - name: session-key-v2
-              alias: SESSION_SECRET_V2
             - name: auto-pip-test-pip-frontend-test-id
               alias: CLIENT_ID
             - name: auto-pip-test-pip-frontend-test-pwd
@@ -53,10 +50,18 @@ spec:
               alias: B2C_URL
             - name: cft-idam-client-secret
               alias: CFT_IDAM_CLIENT_SECRET
-            - name: crime-idam-client-id
-              alias: CRIME_IDAM_CLIENT_ID
-            - name: crime-idam-client-secret
-              alias: CRIME_IDAM_CLIENT_SECRET
+            - name: sso-client-id
+              alias: SSO_CLIENT_ID
+            - name: sso-client-secret
+              alias: SSO_CLIENT_SECRET
+            - name: sso-config-endpoint
+              alias: SSO_CONFIG_ENDPOINT
+            - name: sso-sg-admin-ctsc
+              alias: SSO_SG_ADMIN_CTSC
+            - name: sso-sg-admin-local
+              alias: SSO_SG_ADMIN_LOCAL
+            - name: sso-sg-system-admin
+              alias: SSO_SG_SYSTEM_ADMIN
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net

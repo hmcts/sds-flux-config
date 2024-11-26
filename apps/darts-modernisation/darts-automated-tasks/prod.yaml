@@ -14,5 +14,6 @@ spec:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
         PROCESS_E2E_ARM_RPO: false
         ARM_RPO_DURATION: 24h
+        IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
       pdb:
         enabled: false

@@ -27,6 +27,10 @@ spec:
           key: kubernetes.io/os
           operator: Equal
           value: "windows"
+        - effect: NoSchedule
+          key: dedicated
+          operator: Equal
+          value: "jobs"
       nodeSelector:
         kubernetes.io/os: linux
     operator:

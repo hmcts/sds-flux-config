@@ -9,7 +9,7 @@ spec:
       ignored-by-dynatrace: "true"
       app.kubernetes.io/instance: mi-adf-shir-deployment-2
       app.kubernetes.io/name: mi-adf-shir-deployment-2
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-91ba39e-20240312133745
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-91ba39e-20240312133745 # Keep fixed version as upgrade has performance issue on big files > 10GB
     replicaCount: 2
     memoryLimits: '4096Mi'
     cpuLimits: '4000m'
