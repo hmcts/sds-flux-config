@@ -61,3 +61,20 @@ spec:
   policy:
     alphabetical:
       order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: vh-user-api-demo
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+spec:
+  filterTags:
+    extract: $ts
+    pattern: '^demo-[a-f0-9]+-(?P<ts>[0-9]+)'
+  imageRepositoryRef:
+    name: vh-user-api
+  policy:
+    alphabetical:
+      order: asc
+---
