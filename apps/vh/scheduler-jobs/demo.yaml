@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: vh-scheduler-jobs
   values:
-    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:dev-5b7c2d8-202411261551 #{"$imagepolicy": "flux-system:vh-scheduler-jobs-demo"}
+    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:demo-5b7c2d8-202411261755 #{"$imagepolicy": "flux-system:vh-scheduler-jobs-demo"}
   # chart:
   #   spec:
   #     chart: ./stable/vh-scheduler-jobs/prod
