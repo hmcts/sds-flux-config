@@ -17,7 +17,7 @@ spec:
           enabled: true
           averageUtilization: 75
       disableTraefikTls: true
-      image: sdshmctspublic.azurecr.io/vh/admin-web:prod-5685a0d-202409041315 # {"$imagepolicy": "flux-system:vh-admin-web"}
+      image: sdshmctspublic.azurecr.io/vh/admin-web:prod-bedf8dc-202411211320 # {"$imagepolicy": "flux-system:vh-admin-web"}
   chart:
     spec:
       chart: ./stable/vh-admin-web/non-prod

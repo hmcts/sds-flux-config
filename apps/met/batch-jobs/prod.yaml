@@ -7,7 +7,7 @@ spec:
   releaseName: libragob-batch-housekeeping
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-98564956-1731942017 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
+    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-7e6acdd0-1732622062 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
     schedule: "0 19 * * *"
     suspend: false
     keyVaults:
@@ -43,16 +43,31 @@ spec:
   releaseName: libragob-batch-ams-reporting
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-98564956-1731942016 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
-    schedule: "*/5 * * * *"
+    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-7e6acdd0-1732622065 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
+    schedule: "*/15 * * * *"
     suspend: true
     keyVaults:
       libragob-prod-kv:
         excludeEnvironmentSuffix: true
         secrets:
-          - event-datasource-username
-          - event-datasource-password
-          - event-datasource-url
+          - amd-event-username
+          - amd-event-password
+          - amd-event-datasource-url
+          - amd-postgres-username
+          - amd-postgres-password
+          - amd-postgres-datasource-url
+          - amd-confiscation-username
+          - amd-confiscation-password
+          - amd-confiscation-datasource-url
+          - amd-fines-username
+          - amd-fines-password
+          - amd-fines-datasource-url
+          - amd-maintenance-username
+          - amd-maintenance-password
+          - amd-maintenance-datasource-url
+          - amd-sftp-username
+          - amd-sftp-pvt-key
+          - amd-sftp-endpoint
     environment:
       KV_NAME: libragob-prod-kv
   chart:

@@ -20,7 +20,8 @@ spec:
         MANUAL_DELETION_ENABLED: true
         EVENT_OBFUSCATION_ENABLED: true
         PROCESS_E2E_ARM_RPO: false
+        IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-3e8f1c9-20241119121716 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-73e44fe-20241126112928 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
