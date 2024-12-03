@@ -8,60 +8,7 @@ spec:
     nodejs:
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
-      keyVaults:
-        pip-ss-kv:
-          resourceGroup: pip-ss-test-rg
-          secrets:
-            - name: session-key
-              alias: SESSION_SECRET
-            - name: auto-pip-test-pip-frontend-test-id
-              alias: CLIENT_ID
-            - name: auto-pip-test-pip-frontend-test-pwd
-              alias: CLIENT_SECRET
-            - name: b2c-config-endpoint
-              alias: CONFIG_ENDPOINT
-            - name: b2c-config-admin-endpoint
-              alias: CONFIG_ADMIN_ENDPOINT
-            - name: b2c-tenant-id
-              alias: TENANT_GUID
-            - name: shared-storageaccount-connection-string
-              alias: CONNECTION_STRING
-            - name: REDIS-V6-HOST
-              alias: REDIS_HOST
-            - name: REDIS-V6-PASSWORD
-              alias: REDIS_PASSWORD
-            - name: REDIS-V6-PORT
-              alias: REDIS_PORT
-            - name: app-pip-frontend-id
-              alias: CLIENT_ID_INTERNAL
-            - name: app-pip-frontend-pwd
-              alias: CLIENT_SECRET_INTERNAL
-            - name: app-tenant-id
-              alias: TENANT_ID
-            - name: app-pip-data-management-scope
-              alias: DATA_MANAGEMENT_AZ_API
-            - name: app-pip-subscription-management-scope
-              alias: SUBSCRIPTION_MANAGEMENT_AZ_API
-            - name: app-pip-account-management-scope
-              alias: ACCOUNT_MANAGEMENT_AZ_API
-            - name: app-insights-nodejs-instrumentation-key
-              alias: INSTRUMENTATION_KEY
-            - name: b2c-url
-              alias: B2C_URL
-            - name: cft-idam-client-secret
-              alias: CFT_IDAM_CLIENT_SECRET
-            - name: sso-client-id
-              alias: SSO_CLIENT_ID
-            - name: sso-client-secret
-              alias: SSO_CLIENT_SECRET
-            - name: sso-config-endpoint
-              alias: SSO_CONFIG_ENDPOINT
-            - name: sso-sg-admin-ctsc
-              alias: SSO_SG_ADMIN_CTSC
-            - name: sso-sg-admin-local
-              alias: SSO_SG_ADMIN_LOCAL
-            - name: sso-sg-system-admin
-              alias: SSO_SG_SYSTEM_ADMIN
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1390-4712f9b-20241203105039
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
