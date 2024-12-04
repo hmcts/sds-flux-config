@@ -7,7 +7,7 @@ spec:
   releaseName: libragob-batch-housekeeping
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-6b46a37d-1731332103 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
+    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-b8447b32-1733310198 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
     schedule: "0 19 * * *"
     suspend: true
     keyVaults:
@@ -43,37 +43,31 @@ spec:
   releaseName: libragob-batch-ams-reporting
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-6b46a37d-1731332101 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
-    schedule: "*/3 * * * *"
+    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-b8447b32-1733310199 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
+    schedule: "*/15 * * * *"
     suspend: false
     keyVaults:
       libragob-test-kv:
         excludeEnvironmentSuffix: true
         secrets:
-          - event-datasource-username
-          - event-datasource-password
-          - event-datasource-url
-          - themis-gateway-dbusername
-          - themis-gateway-dbpassword
-          - themis-gateway-datasourceurl
-          - dac-datasource-username
-          - dac-datasource-password
-          - dac-datasource-url
-          - fines-datasource-password
-          - fines-datasource-username
-          - fines-datasource-url
-          - maintenance-datasource-password
-          - maintenance-datasource-username
-          - maintenance-datasource-url
-          - confiscation-datasource-password
-          - confiscation-datasource-username
-          - confiscation-datasource-url
-          - postgres-datasource-username
-          - postgres-datasource-password
-          - postgres-datasource-url
-          - sftp-username
-          - sftp-endpoint
-          - sftp-pvt-key
+          - amd-event-username
+          - amd-event-password
+          - amd-event-datasource-url
+          - amd-postgres-username
+          - amd-postgres-password
+          - amd-postgres-datasource-url
+          - amd-confiscation-username
+          - amd-confiscation-password
+          - amd-confiscation-datasource-url
+          - amd-fines-username
+          - amd-fines-password
+          - amd-fines-datasource-url
+          - amd-maintenance-username
+          - amd-maintenance-password
+          - amd-maintenance-datasource-url
+          - amd-sftp-username
+          - amd-sftp-pvt-key
+          - amd-sftp-endpoint
     environment:
       KV_NAME: libragob-test-kv
       DUMMY_VAR_TO_RESTART: 0

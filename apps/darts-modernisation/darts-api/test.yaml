@@ -21,5 +21,6 @@ spec:
         DARTS_API_DB_POOL_SIZE: 200
         PROCESS_E2E_ARM_RPO: false
         MODERNISED_DARTS_START_DATE: '2024-10-01'
+        IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-8fa97dc-20241115133617 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-a78d3f2-20241203192456 # {"$imagepolicy": "flux-system:darts-api"}

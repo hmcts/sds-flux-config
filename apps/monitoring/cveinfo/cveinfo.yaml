@@ -29,8 +29,15 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-288e7c8-20241113155755 #{"$imagepolicy": "flux-system:cveinfo"}
+    image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-af4d6df-20241122173040 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
+    resources:
+      requests:
+        cpu: 500m
+        memory: 1Gi
+      limits:
+        cpu: 500m
+        memory: 2Gi
     environment:
       CLUSTER_NAME: ss-ptl-00-aks
       MAX_BATCH_SIZE: 1000

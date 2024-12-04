@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/pre/portal:prod-c9a9fc0-20241115093359 # {"$imagepolicy": "flux-system:pre-portal"}
+      image: sdshmctspublic.azurecr.io/pre/portal:prod-c59765e-20241204113459 # {"$imagepolicy": "flux-system:pre-portal"}
       ingressHost: pre-portal.demo.platform.hmcts.net
       environment:
         PRE_API_URL: https://sds-api-mgmt.demo.platform.hmcts.net/pre-api
@@ -20,3 +20,4 @@ spec:
         USE_MK_ON_WATCH_PAGE: true
         TS_AND_CS_REDIRECT_ENABLED: true
         ENABLE_CASE_STATE_COLUMN: true
+        DYNATRACE_JSTAG: https://js-cdn.dynatrace.com/jstag/17177a07246/bf24054dsx/636bef1033a59525_complete.js
