@@ -9,7 +9,7 @@ spec:
     java:
       replicas: 2
       ingressHost: pip-subscription-management.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/pip/subscription-management:pr-367-ee37649-20241204153017
+      image: sdshmctspublic.azurecr.io/pip/subscription-management:pr-367-507f47c-20241204160027
       keyVaults:
         pip-ss-kv:
           excludeEnvironmentSuffix: true
