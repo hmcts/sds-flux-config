@@ -8,7 +8,7 @@ spec:
     global:
       jobKind: CronJob
     job:
-      suspend: true
+      suspend: false
       disableActiveClusterCheck: true
       schedule: "0 * * * *"
       image: sdshmctspublic.azurecr.io/pre/api:prod-e53315d-20241203152200 # {"$imagepolicy": "flux-system:pre-api"}
