@@ -10,39 +10,6 @@ spec:
       replicas: 2
       ingressHost: pip-subscription-management.test.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/pip/subscription-management:pr-367-507f47c-20241204160027
-      keyVaults:
-        pip-ss-kv:
-          excludeEnvironmentSuffix: true
-          resourceGroup: pip-ss-test-rg
-          secrets:
-            - name: subscription-management-POSTGRES-DATABASE
-              alias: DB_NAME
-            - name: subscription-management-POSTGRES-PASS
-              alias: DB_PASS
-            - name: subscription-management-POSTGRES-PORT
-              alias: DB_PORT
-            - name: subscription-management-POSTGRES-USER
-              alias: DB_USER
-            - name: subscription-management-POSTGRES-HOST
-              alias: DB_HOST
-            - name: app-pip-subscription-management-id
-              alias: CLIENT_ID
-            - name: app-pip-subscription-management-pwd
-              alias: CLIENT_SECRET
-            - name: app-tenant-id
-              alias: TENANT_ID
-            - name: app-pip-subscription-management-scope
-              alias: APP_URI
-            - name: app-pip-data-management-scope
-              alias: DATA_MANAGEMENT_AZ_API
-            - name: app-pip-account-management-scope
-              alias: ACCOUNT_MANAGEMENT_AZ_API
-            - name: app-pip-publication-services-scope
-              alias: PUBLICATION_SERVICES_AZ_API
-            - name: auto-pip-test-courtel-api
-              alias: COURTEL_API
-            - name: app-insights-java-connection-string
-              alias: APP_INSIGHTS_CONNECTION_STRING
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
