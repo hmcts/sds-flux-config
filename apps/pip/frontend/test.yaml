@@ -8,7 +8,6 @@ spec:
     nodejs:
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/pip/frontend:staging-2908e6c-20241129092608
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
