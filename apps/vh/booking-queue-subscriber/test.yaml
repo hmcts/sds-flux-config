@@ -7,7 +7,7 @@ spec:
   releaseName: vh-booking-queue-subscriber
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:test-47deebb-202412031927 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-test"}
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:test-9841008-202412061019 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-test"}
     function:
       triggers:
       - type: azure-servicebus
