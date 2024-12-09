@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/dev-role.yaml
   - ../../../rbac/temp-cronjob-role.yaml
+  - ../../../base/slack-provider/dev
 namespace: vh
 patches:
   - path: ../../identity/dev.yaml

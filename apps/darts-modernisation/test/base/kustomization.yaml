@@ -4,11 +4,13 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - darts-api-function.enc.yaml
+  - ../../../base/slack-provider/test
 namespace: darts-modernisation
 patches:
   - path: ../../darts-api/test.yaml
   - path: ../../darts-automated-tasks/test.yaml
   - path: ../../darts-portal/test.yaml
   - path: ../../darts-gateway/test.yaml
+  - path: ../../darts-ucf-test-harness/test.yaml
   - path: ../../identity/test.yaml
   - path: ../../serviceaccount/test.yaml

@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/temp-cronjob-role.yaml
+  - ../../../base/slack-provider/prod
 namespace: vh
 patches:
   - path: ../../identity/prod.yaml

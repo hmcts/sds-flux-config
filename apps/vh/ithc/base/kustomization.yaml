@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../../rbac/temp-cronjob-role.yaml
+  - ../../../base/slack-provider/ithc
 namespace: vh
 patches:
   - path: ../../identity/ithc.yaml

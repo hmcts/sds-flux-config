@@ -35,8 +35,8 @@ spec:
         name: "dev-in"
         objectName: "dev-in-mailrelay-platform-hmcts-net"
     volumeClaim:
-      storageClass: "managed-premium"
-      storageSize: 500Gi
+      storageClass: "managed"
+      storageSize: 64Gi
     global:
       environment: dev
       enableOutboundTls: true

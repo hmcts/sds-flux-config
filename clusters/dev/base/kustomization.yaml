@@ -22,7 +22,6 @@ resources:
   - ../../../apps/pre/base/kustomize.yaml
   - ../../../apps/juror/base/kustomize.yaml
   - ../../../apps/opal/base/kustomize.yaml
-  - ../../../apps/dc/base/kustomize.yaml
   - ../../../apps/pdda/base/kustomize.yaml
   - ../../../apps/pdm/base/kustomize.yaml
 patches:
@@ -32,4 +31,3 @@ patches:
       annotationSelector: hmcts.github.com/kustomize-defaults != disabled
   - path: ../../../apps/toffee/dev/base/kustomize.yaml
   - path: ../../../apps/admin/dev/base/kustomize.yaml
-  - path: ../../../apps/admin/traefik-crds-upgrade-v27.0.2/kustomize.yaml

@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../../base
   - ../../../base/workload-identity
+  - ../../../base/slack-provider/dev
 namespace: hmi
 patches:
   - path: ../../serviceaccount/stg.yaml

@@ -11,7 +11,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment-2
       app.kubernetes.io/name: mi-adf-shir-deployment-2
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-91ba39e-20240607154028 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-91ba39e-20241028151058 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     additionalEnv:
       AUTH_KEY_SECRET_NAME: mi-adf-auth-key-2
     keyVaultSecrets:

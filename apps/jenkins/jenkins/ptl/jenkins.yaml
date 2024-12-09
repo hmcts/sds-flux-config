@@ -55,9 +55,9 @@ spec:
                       - key: PTL_AKS_RESOURCE_GROUP
                         value: ss-ptl-00-rg
                       - key: STG_AKS_CLUSTER_NAME
-                        value: ss-stg-01-aks
+                        value: ss-stg-00-aks
                       - key: STG_AKS_RESOURCE_GROUP
-                        value: ss-stg-01-rg
+                        value: ss-stg-00-rg
                       - key: DEV_AKS_CLUSTER_NAME
                         value: ss-dev-01-aks
                       - key: DEV_AKS_RESOURCE_GROUP
@@ -235,6 +235,12 @@ spec:
                     name: Juror
                     recurse: true
                     title: Juror Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/master-reference-data-.*\/master
+                    name: MRD
+                    recurse: true
+                    title: Master and Reference Data Dashboard
           authentication: |
             jenkins:
               securityRealm:

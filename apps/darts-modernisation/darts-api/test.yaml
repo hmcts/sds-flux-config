@@ -15,5 +15,12 @@ spec:
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctstestextid.b2clogin.com/hmctstestextid.onmicrosoft.com
         APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
         ARM_URL: http://darts-stub-services.test.platform.hmcts.net
+        CASE_EXPIRY_DELETION_ENABLED: false
+        MANUAL_DELETION_ENABLED: false
+        EVENT_OBFUSCATION_ENABLED: false
+        DARTS_API_DB_POOL_SIZE: 200
+        PROCESS_E2E_ARM_RPO: false
+        MODERNISED_DARTS_START_DATE: '2024-10-01'
+        IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-b1e1840-20240731154522 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b757674-20241209121744 # {"$imagepolicy": "flux-system:darts-api"}

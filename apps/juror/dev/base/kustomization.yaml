@@ -7,6 +7,7 @@ resources:
   - ../../../azureserviceoperator-system/resources/flexibleserver-postgres.yaml
   - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
   - ../sops-secrets
+  - ../../../base/slack-provider/dev
 namespace: juror
 patches:
   - path: ../../serviceaccount/stg.yaml

@@ -7,7 +7,7 @@ spec:
   releaseName: vh-booking-queue-subscriber
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:prod-f1badce-202407041625 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber"}
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:demo-9841008-202412061006 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-demo"}
     function:
       triggers:
       - type: azure-servicebus
@@ -20,6 +20,6 @@ spec:
         idleReplicaCount: 1
         maxReplicaCount: 2
         minReplicaCount: 1
-  chart:
-    spec:
-      chart: ./stable/vh-booking-queue-subscriber/prod
+  # chart:
+  #   spec:
+  #     chart: ./stable/vh-booking-queue-subscriber/prod

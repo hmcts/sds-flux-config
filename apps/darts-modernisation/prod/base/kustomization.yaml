@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
+  - ../../../base/slack-provider/prod
 namespace: darts-modernisation
 patches:
   - path: ../../darts-api/prod.yaml
@@ -9,4 +10,3 @@ patches:
   - path: ../../darts-portal/prod.yaml
   - path: ../../darts-gateway/prod.yaml
   - path: ../../serviceaccount/prod.yaml
-  - path: ../../darts-migration/prod.yaml

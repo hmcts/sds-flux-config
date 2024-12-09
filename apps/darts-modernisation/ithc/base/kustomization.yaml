@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../darts-stub-services/darts-stub-services.yaml
+  - ../../../base/slack-provider/ithc
 namespace: darts-modernisation
 patches:
   - path: ../../darts-api/ithc.yaml

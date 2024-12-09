@@ -95,12 +95,12 @@ spec:
                         labels: "daily"
                         maxVirtualMachinesLimit: 10
                         usageMode: "NORMAL"
-                        SpotInstance: true
+                        SpotInstance: false
                         virtualMachineSize: "Standard_D4ds_v5"
                         imageReference:
                             galleryName: "hmcts"
                             galleryResourceGroup: "hmcts-image-gallery-rg"
                             gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                             galleryImageDefinition: "jenkins-ubuntu"
-                            galleryImageVersion: "1.4.169"
+                            galleryImageVersion: "1.4.206"
                         <<: *vm_template_values_anchor

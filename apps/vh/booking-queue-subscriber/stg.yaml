@@ -7,7 +7,7 @@ spec:
   releaseName: vh-booking-queue-subscriber
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-f1badce-202407311401 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-staging"}
+      image: sdshmctspublic.azurecr.io/vh/booking-queue-subscriber:staging-f399d5f-202411211102 # {"$imagepolicy": "flux-system:vh-booking-queue-subscriber-staging"}
       environment:
         VHSERVICES__BOOKINGSAPIURL: https://vh-bookings-api.staging.platform.hmcts.net/
         VHSERVICES__NOTIFICATIONAPIURL: https://vh-notification-api.staging.platform.hmcts.net/

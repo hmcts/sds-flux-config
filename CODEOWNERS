@@ -6,10 +6,6 @@ CODEOWNERS @hmcts/platform-operations
 apps/ @hmcts/platform-operations
 clusters/ @hmcts/platform-operations
 
-# Production applications
-## environment rules
-clusters/prod/ @hmcts/production-apps-approvals
-
 ## Platform rules
 
 apps/kube-system/ @hmcts/platform-operations
@@ -53,9 +49,6 @@ apps/darts-modernisation/ @hmcts/darts
 
 ### JUROR
 apps/juror/ @hmcts/juror
-
-### DATA CATALOGUE (DC)
-apps/dc/ @hmcts/data-catalogue-team
 
 ### OPAL
 apps/opal/ @hmcts/opal

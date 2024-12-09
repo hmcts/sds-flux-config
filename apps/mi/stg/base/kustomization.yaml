@@ -7,16 +7,12 @@ resources:
   - ../../../rbac/nonprod-role.yaml
   - ../../mi-sftp-server/mi-sftp-server.yaml
   - ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
+  - ../../../base/slack-provider/stg
 patches:
-  #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/stg.yaml
-  #overlays for mi-adf-shir
   - path: ../../mi-adf-shir/stg.yaml
-  #overlays for mi-adf-shir-2
   - path: ../../mi-adf-shir-2/stg.yaml
-  #overlays for mi-house-keeping-service
   - path: ../../mi-house-keeping-service/stg.yaml
-  #overlays for mi-sftp-server-secret-provider
   - path: ../../mi-sftp-server/stg-secret-provider-patch.yaml
     target:
       group: secrets-store.csi.x-k8s.io

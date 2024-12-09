@@ -2,53 +2,21 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: pre-api-cron-cleanup-live-events
+  namespace: pre
 spec:
   releaseName: pre-api-cron-cleanup-live-events
   values:
+    java:
+      enabled: false
     job:
+      enabled: true
       environment:
         TASK_NAME: CleanupLiveEvents
-        RUN_DB_MIGRATION_ON_STARTUP: false
-        APIM_ENABLED: true
-        APIM_URI: https://sds-api-mgmt.platform.hmcts.net
-        AZURE_MEDIA_SERVICES_ACCOUNT_NAME: "preams{{ .Values.global.environment }}"
-        AZURE_RESOURCE_GROUP: "pre-{{ .Values.global.environment }}"
-        AZURE_SUBSCRIPTION_ID: 5ca62022-6aa2-4cee-aaa7-e7536c8d566c
-        MEDIA_KIND_SUBSCRIPTION: "pre-mediakind-{{ .Values.global.environment }}"
-        AZURE_INGEST_SA: "preingestsa{{ .Values.global.environment }}"
-        PLATFORM_ENV_TAG: Production
-      image: sdshmctspublic.azurecr.io/pre/api:prod-da02cfb-20240801072253 # {"$imagepolicy": "flux-system:pre-api"}
-    keyVaults:
-      pre-hmctskv:
-        secrets:
-          - name: api-POSTGRES-HOST
-            alias: POSTGRES_HOST
-          - name: api-POSTGRES-PORT
-            alias: POSTGRES_PORT
-          - name: api-POSTGRES-DATABASE
-            alias: POSTGRES_DATABASE
-          - name: api-POSTGRES-PASS
-            alias: POSTGRES_PASSWORD
-          - name: api-POSTGRES-USER
-            alias: POSTGRES_USER
-          - name: AppInsightsInstrumentationKey
-            alias: APPINSIGHTS_INSTRUMENTATIONKEY
-          - name: apim-sub-smoketest-primary-key
-            alias: APIM_SUB_SMOKETEST_PRIMARY_KEY
-          - name: apim-sub-smoketest-secondary-key
-            alias: APIM_SUB_SMOKETEST_SECONDARY_KEY
-          - name: app-insights-connection-string
-          - name: pp-clientid
-            alias: AZ_AMS_CLIENT_ID
-          - name: client-secret
-            alias: AZ_AMS_CLIENT_SECRET
-          - name: api-MKIO-TOKEN
-            alias: MEDIA_KIND_TOKEN
-    schedule: 0 20 * * * # 8pm every day
   chart:
     spec:
-      chart: ./stable/pre-api-cron
+      chart: ./stable/pre-api
       sourceRef:
-        kind: HelmRepository
-        name: hmctspublic
+        kind: GitRepository
+        name: hmcts-charts
         namespace: flux-system
+      interval: 1m

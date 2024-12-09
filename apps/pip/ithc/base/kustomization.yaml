@@ -13,12 +13,12 @@ resources:
   - ../../refresh-views-cron/pip-refresh-views-cron.yaml
   - ../../data-management/pip-data-management.yaml
   - ../../frontend/pip-frontend.yaml
+  - ../../../base/slack-provider/ithc
 namespace: pip
 patches:
   - path: ../../identity/ithc.yaml
   - path: ../../serviceaccount/ithc.yaml
   - path: ../../account-management/ithc.yaml
-  - path: ../../channel-management/ithc.yaml
   - path: ../../data-management/ithc.yaml
   - path: ../../frontend/ithc.yaml
   - path: ../../publication-services/ithc.yaml

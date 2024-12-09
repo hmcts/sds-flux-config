@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/dev-role.yaml
+  - ../../../base/slack-provider/dev
 namespace: my-time
 patches:
   - path: ../../identity/dev.yaml

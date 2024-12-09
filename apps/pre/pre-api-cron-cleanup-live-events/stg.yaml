@@ -4,19 +4,13 @@ metadata:
   name: pre-api-cron-cleanup-live-events
   namespace: pre
 spec:
-  releaseName: pre-api-cron-cleanup-live-events
   values:
-    job:
-      suspend: false
-      disableActiveClusterCheck: true
-      schedule: "0 20 * * *"
-      environment:
-        AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamsstg
-        AZURE_RESOURCE_GROUP: pre-stg
-        AZURE_SUBSCRIPTION_ID: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
-        PLATFORM_ENV_TAG: Staging
     global:
       jobKind: CronJob
-      enableKeyVaults: true
-      tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
-      environment: staging
+    job:
+      schedule: "30 17 * * *" # 5:30 PM UTC
+      image: sdshmctspublic.azurecr.io/pre/api:prod-bcf4af4-20241205142032 # {"$imagepolicy": "flux-system:pre-api"}
+      environment:
+        AZURE_SUBSCRIPTION_ID: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
+        PLATFORM_ENV_TAG: Staging
+        MEDIA_SERVICE: MediaKind

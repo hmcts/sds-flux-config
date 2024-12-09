@@ -2,10 +2,17 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
+  - ../../pre-api-cron-cleanup-live-events/pre-api-cron-cleanup-live-events.yaml
+  - ../../pre-api-cron-cleanup-streaming-locators/pre-api-cron-cleanup-streaming-locators.yaml
+  - ../../pre-api-cron-close-pending-cases/pre-api-cron-close-pending-cases.yaml
   - ../../../rbac/nonprod-role.yaml
+  - ../../../base/slack-provider/stg
 namespace: pre
 patches:
   - path: ../../identity/stg.yaml
   - path: ../../pre-portal/stg.yaml
   - path: ../../pre-api/stg.yaml
+  - path: ../../pre-api-cron-cleanup-streaming-locators/stg.yaml
+  - path: ../../pre-api-cron-cleanup-live-events/stg.yaml
+  - path: ../../pre-api-cron-close-pending-cases/stg.yaml
   - path: ../../serviceaccount/stg.yaml

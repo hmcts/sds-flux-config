@@ -13,11 +13,11 @@ resources:
   - ../../refresh-views-cron/pip-refresh-views-cron.yaml
   - ../../data-management/pip-data-management.yaml
   - ../../frontend/pip-frontend.yaml
+  - ../../../base/slack-provider/test
 namespace: pip
 patches:
   - path: ../../identity/test.yaml
   - path: ../../account-management/test.yaml
-  - path: ../../channel-management/test.yaml
   - path: ../../data-management/test.yaml
   - path: ../../frontend/test.yaml
   - path: ../../publication-services/test.yaml
