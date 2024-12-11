@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: darts-ucf-test-harness
+  namespace: darts-modernisation
+spec:
+  releaseName: darts-ucf-test-harness
+  values:
+    java:
+      ingressHost: darts-ucf-test-harness.demo.platform.hmcts.net
+      environment:
+        DARTS_LOG_LEVEL: DEBUG
+        TEST_HARNESS_AUTOMATION_ENABLED: false
+        TEST_HARNESS_PROXY_URL: http://darts-proxy.demo.platform.hmcts.net/service

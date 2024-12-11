@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     java:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-581830b-20240826073812 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
+      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:prod-791d5d9-20241206074336 #{"$imagepolicy": "flux-system:toffee-recipe-backend"}
       ingressHost: toffee-recipe-backend.demo.platform.hmcts.net
       useWorkloadIdentity: true
       workloadClientID: ${WORKLOAD_IDENTITY_ID}

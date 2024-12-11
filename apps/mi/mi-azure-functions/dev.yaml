@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-86ca7ee-20240814213950 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-41b2b87-20241011093737 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     keyVaultSecrets:
       - encryption-publicKey
       - aramis-encryption-secret

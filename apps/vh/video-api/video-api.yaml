@@ -7,7 +7,16 @@ spec:
   releaseName: vh-video-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/vh/video-api:prod-882b87e-202408191242 # {"$imagepolicy": "flux-system:vh-video-api"}
+      autoscaling:
+        enabled: true
+        maxReplicas: 4
+        cpu:
+          enabled: true
+          averageUtilization: 75
+        memory:
+          enabled: true
+          averageUtilization: 75
+      image: sdshmctspublic.azurecr.io/vh/video-api:prod-311b74b-202411211329 # {"$imagepolicy": "flux-system:vh-video-api"}
       disableTraefikTls: true
   chart:
     spec:

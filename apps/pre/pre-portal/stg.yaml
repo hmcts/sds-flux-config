@@ -12,4 +12,9 @@ spec:
         PRE_API_URL: https://sds-api-mgmt.staging.platform.hmcts.net/pre-api
         PORTAL_URL: https://pre-portal.staging.platform.hmcts.net
         B2C_APP_CLIENT_ID: d20a7462-f222-46b8-a363-d2e30eb274eb
-        ENABLE_MK_WATCH_PAGE: true
+        USE_MK_ON_WATCH_PAGE: true
+        TRIGGER: init-1
+        TS_AND_CS_REDIRECT_ENABLED: true
+        ENABLE_CASE_STATE_COLUMN: true
+        DYNATRACE_JSTAG: https://js-cdn.dynatrace.com/jstag/17177a07246/bf24054dsx/9f9a4af51c7fab2c_complete.js
+        REMOVE_WITNESS_LAST_NAME: true

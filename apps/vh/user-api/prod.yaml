@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: vh-user-api.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/vh/user-api:prod-8254c61-202408191240 #{"$imagepolicy": "flux-system:vh-user-api"}
+      image: sdshmctspublic.azurecr.io/vh/user-api:prod-5fa2fb4-202411211317 #{"$imagepolicy": "flux-system:vh-user-api"}
   chart:
     spec:
       chart: ./stable/vh-user-api/prod
