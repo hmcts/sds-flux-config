@@ -22,6 +22,6 @@ spec:
         PROCESS_E2E_ARM_RPO: true
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-f89b6f9-20241212130548 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-d05dd5f-20241212134741 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
