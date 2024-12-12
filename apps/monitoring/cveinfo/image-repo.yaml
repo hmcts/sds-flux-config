@@ -1,6 +1,6 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
-  name: darts-migration-api
+  name: cveinfo
 spec:
-  image: sdshmctspublic.azurecr.io/darts/api
+  image: hmctspublic.azurecr.io/version-reporter-service/cveinfo

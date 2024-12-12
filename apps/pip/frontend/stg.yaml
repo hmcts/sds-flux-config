@@ -11,7 +11,6 @@ spec:
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.staging.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.staging.platform.hmcts.net
-        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.staging.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.staging.platform.hmcts.net
         AUTH_RETURN_URL: https://pip-frontend.staging.platform.hmcts.net/login/return
         MEDIA_VERIFICATION_RETURN_URL: https://pip-frontend.staging.platform.hmcts.net/media-verification/return
@@ -23,5 +22,4 @@ spec:
         B2C_URL: https://sign-in.pip-frontend.staging.platform.hmcts.net/pip-frontend.staging.platform.hmcts.net
         B2C_ADMIN_URL: https://staff.pip-frontend.staging.platform.hmcts.net/pip-frontend.staging.platform.hmcts.net
         CFT_IDAM_URL: https://idam-web-public.aat.platform.hmcts.net
-        ENABLE_CFT: true
         CRIME_IDAM_URL: https://login.prp.cjscp.org.uk

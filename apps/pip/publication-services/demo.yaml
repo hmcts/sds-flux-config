@@ -10,7 +10,6 @@ spec:
       ingressHost: pip-publication-services.demo.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
-        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.demo.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.demo.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.demo.platform.hmcts.net
         NOTIFY_LINK_SUBSCRIPTION_PAGE: https://pip-frontend.demo.platform.hmcts.net/subscription-management
@@ -23,3 +22,4 @@ spec:
         NOTIFY_LINK_START_PAGE: https://pip-frontend.demo.platform.hmcts.net
         ADMIN_DASHBOARD_LINK: https://pip-frontend.demo.platform.hmcts.net/admin-dashboard
         NOTIFY_CFT_SIGN_IN_LINK: https://pip-frontend.demo.platform.hmcts.net/cft-login
+        NOTIFY_CRIME_SIGN_IN_LINK: https://pip-frontend.demo.platform.hmcts.net/crime-login

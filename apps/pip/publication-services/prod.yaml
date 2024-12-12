@@ -11,7 +11,6 @@ spec:
       ingressHost: pip-publication-services.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
-        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
         NOTIFY_LINK_SUBSCRIPTION_PAGE: https://www.court-tribunal-hearings.service.gov.uk/subscription-management
@@ -24,3 +23,4 @@ spec:
         NOTIFY_LINK_START_PAGE: https://www.court-tribunal-hearings.service.gov.uk
         ADMIN_DASHBOARD_LINK: https://www.court-tribunal-hearings.service.gov.uk/admin-dashboard
         NOTIFY_CFT_SIGN_IN_LINK: https://www.court-tribunal-hearings.service.gov.uk/cft-login
+        NOTIFY_CRIME_SIGN_IN_LINK: https://www.court-tribunal-hearings.service.gov.uk/crime-login

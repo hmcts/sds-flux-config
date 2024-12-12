@@ -11,14 +11,12 @@ spec:
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
-        CHANNEL_MANAGEMENT_URL: https://pip-channel-management.test.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
         AUTH_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/login/return
         MEDIA_VERIFICATION_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/media-verification/return
         ADMIN_AUTH_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/login/admin/return
         FRONTEND_URL: https://pip-frontend.test.platform.hmcts.net
         CFT_IDAM_URL: https://idam-web-public.perftest.platform.hmcts.net
-        ENABLE_CFT: true
         CONFIG_ENDPOINT: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInUserFlow/v2.0/.well-known/openid-configuration
         CONFIG_ADMIN_ENDPOINT: https://staff.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInAdminUserFlow/v2.0/.well-known/openid-configuration
         MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration

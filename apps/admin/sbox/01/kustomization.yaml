@@ -5,3 +5,9 @@ resources:
 
 patches:
 - path: ../../traefik2/sbox/01-traefik2.yaml
+- path: ../../aad-pod-identity/sbox/azure-identity-auto-cluster-01.yaml
+  target:
+    group: aadpodidentity.k8s.io
+    kind: AzureIdentity
+    name: aks-pod-identity-mi
+    version: v1
