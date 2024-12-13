@@ -2,14 +2,31 @@ apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: juror-bureau
+  annotations:
+    hmcts.github.com/prod-automated: disabled
 spec:
+  filterTags:
+    extract: $ts
+    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'
   imageRepositoryRef:
     name: juror-bureau
+  policy:
+    alphabetical:
+      order: asc
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: juror-bureau-pr
+  annotations:
+    hmcts.github.com/prod-automated: disabled
 spec:
   imageRepositoryRef:
     name: juror-bureau
+  filterTags:
+    extract: $ts
+    pattern: '^pr-863-[a-f0-9]+-(?P<ts>[0-9]+)'
+  policy:
+    alphabetical:
+      order: asc
+
