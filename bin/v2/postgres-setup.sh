@@ -67,7 +67,7 @@ fi
   cat <<EOF
 apiVersion: v1
 data:
-    PASSWORD: $PASSWORD
+  PASSWORD: $PASSWORD
 kind: Secret
 metadata:
     creationTimestamp: null
@@ -91,6 +91,9 @@ sops --encrypt --azure-kv https://dtssharedservicesdevkv.vault.azure.net/keys/so
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - ../../../azureserviceoperator-system/resources/resource-group.yaml
+  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres.yaml
+  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
   - $APP_NAME-postgres.enc.yaml
 namespace: $NAMESPACE_NAME
 EOF
