@@ -16,14 +16,14 @@ spec:
   values:
     java:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/darts/api:prod-9b50c8c-20241217104524 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-4c78994-20241217163114 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
       cpuRequests: '2000m'
       cpuLimits: '3000m'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-9b50c8c-20241217104524 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-4c78994-20241217163114 # {"$imagepolicy": "flux-system:darts-api"}
       memoryRequests: '2G'
       memoryLimits: '3G'
     darts-portal:
