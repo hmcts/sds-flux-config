@@ -21,6 +21,7 @@ spec:
         EVENT_OBFUSCATION_ENABLED: true
         PROCESS_E2E_ARM_RPO: true
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
+        MODERNISED_DARTS_START_DATE: '2024-12-01'
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-9b50c8c-20241217104524 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
