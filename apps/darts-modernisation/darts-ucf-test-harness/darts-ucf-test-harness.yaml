@@ -15,6 +15,6 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/ucf-test-harness:prod-f4e9324-20241218094101 # {"$imagepolicy": "flux-system:darts-ucf-test-harness"}
+      image: sdshmctspublic.azurecr.io/darts/ucf-test-harness:prod-9f46c6b-20241218094859 # {"$imagepolicy": "flux-system:darts-ucf-test-harness"}
       disableTraefikTls: true
       replicas: 0
