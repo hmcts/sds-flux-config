@@ -10,7 +10,7 @@ spec:
     job:
       suspend: false
       disableActiveClusterCheck: true
-      schedule: "0 * * * *"
+      schedule: "0 * * 9 *"
       image: sdshmctspublic.azurecr.io/pre/api:prod-9f6ee13-20241217165656 # {"$imagepolicy": "flux-system:pre-api"}
     environment:
       AZURE_SUBSCRIPTION_ID: c68a4bed-4c3d-4956-af51-4ae164c1957c
