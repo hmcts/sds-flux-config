@@ -10,7 +10,7 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: flux-config
+    name: sds-flux-config
     namespace: flux-system
   patches:
     - patch: |-
