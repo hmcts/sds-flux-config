@@ -7,13 +7,13 @@ resources:
   # - ../../../apps/mi/base/kustomize.yaml
   - ../../../apps/hmi/base/kustomize.yaml
   - ../../../apps/monitoring/base/kustomize.yaml
-  - ../../../apps/admin/base/kustomize.yaml
+  # - ../../../apps/admin/base/kustomize.yaml
   - ../../../apps/kube-system/base/kustomize.yaml
   - ../../../apps/cronjob/base/kustomize.yaml
   # - ../../../apps/darts-modernisation/base/kustomize.yaml
   # - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/aspnet/base/kustomize.yaml
-  - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
+  # - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
   - ../../../apps/keda/base/kustomize.yaml
   # - ../../../apps/pre/base/kustomize.yaml
 patches:
