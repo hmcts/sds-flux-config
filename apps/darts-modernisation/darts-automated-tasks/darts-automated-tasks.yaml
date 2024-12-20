@@ -16,7 +16,7 @@ spec:
   values:
     java:
       ingressHost: darts-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/darts/api:prod-880f029-20241220105556 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-8d10cce-20241220115256 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
@@ -29,7 +29,7 @@ spec:
         NOTIFICATION_SCHEDULER_ENABLED: false
         NOTIFICATION_SCHEDULER_CRON: '-'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-880f029-20241220105556 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-8d10cce-20241220115256 # {"$imagepolicy": "flux-system:darts-api"}
       minReplicaCount: 0
       maxReplicaCount: 0
       # only poll every 24 hours, to prevent DB sessions
