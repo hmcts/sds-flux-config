@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+    PASSWORD: ENC[AES256_GCM,data:tEcGzzTxOWmDwgZKL6ioX4/zFyQ=,iv:Ip+94saZiJ5bgc7u2eIScP4cqGDMMaH0PyzUR2roW88=,tag:uNPfe7lGS/DI6g1YYQC5Fw==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: postgres
+    namespace: toffee
+type: Opaque
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssharedservicesdevkv.vault.azure.net
+          name: sops-key
+          version: 2beba064ddfe454482ad0133af2cf0fd
+          created_at: "2024-12-16T15:46:12Z"
+          enc: CU9QZMvK1rZA4xW3P3UV8a_raE2taarTgg5dJPqPkDvZ_CFVUhxc4h72pIvMWjSkS8eTexpcYrsAUNAMV-tnKNX3EgBrCh20G9VXntODQilizJF1hvojK5qNPgJgvMfWsFxqCsLinMG1z93B_AOKj8egxgEvyd_S1Za3hoCaia1DSFCnsT3EPwyT-0dWn_5K7aMdTbsF1QgntSIRq_eDFF126RhTn4tuW4-2rTJSf-_sujflPizddLg-zYiuxqYFC_c1jZYrp0o9npvPTRbExNCrV5ZlqtVqIVwBmYc6UKzx8UrkwyRpRsCEZfJzvb4IfFP9TANnPiu2b8F7NKhk-A
+    hc_vault: []
+    age: []
+    lastmodified: "2024-12-16T15:46:15Z"
+    mac: ENC[AES256_GCM,data:SnZE4IUogPyHT/ehVkvv105o/6PbT4jVB1dXVnCKmNt022arWvr7HHfU99sipeaN7A3bZmhRcge01K5XCYrOpd07rnkI7DWWE3S1kXLB2tK9qQML1f29tshd99xmCHn6PBqxcziksm26fbF/pc7GaCaOwceyyEtLpXXDOx/WKk8=,iv:RIVEVfyGgdZfGsMWUsp6g7V89Oe2gYBonIls/liZiUw=,tag:oP1DwrOyKdMUen20RAYqaw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.1
