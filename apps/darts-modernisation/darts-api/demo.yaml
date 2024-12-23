@@ -24,6 +24,6 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         RESET_POD: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-3ca1d22-20241223142208 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b08d452-20241223153746 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
