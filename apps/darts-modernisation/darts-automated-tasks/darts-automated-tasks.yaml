@@ -20,7 +20,7 @@ spec:
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
-      terminationGracePeriodSeconds: 120
+      terminationGracePeriodSeconds: 300
       environment:
         AUTOMATED_TASK_MODE: true
         API_MODE: false
