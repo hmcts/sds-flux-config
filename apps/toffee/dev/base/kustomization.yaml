@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - ../../../azureserviceoperator-system/resources/resource-group.yaml
   - ../../../azureserviceoperator-system/resources/flexibleserver-postgres.yaml
-  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
   - ../sops-secrets
   - ../../../base
   - ../../../base/workload-identity
