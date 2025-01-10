@@ -11,5 +11,6 @@ resources:
 namespace: toffee
 patches:
   - path: ../aso/toffee-postgres.yaml
+  - path: ../aso/toffee-postgres-config.yaml
   - path: ../../serviceaccount/stg.yaml
   - path: ../../identity/dev.yaml
