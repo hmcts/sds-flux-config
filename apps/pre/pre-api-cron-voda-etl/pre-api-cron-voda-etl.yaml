@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pre-api-cron-voda-etl
+  namespace: pre
+spec:
+  releaseName: pre-api-cron-voda-etl
+  values:
+    java:
+      enabled: false
+    job:
+      enabled: true
+      memoryRequests: '2048Mi'
+      memoryLimits: '2048Mi'
+      environment:
+        TASK_NAME: ClosePendingCases
+  chart:
+    spec:
+      chart: ./stable/pre-api
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
