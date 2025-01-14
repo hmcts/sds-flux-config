@@ -10,7 +10,6 @@ spec:
       ingressHost: toffee.sandbox.platform.hmcts.net
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.sandbox.platform.hmcts.net
-        TZ: CET-1CEST,M3.5.0,M10.5.0/3
       useWorkloadIdentity: true
       workloadClientID: ${WORKLOAD_IDENTITY_ID}
     global:
