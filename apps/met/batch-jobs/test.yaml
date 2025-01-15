@@ -7,7 +7,7 @@ spec:
   releaseName: libragob-batch-housekeeping
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-49fcce59-1736953499 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
+    image: hmctspublic.azurecr.io/libragob/housekeeping:prod-bb6625f4-1736955658 #{"$imagepolicy": "flux-system:libragob-batch-housekeeping"}
     schedule: "0 19 * * *"
     suspend: true
     keyVaults:
@@ -43,7 +43,7 @@ spec:
   releaseName: libragob-batch-ams-reporting
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-49fcce59-1736953498 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
+    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-bb6625f4-1736955660 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
     schedule: "*/15 * * * *"
     suspend: false
     keyVaults:
