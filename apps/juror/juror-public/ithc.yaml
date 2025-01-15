@@ -10,3 +10,9 @@ spec:
       # Uncomment and edit the line below to fix the environment at a specific image
       image: sdshmctspublic.azurecr.io/juror/public:pr-275-03d7436-20241217151441 # {"$imagepolicy": "flux-system:juror-public-pr"}
       ingressHost: juror-public.ithc.apps.hmcts.net
+      environment:
+        WEB_CHAT_UUID: script_883270561673716c67a77f8.98991531
+        WEB_CHAT_CHANNEL: JCSB Webchat
+        WEB_CHAT_CHANNEL_UUID: -gQ6XyBuR02jGgGRk_Mazw
+        WEB_CHAT_TENNANT: aG1jdHN4MTAx
+
