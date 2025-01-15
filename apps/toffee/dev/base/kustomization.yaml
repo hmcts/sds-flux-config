@@ -5,7 +5,12 @@ resources:
   - ../../../base/workload-identity
   - ../../identity/toffee-azure-identity.yaml
   - ../../identity/apple-azure-identity.yaml
+  - ../../../azureserviceoperator-system/resources/resource-group.yaml
+  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres.yaml
+  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
+  - ../sops-secrets
 namespace: toffee
 patches:
+  - path: ../aso/toffee-postgres.yaml
   - path: ../../serviceaccount/stg.yaml
   - path: ../../identity/dev.yaml
