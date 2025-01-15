@@ -109,6 +109,7 @@ patches:
 EOF
   ) >"apps/$NAMESPACE_NAME/dev/base/kustomization.yaml"
 else
+echo "Updating kustomization in dev/base"
 (
     cat <<EOF
   - ../../../azureserviceoperator-system/resources/resource-group.yaml\\
@@ -158,4 +159,5 @@ echo "Updated $KUSTOMIZATION_FILE with contents of $FILE_TO_PATCHES_INCLUDE"
 # deleting the temp file
 rm "./apps/$NAMESPACE_NAME/dev/base/kustomization_resources_temp.yaml"
 rm "./apps/$NAMESPACE_NAME/dev/base/kustomization_patches_temp.yaml"
+rm "./apps/$NAMESPACE_NAME/dev/base/kustomization.yaml.bak"
 fi
