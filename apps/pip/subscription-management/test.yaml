@@ -9,7 +9,6 @@ spec:
     java:
       replicas: 2
       ingressHost: pip-subscription-management.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/pip/subscription-management:pr-367-77f683a-20241206104252
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
