@@ -71,3 +71,5 @@ Note: You need to [install yq](https://mikefarah.gitbook.io/yq/) for these scrip
    ```bash
     ./bin/v2/aso-postgres-server.sh <your namespace> <app name>
    ```
+
+  Expected output of the script should look similar to this [PR](https://github.com/hmcts/sds-flux-config/pull/5953/files).
