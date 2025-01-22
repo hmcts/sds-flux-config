@@ -21,6 +21,8 @@ spec:
         UPDATES_FIXEDRATE_LOW_PRIORITY_IN_MILLISECONDS: 30000
         HIGH_PRIORITY_KEYS_PER_DAC: 1
         ALIAS_NAME: libra-onpremise-gob-gateway.staging.internal.hmcts.net
+        logging_level_root: INFO
+        LOGGING_LEVEL_ROOT: INFO
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
