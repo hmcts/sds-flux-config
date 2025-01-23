@@ -31,13 +31,10 @@ spec:
     kind: CronJob
     image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-9399484-20250121161242 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
-    resources:
-      requests:
-        cpu: 500m
-        memory: 1Gi
-      limits:
-        cpu: 500m
-        memory: 2Gi
+    job:
+      memoryRequests: 2Gi
+      cpuRequests: 500m
+      cpuLimits: '1000m'
     environment:
       CLUSTER_NAME: ss-ptl-00-aks
       MAX_BATCH_SIZE: 1000
