@@ -31,6 +31,9 @@ spec:
     kind: CronJob
     image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-9399484-20250121161242 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
+    memoryRequests: 2Gi
+    cpuRequests: 500m
+    cpuLimits: '1000m'
     job:
       memoryRequests: 2Gi
       cpuRequests: 500m
