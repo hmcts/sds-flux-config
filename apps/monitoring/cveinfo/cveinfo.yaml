@@ -37,24 +37,19 @@ spec:
     image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-f71830f-20250123121229 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
     environment:
-      CLUSTER_NAME: ss-ptl-00-aks
-      MAX_BATCH_SIZE: 1000
-      COSMOS_DB_URI: https://version-reporter-ptl-cosmos.documents.azure.com:443/
-      COSMOS_DB_NAME: reports
+      VAULT_NAME: version-reporter-ptl
       COSMOS_DB_CONTAINER: cveinfo
-    secrets:
-      COSMOS_KEY:
-        secretRef: version-reporter
-        key: cosmos_key
-      AZURE_TENANT_ID:
-        secretRef: version-reporter
-        key: tenant_id
-      AZURE_CLIENT_ID:
-        secretRef: version-reporter
-        key: client_id
-      AZURE_CLIENT_SECRET:
-        secretRef: version-reporter
-        key: client_secret
+      MAX_BATCH_SIZE: 1000
+    keyVaults:
+      version-reporter-ptl:
+        excludeEnvironmentSuffix: true
+        secrets:
+          - name: cosmos-key
+            alias: COSMOS_KEY
+          - name: cosmos-endpoint
+            alias: COSMOS_DB_URI
+          - name: cosmos-db-name
+            alias: COSMOS_DB_NAME
     nodeSelector:
       agentpool: cronjob
     tolerations:
