@@ -34,7 +34,7 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-f71830f-20250123121229 #{"$imagepolicy": "flux-system:cveinfo"}
+    image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-9d54129-20250128095559 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
     environment:
       VAULT_NAME: version-reporter-ptl
