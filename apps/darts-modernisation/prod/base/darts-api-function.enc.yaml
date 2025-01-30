@@ -1,21 +1,21 @@
 apiVersion: v1
 data:
-    DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:kBxVnFniyOVpRl6chl6bDup2fDMzjIIJtPTI6pD5hx6aMaP+7IgPlJ87eShhhJp7//qNBnUSEAPkdjcrzgDgngZ8oXfOx8bokGgo5SL4HkEPo/RLp7uAMVAN4pUefGynMffErdUBt+uNFekuoGNOdGtjs6dYw2bQq2VjrV7LJNATNI0nbgYYiB1QE+aT72mpyWMjbe2TK3ebQvmJTpzJ1aGzWPLcKWY2TtkKEf9LKov7u1ksqqvYIMow3ULvfEE8Ar1n5TmOXS0BpJ3+3gvkrDf9mNGgu5rpFYWFjz0MFFyL84qu8uB/g8Xlg90B40OFpLMPNQf+7flLROljmUyXXM73aSsWQjlpFjjuvfeXaNhyCSZaO7l3SGIzGMtkWXVskUL1ZHnn/N3fmOqUB8Z4Q2RSmBm4XUGloOBh2h8bruXFOBOagdmb9AUAddtPKiKeYjNbkmzkaFJYGarlIpUuIobbqt74sYNBNx3FqD8CZMgEAdH0iaT11aw8G0A8swRo,iv:ZDDxj0kwjGqSXePxcWYX/dzcM5xFR0UNqk85fGyq2fc=,tag:IuCMGk+MCIQ9O58/RG4fJg==,type:str]
+  DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:kBxVnFniyOVpRl6chl6bDup2fDMzjIIJtPTI6pD5hx6aMaP+7IgPlJ87eShhhJp7//qNBnUSEAPkdjcrzgDgngZ8oXfOx8bokGgo5SL4HkEPo/RLp7uAMVAN4pUefGynMffErdUBt+uNFekuoGNOdGtjs6dYw2bQq2VjrV7LJNATNI0nbgYYiB1QE+aT72mpyWMjbe2TK3ebQvmJTpzJ1aGzWPLcKWY2TtkKEf9LKov7u1ksqqvYIMow3ULvfEE8Ar1n5TmOXS0BpJ3+3gvkrDf9mNGgu5rpFYWFjz0MFFyL84qu8uB/g8Xlg90B40OFpLMPNQf+7flLROljmUyXXM73aSsWQjlpFjjuvfeXaNhyCSZaO7l3SGIzGMtkWXVskUL1ZHnn/N3fmOqUB8Z4Q2RSmBm4XUGloOBh2h8bruXFOBOagdmb9AUAddtPKiKeYjNbkmzkaFJYGarlIpUuIobbqt74sYNBNx3FqD8CZMgEAdH0iaT11aw8G0A8swRo,iv:ZDDxj0kwjGqSXePxcWYX/dzcM5xFR0UNqk85fGyq2fc=,tag:IuCMGk+MCIQ9O58/RG4fJg==,type:str]
 kind: Secret
 metadata:
-    creationTimestamp: null
-    name: darts-api-function-values
-    namespace: darts-modernisation
+  creationTimestamp: null
+  name: darts-api-function-values
+  namespace: darts-modernisation
 type: Opaque
 sops:
     kms: []
     gcp_kms: []
     azure_kv:
-        - vault_url: https://dtssharedservicesprodkv.vault.azure.net
-          name: sops-key
-          version: 883d8b431ad345d09b2697c3aaae2a0c
-          created_at: "2025-01-30T16:26:44Z"
-          enc: CD2AOBziwAZumtryb2JBn7W09O7UGYIxtf-N4ef_K7ImjBNKNfNjFbCZU-oldyS7JvrCr9-WP1k7QqOORZfG8ykwhivJsmwmViOL9DO2H8yYh5GJkwjaSu5KYXa49LQJJs0g3XxHNAwgFEG9kcdbIsKX4N4zLOmNFnHgDPU3nDtwlYk_vDibcFluTJRBDm30zT9kJYiYW9X1mSiXP2lY_TEu3j5aQJ5Jd6NAbd96x7X78rUJPSXKOC2SF9AhbAcRs74k2hbY1z2GhSGL7amicqJE8UPjEWXELlpW_UqPTarYCBjoTmFl_LaHOOVvVeBJPCUAVGdcXjm6jMfReA_f9g
+      - vault_url: https://dtssharedservicesprodkv.vault.azure.net
+        name: sops-key
+        version: 883d8b431ad345d09b2697c3aaae2a0c
+        created_at: "2025-01-30T16:26:44Z"
+        enc: CD2AOBziwAZumtryb2JBn7W09O7UGYIxtf-N4ef_K7ImjBNKNfNjFbCZU-oldyS7JvrCr9-WP1k7QqOORZfG8ykwhivJsmwmViOL9DO2H8yYh5GJkwjaSu5KYXa49LQJJs0g3XxHNAwgFEG9kcdbIsKX4N4zLOmNFnHgDPU3nDtwlYk_vDibcFluTJRBDm30zT9kJYiYW9X1mSiXP2lY_TEu3j5aQJ5Jd6NAbd96x7X78rUJPSXKOC2SF9AhbAcRs74k2hbY1z2GhSGL7amicqJE8UPjEWXELlpW_UqPTarYCBjoTmFl_LaHOOVvVeBJPCUAVGdcXjm6jMfReA_f9g
     hc_vault: []
     age: []
     lastmodified: "2025-01-30T16:26:45Z"
