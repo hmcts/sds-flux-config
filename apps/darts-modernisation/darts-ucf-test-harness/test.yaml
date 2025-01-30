@@ -7,7 +7,7 @@ spec:
   releaseName: darts-ucf-test-harness
   values:
     java:
-      replicas: 10
+      replicas: 0
       ingressHost: darts-ucf-test-harness.test.platform.hmcts.net
       environment:
         DARTS_LOG_LEVEL: DEBUG
