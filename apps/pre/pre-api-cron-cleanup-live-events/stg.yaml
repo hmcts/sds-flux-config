@@ -8,9 +8,8 @@ spec:
     global:
       jobKind: CronJob
     job:
-      # schedule: "0 19 * * *" # 7:00 PM UTC
-      schedule: "15 15 * * *" # 15:15 PM UTC - Testing changes temporarily
-      image: sdshmctspublic.azurecr.io/pre/api:prod-23e738c-20250130121231 # {"$imagepolicy": "flux-system:pre-api"}
+      schedule: "0 19 * * *" # 7:00 PM UTC
+      image: sdshmctspublic.azurecr.io/pre/api:prod-5ca2b03-20250130163448 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         AZURE_SUBSCRIPTION_ID: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
         PLATFORM_ENV_TAG: Staging
