@@ -9,7 +9,7 @@ spec:
       jobKind: CronJob
     job:
       schedule: "0 * * * *"
-      image: sdshmctspublic.azurecr.io/pre/api:prod-ab1837e-20250131094955 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-5644bb7-20250203091733 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Test
