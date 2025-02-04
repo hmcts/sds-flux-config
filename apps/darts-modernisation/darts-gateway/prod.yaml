@@ -8,8 +8,10 @@ spec:
   values:
     java:
       ingressHost: darts-gateway.platform.hmcts.net
+      additionalIngressHosts: ["darts-proxy.platform.hmcts.net"]
       environment:
         DARTS_API_URL: https://darts-api.platform.hmcts.net
+        FEIGN_LOG_LEVEL: full
         DARTS_LOG_LEVEL: INFO
         DARTS_SOAP_REQUEST_LOG_LEVEL: TRACE
         DAR_NOTIFY_ENABLED: true
