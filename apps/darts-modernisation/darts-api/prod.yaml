@@ -12,6 +12,7 @@ spec:
         DARTS_GATEWAY_URL: http://darts-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
         DARTS_LOG_LEVEL: INFO
+        FEIGN_LOG_LEVEL: full
         RESTART_ME: '007'
         ARM_PROPERTY_FILE_ENVIRONMENT: live
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsprodextid.b2clogin.com
