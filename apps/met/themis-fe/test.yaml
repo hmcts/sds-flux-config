@@ -6,6 +6,10 @@ metadata:
   namespace: met
 spec:
   values:
+    volumes:
+      - name: tz-config
+        hostPath:
+          path: /usr/share/zoneinfo/Europe/Paris
     nodejs:
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.19.0'
@@ -20,10 +24,6 @@ spec:
       volumeMounts:
         - name: tz-config
           mountPath: /etc/localtime
-      volumes:
-        - name: tz-config
-          hostPath:
-            path: /usr/share/zoneinfo/Europe/Paris
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
