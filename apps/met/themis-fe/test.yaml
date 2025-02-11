@@ -9,7 +9,6 @@ spec:
     nodejs:
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.19.0'
-      TZ: CET-1CEST,M3.5.0,M10.5.0/3
       replicas: 1
       autoscaling:
         enabled: false
@@ -18,6 +17,9 @@ spec:
         LOG4J_DEBUG: true
         TEMP_VAR: 0
         DAC_NUMBER_OF_INSTANCES: 3
+      volumeMounts:
+        - name: tz-config
+          mountPath: /etc/localtime
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
@@ -42,3 +44,7 @@ spec:
             - confiscation-datasource-username
             - confiscation-datasource-url
             - servicebus-connectionstring
+    volumes:
+      - name: tz-config
+        hostPath:
+          path: /usr/share/zoneinfo/Europe/Paris
