@@ -37,9 +37,10 @@ spec:
     image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-9d54129-20250128095559 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
     environment:
-      VAULT_NAME: version-reporter-ptl
-      COSMOS_DB_CONTAINER: cveinfo
       MAX_BATCH_SIZE: 1000
+      COSMOS_DB_URI: https://version-reporter-ptl-cosmos.documents.azure.com:443/
+      COSMOS_DB_NAME: reports
+      COSMOS_DB_CONTAINER: cveinfo
     secrets:
       COSMOS_KEY:
         secretRef: version-reporter
