@@ -20,6 +20,10 @@ spec:
       volumeMounts:
         - name: tz-config
           mountPath: /etc/localtime
+      volumes:
+        - name: tz-config
+          hostPath:
+            path: /usr/share/zoneinfo/Europe/Paris
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
@@ -44,7 +48,3 @@ spec:
             - confiscation-datasource-username
             - confiscation-datasource-url
             - servicebus-connectionstring
-    volumes:
-      - name: tz-config
-        hostPath:
-          path: /usr/share/zoneinfo/Europe/Paris
