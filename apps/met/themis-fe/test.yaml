@@ -14,7 +14,7 @@ spec:
     volumeMounts:
       - name: tz-config
         mountPath: /etc/localtime
-        subPath: localtime 
+        subPath: localtime
     nodejs:
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.19.0'
