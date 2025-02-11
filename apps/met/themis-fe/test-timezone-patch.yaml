@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: met-themis-fe-nodejs
+  namespace: met
+spec:
+  template:
+    spec:
+      containers:
+        - name: met-themis-fe-nodejs
+          volumeMounts:
+            - name: tz-config
+              mountPath: /etc/localtime
+              subPath: localtime
+      volumes:
+        - name: tz-config
+          configMap:
+            name: timezone-config
+            defaultMode: 0644
+            items:
+              - key: localtime
+                path: localtime
