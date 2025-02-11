@@ -18,8 +18,8 @@ spec:
         TEMP_VAR: 0
         DAC_NUMBER_OF_INSTANCES: 3
       volumeMounts:
-      - name: tz-config
-        mountPath: /etc/localtime
+        - name: tz-config
+          mountPath: /etc/localtime
       keyVaults:
         libragob-test-kv:
           excludeEnvironmentSuffix: true
@@ -45,6 +45,6 @@ spec:
             - confiscation-datasource-url
             - servicebus-connectionstring
     volumes:
-    - name: tz-config
-      hostPath:
-        path: /usr/share/zoneinfo/Europe/Paris
+      - name: tz-config
+        hostPath:
+          path: /usr/share/zoneinfo/Europe/Paris
