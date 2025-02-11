@@ -6,7 +6,6 @@ resources:
   - ../../batch-jobs/batch-jobs.yaml
   - ../../pod-delete-cron/pod-delete-cron-rbac.yaml
   - ../../pod-delete-cron/pod-delete-cron.yaml
-  - ../../themis-fe/timezone-paris.yaml
 namespace: met
 patches:
   - path: ../../identity/test.yaml
