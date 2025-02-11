@@ -12,11 +12,15 @@ spec:
           configMap:
             name: timezone-config
             defaultMode: 0644
+            items:
+              - key: localtime
+                path: localtime
       volumeMounts:
         - name: tz-config
           mountPath: /etc/localtime
-      ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
-      image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.19.0'
+          subPath: localtime
+      ingressHost: "cloudgobgateway.test.platform.hmcts.net"
+      image: "sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.19.0"
       replicas: 1
       autoscaling:
         enabled: false
