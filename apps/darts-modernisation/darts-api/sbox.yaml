@@ -13,3 +13,11 @@ spec:
         DARTS_PORTAL_URL: https://darts.sandbox.apps.hmcts.net
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
+  chart:
+    spec:
+      chart: ./
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: chart-function-test
+      interval: 1m

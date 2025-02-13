@@ -7,7 +7,7 @@ spec:
   interval: 5m
   url: ssh://github.com/hmcts/chart-function
   ref:
-    branch: DTSPO-13833-testing-azure-devops-image
+    tag: 2.6.0-alpha
   secretRef:
     name: git-credentials
   ignore: |
