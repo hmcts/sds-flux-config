@@ -12,7 +12,6 @@ spec:
       ingressHost: pip-account-management.staging.platform.hmcts.net
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.staging.platform.hmcts.net
-        SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.staging.platform.hmcts.net
         MAX_SYSTEM_ADMIN_ACCOUNTS: 20
         ENABLE_TESTING_SUPPORT_API: true
         MANAGED_IDENTITY_CLIENT_ID: 8d0ead51-3b31-44df-a78e-ada4eea9fe87
