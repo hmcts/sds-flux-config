@@ -11,6 +11,6 @@ spec:
       suspend: false
       disableActiveClusterCheck: true
       schedule: "0 * * * *"
-      image: sdshmctspublic.azurecr.io/pre/api:prod-c840d26-20250217140619 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-384f56d-20250217150505 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
