@@ -5,9 +5,3 @@ metadata:
 spec:
   imageRepositoryRef:
     name: darts-api
-  filterTags:
-    extract: $ts
-    pattern: '^pr-2568-[a-f0-9]+-(?P<ts>[0-9]+)'
-  policy:
-    alphabetical:
-      order: asc
