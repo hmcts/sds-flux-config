@@ -4,9 +4,7 @@ metadata:
   name: vh
   namespace: flux-system
 spec:
-  path: ./apps/vh/${ENVIRONMENT}/base
+  path: ./apps/vh/dev/base
   postBuild:
     substitute:
-      NAMESPACE: "vh"
-      TEAM_NOTIFICATION_CHANNEL: "${ENV_MONITOR_CHANNEL}"
-      WI_NAME: vh
+      WI_ENVIRONMENT: "dev"
