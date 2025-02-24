@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 10m
   dependsOn:
-    - name: ./apps/dynatrace/dynatrace-crds-upgrade
+    - name: dynatrace-crds
   path: ./apps/dynatrace/${ENVIRONMENT}/${CLUSTER}
   postBuild:
     substitute:
