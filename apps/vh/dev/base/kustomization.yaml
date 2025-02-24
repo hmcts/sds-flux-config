@@ -16,4 +16,19 @@ patches:
   - path: ../../scheduler-jobs/dev.yaml
   - path: ../../video-web/dev.yaml
   - path: ../../booking-queue-subscriber/dev.yaml
-  - path: ../../serviceaccount/stg.yaml
+  - path: ../../serviceaccount/dev.yaml
+  - path: ../../serviceaccount/wi-federated-credential-devpatch.yaml
+    target:
+      name: vh-dev-mi
+    options:
+      allowNameChange: true
+  - path: ../../serviceaccount/wi-rg-devpatch.yaml
+    target:
+      name: managed-identities-dev-mi
+    options:
+      allowNameChange: true
+  - path: ../../serviceaccount/wi-ua-identity-devpatch.yaml
+    target:
+      name: vh-dev-mi
+    options:
+      allowNameChange: true
