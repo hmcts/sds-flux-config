@@ -1,0 +1,7 @@
+apiVersion: resources.azure.com/v1api20200601
+kind: ResourceGroup
+metadata:
+  name: managed-identities-${WI_ENVIRONMENT}-rg
+  namespace: ${NAMESPACE}
+spec:
+  azureName: managed-identities-dev-mi
