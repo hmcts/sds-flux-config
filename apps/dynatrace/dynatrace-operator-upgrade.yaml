@@ -11,3 +11,5 @@ spec:
       chart: dynatrace-operator
       # update the CRDs in dynatrace-crds when changing this value
       version: 1.4.1
+        install:
+      disableWait: false
