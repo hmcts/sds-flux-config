@@ -16,7 +16,8 @@ spec:
         AMS_AZURE_MEDIA_SERVICES: https://preamsprod-ukso1.streaming.media.azure.net
         AMS_AZURE_MEDIA_SERVICES_KEY_DELIVERY: https://preamsprod.keydelivery.uksouth.media.azure.net
         USE_MK_ON_WATCH_PAGE: true
-        TS_AND_CS_REDIRECT_ENABLED: false
-        ENABLE_CASE_STATE_COLUMN: false
+        TS_AND_CS_REDIRECT_ENABLED: true
+        ENABLE_CASE_STATE_COLUMN: true
+        REMOVE_WITNESS_LAST_NAME: true
         DYNATRACE_JSTAG: https://js-cdn.dynatrace.com/jstag/17177a07246/bf00910jpo/2cb36dc17097f85_complete.js
         TRIGGER: init-3
