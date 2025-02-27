@@ -7,6 +7,7 @@ spec:
   releaseName: darts-api
   values:
     java:
+      replicas: 0
       ingressHost: darts-api.staging.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
@@ -23,6 +24,6 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
         MODERNISED_DARTS_START_DATE: '2024-12-01'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-570d01f-20250226150312 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-b508278-20250227143726 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
