@@ -10,7 +10,7 @@ spec:
       ingressHost: pdda-public-display-data-aggregator.staging.platform.hmcts.net
       environment:
         # Change this value from 1 to 0 and vice versa to trigger a restart of the application.
-        TRIGGER_RESTART: 1
+        TRIGGER_RESTART: 0
         LOGGING_LEVEL_UK_GOV_HMCTS_PDDA: DEBUG
         LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: DEBUG
         LOGGING_LEVEL_COM_ZAXXER_HIKARI: DEBUG
