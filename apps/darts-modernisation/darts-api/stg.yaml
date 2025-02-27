@@ -7,7 +7,6 @@ spec:
   releaseName: darts-api
   values:
     java:
-      replicas: 0
       ingressHost: darts-api.staging.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
