@@ -7,7 +7,7 @@ spec:
   releaseName: opal-frontend-test
   chart:
     spec:
-      chart: ./stable/opal-frontend-test
+      chart: ./stable/opal-frontend
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/opal/frontend:prod-4d4d9dc-20250225121607 # {"$imagepolicy": "flux-system:opal-frontend"}
+      image: sdshmctspublic.azurecr.io/opal/frontend:prod-4d4d9dc-20250225121607 # {"$imagepolicy": "flux-system:opal-frontend-test"}
       disableTraefikTls: true
