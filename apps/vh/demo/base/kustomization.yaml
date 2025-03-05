@@ -4,7 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/dev-role.yaml
   - ../../../base/slack-provider/demo
-   - ../../../base/workload-identity
+  - ../../../base/workload-identity
 namespace: vh
 patches:
   - path: ../../identity/demo.yaml
