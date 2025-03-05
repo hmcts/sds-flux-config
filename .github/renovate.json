@@ -3,11 +3,5 @@
   "extends": [
     "local>hmcts/.github:renovate-config",
     "local>hmcts/.github//renovate/flux"
-  ],
-  "packageRules": [
-    {
-      "matchPaths": ["apps/jenkins/jenkins/jenkins-controller-version.yaml"],
-      "enabled": false
-    }
   ]
 }
