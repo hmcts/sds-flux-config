@@ -23,6 +23,6 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
         MODERNISED_DARTS_START_DATE: '2024-12-01'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-e41ff41-20250305121320 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-941d614-20250305133158 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
