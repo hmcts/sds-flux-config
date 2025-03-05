@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pre-api-cron-check-for-locators-and-events
+  namespace: pre
+spec:
+  values:
+    global:
+      jobKind: CronJob
+    job:
+      schedule: "0 0 * * 1,3,5" # At 12:00 AM, only on Monday, Wednesday, and Friday
+      image: sdshmctspublic.azurecr.io/pre/api:prod-49d8e64-20250305102448 # {"$imagepolicy": "flux-system:pre-api"}
+      environment:
+        PLATFORM_ENV_TAG: Production
