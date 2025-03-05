@@ -4,7 +4,7 @@ resources:
   - ../../base
   - ../../base/gotk-components.yaml
   - git-credentials.enc.yaml
-  - ../workload-identity
+  - ../../workload-identity
 patches:
   - path: ../../serviceaccount/sbox.yaml
   - path: ../../base/patches/workload-identity-deployment.yaml
