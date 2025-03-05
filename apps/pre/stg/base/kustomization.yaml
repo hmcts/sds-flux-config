@@ -5,6 +5,7 @@ resources:
   - ../../pre-api-cron-cleanup-live-events/pre-api-cron-cleanup-live-events.yaml
   - ../../pre-api-cron-cleanup-streaming-locators/pre-api-cron-cleanup-streaming-locators.yaml
   - ../../pre-api-cron-close-pending-cases/pre-api-cron-close-pending-cases.yaml
+  - ../../pre-api-cron-check-for-locators-and-events/pre-api-cron-check-for-locators-and-events.yaml
   - ../../../rbac/nonprod-role.yaml
   - ../../../base/slack-provider/stg
 namespace: pre
