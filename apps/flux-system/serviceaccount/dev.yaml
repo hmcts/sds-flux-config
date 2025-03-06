@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kustomize-controller
+  namespace: flux-system
+  annotations:
+    azure.workload.identity/client-id: "74dacd4f-a248-45bb-a2f0-af700dc4cf68"
+  labels:
+    azure.workload.identity/use: "true"
