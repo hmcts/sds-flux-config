@@ -4,8 +4,9 @@ resources:
   - ../../base
   - ../../base/gotk-components.yaml
   - git-credentials.enc.yaml
-  - ../../workload-identity
-  - aso-controller-settings-patch.yaml
+  #- ../../workload-identity
+  #- aso-controller-settings-patch.yaml
 patches:
-  - path: ../../serviceaccount/dev.yaml
-  - path: ../../base/patches/workload-identity-deployment.yaml
+  #- path: ../../serviceaccount/dev.yaml
+  #- path: ../../base/patches/workload-identity-deployment.yaml
+  - path: ../../base/patches/kustomize-controller-patch.yaml
