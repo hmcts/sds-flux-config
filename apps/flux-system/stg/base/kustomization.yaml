@@ -4,7 +4,8 @@ resources:
   - ../../base
   - ../../base/gotk-components.yaml
   - git-credentials.enc.yaml
-  - ../../workload-identity
+  #- ../../workload-identity
 patches:
-  - path: ../../serviceaccount/stg.yaml
-  - path: ../../base/patches/workload-identity-deployment.yaml
+  #- path: ../../serviceaccount/stg.yaml
+  #- path: ../../base/patches/workload-identity-deployment.yaml
+  - path: ../../base/patches/kustomize-controller-patch.yaml
