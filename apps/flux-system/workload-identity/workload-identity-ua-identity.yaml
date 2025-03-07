@@ -1,7 +1,7 @@
 apiVersion: managedidentity.azure.com/v1api20181130
 kind: UserAssignedIdentity
 metadata:
-  name: aks-${ENVIRONMENT}-mi
+  name: aks-${WI_ENVIRONMENT}-mi
   namespace: flux-system
   annotations:
     serviceoperator.azure.com/reconcile-policy: skip
