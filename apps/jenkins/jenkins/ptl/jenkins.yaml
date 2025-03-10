@@ -241,6 +241,12 @@ spec:
                     name: MRD
                     recurse: true
                     title: Master and Reference Data Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/(list-assist-e2e-tests)\/master
+                    name: List Assist
+                    recurse: true
+                    title: List Assist dashboard
           authentication: |
             jenkins:
               securityRealm:

@@ -9,8 +9,9 @@ spec:
     java:
       ingressHost: darts-gateway.test.platform.hmcts.net
       environment:
-        DARTS_LOG_LEVEL: TRACE
-        DAR_NOTIFY_ENABLED: true
+        DARTS_LOG_LEVEL: INFO
+        DARTS_SOAP_REQUEST_LOG_LEVEL: TRACE
+        DAR_NOTIFY_ENABLED: false
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctstestextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctstestextid.b2clogin.com/hmctstestextid.onmicrosoft.com
         ACTIVE_DIRECTORY_B2C_ON_MICROSOFT_URI: https://hmctstestextid.onmicrosoft.com

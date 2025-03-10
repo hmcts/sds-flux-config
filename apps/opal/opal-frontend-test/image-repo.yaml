@@ -1,6 +1,6 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
-  name: vh-test-api
+  name: opal-frontend-test
 spec:
-  image: sdshmctspublic.azurecr.io/vh/test-api
+  image: sdshmctspublic.azurecr.io/opal/frontend

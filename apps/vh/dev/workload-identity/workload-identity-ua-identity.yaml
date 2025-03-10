@@ -1,0 +1,11 @@
+apiVersion: managedidentity.azure.com/v1api20181130
+kind: UserAssignedIdentity
+metadata:
+  name: vh-${ENVIRONMENT}-mi
+  namespace: vh
+  annotations:
+    serviceoperator.azure.com/reconcile-policy: skip
+spec:
+  location: uksouth
+  owner:
+    name: managed-identities-${ENVIRONMENT}-rg
