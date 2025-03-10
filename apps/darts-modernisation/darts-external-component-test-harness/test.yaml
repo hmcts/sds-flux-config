@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: darts-external-component-test-harness
+  namespace: darts-modernisation
+spec:
+  releaseName: darts-external-component-test-harness
+  values:
+    java:
+      replicas: 0
+      ingressHost: darts-external-component-test-harness.test.platform.hmcts.net
+      environment:
+        DARTS_LOG_LEVEL: DEBUG
+        TEST_HARNESS_AUTOMATION_ENABLED: true
+        TEST_HARNESS_AUTOMATION_TRANSFER_FORMAT: MTOM
+        TEST_HARNESS_PROXY_URL: http://darts-gateway.test.platform.hmcts.net/service
+        TEST_HARNESS_AUTOMATION_MIN_START_UP_DELAY_MS: 0
+        TEST_HARNESS_AUTOMATION_MAX_START_UP_DELAY_MS: 300000
+        TEST_HARNESS_AUTOMATION_ENABLE_START_UP_DELAY: true
+        TEST_HARNESS_AUTOMATION_ENABLE_DELAY_BETWEEN_ITERATIONS: false
+        TEST_HARNESS_AUTOMATION_DELAY_BETWEEN_ITERATIONS_MS: 2000
