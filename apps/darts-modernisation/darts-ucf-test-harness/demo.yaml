@@ -8,6 +8,7 @@ spec:
   values:
     java:
       ingressHost: darts-ucf-test-harness.demo.platform.hmcts.net
+      replicas: 1
       environment:
         DARTS_LOG_LEVEL: DEBUG
         TEST_HARNESS_AUTOMATION_ENABLED: false

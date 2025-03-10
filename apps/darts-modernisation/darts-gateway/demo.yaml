@@ -8,6 +8,7 @@ spec:
   values:
     java:
       ingressHost: darts-gateway.demo.platform.hmcts.net
+      additionalIngressHosts: ["darts-proxy.demo.platform.hmcts.net"]
       environment:
         DARTS_LOG_LEVEL: INFO
         DARTS_SOAP_REQUEST_LOG_LEVEL: TRACE
@@ -17,3 +18,4 @@ spec:
         ACTIVE_DIRECTORY_B2C_ON_MICROSOFT_URI: https://hmctsstgextid.onmicrosoft.com
         RESTART_ME: true
         APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
+        FORCE_CHECKSUM_FAILURE: false

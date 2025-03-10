@@ -8,6 +8,7 @@ spec:
   values:
     java:
       replicas: 2
+      image: sdshmctspublic.azurecr.io/pip/account-management:pr-480-2d6fd7e-20250205171659
       ingressHost: pip-account-management.staging.platform.hmcts.net
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.staging.platform.hmcts.net

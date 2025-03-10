@@ -18,10 +18,15 @@ spec:
       interval: 1m
   interval: 5m
   values:
+    resources:
     global:
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     schedule: "0 */4 * * 1-5" # Every 4 hours, week days
     concurrencyPolicy: "Forbid"
+    memoryRequests: "2Gi"
+    cpuRequests: "500m"
+    memoryLimits: "3Gi"
+    cpuLimits: "1000m"
     failedJobsHistoryLimit: 5
     startingDeadlineSeconds: 300
     successfulJobsHistoryLimit: 5
@@ -29,17 +34,9 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-af4d6df-20241122173040 #{"$imagepolicy": "flux-system:cveinfo"}
+    image: hmctspublic.azurecr.io/version-reporter-service/cveinfo:prod-14bc3d0-20250212110414 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
-    resources:
-      requests:
-        cpu: 500m
-        memory: 1Gi
-      limits:
-        cpu: 500m
-        memory: 2Gi
     environment:
-      CLUSTER_NAME: ss-ptl-00-aks
       MAX_BATCH_SIZE: 1000
       COSMOS_DB_URI: https://version-reporter-ptl-cosmos.documents.azure.com:443/
       COSMOS_DB_NAME: reports

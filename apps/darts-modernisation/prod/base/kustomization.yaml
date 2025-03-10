@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../base/slack-provider/prod
+  - ./darts-api-function.enc.yaml
 namespace: darts-modernisation
 patches:
   - path: ../../darts-api/prod.yaml
