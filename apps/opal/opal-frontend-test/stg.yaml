@@ -8,8 +8,17 @@ spec:
   values:
     nodejs:
       ingressHost: opal-frontend-test.staging.platform.hmcts.net
+      keyVaults:
+        opal:
+          secrets:
+            - app-insights-connection-string
+            - redis-connection-string
+            - opal-frontend-csrf-secret
+            - launch-darkly-client-id
       environment:
         DUMMY_VAR: 0
         FRONTEND_HOSTNAME: https://opal-frontend-test.staging.platform.hmcts.net
         OPAL_API_URL: https://opal-fines-service.staging.platform.hmcts.net
         OPAL_FINES_SERVICE_API_URL: https://opal-fines-service.staging.platform.hmcts.net
+        FRONTEND_SESSION_SECRET: 1234567890
+        FRONTEND_COOKIE_SECRET: 0987654321
