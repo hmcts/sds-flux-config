@@ -7,7 +7,7 @@ spec:
   releaseName: darts-external-component-test-harness
   values:
     java:
-      replicas: 120
+      replicas: 80
       ingressHost: darts-external-component-test-harness.test.platform.hmcts.net
       environment:
         DARTS_LOG_LEVEL: DEBUG
