@@ -6,7 +6,7 @@ resources:
 - ../../base/image-update-automation.yaml
 - git-credentials.enc.yaml
 - ../../automation
-        # Add this if you are using aad pod identity with managed identity
+- ../../workload-identity
 patches:
 - patch: |-
     - op: add
@@ -23,4 +23,5 @@ patches:
     namespace: flux-system
     version: v1
 - path: ../../base/patches/image-automation-components-patch.yaml
-- path: ../../base/patches/kustomize-controller-patch.yaml
+- path: ../../base/patches/workload-identity-deployment.yaml
+- paths: ../../serviceaccount/ptl.yaml
