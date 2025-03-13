@@ -20,3 +20,5 @@ spec:
         EVENT_OBFUSCATION_ENABLED: true
         PROCESS_E2E_ARM_RPO: false
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
+        AZCOPY_LOG_LEVEL: "--log-level=ERROR"
+        AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
