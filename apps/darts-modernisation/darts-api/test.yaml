@@ -23,5 +23,7 @@ spec:
         PROCESS_E2E_ARM_RPO: false
         MODERNISED_DARTS_START_DATE: '2024-10-01'
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
+        AZCOPY_LOG_LEVEL: "--log-level=ERROR"
+        AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-f425cd1-20250312152114 # {"$imagepolicy": "flux-system:darts-api"}
