@@ -11,8 +11,6 @@ resources:
   - ../../vh/automation
   - ../../dts-legacy/automation
   - ../../my-time/automation
-  - aks-kubelet-binding.yaml
-  - aks-kubelet-identity.yaml
   - ../../darts-modernisation/automation
   - ../../jenkins/automation
   - ../../monitoring/automation
@@ -21,7 +19,10 @@ resources:
   - ../../opal/automation
   - ../../met/automation
   - ../../pdda/automation
+  - workload-identity-automation
 patches:
+  - path: ../serviceaccount/ptl-automation.yaml
+  - path: ../base/patches/workload-identity-deployment-automation.yaml
   - path: sdshmctspublic-image-repo.yaml
     target:
       kind: ImageRepository
