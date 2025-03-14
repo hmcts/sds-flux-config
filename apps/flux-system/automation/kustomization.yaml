@@ -19,10 +19,7 @@ resources:
   - ../../opal/automation
   - ../../met/automation
   - ../../pdda/automation
-  - workload-identity-automation
 patches:
-  - path: ../serviceaccount/ptl-automation.yaml
-  - path: ../base/patches/workload-identity-deployment-automation.yaml
   - path: sdshmctspublic-image-repo.yaml
     target:
       kind: ImageRepository

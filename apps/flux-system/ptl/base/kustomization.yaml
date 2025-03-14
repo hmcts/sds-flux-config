@@ -7,7 +7,10 @@ resources:
 - git-credentials.enc.yaml
 - ../../automation
 - ../../workload-identity
+- ../../automation/workload-identity-automation
 patches:
 - path: ../../base/patches/image-automation-components-patch.yaml
 - path: ../../base/patches/workload-identity-deployment.yaml
 - path: ../../serviceaccount/ptl.yaml
+- path: ../../serviceaccount/ptl-automation.yaml
+- path: ../../base/patches/workload-identity-deployment-automation.yaml
