@@ -8,8 +8,6 @@ spec:
   values:
     java:
       ingressHost: pre-api.test.platform.hmcts.net
-      memoryRequests: '3Gi'
-      memoryLimits: '3Gi'
       environment:
         AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamstest
         AZURE_RESOURCE_GROUP: pre-test
@@ -17,4 +15,3 @@ spec:
         PLATFORM_ENV_TAG: Testing
         MEDIA_SERVICE: MediaKind
         ENABLE_STREAMING_LOCATOR_ON_START: false
-        VAR_TA: Trigger-1
