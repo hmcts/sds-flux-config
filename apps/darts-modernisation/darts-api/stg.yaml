@@ -25,6 +25,6 @@ spec:
         AZCOPY_LOG_LEVEL: "--log-level=INFO"
         AZCOPY_OUTPUT_LEVEL: "--output-level=default"
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-b334758-20250317105026 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-c308406-20250317113107 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
