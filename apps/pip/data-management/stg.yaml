@@ -7,7 +7,6 @@ spec:
   values:
     java:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/pip/data-management:pr-684-dbcf0d1-20250205164124
       ingressHost: pip-data-management.staging.platform.hmcts.net
       environment:
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.staging.platform.hmcts.net
