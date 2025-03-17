@@ -8,7 +8,6 @@ spec:
   values:
     java:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-480-5b12f63-20250204181530
       ingressHost: pip-publication-services.staging.platform.hmcts.net
       environment:
         NOTIFY_LINK_SUBSCRIPTION_PAGE: https://pip-frontend.staging.platform.hmcts.net/subscription-management
