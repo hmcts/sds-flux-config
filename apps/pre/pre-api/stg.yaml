@@ -8,6 +8,8 @@ spec:
   values:
     java:
       ingressHost: pre-api.staging.platform.hmcts.net
+      memoryRequests: '3Gi'
+      memoryLimits: '3Gi'
       environment:
         AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamsstg
         AZURE_RESOURCE_GROUP: pre-stg
@@ -18,3 +20,4 @@ spec:
         MEDIA_SERVICE: MediaKind
         ENABLE_NEW_EMAIL_SERVICE: true
         ENABLE_STREAMING_LOCATOR_ON_START: true
+        VAR_TA: Trigger-1
