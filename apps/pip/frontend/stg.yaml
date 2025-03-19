@@ -15,8 +15,6 @@ spec:
           secrets:
             - name: session-key
               alias: SESSION_SECRET
-            - name: session-key-v2
-              alias: SESSION_SECRET_V2
             - name: auto-pip-stg-pip-frontend-stg-id
               alias: CLIENT_ID
             - name: auto-pip-stg-pip-frontend-stg-pwd
@@ -53,6 +51,18 @@ spec:
               alias: B2C_URL
             - name: cft-idam-client-secret
               alias: CFT_IDAM_CLIENT_SECRET
+            - name: sso-client-id
+              alias: SSO_CLIENT_ID
+            - name: sso-client-secret
+              alias: SSO_CLIENT_SECRET
+            - name: sso-config-endpoint
+              alias: SSO_CONFIG_ENDPOINT
+            - name: sso-sg-admin-ctsc
+              alias: SSO_SG_ADMIN_CTSC
+            - name: sso-sg-admin-local
+              alias: SSO_SG_ADMIN_LOCAL
+            - name: sso-sg-system-admin
+              alias: SSO_SG_SYSTEM_ADMIN
             - name: crime-idam-client-id
               alias: CRIME_IDAM_CLIENT_ID
             - name: crime-idam-client-secret
