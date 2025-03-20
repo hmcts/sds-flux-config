@@ -9,7 +9,7 @@ spec:
     nodejs:
       ingressHost: 'cloudgobgateway.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.19.0'
-      replicas: 10
+      replicas: 0
       autoscaling:
         enabled: false
       environment:
