@@ -6,16 +6,20 @@ spec:
   interval: 10m
   releaseName: vh-scheduler-jobs
   values:
-    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:prod-cac51a5-202411211318 #{"$imagepolicy": "flux-system:vh-scheduler-jobs"}
-  chart:
-    spec:
-      chart: ./stable/vh-scheduler-jobs/non-prod
-      sourceRef:
-        kind: GitRepository
-        name: hmcts-charts
-        namespace: flux-system
-      interval: 5m
-  install:
-    disableWait: true
-  upgrade:
-    disableWait: true
+    job:
+      environment:
+        TASK_NAME: VHSchedulerJobs
+      useInterpodAntiAffinity: true
+      image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:prod-cac51a5-202411211318 #{"$imagepolicy": "flux-system:vh-scheduler-jobs"}
+    chart:
+      spec:
+        chart: ./stable/vh-scheduler-jobs/non-prod
+        sourceRef:
+          kind: GitRepository
+          name: hmcts-charts
+          namespace: flux-system
+        interval: 5m
+    install:
+      disableWait: true
+    upgrade:
+      disableWait: true
