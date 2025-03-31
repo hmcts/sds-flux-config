@@ -247,6 +247,12 @@ spec:
                     name: List Assist
                     recurse: true
                     title: List Assist dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/sct-resource-management.*\/master
+                    name: SCT Resource Management
+                    recurse: true
+                    title: SCT Resource Management Dashboard
           authentication: |
             jenkins:
               securityRealm:
