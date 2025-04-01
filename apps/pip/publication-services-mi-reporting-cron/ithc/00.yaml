@@ -6,7 +6,8 @@ spec:
   releaseName: pip-publication-services-mi-reporting-cron
   values:
     job:
-      schedule: "01 08 * * *"
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:pr-192-08f4447-20250401103445
+      schedule: "10 15 * * *"
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.ithc.platform.hmcts.net
         TRIGGER_TYPE: MI_DATA_REPORTING
