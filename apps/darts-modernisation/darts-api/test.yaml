@@ -27,3 +27,5 @@ spec:
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-16fc757-20250403153647 # {"$imagepolicy": "flux-system:darts-api"}
+      job:
+        activeDeadlineSeconds: 7200
