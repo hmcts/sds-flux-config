@@ -201,7 +201,7 @@ spec:
                     title: DTS Legacy Apps
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS.*\/darts.*\/master
+                      ^(?!HMCTS-Nightly\/darts-automation\/master$)HMCTS.*\/darts.*\/master
                     name: DARTS Modernisation
                     recurse: true
                     title: DARTS Modernisastion
