@@ -1,7 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ../base
+  - ../base
+  - ../../../apps/flux-system/sbox/01
 
 patches:
-- path: ../../../apps/flux-system/sbox/01/kustomize.yaml
+  - path: ../../../apps/flux-system/sbox/01/kustomize.yaml
