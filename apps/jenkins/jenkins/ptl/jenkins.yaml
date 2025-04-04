@@ -201,18 +201,6 @@ spec:
                     title: DTS Legacy Apps
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS.*\/darts.*\/master
-                    name: DARTS-Modernisation
-                    recurse: true
-                    title: DARTS Modernisastion
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/darts-shared.*\/master
-                    name: Darts Shared Infrastructure
-                    recurse: true
-                    title: Darts Shared Infrastructure
-                - buildMonitor:
-                    includeRegex: >-
                       ^HMCTS.*\/opal.*\/master
                     name: Opal
                     recurse: true
