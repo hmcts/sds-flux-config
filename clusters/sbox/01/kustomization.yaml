@@ -6,3 +6,7 @@ resources:
 
 patches:
   - path: ../../../apps/flux-system/sbox/01/kustomize.yaml
+  - path: ../../../apps/base/kustomize.yaml
+    target:
+      kind: Kustomization
+      annotationSelector: hmcts.github.com/kustomize-defaults != disabled
