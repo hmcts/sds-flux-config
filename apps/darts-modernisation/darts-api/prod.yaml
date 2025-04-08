@@ -13,7 +13,7 @@ spec:
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
         DARTS_LOG_LEVEL: INFO
         FEIGN_LOG_LEVEL: full
-        RESTART_ME: '007'
+        RESTART_ME: '008'
         ARM_PROPERTY_FILE_ENVIRONMENT: live
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsprodextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsprodextid.b2clogin.com/hmctsprodextid.onmicrosoft.com
@@ -28,7 +28,6 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
-        RESTART_ME: "true"
       pdb:
         enabled: false
     function:
