@@ -43,7 +43,7 @@ spec:
   releaseName: libragob-batch-ams-reporting
   values:
     kind: CronJob
-    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-e79a184a-1744094178 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
+    image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-b685ad43-1744107487 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
     schedule: "*/15 * * * *"
     suspend: false
     keyVaults:
