@@ -26,6 +26,6 @@ spec:
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-83da300-20250409081937 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-65273d3-20250409100408 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
