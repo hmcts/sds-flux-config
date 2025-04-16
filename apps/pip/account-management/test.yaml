@@ -18,7 +18,7 @@ spec:
       keyVaults:
         pip-ss-kv:
           excludeEnvironmentSuffix: false
-          resourceGroup: pip-ss-{{ .Values.global.environment }}-rg
+          resourceGroup: pip-ss-test-rg
           secrets:
             - name: auto-pip-test-pip-account-management-test-id
               alias: CLIENT_ID_B2C
