@@ -6,6 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1429-af376e3-20250414145224
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
       keyVaults:
