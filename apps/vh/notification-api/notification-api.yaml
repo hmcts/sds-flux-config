@@ -16,7 +16,7 @@ spec:
         memory:
           enabled: true
           averageUtilization: 75
-      image: sdshmctspublic.azurecr.io/vh/notification-api:prod-db33c04-202409041315 #{"$imagepolicy": "flux-system:vh-notification-api"}
+      image: sdshmctspublic.azurecr.io/vh/notification-api:prod-5b44625-202411211320 #{"$imagepolicy": "flux-system:vh-notification-api"}
       disableTraefikTls: true
   chart:
     spec:

@@ -7,7 +7,7 @@ spec:
   releaseName: mi-house-keeping-service-job
   values:
     kind: CronJob
-    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-16875e5-20240627115638 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
+    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-1a3b28c-20250326130602 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
     schedule: "45 * * * *"
     global:
       subscriptionId: "a8140a9e-f1b0-481f-a4de-09e2ee23f7ab"

@@ -16,7 +16,7 @@ spec:
         memory:
           enabled: true
           averageUtilization: 75
-      image: sdshmctspublic.azurecr.io/vh/bookings-api:prod-54a4fb0-202409041309 #{"$imagepolicy": "flux-system:vh-bookings-api"}
+      image: sdshmctspublic.azurecr.io/vh/bookings-api:prod-91df8f4-202411211321 #{"$imagepolicy": "flux-system:vh-bookings-api"}
       disableTraefikTls: true
   chart:
     spec:

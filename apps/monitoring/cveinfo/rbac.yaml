@@ -1,0 +1,38 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cveinfo-clusterrolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cveinfo-clusterrole
+subjects:
+  - kind: ServiceAccount
+    name: cveinfo-sa
+    namespace: monitoring
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cveinfo-clusterrole
+rules:
+  - apiGroups: ['']
+    resources: ['namespaces']
+    verbs: ['list', 'get']
+  - apiGroups: ['source.toolkit.fluxcd.io']
+    resources: ['helmcharts']
+    verbs: ['list', 'get']
+  - apiGroups: ['source.toolkit.fluxcd.io']
+    resources: ['helmrepositories']
+    verbs: ['list', 'get']
+  - apiGroups: ['']
+    resources: ['secrets']
+    verbs: ['list', 'get']
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cveinfo-sa
+  namespace: monitoring

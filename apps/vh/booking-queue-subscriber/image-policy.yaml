@@ -1,4 +1,4 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: vh-booking-queue-subscriber-dev
@@ -14,7 +14,7 @@ spec:
     alphabetical:
       order: asc
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: vh-booking-queue-subscriber-test
@@ -30,7 +30,7 @@ spec:
     alphabetical:
       order: asc
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: vh-booking-queue-subscriber-staging
@@ -46,7 +46,7 @@ spec:
     alphabetical:
       order: asc
 ---
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
   name: vh-booking-queue-subscriber
@@ -56,6 +56,22 @@ spec:
   filterTags:
     extract: $ts
     pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'
+  imageRepositoryRef:
+    name: vh-booking-queue-subscriber
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: vh-booking-queue-subscriber-demo
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+spec:
+  filterTags:
+    extract: $ts
+    pattern: '^demo-[a-f0-9]+-(?P<ts>[0-9]+)'
   imageRepositoryRef:
     name: vh-booking-queue-subscriber
   policy:

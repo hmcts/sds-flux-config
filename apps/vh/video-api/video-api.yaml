@@ -16,7 +16,7 @@ spec:
         memory:
           enabled: true
           averageUtilization: 75
-      image: sdshmctspublic.azurecr.io/vh/video-api:prod-ff4cf73-202409041311 # {"$imagepolicy": "flux-system:vh-video-api"}
+      image: sdshmctspublic.azurecr.io/vh/video-api:prod-311b74b-202411211329 # {"$imagepolicy": "flux-system:vh-video-api"}
       disableTraefikTls: true
   chart:
     spec:
