@@ -8,48 +8,6 @@ spec:
   values:
     java:
       ingressHost: pip-account-management.ithc.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/pip/account-management:pr-481-080da91-20250401101032
-      keyVaults:
-        pip-ss-kv:
-          excludeEnvironmentSuffix: false
-          resourceGroup: pip-ss-ithc-rg
-          secrets:
-            - name: auto-pip-ithc-pip-account-management-ithc-id
-              alias: CLIENT_ID_B2C
-            - name: auto-pip-ithc-pip-account-management-ithc-pwd
-              alias: CLIENT_SECRET_B2C
-            - name: b2c-tenant-id
-              alias: TENANT_GUID_B2C
-            - name: b2c-extension-app-id
-              alias: EXTENSION_ID
-            - name: shared-storageaccount-name
-              alias: STORAGE_ACCOUNT_NAME
-            - name: account-management-POSTGRES-DATABASE
-              alias: DB_NAME
-            - name: account-management-POSTGRES-PASS
-              alias: DB_PASS
-            - name: account-management-POSTGRES-PORT
-              alias: DB_PORT
-            - name: account-management-POSTGRES-USER
-              alias: DB_USER
-            - name: account-management-POSTGRES-HOST
-              alias: DB_HOST
-            - name: app-pip-account-management-id
-              alias: CLIENT_ID
-            - name: app-pip-account-management-pwd
-              alias: CLIENT_SECRET
-            - name: app-tenant-id
-              alias: TENANT_ID
-            - name: app-pip-account-management-scope
-              alias: APP_URI
-            - name: app-pip-publication-services-scope
-              alias: PUBLICATION_SERVICES_AZ_API
-            - name: auto-pip-ithc-courtel-api
-              alias: COURTEL_API
-            - name: b2c-ad-url
-              alias: IDENTITY_ISSUER
-            - name: app-insights-java-connection-string
-              alias: APP_INSIGHTS_CONNECTION_STRING
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.ithc.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.ithc.platform.hmcts.net
