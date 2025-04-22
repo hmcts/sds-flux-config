@@ -2,11 +2,10 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: vh-scheduler-jobs
+  namespace: flux-system
 spec:
   interval: 10m
   releaseName: vh-scheduler-jobs
-  values:
-    image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:prod-cac51a5-202411211318 #{"$imagepolicy": "flux-system:vh-scheduler-jobs"}
   chart:
     spec:
       chart: ./stable/vh-scheduler-jobs/non-prod
@@ -15,6 +14,12 @@ spec:
         name: hmcts-charts
         namespace: flux-system
       interval: 5m
+  values:
+    job:
+      environment:
+        TASK_NAME: VHSchedulerJobs
+      useInterpodAntiAffinity: true
+      image: sdshmctspublic.azurecr.io/vh/scheduler-jobs-sds:prod-cac51a5-202411211318 #{"$imagepolicy": "flux-system:vh-scheduler-jobs"}
   install:
     disableWait: true
   upgrade:

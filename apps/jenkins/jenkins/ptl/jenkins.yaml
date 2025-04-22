@@ -202,15 +202,9 @@ spec:
                 - buildMonitor:
                     includeRegex: >-
                       ^HMCTS.*\/darts.*\/master
-                    name: DARTS-Modernisation
+                    name: DARTS Modernisation
                     recurse: true
                     title: DARTS Modernisastion
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/darts-shared.*\/master
-                    name: Darts Shared Infrastructure
-                    recurse: true
-                    title: Darts Shared Infrastructure
                 - buildMonitor:
                     includeRegex: >-
                       ^HMCTS.*\/opal.*\/master
@@ -247,6 +241,12 @@ spec:
                     name: List Assist
                     recurse: true
                     title: List Assist dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/sct-resource-management.*\/master
+                    name: SCT Resource Management
+                    recurse: true
+                    title: SCT Resource Management Dashboard
           authentication: |
             jenkins:
               securityRealm:

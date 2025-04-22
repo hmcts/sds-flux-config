@@ -13,7 +13,7 @@ spec:
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
         DARTS_LOG_LEVEL: INFO
         FEIGN_LOG_LEVEL: full
-        RESTART_ME: '007'
+        RESTART_ME: '008'
         ARM_PROPERTY_FILE_ENVIRONMENT: live
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsprodextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsprodextid.b2clogin.com/hmctsprodextid.onmicrosoft.com
@@ -26,9 +26,11 @@ spec:
         PROCESS_E2E_ARM_RPO: true
         ARM_RPO_DURATION: 24h
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
+        AZCOPY_LOG_LEVEL: "--log-level=ERROR"
+        AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
       pdb:
         enabled: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-397367f-20250305112808 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-4b4efe0-20250417082551 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk

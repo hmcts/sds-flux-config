@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: image-reflector-controller
+  namespace: flux-system
+  annotations:
+    azure.workload.identity/client-id: "471db0c1-4f2a-4ae7-957c-b881d4c61c88"
+  labels:
+    azure.workload.identity/use: "true"

@@ -14,3 +14,5 @@ spec:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
         PROCESS_E2E_ARM_RPO: true
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
+        AZCOPY_LOG_LEVEL: "--log-level=INFO"
+        AZCOPY_OUTPUT_LEVEL: "--output-level=default"

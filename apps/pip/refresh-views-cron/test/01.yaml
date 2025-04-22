@@ -6,7 +6,8 @@ spec:
   releaseName: pip-refresh-views-cron
   values:
     job:
-      schedule: "0 8 * * 1,3,5"
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:pr-192-9df4529-20250414103358
+      schedule: "50 14 * * 1,3,5"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
