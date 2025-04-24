@@ -8,51 +8,9 @@ spec:
   values:
     java:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/pip/account-management:pr-490-2f2308c-20250416134721
       ingressHost: pip-account-management.test.platform.hmcts.net
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.test.platform.hmcts.net
         SUBSCRIPTION_MANAGEMENT_URL: https://pip-subscription-management.test.platform.hmcts.net
         ENABLE_TESTING_SUPPORT_API: true
         MANAGED_IDENTITY_CLIENT_ID: 0e0c8682-a038-4aa8-9619-bb88a7ba9357
-      keyVaults:
-        pip-ss-kv:
-          excludeEnvironmentSuffix: false
-          resourceGroup: pip-ss-test-rg
-          secrets:
-            - name: auto-pip-test-pip-account-management-test-id
-              alias: CLIENT_ID_B2C
-            - name: auto-pip-test-pip-account-management-test-pwd
-              alias: CLIENT_SECRET_B2C
-            - name: b2c-tenant-id
-              alias: TENANT_GUID_B2C
-            - name: b2c-extension-app-id
-              alias: EXTENSION_ID
-            - name: shared-storageaccount-name
-              alias: STORAGE_ACCOUNT_NAME
-            - name: account-management-POSTGRES-DATABASE
-              alias: DB_NAME
-            - name: account-management-POSTGRES-PASS
-              alias: DB_PASS
-            - name: account-management-POSTGRES-PORT
-              alias: DB_PORT
-            - name: account-management-POSTGRES-USER
-              alias: DB_USER
-            - name: account-management-POSTGRES-HOST
-              alias: DB_HOST
-            - name: app-pip-account-management-id
-              alias: CLIENT_ID
-            - name: app-pip-account-management-pwd
-              alias: CLIENT_SECRET
-            - name: app-tenant-id
-              alias: TENANT_ID
-            - name: app-pip-account-management-scope
-              alias: APP_URI
-            - name: app-pip-publication-services-scope
-              alias: PUBLICATION_SERVICES_AZ_API
-            - name: auto-pip-test-courtel-api
-              alias: COURTEL_API
-            - name: b2c-ad-url
-              alias: IDENTITY_ISSUER
-            - name: app-insights-java-connection-string
-              alias: APP_INSIGHTS_CONNECTION_STRING
