@@ -26,4 +26,5 @@ spec:
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-fccfe08-20250424113506 # {"$imagepolicy": "flux-system:darts-api"}
+      job:
+        activeDeadlineSeconds: 7200
