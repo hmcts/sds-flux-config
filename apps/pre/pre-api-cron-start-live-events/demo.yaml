@@ -9,9 +9,8 @@ spec:
       jobKind: CronJob
     job:
       suspend: false
-      disableActiveClusterCheck: true
-      schedule: "0 7 1-31/2 * *" # 7 am, every odd day
-      image: sdshmctspublic.azurecr.io/pre/api:prod-754bda4-20250409135910 # {"$imagepolicy": "flux-system:pre-api"}
+      schedule: "0 6 * * *" # 7 am, every day
+      image: sdshmctspublic.azurecr.io/pre/api:prod-2d501da-20250425132045 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         AZURE_SUBSCRIPTION_ID: c68a4bed-4c3d-4956-af51-4ae164c1957c
         PLATFORM_ENV_TAG: Demo
