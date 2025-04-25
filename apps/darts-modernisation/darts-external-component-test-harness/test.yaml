@@ -10,7 +10,7 @@ spec:
       replicas: 10
       ingressHost: darts-external-component-test-harness.test.platform.hmcts.net
       environment:
-        DARTS_LOG_LEVEL: DEBUG
+        DARTS_LOG_LEVEL: INFO
         TEST_HARNESS_AUTOMATION_ENABLED: true
         TEST_HARNESS_AUTOMATION_TRANSFER_FORMAT: MTOM
         TEST_HARNESS_PROXY_URL: http://darts-gateway.test.platform.hmcts.net/service
