@@ -18,13 +18,12 @@ spec:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
         CASE_EXPIRY_DELETION_ENABLED: true
         MANUAL_DELETION_ENABLED: true
-        EVENT_OBFUSCATION_ENABLED: true
         PROCESS_E2E_ARM_RPO: true
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
         MODERNISED_DARTS_START_DATE: '2024-12-01'
         AZCOPY_LOG_LEVEL: "--log-level=INFO"
         AZCOPY_OUTPUT_LEVEL: "--output-level=default"
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-fbc478d-20250425125939 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-59e2cb6-20250425134437 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
