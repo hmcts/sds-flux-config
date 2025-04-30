@@ -23,6 +23,8 @@ spec:
       cpuRequests: '2000m'
       cpuLimits: '3000m'
     function:
+      job:
+        activeDeadlineSeconds: 7200
       image: sdshmctspublic.azurecr.io/darts/api:prod-0ccdd64-20250425162004 # {"$imagepolicy": "flux-system:darts-api"}
       memoryRequests: '2G'
       memoryLimits: '3G'
