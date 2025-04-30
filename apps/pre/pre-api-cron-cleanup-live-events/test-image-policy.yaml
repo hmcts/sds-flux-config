@@ -1,12 +1,12 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
-  name: test-pre-api-cron-start-live-events
+  name: test-pre-api-cron-cleanup-live-events
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
   filterTags:
-    pattern: '^pr-920-[a-f0-9]+-(?P<ts>[0-9]+)'
+    pattern: '^pr-921-[a-f0-9]+-(?P<ts>[0-9]+)'
     extract: '$ts'
   policy:
     alphabetical:

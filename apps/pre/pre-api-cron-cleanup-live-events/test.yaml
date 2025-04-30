@@ -9,7 +9,7 @@ spec:
       jobKind: CronJob
     job:
       schedule: "15 15 * * *" # 15:15 PM UTC
-      image: sdshmctspublic.azurecr.io/pre/api:prod-2d501da-20250425132045 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:pr-921-9dc0127-20250430125058 # {"$imagepolicy": "flux-system:test-pre-api-cron-cleanup-live-events"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Test
