@@ -6,7 +6,7 @@ spec:
   releaseName: pip-refresh-views-cron
   values:
     job:
-      schedule: "0 2 * * 0,2,4,6"
+      schedule: "40 14 * * 0,2,4,6"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
