@@ -15,7 +15,7 @@ metadata:
   namespace: met
 subjects:
   - kind: ServiceAccount
-    name: met
+    name: pod-delete-service-account
 roleRef:
   kind: Role
   name: libragob-pod-delete-role
