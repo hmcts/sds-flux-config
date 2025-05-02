@@ -9,7 +9,7 @@ spec:
   interval: 5m
   values:
     schedule: "*/5 * * * *"
-    suspend: false
+    suspend: true
     args:
       - delete
       - pod
