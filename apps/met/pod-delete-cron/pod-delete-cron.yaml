@@ -11,6 +11,7 @@ spec:
     schedule: "50 22 * * *"
     suspend: true
     disableActiveClusterCheck: true
+    saEnabled: false
     customServiceAccountName: pod-delete-service-account
     command:
       - kubectl
