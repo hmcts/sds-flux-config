@@ -8,5 +8,9 @@ spec:
   releaseName: libragob-pod-delete-nightly
   interval: 5m
   values:
-    schedule: "45 10 * * *"
+    schedule: "*/5 * * * *"
     suspend: false
+    args:
+      - delete
+      - pod
+      - -l app=ajb-example-nginx
