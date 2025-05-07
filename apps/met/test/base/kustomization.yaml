@@ -6,6 +6,7 @@ resources:
   - ../../batch-jobs/batch-jobs.yaml
   - ../../pod-delete-cron/pod-delete-cron-rbac.yaml
   - ../../pod-delete-cron/pod-delete-cron.yaml
+  - ../../pod-delete-cron/pod-delete-service-account-test.yaml
 namespace: met
 patches:
   - path: ../../identity/test.yaml
