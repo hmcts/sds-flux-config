@@ -1,22 +1,22 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: libragob-pod-delete-role
+  name: libragob-batch-jobs-role
   namespace: met
 rules:
   - apiGroups: [""]
     resources: ["pods"]
-    verbs: ["delete", "get", "list", "watch"]
+    verbs: ["get", "list", "logs"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: libragob-pod-delete-role-binding
+  name: libragob-batch-jobs-role-binding
   namespace: met
 subjects:
   - kind: ServiceAccount
-    name: pod-delete-service-account
+    name: libragob-batch-jobs-service-account
 roleRef:
   kind: Role
-  name: libragob-pod-delete-role
+  name: libragob-batch-jobs-role
   apiGroup: rbac.authorization.k8s.io

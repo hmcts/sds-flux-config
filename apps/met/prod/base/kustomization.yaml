@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../batch-jobs/batch-jobs.yaml
+  - ../../batch-jobs/batch-jobs-rbac.yaml
+  - ../../batch-jobs/batch-jobs-service-account-prod.yaml
   - ../../pod-delete-cron/pod-delete-cron-rbac.yaml
   - ../../pod-delete-cron/pod-delete-cron.yaml
   - ../../pod-delete-cron/pod-delete-service-account-prod.yaml
