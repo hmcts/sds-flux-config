@@ -37,6 +37,8 @@ spec:
     image: hmctspublic.azurecr.io/libragob/ams-reporting:prod-dfe32bfc-1746608066 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
     schedule: "*/1 * * * *"
     suspend: false
+    saEnabled: false
+    customServiceAccountName: libragob-batch-jobs-service-account
     kind: CronJob
     aadIdentityName: met-schema
     global:
