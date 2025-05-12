@@ -12,7 +12,7 @@ spec:
         DARTS_PORTAL_URL: https://darts.test.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
         RESTART: 001
-        ARM_URL: http://darts-stub-services.test.platform.hmcts.net
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         PROCESS_E2E_ARM_RPO: false
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
