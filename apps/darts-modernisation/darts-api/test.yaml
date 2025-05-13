@@ -9,17 +9,18 @@ spec:
     java:
       replicas: 4
       ingressHost: darts-api.test.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/darts/api:pr-2871
       #image: sdshmctspublic.azurecr.io/darts/api:pr-2568-f9f2007-20250211125721 #{"$imagepolicy": "flux-system:darts-api-pr"}
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
         DARTS_LOG_LEVEL: INFO
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctstestextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctstestextid.b2clogin.com/hmctstestextid.onmicrosoft.com
-        ARM_URL: http://darts-stub-services.test.platform.hmcts.net
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         CASE_EXPIRY_DELETION_ENABLED: false
         MANUAL_DELETION_ENABLED: true
         DARTS_API_DB_POOL_SIZE: 200
-        PROCESS_E2E_ARM_RPO: false
+        PROCESS_E2E_ARM_RPO: true
         MODERNISED_DARTS_START_DATE: '2024-10-01'
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
