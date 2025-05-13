@@ -9,7 +9,6 @@ spec:
     java:
       replicas: 4
       ingressHost: darts-api.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/darts/api:pr-2871
       #image: sdshmctspublic.azurecr.io/darts/api:pr-2568-f9f2007-20250211125721 #{"$imagepolicy": "flux-system:darts-api-pr"}
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
