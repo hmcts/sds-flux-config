@@ -26,5 +26,9 @@ spec:
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
     function:
+      memoryRequests: 500Mi
+      cpuRequests: 500m
+      memoryLimits: 2Gi
+      cpuLimits: 2
       job:
         activeDeadlineSeconds: 7200
