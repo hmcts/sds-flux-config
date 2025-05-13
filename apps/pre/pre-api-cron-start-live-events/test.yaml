@@ -8,11 +8,11 @@ spec:
     global:
       jobKind: CronJob
     job:
-      suspend: true
-      schedule: "30 7 * * *"
+      suspend: false
+      schedule: "30 16 * * *"
       image: sdshmctspublic.azurecr.io/pre/api:pr-920-ece524a-20250430151220 # {"$imagepolicy": "flux-system:test-pre-api-cron-start-live-events"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
-        PLATFORM_ENV_TAG: Test
+        PLATFORM_ENV_TAG: Testing
         MEDIA_SERVICE: MediaKind
         PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
