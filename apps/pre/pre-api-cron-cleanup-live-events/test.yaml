@@ -8,6 +8,8 @@ spec:
     global:
       jobKind: CronJob
     job:
+      memoryRequests: '1Gi'
+      memoryLimits: '2Gi'
       schedule: "15 15 * * *" # 15:15 PM UTC
       image: sdshmctspublic.azurecr.io/pre/api:pr-921-9dc0127-20250430125058 # {"$imagepolicy": "flux-system:test-pre-api-cron-cleanup-live-events"}
       environment:
