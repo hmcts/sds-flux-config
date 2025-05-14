@@ -8,6 +8,7 @@ spec:
   values:
     java:
       enabled: false
+      memoryLimits: '4Gi'
     job:
       enabled: true
       environment:
