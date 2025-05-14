@@ -10,7 +10,7 @@ spec:
     job:
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
-      schedule: "15 15 * * *" # 15:15 PM UTC
+      schedule: "16 30 * * *" # 16:30 PM UTC
       image: sdshmctspublic.azurecr.io/pre/api:pr-921-9dc0127-20250430125058 # {"$imagepolicy": "flux-system:test-pre-api-cron-cleanup-live-events"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
