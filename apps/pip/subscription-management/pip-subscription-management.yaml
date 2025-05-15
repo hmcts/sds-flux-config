@@ -8,6 +8,8 @@ spec:
     java:
       image: sdshmctspublic.azurecr.io/pip/subscription-management:prod-1a26480-20250414145100 # {"$imagepolicy": "flux-system:pip-subscription-management"}
       disableTraefikTls: true
+      pdb:
+        enabled: false
   chart:
     spec:
       chart: ./stable/pip-subscription-management
