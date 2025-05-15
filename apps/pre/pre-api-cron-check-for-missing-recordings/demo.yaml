@@ -9,7 +9,7 @@ spec:
       jobKind: CronJob
     job:
       schedule: "10 19 * * *" # 7:10 PM UTC
-      image: sdshmctspublic.azurecr.io/pre/api:prod-8c0711b-20250515120340 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-2d7dc8c-20250515130038 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         AZURE_SUBSCRIPTION_ID: c68a4bed-4c3d-4956-af51-4ae164c1957c
         PLATFORM_ENV_TAG: Demo
