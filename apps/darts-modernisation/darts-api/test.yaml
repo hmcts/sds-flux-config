@@ -27,7 +27,7 @@ spec:
     function:
       memoryRequests: 500Mi
       cpuRequests: 500m
-      memoryLimits: 2Gi
-      cpuLimits: 2
+      memoryLimits: 4Gi
+      cpuLimits: 4
       job:
         activeDeadlineSeconds: 7200
