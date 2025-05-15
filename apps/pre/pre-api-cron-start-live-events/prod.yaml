@@ -10,7 +10,7 @@ spec:
     job:
       suspend: false
       schedule: "0 6 * * *"
-      image: sdshmctspublic.azurecr.io/pre/api:prod-486523b-20250515105646 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-8c0711b-20250515120340 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
