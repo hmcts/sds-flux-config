@@ -10,6 +10,8 @@ spec:
       enabled: false
     job:
       enabled: true
+      memoryRequests: '1Gi'
+      memoryLimits: '2Gi'
       environment:
         TASK_NAME: StartLiveEvents
   chart:

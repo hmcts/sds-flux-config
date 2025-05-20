@@ -8,8 +8,6 @@ spec:
     global:
       jobKind: CronJob
     job:
-      memoryRequests: '1Gi'
-      memoryLimits: '2Gi'
       suspend: false
       schedule: "00 13 * * *"
       image: sdshmctspublic.azurecr.io/pre/api:pr-920-51b5474-20250519091257 # {"$imagepolicy": "flux-system:test-pre-api-cron-start-live-events"}
