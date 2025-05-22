@@ -7,7 +7,7 @@ spec:
   releaseName: darts-gateway
   values:
     java:
-      replicas: 4
+      replicas: 2
       image: sdshmctspublic.azurecr.io/darts/gateway:pr-794
       ingressHost: darts-gateway.test.platform.hmcts.net
       environment:
