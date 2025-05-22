@@ -7,7 +7,7 @@ spec:
   releaseName: opal-user-service
   values:
     java:
-      ingressHost: opal-user-service.staging.platform.hmcts.net
+      ingressHost: opal-user-service.demo.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
-        OPAL_FRONTEND_URL: https://opal-frontend.staging.platform.hmcts.net
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.platform.hmcts.net
