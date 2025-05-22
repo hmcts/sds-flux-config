@@ -8,7 +8,7 @@ spec:
   values:
     java:
       replicas: 4
-      image: sdshmctspublic.azurecr.io/darts/gateway:pr-787
+      image: sdshmctspublic.azurecr.io/darts/gateway:pr-794
       ingressHost: darts-gateway.test.platform.hmcts.net
       environment:
         DARTS_LOG_LEVEL: INFO
