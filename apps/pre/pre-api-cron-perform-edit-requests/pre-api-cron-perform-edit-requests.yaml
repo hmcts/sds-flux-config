@@ -10,6 +10,8 @@ spec:
       enabled: false
     job:
       enabled: true
+      memoryRequests: '2Gi'
+      memoryLimits: '4Gi'
       environment:
         TASK_NAME: PerformEditRequest
   chart:
