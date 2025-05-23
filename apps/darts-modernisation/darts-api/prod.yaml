@@ -30,8 +30,6 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
-      pdb:
-        enabled: false
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-d40d808-20250522105346 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
