@@ -17,9 +17,8 @@ patches:
     target:
       kind: Deployment
   - patch: |-
-      - op: replace
-        path: /spec/replicas
-        value: 1
+      - op: remove
+        path: /spec/strategy
     target:
       kind: Deployment
       name: azureserviceoperator-controller-manager
