@@ -16,6 +16,12 @@ patches:
           kubernetes.azure.com/agentpool: system
     target:
       kind: Deployment
+  - patch: |-
+      - op: remove
+        path: /spec/strategy
+    target:
+      kind: Deployment
+      name: azureserviceoperator-controller-manager
   - target:
       kind: Deployment
     path: toleration_patch.yaml
