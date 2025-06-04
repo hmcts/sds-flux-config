@@ -1,5 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../sbox-base
-  - aso-controller-settings.yaml
+  - ../../aso-upgrade/
+  - ../../cert-manager
