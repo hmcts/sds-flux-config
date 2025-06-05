@@ -5,7 +5,7 @@ resources:
   - ../../base/gotk-components.yaml
   - git-credentials.enc.yaml
   - github-app-credentials.enc.yaml
-  - jenkins-webhook-relay-github-app-gitrepo.yaml
+  - ../../base/jenkins-webhook-relay-github-app-gitrepo.yaml
   - ../../workload-identity
 patches:
   - path: ../../serviceaccount/ptlsbox.yaml
