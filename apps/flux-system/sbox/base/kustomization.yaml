@@ -4,6 +4,8 @@ resources:
   - ../../base
   - ../../base/gotk-components.yaml
   - git-credentials.enc.yaml
+  - github-app-credentials.enc.yaml
+  - ../../base/hmcts-charts-github-app-gitrepo.yaml
   - ../../workload-identity
 patches:
   - path: ../../serviceaccount/sbox.yaml
