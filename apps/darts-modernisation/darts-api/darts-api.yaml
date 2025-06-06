@@ -22,6 +22,10 @@ spec:
       memoryLimits: '4G'
       cpuRequests: '2000m'
       cpuLimits: '3000m'
+      lifecycle:
+        preStop:
+          exec:
+            command: ["sh", "-c", "sleep 10"]
     function:
       job:
         activeDeadlineSeconds: 7200
