@@ -7,19 +7,7 @@ spec:
   releaseName: darts-api
   values:
     java:
-      readinessPeriod: 5
-      terminationGracePeriodSeconds: 65
       ingressHost: darts-api.staging.platform.hmcts.net
-      autoscaling:
-        enabled: true
-        maxReplicas: 4
-        cpu:
-          enabled: true
-          averageUtilization: 1
-        memory:
-          enabled: true
-          averageUtilization: 80
-      preStopSleep: 10
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
@@ -37,7 +25,6 @@ spec:
         MODERNISED_DARTS_START_DATE: '2024-12-01'
         AZCOPY_LOG_LEVEL: "--log-level=INFO"
         AZCOPY_OUTPUT_LEVEL: "--output-level=default"
-        GRACEFUL_SHUTDOWN_TIMEOUT: '35s'
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-817b56d-20250606084419 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
