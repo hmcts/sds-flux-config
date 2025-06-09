@@ -7,10 +7,8 @@ spec:
   releaseName: darts-api
   values:
     java:
-      startupDelay: 60
       readinessPeriod: 5
       terminationGracePeriodSeconds: 65
-      image: sdshmctspublic.azurecr.io/darts/api:pr-2971 #{"$imagepolicy": "flux-system:darts-api-pr"}
       ingressHost: darts-api.staging.platform.hmcts.net
       autoscaling:
         enabled: true
@@ -21,10 +19,7 @@ spec:
         memory:
           enabled: true
           averageUtilization: 80
-      lifecycle:
-        preStop:
-          exec:
-            command: ["sh", "-c", "sleep 10"]
+      preStopSleep: 10
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
