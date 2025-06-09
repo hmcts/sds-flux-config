@@ -8,7 +8,6 @@ spec:
   values:
     java:
       startupDelay: 60
-      image: sdshmctspublic.azurecr.io/darts/api:pr-2971 #{"$imagepolicy": "flux-system:darts-api-pr"}
       ingressHost: darts-api.staging.platform.hmcts.net
       autoscaling:
         enabled: true
