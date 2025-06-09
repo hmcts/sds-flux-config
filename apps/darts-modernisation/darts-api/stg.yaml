@@ -7,7 +7,6 @@ spec:
   releaseName: darts-api
   values:
     java:
-      startupDelay: 60
       ingressHost: darts-api.staging.platform.hmcts.net
       autoscaling:
         enabled: true
