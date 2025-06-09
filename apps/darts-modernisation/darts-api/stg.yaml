@@ -19,10 +19,7 @@ spec:
         memory:
           enabled: true
           averageUtilization: 80
-      lifecycle:
-        preStop:
-          exec:
-            command: ["sh", "-c", "sleep 10"]
+      preStopSleep: 10
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
