@@ -7,6 +7,7 @@ spec:
   releaseName: darts-api
   values:
     java:
+      image: sdshmctspublic.azurecr.io/darts/api:pr-2972 #{"$imagepolicy": "flux-system:darts-api-pr"}
       ingressHost: darts-api.staging.platform.hmcts.net
       autoscaling:
         enabled: true
