@@ -8,6 +8,15 @@ spec:
   values:
     java:
       ingressHost: darts-api.staging.platform.hmcts.net
+      autoscaling:
+        enabled: true
+        maxReplicas: 4
+        cpu:
+          enabled: true
+          averageUtilization: 1
+        memory:
+          enabled: true
+          averageUtilization: 1
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
