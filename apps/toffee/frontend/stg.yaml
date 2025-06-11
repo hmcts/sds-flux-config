@@ -6,14 +6,6 @@ metadata:
   annotations:
     fluxcd.io/automated: "false"
 spec:
-  chart:
-    spec:
-      chart: ./stable/toffee-frontend
-      sourceRef:
-        kind: GitRepository
-        name: hmcts-charts-github-app
-        namespace: flux-system
-      interval: 1m
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/toffee/frontend:prod-f8bc08c-20250225100311 #{"$imagepolicy": "flux-system:toffee-frontend"}
