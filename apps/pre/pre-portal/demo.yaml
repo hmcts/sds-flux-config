@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/pre/portal:prod-83da5ea-20250612155142 # {"$imagepolicy": "flux-system:pre-portal"}
+      image: sdshmctspublic.azurecr.io/pre/portal:prod-68c2b7d-20250613085127 # {"$imagepolicy": "flux-system:pre-portal"}
       ingressHost: pre-portal.demo.platform.hmcts.net
       environment:
         PRE_API_URL: https://sds-api-mgmt.demo.platform.hmcts.net/pre-api
