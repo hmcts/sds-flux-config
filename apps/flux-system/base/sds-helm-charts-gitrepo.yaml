@@ -5,12 +5,11 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: https://github.com/hmcts/sds-helm-charts
+  url: ssh://github.com/hmcts/sds-helm-charts
   ref:
     branch: master
-  provider: github
   secretRef:
-    name: github-app-credentials
+    name: git-credentials
   ignore: |
     # exclude all
     /*

@@ -1,15 +1,16 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: vh-video-api
+  name: jenkins-webhook-relay-github-app
   namespace: flux-system
 spec:
   interval: 5m
-  url: ssh://github.com/hmcts/vh-video-api
+  url: https://github.com/hmcts/jenkins-webhook-relay
   ref:
-    branch: feature/VIH-7205_video-api
+    branch: master
+  provider: github
   secretRef:
-    name: git-credentials
+    name: github-app-credentials
   ignore: |
     # exclude all
     /*

@@ -5,12 +5,11 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  url: https://github.com/hmcts/vh-bookings-api
+  url: ssh://github.com/hmcts/vh-bookings-api
   ref:
     branch: master
-  provider: github
   secretRef:
-    name: github-app-credentials
+    name: git-credentials
   ignore: |
     # exclude all
     /*
