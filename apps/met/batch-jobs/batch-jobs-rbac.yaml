@@ -5,7 +5,7 @@ metadata:
   namespace: met
 rules:
   - apiGroups: [""]
-    resources: ["pods"]
+    resources: ["pods", "pods/log"]
     verbs: ["get", "list", "logs"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
