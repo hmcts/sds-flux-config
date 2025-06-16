@@ -9,7 +9,6 @@ spec:
   timeout: 3m0s
   ref:
     branch: master
-  provider: github
   secretRef:
-    name: github-app-credentials
-  url: https://github.com/hmcts/sds-flux-config
+    name: git-credentials
+  url: ssh://git@github.com/hmcts/sds-flux-config
