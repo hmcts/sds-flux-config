@@ -23,10 +23,10 @@ spec:
       tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"
     schedule: "0 */4 * * 1-5" # Every 4 hours, week days
     concurrencyPolicy: "Forbid"
-    memoryRequests: "2Gi"
-    cpuRequests: "500m"
-    memoryLimits: "3Gi"
-    cpuLimits: "1000m"
+    memoryRequests: "3Gi"
+    cpuRequests: "2000m"
+    memoryLimits: "4Gi"
+    cpuLimits: "3000m"
     failedJobsHistoryLimit: 5
     startingDeadlineSeconds: 300
     successfulJobsHistoryLimit: 5
