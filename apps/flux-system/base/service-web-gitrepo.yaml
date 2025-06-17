@@ -1,0 +1,18 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: vh-service-web
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://github.com/hmcts/vh-service-web
+  ref:
+    branch: VIH-7246-chart-setup
+  provider: github
+  secretRef:
+    name: github-app-credentials
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/charts/
