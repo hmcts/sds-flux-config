@@ -1,0 +1,32 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: vh-admin-web
+spec:
+  interval: 10m
+  releaseName: vh-admin-web
+  values:
+    java:
+      autoscaling:
+        enabled: true
+        maxReplicas: 4
+        cpu:
+          enabled: true
+          averageUtilization: 75
+        memory:
+          enabled: true
+          averageUtilization: 75
+      disableTraefikTls: true
+      image: sdshmctspublic.azurecr.io/vh/admin-web:prod-bedf8dc-202411211320 # {"$imagepolicy": "flux-system:vh-admin-web"}
+  chart:
+    spec:
+      chart: ./stable/vh-admin-web/non-prod
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true
