@@ -131,7 +131,7 @@ spec:
                         scm:
                           github:
                             credentialsId: hmcts-jenkins-cnp
-                            repoOwner: hmcts
+                            repoOwner: HMCTS
                             repository: cnp-jenkins-library
                   - name: 'Pipeline'
                     includeInChangesets: false
@@ -141,7 +141,7 @@ spec:
                         scm:
                           github:
                             credentialsId: hmcts-jenkins-cnp
-                            repoOwner: hmcts
+                            repoOwner: HMCTS
                             repository: cnp-jenkins-library
           slack: |
             unclassified:
