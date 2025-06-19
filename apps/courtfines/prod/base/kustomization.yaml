@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - ../../base
 namespace: courtfines
+patches:
+  - path: ../../serviceaccount/prod.yaml
