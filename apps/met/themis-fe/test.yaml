@@ -15,7 +15,7 @@ spec:
       environment:
         KV_CONFIG_TREE: /mnt/secrets/libragob-test-kv/
         LOG4J_DEBUG: true
-        TEMP_VAR: 0
+        TEMP_VAR: 1
         DAC_NUMBER_OF_INSTANCES: 3
       keyVaults:
         libragob-test-kv:
