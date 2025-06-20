@@ -2,6 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: courtfines-app
+  namespace: courtfines
 spec:
   releaseName: courtfines-app
   chart:
@@ -13,7 +14,7 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    nodejs:
+    java:
       replicas: 2
       image: sdshmctspublic.azurecr.io/courtfines/app:latest # {"$imagepolicy": "flux-system:courtfines-app"}
       disableTraefikTls: true
