@@ -14,7 +14,7 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    java:
+    nodejs:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/courtfines/app:prod-latest # {"$imagepolicy": "flux-system:courtfines-app"}
+      image: sdshmctspublic.azurecr.io/courtfines/app:prod-bea5b8a-20250619161653 # {"$imagepolicy": "flux-system:courtfines-app"}
       disableTraefikTls: true
