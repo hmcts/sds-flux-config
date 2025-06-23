@@ -8,6 +8,7 @@ spec:
   values:
     java:
       ingressHost: darts-gateway.staging.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/darts/gateway:pr-807
       environment:
         DARTS_API_URL: https://darts-api.staging.platform.hmcts.net
         DAR_NOTIFY_ENABLED: true
