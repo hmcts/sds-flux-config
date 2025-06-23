@@ -8,6 +8,8 @@ spec:
   values:
     java:
       ingressHost: darts-gateway.staging.platform.hmcts.net
+      memoryRequests: '2G'
+      memoryLimits: '3G'
       environment:
         DARTS_API_URL: https://darts-api.staging.platform.hmcts.net
         DAR_NOTIFY_ENABLED: true
