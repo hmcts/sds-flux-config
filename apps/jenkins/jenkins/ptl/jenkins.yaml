@@ -147,12 +147,6 @@ spec:
                     title: Publishing & Information Dashboard
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS.*\/vh-.+\/master
-                    name: VH
-                    recurse: true
-                    title: Video Hearings Dashboard
-                - buildMonitor:
-                    includeRegex: >-
                       ^HMCTS.*\/hmi-.+\/master
                     name: HMI
                     recurse: true
