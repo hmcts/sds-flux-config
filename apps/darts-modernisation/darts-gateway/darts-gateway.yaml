@@ -17,4 +17,8 @@ spec:
     java:
       replicas: 2
       image: sdshmctspublic.azurecr.io/darts/gateway:prod-92a1b73-20250612161301 # {"$imagepolicy": "flux-system:darts-gateway"}
+      memoryRequests: '2G'
+      memoryLimits: '3G'
+      cpuRequests: '500m'
+      cpuLimits: '2000m'
       disableTraefikTls: true
