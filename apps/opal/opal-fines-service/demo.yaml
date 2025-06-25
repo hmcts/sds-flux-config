@@ -11,4 +11,4 @@ spec:
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.demo.platform.hmcts.net
-        FLYWAY_LOCATIONS: classpath:db/migration/allEnvs
+        FLYWAY_LOCATIONS: classpath:db/migration/allEnvs, classpath:db/migration/demoOnly
