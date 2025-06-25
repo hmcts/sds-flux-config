@@ -7,7 +7,7 @@ spec:
   releaseName: courtfines-app
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/courtfines/app:pr-56-13c0a56-20250616101216 # {"$imagepolicy": "flux-system:courtfines-app"}
+      image: sdshmctspublic.azurecr.io/courtfines/app:prod-3d019cf-20250625080022 # {"$imagepolicy": "flux-system:courtfines-app"}
       ingressHost: courtfines-app.demo.apps.hmcts.net
       environment:
         ENV_NAME: "DEMO"
