@@ -59,8 +59,6 @@ spec:
               Cluster_Name: sds-ithc01
       manager:
         ingress:
+          host: sds-neuvector-ithc01.hmcts.net
           annotations:
-            kubernetes.io/ingress.class: traefik
-            traefik.ingress.kubernetes.io/router.tls: "true"
-          host: sds-neuvector01.ithc.platform.hmcts.net
-          enabled: true
+            traefik.ingress.kubernetes.io/router.tls: "false"
