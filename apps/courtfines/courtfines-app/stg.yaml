@@ -7,7 +7,7 @@ spec:
   releaseName: courtfines-app
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/courtfines/app:prod-a2aadf6-20250703091832 # {"$imagepolicy": "flux-system:courtfines-app"}
+      image: sdshmctspublic.azurecr.io/courtfines/app:prod-a2dda5e-20250703092542 # {"$imagepolicy": "flux-system:courtfines-app"}
       ingressHost: courtfines-app.staging.apps.hmcts.net
       environment:
         ENV_NAME: "STAGING"
