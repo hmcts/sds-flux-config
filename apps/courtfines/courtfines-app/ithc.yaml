@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       image: sdshmctspublic.azurecr.io/courtfines/app:prod-9838e07-20250702224309 # {"$imagepolicy": "flux-system:courtfines-app"}
-      ingressHost: courtfines-app.staging.apps.hmcts.net
+      ingressHost: courtfines-app.ithc.platform.hmcts.net/
       environment:
-        ENV_NAME: "STAGING"
+        ENV_NAME: "ITHC"
         LOG_LEVEL: "DEBUG"
