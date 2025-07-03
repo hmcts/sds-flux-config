@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: version-reporter-service-helmcharts
@@ -26,12 +26,15 @@ spec:
     successfulJobsHistoryLimit: 5
     backoffLimit: 3
     restartPolicy: Never
-    serviceAccountName: version-reporter-service-sa
+    saEnabled: false
+    customServiceAccountName: version-reporter-service-sa
+    runAsRoot: true
     kind: CronJob
-    image: sdshmctspublic.azurecr.io/version-reporter-service/helmcharts:prod-eb74249-20231128092328 #{"$imagepolicy": "flux-system:version-reporter-helmcharts"}
+    image: sdshmctspublic.azurecr.io/version-reporter-service/helmcharts:prod-aec76df-20240607114406 #{"$imagepolicy": "flux-system:version-reporter-helmcharts"}
     imagePullPolicy: Always
     environment:
       CLUSTER_NAME: ss-ptl-00-aks
+      ENVIRONMENT: ss-ptl-00
       MAX_VERSIONS_AWAY: 2
       COSMOS_DB_URI: https://sds-platform-version-reporter.documents.azure.com:443/
       COSMOS_DB_NAME: reports

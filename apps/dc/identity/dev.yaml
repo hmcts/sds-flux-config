@@ -1,9 +1,0 @@
----
-apiVersion: aadpodidentity.k8s.io/v1
-kind: AzureIdentity
-metadata:
-  name: dc-purview-shir
-  namespace: dc
-spec:
-  resourceID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/managed-identities-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/dc-purview-shir-dev-mi
-  clientID: 19aff642-164a-4ca0-9b8c-a02f9811329e

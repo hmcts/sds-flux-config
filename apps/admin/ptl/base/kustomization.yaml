@@ -4,7 +4,6 @@ namespace: admin
 resources:
 - ../../base
 - ../../kube-slack/ptl/kube-slack-values.enc.yaml
-- ../../kured/ptl/kured-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
 - ../../traefik2
 - ../../delete-hung-pods

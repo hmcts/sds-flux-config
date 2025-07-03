@@ -1,0 +1,13 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pip-data-management-no-match-artefacts-cron
+spec:
+  releaseName: pip-data-management-no-match-artefacts-cron
+  values:
+    job:
+      schedule: "0 8 * * 1,3,5"
+      environment:
+        DATA_MANAGEMENT_URL: https://pip-data-management.ithc.platform.hmcts.net
+        ACCOUNT_MANAGEMENT_URL: https://pip-account-management.ithc.platform.hmcts.net
+        TRIGGER_TYPE: NO_MATCH_ARTEFACTS

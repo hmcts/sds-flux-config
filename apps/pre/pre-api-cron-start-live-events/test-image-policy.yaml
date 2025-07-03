@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: test-pre-api-cron-start-live-events
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+spec:
+  filterTags:
+    pattern: 'pr\-920\-51b5474\-20250519091257'
+  policy:
+    alphabetical:
+      order: asc
+  imageRepositoryRef:
+    name: pre-api

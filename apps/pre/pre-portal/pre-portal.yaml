@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: pre-portal
@@ -14,5 +14,14 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pre/portal:prod-8534cff-20240229120606 # {"$imagepolicy": "flux-system:pre-portal"}
+      replicas: 2
+      image: sdshmctspublic.azurecr.io/pre/portal:prod-db3b714-20250623142153 # {"$imagepolicy": "flux-system:pre-portal"}
       disableTraefikTls: true
+      cpuRequests: '50m'
+      cpuLimits: '500m'
+      memoryRequests: '768Mi'
+      memoryLimits: '768Mi'
+      autoscaling:
+        maxReplicas: 4
+        memory:
+          averageUtilization: 90

@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../data-management/pip-data-management.yaml
+  - ../../../base/slack-provider/sbox
 namespace: pip
 patches:
   - path: ../../identity/sbox.yaml

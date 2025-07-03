@@ -1,0 +1,7 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: opal-frontend-test
+spec:
+  imageRepositoryRef:
+    name: opal-frontend-test

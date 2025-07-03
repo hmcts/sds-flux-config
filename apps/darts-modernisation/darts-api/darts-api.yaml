@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: darts-api
@@ -16,9 +16,23 @@ spec:
   values:
     java:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/darts/api:prod-bebf973-20240229134724 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-d8bbd2c-20250702080224 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
-      memoryRequests: '2G'
-      memoryLimits: '3G'
+      memoryRequests: '3G'
+      memoryLimits: '4G'
+      cpuRequests: '2000m'
+      cpuLimits: '3000m'
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-bebf973-20240229134724 # {"$imagepolicy": "flux-system:darts-api"}
+      job:
+        activeDeadlineSeconds: 7200
+      image: sdshmctspublic.azurecr.io/darts/api:prod-d8bbd2c-20250702080224 # {"$imagepolicy": "flux-system:darts-api"}
+      memoryRequests: 500Mi
+      cpuRequests: 500m
+      memoryLimits: 4Gi
+      cpuLimits: 4
+    darts-portal:
+      enabled: false
+      ingressHost: darts-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
+      replicas: 0
+      autoscaling:
+        enabled: false

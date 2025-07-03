@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: jenkins
@@ -147,12 +147,6 @@ spec:
                     title: Publishing & Information Dashboard
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS.*\/vh-.+\/master
-                    name: VH
-                    recurse: true
-                    title: Video Hearings Dashboard
-                - buildMonitor:
-                    includeRegex: >-
                       ^HMCTS.*\/hmi-.+\/master
                     name: HMI
                     recurse: true
@@ -201,16 +195,10 @@ spec:
                     title: DTS Legacy Apps
                 - buildMonitor:
                     includeRegex: >-
-                      ^HMCTS.*\/darts.*\/master
-                    name: DARTS-Modernisation
+                      ^HMCTS.*\/darts(?!-automation\/).*\/master
+                    name: DARTS Modernisation
                     recurse: true
                     title: DARTS Modernisastion
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS.*\/darts-shared.*\/master
-                    name: Darts Shared Infrastructure
-                    recurse: true
-                    title: Darts Shared Infrastructure
                 - buildMonitor:
                     includeRegex: >-
                       ^HMCTS.*\/opal.*\/master
@@ -235,6 +223,24 @@ spec:
                     name: Juror
                     recurse: true
                     title: Juror Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/master-reference-data-.*\/master
+                    name: MRD
+                    recurse: true
+                    title: Master and Reference Data Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/(list-assist-e2e-tests)\/master
+                    name: List Assist
+                    recurse: true
+                    title: List Assist dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/sct-resource-management.*\/master
+                    name: SCT Resource Management
+                    recurse: true
+                    title: SCT Resource Management Dashboard
           authentication: |
             jenkins:
               securityRealm:

@@ -6,10 +6,6 @@ CODEOWNERS @hmcts/platform-operations
 apps/ @hmcts/platform-operations
 clusters/ @hmcts/platform-operations
 
-# Production applications
-## environment rules
-clusters/prod/ @hmcts/production-apps-approvals
-
 ## Platform rules
 
 apps/kube-system/ @hmcts/platform-operations
@@ -42,9 +38,6 @@ apps/mi/ @hmcts/mi
 ### PIP
 apps/pip/ @hmcts/pip-admins
 
-## VH
-apps/vh/ @hmcts/vh-devops
-
 ### DTS-LEGACY
 apps/dts-legacy/ @hmcts/dts-legacy-apps
 
@@ -54,14 +47,17 @@ apps/darts-modernisation/ @hmcts/darts
 ### JUROR
 apps/juror/ @hmcts/juror
 
-### DATA CATALOGUE (DC)
-apps/dc/ @hmcts/data-catalogue-team
-
 ### OPAL
 apps/opal/ @hmcts/opal
 
 ### MET
 apps/met/ @hmcts/national-met
+
+### PRE
+apps/pre/ @hmcts/pre-rec-evidence
+
+### PDDA
+apps/pdda/ @hmcts/pdda
 
 ### Next team
 

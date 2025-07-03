@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: jenkins
@@ -131,7 +131,7 @@ spec:
                         scm:
                           github:
                             credentialsId: hmcts-jenkins-cnp
-                            repoOwner: hmcts
+                            repoOwner: HMCTS
                             repository: cnp-jenkins-library
                   - name: 'Pipeline'
                     includeInChangesets: false
@@ -141,7 +141,7 @@ spec:
                         scm:
                           github:
                             credentialsId: hmcts-jenkins-cnp
-                            repoOwner: hmcts
+                            repoOwner: HMCTS
                             repository: cnp-jenkins-library
           slack: |
             unclassified:
@@ -230,6 +230,7 @@ spec:
                           appID: "52960"
                           description: "GitHub APP Key - CNP"
                           id: "hmcts-jenkins-cnp"
+                          owner: "HMCTS"
                           privateKey: "$${hmcts-jenkins-cnp-ghapp}"
                       - azureCosmosDB:
                           credentialsId: "jenkins-managed-identity"
@@ -243,7 +244,7 @@ spec:
 
       sidecars:
         configAutoReload:
-          image: kiwigrid/k8s-sidecar:1.25.2
+          image: hmctspublic.azurecr.io/imported/kiwigrid/k8s-sidecar:1.25.2
           # If enabled: true, Jenkins Configuration as Code will be reloaded on-the-fly without a reboot.  If false or not-specified,
           # jcasc changes will cause a reboot and will only be applied at the subsequent start-up.  Auto-reload uses the Jenkins CLI
           # over SSH to reapply config when changes to the configScripts are detected.  The admin user (or account you specify in

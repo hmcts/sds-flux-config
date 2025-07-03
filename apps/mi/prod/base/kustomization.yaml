@@ -4,14 +4,11 @@ namespace: mi
 resources:
   - ../../base
   - mi-adf-auth-values.enc.yaml
+  - ../../../base/slack-provider/prod
 patches:
-  #overlays for mi-azure-functions
   - path: ../../mi-azure-functions/prod.yaml
-  #overlays for mi-adf-shir
   - path: ../../mi-adf-shir/prod.yaml
-  #overlays for mi-adf-shir-2
   - path: ../../mi-adf-shir-2/prod.yaml
-  #overlays for mi-house-keeping-service
   - path: ../../mi-house-keeping-service/prod.yaml
   - path: ../../identity/mi-azure-functions-identity-prod.yaml
   - path: ../../identity/mi-house-keeping-service-identity-prod.yaml

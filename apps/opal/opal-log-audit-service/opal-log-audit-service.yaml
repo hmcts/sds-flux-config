@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: opal-log-audit-service
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/opal/print-service:prod-558d437-20240229102646 # {"$imagepolicy": "flux-system:opal-print-service"}
+      image: sdshmctspublic.azurecr.io/opal/log-audit-service:prod-aa11bc1-20240226152244 # {"$imagepolicy": "flux-system:opal-log-audit-service"}
       disableTraefikTls: true

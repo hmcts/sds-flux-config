@@ -3,16 +3,12 @@ kind: Kustomization
 resources:
   - ../account-management/image-repo.yaml
   - ../account-management/image-policy.yaml
-  - ../channel-management/image-repo.yaml
-  - ../channel-management/image-policy.yaml
   - ../data-management/image-repo.yaml
   - ../data-management/image-policy.yaml
   - ../frontend/image-repo.yaml
   - ../frontend/image-policy.yaml
   - ../publication-services/image-repo.yaml
   - ../publication-services/image-policy.yaml
-  - ../subscription-management/image-repo.yaml
-  - ../subscription-management/image-policy.yaml
   - ../account-management-inactive-verification-cron/image-repo.yaml
   - ../account-management-inactive-verification-cron/image-policy.yaml
   - ../account-management-media-reporting-cron/image-repo.yaml

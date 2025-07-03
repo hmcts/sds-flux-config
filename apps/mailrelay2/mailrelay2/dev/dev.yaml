@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: mailrelay2
@@ -35,8 +35,8 @@ spec:
         name: "dev-in"
         objectName: "dev-in-mailrelay-platform-hmcts-net"
     volumeClaim:
-      storageClass: "managed-premium"
-      storageSize: 500Gi
+      storageClass: "managed"
+      storageSize: 64Gi
     global:
       environment: dev
       enableOutboundTls: true

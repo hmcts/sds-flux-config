@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: darts-stub-services
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/stub-services:prod-b17a94e-20240226133349 # {"$imagepolicy": "flux-system:darts-stub-services"}
+      image: sdshmctspublic.azurecr.io/darts/stub-services:prod-0119167-20250630181125 # {"$imagepolicy": "flux-system:darts-stub-services"}
       disableTraefikTls: true

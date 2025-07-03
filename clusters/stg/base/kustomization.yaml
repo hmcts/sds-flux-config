@@ -10,8 +10,6 @@ resources:
   - ../../../apps/neuvector/base/kustomize.yaml
   - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml
-  - ../../../apps/vh/base/kustomize.yaml
-  - ../../../apps/dts-legacy/base/kustomize.yaml
   - ../../../apps/kube-system/base/kustomize.yaml
   # - ../../../apps/my-time/base/kustomize.yaml
   - ../../../apps/darts-modernisation/base/kustomize.yaml
@@ -22,6 +20,7 @@ resources:
   - ../../../apps/juror/base/kustomize.yaml
   - ../../../apps/opal/base/kustomize.yaml
   - ../../../apps/pdda/base/kustomize.yaml
+  - ../../../apps/courtfines/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
@@ -29,4 +28,4 @@ patches:
       annotationSelector: hmcts.github.com/kustomize-defaults != disabled
   - path: ../../../apps/toffee/stg/base/kustomize.yaml
   - path: ../../../apps/admin/stg/base/kustomize.yaml
-  - path: ../../../apps/neuvector/patching-crds/kustomize.yaml
+  - path: ../../../apps/neuvector/crds/kustomize.yaml

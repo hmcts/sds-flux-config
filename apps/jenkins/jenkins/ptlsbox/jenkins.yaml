@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: jenkins
@@ -115,12 +115,6 @@ spec:
                     name: PIP
                     recurse: true
                     title: Publishing & Information Dashboard
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS_.*VH-.*\/.+\/master
-                    name: VH
-                    recurse: true
-                    title: Video Hearings Dashboard
                 - buildMonitor:
                     includeRegex: >-
                       ^HMCTS_.*HMI-.*\/.+\/master

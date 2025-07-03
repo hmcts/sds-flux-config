@@ -1,9 +1,0 @@
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentity
-metadata:
-  name: aks-kubelet-identity-mi
-  namespace: flux-system
-spec:
-  type: 0
-  clientID: 471db0c1-4f2a-4ae7-957c-b881d4c61c88
-  resourceID: /subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourcegroups/genesis-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks-kubelet-ptl-mi

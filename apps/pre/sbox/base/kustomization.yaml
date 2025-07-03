@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../../base/slack-provider/sbox
 namespace: pre
 patches:
   - path: ../../identity/sbox.yaml

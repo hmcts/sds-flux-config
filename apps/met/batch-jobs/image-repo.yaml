@@ -1,0 +1,13 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: libragob-batch-housekeeping
+spec:
+  image: hmctspublic.azurecr.io/libragob/housekeeping
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: libragob-batch-ams-reporting
+spec:
+  image: hmctspublic.azurecr.io/libragob/ams-reporting

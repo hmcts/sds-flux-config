@@ -1,8 +1,8 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
+apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: toffee-recipe-receiver
 spec:
   values:
     function:
-      image: sdshmctspublic.azurecr.io/toffee/recipe-receiver:prod-0feb4b5-20230601141734 #{"$imagepolicy": "flux-system:toffee-recipe-receiver"}
+      image: sdshmctspublic.azurecr.io/toffee/recipe-receiver:prod-3b56e70-20250324094034 #{"$imagepolicy": "flux-system:toffee-recipe-receiver"}
