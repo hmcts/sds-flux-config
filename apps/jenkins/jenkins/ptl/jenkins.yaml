@@ -15,6 +15,8 @@ spec:
         namespace: jenkins
   values:
     controller:
+      # image version is managed in jenkins-controller-version.yaml
+      image: "hmctspublic.azurecr.io/jenkins/jenkins"
       ingress:
         hostName: sds-build.hmcts.net
       secondaryingress:
@@ -403,3 +405,6 @@ spec:
                                         values:
                                           - jenkins-master
                                   topologyKey: "kubernetes.io/hostname"
+      sidecars:
+        configAutoReload:
+          image: hmctspublic.azurecr.io/imported/kiwigrid/k8s-sidecar:1.25.2
