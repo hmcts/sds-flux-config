@@ -21,7 +21,7 @@ spec:
         runAsGroup: 0
         readOnlyRootFilesystem: false
         allowPrivilegeEscalation: true
-      image: 
+      image:
         registry: hmctspublic.azurecr.io
         repository: jenkins/jenkins
       ingress:
@@ -294,7 +294,7 @@ spec:
                                   topologyKey: "kubernetes.io/hostname"
       sidecars:
         configAutoReload:
-          image: 
+          image:
             registry: hmctspublic.azurecr.io
             repository: imported/kiwigrid/k8s-sidecar
             tag: 1.25.2
