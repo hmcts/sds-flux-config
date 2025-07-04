@@ -5,16 +5,10 @@ metadata:
   namespace: courtfines
 spec:
   releaseName: courtfines-app
-  chart:
-    spec:
-      chart: ./stable/courtfines-app
-      sourceRef:
-        kind: GitRepository
-        name: hmcts-charts
-        namespace: flux-system
-      interval: 1m
   values:
     nodejs:
-      replicas: 2
+      ingressHost: courtfines-app.ithc.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/courtfines/app:prod-a82f1a2-20250703145532 # {"$imagepolicy": "flux-system:courtfines-app"}
-      disableTraefikTls: true
+      environment:
+        ENV_NAME: "ITHC"
+        LOG_LEVEL: "DEBUG"
