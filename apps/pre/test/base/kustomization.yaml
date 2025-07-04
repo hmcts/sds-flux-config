@@ -8,7 +8,10 @@ resources:
   - ../../pre-api-cron-check-for-missing-recordings/pre-api-cron-check-for-missing-recordings.yaml
   - ../../pre-api-cron-perform-edit-requests/pre-api-cron-perform-edit-requests.yaml
   - ../../pre-api-cron-start-live-events/pre-api-cron-start-live-events.yaml
-  - ../../pre-api-cron-vodafone-etl/pre-api-cron-vodafone-etl.yaml
+  - ../../pre-api-cron-vodafone-etl-fetch-xml/pre-api-cron-vodafone-etl-fetch-xml.yaml
+  - ../../pre-api-cron-vodafone-etl-migrate-exclusions/pre-api-cron-vodafone-etl-migrate-exclusions.yaml
+  - ../../pre-api-cron-vodafone-etl-post-migration/pre-api-cron-vodafone-etl-post-migration.yaml
+  - ../../pre-api-cron-vodafone-etl-process-full/pre-api-cron-vodafone-etl-process-full.yaml
   - ../../../rbac/nonprod-role.yaml
   - ../../../base/slack-provider/test
 namespace: pre
@@ -22,5 +25,8 @@ patches:
   - path: ../../pre-api-cron-check-for-missing-recordings/test.yaml
   - path: ../../pre-api-cron-perform-edit-requests/test.yaml
   - path: ../../pre-api-cron-start-live-events/test.yaml
-  - path: ../../pre-api-cron-vodafone-etl/test.yaml
+  - path: ../../pre-api-cron-vodafone-etl-fetch-xml/prod.yaml
+  - path: ../../pre-api-cron-vodafone-etl-migrate-exclusions/prod.yaml
+  - path: ../../pre-api-cron-vodafone-etl-post-migration/prod.yaml
+  - path: ../../pre-api-cron-vodafone-etl-process-full/prod.yaml
   - path: ../../serviceaccount/test.yaml

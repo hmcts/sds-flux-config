@@ -10,7 +10,11 @@ resources:
   - ../../pre-api-cron-check-for-missing-recordings/pre-api-cron-check-for-missing-recordings.yaml
   - ../../pre-api-cron-perform-edit-requests/pre-api-cron-perform-edit-requests.yaml
   - ../../pre-api-cron-start-live-events/pre-api-cron-start-live-events.yaml
-  - ../../pre-api-cron-vodafone-etl/pre-api-cron-vodafone-etl.yaml
+  - ../../pre-api-cron-vodafone-etl-fetch-xml/pre-api-cron-vodafone-etl-fetch-xml.yaml
+  - ../../pre-api-cron-vodafone-etl-migrate-exclusions/pre-api-cron-vodafone-etl-migrate-exclusions.yaml
+  - ../../pre-api-cron-vodafone-etl-post-migration/pre-api-cron-vodafone-etl-post-migration.yaml
+  - ../../pre-api-cron-vodafone-etl-process-full/pre-api-cron-vodafone-etl-process-full.yaml
+
 namespace: pre
 patches:
   - path: ../../identity/demo.yaml
@@ -22,5 +26,8 @@ patches:
   - path: ../../pre-api-cron-check-for-missing-recordings/demo.yaml
   - path: ../../pre-api-cron-perform-edit-requests/demo.yaml
   - path: ../../pre-api-cron-start-live-events/demo.yaml
-  - path: ../../pre-api-cron-vodafone-etl/demo.yaml
+  - path: ../../pre-api-cron-vodafone-etl-fetch-xml/demo.yaml
+  - path: ../../pre-api-cron-vodafone-etl-migrate-exclusions/demo.yaml
+  - path: ../../pre-api-cron-vodafone-etl-post-migration/demo.yaml
+  - path: ../../pre-api-cron-vodafone-etl-process-full/demo.yaml
   - path: ../../serviceaccount/demo.yaml
