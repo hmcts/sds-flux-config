@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: cortext-xdr
+  name: cortex-xdr
   namespace: admin
 spec:
   url: https://paloaltonetworks.github.io/cortex-helm
