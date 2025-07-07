@@ -8,7 +8,6 @@ resources:
   - ../../../apps/mi/base/kustomize.yaml
   - ../../../apps/neuvector/base/kustomize.yaml
   - ../../../apps/pip/base/kustomize.yaml
-  - ../../../apps/vh/base/kustomize.yaml
   - ../../../apps/kube-system/base/kustomize.yaml
   - ../../../apps/met/base/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml
@@ -20,6 +19,7 @@ resources:
   - ../../../apps/keda/base/kustomize.yaml
   - ../../../apps/pre/base/kustomize.yaml
   - ../../../apps/juror/base/kustomize.yaml
+  - ../../../apps/courtfines/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:

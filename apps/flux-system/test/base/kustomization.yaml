@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../base/gotk-components.yaml
   - git-credentials.enc.yaml
+  - github-app-credentials.enc.yaml
   - ../../workload-identity
 patches:
   - path: ../../serviceaccount/test.yaml
