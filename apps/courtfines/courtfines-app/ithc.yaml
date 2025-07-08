@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: courtfines-app
+  namespace: courtfines
+spec:
+  releaseName: courtfines-app
+  values:
+    nodejs:
+      ingressHost: courtfines-app.ithc.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/courtfines/app:prod-9701d9c-20250704173257 # {"$imagepolicy": "flux-system:courtfines-app"}
+      environment:
+        ENV_NAME: "ITHC"
+        LOG_LEVEL: "DEBUG"
