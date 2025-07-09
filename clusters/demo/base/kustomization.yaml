@@ -16,6 +16,7 @@ resources:
   - ../../../apps/juror/base/kustomize.yaml
   - ../../../apps/opal/base/kustomize.yaml
   - ../../../apps/courtfines/base/kustomize.yaml
+  - ../../../apps/pdda/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
