@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/dev-role.yaml
-  - ../../../base/workload-identity
   - ../../../base/slack-provider/demo
   - ../../pdda-public-display-data-aggregator/pdda-public-display-data-aggregator.yaml
   - ../../pdda-public-display-manager/pdda-public-display-manager.yaml
