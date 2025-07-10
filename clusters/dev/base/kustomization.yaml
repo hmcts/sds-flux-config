@@ -23,6 +23,7 @@ resources:
   - ../../../apps/pdda/base/kustomize.yaml
   - ../../../apps/pdm/base/kustomize.yaml
   - ../../../apps/courtfines/base/kustomize.yaml
+  - ../../../apps/appreg/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
