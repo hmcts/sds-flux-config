@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../base/workload-identity
-  - ../../appreg-api/appreg-api.yaml
-  - ../../appreg-frontend/appreg-frontend.yaml
+  - ../appreg-api/appreg-api.yaml
+  - ../appreg-frontend/appreg-frontend.yaml
 namespace: appreg
