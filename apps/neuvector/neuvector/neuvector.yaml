@@ -32,7 +32,11 @@ spec:
           memory: 5Gi
       controller:
         ingress:
-          traefik.ingress.kubernetes.io/router.tls: "true"
+          enabled: true
+          host: sds-neuvector{CLUSTER}-api.{ENVIRONMENT}.platform.hmcts.net
+          annotations:
+            kubernetes.io/ingress.class: traefik
+            traefik.ingress.kubernetes.io/router.tls: "true"
         affinity:
           podAntiAffinity:
             preferredDuringSchedulingIgnoredDuringExecution:
@@ -49,8 +53,25 @@ spec:
         azureFileShare:
           enabled: true
           secretName: nv-storage-secret
+          shareName: neuvector-data-{CLUSTER}
         configmap:
           enabled: true
+          data:
+            sysinitcfg.yaml: |
+              New_Service_Policy_Mode: Discover
+              Syslog_ip: fluentbit-log
+              Syslog_IP_Proto: 6
+              Syslog_Port: 5140
+              Syslog_Level: Warning
+              Syslog_status: true
+              Syslog_in_json: true
+              Syslog_Categories:
+                - event
+                - security-event
+                - audit
+              Scan_Config:
+                Auto_Scan: true
+              Cluster_Name: sds-{ENVIRONMENT}{CLUSTER}
       manager:
         affinity:
           podAntiAffinity:
@@ -68,9 +89,11 @@ spec:
           ssl: false
         ingress:
           enabled: true
+          httpredirect: false
+          host: sds-neuvector-{ENVIRONMENT}{CLUSTER}.hmcts.net
           annotations:
             kubernetes.io/ingress.class: traefik
-            traefik.ingress.kubernetes.io/router.tls: "true"
+            traefik.ingress.kubernetes.io/router.tls: "false"
       cve:
         scanner:
           affinity:
