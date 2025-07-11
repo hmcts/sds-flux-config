@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: opal-frontend
-  namespace: opal
+  name: appreg-api
+  namespace: appreg
 spec:
-  releaseName: opal-frontend
+  releaseName: appreg-api
   chart:
     spec:
-      chart: ./stable/opal-frontend
+      chart: ./stable/appreg-api
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
@@ -15,5 +15,6 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/opal/frontend:prod-315563b-20250710134316 # {"$imagepolicy": "flux-system:opal-frontend"}
+      replicas: 2
+      image: sdshmctspublic.azurecr.io/appreg/api:prod-32d3a91-20250709183755 # {"$imagepolicy": "flux-system:appreg-api"}
       disableTraefikTls: true
