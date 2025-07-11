@@ -33,7 +33,7 @@ spec:
       controller:
         ingress:
           enabled: true
-          host: sds-neuvector{CLUSTER}-api.{ENVIRONMENT}.platform.hmcts.net
+          host: sds-neuvector${CLUSTER}-api.${ENVIRONMENT}.platform.hmcts.net
           annotations:
             kubernetes.io/ingress.class: traefik
             traefik.ingress.kubernetes.io/router.tls: "true"
@@ -53,7 +53,7 @@ spec:
         azureFileShare:
           enabled: true
           secretName: nv-storage-secret
-          shareName: neuvector-data-{CLUSTER}
+          shareName: neuvector-data-${CLUSTER}
         configmap:
           enabled: true
           data:
@@ -71,7 +71,7 @@ spec:
                 - audit
               Scan_Config:
                 Auto_Scan: true
-              Cluster_Name: sds-{ENVIRONMENT}{CLUSTER}
+              Cluster_Name: sds-${ENVIRONMENT}${CLUSTER}
       manager:
         affinity:
           podAntiAffinity:
@@ -90,7 +90,7 @@ spec:
         ingress:
           enabled: true
           httpredirect: false
-          host: sds-neuvector-{ENVIRONMENT}{CLUSTER}.hmcts.net
+          host: sds-neuvector-${ENVIRONMENT}${CLUSTER}.hmcts.net
           annotations:
             kubernetes.io/ingress.class: traefik
             traefik.ingress.kubernetes.io/router.tls: "false"

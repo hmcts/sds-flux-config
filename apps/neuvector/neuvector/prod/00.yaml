@@ -12,8 +12,8 @@ spec:
           enabled: true
           host: sds-neuvector00-api.platform.hmcts.net
           annotations:
-              kubernetes.io/ingress.class: traefik
-              traefik.ingress.kubernetes.io/router.tls: "true"
+            kubernetes.io/ingress.class: traefik
+            traefik.ingress.kubernetes.io/router.tls: "true"
         configmap:
           data:
             samlinitcfg.yaml: |
