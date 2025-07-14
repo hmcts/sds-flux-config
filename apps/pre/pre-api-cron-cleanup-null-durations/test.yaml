@@ -1,17 +1,18 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pre-api-cron-cleanup-streaming-locators
+  name: pre-api-cron-close-pending-cases
   namespace: pre
 spec:
   values:
     global:
       jobKind: CronJob
     job:
-      schedule: "30 09 * * *" # 6:30 PM UTC
-      image: sdshmctspublic.azurecr.io/pre/api:pr-1118 # {"$imagepolicy": "flux-system:test-pre-api-cron-cleanup-streaming-locators"}
+      suspend: true
+      schedule: "0 19 * * *"
+      image: sdshmctspublic.azurecr.io/pre/api:pr-1118 # {"$imagepolicy": "flux-system:test-pre-api-cron-check-for-missing-recordings"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Testing
         MEDIA_SERVICE: MediaKind
-        PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
+        ENABLE_NULL_DURATION_UPSERT: false
