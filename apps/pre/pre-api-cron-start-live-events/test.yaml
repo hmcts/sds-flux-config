@@ -10,7 +10,7 @@ spec:
     job:
       suspend: false
       schedule: "00 13 * * *"
-      image: sdshmctspublic.azurecr.io/pre/api:pr-920-51b5474-20250519091257 # {"$imagepolicy": "flux-system:test-pre-api-cron-start-live-events"}
+      image: sdshmctspublic.azurecr.io/pre/api:pr-1118 # {"$imagepolicy": "flux-system:test-pre-api-cron-start-live-events"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Testing
