@@ -10,6 +10,7 @@ resources:
   - ../../pre-api-cron-check-for-missing-recordings/pre-api-cron-check-for-missing-recordings.yaml
   - ../../pre-api-cron-perform-edit-requests/pre-api-cron-perform-edit-requests.yaml
   - ../../pre-api-cron-start-live-events/pre-api-cron-start-live-events.yaml
+  - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
   - ../../pre-api-cron-vodafone-etl/pre-api-cron-vodafone-etl.yaml
 namespace: pre
 patches:
@@ -22,5 +23,6 @@ patches:
   - path: ../../pre-api-cron-check-for-missing-recordings/demo.yaml
   - path: ../../pre-api-cron-perform-edit-requests/demo.yaml
   - path: ../../pre-api-cron-start-live-events/demo.yaml
+  - path: ../../pre-api-cron-cleanup-null-durations/demo.yaml
   - path: ../../pre-api-cron-vodafone-etl/demo.yaml
   - path: ../../serviceaccount/demo.yaml
