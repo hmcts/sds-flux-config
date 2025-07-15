@@ -26,7 +26,7 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
-        RESTART_ME: '009'
+        RESTART_ME: '010'
     function:
       memoryRequests: 500Mi
       cpuRequests: 500m
