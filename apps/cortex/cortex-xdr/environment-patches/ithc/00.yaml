@@ -2,9 +2,9 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: cortex-xdr
-  namespace: admin
+  namespace: cortex
 spec:
   values:
     agent:
       endpointTags: "testhmcts"
-      clusterName: "ss-sbox-00"
+      clusterName: "ss-ithc-00"
