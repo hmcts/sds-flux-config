@@ -19,6 +19,7 @@ resources:
   - ../../../apps/courtfines/base/kustomize.yaml
   - ../../../apps/appreg/base/kustomize.yaml
   - ../../../apps/rota/base/kustomize.yaml
+  - ../../../apps/cortex/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
