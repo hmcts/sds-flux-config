@@ -1,6 +1,6 @@
 apiVersion: v1
 data:
-  DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:9CUdGKgtwkVbYNM+InCc/PW5K6ZK6u4CmKs0DpGu6hn09IriX3T+97ZlLZqm2SixJQzphjf3UAn6TIKn9m78A+WdW5IlGGrB3dH0PJaGBNSOf9SWHPS9/R77Hh5l5tHWmtlC8mVMOwujq4izDdS+xizGoEKfHK9d+ucOjA==,iv:Y/9m+R9f2FR3LOKJDR7TJZ3YIRkIHMfrdQLna44mlAk=,tag:rw4ncLvEV6ov2l8C86fZLw==,type:str]
+  DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:0qG4CcwVRjRQ8ISjfVh2i7sf0h4U7Muv38Tbe+z3NGAX0oUxoMChyEitewNtTjtnHua6PIG/SBTo8wIlzEPvYK1OYlMGmcRoPXcbWrEbeh2CAny/q31WRBAsvp9fSW4XNh26x6spOLvlxFU1PjXYJ1mDypKktU/8W0jmD5ktAsA=,iv:5Q+XP+kSj4/NH0DgH2LGBBU8PVVFxkdz0fWTfU0+p0s=,tag:i+9PwTncmRU1bJtk2FswCQ==,type:str]
 kind: Secret
 metadata:
   creationTimestamp: null
@@ -14,7 +14,7 @@ sops:
       version: 6d094e08ab7240ea8a64ec77f7f734b7
       created_at: "2024-04-02T12:41:28Z"
       enc: fX0IuFJqGT1Z4Ap8W5JzEH70LZ-ytiVLYt7yBzqWBFV0ChFHG7yL4zBukIUpSUXhW9IzqmlzZJMWzbURUO6mcAipoT4FlZ0ziOGUMcKHoQ3fktOk8x03YgggemUKW0qe44vfMiI33s0iqyIJZ2hFhCHi-L0nOLFSMRQ4MTa9PLD0zFnTZlwB21rYjqoWmy15_xz8IuE-VALvhQ2B5prWkRMlUk5Wi0zz3XvvOFTochm5PgAujBFotGOL2e4VkX97hGSZHVTrGQuAbn1uMO8aDsLK7GsoSW8fJo_ogTL_z1ElOPu7cSngiUtaf2M15bjJh8SCO-2D1rH6M-43jGM9XA
-  lastmodified: "2025-07-15T10:14:27Z"
-  mac: ENC[AES256_GCM,data:wm0zGR2LoZbUib9iuQIsh210NtMWz3arIO/94arOgtUkdXzskvahjpbW8ZEgqPnYMg7TK5BlKdKsm38jjPs3xFKX6F0KwhtG0qd1w7vCQKt2/SelsOx576szxK0KeQhnMeXK1UADlfBeUlC0zOV91P4hOPgnfoAqmUCBI62Ags0=,iv:ghRTfyBCQmK0KUxTjpgMmXiB8s0BzXsF36jPa5LIUaM=,tag:nATXQbtDx5qbqIE/SkdCoQ==,type:str]
+  lastmodified: "2025-07-15T10:42:18Z"
+  mac: ENC[AES256_GCM,data:IMwNKWjfS2BCbPkAeDnsTfEY7m4cXS/KHVrdQgjpYwgYGUlMyYJdPNGcwBxt1VfGUOzkubP15RtpY0H8JiZJ5ME2KO4SS30GFmMefB9RbslBDZhAwOwltfQO84oZxXRJunUkMLWQxWU+HeNh9mWf1yycnLVJLHVMtDgXANIgrzU=,iv:2hX2mYGBGur35FufKAwEAwZj5UNSSzBbIhzHb1dG08s=,tag:hjQIziVlVBWu0MHf3qUASA==,type:str]
   encrypted_regex: ^(data|stringData)$
   version: 3.10.2
