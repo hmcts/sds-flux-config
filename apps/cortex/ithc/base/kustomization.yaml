@@ -3,4 +3,6 @@ kind: Kustomization
 namespace: cortex
 resources:
   - ../../base
-  - namespace.yaml
+
+patches:
+  - path: namespace.yaml
