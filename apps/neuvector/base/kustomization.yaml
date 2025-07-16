@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ../fluentbit-log/fluentbit-log.yaml
+  - ../neuvector/secret.yaml
   - ../neuvector/neuvector.yaml
   - ../../base/workload-identity
