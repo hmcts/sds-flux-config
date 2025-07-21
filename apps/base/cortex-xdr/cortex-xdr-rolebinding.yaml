@@ -5,9 +5,9 @@ metadata:
   namespace: ${NAMESPACE}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
+  kind: Role
   name: cortex-xdr-role
 subjects:
   - kind: ServiceAccount
     name: cortex-xdr-sa
-    namespace: admin
+    namespace: cortex
