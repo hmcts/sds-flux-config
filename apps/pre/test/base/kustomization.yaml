@@ -9,6 +9,7 @@ resources:
   - ../../pre-api-cron-perform-edit-requests/pre-api-cron-perform-edit-requests.yaml
   - ../../pre-api-cron-process-capture-sessions/pre-api-cron-process-capture-sessions.yaml
   - ../../pre-api-cron-start-live-events/pre-api-cron-start-live-events.yaml
+  - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
   - ../../pre-api-cron-vodafone-etl/pre-api-cron-vodafone-etl.yaml
   - ../../../rbac/nonprod-role.yaml
   - ../../../base/slack-provider/test
@@ -24,5 +25,6 @@ patches:
   - path: ../../pre-api-cron-perform-edit-requests/test.yaml
   - path: ../../pre-api-cron-process-capture-sessions/test.yaml
   - path: ../../pre-api-cron-start-live-events/test.yaml
+  - path: ../../pre-api-cron-cleanup-null-durations/test.yaml
   - path: ../../pre-api-cron-vodafone-etl/test.yaml
   - path: ../../serviceaccount/test.yaml
