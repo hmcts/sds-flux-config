@@ -1,17 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pre-api-cron-vodafone-etl-migrate-exclusions
+  name: pre-api-cron-vodafone-etl-fetch-data
   namespace: pre
 spec:
-  releaseName: pre-api-cron-vodafone-etl-migrate-exclusions
+  releaseName: pre-api-cron-vodafone-etl-fetch-data
   values:
     java:
       enabled: false
     job:
       enabled: true
       environment:
-        TASK_NAME: MigrateExclusions
+        TASK_NAME: FetchData
   chart:
     spec:
       chart: ./stable/pre-api

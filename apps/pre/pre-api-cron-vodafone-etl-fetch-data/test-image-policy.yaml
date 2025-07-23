@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
-  name: test-pre-api-cron-vodafone-etl-fetch-xml
+  name: test-pre-api-cron-vodafone-etl-fetch-data
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
