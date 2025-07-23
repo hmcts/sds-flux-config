@@ -6,12 +6,14 @@ resources:
   - ../../pre-api-cron-cleanup-streaming-locators/pre-api-cron-cleanup-streaming-locators.yaml
   - ../../pre-api-cron-close-pending-cases/pre-api-cron-close-pending-cases.yaml
   - ../../pre-api-cron-check-for-missing-recordings/pre-api-cron-check-for-missing-recordings.yaml
+  - ../../pre-api-cron-get-scheduled-bookings/pre-api-cron-get-scheduled-bookings.yaml
   - ../../pre-api-cron-perform-edit-requests/pre-api-cron-perform-edit-requests.yaml
   - ../../pre-api-cron-start-live-events/pre-api-cron-start-live-events.yaml
   - ../../pre-api-cron-vodafone-etl-fetch-xml/pre-api-cron-vodafone-etl-fetch-xml.yaml
   - ../../pre-api-cron-vodafone-etl-migrate-exclusions/pre-api-cron-vodafone-etl-migrate-exclusions.yaml
   - ../../pre-api-cron-vodafone-etl-post-migration/pre-api-cron-vodafone-etl-post-migration.yaml
   - ../../pre-api-cron-vodafone-etl-process-full/pre-api-cron-vodafone-etl-process-full.yaml
+  - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
   - ../../../base/slack-provider/prod
 namespace: pre
 patches:
@@ -22,10 +24,12 @@ patches:
   - path: ../../pre-api-cron-cleanup-live-events/prod.yaml
   - path: ../../pre-api-cron-close-pending-cases/prod.yaml
   - path: ../../pre-api-cron-check-for-missing-recordings/prod.yaml
+  - path: ../../pre-api-cron-get-scheduled-bookings/prod.yaml
   - path: ../../pre-api-cron-perform-edit-requests/prod.yaml
   - path: ../../pre-api-cron-start-live-events/prod.yaml
   - path: ../../pre-api-cron-vodafone-etl-fetch-xml/prod.yaml
   - path: ../../pre-api-cron-vodafone-etl-migrate-exclusions/prod.yaml
   - path: ../../pre-api-cron-vodafone-etl-post-migration/prod.yaml
   - path: ../../pre-api-cron-vodafone-etl-process-full/prod.yaml
+  - path: ../../pre-api-cron-cleanup-null-durations/prod.yaml
   - path: ../../serviceaccount/prod.yaml

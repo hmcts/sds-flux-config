@@ -8,13 +8,14 @@ resources:
   - ../../pre-api-cron-cleanup-streaming-locators/pre-api-cron-cleanup-streaming-locators.yaml
   - ../../pre-api-cron-close-pending-cases/pre-api-cron-close-pending-cases.yaml
   - ../../pre-api-cron-check-for-missing-recordings/pre-api-cron-check-for-missing-recordings.yaml
+  - ../../pre-api-cron-get-scheduled-bookings/pre-api-cron-get-scheduled-bookings.yaml
   - ../../pre-api-cron-perform-edit-requests/pre-api-cron-perform-edit-requests.yaml
   - ../../pre-api-cron-start-live-events/pre-api-cron-start-live-events.yaml
   - ../../pre-api-cron-vodafone-etl-fetch-xml/pre-api-cron-vodafone-etl-fetch-xml.yaml
   - ../../pre-api-cron-vodafone-etl-migrate-exclusions/pre-api-cron-vodafone-etl-migrate-exclusions.yaml
   - ../../pre-api-cron-vodafone-etl-post-migration/pre-api-cron-vodafone-etl-post-migration.yaml
   - ../../pre-api-cron-vodafone-etl-process-full/pre-api-cron-vodafone-etl-process-full.yaml
-
+  - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
 namespace: pre
 patches:
   - path: ../../identity/demo.yaml
@@ -24,10 +25,12 @@ patches:
   - path: ../../pre-api-cron-cleanup-live-events/demo.yaml
   - path: ../../pre-api-cron-close-pending-cases/demo.yaml
   - path: ../../pre-api-cron-check-for-missing-recordings/demo.yaml
+  - path: ../../pre-api-cron-get-scheduled-bookings/demo.yaml
   - path: ../../pre-api-cron-perform-edit-requests/demo.yaml
   - path: ../../pre-api-cron-start-live-events/demo.yaml
   - path: ../../pre-api-cron-vodafone-etl-fetch-xml/demo.yaml
   - path: ../../pre-api-cron-vodafone-etl-migrate-exclusions/demo.yaml
   - path: ../../pre-api-cron-vodafone-etl-post-migration/demo.yaml
   - path: ../../pre-api-cron-vodafone-etl-process-full/demo.yaml
+  - path: ../../pre-api-cron-cleanup-null-durations/demo.yaml
   - path: ../../serviceaccount/demo.yaml

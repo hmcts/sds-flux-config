@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: appreg-api
+  namespace: appreg
+spec:
+  releaseName: appreg-api
+  chart:
+    spec:
+      chart: ./stable/appreg-api
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
+  values:
+    nodejs:
+      replicas: 2
+      image: sdshmctspublic.azurecr.io/appreg/api:prod-32d3a91-20250709183755 # {"$imagepolicy": "flux-system:appreg-api"}
+      disableTraefikTls: true

@@ -18,15 +18,16 @@ spec:
         AUDIO_LINKING_TASK_PRE_AMBLE_DURATION: '0m'
         AUDIO_LINKING_TASK_POST_AMBLE_DURATION: '0m'
         FEIGN_LOG_LEVEL: full
-        CASE_EXPIRY_DELETION_ENABLED: false
+        CASE_EXPIRY_DELETION_ENABLED: true
         MANUAL_DELETION_ENABLED: true
         PROCESS_E2E_ARM_RPO: true
         ARM_RPO_DURATION: 24h
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         RESET_POD: true
+        RESTART: 001
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-d8bbd2c-20250702080224 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-0658b18-20250718182652 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk

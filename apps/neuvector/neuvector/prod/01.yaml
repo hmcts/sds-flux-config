@@ -9,7 +9,6 @@ spec:
     neuvector:
       controller:
         azureFileShare:
-          secretName: nv-storage-secret
           shareName: neuvector-data-01
         ingress:
           enabled: true
@@ -21,43 +20,25 @@ spec:
               Issuer: https://sts.windows.net/531ff96d-0ae9-462a-8d2d-bec7c0b42082/
               X509_Cert: |
                 -----BEGIN CERTIFICATE-----
-                MIIC8DCCAdigAwIBAgIQeut9SGWeWYpIC6Vfq86r1zANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQD
-                EylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yMTAyMTcxMTIw
-                NDNaFw0yNDAyMTcxMTIwNDNaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQg
-                U1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAybM4mGhuoDae
-                LLkB5lpaHk1F/+xA4UJ/6wxZSPr4Cnd25oi6rhhOtOYscXfGpEmUECu9Zg3u/irjahjR1eNpLxzg
-                ZvUZeE5XAkWE3CIu6JVwA+yjA0J2cmXoH3FMD143Kxhz/izODFYDazHY6Utkz68PfJ+rbJOxwwu7
-                h23jZnlF3fmYpML5QeJY7SGZiD27cOf/RPNJIXSckQrxySJsGjdrt6/wStiOUh8egNNvAovCFF5t
-                agRqDah0pfRBoUJ/swYsMcKi+3YgJ4B4HhEJsOtGw5q26EZxhH8V90B1HwkDDblRBQYQLKWKFC2h
-                tjBVccUW7SEeYctrelW/JZAkLQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBTBI0MEwx1GIHkMid3
-                fhU6pgFO4j535JgnpoiswjIJSfEPghZDHwa4CSagZF7eK+zqgZevcla7WN8Z8/U4G1vQcF+Fbckr
-                2WEYfd2OElAfDEYljsMUQPUL1jkjiYmsltkD2K+M2qHTbwi0cjNKSJpeHR494wXKzpAcyPdZwvwK
-                mpqXuma56ryTxs62aYcxsPiwmM0YR0G99rLel18BdBtllK0yMTwCY9LuNXrTzKKCfATl0qnAshzE
-                FdrDAE0uOedcXykuoJlKWL7VPDO/0JJzlNA1WV9jckEXOd4N1jbM3SZARU9o5AyRY//ETkDXClVh
-                mZgVNTZYedemLQ+/jE4e
+                MIICxDCCAaygAwIBAgIIItFPpXlpqA8wDQYJKoZIhvcNAQELBQAwIjEgMB4GA1UEAwwXU0RTIE5l
+                dXZlY3RvciAtIFByb2QgMDEwHhcNMjUwNzAyMTQxNjI2WhcNMjYwNzAyMTQyNjI2WjAiMSAwHgYD
+                VQQDDBdTRFMgTmV1dmVjdG9yIC0gUHJvZCAwMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC
+                ggEBAKQBzX2gj7f/Zf6X6JGikoiDhHTTkyJ096Kegku00YSECN407DuzpXWb7ulELRY4kn7h26zU
+                7xqdt24Ulm8ACTxZxitswVk2llRGFPGi1OQ34UI8OcnY7vOQvLXqEb7KQdiSRCmdGhCm4wY50ucI
+                g8xh87wYTYQaS6VyFrXwvZXGUkvI+8PiVYiBR0npZ78VqHUiyJ4M+aM7Izk/fSJYffuPw/aUFoR2
+                glVOYCpW2HpQkrosbbs467mm6FQGHCSamtGxweMFzMuNJtr9WCOJ0d/YsimkydwFurQ1Kc3shF9e
+                hQVK1jAH1i4vRwwrp0CBhB44hUAoTgw4KkAcuWVJKTMCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEA
+                MikYD/9WrCHI7jYiGNjqrUVeaxlC/iD77IInNldtTUaKAVAR1UAOVP54UvvOeMgHFXjgyN+H3T0S
+                N92J5nvDCAypQDWseonHnn3SP3NREdVkiYDyYvrjYdK7kdi6a7b4tWimad77BTvS0M5WdyOwRGaO
+                sy/2KcjDN/yV+xyi78F30tUVrWM/tY8C5IbiSvv8C7R+7kymg3AHi0U5753/8lEJ6gNyuBGNgtAT
+                /WnmxUlChCEMEbR5ke3AvUIXfWI0Q6BjUtfCSwcjGH8+MYCKJljl2+Bu1rI87KDbAB+ha6P2DiyD
+                8b1zD/4zr/y6IUbx4K5ZH33E25ZASN+xSyUP0Q==
                 -----END CERTIFICATE-----
               Enable: true
               Default_Role: reader
               Role_Groups:
                 admin:
                   - e7ea2042-4ced-45dd-8ae3-e051c6551789
-            sysinitcfg.yaml: |
-              New_Service_Policy_Mode: Discover
-              Syslog_ip: fluentbit-log
-              Syslog_IP_Proto: 6
-              Syslog_Port: 5140
-              Syslog_Level: Warning
-              Syslog_status: true
-              Syslog_in_json: true
-              Syslog_Categories:
-                - event
-                - security-event
-                - audit
-              Syslog_In_Json: false
-              Scan_Config:
-                Auto_Scan: true
-              Cluster_Name: sds-prod01
       manager:
         ingress:
-          host: sds-neuvector01.platform.hmcts.net
-          enabled: true
+          host: sds-neuvector-01.hmcts.net
