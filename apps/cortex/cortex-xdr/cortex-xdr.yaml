@@ -29,6 +29,6 @@ spec:
       create: false
       name: cortex-xdr
     rbac:
-      create: true
+      create: false
     serviceAccount:
       name: "cortex-xdr-sa"

@@ -6,7 +6,7 @@ spec:
   releaseName: pip-publication-services-mi-reporting-cron
   values:
     job:
-      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-7ab2ce7-20250610125912 # {"$imagepolicy": "flux-system:pip-publication-services-mi-reporting-cron"}
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-0b647cb-20250722154741 # {"$imagepolicy": "flux-system:pip-publication-services-mi-reporting-cron"}
       disableTraefikTls: true
   chart:
     spec:
