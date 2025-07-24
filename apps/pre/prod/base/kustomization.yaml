@@ -8,6 +8,7 @@ resources:
   - ../../pre-api-cron-check-for-missing-recordings/pre-api-cron-check-for-missing-recordings.yaml
   - ../../pre-api-cron-get-scheduled-bookings/pre-api-cron-get-scheduled-bookings.yaml
   - ../../pre-api-cron-perform-edit-requests/pre-api-cron-perform-edit-requests.yaml
+  - ../../pre-api-cron-process-capture-sessions/pre-api-cron-process-capture-sessions.yaml
   - ../../pre-api-cron-start-live-events/pre-api-cron-start-live-events.yaml
   - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
   - ../../pre-api-cron-vodafone-etl/pre-api-cron-vodafone-etl.yaml
@@ -23,6 +24,7 @@ patches:
   - path: ../../pre-api-cron-check-for-missing-recordings/prod.yaml
   - path: ../../pre-api-cron-get-scheduled-bookings/prod.yaml
   - path: ../../pre-api-cron-perform-edit-requests/prod.yaml
+  - path: ../../pre-api-cron-process-capture-sessions/prod.yaml
   - path: ../../pre-api-cron-start-live-events/prod.yaml
   - path: ../../pre-api-cron-cleanup-null-durations/prod.yaml
   - path: ../../pre-api-cron-vodafone-etl/prod.yaml
