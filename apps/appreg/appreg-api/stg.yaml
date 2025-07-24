@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: appreg-api.staging.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/appreg/api:prod-32d3a91-20250709183755 # {"$imagepolicy": "flux-system:appreg-api"}
+      image: sdshmctspublic.azurecr.io/appreg/api:prod-0ef0e2d-20250724144646 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "STAGING"
         LOG_LEVEL: "DEBUG"
