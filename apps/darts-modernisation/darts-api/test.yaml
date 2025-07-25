@@ -7,7 +7,7 @@ spec:
   releaseName: darts-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/api:pr-2989-425f5e2-20250707101354 #{"$imagepolicy": "flux-system:darts-api-pr"}
+      image: sdshmctspublic.azurecr.io/darts/api:pr-2989 #{"$imagepolicy": "flux-system:darts-api-pr"}
       replicas: 4
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
