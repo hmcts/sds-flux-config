@@ -7,8 +7,6 @@ spec:
   releaseName: darts-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/api:pr-2989 #{"$imagepolicy": "flux-system:darts-api-pr"}
-      replicas: 4
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
@@ -28,11 +26,5 @@ spec:
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         RESTART_ME: '011'
     function:
-      memoryRequests: 500Mi
-      cpuRequests: 500m
-      memoryLimits: 4Gi
-      cpuLimits: 4
-      job:
-        activeDeadlineSeconds: 7200
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
