@@ -19,4 +19,7 @@ spec:
         AZURE_FINAL_SA: prefinalsastg
         MEDIA_SERVICE: MediaKind
         ENABLE_AUTOMATED_EDITING: true
+        ENABLE_NULL_DURATION_UPSERT: false
+        ENABLE_ENHANCED_PROCESSING: true
+        HIKARI_POOL_SIZE: 25
         VAR_TA: Trigger-1

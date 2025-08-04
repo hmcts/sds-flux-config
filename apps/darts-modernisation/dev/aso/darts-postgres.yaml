@@ -8,3 +8,6 @@ spec:
   sku:
     name: Standard_D2ds_v5
     tier: GeneralPurpose
+  storage:
+    autoGrow: "Enabled"
+    storageSizeGB: 64

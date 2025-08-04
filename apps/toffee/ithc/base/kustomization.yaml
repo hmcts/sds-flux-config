@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
+  - ../../../base/cortex-xdr
 namespace: toffee
 patches:
   - path: ../../identity/ithc.yaml
@@ -9,3 +10,4 @@ patches:
   - path: ../../recipe-backend/ithc.yaml
   - path: ../../recipe-receiver/ithc.yaml
   - path: ../../serviceaccount/ithc.yaml
+  - path: namespace.yaml

@@ -6,8 +6,7 @@ metadata:
     hmcts.github.com/prod-automated: disabled
 spec:
   filterTags:
-    pattern: '^pr-920-[a-f0-9]+-(?P<ts>[0-9]+)'
-    extract: '$ts'
+    pattern: 'pr\-1118'
   policy:
     alphabetical:
       order: asc

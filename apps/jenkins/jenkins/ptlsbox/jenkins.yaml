@@ -5,14 +5,6 @@ metadata:
   name: jenkins
   namespace: jenkins
 spec:
-  chart:
-    spec:
-      chart: jenkins
-      version: 4.6.6
-      sourceRef:
-        kind: HelmRepository
-        name: jenkins
-        namespace: jenkins
   values:
     controller:
       # image version is managed in jenkins-controller-version.yaml
@@ -21,6 +13,9 @@ spec:
         runAsGroup: 0
         readOnlyRootFilesystem: false
         allowPrivilegeEscalation: true
+      image:
+        registry: hmctspublic.azurecr.io
+        repository: jenkins/jenkins
       ingress:
         hostName: sds-sandbox-build.hmcts.net
       secondaryingress:
@@ -115,12 +110,6 @@ spec:
                     name: PIP
                     recurse: true
                     title: Publishing & Information Dashboard
-                - buildMonitor:
-                    includeRegex: >-
-                      ^HMCTS_.*VH-.*\/.+\/master
-                    name: VH
-                    recurse: true
-                    title: Video Hearings Dashboard
                 - buildMonitor:
                     includeRegex: >-
                       ^HMCTS_.*HMI-.*\/.+\/master
