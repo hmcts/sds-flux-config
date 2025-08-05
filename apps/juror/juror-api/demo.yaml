@@ -8,7 +8,7 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: sdshmctspublic.azurecr.io/juror/api:prod-f601808-20250724130850
+      image: sdshmctspublic.azurecr.io/juror/api:pr-958-79861f8-20250805075205
       ingressHost: juror-api.demo.platform.hmcts.net
       environment:
         RUN_DB_MIGRATION_ON_STARTUP: true
