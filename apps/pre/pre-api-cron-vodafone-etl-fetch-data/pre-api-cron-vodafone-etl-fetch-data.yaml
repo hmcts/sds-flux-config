@@ -1,17 +1,17 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pre-api-cron-vodafone-etl
+  name: pre-api-cron-vodafone-etl-fetch-data
   namespace: pre
 spec:
-  releaseName: pre-api-cron-vodafone-etl
+  releaseName: pre-api-cron-vodafone-etl-fetch-data
   values:
     java:
       enabled: false
     job:
       enabled: true
       environment:
-        TASK_NAME: FetchXML
+        TASK_NAME: FetchData
   chart:
     spec:
       chart: ./stable/pre-api

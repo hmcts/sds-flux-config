@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pre-api-cron-vodafone-etl-fetch-data
+  namespace: pre
+spec:
+  values:
+    global:
+      jobKind: CronJob
+    job:
+      memoryRequests: '1Gi'
+      memoryLimits: '2Gi'
+      schedule: "10 10 1 5 *" # 10 AM 1st May UTC
+      suspend: true
+      image: sdshmctspublic.azurecr.io/pre/api:pr-1118 # {"$imagepolicy": "flux-system:test-pre-api-cron-vodafone-etl"}
+      environment:
+        AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
+        PLATFORM_ENV_TAG: Testing
+        MEDIA_SERVICE: MediaKind
+        PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
