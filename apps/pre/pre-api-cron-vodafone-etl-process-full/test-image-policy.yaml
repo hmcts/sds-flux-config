@@ -1,12 +1,12 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
-  name: test-pre-api-cron-vodafone-etl
+  name: test-pre-api-cron-vodafone-etl-process-full
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
   filterTags:
-    pattern: 'pr\-1118'
+    pattern: 'pr\-921\-5878407\-20250520121648'
   policy:
     alphabetical:
       order: asc
