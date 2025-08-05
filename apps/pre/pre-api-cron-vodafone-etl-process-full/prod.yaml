@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pre-api-cron-vodafone-etl-process-full
+  namespace: pre
+spec:
+  values:
+    global:
+      jobKind: CronJob
+    job:
+      schedule: "10 10 1 5 *" # 10 AM 1st May UTC
+      suspend: true
+      memoryRequests: '1Gi'
+      memoryLimits: '2Gi'
+      image: sdshmctspublic.azurecr.io/pre/api:prod-ca98f53-20250702120854 # {"$imagepolicy": "flux-system:pre-api"}
+      environment:
+        MEDIA_SERVICE: MediaKind
+        ENABLE_NEW_EMAIL_SERVICE: true
+        PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
