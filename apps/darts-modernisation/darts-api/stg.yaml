@@ -16,6 +16,8 @@ spec:
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
+        AUDIO_LINKING_TASK_PRE_AMBLE_DURATION: '0m'
+        AUDIO_LINKING_TASK_POST_AMBLE_DURATION: '0m'
         CASE_EXPIRY_DELETION_ENABLED: true
         MANUAL_DELETION_ENABLED: true
         PROCESS_E2E_ARM_RPO: true
@@ -24,6 +26,6 @@ spec:
         AZCOPY_LOG_LEVEL: "--log-level=INFO"
         AZCOPY_OUTPUT_LEVEL: "--output-level=default"
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-bf23ec7-20250514113057 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-081bc82-20250805083825 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net

@@ -7,11 +7,9 @@ resources:
   - ../../../apps/mi/base/kustomize.yaml
   - ../../../apps/azure-devops/base/kustomize.yaml
   - ../../../apps/admin/base/kustomize.yaml
-  - ../../../apps/neuvector/base/kustomize.yaml
+  - ../../../apps/neuvector/crds/kustomize.yaml
   - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml
-  - ../../../apps/vh/base/kustomize.yaml
-  - ../../../apps/dts-legacy/base/kustomize.yaml
   - ../../../apps/kube-system/base/kustomize.yaml
   # - ../../../apps/my-time/base/kustomize.yaml
   - ../../../apps/darts-modernisation/base/kustomize.yaml
@@ -22,6 +20,9 @@ resources:
   - ../../../apps/juror/base/kustomize.yaml
   - ../../../apps/opal/base/kustomize.yaml
   - ../../../apps/pdda/base/kustomize.yaml
+  - ../../../apps/courtfines/base/kustomize.yaml
+  - ../../../apps/appreg/base/kustomize.yaml
+  - ../../../apps/rota/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:

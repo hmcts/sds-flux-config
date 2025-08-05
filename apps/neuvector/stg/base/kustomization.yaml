@@ -4,8 +4,7 @@ resources:
   - ../../base
   - fluentbit-log.yaml
   - nv-storage-secret.yaml
-  - nv-storage-secret-hack.yaml
+
 patches:
-  - path: ../../identity/stg.yaml
   - path: ../../neuvector/stg/stg.yaml
   - path: ../../serviceaccount/stg.yaml

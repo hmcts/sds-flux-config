@@ -1,13 +1,15 @@
 apiVersion: v1
 data:
-  client_id: ENC[AES256_GCM,data:H48Hl+aH+Qv6CiCR8xgKbIv1NTdauGhHMqgRlaFPsaxjWS30N6qUvnH/FUcarcgc,iv:wbBMNQrTwL/PeTOE6ZSAmQiCyLq+zokAiupJFSWiGZ8=,tag:haLo0UyDJLCRmHFaTGppbg==,type:str]
-  client_secret: ENC[AES256_GCM,data:gNzglXJMe75PX4iBeCkrSVfND/tiIg2CDXuQ8NNCioqAYZuL9OU7aNR7EPzERtYCV2C3jg6jHo4=,iv:8DSKM1nkJV+1HqzosOdsxgOtluG7fiZIWJLnPsZzhbE=,tag:57KeG11xZS8en806yelIGA==,type:str]
-  cosmos_key: ENC[AES256_GCM,data:tjo0FwqIUrSPDFMzclZLfozeAfZzulQPwpbGchQzLfYftPf257+aPOCrIgWEyT6rTG6ZL8ufacb4DDHL7Ln7SfaCgweEjAHbovN8uXBVEp+aUQPqDv90QeffXVotABbN4QN/ODL+wvq+vH6WuGKygD2u2KA8BypU,iv:ejMpmFAwLkWcy7pvYNmUQ5zgAM4n7HNzajQp01vX5wo=,tag:GselciqQBGJDcC+fIRjGDQ==,type:str]
-  tenant_id: ENC[AES256_GCM,data:J97IWG2WCGA1KFiK0eB4kVIjrkTiU8x2GUXPpTtapo5hdoR+kG3r0CIbGm5nVjfK,iv:tP123jcj/G0UQGyHLMoQx8XaKueGHl4R77WiELkxFWU=,tag:sKFx+uauRynQn122MDtbog==,type:str]
+  client_id: ENC[AES256_GCM,data:dM3ny4+3kPBjvtC7nZ5WRslA2RtjQl4EckGTo05YUUhKnjN2VlEuD6AmUcPz298g,iv:azARTKXRIIP/N2+JUNA3r9c7qO/LPLcFmt8YQzd4h2I=,tag:iW06kgt+8mMJOfv6xTpoeQ==,type:str]
+  client_secret: ENC[AES256_GCM,data:+5lTzSKuoXnt1xmv3PR+rWTvcCJHjjZa7vxBazH8OQ0dUOrRxbhV4Y/xYTq9uMl22x66ENU9zyI=,iv:l6WSc8TXc+CoBpZNu7aIFuSsjokDPk+qVXsB2ZkuPcQ=,tag:vZBAZuNzheMl3CEbR3u3NA==,type:str]
+  cosmos_key: ENC[AES256_GCM,data:4sQK/iATaEcke/IkMVRzDugney+6CEc6NlXokybyXVRWV+lWZx33Uz4PQOZfpxDWeoVPBmBYQDdLzJ1Z1quxhXJ84daBDKQKVI4Bq5KsU9VOvAAC1CKX7XYLulE+AnMQD/iO7c4lXveYgGmPR+8uOrIbnNE4mHIA,iv:RgRNAiX63s3ZVecmGpqnAbA/lOkvgvbgi5giMUZFyB4=,tag:BCP3l43l4UQZsVmGt5p77w==,type:str]
+  tenant_id: ENC[AES256_GCM,data:0n/nCRaUNGOhIADIxIe55mB7wz93lbP1KTe+lXJy5d4nde5ihdVxzWM4z7e34013,iv:rDgrtnTlhi4Qcni8SvPcbIrZWtbvnVeuKmIcIwJMyis=,tag:UuxkjjsVI1lq0qZCPqiiaA==,type:str]
 kind: Secret
 metadata:
+  creationTimestamp: null
   name: version-reporter
   namespace: monitoring
+type: Opaque
 sops:
   kms: []
   gcp_kms: []
@@ -15,12 +17,12 @@ sops:
     - vault_url: https://dtssdsptl.vault.azure.net
       name: sops-key
       version: b047792919f74e6c875ba3a8945ed7a9
-      created_at: "2023-07-12T12:42:07Z"
-      enc: tqp2r38LD5uPrIHNmbZuIu0MU78q0iEhcjuHv5Qr0NXtpQ5o9y3wOvtcOVtP4jqcc0FSK8WiTOYj0HEys055v7pXHKn9vzCHeeTuUP5aWTpdwDUN6xPr3HhNfdDBHixKA0uOPdwIk0P534xAQH3Sy-W5rmbxr-VezL3KcY07Kwca90zLZPsJozOdyerm6m-XJa7tI5OMVMw3LWiY3kUxy_QOR3vy71tgdXZaBD85W0jHPaznNIONMErf8kQKHZGDZaaKjNw91eqw7bzTqHzZlEfMzQAaQ58sU7dozrLtgePPXUodYQpxZF8rf76Wmu22jMGtUt0dcSyOS_RET3pM2w
+      created_at: "2025-05-27T08:44:51Z"
+      enc: bGXQxqT0HiC8fZjMK59ITLkonDnq8Zfa1sug-BghbaDnOXVKtoQCz9aXjSQOM7kNMPvavc9Bo42u6_2saCFQHsq_7EzCFXGP7u59kg2AQCyZSR7CzMJtht-NGdPBecM9-_Igt8HplZDrBJaUnA6jTT9VS3Bnejw-decO0nsOz3S5IU-pw_c0BmLFfCe4jAh4ZoXUrUTEAZIhvXDUkBvJzG-sdZSdKMBl6yRTQn07e3QDNPXkSHOQTUltm17_dj8DQvRUfquFiN8szwBVa--zgf6k5kPej8IFOr1tlj64jptt5Z9C_jbqdMK3blQeHEhX9uiPqCukwC4YR7ptyNY9rA
   hc_vault: []
   age: []
-  lastmodified: "2023-07-12T12:42:09Z"
-  mac: ENC[AES256_GCM,data:e/W+bQoXjLf4h3H/hesw7LWbYOMCoPs9uh/I0zpO935hrWVcgma/MEQl2+w6rTAQNbLUbUPxTcnXlYiT4f8sDgcLp5xCid+m38z0XAe+pMDYIEqs/FSSD+XU4KR0eCW1ZJ0hgDeO256Gtfxq6E9luzth0sMICkMHCm44dJa4b3A=,iv:7gyDWqPSEVCiLQge6PfvH7GpU2Hw1iL5eKYhz5CYAVE=,tag:hY/isU7ooXMU2Y84ef4TMg==,type:str]
+  lastmodified: "2025-05-27T08:45:00Z"
+  mac: ENC[AES256_GCM,data:4zatGYM3I1KHqoqU5GAiknK8H80ROeCMGnoQRdXB3gCdHG3KiENynNI4VDhszaB5x9NMjsTnnf8v4PdsNaeEkPMpHRNJO8Ndk01RGkd2lLInMgQHe3WK8eIeCuQJ/I+Bp9tFFS912X9b2ifGOeiKKC+4c/JyJogr9BBd4/KhYKo=,iv:mqRRs3xRq5B+5KqF+vEIOsBmqPo4dmJbEadsEQFRCjo=,tag:xlUIVIuuXLLklJWIh9p9MQ==,type:str]
   pgp: []
   encrypted_regex: ^(data|stringData)$
   version: 3.7.3
