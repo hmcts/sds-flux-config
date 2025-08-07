@@ -16,7 +16,7 @@ spec:
   values:
     java:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/darts/gateway:prod-3abc655-20250806190800 # {"$imagepolicy": "flux-system:darts-gateway"}
+      image: sdshmctspublic.azurecr.io/darts/gateway:prod-574eadf-20250807075917 # {"$imagepolicy": "flux-system:darts-gateway"}
       memoryRequests: '2G'
       memoryLimits: '3G'
       cpuRequests: '500m'
