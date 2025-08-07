@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: darts-api
   values:
-    java:      
+    java:
       image: sdshmctspublic.azurecr.io/darts/api:pr-2977 #{"$imagepolicy": "flux-system:darts-api-pr"}
       ingressHost: darts-api.demo.platform.hmcts.net
       environment:
