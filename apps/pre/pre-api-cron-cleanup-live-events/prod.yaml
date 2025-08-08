@@ -12,5 +12,4 @@ spec:
       image: sdshmctspublic.azurecr.io/pre/api:prod-08679ba-20250808144405 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
-        ENABLE_NEW_EMAIL_SERVICE: true
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
