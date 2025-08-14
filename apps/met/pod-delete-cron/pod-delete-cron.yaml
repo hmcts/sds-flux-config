@@ -7,7 +7,7 @@ spec:
   releaseName: libragob-pod-delete-nightly
   interval: 5m
   values:
-    image: bitnami/kubectl:latest
+    image: hmctspublic.azurecr.io/imported/bitnami/kubectl:1.33.4
     schedule: "50 22 * * *"
     suspend: true
     disableActiveClusterCheck: true
