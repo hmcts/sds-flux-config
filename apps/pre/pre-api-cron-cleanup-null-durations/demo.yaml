@@ -8,9 +8,7 @@ spec:
     global:
       jobKind: CronJob
     job:
-      suspend: false
-      disableActiveClusterCheck: true
-      schedule: "50 1 * * Thu" # 2:50 BST, Thursday
+      schedule: "10 2 * * Thu" # 3:10 BST, Thursday
       image: sdshmctspublic.azurecr.io/pre/api:prod-94ee809-20250821083204 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         AZURE_SUBSCRIPTION_ID: c68a4bed-4c3d-4956-af51-4ae164c1957c
