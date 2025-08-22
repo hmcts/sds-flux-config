@@ -8,7 +8,7 @@ spec:
     global:
       jobKind: CronJob
     job:
-      suspend: false
+      suspend: true
       schedule: "50 15 * * Thu" # 4:50 BST, Thursday
       image: sdshmctspublic.azurecr.io/pre/api:prod-668c4a8-20250822100229 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
