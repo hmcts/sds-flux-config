@@ -8,6 +8,7 @@ spec:
     nodejs:
       replicas: 2
       ingressHost: pip-frontend.staging.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1525-d637dc9-20250820100804
       keyVaults:
         pip-ss-kv:
           resourceGroup: pip-ss-stg-rg
