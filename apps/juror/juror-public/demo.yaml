@@ -8,5 +8,5 @@ spec:
   values:
     nodejs:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: sdshmctspublic.azurecr.io/juror/public:pr-318-de5e8f1-20250821132046 # {"$imagepolicy": "flux-system:juror-public-pr"}
+      image: sdshmctspublic.azurecr.io/juror/public:prod-eda9d89-20250814133513
       ingressHost: juror-public.demo.apps.hmcts.net
