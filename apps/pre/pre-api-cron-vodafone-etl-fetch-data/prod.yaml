@@ -8,8 +8,8 @@ spec:
     global:
       jobKind: CronJob
     job:
-      schedule: "10 10 1 5 *" # 10 AM 1st May UTC
-      suspend: true
+      schedule: "30 16 27 8 *" # 5:30pm (BST) - 27 Aug
+      suspend: false
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
       image: sdshmctspublic.azurecr.io/pre/api:prod-48291a6-20250827142829 # {"$imagepolicy": "flux-system:pre-api"}
