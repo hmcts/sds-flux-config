@@ -24,3 +24,11 @@ spec:
         B2C_ADMIN_URL: https://staff.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
         SESSION_COOKIE_SAME_SITE: lax
         CRIME_IDAM_URL: https://login.sit.cjscp.org.uk
+      autoscaling:
+        enabled: true
+        cpu:
+          enabled: true
+          averageUtilization: 70
+        memory:
+          enabled: true
+          averageUtilization: 85
