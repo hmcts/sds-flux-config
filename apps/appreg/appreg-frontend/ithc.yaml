@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: appreg-frontend
+  namespace: appreg
+spec:
+  releaseName: appreg-frontend
+  values:
+    nodejs:
+      ingressHost: appreg.ithc.apps.hmcts.net
+      image: sdshmctspublic.azurecr.io/appreg/frontend:prod-5d53562-20250903093203 # {"$imagepolicy": "flux-system:appreg-frontend"}
+      environment:
+        ENV_NAME: "ITHC"
+        LOG_LEVEL: "DEBUG"

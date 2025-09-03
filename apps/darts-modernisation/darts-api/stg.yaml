@@ -12,7 +12,7 @@ spec:
         DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART_ME: '007'
+        RESTART_ME: '008'
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
@@ -26,6 +26,6 @@ spec:
         AZCOPY_LOG_LEVEL: "--log-level=INFO"
         AZCOPY_OUTPUT_LEVEL: "--output-level=default"
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-03f9345-20250729105313 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-14e13af-20250902172541 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
