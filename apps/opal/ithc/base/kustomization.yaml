@@ -4,17 +4,16 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
   - ../../opal-frontend/opal-frontend.yaml
-  - ../../opal-fines-service/opal-fines-service.yaml
-  - ../../opal-file-handler/opal-file-handler.yaml
-  - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
-  - ../../opal-user-service/opal-user-service.yaml
+  # - ../../opal-fines-service/opal-fines-service.yaml
+  # - ../../opal-file-handler/opal-file-handler.yaml
+  # - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
+  # - ../../opal-user-service/opal-user-service.yaml
 namespace: opal
 patches:
   - path: ../../serviceaccount/ithc.yaml
   - path: ../../opal-frontend/ithc.yaml
-  - path: ../../opal-fines-service/ithc.yaml
-  - path: ../../opal-file-handler/ithc.yaml
-  - path: ../../opal-legacy-db-stub/ithc.yaml
-  - path: ../../opal-user-service/ithc.yaml
- 
-
+  - path: ../../serviceaccount/ithc.yaml
+# - path: ../../opal-fines-service/ithc.yaml
+# - path: ../../opal-file-handler/ithc.yaml
+# - path: ../../opal-legacy-db-stub/ithc.yaml
+# - path: ../../opal-user-service/ithc.yaml
