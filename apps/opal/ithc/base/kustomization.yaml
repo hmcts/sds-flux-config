@@ -3,26 +3,18 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
-  - ../../opal-fines-service/opal-fines-service.yaml
-  - ../../opal-user-service/opal-user-service.yaml
-  - ../../opal-file-handler/opal-file-handler.yaml
-  - ../../opal-external-api/opal-external-api.yaml
   - ../../opal-frontend/opal-frontend.yaml
+  - ../../opal-fines-service/opal-fines-service.yaml
+  - ../../opal-file-handler/opal-file-handler.yaml
   - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
-  - ../../opal-log-audit-service/opal-log-audit-service.yaml
-  - ../../opal-service-auth-provider-app/opal-service-auth-provider-app.yaml
-  - ../../opal-frontend-test/opal-frontend-test.yaml
-  - ../../../base/slack-provider/ithc
+  - ../../opal-user-service/opal-user-service.yaml
 namespace: opal
 patches:
   - path: ../../serviceaccount/ithc.yaml
-  - path: ../../opal-fines-service/ithc.yaml
-  - path: ../../opal-user-service/ithc.yaml
-  - path: ../../opal-file-handler/ithc.yaml
-  - path: ../../opal-external-api/ithc.yaml
   - path: ../../opal-frontend/ithc.yaml
+  - path: ../../opal-fines-service/ithc.yaml
+  - path: ../../opal-file-handler/ithc.yaml
   - path: ../../opal-legacy-db-stub/ithc.yaml
-  - path: ../../opal-log-audit-service/ithc.yaml
-  - path: ../../opal-service-auth-provider-app/ithc.yaml
-  - path: ../../opal-frontend-test/ithc.yaml
-  - path: ../../serviceaccount/ithc.yaml
+  - path: ../../opal-user-service/ithc.yaml
+ 
+
