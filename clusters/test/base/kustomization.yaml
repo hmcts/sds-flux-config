@@ -20,6 +20,7 @@ resources:
   - ../../../apps/pre/base/kustomize.yaml
   - ../../../apps/juror/base/kustomize.yaml
   - ../../../apps/courtfines/base/kustomize.yaml
+  - ../../../apps/opal/base/kustomize.yaml
   - ../../../apps/rota/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
@@ -29,3 +30,4 @@ patches:
   - path: ../../../apps/toffee/test/base/kustomize.yaml
   - path: ../../../apps/admin/test/base/kustomize.yaml
   - path: ../../../apps/neuvector/crds/kustomize.yaml
+  - path: ../../../apps/dynatrace/dynatrace-crds-upgrade/kustomize.yaml
