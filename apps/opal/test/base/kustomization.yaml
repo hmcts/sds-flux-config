@@ -7,7 +7,7 @@ resources:
   - ../../opal-fines-service/opal-fines-service.yaml
   # - ../../opal-file-handler/opal-file-handler.yaml
   - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
-  # - ../../opal-user-service/opal-user-service.yaml
+  - ../../opal-user-service/opal-user-service.yaml
 namespace: opal
 patches:
   - path: ../../serviceaccount/test.yaml
@@ -15,4 +15,4 @@ patches:
   - path: ../../opal-fines-service/test.yaml
   # - path: ../../opal-file-handler/test.yaml
   - path: ../../opal-legacy-db-stub/test.yaml
-  # - path: ../../opal-user-service/test.yaml
+  - path: ../../opal-user-service/test.yaml
