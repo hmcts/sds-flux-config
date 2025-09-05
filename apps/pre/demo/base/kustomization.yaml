@@ -17,6 +17,7 @@ resources:
   - ../../pre-api-cron-vodafone-etl-post-migration/pre-api-cron-vodafone-etl-post-migration.yaml
   - ../../pre-api-cron-vodafone-etl-process-full/pre-api-cron-vodafone-etl-process-full.yaml
   - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
+  - ../../pre-api-cron-vodafone-mk-import/pre-api-cron-vodafone-mk-import.yaml
 namespace: pre
 patches:
   - path: ../../identity/demo.yaml
@@ -35,4 +36,5 @@ patches:
   - path: ../../pre-api-cron-vodafone-etl-process-full/demo.yaml
   - path: ../../pre-api-cron-cleanup-null-durations/demo.yaml
   - path: ../../pre-api-cron-process-capture-sessions/stg.yaml
+  - path: ../../pre-api-cron-vodafone-mk-import/demo.yaml
   - path: ../../serviceaccount/demo.yaml
