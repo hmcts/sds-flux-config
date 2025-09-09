@@ -6,6 +6,7 @@ spec:
   releaseName: pip-data-management
   values:
     java:
+      image: sdshmctspublic.azurecr.io/pip/data-management:pr-755-39ea82d-20250908133250
       replicas: 2
       ingressHost: pip-data-management.staging.platform.hmcts.net
       environment:
