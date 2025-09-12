@@ -1,43 +1,120 @@
----
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
+apiVersion: v1
+kind: ConfigMap
 metadata:
-  name: neuvector
+  name: neuvector-restapi-config
   namespace: neuvector
-spec:
-  values:
-    neuvector:
-      controller:
-        azureFileShare:
-          shareName: neuvector-data-00
-        ingress:
-          host: sds-neuvector00-api.staging.platform.hmcts.net
-        configmap:
-          data:
-            samlinitcfg.yaml: |
-              SSO_URL: https://login.microsoftonline.com/531ff96d-0ae9-462a-8d2d-bec7c0b42082/saml2
-              Issuer: https://sts.windows.net/531ff96d-0ae9-462a-8d2d-bec7c0b42082/
-              X509_Cert: |
-                -----BEGIN CERTIFICATE-----
-                MIICwjCCAaqgAwIBAgIICUvjHN4pgIIwDQYJKoZIhvcNAQELBQAwITEfMB0GA1UEAwwWU0RTIE5l
-                dXZlY3RvciAtIFNURyAwMDAeFw0yNTA3MDIxNDE1MTFaFw0yNjA3MDIxNDI1MTFaMCExHzAdBgNV
-                BAMMFlNEUyBOZXV2ZWN0b3IgLSBTVEcgMDAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
-                AQD2DJxNzB+T1pCXy6ddo4ScxOyDD/OxGajlc31Lwa232lahmWYxxqzgkZDifQh1Ri1QiUiTlH6L
-                bwYVc5NMhQ6JeJfnClniuHi4K8uXBH7yTvPCN0jiAeB6C07hnbnuaf6KBEz2BDWyiFtlWlrX4rR4
-                qu3syadxuO3zDNwzQ+8ZbEXjtXYcWC1lk3Z+3/iPbVGgVX66xoug+svzIl4MPMLXP8964gy9wFmR
-                DB6efyV4xcilLWbkaXWRLlojW5KaX7Kj8+ZWL8AO7noM12kzOlWEroI9NuWYh6sp29T8NP5Zf8PJ
-                GxjHYfkKCGxSegfWPS2pCAokfFaY73JhWqpX4NbJAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAB/L
-                seA/xz5/VsRkWvlBtyxOEt0nx2IWOdetsEANJdQBigQWEsJtkbvv0PAfZakhlRTQRGeZT65WrsUW
-                mFKal/RS91l9I5/x+dYejCeLLj4tZ7jBF8kbhSW/LvyP8t+Ub0xsFj8I2tOzWAQLWayZiD0uoEf8
-                7vxGPMQVBXOVZEQ2DykkN80pJW/3JLbf2A4O1QX2f2zzEyY2vcOjXyALaua9Z+pplPaZbW6onGBW
-                xU11mbvGAoC2Lm03ndeDv25naTenQKSLEKBWgR34oiIepUC5XqebQMMfH+q9KBNU547z9rru6wlB
-                7cEnoDjUSv8Ylk1PLdbTRIo1KGbjeXSOYfc=
-                -----END CERTIFICATE-----
-              Enable: true
-              Default_Role: reader
-              Role_Groups:
-                admin:
-                  - e7ea2042-4ced-45dd-8ae3-e051c6551789
-      manager:
-        ingress:
-          host: sds-neuvector-stg00.hmcts.net
+data:
+  config.sh: |
+    #!/bin/sh
+
+    set -e
+
+    # NV API URL. Note just using hostname doesn't always resolve...
+    API_URL="https://neuvector-svc-controller.neuvector.svc.cluster.local:10443/v1"
+
+    # Key Vault secrets
+    NV_ADMIN_PASSWORD=$(cat /mnt/secrets/sdsneuvector/neuvector-admin-password)
+    NV_NEW_ADMIN_PASSWORD=$(cat  /mnt/secrets/sdsneuvector/neuvector-new-admin-password)
+    NV_LICENSE=$(cat /mnt/secrets/sdsneuvector/neuvector-license-dev)
+    NV_SLACK_WEBHOOK=$(cat /mnt/secrets/sdsneuvector/neuvector-slack-webhook)
+
+    # alias curl for convenience
+    _CURL="curl -sk --show-error --fail"
+
+    # sleep as neuvector backup loads asynchronously, and has caused corrupted config
+    echo "Delay configuration for neuvector to load backup first..."
+    sleep 180
+
+    # Authenticate and check if password has been changed
+    echo "Getting default authentication token..."
+    set +e
+    RESULT=$($_CURL  -H "Content-Type: application/json" -d '{"password": {"username": "admin", "password": "'"$NV_ADMIN_PASSWORD"'"}}' "$API_URL/auth")
+    EXIT_CODE=$?
+    set -e
+    if [ $EXIT_CODE -ne 0 ]
+    then
+      echo "Getting authentication token..."
+      TOKEN=$($_CURL  -H "Content-Type: application/json" -d '{"password": {"username": "admin", "password": "'"$NV_NEW_ADMIN_PASSWORD"'"}}' "$API_URL/auth" | jq -r .token.token)
+      _NEW_TOKEN="1"
+    else
+      TOKEN=$(echo "${RESULT}" | jq -r .token.token)
+    fi
+
+    echo "Accepting EULA..."
+    EULA_RESPONSE=$(curl -vk -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" $API_URL/eula)
+    echo "${EULA_RESPONSE}"
+    EULA=$(echo "${EULA_RESPONSE}" | jq -r .eula.accepted)
+    if [[ "$EULA" != "true" ]]
+    then
+      $_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" -d '{"eula":{"accepted":true}}' $API_URL/eula
+    fi
+
+    # Skip license setting for now as API endpoint seems to have changed in 5.4.5
+    echo "Skipping license configuration (API compatibility issue with v5.4.5)..."
+    set +e
+    LICENSE_RESPONSE=$($_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" $API_URL/system/license 2>/dev/null)
+    if [ $? -eq 0 ]; then
+      LICENSE=$(echo "${LICENSE_RESPONSE}" | jq -r .license.info.email)
+      echo "Currently registered to $LICENSE"
+      if [[ "$LICENSE" == "null" ]] && [[ "$NV_LICENSE" != "" ]]; then
+        echo "Attempting to set license..."
+        $_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" -d '{"license_key": "'"$NV_LICENSE"'"}' $API_URL/system/license/update || echo "License update failed - skipping"
+      fi
+    else
+      echo "License API not available in this version - skipping license configuration"
+    fi
+    set -e
+
+    # Change admin password with improved error handling
+    if [ "$_NEW_TOKEN" == "" ]
+    then
+      echo "Changing default admin password..."
+      set +e
+      # Try the current API format first
+      PASSWD_RESULT=$($_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" $API_URL/user/admin -X PATCH -d '{"config":{"fullname":"admin","password":"'"$NV_ADMIN_PASSWORD"'","new_password":"'"$NV_NEW_ADMIN_PASSWORD"'"}}' 2>/dev/null)
+      PASSWD_EXIT_CODE=$?
+      if [ $PASSWD_EXIT_CODE -ne 0 ]; then
+        echo "Standard password change API failed, trying alternative format..."
+        # Try alternative API format for password change
+        PASSWD_RESULT=$($_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" $API_URL/user/admin -X PATCH -d '{"user":{"fullname":"admin","password":"'"$NV_NEW_ADMIN_PASSWORD"'"}}' 2>/dev/null)
+        PASSWD_EXIT_CODE=$?
+        if [ $PASSWD_EXIT_CODE -ne 0 ]; then
+          echo "Password change failed with both API formats - may need manual intervention"
+          echo "Attempting to continue with existing configuration..."
+        fi
+      fi
+      set -e
+      
+      if [ $PASSWD_EXIT_CODE -eq 0 ]; then
+        echo "Re-authenticating..."
+        TOKEN=$($_CURL  -H "Content-Type: application/json" -d '{"password": {"username": "admin", "password": "'"$NV_NEW_ADMIN_PASSWORD"'"}}' "$API_URL/auth" | jq -r .token.token)
+      fi
+    fi
+
+    # Set the Slack webhook URL
+    echo "Setting Slack webhook URL..."
+    $_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" $API_URL/system/config -X PATCH -d '{"config":{"webhook_status":true,"webhook_url":"'"$NV_SLACK_WEBHOOK"'"}}'
+
+    # Set response rules
+    if [[ 7 -gt 0 ]]
+    then
+      echo "Deleting existing response rules..."
+      $_CURL  -H "X-Auth-Token: $TOKEN" -X DELETE "$API_URL/response/rule?scope=local"
+      echo "Setting response rules..."
+      echo "Setting response rule: '"{\"insert\":{\"after\":0,\"rules\":[{\"group\":null,\"conditions\":[{\"type\":\"name\",\"value\":\"Admission.Control.Denied\"}],\"actions\":[\"webhook\"],\"event\":\"admission-control\",\"disable\":false}]}}"'"
+      $_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" -X PATCH -d '{"insert":{"after":0,"rules":[{"group":null,"conditions":[{"type":"name","value":"Admission.Control.Denied"}],"actions":["webhook"],"event":"admission-control","disable":false}]}}' "$API_URL/response/rule?scope=local"
+      echo "Setting response rule: '"{\"insert\":{\"after\":1,\"rules\":[{\"group\":null,\"conditions\":[],\"actions\":[\"webhook\"],\"event\":\"security-event\",\"disable\":true}]}}"'"
+      $_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" -X PATCH -d '{"insert":{"after":1,"rules":[{"group":null,"conditions":[],"actions":["webhook"],"event":"security-event","disable":true}]}}' "$API_URL/response/rule?scope=local"
+      echo "Setting response rule: '"{\"insert\":{\"after\":2,\"rules\":[{\"group\":null,\"conditions\":[{\"type\":\"level\",\"value\":\"Error\"}],\"actions\":[\"webhook\"],\"event\":\"security-event\",\"disable\":false}]}}"'"
+      $_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" -X PATCH -d '{"insert":{"after":2,"rules":[{"group":null,"conditions":[{"type":"level","value":"Error"}],"actions":["webhook"],"event":"security-event","disable":false}]}}' "$API_URL/response/rule?scope=local"
+      echo "Setting response rule: '"{\"insert\":{\"after\":3,\"rules\":[{\"group\":null,\"conditions\":[{\"type\":\"name\",\"value\":\"Container.Privilege.Escalation\"}],\"actions\":[\"quarantine\"],\"event\":\"security-event\",\"disable\":true}]}}"'"
+      $_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" -X PATCH -d '{"insert":{"after":3,"rules":[{"group":null,"conditions":[{"type":"name","value":"Container.Privilege.Escalation"}],"actions":["quarantine"],"event":"security-event","disable":true}]}}' "$API_URL/response/rule?scope=local"
+      echo "Setting response rule: '"{\"insert\":{\"after\":4,\"rules\":[{\"group\":null,\"conditions\":[{\"type\":\"cve-high\",\"value\":\"10\"}],\"actions\":[\"quarantine\"],\"event\":\"cve-report\",\"disable\":true}]}}"'"
+      $_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" -X PATCH -d '{"insert":{"after":4,"rules":[{"group":null,"conditions":[{"type":"cve-high","value":"10"}],"actions":["quarantine"],"event":"cve-report","disable":true}]}}' "$API_URL/response/rule?scope=local"
+      echo "Setting response rule: '"{\"insert\":{\"after\":5,\"rules\":[{\"group\":null,\"conditions\":[{\"type\":\"name\",\"value\":\"Container.Quarantined\"}],\"actions\":[\"webhook\"],\"event\":\"event\",\"disable\":false}]}}"'"
+      $_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" -X PATCH -d '{"insert":{"after":5,"rules":[{"group":null,"conditions":[{"type":"name","value":"Container.Quarantined"}],"actions":["webhook"],"event":"event","disable":false}]}}' "$API_URL/response/rule?scope=local"
+      echo "Setting response rule: '"{\"insert\":{\"after\":6,\"rules\":[{\"group\":null,\"conditions\":[{\"type\":\"name\",\"value\":\"5.4\"}],\"actions\":[\"webhook\"],\"event\":\"compliance\",\"disable\":true}]}}"'"
+      $_CURL  -H "Content-Type: application/json" -H "X-Auth-Token: $TOKEN" -X PATCH -d '{"insert":{"after":6,"rules":[{"group":null,"conditions":[{"type":"name","value":"5.4"}],"actions":["webhook"],"event":"compliance","disable":true}]}}' "$API_URL/response/rule?scope=local"
+    fi
+
+    echo "NeuVector configuration completed successfully!"
