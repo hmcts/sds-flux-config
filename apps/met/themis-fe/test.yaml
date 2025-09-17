@@ -7,6 +7,11 @@ metadata:
 spec:
   values:
     nodejs:
+      livenessDelay: 180
+      startupDelay: 90
+      startupPeriodSeconds: 10
+      startupFailureThreshold: 60
+      startupTimeoutSeconds: 5
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
       image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.27.0'
       replicas: 1
