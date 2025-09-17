@@ -12,8 +12,11 @@ spec:
       aadpodidbinding: met-schema-binding
     nodejs:
       applicationPort: 8082
-      livenessDelay: 90
+      livenessDelay: 180
       startupDelay: 90
+      startupPeriodSeconds: 10
+      startupFailureThreshold: 60
+      startupTimeoutSeconds: 5
       readinessPath: /services/themisgatewayapi?wsdl
       startupPath: /services/themisgatewayapi?wsdl
       livenessPath: /services/themisgatewayapi?wsdl
