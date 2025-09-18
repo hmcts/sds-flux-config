@@ -11,7 +11,7 @@ spec:
       suspend: true
       disableActiveClusterCheck: true
       schedule: "*/5 * * * *" # every 5 mins
-      image: sdshmctspublic.azurecr.io/pre/api:prod-203dfd9-20250917155701 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-c6940d7-20250918133350 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
