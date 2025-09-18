@@ -6,6 +6,7 @@ metadata:
   namespace: neuvector
 spec:
   values:
+    useWorkloadIdentity: true
     keyvault:
       name: sdsneuvector
       licensesecretname: neuvector-license-dev
