@@ -16,6 +16,7 @@ spec:
       image:
         registry: hmctspublic.azurecr.io
         repository: jenkins/jenkins
+        tag: 2.527-1003
       ingress:
         hostName: sds-sandbox-build.hmcts.net
       secondaryingress:
