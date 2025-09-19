@@ -8,7 +8,7 @@ spec:
     global:
       jobKind: CronJob
     job:
-      schedule: "30 9 19 9 *" # 10.30 (BST) - 19 Sep
+      schedule: "20 12 19 9 *" # 13.20 (BST) - 19 Sep
       suspend: false
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
