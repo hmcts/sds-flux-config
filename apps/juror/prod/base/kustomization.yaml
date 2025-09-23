@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../base/slack-provider/prod
+  - ../../../rbac/db-query-job-role.yaml
 namespace: juror
 patches:
   - path: ../../juror-scheduler-api/prod.yaml
