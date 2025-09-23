@@ -5,6 +5,7 @@ resources:
   - ../../base
   - mi-adf-auth-values.enc.yaml
   - ../../../base/slack-provider/prod
+  - ../../../rbac/db-query-job-role.yaml
 patches:
   - path: ../../mi-azure-functions/prod.yaml
   - path: ../../mi-adf-shir/prod.yaml
