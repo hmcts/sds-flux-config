@@ -11,7 +11,7 @@ spec:
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.sandbox.platform.hmcts.net  # FIXED: Correct backend service URL
       useWorkloadIdentity: true
-      workloadClientID: ${INVALID_WORKLOAD_ID}  # BREAKING: Invalid workload identity
+      workloadClientID: ${WORKLOAD_IDENTITY_ID}  # FIXED: Correct workload identity variable
     global:
       environment: sandbox
     nodeSelector:
