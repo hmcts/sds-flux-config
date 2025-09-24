@@ -1,8 +1,0 @@
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentity
-metadata:
-  name: pre
-  namespace: pre
-spec:
-  resourceID: /subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/managed-identities-stg-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/pre-stg-mi
-  clientID: 04728318-ee74-4ccf-ae85-6afdb9054a6d

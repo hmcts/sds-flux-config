@@ -1,7 +1,0 @@
-apiVersion: documentdb.azure.com/v1api20210515
-kind: DatabaseAccount
-metadata:
-  name: ${NAMESPACE}-${ENVIRONMENT}-cosmos
-  namespace: ${NAMESPACE}
-spec:
-  databaseAccountOfferType: Standard

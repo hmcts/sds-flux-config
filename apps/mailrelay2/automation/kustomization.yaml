@@ -1,5 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../mailrelay2/image-repo.yaml
-  - ../mailrelay2/image-policy.yaml

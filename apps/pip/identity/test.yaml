@@ -1,8 +1,0 @@
-apiVersion: "aadpodidentity.k8s.io/v1"
-kind: AzureIdentity
-metadata:
-  name: pip
-  namespace: pip
-spec:
-  resourceID: /subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourcegroups/managed-identities-test-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/pip-test-mi
-  clientID: 0e0c8682-a038-4aa8-9619-bb88a7ba9357
