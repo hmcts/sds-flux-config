@@ -7,7 +7,7 @@ spec:
   releaseName: darts-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/api:pr-2967 #{"$imagepolicy": "flux-system:darts-api-pr"}
+      image: sdshmctspublic.azurecr.io/darts/api:pr-3063 #{"$imagepolicy": "flux-system:darts-api-pr"}
       ingressHost: darts-api.demo.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
@@ -29,6 +29,6 @@ spec:
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-b023164-20250911114707 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-ebd6a7f-20250923161651 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk

@@ -7,8 +7,8 @@ spec:
   releaseName: appreg-frontend
   values:
     nodejs:
-      ingressHost: appreg.staging.apps.hmcts.net
-      image: sdshmctspublic.azurecr.io/appreg/frontend:prod-45c25c6-20250916105343 # {"$imagepolicy": "flux-system:appreg-frontend"}
+      ingressHost: appreg.staging.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/appreg/frontend:prod-21483ad-20250924143004 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "STAGING"
         LOG_LEVEL: "DEBUG"

@@ -13,6 +13,7 @@ resources:
   - ../../data-management/pip-data-management.yaml
   - ../../frontend/pip-frontend.yaml
   - ../../../base/slack-provider/prod
+  - ../../../rbac/db-query-job-role.yaml
 namespace: pip
 patches:
   - path: ../../identity/prod.yaml
