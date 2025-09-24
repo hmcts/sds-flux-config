@@ -15,7 +15,7 @@ spec:
     global:
       environment: sandbox
     nodeSelector:
-      agentpool: wrong-pool  # BREAKING: Non-existent agent pool
+      agentpool: default
     volumes:
       - name: azurekeyvault
         csi:
