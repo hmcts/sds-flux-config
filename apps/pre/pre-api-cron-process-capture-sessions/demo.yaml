@@ -11,7 +11,7 @@ spec:
       suspend: true
       disableActiveClusterCheck: true
       schedule: "*/5 * * * *"
-      image: sdshmctspublic.azurecr.io/pre/api:prod-8ef1745-20250925152239 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-c51b11b-20250925162950 # {"$imagepolicy": "flux-system:pre-api"}
     environment:
       AZURE_SUBSCRIPTION_ID: c68a4bed-4c3d-4956-af51-4ae164c1957c
       PLATFORM_ENV_TAG: Demo
