@@ -10,7 +10,6 @@ spec:
     job:
       suspend: true
       schedule: "*/5 * * * *" # every 5 mins
-      image: sdshmctspublic.azurecr.io/pre/api:pr-1118 # {"$imagepolicy": "flux-system:test-pre-api-cron-perform-edit-requests"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Test
