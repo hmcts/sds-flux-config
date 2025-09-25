@@ -10,7 +10,7 @@ spec:
     job:
       suspend: true
       schedule: "30 13 * * *"
-      image: sdshmctspublic.azurecr.io/pre/api:prod-c51b11b-20250925162950 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-9835de4-20250925184454 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Testing
