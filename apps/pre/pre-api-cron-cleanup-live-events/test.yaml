@@ -11,7 +11,6 @@ spec:
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
       schedule: "30 11 * * *" # 11:30 AM UTC
-      image: sdshmctspublic.azurecr.io/pre/api:pr-1118 # {"$imagepolicy": "flux-system:test-pre-api-cron-cleanup-live-events"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Testing
