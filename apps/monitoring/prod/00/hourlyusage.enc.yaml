@@ -1,19 +1,25 @@
 apiVersion: v1
 data:
-  access_key: ENC[AES256_GCM,data:vaw/zGWGMobKLJTxtymxrL8e1f/vuwQ8uIWWrKigEAl5VZqKk5KtkYaEv7WAmDxAGgU0vRTxgT8=,iv:xtCRGXRiGAxatuxiGddxl6PEK0vY9mPcm3k3oNbJOuo=,tag:OYLIEEIz6fvxtEBg4hCk4Q==,type:str]
+  access_key: ENC[AES256_GCM,data:oF8Mj3gH+he4yE7ht2bxgiHKxHPKppc1IcmAMra3mlnz6N5jPhT2Fn8CneSnyLZx4xWAfLxtnyH0+s2V+jjZK9Covbkuzwxfx/VgvZ/xJ+2PcTDWxUsTPXFXt3aeR1dhlKfY1tjfHpIlkUsC+sjarapCaOau6rIZ,iv:eZpUtSGqCDH4mx1MX7idOjsAs/yset+rFiE8aCXerNg=,tag:8Ppw5aKwNhYOTDue7rTXhA==,type:str]
 kind: Secret
 metadata:
+  creationTimestamp: null
   name: vm-hourlyusage
   namespace: monitoring
 type: Opaque
 sops:
+  kms: []
+  gcp_kms: []
   azure_kv:
     - vault_url: https://dtssharedservicesprodkv.vault.azure.net
       name: sops-key
       version: 883d8b431ad345d09b2697c3aaae2a0c
-      created_at: "2025-09-26T11:12:20Z"
-      enc: iJyImXa2pjuO6aLAxpUoLBraPx-B49gusJ7N5oKuFItMcQ6-snrHKY09FWd-TrchXwANiBJMGem5eqatmFSCy6f4vmCO0i7zyrhbD8vMEVQ1GFBXkUbgD89Cowi0_uAhOkfWbtNsL6PhYkz6dMlBNZTj8obGyeedOCt2hGcG5kUQXo7kibBKv3HwyNeTzy9GVgwuqxAEo-m-2DYJuxSOYHGGd1TeusgT7j6oF3baxPVIFEq7Gsbxvpe_0EWiRgkNRe8UnL4KkJ7-gAQ43sIQIBKz2HPlo42kHdFDV87rMPxYC296EV3Y_8BwoFi_hzYyOBHts6hQFi1zoY0rrzuWmg
-  lastmodified: "2025-09-26T11:12:23Z"
-  mac: ENC[AES256_GCM,data:mJUMkll0PVMUMPBAX4GHuEcZ4N2co9DMBBa3oqk69rvkNYQrQERN5Ss9dG4p5CTmI8w5G4ZfD2G4ItxJ61y5iXfaDFdKNyprA/UocjS+Tq/JN/vnf10PcOYWGnC5Hnp9AFxcc9LAL+hf+0tN02MeAzlj0XDUKkE1ApFooOcjxuU=,iv:tXzuVWSVjITcMNNVI+fdwbldbLfc675PPB4fJzYN7xY=,tag:cD8xzsA+7I2KFDL1cYJRFw==,type:str]
+      created_at: "2025-09-29T11:53:17Z"
+      enc: hXFMx6ayYky92W_oXwqSsR6r6DLqqv88zEu42ghwhHH4pP4343JoFJlwv74SjvBRM1L7Jgg0HEdYFBxWyzr4o_4D6Tv-ojPSr0LtJfd0Kv7BisbIgsdxZxr8oen3OkWgyCU94YuRr-rlZ-y7ovpK7APf9gyZg27sjBzgJqyhnGkz3Oyz7m1sxEKfnOQG_e3zcveUtLarCxV4e32DAcn51gCnhpNeNIVljCUpWIV9pKGzXD59_gV04sj6XT4dRoAwddEYlS822RMmXBcLu6J9v0peDsMqCuPd7ldUDs_Rh57igfrzaw68AKNQKZrTg85qxXXJSRyzF1Lrb1K-OXHU9Q
+  hc_vault: []
+  age: []
+  lastmodified: "2025-09-29T11:53:20Z"
+  mac: ENC[AES256_GCM,data:t1aVvfB/nk/wBOwyLrkTBoBR3gJuH5OqeC7gQfdMRSiSipSmstolY3/uVEUUqpCt36J/t1BQ9MmKhc/WPiEMr1xKAsqRKqdW/IJECHceJljT47DxtGjF/xHFXNpYunr91B3USwrbjGK0PTOra9aRpsdisUQjxQeZ9s5Y6qqUnjI=,iv:ZarDuKBHmtrUFxsKrSbKljKEeek8XsUx7VbtP/UjOao=,tag:GJhOpn7x/Rne3ZjVFYiFVg==,type:str]
+  pgp: []
   encrypted_regex: ^(data|stringData)$
-  version: 3.10.2
+  version: 3.9.1
