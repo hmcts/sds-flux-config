@@ -7,7 +7,7 @@ spec:
   releaseName: appreg-frontend
   values:
     nodejs:
-      ingressHost: appreg.demo.platform.hmcts.net
+      ingressHost: appreg.demo.apps.hmcts.net
       image: sdshmctspublic.azurecr.io/appreg/frontend:prod-f8d6131-20250929161118 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "DEMO"
