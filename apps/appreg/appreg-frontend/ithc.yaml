@@ -7,7 +7,7 @@ spec:
   releaseName: appreg-frontend
   values:
     nodejs:
-      ingressHost: appreg.ithc.platform.hmcts.net
+      ingressHost: appreg.ithc.apps.hmcts.net
       image: sdshmctspublic.azurecr.io/appreg/frontend:prod-f8d6131-20250929161118 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "ITHC"
