@@ -1,10 +1,12 @@
 apiVersion: v1
 data:
-  access_key: ENC[AES256_GCM,data:xCU8p7lthghdWjssIIYYvCS8D1bRCuV4nPloaseFoPQqmgSH/0l1dOHiVovr8pHIhe9cCgaDm6NLDCQXHai6nozsoV4G5kvgbCRVzQlpsdQzGWGxLf3V7/xnvuIlA1KPSMNQxesNYvcFozifWmf4I+tX+VjgaiK/,iv:Yj6sdGQJp8lxFWkObb7qx8vs4OwR9BJYYhbUT9UbGjU=,tag:upGL8fH7LrED501OBaCG5w==,type:str]
+  access_key: ENC[AES256_GCM,data:oF8Mj3gH+he4yE7ht2bxgiHKxHPKppc1IcmAMra3mlnz6N5jPhT2Fn8CneSnyLZx4xWAfLxtnyH0+s2V+jjZK9Covbkuzwxfx/VgvZ/xJ+2PcTDWxUsTPXFXt3aeR1dhlKfY1tjfHpIlkUsC+sjarapCaOau6rIZ,iv:eZpUtSGqCDH4mx1MX7idOjsAs/yset+rFiE8aCXerNg=,tag:8Ppw5aKwNhYOTDue7rTXhA==,type:str]
 kind: Secret
 metadata:
+  creationTimestamp: null
   name: vm-hourlyusage
   namespace: monitoring
+type: Opaque
 sops:
   kms: []
   gcp_kms: []
@@ -12,12 +14,12 @@ sops:
     - vault_url: https://dtssharedservicesprodkv.vault.azure.net
       name: sops-key
       version: 883d8b431ad345d09b2697c3aaae2a0c
-      created_at: "2023-11-28T13:31:45Z"
-      enc: XfNUuhwtyXzdzsm3H2u4RAXgwbHCQt7-Rni56PfV3iP-P7XvPLPg5UYDqWkcvVpKXHHDgvVCmbxjhbYHmREKAIYi2GDWFQl42yW_E_sIgbqfVIaNb3iRy0jFCwMivPqjH2pt3z4p9FwnR-ciEzTa0AywqNu3rwTziqVnJrO_oo4aFWXhBzxRGHoALrrD2uwJPTm9xKH61vTtFFBiyqsRyrLJIofaivXdE8W3L5eQQfmdCVtnCbn9_5KLmDBfiX0zJa4hNrLTbWuZ42vAgpRrPQB_f2DChIHfJSF6QcufCA--1zsEfiayVMvNBp1BNgxaGzpObCksRx_jd5mZMyfJUQ
+      created_at: "2025-09-29T11:53:17Z"
+      enc: hXFMx6ayYky92W_oXwqSsR6r6DLqqv88zEu42ghwhHH4pP4343JoFJlwv74SjvBRM1L7Jgg0HEdYFBxWyzr4o_4D6Tv-ojPSr0LtJfd0Kv7BisbIgsdxZxr8oen3OkWgyCU94YuRr-rlZ-y7ovpK7APf9gyZg27sjBzgJqyhnGkz3Oyz7m1sxEKfnOQG_e3zcveUtLarCxV4e32DAcn51gCnhpNeNIVljCUpWIV9pKGzXD59_gV04sj6XT4dRoAwddEYlS822RMmXBcLu6J9v0peDsMqCuPd7ldUDs_Rh57igfrzaw68AKNQKZrTg85qxXXJSRyzF1Lrb1K-OXHU9Q
   hc_vault: []
   age: []
-  lastmodified: "2023-11-28T13:31:46Z"
-  mac: ENC[AES256_GCM,data:zuBZo4qR2WE6RiL71y8JVkmghhLAU8zPK4cdnlAppDYIgtu6xNlrtfHTZFdjiocWxigXWOkfNrQJ2OJYvV2KMLrqSPNszdUtT+JNQA4BJZzo/VCyQWGoYclC61Wk1QyIb0aGCJ+lMhu60yGK/+ZjelybIAyb+KZuBIoGQA3aiX8=,iv:cUUMdI1NV6rLg07wWrvmji5x02H+9JKTtpTWyTrLKns=,tag:n8As4l0N7E7z0VqOO8c2/Q==,type:str]
+  lastmodified: "2025-09-29T11:53:20Z"
+  mac: ENC[AES256_GCM,data:t1aVvfB/nk/wBOwyLrkTBoBR3gJuH5OqeC7gQfdMRSiSipSmstolY3/uVEUUqpCt36J/t1BQ9MmKhc/WPiEMr1xKAsqRKqdW/IJECHceJljT47DxtGjF/xHFXNpYunr91B3USwrbjGK0PTOra9aRpsdisUQjxQeZ9s5Y6qqUnjI=,iv:ZarDuKBHmtrUFxsKrSbKljKEeek8XsUx7VbtP/UjOao=,tag:GJhOpn7x/Rne3ZjVFYiFVg==,type:str]
   pgp: []
   encrypted_regex: ^(data|stringData)$
-  version: 3.7.3
+  version: 3.9.1

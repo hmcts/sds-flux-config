@@ -8,10 +8,10 @@ spec:
     global:
       jobKind: CronJob
     job:
-      suspend: true
+      suspend: false
       disableActiveClusterCheck: true
       schedule: "*/5 * * * *" # every 5 mins
-      image: sdshmctspublic.azurecr.io/pre/api:prod-0ca6162-20250925100524 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-e383dd6-20250929191036 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/

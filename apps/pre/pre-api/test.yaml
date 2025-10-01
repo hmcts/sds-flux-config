@@ -8,7 +8,6 @@ spec:
   values:
     java:
       ingressHost: pre-api.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/pre/api:pr-1118 # {"$imagepolicy": "flux-system:test-pre-api"}
       environment:
         AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamstest
         AZURE_RESOURCE_GROUP: pre-test
