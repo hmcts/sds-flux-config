@@ -9,7 +9,6 @@ spec:
       jobKind: CronJob
     job:
       schedule: "30 09 * * *" # 6:30 PM UTC
-      image: sdshmctspublic.azurecr.io/pre/api:pr-1118 # {"$imagepolicy": "flux-system:test-pre-api-cron-cleanup-streaming-locators"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Testing

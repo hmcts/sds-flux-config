@@ -4,6 +4,7 @@ namespace: mailrelay
 resources:
   - ../../base
   - ../../mailrelay/prod/mailrelay-values.enc.yaml
+  - ../../../rbac/db-query-job-role.yaml
 patches:
   - path: ../../mailrelay/prod/prod.yaml
   - path: ../../serviceaccount/prod.yaml

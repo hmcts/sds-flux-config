@@ -17,6 +17,7 @@ resources:
   - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
   - ../../pre-api-cron-vodafone-mk-import/pre-api-cron-vodafone-mk-import.yaml
   - ../../../base/slack-provider/prod
+  - ../../../rbac/db-query-job-role.yaml
 namespace: pre
 patches:
   - path: ../../identity/prod.yaml
