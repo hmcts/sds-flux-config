@@ -8,11 +8,11 @@ spec:
     global:
       jobKind: CronJob
     job:
-      schedule: "55 13 29 9 *" # 13.55 am 29th Sep UTC (14.55pm BST)
+      schedule: "55 12 1 10 *" # 12.55 pm 1st Oct UTC (13.55pm BST)
       suspend: false
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
-      image: sdshmctspublic.azurecr.io/pre/api:prod-e383dd6-20250929191036 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-654b08d-20251002130528 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
         ENABLE_NEW_EMAIL_SERVICE: true
