@@ -7,7 +7,6 @@ resources:
 - ../../traefik2
 - ../../external-dns/
 - ../../delete-hung-pods
-- ../../../flux-system/docker-regcreds/dev/
 namespace: admin
 patches:
 - path: ../../aad-pod-identity/dev/azure-identity-patch.yaml
