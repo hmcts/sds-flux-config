@@ -5,6 +5,7 @@ resources:
   - ../../base/gotk-components.yaml
   - github-app-credentials.enc.yaml
   - ../../workload-identity
+  - ../../docker-regcreds/sbox
 patches:
   - path: ../../serviceaccount/sbox.yaml
   - path: ../../base/patches/workload-identity-deployment.yaml
