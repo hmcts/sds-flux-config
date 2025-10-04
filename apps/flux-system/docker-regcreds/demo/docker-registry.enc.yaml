@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+    .dockerconfigjson: ENC[AES256_GCM,data:JxcjSMkxrNPGA5WeRQKyXjtuaapadKLQCgkvnMlHClZFCNhFzX7w3ytBINXcSqXl6nQyVfin7avu/Bh2CmiP7gmFhsbzh/sIOhmyXMVyAa7IEznVRJ3BA3CyBYQ+kEcZetzuTaudD4+9nEkCqqa/2X4wWdw9OOEVNdClj0EcJzb68jwFuFgNfldmza777MVxvl+ehMd2Ga2f7rCsYumecll94WchQ9/4FNai8TkjZKFBLcxr/a1NCOxWluMzRT+ouKvB16YRmJfWTiBIXX6p0vRkmxXHniNDfmrg3SRtB02Pem6kBfEEA70AQ7qZS/uZAd6RnU1q+LUu80f0+yOjtAECzWD248Dp7ItedpcV1xVoZUwQyXdyHz1o5tYqHg0543x40M0vjubs2qE4QYi5906wrbyt6cLMo4tD0TUC1taUiZJlSAu65/ZWtvMM57x3pEp/XMC17MTrGGTzJqgx1BoRvErzjN91s1R4S4AGm5rAp+Fa,iv:VxUvjOsFF71VVdcH22gg41tqY4eIHNE16NWE4C97c1c=,tag:VlLc2noKOx1J4FaNY2qjMw==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: docker-regcreds
+    namespace: flux-system
+type: kubernetes.io/dockerconfigjson
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssharedservicesdemokv.vault.azure.net
+          name: sops-key
+          version: 0657d01a616f4a0abb44e8b4ff26ac71
+          created_at: "2025-10-03T14:51:23Z"
+          enc: Ilimo1kPQqT0lqscYD3ilhd8egrtypnFKgfxipXfTMWKyMga43qx6L_oxpvqbopXiD4VvwcEiA9qDel5XXwKf8lC2_LqXocHsslwyd4_UJvhX_dxNUnF890ZppPTJQzePziWGOKH5XjkRVF3k_hu2q-XkvkXOOYAdBg0cuO4UPF2JjwWnsirDuNMM4X77RojU_m-vrAAh9YzX982YnR7-kSTt6hGl_AO4ZhraKMrBy_r3NiG4TKMvIc2cAHIwTGVl5IA4Z5lAnJC3y_597caIK-PDfYrvMuyHyPmOu44gKXW25CyYsddnNhNpZSLhMbnboxSZeFwnHbcLIvgWbztyw
+    hc_vault: []
+    age: []
+    lastmodified: "2025-10-03T14:51:32Z"
+    mac: ENC[AES256_GCM,data:dqdE6mPETHTb89F2f9GwtuJU6YbWpSl4FWl0nA6RJTOd9+E2g16/lcnRAF9iSHO5EG9HQ7Q+Gcv3YcZjkE9gsx1eSXNQkcc7dlPpdGXkEnGtMR7mbhgrQoSNSJ/e8EIPAM50O3tUOfhYqwApcn1af0pihC/fYKRe5NcvvMiWGG0=,iv:hj7gKSyKa+HDypsrctMnR4T6qnPvYEcL9NUfiFZ/bcM=,tag:nXnhu9pSsKUKD59LJ4mFbw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.4

@@ -5,6 +5,7 @@ resources:
   - github-app-credentials.enc.yaml
   - ../../base/gotk-components.yaml
   - ../../workload-identity
+  - ../../docker-regcreds/prod
 patches:
   - path: ../../serviceaccount/prod.yaml
   - path: ../../base/patches/workload-identity-deployment.yaml

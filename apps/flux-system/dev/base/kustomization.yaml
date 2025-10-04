@@ -6,6 +6,7 @@ resources:
   - github-app-credentials.enc.yaml
   - ../../workload-identity
   - aso-controller-settings-patch.yaml
+  - ../../docker-regcreds/dev
 patches:
   - path: ../../serviceaccount/dev.yaml
   - path: ../../base/patches/workload-identity-deployment.yaml
