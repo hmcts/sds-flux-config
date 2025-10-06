@@ -1,25 +1,25 @@
 apiVersion: v1
 data:
-    .dockerconfigjson: ENC[AES256_GCM,data:57rpGuSn+3IOWBG/yWLLny0ZRDt3VB+lyOG9Jvc8B0frTJ2wWUMbVC0aA43pdRE7DpeluDqlVemiPAoQYNn3TOhOxJ2xjnJdbwEyMuYVsw0EI5CsHZ16YEWOIuzza7mun79gwgD97mOZ1joeEdNjLwIdR5G+uzB5xZ2clTpWWgKHR9VDd6n2si2h6qkeVrIYmoAGBwumQMeALqHmrCX0QMTwpo1gVDy71WlrTeEozgi/lHWN7ubPmZ/gxxtXZJXyA8DDqrLf185nM9Mb3inu7ZXBXKwYfKP7D7W99DZ26cXmsEd/e6eEvYCRdao6ias6lQEGE1XmyZHgFDLwTr01iSE7jh1/Y+JvFDHYlTDjjpgNtmr12z0D1Xk5kHF7DX1YVo3AY0Kurvn+napeFUtb6R4psfa8gZq8mVF7Ybu3qWnkeS/PsK+UUU8F2HLLV/Esoh2cby0CKRIQ3GXyLTPOJOozQzS0iyWXviioVQ==,iv:DDBjWz1TOCu9yN5D/SmJpU3455HRoaRNiOdZd5hRYrI=,tag:FOB7S60+l3cK4T/UPF0SXQ==,type:str]
+  .dockerconfigjson: ENC[AES256_GCM,data:57rpGuSn+3IOWBG/yWLLny0ZRDt3VB+lyOG9Jvc8B0frTJ2wWUMbVC0aA43pdRE7DpeluDqlVemiPAoQYNn3TOhOxJ2xjnJdbwEyMuYVsw0EI5CsHZ16YEWOIuzza7mun79gwgD97mOZ1joeEdNjLwIdR5G+uzB5xZ2clTpWWgKHR9VDd6n2si2h6qkeVrIYmoAGBwumQMeALqHmrCX0QMTwpo1gVDy71WlrTeEozgi/lHWN7ubPmZ/gxxtXZJXyA8DDqrLf185nM9Mb3inu7ZXBXKwYfKP7D7W99DZ26cXmsEd/e6eEvYCRdao6ias6lQEGE1XmyZHgFDLwTr01iSE7jh1/Y+JvFDHYlTDjjpgNtmr12z0D1Xk5kHF7DX1YVo3AY0Kurvn+napeFUtb6R4psfa8gZq8mVF7Ybu3qWnkeS/PsK+UUU8F2HLLV/Esoh2cby0CKRIQ3GXyLTPOJOozQzS0iyWXviioVQ==,iv:DDBjWz1TOCu9yN5D/SmJpU3455HRoaRNiOdZd5hRYrI=,tag:FOB7S60+l3cK4T/UPF0SXQ==,type:str]
 kind: Secret
 metadata:
-    creationTimestamp: null
-    name: dockerhub-creds
-    namespace: ${NAMESPACE}
+  creationTimestamp: null
+  name: dockerhub-creds
+  namespace: ${NAMESPACE}
 type: kubernetes.io/dockerconfigjson
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv:
-        - vault_url: https://dtssharedservicestestkv.vault.azure.net
-          name: sops-key
-          version: 6d094e08ab7240ea8a64ec77f7f734b7
-          created_at: "2025-10-03T14:25:44Z"
-          enc: RhIlog2b1pvc-WnzE8b_KPMgcdqPzhtSJ8EGcWl8vw1si3VMXGUa7nmBulowbmWYjLw3j8xNO2cHEIDv6qmHnE7LOFLFjmpJTh3YKgGjiC5e_4lVOkxnad3EOtBhdjgUeMEKIO2jhlrRsEIeI4WacE4FhdeDOKTzVXfaWFl-fF6m_OK28rlcqKU8TnAGTOAXTfxHEt-UjI03MZYz_FSVvqjJhqR1Bc-ayF_Ejixxza_XKk6z_EGmn6M5FodptkjKwFDLNu4T_g6A4HBRSDUmkZp2XVVC_ZILgPfyC7u1FAgy0dQb46OHXbaaWQkYEWgSuSYRqFv_vv1gqhafNzSCmg
-    hc_vault: []
-    age: []
-    lastmodified: "2025-10-03T14:25:45Z"
-    mac: ENC[AES256_GCM,data:8Lakyupe/FGS+XYaCAnMxZQ2K/FdrOJs6GD9UXL8Ty3ga4lYbLPhtOfoA9Wc/1LpBiW7V+tG8GiP/ELrn9dyRCLxQMwtWfNRYHHXUMbwbzsBtQ0tVr4iMuCv5ZsjhV98xcxnGPeNqUUUaXD2G49MXlkowMQhFxMbCyo8538Rei8=,iv:3XIrtlB9mv2SDjNNKIkQdKZemDJEC5ZCZzMCv/2nqoQ=,tag:L9ppkhiQZfPU3yiPYvVJsA==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.4
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicestestkv.vault.azure.net
+      name: sops-key
+      version: 6d094e08ab7240ea8a64ec77f7f734b7
+      created_at: "2025-10-03T14:25:44Z"
+      enc: RhIlog2b1pvc-WnzE8b_KPMgcdqPzhtSJ8EGcWl8vw1si3VMXGUa7nmBulowbmWYjLw3j8xNO2cHEIDv6qmHnE7LOFLFjmpJTh3YKgGjiC5e_4lVOkxnad3EOtBhdjgUeMEKIO2jhlrRsEIeI4WacE4FhdeDOKTzVXfaWFl-fF6m_OK28rlcqKU8TnAGTOAXTfxHEt-UjI03MZYz_FSVvqjJhqR1Bc-ayF_Ejixxza_XKk6z_EGmn6M5FodptkjKwFDLNu4T_g6A4HBRSDUmkZp2XVVC_ZILgPfyC7u1FAgy0dQb46OHXbaaWQkYEWgSuSYRqFv_vv1gqhafNzSCmg
+  hc_vault: []
+  age: []
+  lastmodified: "2025-10-03T14:25:45Z"
+  mac: ENC[AES256_GCM,data:8Lakyupe/FGS+XYaCAnMxZQ2K/FdrOJs6GD9UXL8Ty3ga4lYbLPhtOfoA9Wc/1LpBiW7V+tG8GiP/ELrn9dyRCLxQMwtWfNRYHHXUMbwbzsBtQ0tVr4iMuCv5ZsjhV98xcxnGPeNqUUUaXD2G49MXlkowMQhFxMbCyo8538Rei8=,iv:3XIrtlB9mv2SDjNNKIkQdKZemDJEC5ZCZzMCv/2nqoQ=,tag:L9ppkhiQZfPU3yiPYvVJsA==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.4
