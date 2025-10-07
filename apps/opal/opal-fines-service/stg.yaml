@@ -11,4 +11,6 @@ spec:
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.staging.platform.hmcts.net
+        OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
+        OPAL_LEGACY_GATEWAY_URL: https://opal-legacy-db-stub.staging.platform.hmcts.net/opal
         FLYWAY_LOCATIONS: classpath:db/migration/allEnvs, classpath:db/migration/stgOnly

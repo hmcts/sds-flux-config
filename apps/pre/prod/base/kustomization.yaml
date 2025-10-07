@@ -15,7 +15,9 @@ resources:
   - ../../pre-api-cron-vodafone-etl-post-migration/pre-api-cron-vodafone-etl-post-migration.yaml
   - ../../pre-api-cron-vodafone-etl-process-full/pre-api-cron-vodafone-etl-process-full.yaml
   - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
+  - ../../pre-api-cron-vodafone-mk-import/pre-api-cron-vodafone-mk-import.yaml
   - ../../../base/slack-provider/prod
+  - ../../../rbac/db-query-job-role.yaml
 namespace: pre
 patches:
   - path: ../../identity/prod.yaml
@@ -34,4 +36,5 @@ patches:
   - path: ../../pre-api-cron-vodafone-etl-post-migration/prod.yaml
   - path: ../../pre-api-cron-vodafone-etl-process-full/prod.yaml
   - path: ../../pre-api-cron-cleanup-null-durations/prod.yaml
+  - path: ../../pre-api-cron-vodafone-mk-import/prod.yaml
   - path: ../../serviceaccount/prod.yaml

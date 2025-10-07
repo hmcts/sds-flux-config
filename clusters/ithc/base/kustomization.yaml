@@ -20,6 +20,7 @@ resources:
   - ../../../apps/appreg/base/kustomize.yaml
   - ../../../apps/rota/base/kustomize.yaml
   - ../../../apps/cortex/base/kustomize.yaml
+  - ../../../apps/opal/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
@@ -28,3 +29,4 @@ patches:
   - path: ../../../apps/toffee/ithc/base/kustomize.yaml
   - path: ../../../apps/admin/ithc/base/kustomize.yaml
   - path: ../../../apps/neuvector/crds/kustomize.yaml
+  - path: ../../../apps/neuvector/patching-crds/kustomize.yaml
