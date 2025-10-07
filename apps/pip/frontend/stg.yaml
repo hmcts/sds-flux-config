@@ -22,3 +22,10 @@ spec:
         B2C_ADMIN_URL: https://staff.pip-frontend.staging.platform.hmcts.net/pip-frontend.staging.platform.hmcts.net
         CFT_IDAM_URL: https://idam-web-public.aat.platform.hmcts.net
         CRIME_IDAM_URL: https://login.prp.cjscp.org.uk
+      autoscaling:
+        enabled: true
+        cpu:
+          enabled: true
+          averageUtilization: 70
+        memory:
+          enabled: false

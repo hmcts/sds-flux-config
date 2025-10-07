@@ -21,3 +21,10 @@ spec:
         B2C_URL: https://sign-in.pip-frontend.demo.platform.hmcts.net/pip-frontend.demo.platform.hmcts.net
         B2C_ADMIN_URL: https://staff.pip-frontend.demo.platform.hmcts.net/pip-frontend.demo.platform.hmcts.net
         CRIME_IDAM_URL: https://login.sit.cjscp.org.uk
+      autoscaling:
+        enabled: true
+        cpu:
+          enabled: true
+          averageUtilization: 70
+        memory:
+          enabled: false
