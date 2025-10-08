@@ -234,6 +234,12 @@ spec:
                     name: SCT Resource Management
                     recurse: true
                     title: SCT Resource Management Dashboard
+                - buildMonitor:
+                    includeRegex: >-
+                      ^HMCTS.*\/(dcs-e2e-tests)\/master
+                    name: DCS
+                    recurse: true
+                    title: DCS dashboard
           authentication: |
             jenkins:
               securityRealm:
