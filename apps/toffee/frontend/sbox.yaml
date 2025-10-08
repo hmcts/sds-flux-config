@@ -14,8 +14,6 @@ spec:
       workloadClientID: ${WORKLOAD_IDENTITY_ID}
     global:
       environment: sandbox
-    nodeSelector:
-      agentpool: arm
     volumes:
       - name: azurekeyvault
         csi:
