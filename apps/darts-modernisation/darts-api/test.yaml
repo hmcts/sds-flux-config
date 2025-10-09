@@ -27,7 +27,7 @@ spec:
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         RESTART_ME: '012'
-        ENABLE_ARM_V5_2_UPGRADE: true
+        ENABLE_ARM_V5_2_UPGRADE: false
     function:
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk

@@ -27,7 +27,7 @@ spec:
         MODERNISED_DARTS_START_DATE: '2024-12-01'
         AZCOPY_LOG_LEVEL: "--log-level=INFO"
         AZCOPY_OUTPUT_LEVEL: "--output-level=default"
-        ENABLE_ARM_V5_2_UPGRADE: true
+        ENABLE_ARM_V5_2_UPGRADE: false
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-30e1781-20251007154108 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
