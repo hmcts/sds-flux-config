@@ -18,6 +18,8 @@ spec:
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsprodextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsprodextid.b2clogin.com/hmctsprodextid.onmicrosoft.com
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_API_URL: https://api.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_AUTH_URL: https://auth.court-tribunal-records-archive.service.justice.gov.uk
         MODERNISED_DARTS_START_DATE: '2025-05-25' # MODERNISED_DARTS_START_DATE to be updated before go-live
         AUDIO_LINKING_TASK_PRE_AMBLE_DURATION: '0m'
         AUDIO_LINKING_TASK_POST_AMBLE_DURATION: '0m'
@@ -30,7 +32,10 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
+        ENABLE_ARM_V5_2_UPGRADE: false
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-47edfe0-20251009160750 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_API_URL: https://api.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_AUTH_URL: https://auth.court-tribunal-records-archive.service.justice.gov.uk
