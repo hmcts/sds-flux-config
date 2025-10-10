@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+  .dockerconfigjson: ENC[AES256_GCM,data:nHJbnaHDlRMKlWSA+2iF/fW1Tl4VV9LKMlmTeVdDrb+tGWklcw4fVWsmBNwq+mpto95d9QFMmkBuDo754tz/5ASh9/eZycZ9NBMudyiLgREtohaq2v0qy69A155XexuYzpho19yYc60KPLRrrbyjCcoR9HamVlDpHh1RGfKe98Rwjw32nDmMvb+PX4tzTYvea85I0qoe8OBptrXx1nwafGB+L7rlPOPsENO4LawleRe1i4WWdqdkUmJIHDk3SM0Vqv3GqRDkhoqCDaXQHFs4uJmdtH2kVeUVBufsAED1CQ1edfwFdQZrrLEeag7XkJcjzyb4RN4L8CTfuZQjCnP/gfv7Aglz5OBAQ5Eqb5qG8TDDsmaH0NX9ki5JsvDZQnqpTgPamr2VevzZZA6LgGVaDmD3p65GTFWhgDqWaIAJCnyqTitoizXVzrSAZhHMmrHMamKwyQ1PBdqQZTOw91O04WM9QMlofWg8KVZX/w==,iv:WlFtdsm42r0BP91jTyfcXpaqKSdb7jnwONP8OG5mm6I=,tag:UxRBV24C91hoEGf4um4rcw==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: dockerhub-creds
+  namespace: ${NAMESPACE}
+type: kubernetes.io/dockerconfigjson
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicessboxkv.vault.azure.net
+      name: sops-key
+      version: 743d27d4b20644a6bd1936f3e55d1db3
+      created_at: "2025-10-03T14:25:39Z"
+      enc: fu2Rarx7dNyqYTaIyG-_NLXtM8RXAYrUahWydDKyAo0Gwx8VBEfUL_Rq66CaW_FEXlKhv5luupUA_Q_oUcbSfOcELp1AnOBB4Sxv2ew1Xs0lvOcUwd7WSve2-2q7c4_4-qwqr7_dr2ppSHarn_nOX-bJQ3lGYvbgU9JLPgMzFvYw0QfxCKNsDyUwf92fTwgazDvdUCu006KKnbqR6vvxYWsIT1WwbKsrzxRwuvT6SQ1rg35bFLiNDZenX-9_7yhJ-J5mGi08AgeIYCZy2m-cgNVQhrodPWZhCbnGwlqlYqNuB0CSZNXlf9gvSxCecOmqI6XWClmBrjjDCKkk0hPdWQ
+  hc_vault: []
+  age: []
+  lastmodified: "2025-10-03T14:25:41Z"
+  mac: ENC[AES256_GCM,data:TuDxF8StspPkrDvv+yE/xPxumd3b8JUU2aKul3YTv4sucb3EhEdqJyQcUhQlMb2CuTpVJophh+rv6XpwJh1Owc+zMnNZNLCVm+ixB6B2waQRNwQti18mfc9USkxgCvvRVTmuHY85IeuIWQu6HyotE3aQyT9X25EqFOAcZoa2KQw=,iv:SwsPUAmi2HYGVLqizGBUqJwHI9a4qwOMZZGXdlsRqbU=,tag:3RS2ZysugAP4Es9htib+hg==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.4
