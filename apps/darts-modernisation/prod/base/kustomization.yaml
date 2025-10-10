@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../base/slack-provider/prod
   - ./darts-api-function.enc.yaml
+  - ../../../rbac/db-query-job-role.yaml
 namespace: darts-modernisation
 patches:
   - path: ../../darts-api/prod.yaml

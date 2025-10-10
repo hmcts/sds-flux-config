@@ -4,5 +4,6 @@ metadata:
   name: external-dns
   namespace: admin
 spec:
-  url: https://charts.bitnami.com/bitnami
   interval: 10m
+  url: oci://registry-1.docker.io/bitnamicharts
+  type: oci

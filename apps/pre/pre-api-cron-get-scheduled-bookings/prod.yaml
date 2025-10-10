@@ -9,6 +9,6 @@ spec:
       jobKind: CronJob
     job:
       schedule: "30 6 * * *"
-      image: sdshmctspublic.azurecr.io/pre/api:prod-95366a3-20250828121502 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-0adf579-20251009132828 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind

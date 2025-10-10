@@ -7,7 +7,6 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-541-38f776f-20250820133513
       replicas: 2
       ingressHost: pip-publication-services.test.platform.hmcts.net
       environment:
@@ -18,6 +17,7 @@ spec:
         NOTIFY_LINK_AAD_RESET_PW_LINK_ADMIN: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=7e6d47d3-ed02-4e32-a86c-7e01d74eb77a&nonce=defaultNonce&redirect_uri=https://pip-frontend.test.platform.hmcts.net/password-change-confirmation/true&scope=openid&response_type=code&prompt=login&response_mode=form_post
         NOTIFY_LINK_AAD_RESET_PW_LINK_MEDIA: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=7e6d47d3-ed02-4e32-a86c-7e01d74eb77a&nonce=defaultNonce&redirect_uri=https://pip-frontend.test.platform.hmcts.net/password-change-confirmation/false&scope=openid&response_type=code&prompt=login&response_mode=form_post
         NOTIFY_CRIME_SIGN_IN_LINK: https://pip-frontend.test.platform.hmcts.net/crime-login
+        XHIBIT_S3_BUCKET_NAME: staging.xhibit.justice.gov.uk
       memoryRequests: 1200Mi
       autoscaling:
         enabled: true
@@ -25,5 +25,4 @@ spec:
           enabled: true
           averageUtilization: 70
         memory:
-          enabled: true
-          averageUtilization: 85
+          enabled: false

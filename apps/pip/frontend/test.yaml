@@ -6,7 +6,6 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1518-ddc65af-20250820140237
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
       environment:
@@ -30,5 +29,4 @@ spec:
           enabled: true
           averageUtilization: 70
         memory:
-          enabled: true
-          averageUtilization: 85
+          enabled: false
