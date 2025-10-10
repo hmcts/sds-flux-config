@@ -25,3 +25,11 @@ spec:
         NOTIFY_CRIME_SIGN_IN_LINK: https://www.court-tribunal-hearings.service.gov.uk/crime-login
         PUB_SERVICES_REDEPLOY: true
         XHIBIT_S3_BUCKET_NAME: staging.xhibit.justice.gov.uk  # change it to production S3 bucket before deploying the changes
+      memoryRequests: 1200Mi
+      autoscaling:
+        enabled: true
+        cpu:
+          enabled: true
+          averageUtilization: 70
+        memory:
+          enabled: false

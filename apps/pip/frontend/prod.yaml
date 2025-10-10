@@ -22,3 +22,10 @@ spec:
         CFT_IDAM_URL: https://hmcts-access.service.gov.uk
         RESTART_PROD: true
         CRIME_IDAM_URL: https://login.cjscp.org.uk
+      autoscaling:
+        enabled: true
+        cpu:
+          enabled: true
+          averageUtilization: 70
+        memory:
+          enabled: false
