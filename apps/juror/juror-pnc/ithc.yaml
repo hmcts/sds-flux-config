@@ -8,8 +8,8 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: sdshmctspublic.azurecr.io/juror/pnc:pr-201-a92cd08-20250930073613
-      ingressHost: juror-pnc.ithc.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/juror/pnc:pr-198-d4b607e-20251015143608
+      ingressHost: legacy.api.test.leds.nprod.tgwv2.police.uk
       environment:
         PNC_SERVICE_PNC_TRAN_CODE: '#L0'
         PNC_SERVICE_PNC_TERMINAL: LCRTS001
