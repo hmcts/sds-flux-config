@@ -10,5 +10,7 @@ spec:
       ingressHost: toffee-recipe-backend.ithc.platform.hmcts.net
       useWorkloadIdentity: true
       workloadClientID: ${WORKLOAD_IDENTITY_ID}
+      pdb:
+        enabled: false
     global:
       environment: ithc
