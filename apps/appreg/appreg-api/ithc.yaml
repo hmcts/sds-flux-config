@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: appreg-api
   values:
-    nodejs:
+    java:
       ingressHost: appreg-api.ithc.platform.hmcts.net
       image: sdshmctspublic.azurecr.io/appreg/api:prod-0f14f9b-20251017124442 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
