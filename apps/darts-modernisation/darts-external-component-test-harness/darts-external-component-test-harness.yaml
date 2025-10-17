@@ -18,5 +18,3 @@ spec:
       image: sdshmctspublic.azurecr.io/darts/external-component-test-harness:prod-c83e8fb-20250911152930 # {"$imagepolicy": "flux-system:darts-external-component-test-harness"}
       disableTraefikTls: true
       replicas: 0
-    pdb:
-      enabled: false
