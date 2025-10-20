@@ -6,7 +6,6 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1509-e47db52-20250729105857
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
       environment:
@@ -24,3 +23,10 @@ spec:
         B2C_ADMIN_URL: https://staff.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
         SESSION_COOKIE_SAME_SITE: lax
         CRIME_IDAM_URL: https://login.sit.cjscp.org.uk
+      autoscaling:
+        enabled: true
+        cpu:
+          enabled: true
+          averageUtilization: 70
+        memory:
+          enabled: false

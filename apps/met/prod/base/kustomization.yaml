@@ -8,6 +8,7 @@ resources:
   - ../../pod-delete-cron/pod-delete-cron-rbac.yaml
   - ../../pod-delete-cron/pod-delete-cron.yaml
   - ../../pod-delete-cron/pod-delete-service-account-prod.yaml
+  - ../../../rbac/db-query-job-role.yaml
 namespace: met
 patches:
   - path: ../../identity/prod.yaml

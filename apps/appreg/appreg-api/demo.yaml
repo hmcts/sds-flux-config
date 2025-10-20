@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: appreg-api
+  namespace: appreg
+spec:
+  releaseName: appreg-api
+  values:
+    java:
+      ingressHost: appreg-api.demo.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/appreg/api:prod-a95e15b-20251020135300 # {"$imagepolicy": "flux-system:appreg-api"}
+      environment:
+        ENV_NAME: "DEMO"
+        LOG_LEVEL: "DEBUG"

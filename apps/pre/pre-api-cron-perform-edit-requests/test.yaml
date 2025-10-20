@@ -10,11 +10,10 @@ spec:
     job:
       suspend: true
       schedule: "*/5 * * * *" # every 5 mins
-      image: sdshmctspublic.azurecr.io/pre/api:pr-1118 # {"$imagepolicy": "flux-system:test-pre-api-cron-perform-edit-requests"}
+      image: sdshmctspublic.azurecr.io/pre/api:pr-1267
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Test
         MEDIA_SERVICE: MediaKind
         PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
         ENABLE_NEW_EMAIL_SERVICE: true
-        ENABLE_MULTI_FFMPEG_COMMAND: false

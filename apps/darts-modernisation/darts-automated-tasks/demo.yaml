@@ -12,11 +12,14 @@ spec:
         DARTS_PORTAL_URL: https://darts.demo.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
         FEIGN_LOG_LEVEL: full
         PROCESS_E2E_ARM_RPO: true
         ARM_RPO_DURATION: 24h
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         RESET_POD: true
-        RESTART: 001
+        RESTART: 003
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
+        ENABLE_ARM_V5_2_UPGRADE: true

@@ -18,10 +18,11 @@ spec:
         AZURE_INGEST_SA: preingestsastg
         AZURE_FINAL_SA: prefinalsastg
         MEDIA_SERVICE: MediaKind
-        ENABLE_NEW_EMAIL_SERVICE: true
-        ENABLE_STREAMING_LOCATOR_ON_START: true
         ENABLE_AUTOMATED_EDITING: true
         ENABLE_NULL_DURATION_UPSERT: false
         ENABLE_ENHANCED_PROCESSING: true
+        ENABLE_MIGRATION_ADMIN_ENDPOINTS: true
+        ENABLE_MIGRATED_DATA: true
+        ENABLE_V2_B2C: true
         HIKARI_POOL_SIZE: 25
         VAR_TA: Trigger-1

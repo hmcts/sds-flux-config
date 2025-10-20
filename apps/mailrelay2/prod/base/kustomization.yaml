@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../mailrelay2/prod/mailrelay-values.enc.yaml
+  - ../../../rbac/db-query-job-role.yaml
 namespace: mailrelay2
 patches:
   - path: ../../mailrelay2/prod/prod.yaml
