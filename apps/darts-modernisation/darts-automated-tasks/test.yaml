@@ -13,7 +13,10 @@ spec:
         DARTS_LOG_LEVEL: DEBUG
         RESTART: 002
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
         PROCESS_E2E_ARM_RPO: false
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
+        ENABLE_ARM_V5_2_UPGRADE: false

@@ -12,10 +12,12 @@ spec:
         DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART_ME: '008'
+        RESTART_ME: '010'
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
+        ARM_API_URL: https://darts-stub-services.staging.platform.hmcts.net
+        ARM_AUTH_URL: https://darts-stub-services.staging.platform.hmcts.net
         AUDIO_LINKING_TASK_PRE_AMBLE_DURATION: '0m'
         AUDIO_LINKING_TASK_POST_AMBLE_DURATION: '0m'
         CASE_EXPIRY_DELETION_ENABLED: true
@@ -25,7 +27,10 @@ spec:
         MODERNISED_DARTS_START_DATE: '2024-12-01'
         AZCOPY_LOG_LEVEL: "--log-level=INFO"
         AZCOPY_OUTPUT_LEVEL: "--output-level=default"
+        ENABLE_ARM_V5_2_UPGRADE: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-30e1781-20251007154108 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-e4a3e8b-20251021182333 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
+        ARM_API_URL: https://darts-stub-services.staging.platform.hmcts.net
+        ARM_AUTH_URL: https://darts-stub-services.staging.platform.hmcts.net

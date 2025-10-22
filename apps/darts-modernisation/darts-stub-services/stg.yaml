@@ -8,3 +8,5 @@ spec:
   values:
     java:
       ingressHost: darts-stub-services.staging.platform.hmcts.net
+      environment:
+        RESTART_ME: '001'

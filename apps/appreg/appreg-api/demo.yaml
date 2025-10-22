@@ -6,9 +6,11 @@ metadata:
 spec:
   releaseName: appreg-api
   values:
-    nodejs:
+    java:
       ingressHost: appreg-api.demo.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/appreg/api:prod-e31be60-20250911110048 # {"$imagepolicy": "flux-system:appreg-api"}
+      image: sdshmctspublic.azurecr.io/appreg/api:prod-2ee6dfe-20251022092101 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "DEMO"
         LOG_LEVEL: "DEBUG"
+      pdb:
+        enabled: false

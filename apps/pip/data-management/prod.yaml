@@ -13,3 +13,11 @@ spec:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
         MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
         LCSU_ENABLED: false
+      memoryRequests: 1500Mi
+      autoscaling:
+        enabled: true
+        cpu:
+          enabled: true
+          averageUtilization: 70
+        memory:
+          enabled: false
