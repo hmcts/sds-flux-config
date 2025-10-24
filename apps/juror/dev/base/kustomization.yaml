@@ -8,7 +8,9 @@ resources:
   - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
   - ../sops-secrets
   - ../../../base/slack-provider/dev
+  - ../../juror-eric-shir/juror-adf-shir.yaml
 namespace: juror
 patches:
   - path: ../../serviceaccount/stg.yaml
   - path: ../aso/juror-postgres.yaml
+  - path: ../../juror-eric-shir/dev.yaml
