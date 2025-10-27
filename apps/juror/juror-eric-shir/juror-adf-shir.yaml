@@ -8,6 +8,7 @@ spec:
   releaseName: juror-synapse-shir
   values:
     appName: juror-synapse-shir
+    namespace: juror
     labels:
       app.kubernetes.io/instance: juror-synapse-shir-deployment
       app.kubernetes.io/name: juror-synapse-shir-deployment
