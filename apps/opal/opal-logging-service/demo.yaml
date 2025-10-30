@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: opal-logging-service
+  namespace: opal
+spec:
+  releaseName: opal-logging-service
+  values:
+    java:
+      ingressHost: opal-logging-service.demo.platform.hmcts.net
