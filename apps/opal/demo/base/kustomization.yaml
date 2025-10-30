@@ -5,6 +5,7 @@ resources:
   - ../../../rbac/nonprod-role.yaml
   - ../../opal-frontend/opal-frontend.yaml
   - ../../opal-fines-service/opal-fines-service.yaml
+  - ../../opal-logging-service/opal-logging-service.yaml
   - ../../opal-file-handler/opal-file-handler.yaml
   - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
   - ../../opal-user-service/opal-user-service.yaml
@@ -13,6 +14,7 @@ patches:
   - path: ../../serviceaccount/demo.yaml
   - path: ../../opal-frontend/demo.yaml
   - path: ../../opal-fines-service/demo.yaml
+  - path: ../../opal-logging-service/demo.yaml
   - path: ../../opal-file-handler/demo.yaml
   - path: ../../opal-legacy-db-stub/demo.yaml
   - path: ../../opal-user-service/demo.yaml
