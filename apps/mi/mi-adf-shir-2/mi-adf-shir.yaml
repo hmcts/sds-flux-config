@@ -14,6 +14,7 @@ spec:
     image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-cff729c-20250123185241 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     additionalEnv:
       AUTH_KEY_SECRET_NAME: mi-adf-auth-key-2
+      TZ: UTC
     keyVaultSecrets:
       - mi-adf-auth-key-2
       - cgi-tec-tns-descriptor
