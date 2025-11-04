@@ -8,17 +8,21 @@ spec:
   values:
     java:
       ingressHost: pre-api.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/pre/api:pr-1267
+      memoryRequests: '3Gi'
+      memoryLimits: '3Gi'
       environment:
         AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamstest
         AZURE_RESOURCE_GROUP: pre-test
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Testing
         MEDIA_SERVICE: MediaKind
+        ENABLE_AUTOMATED_EDITING: true
         ENABLE_NULL_DURATION_UPSERT: false
-        ENABLE_ENHANCED_PROCESSING: false
-        ENABLE_MIGRATION_ADMIN_ENDPOINTS: false
-        ENABLE_MIGRATED_DATA: false
+        ENABLE_ENHANCED_PROCESSING: true
+        ENABLE_MIGRATION_ADMIN_ENDPOINTS: true
+        ENABLE_MIGRATED_DATA: true
+        ENABLE_V2_B2C: true
+        HIKARI_POOL_SIZE: 25
         PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
         MEDIA_KIND_SUBSCRIPTION: pre-mkio-sbox
         MEDIA_KIND_SUBSCRIPTION_ID: 137dc683-7cf3-4869-b8c7-a9fdcedc0da2
