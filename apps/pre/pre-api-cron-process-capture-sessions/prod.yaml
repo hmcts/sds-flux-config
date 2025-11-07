@@ -10,6 +10,6 @@ spec:
     job:
       disableActiveClusterCheck: true
       schedule: "15 18 * * *" # 6.15pm every day
-      image: sdshmctspublic.azurecr.io/pre/api:prod-4418940-20251105163437 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-aa57040-20251107120700 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind

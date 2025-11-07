@@ -12,7 +12,7 @@ spec:
       suspend: true
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
-      image: sdshmctspublic.azurecr.io/pre/api:prod-4418940-20251105163437 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-aa57040-20251107120700 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         AZURE_SUBSCRIPTION_ID: c68a4bed-4c3d-4956-af51-4ae164c1957c
         PLATFORM_ENV_TAG: Demo
