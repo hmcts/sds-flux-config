@@ -16,5 +16,5 @@ spec:
   values:
     nodejs:
       replicas: 2
-      image: sdshmctspublic.azurecr.io/courtfines/app:prod-2e34301-20251023130358 # {"$imagepolicy": "flux-system:courtfines-app"}
+      image: sdshmctspublic.azurecr.io/courtfines/app:prod-cf6f252-20251111054004 # {"$imagepolicy": "flux-system:courtfines-app"}
       disableTraefikTls: true
