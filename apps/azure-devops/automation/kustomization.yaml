@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - ../azure-devops-agent-keda/image-repo.yaml
   - ../azure-devops-agent-keda/image-policy.yaml
+  - ../azure-devops-agent-windows-keda/image-repo.yaml
+  - ../azure-devops-agent-windows-keda/image-policy.yaml
