@@ -37,6 +37,7 @@ spec:
     memoryLimits: 3Gi
     cpuLimits: 2
     maxReplicaCount: 3
+    minReplicaCount: 1
     successfulJobsHistoryLimit: 5
     failedJobsHistoryLimit: 5
   chart:
