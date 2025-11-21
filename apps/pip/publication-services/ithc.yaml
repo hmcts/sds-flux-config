@@ -7,6 +7,7 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
+      image: sdshmctspublic.azurecr.io/pip/publication-services:pr-541-b0b2257-20251119152952
       ingressHost: pip-publication-services.ithc.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.ithc.platform.hmcts.net
