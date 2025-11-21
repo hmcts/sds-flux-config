@@ -6,7 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1583-3caead9-20251117161531
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1518-e1e21fc-20251120104304
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
       environment:
@@ -36,6 +36,8 @@ spec:
               alias: CLIENT_SECRET
             - name: b2c-config-endpoint
               alias: CONFIG_ENDPOINT
+            - name: b2c-config-admin-endpoint
+              alias: CONFIG_ADMIN_ENDPOINT
             - name: b2c-tenant-id
               alias: TENANT_GUID
             - name: shared-storageaccount-connection-string
