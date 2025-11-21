@@ -4,6 +4,9 @@ resources:
   - ../../base
   - ../../../rbac/dev-role.yaml
   - ../../../base/slack-provider/dev
+  - ../../../azureserviceoperator-system/resources/resource-group.yaml
+  - ../../../azureserviceoperator-system/resources/servicebus-namespace.yaml
 namespace: opal
 patches:
   - path: ../../serviceaccount/stg.yaml
+  - path: ../aso/opal-servicebus.yaml
