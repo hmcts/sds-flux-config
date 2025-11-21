@@ -6,7 +6,8 @@ spec:
   releaseName: pip-account-management-inactive-verify-cron
   values:
     job:
-      schedule: "01 08 * * *"
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:pr-213-0e90022-20251119152446
+      schedule: "10 16 * * *"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.ithc.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.ithc.platform.hmcts.net
