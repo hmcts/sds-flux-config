@@ -7,7 +7,6 @@ spec:
   releaseName: pip-account-management
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/account-management:pr-552-85cf64e-20251119152558
       ingressHost: pip-account-management.ithc.platform.hmcts.net
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.ithc.platform.hmcts.net

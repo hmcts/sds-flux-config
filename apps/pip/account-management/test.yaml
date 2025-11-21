@@ -7,7 +7,6 @@ spec:
   releaseName: pip-account-management
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pip/account-management:pr-552-85cf64e-20251119152558
       replicas: 2
       ingressHost: pip-account-management.test.platform.hmcts.net
       environment:
