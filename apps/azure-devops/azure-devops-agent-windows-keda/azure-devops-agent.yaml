@@ -7,7 +7,7 @@ spec:
   releaseName: azure-devops-agent-windows
   values:
     scaleType: Job
-    image: hmctspublic.azurecr.io/azure-devops-agent-windows:pr-45-1bca5a01-1762938418
+    image: hmctspublic.azurecr.io/azure-devops-agent-windows:pr-45-817e7cd0-1764159985
     runAsRoot: true
     tolerations:
       - key: kubernetes.io/os
@@ -37,7 +37,6 @@ spec:
     memoryLimits: 3Gi
     cpuLimits: 2
     maxReplicaCount: 3
-    minReplicaCount: 1
     successfulJobsHistoryLimit: 5
     failedJobsHistoryLimit: 5
   chart:

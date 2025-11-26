@@ -1,0 +1,19 @@
+apiVersion: servicebus.azure.com/v1api20211101
+kind: Namespace
+metadata:
+  name: ${NAMESPACE}-servicebus-${ENVIRONMENT}
+  namespace: ${NAMESPACE}
+  annotations:
+    serviceoperator.azure.com/reconcile-policy: detach-on-delete
+spec:
+  tags:
+    builtFrom: https://github.com/hmcts/sds-flux-config
+    businessArea: Cross-Cutting
+    environment: development
+  location: uksouth
+  owner:
+    name: ${NAMESPACE}-aso-${ENVIRONMENT}-rg
+  azureName: ${NAMESPACE}-sb-${ENVIRONMENT}
+  sku:
+    name: Basic
+  zoneRedundant: false
