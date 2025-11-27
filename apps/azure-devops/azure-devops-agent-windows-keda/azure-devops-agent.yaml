@@ -7,7 +7,7 @@ spec:
   releaseName: azure-devops-agent-windows
   values:
     scaleType: Job
-    image: hmctspublic.azurecr.io/azure-devops-agent-windows:pr-45-3e8e8352-1764275628
+    image: hmctspublic.azurecr.io/azure-devops-agent-windows:pr-45-67d73938-1764283192
     runAsRoot: true
     tolerations:
       - key: kubernetes.io/os
