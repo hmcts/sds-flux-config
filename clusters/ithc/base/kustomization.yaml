@@ -21,6 +21,7 @@ resources:
   - ../../../apps/rota/base/kustomize.yaml
   - ../../../apps/cortex/base/kustomize.yaml
   - ../../../apps/opal/base/kustomize.yaml
+  - ../../../apps/cath/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
