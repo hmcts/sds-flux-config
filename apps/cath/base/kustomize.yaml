@@ -4,7 +4,7 @@ metadata:
   name: cath
   namespace: flux-system
 spec:
-  path: ./apps/cath/${ENVIRONMENT}/${CLUSTER}
+  path: ./apps/cath/${ENVIRONMENT}/base
   postBuild:
     substitute:
       NAMESPACE: "cath"
