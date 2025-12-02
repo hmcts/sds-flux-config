@@ -12,8 +12,7 @@ spec:
       environment:
         PRE_API_URL: https://sds-api-mgmt.platform.hmcts.net/pre-api
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk
-        B2C_APP_CLIENT_ID: 95370927-9b25-4530-88e8-a1af7a9f0a48
-        AMS_AZURE_MEDIA_SERVICES: https://preamsprod-ukso1.streaming.media.azure.net
-        AMS_AZURE_MEDIA_SERVICES_KEY_DELIVERY: https://preamsprod.keydelivery.uksouth.media.azure.net
         DYNATRACE_JSTAG: https://js-cdn.dynatrace.com/jstag/17177a07246/bf00910jpo/2cb36dc17097f85_complete.js
-        TRIGGER: init-7
+        B2C_APP_CLIENT_ID: 95370927-9b25-4530-88e8-a1af7a9f0a48
+        B2C_BASE_URL: https://hmctsprodextid.b2clogin.com/hmctsprodextid.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1A_SignUpOrSignin
+        B2C_END_SESSION_ENDPOINT: https://hmctsprodextid.b2clogin.com/hmctsprodextid.onmicrosoft.com/b2c_1a_signup_signin/oauth2/v2.0/logout
