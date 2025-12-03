@@ -4,8 +4,6 @@ resources:
   - ../../base
   - ../../../rbac/dev-role.yaml
   - ../../../base/slack-provider/demo
-  - ../../pdda-public-display-data-aggregator/pdda-public-display-data-aggregator.yaml
-  - ../../pdda-public-display-manager/pdda-public-display-manager.yaml
 namespace: pdda
 patches:
   - path: ../../serviceaccount/demo.yaml

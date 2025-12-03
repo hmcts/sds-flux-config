@@ -21,6 +21,7 @@ resources:
   - ../../../apps/hmi/base/kustomize.yaml
   - ../../../apps/juror/base/kustomize.yaml
   - ../../../apps/darts-modernisation/base/kustomize.yaml
+  - ../../../apps/pdda/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:

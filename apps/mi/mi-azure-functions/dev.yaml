@@ -10,6 +10,15 @@ spec:
     keyVaultSecrets:
       - encryption-publicKey
       - aramis-encryption-secret
+      - log-analytics-workspace-id
+      - smtp-server
+      - smtp-port
+      - smtp-sender-email-adf-monitor
+      - smtp-sender-pwd-adf-monitor
+      - smtp-recipients-adf-monitor
+      - smtp-sender-email-dwp-reporting
+      - smtp-sender-pwd-dwp-reporting
+      - smtp-recipients-dwp-reporting
     env:
       ADF_RESOURCEGROUP: mi-ingestion-dev-rg
       ADF_NAME: mi-ingestion-adf-dev

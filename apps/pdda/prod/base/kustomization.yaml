@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+namespace: pdda
+patches:
+  - path: ../../identity/prod.yaml
+  - path: ../../serviceaccount/prod.yaml
+  - path: ../../pdda-public-display-data-aggregator/prod.yaml
+  - path: ../../pdda-public-display-manager/prod.yaml

@@ -1,0 +1,8 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: pdda-public-display-data-aggregator
+  namespace: pdda
+spec:
+  resourceID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/managed-identities-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/pdda-prod-mi
+  clientID: e1058339-f5e7-4c7c-957e-b0ca94b18752
