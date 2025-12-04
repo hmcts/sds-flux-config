@@ -1,15 +1,13 @@
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
-  name: juror-bureau-pr
-  annotations:
-    hmcts.github.com/prod-automated: disabled
+  name: darts-api-pr-test-env
 spec:
   imageRepositoryRef:
-    name: juror-bureau
+    name: darts-api
   filterTags:
     extract: $ts
-    pattern: '^pr-1068-[a-f0-9]+-(?P<ts>[0-9]+)'
+    pattern: '^pr-3103-[a-f0-9]+-(?P<ts>[0-9]+)'
   policy:
     alphabetical:
       order: asc
