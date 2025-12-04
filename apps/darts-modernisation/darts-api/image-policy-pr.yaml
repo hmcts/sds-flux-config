@@ -5,6 +5,12 @@ metadata:
 spec:
   imageRepositoryRef:
     name: darts-api
+  filterTags:
+    extract: $ts
+    pattern: '^pr-\d{4}-[a-f0-9]+-(?P<ts>[0-9]{14})$'
+  policy:
+    alphabetical:
+      order: desc
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
