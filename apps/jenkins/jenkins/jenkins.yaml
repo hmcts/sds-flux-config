@@ -246,7 +246,7 @@ spec:
                           id: "cosmos-connection"
                           preferredRegion: "UK South"
                           scope: GLOBAL
-                          url: "https://$${pipeline-metrics-account-name}.documents.azure.com:443/"
+                          url: "https://pipeline-metrics.documents.azure.com/"
           jobs: |
             jobs:
               - url: https://raw.githubusercontent.com/hmcts/sds-jenkins-config/master/jobdsl/organisations.groovy
