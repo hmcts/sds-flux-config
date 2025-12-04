@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../darts-api/image-repo.yaml
   - ../darts-api/image-policy.yaml
+  - ../darts-api/image-policy-test-env.yaml
   - ../darts-automated-tasks/image-repo.yaml
   - ../darts-automated-tasks/image-policy.yaml
   - ../darts-external-component-test-harness/image-repo.yaml
