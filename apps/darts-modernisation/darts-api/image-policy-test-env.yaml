@@ -7,7 +7,7 @@ spec:
     name: darts-api
   filterTags:
     extract: $ts
-    pattern: '^pr-3103+-[a-f0-9]+-(?P<ts>[0-9]{14})$'
+    pattern: '^pr-3103-[a-f0-9]+-(?P<ts>[0-9]{14})$'
   policy:
     alphabetical:
       order: desc
