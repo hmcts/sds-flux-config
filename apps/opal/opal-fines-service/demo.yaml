@@ -7,6 +7,7 @@ spec:
   releaseName: opal-fines-service
   values:
     java:
+      image: sdshmctspublic.azurecr.io/opal/fines-service:prod-1c365b6-20251205172847
       ingressHost: opal-fines-service.demo.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
