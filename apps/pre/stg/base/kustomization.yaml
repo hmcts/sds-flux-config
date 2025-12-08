@@ -16,6 +16,7 @@ resources:
   - ../../pre-api-cron-vodafone-etl-process-full/pre-api-cron-vodafone-etl-process-full.yaml
   - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
   - ../../pre-api-cron-vodafone-mk-import/pre-api-cron-vodafone-mk-import.yaml
+  - ../../pre-api-cron-capture-session-status-correction-task/pre-api-cron-capture-session-status-correction-task.yaml
   - ../../../rbac/nonprod-role.yaml
   - ../../../base/slack-provider/stg
 namespace: pre
