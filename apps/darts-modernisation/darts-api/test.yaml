@@ -7,6 +7,10 @@ spec:
   releaseName: darts-api
   values:
     java:
+      replicas: 4
+      autoscaling:
+        enabled: false
+        maxReplicas: 4
       image: sdshmctspublic.azurecr.io/darts/api:pr-3118-a47bc2d-20251208150513 #{"$imagepolicy": "flux-system:darts-api-test"}
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
