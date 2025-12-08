@@ -7,6 +7,7 @@ spec:
   releaseName: opal-frontend
   values:
     nodejs:
+      image: sdshmctspublic.azurecr.io/opal/frontend:prod-aa24e0d-20251208091127
       ingressHost: opal-frontend.demo.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
