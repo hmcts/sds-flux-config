@@ -4,9 +4,17 @@ metadata:
   name: toffee-frontend
   namespace: toffee
 spec:
+  chart:
+    spec:
+      chart: toffee-frontend
+      version: 0.1.38
+      sourceRef:
+        kind: HelmRepository
+        name: hmctssbox-oci
+        namespace: flux-system
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/toffee/frontend:prod-f8bc08c-20250225100311 #{"$imagepolicy": "flux-system:toffee-frontend-sbox"}
+      image: hmctssbox.azurecr.io/toffee/frontend:prod-8775362-20250225094245
       ingressHost: toffee.sandbox.platform.hmcts.net
       environment:
         RECIPE_BACKEND_URL: http://toffee-recipe-backend.sandbox.platform.hmcts.net
