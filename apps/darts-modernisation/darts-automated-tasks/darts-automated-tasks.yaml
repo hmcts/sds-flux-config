@@ -20,6 +20,8 @@ spec:
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
+      cpuRequests: '2000m'
+      cpuLimits: '6000m'
       terminationGracePeriodSeconds: 300
       environment:
         AUTOMATED_TASK_MODE: true
