@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: juror-er-portal
+  namespace: juror
+spec:
+  releaseName: juror-er-portal
+  values:
+    nodejs:
+      # Uncomment and edit the line below to fix the environment at a specific image
+      # image: sdshmctspublic.azurecr.io/juror/er-portal:prod-67c8860-20251128123109
+      ingressHost: juror-er.demo.apps.hmcts.net
