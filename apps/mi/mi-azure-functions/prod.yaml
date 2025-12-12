@@ -8,12 +8,13 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-baec0a0-20251103134855 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-918b172-20251211191250 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     replicaCount: 4
     env:
       ADF_RESOURCEGROUP: mi-ingestion-prod-rg
       ADF_NAME: mi-ingestion-adf-prod
       ADF_STORAGEACCOUNTNAME: miauditprod
+      MI_EXTERNAL_SHARING_ACCOUNTNAME: miexternalsharingprod
       MI_METADATA_SERVER: mi-metadata-server-prod.database.windows.net
       MI_METADATA_SERVER_DB: mi-metadata-db-prod
       OPTIC_TOKEN_URL: https://hmcts.icasework.com/token

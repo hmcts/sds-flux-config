@@ -7,7 +7,11 @@ spec:
   releaseName: darts-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/api:pr-3103 #{"$imagepolicy": "flux-system:darts-api-pr"}
+      replicas: 4
+      autoscaling:
+        enabled: false
+        maxReplicas: 4
+      image: sdshmctspublic.azurecr.io/darts/api:pr-3118-b93e624-20251211161053 #{"$imagepolicy": "flux-system:darts-api-test"}
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
@@ -27,7 +31,7 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
-        RESTART_ME: '012'
+        RESTART_ME: '013'
         ENABLE_ARM_V5_2_UPGRADE: true
     function:
       environment:
