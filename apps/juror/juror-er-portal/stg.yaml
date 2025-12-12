@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: juror-er-portal
+  namespace: juror
+spec:
+  releaseName: juror-er-portal
+  values:
+    nodejs:
+      ingressHost: juror-er.staging.apps.hmcts.net

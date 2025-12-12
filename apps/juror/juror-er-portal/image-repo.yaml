@@ -1,0 +1,6 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageRepository
+metadata:
+  name: juror-er-portal
+spec:
+  image: sdshmctspublic.azurecr.io/juror/er-portal
