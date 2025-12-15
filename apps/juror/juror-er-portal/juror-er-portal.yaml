@@ -1,0 +1,34 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: juror-er-portal
+  namespace: juror
+spec:
+  releaseName: juror-er-portal
+  chart:
+    spec:
+      chart: ./stable/juror-er-portal
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
+  values:
+    nodejs:
+      image: sdshmctspublic.azurecr.io/juror/er-portal:prod-8149332-20251211104700 # {"$imagepolicy": "flux-system:juror-er-portal"}
+      startupPeriod: 30
+      memoryRequests: '1Gi'
+      cpuRequests: '500m'
+      memoryLimits: '2Gi'
+      cpuLimits: '1000m'
+      replicas: 2
+      autoscaling:
+        enabled: true
+        maxReplicas: 4
+        cpu:
+          enabled: true
+          averageUtilization: 90
+        memory:
+          enabled: true
+          averageUtilization: 80
+      disableTraefikTls: true
