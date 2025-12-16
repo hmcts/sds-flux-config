@@ -34,7 +34,7 @@ spec:
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         ENABLE_ARM_V5_2_UPGRADE: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-19ca03d-20251215122004 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-a52da86-20251216124702 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.court-tribunal-records-archive.service.justice.gov.uk
