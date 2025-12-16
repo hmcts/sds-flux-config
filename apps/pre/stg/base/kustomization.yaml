@@ -17,6 +17,7 @@ resources:
   - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
   - ../../pre-api-cron-vodafone-mk-import/pre-api-cron-vodafone-mk-import.yaml
   - ../../pre-api-cron-capture-session-status-correction-task/pre-api-cron-capture-session-status-correction-task.yaml
+  - ../../pre-api-cron-update-alt-email-field/pre-api-cron-update-alt-email-field.yaml
   - ../../../rbac/nonprod-role.yaml
   - ../../../base/slack-provider/stg
 namespace: pre
@@ -38,4 +39,5 @@ patches:
   - path: ../../pre-api-cron-vodafone-etl-process-full/stg.yaml
   - path: ../../pre-api-cron-cleanup-null-durations/stg.yaml
   - path: ../../pre-api-cron-vodafone-mk-import/stg.yaml
+  - path: ../../pre-api-cron-update-alt-email-field/stg.yaml
   - path: ../../serviceaccount/stg.yaml
