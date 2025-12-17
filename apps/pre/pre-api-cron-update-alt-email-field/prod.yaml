@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pre-api-cron-vodafone-etl-fetch-data
+  name: pre-api-cron-update-alt-email-field
   namespace: pre
 spec:
   values:
@@ -10,15 +10,13 @@ spec:
     job:
       schedule: "10 10 1 5 *" # 10 AM 1st May UTC
       suspend: true
-      memoryRequests: '1Gi'
-      memoryLimits: '2Gi'
+      memoryRequests: "1Gi"
+      memoryLimits: "2Gi"
       image: sdshmctspublic.azurecr.io/pre/api:prod-32ad2b2-20251216152051 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
-        AZURE_SUBSCRIPTION_ID: c68a4bed-4c3d-4956-af51-4ae164c1957c
-        PLATFORM_ENV_TAG: Demo
         MEDIA_SERVICE: MediaKind
         ENABLE_NEW_EMAIL_SERVICE: true
-        PORTAL_URL: https://pre-portal.demo.platform.hmcts.net/
-        MEDIA_KIND_SUBSCRIPTION: pre-mkio-demo
-        MEDIA_KIND_SUBSCRIPTION_ID: ff98b8dd-8ba7-4d80-b792-80a7b2f5d773
+        PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
+        MEDIA_KIND_SUBSCRIPTION: pre-mkio-prod
+        MEDIA_KIND_SUBSCRIPTION_ID: 1d8c003d-e588-41f7-8e7f-20dbb2f92a39
         MEDIA_KIND_LOCATION: uksouth-4

@@ -1,23 +1,23 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pre-api-cron-perform-edit-requests
+  name: pre-api-cron-update-alt-email-field
   namespace: pre
 spec:
   values:
     global:
       jobKind: CronJob
     job:
+      schedule: "45 9 17 12 *" # 9.45am (GMT) - 17 Dec
       suspend: false
-      disableActiveClusterCheck: true
-      schedule: "*/5 * * * *" # every 5 mins
+      memoryRequests: "1Gi"
+      memoryLimits: "2Gi"
       image: sdshmctspublic.azurecr.io/pre/api:prod-32ad2b2-20251216152051 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
-        AZURE_SUBSCRIPTION_ID: c68a4bed-4c3d-4956-af51-4ae164c1957c
-        PLATFORM_ENV_TAG: Demo
+        AZURE_SUBSCRIPTION_ID: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
+        PLATFORM_ENV_TAG: Staging
         MEDIA_SERVICE: MediaKind
-        PORTAL_URL: https://pre-portal.demo.platform.hmcts.net/
         ENABLE_NEW_EMAIL_SERVICE: true
-        MEDIA_KIND_SUBSCRIPTION: pre-mkio-demo
-        MEDIA_KIND_SUBSCRIPTION_ID: ff98b8dd-8ba7-4d80-b792-80a7b2f5d773
+        MEDIA_KIND_SUBSCRIPTION: pre-mkio-stg
+        MEDIA_KIND_SUBSCRIPTION_ID: 36a78cf2-290d-4621-b974-eda4a570ef70
         MEDIA_KIND_LOCATION: uksouth-4
