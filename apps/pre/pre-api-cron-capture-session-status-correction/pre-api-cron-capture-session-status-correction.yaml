@@ -1,10 +1,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pre-api-cron-capture-session-status-correction-task
+  name: pre-api-cron-capture-session-status-correction
   namespace: pre
 spec:
-  releaseName: pre-api-cron-capture-session-status-correction-task
+  releaseName: pre-api-cron-capture-session-status-correction
   values:
     java:
       enabled: false
