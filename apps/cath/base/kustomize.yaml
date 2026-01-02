@@ -1,0 +1,11 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cath
+  namespace: flux-system
+spec:
+  path: ./apps/cath/${ENVIRONMENT}/base
+  postBuild:
+    substitute:
+      NAMESPACE: "cath"
+      TEAM_NOTIFICATION_CHANNEL: "pip-ai-coding"
