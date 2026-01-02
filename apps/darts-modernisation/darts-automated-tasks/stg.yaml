@@ -18,5 +18,8 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
         AZCOPY_LOG_LEVEL: "--log-level=INFO"
         AZCOPY_OUTPUT_LEVEL: "--output-level=default"
-        ENABLE_ARM_V5_2_UPGRADE: false
+        ENABLE_ARM_V5_2_UPGRADE: true
         RESTART_ME: '010'
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
+        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
+        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
