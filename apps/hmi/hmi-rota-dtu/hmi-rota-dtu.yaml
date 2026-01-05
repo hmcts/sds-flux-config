@@ -18,6 +18,6 @@ spec:
   releaseName: hmi-rota-dtu
   values:
     function:
-      image: sdshmctspublic.azurecr.io/hmi/rota-dtu:latest
+      image: hmctsprod.azurecr.io/hmi/rota-dtu:latest
       triggerAuth:
         triggerPodIdentityProvider: azure-workload

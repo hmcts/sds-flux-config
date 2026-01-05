@@ -9,7 +9,7 @@ spec:
   values:
     java:
       memoryRequests: "1Gi"
-      image: sdshmctspublic.azurecr.io/toffee/recipe-backend:latest
+      image: hmctsprod.azurecr.io/toffee/recipe-backend:latest
       disableTraefikTls: true
   chart:
     spec:

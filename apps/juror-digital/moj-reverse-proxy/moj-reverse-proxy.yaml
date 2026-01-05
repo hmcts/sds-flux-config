@@ -9,7 +9,7 @@ spec:
   releaseName: moj-reverse-proxy
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/jd/juror-reverse-proxy:nle-db26
+      image: hmctsprod.azurecr.io/jd/juror-reverse-proxy:nle-db26
       replicas: 2
       autoscaling:
         enabled: true

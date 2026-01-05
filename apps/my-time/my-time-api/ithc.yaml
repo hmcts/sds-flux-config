@@ -6,4 +6,4 @@ metadata:
 spec:
   releaseName: my-time-api
   values:
-    image: sdshmctspublic.azurecr.io/my-time/api:latest #{"$imagepolicy": "flux-system:latest"}
+    image: hmctsprod.azurecr.io/my-time/api:latest #{"$imagepolicy": "flux-system:latest"}

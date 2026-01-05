@@ -6,7 +6,7 @@ spec:
   releaseName: my-time-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/my-time/frontend:latest # {"$imagepolicy": "flux-system:my-time-frontend"}
+      image: hmctsprod.azurecr.io/my-time/frontend:latest # {"$imagepolicy": "flux-system:my-time-frontend"}
       disableTraefikTls: true
   chart:
     spec:

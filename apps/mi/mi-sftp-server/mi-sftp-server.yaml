@@ -30,7 +30,7 @@ spec:
               mountPath: /sftp-config
       containers:
         - name: mi-sftp-server
-          image: sdshmctspublic.azurecr.io/mi/sftp:1.0.0-release
+          image: hmctsprod.azurecr.io/mi/sftp:1.0.0-release
           imagePullPolicy: Always
           securityContext:
             capabilities:
