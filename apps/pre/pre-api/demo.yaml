@@ -10,7 +10,6 @@ spec:
       replicas: 2
       ingressHost: pre-api.demo.platform.hmcts.net
       environment:
-        AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamsdemo
         AZURE_RESOURCE_GROUP: pre-demo
         PLATFORM_ENV_TAG: Demo
         PORTAL_URL: https://pre-portal.demo.platform.hmcts.net/
