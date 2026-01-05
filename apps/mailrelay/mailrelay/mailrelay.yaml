@@ -19,7 +19,7 @@ spec:
       interval: 1m
   values:
     image:
-      repository: sdshmctspublic.azurecr.io/exim-relay
+      repository: hmctsprod.azurecr.io/exim-relay
       tag: 0.4
       pullPolicy: IfNotPresent
 
@@ -51,14 +51,14 @@ spec:
     fluentbit:
       enabled: true
       image:
-        repository: sdshmctspublic.azurecr.io/fluent/fluent-bit
+        repository: hmctsprod.azurecr.io/fluent/fluent-bit
         tag: 1.7.2
         pullPolicy: IfNotPresent
 
     eximexporter:
       enabled: true
       image:
-        repository: sdshmctspublic.azurecr.io/exim-exporter
+        repository: hmctsprod.azurecr.io/exim-exporter
         tag: 0.3
         pullPolicy: IfNotPresent
         ports:

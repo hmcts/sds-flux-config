@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: juror-synapse-shir
   values:
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:dev-e877ecf-20250801092027 #{"$imagepolicy": "flux-system:juror-adf-shir-dev"}
+    image: hmctsprod.azurecr.io/mi/adf-integration-runtime:dev-e877ecf-20250801092027 #{"$imagepolicy": "flux-system:juror-adf-shir-dev"}
     replicaCount: 1
     memoryLimits: '4096Mi'
     environment: "stg"

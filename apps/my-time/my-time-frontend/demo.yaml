@@ -6,6 +6,6 @@ metadata:
 spec:
   releaseName: my-time-frontend
   values:
-    image: sdshmctspublic.azurecr.io/my-time/frontend:latest #{"$imagepolicy": "flux-system:my-time-frontend"}
+    image: hmctsprod.azurecr.io/my-time/frontend:latest #{"$imagepolicy": "flux-system:my-time-frontend"}
     nodejs:
       environment:

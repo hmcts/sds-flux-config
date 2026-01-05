@@ -22,10 +22,10 @@ resources:
   - ../../appreg/automation
   - ../../rota/automation
 patches:
-  - path: sdshmctspublic-image-repo.yaml
+  - path: hmctsprod-image-repo.yaml
     target:
       kind: ImageRepository
-      annotationSelector: hmcts.github.com/image-registry != hmctspublic,hmcts.github.com/image-registry != hmctsprivate,hmcts.github.com/image-registry != hmctssbox
+      annotationSelector: hmcts.github.com/image-registry != hmctspublic,hmcts.github.com/image-registry != hmctsprivate,hmcts.github.com/image-registry != hmctssbox,hmcts.github.com/image-registry != hmctssandbox
   - path: hmctspublic-image-repo.yaml
     target:
       kind: ImageRepository
@@ -42,3 +42,7 @@ patches:
     target:
       kind: ImageRepository
       annotationSelector: hmcts.github.com/image-registry == hmctssbox
+  - path: hmctssandbox-image-repo.yaml
+    target:
+      kind: ImageRepository
+      annotationSelector: hmcts.github.com/image-registry == hmctssandbox

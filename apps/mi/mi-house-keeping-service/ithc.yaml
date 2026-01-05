@@ -8,7 +8,7 @@ spec:
   values:
     kind: CronJob
     schedule: "45 * * * *"
-    image: sdshmctspublic.azurecr.io/mi-house-keeping-service:prod-090f520-20250613094733 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
+    image: hmctsprod.azurecr.io/mi-house-keeping-service:prod-090f520-20250613094733 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
     global:
       subscriptionId: "ba71a911-e0d6-4776-a1a6-079af1df7139"
       environment: "ithc"

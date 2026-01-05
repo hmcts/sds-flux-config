@@ -8,7 +8,7 @@ spec:
   timeout: 20m
   values:
     image:
-      repository: sdshmctspublic.azurecr.io/exim-relay
+      repository: hmctsprod.azurecr.io/exim-relay
       tag: v0.2.19
       pullPolicy: IfNotPresent
     service:
