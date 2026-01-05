@@ -29,7 +29,7 @@ spec:
         AZCOPY_OUTPUT_LEVEL: "--output-level=default"
         ENABLE_ARM_V5_2_UPGRADE: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-527abd9-20251218124624 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-6453621-20251222115056 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
         ARM_API_URL: https://darts-stub-services.staging.platform.hmcts.net
