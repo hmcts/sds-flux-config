@@ -5,7 +5,7 @@ NAMESPACE=$1
 PRODUCT=$2
 COMPONENT=$3
 REGISTRY=$4
-ACR=${REGISTRY:-sdshmctspublic}
+ACR=${REGISTRY:-hmctsprod}
 APPS_DIR="../../apps/"
 COMPONENT_DIR="${APPS_DIR}/${NAMESPACE}/${PRODUCT}-${COMPONENT}"
 
@@ -91,7 +91,7 @@ then
 fi
 
 if [ ! -d "${APPS_DIR}/${NAMESPACE}/automation" ]; then
-  
+
   echo "Creating automation directory for ${NAMESPACE}"
   mkdir ${APPS_DIR}/${NAMESPACE}/automation
   (

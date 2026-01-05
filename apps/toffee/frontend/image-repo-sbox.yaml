@@ -3,6 +3,6 @@ kind: ImageRepository
 metadata:
   name: toffee-frontend-sbox
   annotations:
-    hmcts.github.com/image-registry: hmctssbox
+    hmcts.github.com/image-registry: hmctsandbox
 spec:
-  image: hmctssbox.azurecr.io/toffee/frontend
+  image: hmctsandbox.azurecr.io/toffee/frontend

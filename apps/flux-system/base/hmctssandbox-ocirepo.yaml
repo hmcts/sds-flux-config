@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: hmctssandbox-oci
+  namespace: flux-system
+spec:
+  url: oci://hmctssandbox.azurecr.io/helm
+  interval: 10m
+  type: oci
+  provider: azure
