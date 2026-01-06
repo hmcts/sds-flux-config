@@ -19,3 +19,9 @@ patches:
   - target:
       kind: Deployment
     path: toleration_patch.yaml
+  - target:
+      kind: Deployment
+      name: azureserviceoperator-controller-manager
+    patch: |-
+      - op: remove
+        path: /spec/strategy/rollingUpdate
