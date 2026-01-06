@@ -14,16 +14,12 @@ spec:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
         NOTIFY_LINK_SUBSCRIPTION_PAGE: https://www.court-tribunal-hearings.service.gov.uk/subscription-management
         NOTIFY_LINK_AAD_SIGNIN_LINK: https://www.court-tribunal-hearings.service.gov.uk/login?p=B2C_1_SignInUserFlow
-        NOTIFY_LINK_AAD_ADMIN_SIGNIN_LINK: https://www.court-tribunal-hearings.service.gov.uk/admin-dashboard
         NOTIFY_LINK_GOV_GUIDANCE: https://www.gov.uk
-        NOTIFY_LINK_AAD_RESET_PW_LINK_ADMIN: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=6ff73117-42b7-4bf4-bb74-e5a59ca5314e&nonce=defaultNonce&redirect_uri=https://www.court-tribunal-hearings.service.gov.uk/password-change-confirmation&scope=openid&response_type=code&prompt=login&response_mode=form_post
         NOTIFY_LINK_AAD_RESET_PW_LINK_MEDIA: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=6ff73117-42b7-4bf4-bb74-e5a59ca5314e&nonce=defaultNonce&redirect_uri=https://www.court-tribunal-hearings.service.gov.uk/password-change-confirmation&scope=openid&response_type=code&prompt=login&response_mode=form_post
         MEDIA_VERIFICATION_PAGE_LINK: https://www.court-tribunal-hearings.service.gov.uk/media-verification?p=B2C_1_SignInMediaVerification
         NOTIFY_LINK_START_PAGE: https://www.court-tribunal-hearings.service.gov.uk
-        ADMIN_DASHBOARD_LINK: https://www.court-tribunal-hearings.service.gov.uk/admin-dashboard
         NOTIFY_CFT_SIGN_IN_LINK: https://www.court-tribunal-hearings.service.gov.uk/cft-login
         NOTIFY_CRIME_SIGN_IN_LINK: https://www.court-tribunal-hearings.service.gov.uk/crime-login
-        PUB_SERVICES_REDEPLOY: true
         XHIBIT_S3_BUCKET_NAME: staging.xhibit.justice.gov.uk  # change it to production S3 bucket before deploying the changes
       memoryRequests: 1200Mi
       autoscaling:
