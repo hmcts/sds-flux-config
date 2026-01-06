@@ -14,7 +14,7 @@ spec:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
-        FEIGN_LOG_LEVEL: full
+        FEIGN_LOG_LEVEL: BASIC
         PROCESS_E2E_ARM_RPO: true
         ARM_RPO_DURATION: 24h
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
