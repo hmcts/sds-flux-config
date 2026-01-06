@@ -13,14 +13,10 @@ spec:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
         AUTH_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/login/return
         MEDIA_VERIFICATION_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/media-verification/return
-        ADMIN_AUTH_RETURN_URL: https://www.court-tribunal-hearings.service.gov.uk/login/admin/return
         FRONTEND_URL: https://www.court-tribunal-hearings.service.gov.uk
-        CONFIG_ADMIN_ENDPOINT: https://staff.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/B2C_1_SignInAdminUserFlow/v2.0/.well-known/openid-configuration
         MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration
         B2C_URL: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk
-        B2C_ADMIN_URL: https://staff.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk
         CFT_IDAM_URL: https://hmcts-access.service.gov.uk
-        RESTART_PROD: true
         CRIME_IDAM_URL: https://login.cjscp.org.uk
       autoscaling:
         enabled: true
