@@ -247,6 +247,12 @@ spec:
                           preferredRegion: "UK South"
                           scope: GLOBAL
                           url: "https://$${pipeline-metrics-account-name}.documents.azure.com:443/"
+                      - usernamePassword:
+                          description: "Fortify on Demand - OAuth client credentials (client_id/client_secret)"
+                          id: "fortify-on-demand-oauth"
+                          password: "$${fortify-on-demand-password}"
+                          scope: GLOBAL
+                          username: "$${fortify-on-demand-username}"
           jobs: |
             jobs:
               - url: https://raw.githubusercontent.com/hmcts/sds-jenkins-config/master/jobdsl/organisations.groovy
