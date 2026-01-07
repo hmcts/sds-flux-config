@@ -41,6 +41,7 @@ spec:
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
         ENABLE_ARM_V5_2_UPGRADE: true
+        FEIGN_LOG_LEVEL: full
         ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
