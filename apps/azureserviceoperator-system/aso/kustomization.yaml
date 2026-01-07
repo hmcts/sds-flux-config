@@ -30,6 +30,6 @@ patches:
       spec:
         strategy:
           type: RollingUpdate
-          rollingUpdate: 
+          rollingUpdate:
             maxUnavailable: 1
             maxSurge: 1
