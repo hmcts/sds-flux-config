@@ -7,7 +7,7 @@ spec:
   releaseName: darts-api
   values:
     java:
-      image: sdshmctspublic.azurecr.io/darts/api:pr-3159-245d856-20260107171054 #{"$imagepolicy": "flux-system:darts-api-demo"}
+      image: sdshmctspublic.azurecr.io/darts/api:pr-3156-f8b5af4-20260108113615 #{"$imagepolicy": "flux-system:darts-api-demo"}
       ingressHost: darts-api.demo.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
@@ -35,7 +35,7 @@ spec:
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-6453621-20251222115056 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-0727c91-20260108112848 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
