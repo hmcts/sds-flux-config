@@ -11,4 +11,5 @@ spec:
       image: sdshmctspublic.azurecr.io/juror/api:prod-f91a55b-20260108140211  # {"$imagepolicy": "flux-system:juror-api-pr"}
       ingressHost: juror-api.test.platform.hmcts.net
       environment:
-        TOKEN_EXPIRY: 5h
+        RUN_DB_MIGRATION_ON_STARTUP: true
+        EMPTY_VAR: one
