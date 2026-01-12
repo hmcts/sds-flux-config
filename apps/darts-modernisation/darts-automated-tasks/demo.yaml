@@ -23,3 +23,6 @@ spec:
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         ENABLE_ARM_V5_2_UPGRADE: true
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
+        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
+        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false

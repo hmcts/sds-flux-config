@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - https://github.com/Azure/azure-service-operator/releases/download/v2.17.0/azureserviceoperator_v2.17.0.yaml
+  - https://github.com/Azure/azure-service-operator/releases/download/v2.10.0/azureserviceoperator_v2.10.0.yaml
 patches:
   - patch: |-
       - op: add
@@ -19,17 +19,3 @@ patches:
   - target:
       kind: Deployment
     path: toleration_patch.yaml
-  - target:
-      kind: Deployment
-      name: azureserviceoperator-controller-manager
-    patch: |-
-      apiVersion: apps/v1
-      kind: Deployment
-      metadata:
-        name: azureserviceoperator-controller-manager
-      spec:
-        strategy:
-          type: RollingUpdate
-          rollingUpdate:
-            maxUnavailable: 25%
-            maxSurge: 25%

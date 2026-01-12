@@ -8,6 +8,7 @@ spec:
   values:
     java:
       ingressHost: pre-api.test.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pre/api:pr-1317
       memoryRequests: '3Gi'
       memoryLimits: '3Gi'
       environment:

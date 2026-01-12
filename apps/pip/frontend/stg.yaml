@@ -6,7 +6,6 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1600-1974df8-20251210115530
       replicas: 2
       ingressHost: pip-frontend.staging.platform.hmcts.net
       environment:
@@ -14,13 +13,10 @@ spec:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.staging.platform.hmcts.net
         AUTH_RETURN_URL: https://pip-frontend.staging.platform.hmcts.net/login/return
         MEDIA_VERIFICATION_RETURN_URL: https://pip-frontend.staging.platform.hmcts.net/media-verification/return
-        ADMIN_AUTH_RETURN_URL: https://pip-frontend.staging.platform.hmcts.net/login/admin/return
         FRONTEND_URL: https://pip-frontend.staging.platform.hmcts.net
         CONFIG_ENDPOINT: https://sign-in.pip-frontend.staging.platform.hmcts.net/pip-frontend.staging.platform.hmcts.net/B2C_1_SignInUserFlow/v2.0/.well-known/openid-configuration
-        CONFIG_ADMIN_ENDPOINT: https://staff.pip-frontend.staging.platform.hmcts.net/pip-frontend.staging.platform.hmcts.net/B2C_1_SignInAdminUserFlow/v2.0/.well-known/openid-configuration
         MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.pip-frontend.staging.platform.hmcts.net/pip-frontend.staging.platform.hmcts.net/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration
         B2C_URL: https://sign-in.pip-frontend.staging.platform.hmcts.net/pip-frontend.staging.platform.hmcts.net
-        B2C_ADMIN_URL: https://staff.pip-frontend.staging.platform.hmcts.net/pip-frontend.staging.platform.hmcts.net
         CFT_IDAM_URL: https://idam-web-public.aat.platform.hmcts.net
         CRIME_IDAM_URL: https://login.prp.cjscp.org.uk
       autoscaling:

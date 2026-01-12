@@ -6,6 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1611-453704e-20260108134012
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
       environment:
@@ -13,14 +14,11 @@ spec:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
         AUTH_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/login/return
         MEDIA_VERIFICATION_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/media-verification/return
-        ADMIN_AUTH_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/login/admin/return
         FRONTEND_URL: https://pip-frontend.test.platform.hmcts.net
         CFT_IDAM_URL: https://idam-web-public.perftest.platform.hmcts.net
         CONFIG_ENDPOINT: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInUserFlow/v2.0/.well-known/openid-configuration
-        CONFIG_ADMIN_ENDPOINT: https://staff.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInAdminUserFlow/v2.0/.well-known/openid-configuration
         MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration
         B2C_URL: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
-        B2C_ADMIN_URL: https://staff.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
         SESSION_COOKIE_SAME_SITE: lax
         CRIME_IDAM_URL: https://login.sit.cjscp.org.uk
       autoscaling:
@@ -30,3 +28,57 @@ spec:
           averageUtilization: 70
         memory:
           enabled: false
+      keyVaults:
+        pip-ss-kv:
+          resourceGroup: pip-ss-test-rg
+          secrets:
+            - name: session-key
+              alias: SESSION_SECRET
+            - name: auto-pip-test-pip-frontend-test-id
+              alias: CLIENT_ID
+            - name: auto-pip-test-pip-frontend-test-pwd
+              alias: CLIENT_SECRET
+            - name: b2c-config-endpoint
+              alias: CONFIG_ENDPOINT
+            - name: b2c-tenant-id
+              alias: TENANT_GUID
+            - name: shared-storageaccount-connection-string
+              alias: CONNECTION_STRING
+            - name: REDIS-V6-HOST
+              alias: REDIS_HOST
+            - name: REDIS-V6-PASSWORD
+              alias: REDIS_PASSWORD
+            - name: REDIS-V6-PORT
+              alias: REDIS_PORT
+            - name: app-pip-frontend-id
+              alias: CLIENT_ID_INTERNAL
+            - name: app-pip-frontend-pwd
+              alias: CLIENT_SECRET_INTERNAL
+            - name: app-tenant-id
+              alias: TENANT_ID
+            - name: app-pip-data-management-scope
+              alias: DATA_MANAGEMENT_AZ_API
+            - name: app-pip-account-management-scope
+              alias: ACCOUNT_MANAGEMENT_AZ_API
+            - name: app-insights-nodejs-connection-string
+              alias: APP_INSIGHTS_CONNECTION_STRING
+            - name: b2c-url
+              alias: B2C_URL
+            - name: cft-idam-client-secret
+              alias: CFT_IDAM_CLIENT_SECRET
+            - name: crime-idam-client-id
+              alias: CRIME_IDAM_CLIENT_ID
+            - name: crime-idam-client-secret
+              alias: CRIME_IDAM_CLIENT_SECRET
+            - name: sso-client-id
+              alias: SSO_CLIENT_ID
+            - name: sso-client-secret
+              alias: SSO_CLIENT_SECRET
+            - name: sso-issuer-url
+              alias: SSO_ISSUER_URL
+            - name: sso-sg-admin-ctsc
+              alias: SSO_SG_ADMIN_CTSC
+            - name: sso-sg-admin-local
+              alias: SSO_SG_ADMIN_LOCAL
+            - name: sso-sg-system-admin
+              alias: SSO_SG_SYSTEM_ADMIN

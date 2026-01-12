@@ -13,7 +13,7 @@ spec:
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
         DARTS_LOG_LEVEL: INFO
         FEIGN_LOG_LEVEL: full
-        RESTART_ME: '011'
+        RESTART_ME: '012'
         ARM_PROPERTY_FILE_ENVIRONMENT: live
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsprodextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsprodextid.b2clogin.com/hmctsprodextid.onmicrosoft.com
@@ -33,9 +33,16 @@ spec:
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         ENABLE_ARM_V5_2_UPGRADE: true
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
+        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
+        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-6453621-20251222115056 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-0727c91-20260108112848 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.court-tribunal-records-archive.service.justice.gov.uk
         ARM_AUTH_URL: https://auth.court-tribunal-records-archive.service.justice.gov.uk
+        ENABLE_ARM_V5_2_UPGRADE: true
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
+        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
+        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false

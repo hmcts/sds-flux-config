@@ -27,10 +27,17 @@ spec:
         MODERNISED_DARTS_START_DATE: '2024-12-01'
         AZCOPY_LOG_LEVEL: "--log-level=INFO"
         AZCOPY_OUTPUT_LEVEL: "--output-level=default"
-        ENABLE_ARM_V5_2_UPGRADE: false
+        ENABLE_ARM_V5_2_UPGRADE: true
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
+        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
+        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-6453621-20251222115056 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-0727c91-20260108112848 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
         ARM_API_URL: https://darts-stub-services.staging.platform.hmcts.net
         ARM_AUTH_URL: https://darts-stub-services.staging.platform.hmcts.net
+        ENABLE_ARM_V5_2_UPGRADE: true
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
+        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
+        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
