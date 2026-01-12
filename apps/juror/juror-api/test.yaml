@@ -8,7 +8,7 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      # image: sdshmctspublic.azurecr.io/juror/api:pr-654-0c1e055-20240729134749
+      image: sdshmctspublic.azurecr.io/juror/api:prod-f91a55b-20260108140211  # {"$imagepolicy": "flux-system:juror-api-pr"}
       ingressHost: juror-api.test.platform.hmcts.net
       environment:
         TOKEN_EXPIRY: 5h
