@@ -8,7 +8,6 @@ spec:
   values:
     nodejs:
       ingressHost: darts.test.apps.hmcts.net
-      replicas: 0
       enabled: false
       environment:
         RESTART_ME: '001'

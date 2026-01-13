@@ -8,7 +8,6 @@ spec:
   values:
     java:
       ingressHost: darts-gateway.test.platform.hmcts.net
-      replicas: 0
       enabled: false
       environment:
         DARTS_LOG_LEVEL: INFO
