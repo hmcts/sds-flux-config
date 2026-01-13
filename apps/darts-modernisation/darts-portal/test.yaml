@@ -8,7 +8,6 @@ spec:
   values:
     nodejs:
       ingressHost: darts.test.apps.hmcts.net
-      enabled: false
       environment:
         RESTART_ME: '001'
         DARTS_AZUREAD_B2C_ORIGIN_HOST: https://hmctstestextid.b2clogin.com
