@@ -8,7 +8,6 @@ spec:
   values:
     java:
       ingressHost: darts-gateway.test.platform.hmcts.net
-      enabled: false
       environment:
         DARTS_LOG_LEVEL: INFO
         DARTS_SOAP_REQUEST_LOG_LEVEL: TRACE
