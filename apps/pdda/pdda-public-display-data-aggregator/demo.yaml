@@ -6,6 +6,7 @@ metadata:
 spec:
   releaseName: pdda-public-display-data-aggregator
   values:
+    image: sdshmctspublic.azurecr.io/pdda/public-display-data-aggregator:prod-aa94e4c-20251215122415 # {"$imagepolicy": "flux-system:pdda-public-display-data-aggregator-demo"}
     java:
       ingressHost: pdda-public-display-data-aggregator.demo.platform.hmcts.net
       environment:
