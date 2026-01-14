@@ -7,15 +7,15 @@ spec:
   releaseName: darts-api
   values:
     java:
-      replicas: 4
       autoscaling:
         enabled: false
         maxReplicas: 4
-      image: sdshmctspublic.azurecr.io/darts/api:pr-3118-b93e624-20251211161053 #{"$imagepolicy": "flux-system:darts-api-test"}
+      image: sdshmctspublic.azurecr.io/darts/api:pr-3156-9c0b45c-20260113160251 #{"$imagepolicy": "flux-system:darts-api-test"}
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
         DARTS_LOG_LEVEL: INFO
+        FEIGN_LOG_LEVEL: basic
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctstestextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctstestextid.b2clogin.com/hmctstestextid.onmicrosoft.com
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
@@ -37,6 +37,7 @@ spec:
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
     function:
+      replicas: 0
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk

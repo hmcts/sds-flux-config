@@ -12,7 +12,7 @@ spec:
       memoryLimits: "2Gi"
       schedule: "10 10 1 5 *" # 10 AM 1st May UTC
       suspend: true
-      image: sdshmctspublic.azurecr.io/pre/api:prod-e6df200-20260105091354 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-d660c92-20260112155926 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Testing

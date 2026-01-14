@@ -8,6 +8,7 @@ spec:
   values:
     java:
       ingressHost: pre-api.test.platform.hmcts.net
+      image: sdshmctspublic.azurecr.io/pre/api:pr-1317
       memoryRequests: '3Gi'
       memoryLimits: '3Gi'
       environment:
@@ -28,3 +29,4 @@ spec:
         MEDIA_KIND_SUBSCRIPTION_ID: 5a51adb0-4aa3-47bb-af32-45bbd3ba623d
         TESTING_SUPPORT_ENDPOINTS_ENABLED: true
         MEDIA_KIND_LOCATION: uksouth-4
+        TRIGGER_RESTART: 1
