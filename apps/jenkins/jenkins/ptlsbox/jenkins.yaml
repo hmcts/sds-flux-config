@@ -51,6 +51,14 @@ spec:
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: REGISTRY_NAME
                         value: sdshmctspublicsbox
+                      - key: DUAL_ACR_PUBLISH
+                        value: "true"
+                      - key: SECONDARY_REGISTRY_NAME
+                        value: hmctssbox
+                      - key: SECONDARY_REGISTRY_RESOURCE_GROUP
+                        value: cnp-acr-rg
+                      - key: SECONDARY_REGISTRY_SUBSCRIPTION
+                        value: bf308a5c-0624-4334-8ff8-8dca9fd43783
                       - key: SBOX_AKS_CLUSTER_NAME
                         value: ss-sbox-00-aks
                       - key: SBOX_AKS_RESOURCE_GROUP
