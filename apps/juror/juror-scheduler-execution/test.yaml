@@ -10,3 +10,5 @@ spec:
       # Uncomment and edit the line below to fix the environment at a specific image
       # image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-a15461d-20240614120349
       ingressHost: juror-scheduler-execution.test.platform.hmcts.net
+      environment:
+        TRIGGER_RESTART: 1
