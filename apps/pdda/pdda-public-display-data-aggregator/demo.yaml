@@ -7,7 +7,7 @@ spec:
   releaseName: pdda-public-display-data-aggregator
   values:
     java:
-      image: sdshmctspublic.azurecr.io/pdda/public-display-data-aggregator:prod-aa94e4c-20251215122415 # {"$imagepolicy": "flux-system:demo-pdda-public-display-data-aggregator"}
+      image: sdshmctspublic.azurecr.io/pdda/public-display-data-aggregator:prod-aa94e4c-20251215122415 #{"$imagepolicy": "flux-system:demo-pdda-public-display-data-aggregator"}
       ingressHost: pdda-public-display-data-aggregator.demo.platform.hmcts.net
       environment:
         # Change this value from 1 to 0 and vice versa to trigger a restart of the application.
