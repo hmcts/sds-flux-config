@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: darts-gateway.test.platform.hmcts.net
-      replicas: 0 
+      replicas: 0
       autoscaling:
         enabled: false
       environment:

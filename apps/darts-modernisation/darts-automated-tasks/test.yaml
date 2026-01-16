@@ -8,7 +8,7 @@ spec:
   values:
     java:
       image: sdshmctspublic.azurecr.io/darts/api:pr-3156-9c0b45c-20260113160251 #{"$imagepolicy": "flux-system:darts-api-test"}
-      replicas: 0 
+      replicas: 0
       autoscaling:
         enabled: false
       environment:

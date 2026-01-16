@@ -7,7 +7,7 @@ spec:
   releaseName: darts-api
   values:
     java:
-      replicas: 0 
+      replicas: 0
       autoscaling:
         enabled: false
         maxReplicas: 4
