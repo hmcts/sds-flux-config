@@ -32,7 +32,7 @@ spec:
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
     function:
-      image: sdshmctspublic.azurecr.io/darts/api:prod-37dd67a-20260119150015 # {"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-d46ccf2-20260120110127 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
         ARM_API_URL: https://darts-stub-services.staging.platform.hmcts.net
