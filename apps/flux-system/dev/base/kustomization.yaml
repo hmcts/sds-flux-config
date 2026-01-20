@@ -8,4 +8,6 @@ resources:
   - aso-controller-settings-patch.yaml
 patches:
   - path: ../../serviceaccount/dev.yaml
+  - path: ../../serviceaccount/dev-source-controller.yaml
   - path: ../../base/patches/workload-identity-deployment.yaml
+  - path: ../../base/patches/workload-identity-source-controller-patch.yaml
