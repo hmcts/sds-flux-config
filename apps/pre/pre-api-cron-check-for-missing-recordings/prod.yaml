@@ -9,7 +9,7 @@ spec:
       jobKind: CronJob
     job:
       schedule: "15 6 * * *" # 6:15 AM UTC
-      image: sdshmctspublic.azurecr.io/pre/api:prod-0d625ef-20260120134128 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-1e0cf48-20260120135746 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
         MEDIA_KIND_SUBSCRIPTION: pre-mkio-prod
