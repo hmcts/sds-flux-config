@@ -7,11 +7,12 @@ spec:
   releaseName: darts-automated-tasks
   values:
     java:
+      image: sdshmctspublic.azurecr.io/darts/api:pr-3156-9c0b45c-20260113160251 #{"$imagepolicy": "flux-system:darts-api-test"}
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.test.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART: 002
+        RESTART: 003
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
@@ -19,4 +20,7 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
-        ENABLE_ARM_V5_2_UPGRADE: false
+        ENABLE_ARM_V5_2_UPGRADE: true
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
+        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
+        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false

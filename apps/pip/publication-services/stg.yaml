@@ -12,13 +12,10 @@ spec:
       environment:
         NOTIFY_LINK_SUBSCRIPTION_PAGE: https://pip-frontend.staging.platform.hmcts.net/subscription-management
         NOTIFY_LINK_AAD_SIGNIN_LINK: https://pip-frontend.staging.platform.hmcts.net/login?p=B2C_1_SignInUserFlow
-        NOTIFY_LINK_AAD_ADMIN_SIGNIN_LINK: https://pip-frontend.staging.platform.hmcts.net/admin-dashboard
         NOTIFY_LINK_GOV_GUIDANCE: https://www.gov.uk
-        NOTIFY_LINK_AAD_RESET_PW_LINK_ADMIN: https://sign-in.pip-frontend.staging.platform.hmcts.net/pip-frontend.staging.platform.hmcts.net/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=cae650ba-431b-4fc8-be14-22d476ebd31b&nonce=defaultNonce&redirect_uri=https://pip-frontend.staging.platform.hmcts.net/password-change-confirmation&scope=openid&response_type=code&prompt=login&response_mode=form_post
         NOTIFY_LINK_AAD_RESET_PW_LINK_MEDIA: https://sign-in.pip-frontend.staging.platform.hmcts.net/pip-frontend.staging.platform.hmcts.net/oauth2/v2.0/authorize?p=B2C_1A_PASSWORD_RESET&client_id=cae650ba-431b-4fc8-be14-22d476ebd31b&nonce=defaultNonce&redirect_uri=https://pip-frontend.staging.platform.hmcts.net/password-change-confirmation&scope=openid&response_type=code&prompt=login&response_mode=form_post
         MEDIA_VERIFICATION_PAGE_LINK: https://pip-frontend.staging.platform.hmcts.net/media-verification?p=B2C_1_SignInMediaVerification
         NOTIFY_LINK_START_PAGE: https://pip-frontend.staging.platform.hmcts.net
-        ADMIN_DASHBOARD_LINK: https://pip-frontend.staging.platform.hmcts.net/admin-dashboard
         NOTIFY_CFT_SIGN_IN_LINK: https://pip-frontend.staging.platform.hmcts.net/cft-login
         STANDARD_MAX_EMAILS: 100
         HIGH_CAPACITY_MAX_EMAILS: 1000
