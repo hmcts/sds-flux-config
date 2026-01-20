@@ -18,5 +18,3 @@ spec:
       memoryRequests: "512Mi"
       image: hmctsprod.azurecr.io/toffee/frontend:latest
       disableTraefikTls: true
-      environment:
-        RECIPE_BACKEND_URL: http://toffee-recipe-backend.sandbox.platform.hmcts.net
