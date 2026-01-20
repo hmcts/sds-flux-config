@@ -12,7 +12,7 @@ spec:
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
       suspend: true
-      image: sdshmctspublic.azurecr.io/pre/api:prod-867c832-20260119171526 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-0d625ef-20260120134128 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Testing
         PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
