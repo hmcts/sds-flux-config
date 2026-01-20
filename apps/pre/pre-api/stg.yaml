@@ -11,21 +11,13 @@ spec:
       memoryRequests: '3Gi'
       memoryLimits: '3Gi'
       environment:
-        AZURE_MEDIA_SERVICES_ACCOUNT_NAME: preamsstg
         AZURE_RESOURCE_GROUP: pre-stg
-        AZURE_SUBSCRIPTION_ID: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
         PLATFORM_ENV_TAG: Staging
         AZURE_INGEST_SA: preingestsastg
         AZURE_FINAL_SA: prefinalsastg
-        MEDIA_SERVICE: MediaKind
         ENABLE_AUTOMATED_EDITING: true
         ENABLE_NULL_DURATION_UPSERT: false
         ENABLE_ENHANCED_PROCESSING: true
         ENABLE_MIGRATION_ADMIN_ENDPOINTS: true
         ENABLE_MIGRATED_DATA: true
         HIKARI_POOL_SIZE: 25
-        MEDIA_KIND_SUBSCRIPTION: pre-mkio-stg
-        MEDIA_KIND_SUBSCRIPTION_ID: 36a78cf2-290d-4621-b974-eda4a570ef70
-        MEDIA_KIND_LOCATION: uksouth-4
-        TESTING_SUPPORT_ENDPOINTS_ENABLED: true
-        TRIGGER_RESTART: 1

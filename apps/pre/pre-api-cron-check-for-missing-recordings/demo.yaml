@@ -11,9 +11,4 @@ spec:
       schedule: "10 19 * * *" # 7:10 PM UTC
       image: sdshmctspublic.azurecr.io/pre/api:prod-867c832-20260119171526 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
-        AZURE_SUBSCRIPTION_ID: c68a4bed-4c3d-4956-af51-4ae164c1957c
         PLATFORM_ENV_TAG: Demo
-        MEDIA_SERVICE: MediaKind
-        MEDIA_KIND_SUBSCRIPTION: pre-mkio-demo
-        MEDIA_KIND_SUBSCRIPTION_ID: ff98b8dd-8ba7-4d80-b792-80a7b2f5d773
-        MEDIA_KIND_LOCATION: uksouth-4

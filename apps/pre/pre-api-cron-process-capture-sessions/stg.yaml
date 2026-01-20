@@ -12,10 +12,5 @@ spec:
       schedule: "* * * * *" # every min to speed up testing efforts
       image: sdshmctspublic.azurecr.io/pre/api:prod-867c832-20260119171526 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
-        AZURE_SUBSCRIPTION_ID: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
         PLATFORM_ENV_TAG: Staging
-        MEDIA_SERVICE: MediaKind
         ENABLE_ENHANCED_PROCESSING: true
-        MEDIA_KIND_SUBSCRIPTION: pre-mkio-stg
-        MEDIA_KIND_SUBSCRIPTION_ID: 36a78cf2-290d-4621-b974-eda4a570ef70
-        MEDIA_KIND_LOCATION: uksouth-4
