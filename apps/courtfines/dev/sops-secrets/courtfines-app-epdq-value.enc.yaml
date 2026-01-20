@@ -1,20 +1,20 @@
 apiVersion: v1
 data:
-    EPDQ_SHAIN: ENC[AES256_GCM,data:hE6246L2GeLCQetqzuq+S8+b88940Q3Dx0MqgeCR0v6tmT8KW/WqWFEZVXtMfEmSeIEiswO4bzuPaHyG7V2Bh52hIhH86jVrBEUOc9PeQ02vTMh9,iv:OvUGT/zzM9Byxrj2OyVk5mdg8v+mwUrGO61Jl9MO36k=,tag:ouV7nYHgw+pszqQEBe/+Kw==,type:str]
+  EPDQ_SHAIN: ENC[AES256_GCM,data:hE6246L2GeLCQetqzuq+S8+b88940Q3Dx0MqgeCR0v6tmT8KW/WqWFEZVXtMfEmSeIEiswO4bzuPaHyG7V2Bh52hIhH86jVrBEUOc9PeQ02vTMh9,iv:OvUGT/zzM9Byxrj2OyVk5mdg8v+mwUrGO61Jl9MO36k=,tag:ouV7nYHgw+pszqQEBe/+Kw==,type:str]
 kind: Secret
 metadata:
-    creationTimestamp: null
-    name: epdq
-    namespace: courtfines
+  creationTimestamp: null
+  name: epdq
+  namespace: courtfines
 type: Opaque
 sops:
-    azure_kv:
-        - vault_url: https://dtssharedservicesdevkv.vault.azure.net
-          name: sops-key
-          version: 2beba064ddfe454482ad0133af2cf0fd
-          created_at: "2026-01-20T11:15:34Z"
-          enc: VIHJAcIi7AgI5E3QuISllvQTF1IkQ5_1eDYz6VTwwT661xi0FEl07A2HkJc69Z8r9HVV8eTXocjbLivMyTLNuIhuT3MdgYWboGql7SVQM0gYAwN2EbTqyimtPbeoUh59H-m3WYcZixporjgewu-vzrEFWEO8Abo3M5lhG8o42oG3MmZGJEcyOV4L8gwsVhEjUJtEDFHlQrMyhMYPCJgNzEQf8rHUTo1HT7wEm_JDaNjLbUY31fYc-wXX9pRQMDG-RD6xvYVC88LE3Lr8Ggwc1gyAzYOpyDkzcJ0yiG8WKFV3rZ-adtjSnfWYSzFOMCDvGGAipNYcLeExXKzWkTb2_A
-    lastmodified: "2026-01-20T11:15:36Z"
-    mac: ENC[AES256_GCM,data:UuGNQtZco5SipKjT8KE34nUnhbt0U3FaIoe6+c5RFIpnYFH1h9PjIvdK1J/ysS5fLXmAb7SyxfDoeiwJcvtAqttaVoOzUsQZwTmCunmsdpwxBJhZ4TAwW+DCXNdOULEPt24OeSkrowoMait7MkW1NiHZJOVxjnO9Ukc1bAHrdV4=,iv:fH+Uhy/F5Gk6MPDcHSD80fBqOPfqu0xu28gLHTWyDes=,tag:ZBFCJjy610SAyV5/lsAWKQ==,type:str]
-    encrypted_regex: ^(data|stringData)$
-    version: 3.11.0
+  azure_kv:
+    - vault_url: https://dtssharedservicesdevkv.vault.azure.net
+      name: sops-key
+      version: 2beba064ddfe454482ad0133af2cf0fd
+      created_at: "2026-01-20T11:15:34Z"
+      enc: VIHJAcIi7AgI5E3QuISllvQTF1IkQ5_1eDYz6VTwwT661xi0FEl07A2HkJc69Z8r9HVV8eTXocjbLivMyTLNuIhuT3MdgYWboGql7SVQM0gYAwN2EbTqyimtPbeoUh59H-m3WYcZixporjgewu-vzrEFWEO8Abo3M5lhG8o42oG3MmZGJEcyOV4L8gwsVhEjUJtEDFHlQrMyhMYPCJgNzEQf8rHUTo1HT7wEm_JDaNjLbUY31fYc-wXX9pRQMDG-RD6xvYVC88LE3Lr8Ggwc1gyAzYOpyDkzcJ0yiG8WKFV3rZ-adtjSnfWYSzFOMCDvGGAipNYcLeExXKzWkTb2_A
+  lastmodified: "2026-01-20T11:15:36Z"
+  mac: ENC[AES256_GCM,data:UuGNQtZco5SipKjT8KE34nUnhbt0U3FaIoe6+c5RFIpnYFH1h9PjIvdK1J/ysS5fLXmAb7SyxfDoeiwJcvtAqttaVoOzUsQZwTmCunmsdpwxBJhZ4TAwW+DCXNdOULEPt24OeSkrowoMait7MkW1NiHZJOVxjnO9Ukc1bAHrdV4=,iv:fH+Uhy/F5Gk6MPDcHSD80fBqOPfqu0xu28gLHTWyDes=,tag:ZBFCJjy610SAyV5/lsAWKQ==,type:str]
+  encrypted_regex: ^(data|stringData)$
+  version: 3.11.0
