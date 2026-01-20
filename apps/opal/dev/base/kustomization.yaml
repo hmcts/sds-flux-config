@@ -6,8 +6,12 @@ resources:
   - ../../../base/slack-provider/dev
   - ../../../azureserviceoperator-system/resources/resource-group.yaml
   - ../../../azureserviceoperator-system/resources/servicebus-namespace.yaml
+  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
+  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres.yaml
   - ../sops-secrets
 namespace: opal
 patches:
   - path: ../../serviceaccount/stg.yaml
   - path: ../aso/opal-servicebus.yaml
+  - path: ../aso/opal-postgres.yaml
+
