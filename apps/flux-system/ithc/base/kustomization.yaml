@@ -7,4 +7,6 @@ resources:
   - ../../workload-identity
 patches:
   - path: ../../serviceaccount/ithc.yaml
+  - path: ../../serviceaccount/ithc-source-controller.yaml
   - path: ../../base/patches/workload-identity-deployment.yaml
+  - path: ../../base/patches/workload-identity-source-controller-patch.yaml

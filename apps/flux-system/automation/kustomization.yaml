@@ -25,7 +25,11 @@ patches:
   - path: sdshmctspublic-image-repo.yaml
     target:
       kind: ImageRepository
-      annotationSelector: hmcts.github.com/image-registry != hmctspublic,hmcts.github.com/image-registry != hmctsprivate,hmcts.github.com/image-registry != hmctssbox
+      annotationSelector: hmcts.github.com/image-registry != hmctspublic,hmcts.github.com/image-registry != hmctsprod,hmcts.github.com/image-registry != hmctsprivate,hmcts.github.com/image-registry != hmctssbox
+  - path: hmctsprod-image-repo.yaml
+    target:
+      kind: ImageRepository
+      annotationSelector: hmcts.github.com/image-registry == hmctsprod
   - path: hmctspublic-image-repo.yaml
     target:
       kind: ImageRepository
