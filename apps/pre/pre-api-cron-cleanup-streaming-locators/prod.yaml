@@ -9,6 +9,10 @@ spec:
       jobKind: CronJob
     job:
       schedule: "0 0 * * *" # 0:00 PM UTC
-      image: sdshmctspublic.azurecr.io/pre/api:prod-e6df200-20260105091354 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-d660c92-20260112155926 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
+        MEDIA_SERVICE: MediaKind
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
+        MEDIA_KIND_SUBSCRIPTION: pre-mkio-prod
+        MEDIA_KIND_SUBSCRIPTION_ID: 1d8c003d-e588-41f7-8e7f-20dbb2f92a39
+        MEDIA_KIND_LOCATION: uksouth-4
