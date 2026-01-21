@@ -21,6 +21,10 @@ spec:
       cpuRequests: '500m'
       memoryLimits: '2Gi'
       cpuLimits: '1000m'
+      devmemoryRequests: '1Gi'
+      devcpuRequests: '500m'
+      devmemoryLimits: '2Gi'
+      devcpuLimits: '1000m'
       replicas: 2
       autoscaling:
         enabled: true
