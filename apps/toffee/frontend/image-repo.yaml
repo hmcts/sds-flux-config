@@ -2,5 +2,7 @@ apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: toffee-frontend
+  annotations:
+    hmcts.github.com/image-registry: hmctsprod
 spec:
-  image: sdshmctspublic.azurecr.io/toffee/frontend
+  image: hmctsprod.azurecr.io/toffee/frontend

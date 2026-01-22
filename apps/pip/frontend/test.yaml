@@ -6,7 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1611-453704e-20260108134012
+      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1613-0a734bd-20260116171453
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
       environment:
@@ -14,14 +14,11 @@ spec:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
         AUTH_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/login/return
         MEDIA_VERIFICATION_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/media-verification/return
-        ADMIN_AUTH_RETURN_URL: https://pip-frontend.test.platform.hmcts.net/login/admin/return
         FRONTEND_URL: https://pip-frontend.test.platform.hmcts.net
         CFT_IDAM_URL: https://idam-web-public.perftest.platform.hmcts.net
         CONFIG_ENDPOINT: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInUserFlow/v2.0/.well-known/openid-configuration
-        CONFIG_ADMIN_ENDPOINT: https://staff.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInAdminUserFlow/v2.0/.well-known/openid-configuration
         MEDIA_VERIFICATION_CONFIG_ENDPOINT: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net/B2C_1_SignInMediaVerification/v2.0/.well-known/openid-configuration
         B2C_URL: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
-        B2C_ADMIN_URL: https://staff.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
         SESSION_COOKIE_SAME_SITE: lax
         CRIME_IDAM_URL: https://login.sit.cjscp.org.uk
       autoscaling:

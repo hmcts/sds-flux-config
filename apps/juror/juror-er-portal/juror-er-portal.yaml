@@ -15,12 +15,16 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/juror/er-portal:prod-d2af800-20251223142906 # {"$imagepolicy": "flux-system:juror-er-portal"}
+      image: sdshmctspublic.azurecr.io/juror/er-portal:prod-0b0220b-20260120151309 # {"$imagepolicy": "flux-system:juror-er-portal"}
       startupPeriod: 30
       memoryRequests: '1Gi'
       cpuRequests: '500m'
       memoryLimits: '2Gi'
       cpuLimits: '1000m'
+      devmemoryRequests: '1Gi'
+      devcpuRequests: '500m'
+      devmemoryLimits: '2Gi'
+      devcpuLimits: '1000m'
       replicas: 2
       autoscaling:
         enabled: true

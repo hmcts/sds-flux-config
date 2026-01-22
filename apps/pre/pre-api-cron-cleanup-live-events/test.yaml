@@ -13,10 +13,5 @@ spec:
       schedule: "30 11 * * *" # 11:30 AM UTC
       image: sdshmctspublic.azurecr.io/pre/api:pr-1317
       environment:
-        AZURE_SUBSCRIPTION_ID: 3eec5bde-7feb-4566-bfb6-805df6e10b90
         PLATFORM_ENV_TAG: Testing
-        MEDIA_SERVICE: MediaKind
         PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
-        MEDIA_KIND_SUBSCRIPTION: pre-mkio-test
-        MEDIA_KIND_SUBSCRIPTION_ID: 5a51adb0-4aa3-47bb-af32-45bbd3ba623d
-        MEDIA_KIND_LOCATION: uksouth-4

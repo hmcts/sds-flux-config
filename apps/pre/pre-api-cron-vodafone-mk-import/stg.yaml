@@ -12,13 +12,8 @@ spec:
       suspend: false
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
-      image: sdshmctspublic.azurecr.io/pre/api:prod-6c577cf-20260109110054 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-5de0498-20260122114941 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
-        AZURE_SUBSCRIPTION_ID: 74dacd4f-a248-45bb-a2f0-af700dc4cf68
         PLATFORM_ENV_TAG: Staging
-        MEDIA_SERVICE: MediaKind
         ENABLE_NEW_EMAIL_SERVICE: true
         TASK_BATCH_IMPORT_MISSING_ASSETS_BATCH_SIZE: 2
-        MEDIA_KIND_SUBSCRIPTION: pre-mkio-stg
-        MEDIA_KIND_SUBSCRIPTION_ID: 36a78cf2-290d-4621-b974-eda4a570ef70
-        MEDIA_KIND_LOCATION: uksouth-4
