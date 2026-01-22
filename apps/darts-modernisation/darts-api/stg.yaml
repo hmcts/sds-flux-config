@@ -31,6 +31,7 @@ spec:
         ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
+        SHEDLOCK_LOG_LEVEL: DEBUG
     function:
       image: sdshmctspublic.azurecr.io/darts/api:prod-6d1683a-20260121094507 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
