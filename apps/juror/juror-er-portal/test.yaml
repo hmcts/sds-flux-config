@@ -7,5 +7,5 @@ spec:
   releaseName: juror-er-portal
   values:
     nodejs:
-      image: sdshmctspublic.azurecr.io/juror/er-portal:pr-99-50c50ac-20260122111755 # {"$imagepolicy": "flux-system:juror-er-portal-pr"}
+      image: sdshmctspublic.azurecr.io/juror/er-portal:pr-99-50c50ac-20260122111755 # {"$imagepolicy": "flux-system:juror-er-portal"}
       ingressHost: juror-er.test.apps.hmcts.net
