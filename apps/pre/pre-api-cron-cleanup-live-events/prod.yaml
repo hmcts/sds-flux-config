@@ -9,7 +9,7 @@ spec:
       jobKind: CronJob
     job:
       schedule: "0 18 * * *" # 6pm every day (before CVP cron)
-      image: sdshmctspublic.azurecr.io/pre/api:prod-003bf9c-20260126072214 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-0bba00e-20260127141126 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
