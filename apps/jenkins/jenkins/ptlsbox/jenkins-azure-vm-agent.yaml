@@ -65,6 +65,7 @@ spec:
               storageAccountNameReferenceType: "existing"
               storageAccountType: "Standard_LRS"
               subnetName: "iaas"
+              uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptlsbox-mi
               usePrivateIP: true
               virtualNetworkName: "ss-ptlsbox-vnet"
               virtualNetworkResourceGroupName: "ss-ptlsbox-network-rg"
@@ -91,23 +92,8 @@ spec:
                     vmTemplates:
                       - templateName: "cnp-jenkins-builders"
                         templateDesc: "Jenkins build agents for HMCTS"
-                        uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptlsbox-mi
                         labels: "daily"
                         maxVirtualMachinesLimit: 10
-                        usageMode: "NORMAL"
-                        SpotInstance: false
-                        virtualMachineSize: "Standard_D4ds_v5"
-                        imageReference:
-                            galleryName: "hmcts"
-                            galleryResourceGroup: "hmcts-image-gallery-rg"
-                            gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                            galleryImageDefinition: "jenkins-ubuntu-v2"
-                            galleryImageVersion: "24.04.53"
-                      - templateName: "dtspo-29750"
-                        templateDesc: "Jenkins build agents for HMCTS"
-                        uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/dtspo-29750
-                        labels: "dtspo-29750"
-                        maxVirtualMachinesLimit: 2
                         usageMode: "NORMAL"
                         SpotInstance: false
                         virtualMachineSize: "Standard_D4ds_v5"
