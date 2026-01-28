@@ -102,6 +102,7 @@ spec:
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
+                      <<: *vm_template_values_anchor
                     - templateName: "dtspo-29750"
                       templateDesc: "Jenkins build agents for HMCTS"
                       uamiID: /subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/dtspo-29750
