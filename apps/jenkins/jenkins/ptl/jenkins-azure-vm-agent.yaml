@@ -106,6 +106,9 @@ spec:
                       templateDesc: "Jenkins build agents for HMCTS"
                       uamiID: /subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/dtspo-29750
                       labels: "dtspo-29750"
+                      retentionStrategy:
+                        azureVMCloudRetentionStrategy:
+                          idleTerminationMinutes: 5
                       maxVirtualMachinesLimit: 2
                       usageMode: "NORMAL"
                       SpotInstance: false
