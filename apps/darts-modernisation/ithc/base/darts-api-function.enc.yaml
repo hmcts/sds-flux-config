@@ -1,25 +1,25 @@
 apiVersion: v1
 data:
-    DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:4CSSPaOh9te7V3v87GH9V3RSLOVRSabR7MGjz8sOABjpXkccfJYE1G0Vifm2pIr1IQXdlcDDiS0GXttlEmyV23aNjLqHs2RYoj/bsexRObWg4bmcQIH1O1bdlSOT,iv:GB0oFTe1c/brXSNJsNMWLZCwSnoptKCymBD+D7WsBcE=,tag:b9wDsfvLbP/XV2K7gwmY+g==,type:str]
+  DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:4CSSPaOh9te7V3v87GH9V3RSLOVRSabR7MGjz8sOABjpXkccfJYE1G0Vifm2pIr1IQXdlcDDiS0GXttlEmyV23aNjLqHs2RYoj/bsexRObWg4bmcQIH1O1bdlSOT,iv:GB0oFTe1c/brXSNJsNMWLZCwSnoptKCymBD+D7WsBcE=,tag:b9wDsfvLbP/XV2K7gwmY+g==,type:str]
 kind: Secret
 metadata:
-    creationTimestamp: null
-    name: darts-api-function-values
-    namespace: monitoring
+  creationTimestamp: null
+  name: darts-api-function-values
+  namespace: monitoring
 type: Opaque
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv:
-        - vault_url: https://dtssharedservicesithckv.vault.azure.net
-          name: sops-key
-          version: 96812ee192044e6daabee8d3621b456f
-          created_at: "2026-01-29T14:30:49Z"
-          enc: iFJE-Rro1-Gy7mCpCCmyCjcS2Kior2R5Hkxz9RudpawLg4BjRdihZnLmtKafEkWXxD9yS1Sxna0RU3fAPvsVi7lD7r8a0-xWBKXNCIMf-UoSstPxhRfpNllLbVQMKPPz8cqWEUMVtfzpXVt1nrixIQK_A00v7vgO23NDAXmMQFXYgDI5_jGx2rNdeNU-yQd8-AneWXf7GdXu23u2YReI8Kz9qxW1Z8bRXjKZYTtAyQFkGWwDLvR1GYIthM-dEc1flJMlb3Lm1UN0pyCoxFQ01oL42KqYk687UMShGggIqRIKAeZYxMB26kiMTpDrFzSY0I4T43cdVRzWUJFrf7Lrmw
-    hc_vault: []
-    age: []
-    lastmodified: "2026-01-29T14:30:51Z"
-    mac: ENC[AES256_GCM,data:fB9jmsxUkX/ayGA/82UFo5liqGUQ3j4KTS4Utulqm0Hvoc+qOv38XwSefJwXr+b9QAD8KN2VYbRJDDhpTWC/PTkI2AqA81yU++EtRDVjNWzjFoQSLpqhuDXDWrnC1KilggSzJ7YberuSoh0dt6j39z4ENJJNRHdpsXEWQQs7ULY=,iv:ZfAGNZ4iO4qf5L0/k6+fJAJ6epMQMPHTpKrtOxMd+e8=,tag:jBmOODhsOh+KpF+uTG/gwg==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.11.0
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicesithckv.vault.azure.net
+      name: sops-key
+      version: 96812ee192044e6daabee8d3621b456f
+      created_at: "2026-01-29T14:30:49Z"
+      enc: iFJE-Rro1-Gy7mCpCCmyCjcS2Kior2R5Hkxz9RudpawLg4BjRdihZnLmtKafEkWXxD9yS1Sxna0RU3fAPvsVi7lD7r8a0-xWBKXNCIMf-UoSstPxhRfpNllLbVQMKPPz8cqWEUMVtfzpXVt1nrixIQK_A00v7vgO23NDAXmMQFXYgDI5_jGx2rNdeNU-yQd8-AneWXf7GdXu23u2YReI8Kz9qxW1Z8bRXjKZYTtAyQFkGWwDLvR1GYIthM-dEc1flJMlb3Lm1UN0pyCoxFQ01oL42KqYk687UMShGggIqRIKAeZYxMB26kiMTpDrFzSY0I4T43cdVRzWUJFrf7Lrmw
+  hc_vault: []
+  age: []
+  lastmodified: "2026-01-29T14:30:51Z"
+  mac: ENC[AES256_GCM,data:fB9jmsxUkX/ayGA/82UFo5liqGUQ3j4KTS4Utulqm0Hvoc+qOv38XwSefJwXr+b9QAD8KN2VYbRJDDhpTWC/PTkI2AqA81yU++EtRDVjNWzjFoQSLpqhuDXDWrnC1KilggSzJ7YberuSoh0dt6j39z4ENJJNRHdpsXEWQQs7ULY=,iv:ZfAGNZ4iO4qf5L0/k6+fJAJ6epMQMPHTpKrtOxMd+e8=,tag:jBmOODhsOh+KpF+uTG/gwg==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.11.0
