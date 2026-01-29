@@ -22,6 +22,7 @@ resources:
   - ../../../apps/juror/base/kustomize.yaml
   - ../../../apps/darts-modernisation/base/kustomize.yaml
   - ../../../apps/pdda/base/kustomize.yaml
+  - ../../../apps/courtfines/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:
