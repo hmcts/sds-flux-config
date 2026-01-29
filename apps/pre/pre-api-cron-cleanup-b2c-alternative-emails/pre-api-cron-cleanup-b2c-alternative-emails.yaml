@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pre-api-cron-cleanup-b2c-alternative-emails
+  namespace: pre
+spec:
+  releaseName: pre-api-cron-cleanup-b2c-alternative-emails
+  values:
+    java:
+      enabled: false
+    job:
+      enabled: true
+      memoryRequests: '1Gi'
+      memoryLimits: '2Gi'
+      environment:
+        TASK_NAME: CleanupB2CAlternativeEmails
+  chart:
+    spec:
+      chart: ./stable/pre-api
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m

@@ -6,7 +6,7 @@ spec:
   releaseName: pip-account-management-clear-audit-cron
   values:
     job:
-      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-b830980-20260106101734 # {"$imagepolicy": "flux-system:pip-account-management-clear-audit-cron"}
+      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-687bbdf-20260122161340 # {"$imagepolicy": "flux-system:pip-account-management-clear-audit-cron"}
       disableTraefikTls: true
   chart:
     spec:

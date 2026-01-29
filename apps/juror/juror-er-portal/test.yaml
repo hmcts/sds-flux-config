@@ -7,6 +7,5 @@ spec:
   releaseName: juror-er-portal
   values:
     nodejs:
-      # Uncomment and edit the line below to fix the environment at a specific image
-      # image: sdshmctspublic.azurecr.io/juror/er-portal:staging-8149332-20251211104700
+      image: sdshmctspublic.azurecr.io/juror/er-portal:prod-9f67ae6-20260128114406 # {"$imagepolicy": "flux-system:juror-er-portal"}
       ingressHost: juror-er.test.apps.hmcts.net

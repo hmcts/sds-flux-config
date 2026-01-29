@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: courtfines-app
+  namespace: courtfines
+spec:
+  releaseName: courtfines-app
+  values:
+    nodejs:
+      ingressHost: courtfines.justice.gov.uk
+      image: sdshmctspublic.azurecr.io/courtfines/app:prod-50406ba-20260128134547 # {"$imagepolicy": "flux-system:courtfines-app"}
+      environment:
+        ENV_NAME: "PRODUCTION"
+        LOG_LEVEL: "INFO"

@@ -11,7 +11,7 @@ spec:
       autoscaling:
         enabled: false
         maxReplicas: 4
-      image: sdshmctspublic.azurecr.io/darts/api:pr-3156-9c0b45c-20260113160251 #{"$imagepolicy": "flux-system:darts-api-test"}
+      image: sdshmctspublic.azurecr.io/darts/api:pr-3168-ef3656e-20260129094305 #{"$imagepolicy": "flux-system:darts-api-test"}
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
@@ -37,6 +37,7 @@ spec:
         ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
+        SHEDLOCK_LOG_LEVEL: DEBUG
     function:
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
