@@ -12,7 +12,7 @@ spec:
       suspend: false
       memoryRequests: "1Gi"
       memoryLimits: "2Gi"
-      image: sdshmctspublic.azurecr.io/pre/api:prod-ac21fee-20260129084255 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-258b1ca-20260129131027 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
         ENABLE_NEW_EMAIL_SERVICE: true
