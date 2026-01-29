@@ -23,7 +23,7 @@ spec:
         XHIBIT_S3_BUCKET_NAME: staging.xhibit.justice.gov.uk  # change it to production S3 bucket before deploying the changes
       memoryRequests: 1200Mi
       autoscaling:
-        enabled: true
+        enabled: false
         cpu:
           enabled: true
           averageUtilization: 70
