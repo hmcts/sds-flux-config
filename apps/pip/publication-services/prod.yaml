@@ -7,7 +7,7 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      replicas: 0
+      replicas: 2
       ingressHost: pip-publication-services.platform.hmcts.net
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
@@ -23,7 +23,7 @@ spec:
         XHIBIT_S3_BUCKET_NAME: staging.xhibit.justice.gov.uk  # change it to production S3 bucket before deploying the changes
       memoryRequests: 1200Mi
       autoscaling:
-        enabled: false
+        enabled: true
         cpu:
           enabled: true
           averageUtilization: 70
