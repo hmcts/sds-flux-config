@@ -11,14 +11,18 @@ spec:
         DARTS_GATEWAY_URL: http://darts-gateway.ithc.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.ithc.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        ARM_URL: http://darts-stub-services.ithc.platform.hmcts.net
-        ARM_API_URL: https://darts-stub-services.staging.platform.hmcts.net
-        ARM_AUTH_URL: https://darts-stub-services.staging.platform.hmcts.net
-        PROCESS_E2E_ARM_RPO: false
-        IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
+        FEIGN_LOG_LEVEL: full
+        PROCESS_E2E_ARM_RPO: true
+        ARM_RPO_DURATION: 24h
+        IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
+        RESET_POD: true
+        RESTART: 003
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         ENABLE_ARM_V5_2_UPGRADE: true
-        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
