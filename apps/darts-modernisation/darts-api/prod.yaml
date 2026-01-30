@@ -8,6 +8,9 @@ spec:
   values:
     java:
       ingressHost: darts-api.platform.hmcts.net
+      replicas: 0
+      autoscaling:
+        enabled: false
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
@@ -37,6 +40,9 @@ spec:
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
     function:
+      minReplicaCount: 0
+      maxReplicaCount: 0
+      triggers: []
       image: sdshmctspublic.azurecr.io/darts/api:prod-b2c862f-20260129170426 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
