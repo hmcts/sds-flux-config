@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pre-api-cron-cleanup-b2c-alternative-emails
+  namespace: pre
+spec:
+  values:
+    global:
+      jobKind: CronJob
+    job:
+      suspend: false
+      schedule: "0 20 * * *"
+      image: sdshmctspublic.azurecr.io/pre/api:pr-1317
+      environment:
+        PLATFORM_ENV_TAG: Testing
+        PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
