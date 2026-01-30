@@ -62,6 +62,7 @@ spec:
               storageAccountNameReferenceType: "existing"
               storageAccountType: "Standard_LRS"
               subnetName: "iaas"
+              uamiID: /subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptl-mi
               usePrivateIP: true
               virtualNetworkName: "ss-ptl-vnet"
               virtualNetworkResourceGroupName: "ss-ptl-network-rg"
@@ -88,7 +89,6 @@ spec:
                     vmTemplates:
                     - templateName: "cnp-jenkins-builders"
                       templateDesc: "Jenkins build agents for HMCTS"
-                      uamiID: /subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptl-mi
                       labels: "daily"
                       retentionStrategy:
                         azureVMCloudRetentionStrategy:
@@ -102,22 +102,4 @@ spec:
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                      <<: *vm_template_values_anchor
-                    - templateName: "dtspo-29750"
-                      templateDesc: "Jenkins build agents for HMCTS"
-                      uamiID: /subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/dtspo-29750
-                      labels: "dtspo-29750"
-                      retentionStrategy:
-                        azureVMCloudRetentionStrategy:
-                          idleTerminationMinutes: 5
-                      maxVirtualMachinesLimit: 2
-                      usageMode: "NORMAL"
-                      SpotInstance: false
-                      virtualMachineSize: "Standard_D4ds_v5"
-                      imageReference:
-                          galleryName: "hmcts"
-                          galleryResourceGroup: "hmcts-image-gallery-rg"
-                          gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                          galleryImageDefinition: "jenkins-ubuntu-v2"
-                          galleryImageVersion: "24.04.53"
                       <<: *vm_template_values_anchor
