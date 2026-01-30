@@ -9,7 +9,7 @@ spec:
     java:
       replicas: 0
       autoscaling:
-        enabled: false 
+        enabled: false
       environment:
         RESTART_ME: '002'
         DARTS_GATEWAY_URL: http://darts-gateway.platform.hmcts.net
