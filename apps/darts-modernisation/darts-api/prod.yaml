@@ -42,7 +42,6 @@ spec:
     function:
       minReplicaCount: 0
       maxReplicaCount: 0
-      triggers: []
       image: sdshmctspublic.azurecr.io/darts/api:prod-b2c862f-20260129170426 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
