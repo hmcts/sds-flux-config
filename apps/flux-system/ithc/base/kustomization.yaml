@@ -5,7 +5,6 @@ resources:
   - ../../base/gotk-components.yaml
   - github-app-credentials.enc.yaml
   - ../../workload-identity
-  - aso-controller-settings-patch.yaml
 patches:
   - path: ../../serviceaccount/ithc.yaml
   - path: ../../serviceaccount/ithc-source-controller.yaml
