@@ -172,7 +172,7 @@ spec:
                       containers:
                       - args: "/bin/sh -c cat"
                         command: "/tini --"
-                        image: "hmctspublic.azurecr.io/jenkins/build-agent:db8a7c"
+                        image: "hmctspublic.azurecr.io/imported/jenkins/build-agent:latest"
                         livenessProbe:
                           failureThreshold: 3
                           initialDelaySeconds: 150
