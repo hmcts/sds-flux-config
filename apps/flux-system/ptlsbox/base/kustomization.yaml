@@ -5,8 +5,17 @@ resources:
   - ../../base/gotk-components.yaml
   - github-app-credentials.enc.yaml
   - ../../workload-identity
+  - aso-controller-settings-patch.yaml
 patches:
   - path: ../../serviceaccount/ptlsbox.yaml
   - path: ../../serviceaccount/ptlsbox-source-controller.yaml
   - path: ../../base/patches/workload-identity-deployment.yaml
   - path: ../../base/patches/workload-identity-source-controller-patch.yaml
+  - patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/args/-
+        value: --concurrent=10
+    target:
+      kind: Deployment
+      name: helm-controller
+      namespace: flux-system
