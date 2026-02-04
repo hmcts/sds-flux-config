@@ -12,7 +12,7 @@ spec:
       suspend: false
       memoryRequests: "1Gi"
       memoryLimits: "2Gi"
-      image: sdshmctspublic.azurecr.io/pre/api:prod-653888d-20260203171635 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-4cfa5a2-20260204151712 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         ENABLE_NEW_EMAIL_SERVICE: true
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
