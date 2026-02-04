@@ -6,7 +6,7 @@ spec:
   releaseName: pip-publication-services-mi-reporting-cron
   values:
     job:
-      schedule: "01 08 * * 1,3,5"
+      schedule: "00 22 * * 1,3,5"
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net
         TRIGGER_TYPE: MI_DATA_REPORTING
