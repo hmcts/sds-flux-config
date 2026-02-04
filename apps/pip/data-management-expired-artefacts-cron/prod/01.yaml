@@ -6,7 +6,7 @@ spec:
   releaseName: pip-data-management-expired-artefacts-cron
   values:
     job:
-      schedule: "05 22 * * 1,3,5"
+      schedule: "0 1 * * 1,3,5"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
