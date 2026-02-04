@@ -8,5 +8,5 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-108379b-20250912095211
+      image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-d63398c-20260204152138 # {"$imagepolicy": "flux-system:juror-scheduler-execution"}
       ingressHost: juror-scheduler-execution.demo.platform.hmcts.net
