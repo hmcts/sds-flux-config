@@ -6,7 +6,7 @@ spec:
   releaseName: pip-data-management
   values:
     java:
-      replicas: 0
+      replicas: 2
       ingressHost: pip-data-management.platform.hmcts.net
       environment:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net
@@ -15,7 +15,7 @@ spec:
         LCSU_ENABLED: false
       memoryRequests: 1500Mi
       autoscaling:
-        enabled: false
+        enabled: true
         cpu:
           enabled: true
           averageUtilization: 70
