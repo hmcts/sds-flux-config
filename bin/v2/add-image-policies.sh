@@ -5,7 +5,7 @@ NAMESPACE=$1
 PRODUCT=$2
 COMPONENT=$3
 REGISTRY=$4
-ACR=${REGISTRY:-sdshmctspublic}
+ACR=${REGISTRY:-hmctsprod}
 APPS_DIR="../../apps/"
 COMPONENT_DIR="${APPS_DIR}/${NAMESPACE}/${PRODUCT}-${COMPONENT}"
 
@@ -39,7 +39,7 @@ spec:
 EOF
 ) > "${COMPONENT_DIR}/image-policy.yaml"
 
-if [[ ${ACR} == "hmctspublic" ]]
+if [[ ${ACR} == "hmctsprod" ]]
 then
 (
 cat <<EOF
@@ -51,7 +51,7 @@ spec:
   image: ${ACR}.azurecr.io/${PRODUCT}/${COMPONENT}
 EOF
 ) > "${COMPONENT_DIR}/image-repo.yaml"
-elif [[ ${ACR} == "sdshmctspublicsbox" ]]
+elif [[ ${ACR} == "hmctssbox" ]]
 then
 (
 cat <<EOF
@@ -60,21 +60,7 @@ kind: ImageRepository
 metadata:
   name: ${PRODUCT}-${COMPONENT}
   annotations:
-    hmcts.github.com/image-registry: sdshmctspublicsbox
-spec:
-  image: ${ACR}.azurecr.io/${PRODUCT}/${COMPONENT}
-EOF
-) > "${COMPONENT_DIR}/image-repo.yaml"
-elif [[ ${ACR} == "hmctsprivate" ]]
-then
-(
-cat <<EOF
-apiVersion: image.toolkit.fluxcd.io/v1beta2
-kind: ImageRepository
-metadata:
-  name: ${PRODUCT}-${COMPONENT}
-  annotations:
-    hmcts.github.com/image-registry: hmctsprivate
+    hmcts.github.com/image-registry: hmctssbox
 spec:
   image: ${ACR}.azurecr.io/${PRODUCT}/${COMPONENT}
 EOF
