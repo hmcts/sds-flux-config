@@ -229,6 +229,7 @@ spec:
                           labels:
                             app.kubernetes.io/name: jenkins
                             app.kubernetes.io/component: jenkins-agent
+                            azure.workload.identity/use: "true"
                         spec:
                           securityContext:
                             runAsUser: 1000
