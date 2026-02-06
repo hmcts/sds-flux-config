@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: appreg.ithc.apps.hmcts.net
-      image: sdshmctspublic.azurecr.io/appreg/frontend:prod-3c1696f-20260206112047 # {"$imagepolicy": "flux-system:appreg-frontend"}
+      image: sdshmctspublic.azurecr.io/appreg/frontend:prod-aa9aa71-20260206164819 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "ITHC"
         LOG_LEVEL: "DEBUG"
