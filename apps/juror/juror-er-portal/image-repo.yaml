@@ -2,5 +2,7 @@ apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: juror-er-portal
+  annotations:
+    hmcts.github.com/image-registry: hmctsprod
 spec:
-  image: sdshmctspublic.azurecr.io/juror/er-portal
+  image: hmctsprod.azurecr.io/juror/er-portal

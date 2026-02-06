@@ -2,5 +2,7 @@ apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: opal-logging-service
+  annotations:
+    hmcts.github.com/image-registry: hmctsprod
 spec:
-  image: sdshmctspublic.azurecr.io/opal/logging-service
+  image: hmctsprod.azurecr.io/opal/logging-service

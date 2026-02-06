@@ -2,12 +2,16 @@ apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: libragob-batch-housekeeping
+  annotations:
+    hmcts.github.com/image-registry: hmctsprod
 spec:
-  image: hmctspublic.azurecr.io/libragob/housekeeping
+  image: hmctsprod.azurecr.io/libragob/housekeeping
 ---
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: libragob-batch-ams-reporting
+  annotations:
+    hmcts.github.com/image-registry: hmctsprod
 spec:
-  image: hmctspublic.azurecr.io/libragob/ams-reporting
+  image: hmctsprod.azurecr.io/libragob/ams-reporting

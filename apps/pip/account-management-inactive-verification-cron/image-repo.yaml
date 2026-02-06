@@ -2,5 +2,7 @@ apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: pip-account-management-inactive-verification-cron
+  annotations:
+    hmcts.github.com/image-registry: hmctsprod
 spec:
-  image: sdshmctspublic.azurecr.io/pip/cron-trigger
+  image: hmctsprod.azurecr.io/pip/cron-trigger

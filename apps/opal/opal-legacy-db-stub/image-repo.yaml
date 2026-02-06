@@ -2,5 +2,7 @@ apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: opal-legacy-db-stub
+  annotations:
+    hmcts.github.com/image-registry: hmctsprod
 spec:
-  image: sdshmctspublic.azurecr.io/opal/legacy-db-stub
+  image: hmctsprod.azurecr.io/opal/legacy-db-stub
