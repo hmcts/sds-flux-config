@@ -19,6 +19,10 @@ spec:
           value: https://ptl.vault.azure.net
       JCasC:
         configScripts:
+          misc-jenkins-settings: |
+            crumbIssuer:
+              standard:
+                excludeClientIPFromCrumb: true
           welcome-message: |
             jenkins:
               systemMessage: >-
@@ -131,9 +135,6 @@ spec:
                         value: Cross-Cutting
           views: |
             jenkins:
-              crumbIssuer:
-                standard:
-                  excludeClientIPFromCrumb: true
               views:
                 - all:
                     name: all
