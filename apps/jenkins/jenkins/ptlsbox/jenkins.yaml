@@ -167,12 +167,12 @@ spec:
                     - key: "cloud"
                       value: "kubernetes"
                     templates:
-                    - activeDeadlineSeconds: 3600
-                      activeDeadlineSecondsStr: "3600"
+                    - activeDeadlineSeconds: 120
+                      activeDeadlineSecondsStr: "120"
                       containers:
                       - args: "/bin/sh -c cat"
                         command: "/tini --"
-                        image: "hmctspublic.azurecr.io/jenkins/k8s-agent:latest"
+                        image: "hmctspublic.azurecr.io/jenkins/build-agent:db8a7c"
                         livenessProbe:
                           failureThreshold: 3
                           initialDelaySeconds: 150
@@ -186,7 +186,7 @@ spec:
                         resourceRequestMemory: "4Gi"
                         ttyEnabled: true
                         workingDir: "/home/jenkins/agent"
-                      - image: "hmctspublic.azurecr.io/jenkins/k8s-agent:latest"
+                      - image: "hmctspublic.azurecr.io/jenkins/minimal-agent:db8a7c"
                         livenessProbe:
                           failureThreshold: 3
                           initialDelaySeconds: 150
@@ -229,14 +229,13 @@ spec:
                           labels:
                             app.kubernetes.io/name: jenkins
                             app.kubernetes.io/component: jenkins-agent
-                            azure.workload.identity/use: "true"
                         spec:
                           securityContext:
                             runAsUser: 1000
                             fsGroup: 118
                           initContainers:
                           - name: init-agent
-                            image: hmctspublic.azurecr.io/jenkins/k8s-agent:latest
+                            image: hmctspublic.azurecr.io/jenkins/minimal-agent:dbg8js
                             command:
                               - /bin/sh
                               - -c
@@ -265,14 +264,13 @@ spec:
                           labels:
                             app.kubernetes.io/name: jenkins
                             app.kubernetes.io/component: jenkins-agent
-                            azure.workload.identity/use: "true"
                         spec:
                           securityContext:
                             runAsUser: 1000
                             fsGroup: 118
                           initContainers:
                           - name: init-agent
-                            image: hmctspublic.azurecr.io/jenkins/k8s-agent:latest
+                            image: hmctspublic.azurecr.io/jenkins/minimal-agent:db6hu6
                             command:
                               - /bin/sh
                               - -c
