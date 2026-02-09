@@ -20,9 +20,10 @@ spec:
       JCasC:
         configScripts:
           misc-jenkins-settings: |
-            crumbIssuer:
-              standard:
-                excludeClientIPFromCrumb: true
+            jenkins:
+              crumbIssuer:
+                standard:
+                  excludeClientIPFromCrumb: true
           welcome-message: |
             jenkins:
               systemMessage: >-
