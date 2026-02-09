@@ -167,8 +167,8 @@ spec:
                     - key: "cloud"
                       value: "kubernetes"
                     templates:
-                    - activeDeadlineSeconds: 120
-                      activeDeadlineSecondsStr: "120"
+                    - activeDeadlineSeconds: 3600
+                      activeDeadlineSecondsStr: "3600"
                       containers:
                       - args: "/bin/sh -c cat"
                         alwaysPullImage: true
