@@ -131,6 +131,9 @@ spec:
                         value: Cross-Cutting
           views: |
             jenkins:
+              crumbIssuer:
+                standard:
+                  excludeClientIPFromCrumb: true
               views:
                 - all:
                     name: all
