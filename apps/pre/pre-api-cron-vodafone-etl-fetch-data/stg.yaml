@@ -8,11 +8,11 @@ spec:
     global:
       jobKind: CronJob
     job:
-      schedule: "20 16 16 12 *" # 4:20pm (GMT) - 16 Dec
+      schedule: "15 15 9 2 *" # 15.15pm (GMT) - 9 Feb
       suspend: false
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
-      image: sdshmctspublic.azurecr.io/pre/api:prod-8343f94-20260209123203 # {"$imagepolicy": "flux-system:pre-api"}
+      image: sdshmctspublic.azurecr.io/pre/api:prod-7a2e9b9-20260209140319 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Staging
         ENABLE_NEW_EMAIL_SERVICE: true
