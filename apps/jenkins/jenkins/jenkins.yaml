@@ -89,9 +89,6 @@ spec:
         configScripts:
           misc-jenkins-settings: |
             jenkins:
-              crumbIssuer:
-                standard:
-                  excludeClientIPFromCrumb: true
               markupFormatter:
                 rawHtml:
                   disableSyntaxHighlighting: false
