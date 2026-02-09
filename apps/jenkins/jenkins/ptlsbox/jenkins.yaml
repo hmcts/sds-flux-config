@@ -167,10 +167,11 @@ spec:
                     - key: "cloud"
                       value: "kubernetes"
                     templates:
-                    - activeDeadlineSeconds: 3600
-                      activeDeadlineSecondsStr: "3600"
+                    - activeDeadlineSeconds: 120
+                      activeDeadlineSecondsStr: "120"
                       containers:
                       - args: "/bin/sh -c cat"
+                        alwaysPullImage: true
                         command: "/tini --"
                         image: "hmctspublic.azurecr.io/jenkins/k8s-agent:latest"
                         livenessProbe:
@@ -187,6 +188,7 @@ spec:
                         ttyEnabled: true
                         workingDir: "/home/jenkins/agent"
                       - image: "hmctspublic.azurecr.io/jenkins/k8s-agent:latest"
+                        alwaysPullImage: true
                         livenessProbe:
                           failureThreshold: 3
                           initialDelaySeconds: 150
