@@ -4,13 +4,15 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
+  decryption:
+    provider: sops
   path: ./clusters/demo/00
   postBuild:
     substitute:
       ENVIRONMENT: "demo"
       WI_ENVIRONMENT: "demo"
       CLUSTER: "00"
-      ISSUER_URL: "https://uksouth.oic.prod-aks.azure.com/531ff96d-0ae9-462a-8d2d-bec7c0b42082/ffedfaed-4256-4cf9-b748-534134ea556c/"
+      ISSUER_URL: "https://uksouth.oic.prod-aks.azure.com/531ff96d-0ae9-462a-8d2d-bec7c0b42082/60a2232e-eba8-4674-ac50-45947220594d/"
       ENV_MONITOR_CHANNEL: "aks-monitor-demo"
       KEYVAULT_ENVIRONMENT: "demo"
       ACTIVE_CRON_CLUSTER: "true"

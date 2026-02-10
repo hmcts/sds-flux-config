@@ -15,6 +15,7 @@ resources:
   - ../../pre-api-cron-vodafone-etl-post-migration/pre-api-cron-vodafone-etl-post-migration.yaml
   - ../../pre-api-cron-vodafone-etl-process-full/pre-api-cron-vodafone-etl-process-full.yaml
   - ../../pre-api-cron-cleanup-null-durations/pre-api-cron-cleanup-null-durations.yaml
+  - ../../pre-api-cron-cleanup-b2c-alternative-emails/pre-api-cron-cleanup-b2c-alternative-emails.yaml
   - ../../pre-api-cron-vodafone-mk-import/pre-api-cron-vodafone-mk-import.yaml
   - ../../pre-api-cron-update-alt-email-field/pre-api-cron-update-alt-email-field.yaml
   - ../../../rbac/nonprod-role.yaml
@@ -37,6 +38,7 @@ patches:
   - path: ../../pre-api-cron-vodafone-etl-post-migration/prod.yaml
   - path: ../../pre-api-cron-vodafone-etl-process-full/prod.yaml
   - path: ../../pre-api-cron-cleanup-null-durations/test.yaml
+  - path: ../../pre-api-cron-cleanup-b2c-alternative-emails/test.yaml
   - path: ../../pre-api-cron-vodafone-mk-import/test.yaml
   - path: ../../pre-api-cron-update-alt-email-field/test.yaml
   - path: ../../serviceaccount/test.yaml

@@ -9,8 +9,8 @@ spec:
       jobKind: CronJob
     job:
       suspend: false
-      schedule: "0 20 28 01 *" # 8 pm, 28th January every year
-      image: sdshmctspublic.azurecr.io/pre/api:prod-54662a4-20260129081129 # {"$imagepolicy": "flux-system:pre-api"}
+      schedule: "15 10 29 01 *" # At 09:30 on 29 in January
+      image: sdshmctspublic.azurecr.io/pre/api:prod-24dce2f-20260209150425 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
