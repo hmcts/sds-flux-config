@@ -11,7 +11,7 @@ spec:
       autoscaling:
         enabled: false
         maxReplicas: 4
-      image: sdshmctspublic.azurecr.io/darts/api:pr-3168-fcb24e7-20260128161006 #{"$imagepolicy": "flux-system:darts-api"}
+      image: sdshmctspublic.azurecr.io/darts/api:prod-1e1ee8f-20260204160928 #{"$imagepolicy": "flux-system:darts-api"}
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
