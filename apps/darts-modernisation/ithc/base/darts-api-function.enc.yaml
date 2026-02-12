@@ -1,0 +1,19 @@
+apiVersion: v1
+data:
+  DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:setMUiAAChNUNTyWBKUKrGDXFI6syVGg9ld0RSki8tvsHO4XXJ+00gKUY2ba3lmTTwgi2znOYB2iOc8N0BdTuAbS0M/WvrhEzDF27l+uyWqsVDAYplfZASJWehin7fEfeUIrqtgMhbtlLNEsf/orHm612o0VTi+BIycnbw==,iv:ydym7t2u+zm4cxSGfiZ8zUoPfUgJY+pQidCHj/GCIh4=,tag:VhtMi/u33Z/hC4HdvhtcPA==,type:str]
+kind: Secret
+metadata:
+  name: darts-api-function-values
+  namespace: darts-modernisation
+type: Opaque
+sops:
+  azure_kv:
+    - vault_url: https://dtssharedservicesithckv.vault.azure.net
+      name: sops-key
+      version: 96812ee192044e6daabee8d3621b456f
+      created_at: "2026-02-12T10:02:29Z"
+      enc: LM_mIKoXrAkC6Ci9KMl_s6KiQqTpWLXr4_6mDnMEMpfYYTh2BqcOLIn4bow4w8WJ_Y5tervFmRzwqjl5AAT1cRtAjNDb7hAXzf_HW6BlyJVPd0tM1s6-u0K1cEVaM5PejZk-iOtEAvHwic-js6K4UEhKbNsNCmDrbOsRslWCdoE4iOXIdQ-fa3_h-Yz6c4kyYUIx-YeMjiGuzidmoU_EbONJC0-dmGnJ1CAgZBnqeDxgjyJ3Odo7AqbUrp1wPHzukdf5WeMsnfhZrmgRlUZXC0Ri9Thj2BZupEk1A79OFyWV88LGknldGc0aQDS3tlUR3aVyI3oHrUH1X4nyIcgtyQ
+  lastmodified: "2026-02-12T10:02:31Z"
+  mac: ENC[AES256_GCM,data:qLUBeGTNginaiSk6F22S74k7Wf4Z/q8iY2FzFil0xONMO4JadeWco2CwZW9c9YR8V1tMiciU1bhnB3IqyNmMXVGLmCIIsA96iHdp7qVTNN7DGLnOsMAIA5EF5b92nsCR2p8wRN2xVH94zEmb4629w+RTtURDiyxvDtxcRmjNsN8=,iv:6ix1gy6gZ4YYVWkG/0maUFTJJ6svy1EZcCvfIBlMPkw=,tag:l/PjjcgZXXPfuVbLC/4gWA==,type:str]
+  encrypted_regex: ^(data|stringData)$
+  version: 3.11.0

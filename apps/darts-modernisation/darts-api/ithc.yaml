@@ -7,23 +7,41 @@ spec:
   releaseName: darts-api
   values:
     java:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-d30a097-20260211222732 #{"$imagepolicy": "flux-system:darts-api"}
       ingressHost: darts-api.ithc.platform.hmcts.net
-      replicas: 2
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.ithc.platform.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsithcextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsithcextid.b2clogin.com/hmctsithcextid.onmicrosoft.com
-        ARM_URL: http://darts-stub-services.ithc.platform.hmcts.net
-        ARM_API_URL: https://darts-stub-services.staging.platform.hmcts.net
-        ARM_AUTH_URL: https://darts-stub-services.staging.platform.hmcts.net
-        CASE_EXPIRY_DELETION_ENABLED: false
+        APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
+        AUDIO_LINKING_TASK_PRE_AMBLE_DURATION: '0m'
+        AUDIO_LINKING_TASK_POST_AMBLE_DURATION: '0m'
+        FEIGN_LOG_LEVEL: full
+        CASE_EXPIRY_DELETION_ENABLED: true
         MANUAL_DELETION_ENABLED: true
-        PROCESS_E2E_ARM_RPO: false
-        IS_MOCK_ARM_RPO_DOWNLOAD_CSV: true
+        PROCESS_E2E_ARM_RPO: true
+        ARM_RPO_DURATION: 24h
+        IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
+        RESET_POD: true
+        RESTART: 015
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         ENABLE_ARM_V5_2_UPGRADE: true
-        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
+    function:
+      image: sdshmctspublic.azurecr.io/darts/api:prod-d30a097-20260211222732 # {"$imagepolicy": "flux-system:darts-api"}
+      environment:
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
+        ENABLE_ARM_V5_2_UPGRADE: true
+        FEIGN_LOG_LEVEL: full
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
+        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
+        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
