@@ -3,14 +3,14 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
-  - ../../darts-stub-services/darts-stub-services.yaml
+  - ./darts-api-function.enc.yaml
   - ../../../base/slack-provider/ithc
 namespace: darts-modernisation
 patches:
   - path: ../../darts-api/ithc.yaml
   - path: ../../darts-automated-tasks/ithc.yaml
+  - path: ../../darts-external-component-test-harness/ithc.yaml
   - path: ../../darts-portal/ithc.yaml
   - path: ../../darts-gateway/ithc.yaml
-  - path: ../../darts-stub-services/ithc.yaml
   - path: ../../identity/ithc.yaml
   - path: ../../serviceaccount/ithc.yaml
