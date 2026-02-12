@@ -10,7 +10,7 @@ spec:
       version: 1.0.0
       sourceRef:
         kind: HelmRepository
-        name: hmctspublic-oci
+        name: hmctssbox-oci
         namespace: flux-system
   releaseName: mi-azure-functions
   values:
