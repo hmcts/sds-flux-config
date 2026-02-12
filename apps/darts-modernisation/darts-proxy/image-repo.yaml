@@ -1,6 +1,8 @@
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
-  name: darts-proxy
+  name: darts-prox
+  annotations:
+    hmcts.github.com/image-registry: hmctsprod
 spec:
-  image: sdshmctspublic.azurecr.io/darts/proxy
+  image: hmctsprod.azurecr.io/darts/proxy
