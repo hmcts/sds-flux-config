@@ -6,7 +6,7 @@ spec:
   releaseName: pip-account-management-inactive-verify-cron
   values:
     job:
-      image: sdshmctspublic.azurecr.io/pip/cron-trigger:prod-687bbdf-20260122161340 # {"$imagepolicy": "flux-system:pip-account-management-inactive-verification-cron"}
+      image: hmctsprod.azurecr.io/pip/cron-trigger:prod-687bbdf-20260122161340 # {"$imagepolicy": "flux-system:pip-account-management-inactive-verification-cron"}
       disableTraefikTls: true
   chart:
     spec:
