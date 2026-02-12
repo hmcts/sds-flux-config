@@ -13,7 +13,7 @@ spec:
       startupFailureThreshold: 60
       startupTimeoutSeconds: 5
       ingressHost: 'cloudgobgateway.test.platform.hmcts.net'
-      image: 'sdshmctspublic.azurecr.io/themis/themis_sb_azure:1.27.0'
+      image: 'hmctsprod.azurecr.io/themis/themis_sb_azure:1.27.0'
       replicas: 1
       autoscaling:
         enabled: false
