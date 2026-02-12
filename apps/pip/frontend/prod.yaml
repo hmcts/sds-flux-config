@@ -18,6 +18,7 @@ spec:
         B2C_URL: https://sign-in.court-tribunal-hearings.service.gov.uk/court-tribunal-hearings.service.gov.uk
         CFT_IDAM_URL: https://hmcts-access.service.gov.uk
         CRIME_IDAM_URL: https://login.cjscp.org.uk
+        RETRIGGER_PODS: "true"
       autoscaling:
         enabled: true
         cpu:
