@@ -10,11 +10,11 @@ spec:
       version: 1.0.0
       sourceRef:
         kind: HelmRepository
-        name: hmctspublic-oci
+        name: hmctssbox-oci
         namespace: flux-system
   releaseName: mi-azure-functions
   values:
-    image: sdshmctspublic.azurecr.io/mi/azure-functions:prod-17aa96a-20251212125415 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: hmctsprod.azurecr.io/mi/azure-functions:prod-17aa96a-20251212125415 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     env:
       ADF_RESOURCEGROUP: mi-ingestion-sbox-rg
       ADF_NAME: mi-ingestion-adf-sbox

@@ -8,7 +8,7 @@ spec:
     java:
       replicas: 1
       useInterpodAntiAffinity: true
-      image: sdshmctspublic.azurecr.io/lgy-iac/web:prod-503f6e9-20220923094351 #{"$imagepolicy": "flux-system:lgy-iac-web"}
+      image: hmctsprod.azurecr.io/lgy-iac/web:prod-503f6e9-20220923094351 #{"$imagepolicy": "flux-system:lgy-iac-web"}
   chart:
     spec:
       chart: ./stable/lgy-iac-web
