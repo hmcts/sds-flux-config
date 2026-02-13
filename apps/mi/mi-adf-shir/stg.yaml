@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: mi-adf-shir
   values:
-    image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:dev-e877ecf-20250801092027 #{"$imagepolicy": "flux-system:mi-adf-shir-dev"}
+    image: hmctsprod.azurecr.io/mi/adf-integration-runtime:dev-e877ecf-20250801092027 #{"$imagepolicy": "flux-system:mi-adf-shir-dev"}
     memoryLimits: '4096Mi'
     environment: "stg"
     resourceGroup: "mi-stg-rg"
