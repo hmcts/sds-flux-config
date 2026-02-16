@@ -1,0 +1,15 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: darts-api-ithc
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+spec:
+  imageRepositoryRef:
+    name: darts-api
+  filterTags:
+    extract: $ts
+    pattern: "^pr-3172-[a-f0-9]+-(?P<ts>[0-9]+)"
+  policy:
+    alphabetical:
+      order: asc
