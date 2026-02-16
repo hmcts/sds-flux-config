@@ -37,7 +37,7 @@ spec:
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
     function:
-      image: hmctsprod.azurecr.io/darts/api:prod-bb369a0-20260213192105 # {"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-1bc2b39-20260216143840 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.court-tribunal-records-archive.service.justice.gov.uk
