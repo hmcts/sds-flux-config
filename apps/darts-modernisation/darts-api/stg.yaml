@@ -33,7 +33,7 @@ spec:
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
         SHEDLOCK_LOG_LEVEL: DEBUG
     function:
-      image: hmctsprod.azurecr.io/darts/api:prod-24db09e-20260216180056 # {"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-6ec4e12-20260216190659 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
         ARM_API_URL: https://darts-stub-services.staging.platform.hmcts.net
