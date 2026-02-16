@@ -10,4 +10,3 @@ spec:
     job:
       schedule: "15 6 * * *" # 6:15 AM UTC
       image: hmctsprod.azurecr.io/pre/api:prod-61efb4e-20260212103154 # {"$imagepolicy": "flux-system:pre-api"}
-      environment:
