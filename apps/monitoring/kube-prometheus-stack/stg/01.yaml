@@ -119,4 +119,3 @@ spec:
                 title: 'SDS-staging-01 - {{ template "slack.default.title" . }}'
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
-
