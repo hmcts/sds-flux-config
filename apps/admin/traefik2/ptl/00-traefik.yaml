@@ -5,13 +5,6 @@ metadata:
   namespace: admin
 spec:
   chart:
-    spec:
-      chart: traefik
-      version: 37.2.0
-      sourceRef:
-        kind: HelmRepository
-        name: traefik
-        namespace: admin
   values:
     service:
       spec:

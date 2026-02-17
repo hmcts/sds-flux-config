@@ -4,6 +4,7 @@ resources:
   - ../../../apps/flux-system/demo/base
   - ../../../apps/admin/base/kustomize.yaml
   - ../../../apps/dynatrace/base/kustomize.yaml
+  - ../../../apps/dynatrace/dynatrace-crds/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml
   - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/kube-system/base/kustomize.yaml
@@ -27,4 +28,3 @@ patches:
   - path: ../../../apps/toffee/demo/base/kustomize.yaml
   - path: ../../../apps/admin/demo/base/kustomize.yaml
   - path: ../../../apps/dynatrace/dynatrace-crds-upgrade/kustomize.yaml
-  - path: ../../../apps/admin/traefik-crds-upgrade-v390/kustomize.yaml
