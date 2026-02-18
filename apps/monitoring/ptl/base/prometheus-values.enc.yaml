@@ -1,25 +1,25 @@
 apiVersion: v1
 data:
-    values.yaml: ENC[AES256_GCM,data:7vUncLL6xH52feKB83GJ51/uJORChFx7a5pJraGTO2sR0NzL/GOcD9tZJKDTWsIDQzMbkvztA4HjM0zKsSBT0SSw80E5jl3TB0s2mNrsZy6uHsqW2ckkMcl7k05HcjnRahcGPFAaDW1UAlEXVx0U4NK4if0cnCUcmWrt+hI6oYwWgkl4/V89aore/3hx42elydjjBysuaDFpovqC7HLu0Ijqh4eJzIgeP2HUrpzN//3RCyUmg2id9Hql8IiB7XOpjolRH+yaHNcG8HKNZ9GV44CS9Lnr76BybVh0fCEBwgslTDGkZgyFoHSJ3jk=,iv:SyJqSfHqQGwyzYk5/gKLqGhADqIO1d9gnZoxCV/tu24=,tag:CsANILvzMkRX+VC6YMfT4A==,type:str]
+  values.yaml: ENC[AES256_GCM,data:7vUncLL6xH52feKB83GJ51/uJORChFx7a5pJraGTO2sR0NzL/GOcD9tZJKDTWsIDQzMbkvztA4HjM0zKsSBT0SSw80E5jl3TB0s2mNrsZy6uHsqW2ckkMcl7k05HcjnRahcGPFAaDW1UAlEXVx0U4NK4if0cnCUcmWrt+hI6oYwWgkl4/V89aore/3hx42elydjjBysuaDFpovqC7HLu0Ijqh4eJzIgeP2HUrpzN//3RCyUmg2id9Hql8IiB7XOpjolRH+yaHNcG8HKNZ9GV44CS9Lnr76BybVh0fCEBwgslTDGkZgyFoHSJ3jk=,iv:SyJqSfHqQGwyzYk5/gKLqGhADqIO1d9gnZoxCV/tu24=,tag:CsANILvzMkRX+VC6YMfT4A==,type:str]
 kind: Secret
 metadata:
-    creationTimestamp: null
-    name: prometheus-extra-values
-    namespace: monitoring
+  creationTimestamp: null
+  name: prometheus-extra-values
+  namespace: monitoring
 type: Opaque
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv:
-        - vault_url: https://dtssdsptl.vault.azure.net
-          name: sops-key
-          version: b047792919f74e6c875ba3a8945ed7a9
-          created_at: "2026-02-18T15:45:47Z"
-          enc: b82d4EXUBkOAccxanrJbhIJiZtq-Usriqa3QzokvJid8ZlwFCEdddd1YaqHTT6KF_PuVS11VlP6IZlVS9teP-IbFt1j7UbgOEx15x8rzuvGZGmV0YLykp3xGbebNt47taEN64vRg1gTDUHTewEeEk3LL4MWI7hT-DKXtWszoV7JTidquly62u7y1HWZVG4BD_38mAmcyuMWUucyWb7yxILPgw2ZU24TgnYD84BuN9w0SKtfo8qCvFvGfsdijEBQNhR3F1dLhzC5Oc4w6tYugFsl1mAXuPoGpoDeR81R_8fPnkq188uNPQ6rPVxhCct5CcPir9zG3DGa1Qv-0us2tOA
-    hc_vault: []
-    age: []
-    lastmodified: "2026-02-18T15:45:57Z"
-    mac: ENC[AES256_GCM,data:DQ0nUc6JJv7M9t3xS9GxFXMosl2/jfsXa8rd7oyBP+INTuTKyq08ZoLlUr+lMOIyN24+gjDtiIW/IkRjG5nCOxYsqIuFJXp+RB9EOIa+6/IGVyO1wGOzTxC9wSVKnKxd9f/RBBntvCsbF/M/IVBJXh0FljJ39siD3QnPUJRrr8o=,iv:4R3uv3DsDut3TdBbunh22BI1cV4GBBGYPdaCzSJy36U=,tag:a4z31Y1PZNaumwNFV9NClg==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.4
+  kms: []
+  gcp_kms: []
+  azure_kv:
+      - vault_url: https://dtssdsptl.vault.azure.net
+        name: sops-key
+        version: b047792919f74e6c875ba3a8945ed7a9
+        created_at: "2026-02-18T15:45:47Z"
+        enc: b82d4EXUBkOAccxanrJbhIJiZtq-Usriqa3QzokvJid8ZlwFCEdddd1YaqHTT6KF_PuVS11VlP6IZlVS9teP-IbFt1j7UbgOEx15x8rzuvGZGmV0YLykp3xGbebNt47taEN64vRg1gTDUHTewEeEk3LL4MWI7hT-DKXtWszoV7JTidquly62u7y1HWZVG4BD_38mAmcyuMWUucyWb7yxILPgw2ZU24TgnYD84BuN9w0SKtfo8qCvFvGfsdijEBQNhR3F1dLhzC5Oc4w6tYugFsl1mAXuPoGpoDeR81R_8fPnkq188uNPQ6rPVxhCct5CcPir9zG3DGa1Qv-0us2tOA
+  hc_vault: []
+  age: []
+  lastmodified: "2026-02-18T15:45:57Z"
+  mac: ENC[AES256_GCM,data:DQ0nUc6JJv7M9t3xS9GxFXMosl2/jfsXa8rd7oyBP+INTuTKyq08ZoLlUr+lMOIyN24+gjDtiIW/IkRjG5nCOxYsqIuFJXp+RB9EOIa+6/IGVyO1wGOzTxC9wSVKnKxd9f/RBBntvCsbF/M/IVBJXh0FljJ39siD3QnPUJRrr8o=,iv:4R3uv3DsDut3TdBbunh22BI1cV4GBBGYPdaCzSJy36U=,tag:a4z31Y1PZNaumwNFV9NClg==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.4
