@@ -1,8 +1,12 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: dynatrace-crd
+  name: dynatrace-crd-upgrade
   namespace: flux-system
 spec:
   interval: 10m
   path: ./apps/dynatrace/dynatrace-crds-upgrade
+  sourceRef:
+    kind: GitRepository
+    name: flux-config
+    namespace: flux-system
