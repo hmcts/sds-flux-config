@@ -6,3 +6,7 @@ metadata:
 spec:
   interval: 10m
   path: ./apps/dynatrace/dynatrace-crds
+  sourceRef:
+    kind: GitRepository
+    name: flux-config
+    namespace: flux-system
