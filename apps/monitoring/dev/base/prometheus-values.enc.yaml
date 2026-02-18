@@ -11,11 +11,11 @@ sops:
   kms: []
   gcp_kms: []
   azure_kv:
-      - vault_url: https://dtssharedservicesdevkv.vault.azure.net
-        name: sops-key
-        version: 2beba064ddfe454482ad0133af2cf0fd
-        created_at: "2026-02-18T16:34:10Z"
-        enc: Oe68Zg-pYFN9nmwRjc80tmG_ePmeBwSi1a0DdCWPMsFcUk8jc84zzmBfl5dMAZdOT4QQ0T_4Jzr0CBRdLAJjPrR6P3ZpsgDvU-azGG4JoOU28sr1yYNS91Oe8-Yp3pZX3f3vpaQKOqe2glAqwv7Gg6SwSxurOjGCog_f3LO51pVDs8dQRZ5VvRBO1KMla9iuVtiNQgwHELbo78uM6iAEUnFFWSB0RWGLKJZmrUpDZLMIrEZuP7hFZNavG9-_hnm1kEmT6d8PT-TQwn_243_E-NztXz71sVsnw8t0ZpoFZmNXV6-VKbS0pE-CtpJgR_C_11F6y72BkcvmPlBn1hMd_A
+  - vault_url: https://dtssharedservicesdevkv.vault.azure.net
+    name: sops-key
+    version: 2beba064ddfe454482ad0133af2cf0fd
+    created_at: "2026-02-18T16:34:10Z"
+    enc: Oe68Zg-pYFN9nmwRjc80tmG_ePmeBwSi1a0DdCWPMsFcUk8jc84zzmBfl5dMAZdOT4QQ0T_4Jzr0CBRdLAJjPrR6P3ZpsgDvU-azGG4JoOU28sr1yYNS91Oe8-Yp3pZX3f3vpaQKOqe2glAqwv7Gg6SwSxurOjGCog_f3LO51pVDs8dQRZ5VvRBO1KMla9iuVtiNQgwHELbo78uM6iAEUnFFWSB0RWGLKJZmrUpDZLMIrEZuP7hFZNavG9-_hnm1kEmT6d8PT-TQwn_243_E-NztXz71sVsnw8t0ZpoFZmNXV6-VKbS0pE-CtpJgR_C_11F6y72BkcvmPlBn1hMd_A
   hc_vault: []
   age: []
   lastmodified: "2026-02-18T16:34:29Z"
