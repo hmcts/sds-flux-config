@@ -3,7 +3,8 @@ kind: Kustomization
 namespace: monitoring
 resources:
 - ../../base
-- ../../kube-prometheus-stack/ptl/prometheus-values.enc.yaml
+- prometheus-values.yaml
+- prometheus-values.enc.yaml
 - ../../version-reporter
 - ../../version-reporter/ptl/version-reporter.enc.yaml
 - ../../version-reporter/ptl/github-token.enc.yaml

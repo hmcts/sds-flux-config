@@ -56,6 +56,9 @@ spec:
           type: camptocamp-prometheus-alertmanager-datasource
           url: https://sds-alertmanager-01.sandbox.platform.hmcts.net
           access: proxy
+  valuesFrom:
+    - name: "prometheus-extra-values"
+      kind: Secret
   chart:
     spec:
       chart: kube-prometheus-stack

@@ -121,6 +121,9 @@ spec:
                 title: 'SDS-Sbox-00 - {{ template "slack.default.title" . }}'
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
+  valuesFrom:
+    - name: "prometheus-extra-values"
+      kind: Secret
   chart:
     spec:
       chart: kube-prometheus-stack

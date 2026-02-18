@@ -33,3 +33,6 @@ spec:
                 title: 'SDS-prod-00 - {{ template "slack.default.title" . }}'
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
+  valuesFrom:
+    - name: "prometheus-values"
+      kind: Secret
