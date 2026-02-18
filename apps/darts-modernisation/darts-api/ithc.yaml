@@ -36,7 +36,7 @@ spec:
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
         RUN_DB_MIGRATION_ON_STARTUP: true
         ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 1
-        ARM_RPO_TOTAL_CATCHUP_HOURS: 12
+        ARM_RPO_TOTAL_CATCHUP_HOURS: 2
     function:
       image: hmctsprod.azurecr.io/darts/api:prod-6ec4e12-20260216190659 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
