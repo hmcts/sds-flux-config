@@ -2,5 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - ../../kube-prometheus-stack/test/prometheus-values.enc.yaml
+  - prometheus-values.yaml
+  - prometheus-values.enc.yaml
 namespace: monitoring
