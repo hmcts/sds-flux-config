@@ -73,5 +73,5 @@ spec:
           url: https://sds-alertmanager-01.platform.hmcts.net
           access: proxy
   valuesFrom:
-    - name: "prometheus-values"
+    - name: "prometheus-extra-values"
       kind: Secret

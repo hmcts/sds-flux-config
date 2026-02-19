@@ -34,5 +34,5 @@ spec:
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
   valuesFrom:
-    - name: "prometheus-values"
+    - name: "prometheus-extra-values"
       kind: Secret
