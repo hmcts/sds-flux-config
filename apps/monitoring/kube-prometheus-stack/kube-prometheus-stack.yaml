@@ -251,6 +251,9 @@ spec:
                     operator: In
                     values:
                       - system
+  valuesFrom:
+    - name: "prometheus-extra-values"
+      kind: Secret
   chart:
     spec:
       chart: kube-prometheus-stack
