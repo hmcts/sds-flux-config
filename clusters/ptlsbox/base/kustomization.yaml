@@ -16,4 +16,3 @@ patches:
       kind: Kustomization
       annotationSelector: hmcts.github.com/kustomize-defaults != disabled
   - path: ../../../apps/admin/ptlsbox/base/kustomize.yaml
-  - path: ../../../apps/monitoring/kube-prometheus-stack-crds-upgrade-v81/kustomize.yaml
