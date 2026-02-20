@@ -7,6 +7,7 @@ spec:
   releaseName: opal-user-service
   values:
     java:
+      image: sdshmctspublic.azurecr.io/opal/user-service:prod-488ffc8-20251124100715
       ingressHost: opal-user-service.demo.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
