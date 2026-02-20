@@ -65,7 +65,6 @@ spec:
               storageAccountNameReferenceType: "existing"
               storageAccountType: "Standard_LRS"
               subnetName: "iaas"
-              uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptlsbox-mi
               usePrivateIP: true
               virtualNetworkName: "ss-ptlsbox-vnet"
               virtualNetworkResourceGroupName: "ss-ptlsbox-network-rg"
@@ -97,6 +96,7 @@ spec:
                         usageMode: "NORMAL"
                         SpotInstance: false
                         virtualMachineSize: "Standard_D4ds_v5"
+                        uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptlsbox-mi
                         imageReference:
                             galleryName: "hmcts"
                             galleryResourceGroup: "hmcts-image-gallery-rg"
