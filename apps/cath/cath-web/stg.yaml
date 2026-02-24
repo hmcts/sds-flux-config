@@ -1,0 +1,36 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cath-web
+spec:
+  releaseName: cath-web
+  values:
+    nodejs:
+      replicas: 2
+      ingressHost: cath-web.staging.platform.hmcts.net
+      environment:
+        BASE_URL: https://cath-web.staging.platform.hmcts.net
+        REDIS_HOST: cath-stg.redis.cache.windows.net
+        SSO_ALLOW_HTTP_REDIRECT: "false"
+      keyVaults:
+        pip-ss-kv:
+          secrets:
+            - name: sso-client-id
+              alias: SSO_CLIENT_ID
+            - name: sso-client-secret
+              alias: SSO_CLIENT_SECRET
+            - name: sso-issuer-url
+              alias: SSO_IDENTITY_METADATA
+            - name: sso-sg-system-admin
+              alias: SSO_SYSTEM_ADMIN_GROUP_ID
+            - name: sso-sg-admin-ctsc
+              alias: SSO_INTERNAL_ADMIN_CTSC_GROUP_ID
+            - name: sso-sg-admin-local
+              alias: SSO_INTERNAL_ADMIN_LOCAL_GROUP_ID
+      autoscaling:
+        enabled: true
+        cpu:
+          enabled: true
+          averageUtilization: 70
+        memory:
+          enabled: false
