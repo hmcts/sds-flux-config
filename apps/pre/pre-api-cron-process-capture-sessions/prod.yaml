@@ -10,4 +10,4 @@ spec:
     job:
       disableActiveClusterCheck: true
       schedule: "15 18 * * *" # 6.15pm every day
-      image: hmctsprod.azurecr.io/pre/api:prod-3f8d5c2-20260223171148 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-1ae761c-20260224201935 # {"$imagepolicy": "flux-system:pre-api"}

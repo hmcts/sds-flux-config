@@ -12,7 +12,7 @@ spec:
       suspend: false
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
-      image: hmctsprod.azurecr.io/pre/api:prod-3f8d5c2-20260223171148 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-1ae761c-20260224201935 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         ENABLE_NEW_EMAIL_SERVICE: true
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
