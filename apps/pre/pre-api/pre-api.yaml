@@ -8,7 +8,7 @@ spec:
   values:
     java:
       replicas: 2
-      image: hmctsprod.azurecr.io/pre/api:prod-3f8d5c2-20260223171148 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-d4d7f39-20260225122319 # {"$imagepolicy": "flux-system:pre-api"}
       disableTraefikTls: true
       memoryRequests: '3Gi'
       memoryLimits: '3Gi'
