@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: external-dns-k8s-sigs
+  namespace: admin
+spec:
+  releaseName: external-dns-k8s-sigs
+  values:
+    logLevel: debug
+    domainFilters:
+      # Test domain - create a subdomain specifically for testing
+      - k8s-sigs-test.dev.platform.hmcts.net
