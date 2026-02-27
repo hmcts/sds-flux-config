@@ -65,6 +65,7 @@ spec:
               storageAccountNameReferenceType: "existing"
               storageAccountType: "Standard_LRS"
               subnetName: "iaas"
+              # uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptlsbox-mi
               usePrivateIP: true
               virtualNetworkName: "ss-ptlsbox-vnet"
               virtualNetworkResourceGroupName: "ss-ptlsbox-network-rg"
@@ -102,20 +103,20 @@ spec:
                             galleryResourceGroup: "hmcts-image-gallery-rg"
                             gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                             galleryImageDefinition: "jenkins-ubuntu-v2"
-                            galleryImageVersion: "24.04.69"
+                            galleryImageVersion: "24.04.70"
                         <<: *vm_template_values_anchor
-                      - templateName: "cnp-jenkins-builders-build-only"
-                        templateDesc: "Jenkins build agents for HMCTS that only run build stages (no deployments)"
+                      - templateName: "cnp-jenkins-build-only-builders"
+                        templateDesc: "Jenkins build-only build agents for HMCTS"
                         labels: "build-only"
                         maxVirtualMachinesLimit: 10
                         usageMode: "EXCLUSIVE"
                         SpotInstance: false
                         virtualMachineSize: "Standard_D4ds_v5"
-                        uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/DTSPO-30163-jenkins-build-only-mi
+                        uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptlsbox-build-only-mi
                         imageReference:
                             galleryName: "hmcts"
                             galleryResourceGroup: "hmcts-image-gallery-rg"
                             gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                             galleryImageDefinition: "jenkins-ubuntu-v2"
-                            galleryImageVersion: "24.04.69"
+                            galleryImageVersion: "24.04.70"
                         <<: *vm_template_values_anchor
