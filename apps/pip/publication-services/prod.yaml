@@ -20,7 +20,7 @@ spec:
         NOTIFY_LINK_START_PAGE: https://www.court-tribunal-hearings.service.gov.uk
         NOTIFY_CFT_SIGN_IN_LINK: https://www.court-tribunal-hearings.service.gov.uk/cft-login
         NOTIFY_CRIME_SIGN_IN_LINK: https://www.court-tribunal-hearings.service.gov.uk/crime-login
-        XHIBIT_S3_BUCKET_NAME: staging.xhibit.justice.gov.uk  # change it to production S3 bucket before deploying the changes
+        XHIBIT_S3_BUCKET_NAME: staging.xhibit.justice.gov.uk  # change it to production S3 bucket before 5th March release
       memoryRequests: 1200Mi
       autoscaling:
         enabled: true

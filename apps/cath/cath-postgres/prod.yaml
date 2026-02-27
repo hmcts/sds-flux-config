@@ -10,11 +10,5 @@ spec:
       keyVaults:
         pip-ss-kv:
           secrets:
-            - name: postgres-host
-              alias: POSTGRES_HOST
-            - name: postgres-user
-              alias: POSTGRES_USER
-            - name: postgres-password
-              alias: POSTGRES_PASSWORD
-            - name: postgres-port
-              alias: POSTGRES_PORT
+            - name: postgres-url
+              alias: DATABASE_URL

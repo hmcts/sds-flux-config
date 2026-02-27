@@ -10,3 +10,5 @@ spec:
         pip-ss-kv:
           secrets:
             - name: app-insights-connection-string
+            - name: postgres-url
+              alias: DATABASE_URL

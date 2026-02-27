@@ -27,6 +27,8 @@ spec:
               alias: SSO_INTERNAL_ADMIN_CTSC_GROUP_ID
             - name: sso-sg-admin-local
               alias: SSO_INTERNAL_ADMIN_LOCAL_GROUP_ID
+            - name: postgres-url
+              alias: DATABASE_URL
       autoscaling:
         enabled: true
         cpu:
