@@ -9,12 +9,12 @@ spec:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
       # image: hmctsprod.azurecr.io/juror/pnc:prod-0fe13d4-20251023133902 # {"$imagepolicy": "flux-system:juror-pnc"}
-      image: hmctsprod.azurecr.io/juror/pnc:pr-198-7c57e1c-20260225094545
+      image: hmctsprod.azurecr.io/juror/pnc:pr-198-77d2090-20260227110323
       ingressHost: juror-pnc.ithc.platform.hmcts.net
       environment:
         PNC_SERVICE_PNC_TRAN_CODE: '#L0'
         PNC_SERVICE_PNC_TERMINAL: LCRTS001
         PNC_SERVICE_PNC_AUTHORISATION: 2K01JV01
         PNC_SERVICE_GATEWAY_ID: JVJVS001
-        PNC_SERVICE_HOST: api.test.leds.police.uk
+        PNC_SERVICE_HOST: legacy.api.test.leds.police.uk
         PNC_SERVICE_POST: 443
