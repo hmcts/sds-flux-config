@@ -19,8 +19,7 @@ spec:
     # Filter to only manage ingresses with this specific annotation
     annotationFilter: "external-dns.alpha.kubernetes.io/controller=k8s-sigs"
     image:
-      registry: hmctsprod.azurecr.io
-      repository: imported/k8s-sigs/external-dns
+      repository: hmctsprod.azurecr.io/imported/k8s-sigs/external-dns
       tag: v0.20.0
     serviceAccount:
       create: false
