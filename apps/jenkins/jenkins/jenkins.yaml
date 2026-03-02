@@ -284,13 +284,13 @@ spec:
               value: "300"
       ingress:
         enabled: true
-        labels: { }
+        labels: {}
         annotations:
           kubernetes.io/ingress.class: traefik
           traefik.ingress.kubernetes.io/router.tls: "true"
       secondaryingress:
         enabled: true
-        paths: [ "/" ]
+        paths: ["/"]
         annotations:
           kubernetes.io/ingress.class: traefik
           traefik.ingress.kubernetes.io/router.tls: "true"
@@ -311,7 +311,7 @@ spec:
       ##   GKE, AWS & OpenStack)
       ##
       storageClass:
-      annotations: { }
+      annotations: {}
       accessMode: "ReadWriteOnce"
       size: "8Gi"
       volumes:
