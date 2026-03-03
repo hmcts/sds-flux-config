@@ -22,6 +22,10 @@ spec:
       create: false
       name: jenkins
     controller:
+      scriptApproval:
+        - "method java.time.ZonedDateTime getDayOfWeek"
+        - "staticMethod java.time.ZoneId of java.lang.String"
+        - "staticMethod java.time.ZonedDateTime now"
       image:
         registry: hmctspublic.azurecr.io
         repository: jenkins/jenkins
