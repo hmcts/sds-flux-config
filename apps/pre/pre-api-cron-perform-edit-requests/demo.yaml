@@ -11,7 +11,7 @@ spec:
       suspend: false
       disableActiveClusterCheck: true
       schedule: "*/5 * * * *" # every 5 mins
-      image: hmctsprod.azurecr.io/pre/api:prod-6c14834-20260227182339 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-41d5a16-20260304171000 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Demo
         PORTAL_URL: https://pre-portal.demo.platform.hmcts.net/
