@@ -1,0 +1,7 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: pip-data-management-scheduled-list-type-subscriptions-cron
+spec:
+  imageRepositoryRef:
+    name: pip-data-management-scheduled-list-type-subscriptions-cron
