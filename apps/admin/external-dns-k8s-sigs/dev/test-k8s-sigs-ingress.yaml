@@ -4,13 +4,12 @@ metadata:
   name: test-k8s-sigs-external-dns
   namespace: admin
   annotations:
-    # This annotation ensures ONLY the k8s-sig external-dns manages this
     external-dns.alpha.kubernetes.io/controller: k8s-sigs
-    external-dns.alpha.kubernetes.io/hostname: mytest.k8s-sig-tests.dev.platform.hmcts.net
+    external-dns.alpha.kubernetes.io/hostname: mytest.k8s-sig-tests.platform.hmcts.net
 spec:
   ingressClassName: traefik
   rules:
-  - host: mytest.k8s-sigs-test.dev.platform.hmcts.net
+  - host: mytest.k8s-sigs-test.platform.hmcts.net
     http:
       paths:
       - path: /
