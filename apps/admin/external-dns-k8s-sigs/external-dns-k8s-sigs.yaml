@@ -16,7 +16,6 @@ spec:
   interval: 1m
   values:
     provider: azure-private-dns
-    # Filter to only manage ingresses with this specific annotation
     annotationFilter: "external-dns.alpha.kubernetes.io/controller=k8s-sigs"
     image:
       repository: hmctsprod.azurecr.io/imported/k8s-sigs/external-dns
