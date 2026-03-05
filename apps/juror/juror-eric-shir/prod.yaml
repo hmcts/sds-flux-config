@@ -9,7 +9,7 @@ spec:
     image: sdshmctspublic.azurecr.io/mi/adf-integration-runtime:prod-6858f71-20251111140116 #{"$imagepolicy": "flux-system:juror-adf-shir"}
     replicaCount: 1
     memoryLimits: '4096Mi'
-    environment: "stg"
+    environment: "prod"
     fullKeyVaultName: "baubais-prod-kv"
     keyVaultName: "baubais-kv"
     resourceGroup: "baubais-data-factory-rg-prod"
