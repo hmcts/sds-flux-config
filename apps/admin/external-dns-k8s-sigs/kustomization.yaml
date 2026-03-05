@@ -3,3 +3,4 @@ namespace: admin
 kind: Kustomization
 resources:
   - external-dns-k8s-sigs.yaml
+  - external-dns-azure-config.yaml
