@@ -14,7 +14,7 @@ spec:
         readOnlyRootFilesystem: false
         allowPrivilegeEscalation: true
       image:
-        registry: hmctspublic.azurecr.io
+        registry: hmctsprod.azurecr.io
         repository: jenkins/jenkins
       ingress:
         hostName: sds-sandbox-build.hmcts.net
@@ -50,15 +50,9 @@ spec:
                       - key: GRADLE_OPTS
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: REGISTRY_NAME
-                        value: sdshmctspublicsbox
-                      - key: DUAL_ACR_PUBLISH
-                        value: "true"
-                      - key: SECONDARY_REGISTRY_NAME
                         value: hmctssbox
-                      - key: SECONDARY_REGISTRY_RESOURCE_GROUP
-                        value: cnp-acr-rg
-                      - key: SECONDARY_REGISTRY_SUBSCRIPTION
-                        value: bf308a5c-0624-4334-8ff8-8dca9fd43783
+                      - key: DUAL_ACR_PUBLISH
+                        value: "false"
                       - key: SBOX_AKS_CLUSTER_NAME
                         value: ss-sbox-00-aks
                       - key: SBOX_AKS_RESOURCE_GROUP
@@ -173,7 +167,7 @@ spec:
                       - args: "/bin/sh -c cat"
                         alwaysPullImage: true
                         command: "/tini --"
-                        image: "hmctspublic.azurecr.io/jenkins/k8s-agent:latest"
+                        image: "hmctsprod.azurecr.io/jenkins/k8s-agent:latest"
                         livenessProbe:
                           failureThreshold: 3
                           initialDelaySeconds: 150
@@ -187,7 +181,7 @@ spec:
                         resourceRequestMemory: "4Gi"
                         ttyEnabled: true
                         workingDir: "/home/jenkins/agent"
-                      - image: "hmctspublic.azurecr.io/jenkins/k8s-agent:latest"
+                      - image: "hmctsprod.azurecr.io/jenkins/k8s-agent:latest"
                         alwaysPullImage: true
                         livenessProbe:
                           failureThreshold: 3
@@ -238,7 +232,7 @@ spec:
                             fsGroup: 118
                           initContainers:
                           - name: init-agent
-                            image: hmctspublic.azurecr.io/jenkins/k8s-agent:latest
+                            image: hmctsprod.azurecr.io/jenkins/k8s-agent:latest
                             command:
                               - /bin/sh
                               - -c
@@ -274,7 +268,7 @@ spec:
                             fsGroup: 118
                           initContainers:
                           - name: init-agent
-                            image: hmctspublic.azurecr.io/jenkins/k8s-agent:latest
+                            image: hmctsprod.azurecr.io/jenkins/k8s-agent:latest
                             command:
                               - /bin/sh
                               - -c
@@ -296,3 +290,7 @@ spec:
                                         values:
                                           - jenkins-master
                                   topologyKey: "kubernetes.io/hostname"
+      sidecars:
+        configAutoReload:
+          image:
+            registry: hmctsprod.azurecr.io
