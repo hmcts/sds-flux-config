@@ -29,9 +29,14 @@ spec:
       azure.workload.identity/use: "true"
     sources:
       - ingress
-    extraArgs:
-      azure-resource-group: core-infra-intsvc-rg
-      azure-subscription-id: 1baf5470-1c3e-40d3-a6f7-74bfbce4b348
+    extraVolumes:
+      - name: azure-config
+        configMap:
+          name: external-dns-azure-config
+    extraVolumeMounts:
+      - name: azure-config
+        mountPath: /etc/kubernetes
+        readOnly: true
     global:
       security:
         allowInsecureImages: true
