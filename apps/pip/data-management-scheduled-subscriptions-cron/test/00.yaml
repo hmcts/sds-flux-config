@@ -1,9 +1,9 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pip-data-management-scheduled-list-type-subscriptions-cron
+  name: pip-data-management-scheduled-subscriptions-cron
 spec:
-  releaseName: pip-data-management-scheduled-list-type-subscriptions-cron
+  releaseName: pip-data-management-scheduled-subscriptions-cron
   values:
     job:
       schedule: "15 10 * * 0,2,4,6"

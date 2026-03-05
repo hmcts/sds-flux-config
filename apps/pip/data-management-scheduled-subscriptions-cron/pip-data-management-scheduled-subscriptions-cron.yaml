@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pip-data-management-scheduled-list-type-subscriptions-cron
+  name: pip-data-management-scheduled-subscriptions-cron
 spec:
-  releaseName: pip-data-management-scheduled-list-type-subscriptions-cron
+  releaseName: pip-data-management-scheduled-subscriptions-cron
   values:
     job:
-      image: hmctsprod.azurecr.io/pip/cron-trigger:pr-232-8c64a11-20260304174518 # {"$imagepolicy": "flux-system:pip-data-management-scheduled-list-type-subscriptions-cron"}
+      image: hmctsprod.azurecr.io/pip/cron-trigger:pr-232-8c64a11-20260304174518 # {"$imagepolicy": "flux-system:pip-data-management-scheduled-subscriptions-cron"}
       disableTraefikTls: true
   chart:
     spec:
