@@ -6,7 +6,7 @@ spec:
   releaseName: pip-data-management-scheduled-list-type-subscriptions-cron
   values:
     job:
-      image: hmctsprod.azurecr.io/pip/cron-trigger:prod-fa65026-20260304135430 # {"$imagepolicy": "flux-system:pip-data-management-scheduled-list-type-subscriptions-cron"}
+      image: hmctsprod.azurecr.io/pip/cron-trigger:pr-232-8c64a11-20260304174518 # {"$imagepolicy": "flux-system:pip-data-management-scheduled-list-type-subscriptions-cron"}
       disableTraefikTls: true
   chart:
     spec:
