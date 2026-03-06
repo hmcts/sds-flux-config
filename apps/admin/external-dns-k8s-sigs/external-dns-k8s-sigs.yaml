@@ -16,7 +16,6 @@ spec:
   interval: 1m
   values:
     provider: azure-private-dns
-    # Filter to only manage ingresses with this specific annotation
     annotationFilter: "external-dns.alpha.kubernetes.io/controller=k8s-sigs"
     image:
       repository: hmctsprod.azurecr.io/imported/k8s-sigs/external-dns
@@ -29,9 +28,14 @@ spec:
       azure.workload.identity/use: "true"
     sources:
       - ingress
-    extraArgs:
-      azure-resource-group: core-infra-intsvc-rg
-      azure-subscription-id: 1baf5470-1c3e-40d3-a6f7-74bfbce4b348
+    extraVolumes:
+      - name: azure-config
+        configMap:
+          name: external-dns-azure-config
+    extraVolumeMounts:
+      - name: azure-config
+        mountPath: /etc/kubernetes
+        readOnly: true
     global:
       security:
         allowInsecureImages: true
