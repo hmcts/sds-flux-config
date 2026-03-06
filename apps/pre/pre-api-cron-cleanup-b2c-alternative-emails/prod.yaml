@@ -9,7 +9,7 @@ spec:
       jobKind: CronJob
     job:
       suspend: false
-      schedule: "15 10 29 01 *" # At 09:30 on 29 in January
+      schedule: "10 0 * * *" # At 00:10 Every day
       image: hmctsprod.azurecr.io/pre/api:prod-41d5a16-20260304171000 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         MEDIA_SERVICE: MediaKind
