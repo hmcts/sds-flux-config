@@ -6,8 +6,8 @@ spec:
   releaseName: pip-data-management-scheduled-subscriptions-cron
   values:
     job:
-      image: hmctsprod.azurecr.io/pip/cron-trigger:pr-232-8c64a11-20260304174518
-      schedule: "05 12 * * 1,3,5"
+      image: hmctsprod.azurecr.io/pip/cron-trigger:pr-232-d30482c-20260306123248
+      schedule: "25 13 * * 1,3,5"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
