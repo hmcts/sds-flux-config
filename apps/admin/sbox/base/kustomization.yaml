@@ -7,6 +7,7 @@ resources:
 - ../../traefik2
 - ../../traefik2/sbox/traefik-ping-ingress.yaml
 - ../../delete-hung-pods
+- ../../external-dns-k8s-sigs
 patches:
 - path: ../../aad-pod-identity/sbox/azure-identity-patch.yaml
   target:
@@ -21,3 +22,4 @@ patches:
     name: aks-kubelet-identity-mi
     version: v1
 - path: ../../traefik2/sbox/secret-provider.yaml
+- path: ../../external-dns-k8s-sigs/sbox/external-dns-k8s-sigs-private.yaml
