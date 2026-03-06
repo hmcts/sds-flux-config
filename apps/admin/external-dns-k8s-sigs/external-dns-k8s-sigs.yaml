@@ -16,7 +16,7 @@ spec:
   interval: 1m
   values:
     provider: azure-private-dns
-    annotationFilter: "external-dns.alpha.kubernetes.io/controller in (k8s-sigs)"
+    annotationFilter: "external-dns.alpha.kubernetes.io/test in (k8s-sigs)"
     image:
       repository: hmctsprod.azurecr.io/imported/k8s-sigs/external-dns
       tag: v0.20.0

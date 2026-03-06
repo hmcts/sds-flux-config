@@ -4,7 +4,7 @@ metadata:
   name: test-k8s-sigs-external-dns
   namespace: admin
   annotations:
-    external-dns.alpha.kubernetes.io/controller: k8s-sigs
+    external-dns.alpha.kubernetes.io/test: k8s-sigs
     external-dns.alpha.kubernetes.io/hostname: mytest.k8s-sig-test.platform.hmcts.net
 spec:
   ingressClassName: traefik
