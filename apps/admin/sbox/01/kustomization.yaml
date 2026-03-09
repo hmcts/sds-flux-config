@@ -2,7 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../base
-
+- ../../external-dns-k8s-sigs
+- ../../external-dns-k8s-sigs/sbox/test-k8s-sigs-ingress.yaml
 patches:
 - path: ../../traefik2/sbox/01-traefik2.yaml
 - path: ../../aad-pod-identity/sbox/azure-identity-auto-cluster-01.yaml
@@ -11,4 +12,5 @@ patches:
     kind: AzureIdentity
     name: aks-pod-identity-mi
     version: v1
+- path: ../../external-dns-k8s-sigs/sbox/external-dns-k8s-sigs-private.yaml
 - path: ../../external-dns-k8s-sigs/sbox/01-external-dns-k8s-sigs-private.yaml
