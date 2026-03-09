@@ -4,4 +4,5 @@ resources:
 - ../base
 patches:
 - path: ../../traefik2/sbox/00-traefik2.yaml
+- path: hungpod-kubectl-image-patch.yaml
 # - path: ../../external-dns-k8s-sigs/sbox/00-external-dns-k8s-sigs-private.yaml
