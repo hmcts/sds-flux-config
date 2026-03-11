@@ -2,6 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../base
-
 patches:
 - path: ../../traefik2/sbox/00-traefik2.yaml
+# - path: ../../external-dns-k8s-sigs/sbox/00-external-dns-k8s-sigs-private.yaml
