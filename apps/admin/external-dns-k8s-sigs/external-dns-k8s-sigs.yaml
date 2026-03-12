@@ -1,10 +1,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: external-dns-k8s-sigs
+  name: external-dns
   namespace: admin
 spec:
-  releaseName: external-dns-k8s-sigs
+  releaseName: external-dns
   chart:
     spec:
       chart: imported/k8s-sigs/external-dns-chart
@@ -16,7 +16,7 @@ spec:
   interval: 1m
   values:
     provider: azure-private-dns
-    annotationFilter: "external-dns.alpha.kubernetes.io/test in (k8s-sigs)"
+    annotationFilter: "external-dns.alpha.kubernetes.io/exclude notin (true)"
     image:
       repository: hmctsprod.azurecr.io/imported/k8s-sigs/external-dns
       tag: v0.20.0
