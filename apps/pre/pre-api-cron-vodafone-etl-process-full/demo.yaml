@@ -11,7 +11,7 @@ spec:
       schedule: "10 10 1 5 *" # 10 AM 1st May UTC
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
-      image: hmctsprod.azurecr.io/pre/api:prod-41d5a16-20260304171000 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-191b190-20260311184306 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Demo
         ENABLE_NEW_EMAIL_SERVICE: true
