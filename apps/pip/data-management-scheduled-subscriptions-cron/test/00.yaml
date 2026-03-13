@@ -7,7 +7,7 @@ spec:
   values:
     job:
       image: hmctsprod.azurecr.io/pip/cron-trigger:pr-232-d30482c-20260306123248
-      schedule: "0 15 * * 0,2,4,6"
+      schedule: "0 17 * * 0,2,4,6"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
