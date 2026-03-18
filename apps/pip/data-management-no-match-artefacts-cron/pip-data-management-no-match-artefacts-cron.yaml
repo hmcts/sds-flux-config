@@ -6,7 +6,7 @@ spec:
   releaseName: pip-data-management-no-match-artefacts-cron
   values:
     job:
-      image: hmctsprod.azurecr.io/pip/cron-trigger:prod-2683c01-20260226145322 # {"$imagepolicy": "flux-system:pip-data-management-no-match-artefacts-cron"}
+      image: hmctsprod.azurecr.io/pip/cron-trigger:prod-fa65026-20260304135430 # {"$imagepolicy": "flux-system:pip-data-management-no-match-artefacts-cron"}
       disableTraefikTls: true
   chart:
     spec:

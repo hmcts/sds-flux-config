@@ -11,7 +11,7 @@ spec:
       autoscaling:
         enabled: false
         maxReplicas: 4
-      image: hmctsprod.azurecr.io/darts/api:prod-a7d2882-20260226104737 #{"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:pr-3173-41ac08e-20260316132841 #{"$imagepolicy": "flux-system:darts-api-test"}
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
@@ -24,7 +24,7 @@ spec:
         ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
         AUDIO_LINKING_TASK_PRE_AMBLE_DURATION: '0m'
         AUDIO_LINKING_TASK_POST_AMBLE_DURATION: '0m'
-        CASE_EXPIRY_DELETION_ENABLED: false
+        CASE_EXPIRY_DELETION_ENABLED: true
         MANUAL_DELETION_ENABLED: true
         DARTS_API_DB_POOL_SIZE: 200
         PROCESS_E2E_ARM_RPO: true
@@ -40,6 +40,7 @@ spec:
         SHEDLOCK_LOG_LEVEL: DEBUG
         ARM_RPO_TOTAL_CATCHUP_HOURS: 12
         ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
+        RUN_DB_MIGRATION_ON_STARTUP: false
     function:
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk

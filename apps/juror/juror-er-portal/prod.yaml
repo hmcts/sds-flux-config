@@ -7,6 +7,6 @@ spec:
   releaseName: juror-er-portal
   values:
     nodejs:
-      ingressHost: juror-er.prod.apps.hmcts.net
+      ingressHost: juror-er.apps.hmcts.net
       environment:
         API_ENDPOINT: https://juror-api.platform.hmcts.net/api/v1

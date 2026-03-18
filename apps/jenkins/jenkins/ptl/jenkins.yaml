@@ -19,11 +19,6 @@ spec:
           value: https://ptl.vault.azure.net
       JCasC:
         configScripts:
-          misc-jenkins-settings: |
-            jenkins:
-              crumbIssuer:
-                standard:
-                  excludeClientIPFromCrumb: true
           welcome-message: |
             jenkins:
               systemMessage: >-
@@ -47,15 +42,9 @@ spec:
                       - key: GRADLE_OPTS
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: REGISTRY_NAME
-                        value: sdshmctspublic
-                      - key: DUAL_ACR_PUBLISH
-                        value: "true"
-                      - key: SECONDARY_REGISTRY_NAME
                         value: hmctsprod
-                      - key: SECONDARY_REGISTRY_RESOURCE_GROUP
-                        value: rpe-acr-prod-rg
-                      - key: SECONDARY_REGISTRY_SUBSCRIPTION
-                        value: 8999dec3-0104-4a27-94ee-6588559729d1
+                      - key: DUAL_ACR_PUBLISH
+                        value: "false"
                       - key: PTL_AKS_CLUSTER_NAME
                         value: ss-ptl-00-aks
                       - key: PTL_AKS_RESOURCE_GROUP
@@ -295,7 +284,7 @@ spec:
                       containers:
                       - args: "/bin/sh -c cat"
                         command: "/tini --"
-                        image: "hmctspublic.azurecr.io/jenkins/build-agent:db8a7c"
+                        image: "hmctsprod.azurecr.io/jenkins/build-agent:db8a7c"
                         livenessProbe:
                           failureThreshold: 3
                           initialDelaySeconds: 150
@@ -309,7 +298,7 @@ spec:
                         resourceRequestMemory: "4Gi"
                         ttyEnabled: true
                         workingDir: "/home/jenkins/agent"
-                      - image: "hmctspublic.azurecr.io/jenkins/minimal-agent:db8a7c"
+                      - image: "hmctsprod.azurecr.io/jenkins/minimal-agent:db8a7c"
                         livenessProbe:
                           failureThreshold: 3
                           initialDelaySeconds: 150
@@ -358,7 +347,7 @@ spec:
                             fsGroup: 118
                           initContainers:
                           - name: init-agent
-                            image: hmctspublic.azurecr.io/jenkins/minimal-agent:db6hu6
+                            image: hmctsprod.azurecr.io/jenkins/minimal-agent:db6hu6
                             command:
                               - /bin/sh
                               - -c
@@ -393,7 +382,7 @@ spec:
                             fsGroup: 118
                           initContainers:
                           - name: init-agent
-                            image: hmctspublic.azurecr.io/jenkins/minimal-agent:db6hu6
+                            image: hmctsprod.azurecr.io/jenkins/minimal-agent:db6hu6
                             command:
                               - /bin/sh
                               - -c

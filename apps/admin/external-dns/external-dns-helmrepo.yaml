@@ -1,9 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: external-dns
-  namespace: admin
-spec:
-  interval: 10m
-  url: oci://registry-1.docker.io/bitnamicharts
-  type: oci
