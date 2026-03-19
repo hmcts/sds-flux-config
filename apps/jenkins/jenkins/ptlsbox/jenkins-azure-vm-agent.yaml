@@ -103,7 +103,7 @@ spec:
                             galleryResourceGroup: "hmcts-image-gallery-rg"
                             gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                             galleryImageDefinition: "jenkins-ubuntu-v2"
-                            galleryImageVersion: "24.04.71"
+                            galleryImageVersion: "24.04.72"
                         <<: *vm_template_values_anchor
                       - templateName: "cnp-jenkins-build-only-builders"
                         templateDesc: "Jenkins build-only build agents for HMCTS"
@@ -118,5 +118,35 @@ spec:
                             galleryResourceGroup: "hmcts-image-gallery-rg"
                             gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                             galleryImageDefinition: "jenkins-ubuntu-v2"
-                            galleryImageVersion: "24.04.71"
+                            galleryImageVersion: "24.04.72"
+                        <<: *vm_template_values_anchor
+                      - templateName: "cnp-jenkins-builders-sbox"
+                        templateDesc: "Jenkins build agents for SDS sbox environment"
+                        labels: "ubuntu-sbox"
+                        maxVirtualMachinesLimit: 10
+                        usageMode: "EXCLUSIVE"
+                        SpotInstance: false
+                        virtualMachineSize: "Standard_D4ds_v5"
+                        uamiID: /subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/managed-identities-sbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-sbox-mi
+                        imageReference:
+                            galleryName: "hmcts"
+                            galleryResourceGroup: "hmcts-image-gallery-rg"
+                            gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
+                            galleryImageDefinition: "jenkins-ubuntu-v2"
+                            galleryImageVersion: "24.04.72"
+                        <<: *vm_template_values_anchor
+                      - templateName: "cnp-jenkins-builders-ptlsbox"
+                        templateDesc: "Jenkins build agents for SDS ptlsbox environment"
+                        labels: "ubuntu-ptlsbox"
+                        maxVirtualMachinesLimit: 10
+                        usageMode: "EXCLUSIVE"
+                        SpotInstance: false
+                        virtualMachineSize: "Standard_D4ds_v5"
+                        uamiID: /subscriptions/64b1c6d6-1481-44ad-b620-d8fe26a2c768/resourceGroups/managed-identities-ptlsbox-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptlsbox-mi
+                        imageReference:
+                            galleryName: "hmcts"
+                            galleryResourceGroup: "hmcts-image-gallery-rg"
+                            gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
+                            galleryImageDefinition: "jenkins-ubuntu-v2"
+                            galleryImageVersion: "24.04.72"
                         <<: *vm_template_values_anchor

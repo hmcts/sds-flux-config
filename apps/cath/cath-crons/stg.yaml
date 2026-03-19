@@ -4,11 +4,3 @@ metadata:
   name: cath-crons
 spec:
   releaseName: cath-crons
-  values:
-    job:
-      keyVaults:
-        pip-ss-kv:
-          secrets:
-            - name: app-insights-connection-string
-            - name: postgres-url
-              alias: DATABASE_URL

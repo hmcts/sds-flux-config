@@ -4,11 +4,3 @@ metadata:
   name: cath-postgres
 spec:
   releaseName: cath-postgres
-  values:
-    nodejs:
-      ingressHost: cath-postgres.staging.platform.hmcts.net
-      keyVaults:
-        pip-ss-kv:
-          secrets:
-            - name: postgres-url
-              alias: DATABASE_URL

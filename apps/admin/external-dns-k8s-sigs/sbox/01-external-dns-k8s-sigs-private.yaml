@@ -1,9 +1,0 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
-metadata:
-  name: external-dns-k8s-sigs
-  namespace: admin
-spec:
-  releaseName: external-dns-k8s-sigs
-  values:
-    txtOwnerId: sbox-k8s-sigs-active
