@@ -5,9 +5,6 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
-  valuesFrom:
-    - name: "prometheus-values"
-      kind: Secret
   interval: 5m
   releaseName: kube-prometheus-stack
   upgrade:
@@ -254,11 +251,14 @@ spec:
                     operator: In
                     values:
                       - system
+  valuesFrom:
+    - name: "prometheus-extra-values"
+      kind: Secret
   chart:
     spec:
       chart: kube-prometheus-stack
       # update crds in kube-prometheus-stack-crds when changing this version
-      version: 79.11.0
+      version: 81.6.3
       sourceRef:
         kind: HelmRepository
         name: prometheus

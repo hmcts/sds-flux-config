@@ -8,6 +8,7 @@ resources:
   - ../../../apps/admin/base/kustomize.yaml
   - ../../../apps/monitoring/base/kustomize.yaml
   - ../../../apps/pip/base/kustomize.yaml
+  - ../../../apps/cath/base/kustomize.yaml
   - ../../../apps/juror-digital/base/kustomize.yaml
   - ../../../apps/toffee/base/kustomize.yaml
   - ../../../apps/mailrelay/base/kustomize.yaml
@@ -31,5 +32,3 @@ patches:
       annotationSelector: hmcts.github.com/kustomize-defaults != disabled
   - path: ../../../apps/toffee/dev/base/kustomize.yaml
   - path: ../../../apps/admin/dev/base/kustomize.yaml
-  - path: ../../../apps/admin/traefik-crds-upgrade-v390/kustomize.yaml
-  - path: ../../../apps/monitoring/kube-prometheus-stack-crds-upgrade-v81/kustomize.yaml

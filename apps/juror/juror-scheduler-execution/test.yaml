@@ -8,7 +8,7 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      # image: sdshmctspublic.azurecr.io/juror/scheduler-execution:prod-a15461d-20240614120349
+      image: hmctsprod.azurecr.io/juror/scheduler-execution:pr-268-b879ca5-20260313170755 # {"$imagepolicy": "flux-system:juror-scheduler-execution-pr"}
       ingressHost: juror-scheduler-execution.test.platform.hmcts.net
       environment:
         TRIGGER_RESTART: 1

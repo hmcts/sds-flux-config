@@ -3,18 +3,28 @@ kind: HelmRelease
 metadata:
   name: traefik2
   namespace: admin
+  annotations:
+    # Traefik v39.0.0+ enables schema validation so these additional fields are not allowed anymore
+    hmcts.github.com/kustomize-defaults: disabled
 spec:
   releaseName: traefik
   chart:
     spec:
       chart: traefik
       # update the crd version in traefik-crds when updating this
-      version: 37.2.0
+      version: 39.0.0
       sourceRef:
         kind: HelmRepository
         name: traefik
         namespace: admin
   interval: 1m
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+      remediateLastFailure: true
   values:
     image:
       registry: hmctsprod.azurecr.io
@@ -45,8 +55,9 @@ spec:
     service:
       annotations:
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-    access:
-      enabled: true
+    logs:
+      access:
+        enabled: true
     rbac:
       enabled: true
     autoscaling:
@@ -58,8 +69,9 @@ spec:
       maxUnavailable: "50%"
     ports:
       websecure:
-        tls:
-          enabled: false
+        http:
+          tls:
+            enabled: false
     instanceLabelOverride: traefik
     tolerations:
       - key: CriticalAddonsOnly
