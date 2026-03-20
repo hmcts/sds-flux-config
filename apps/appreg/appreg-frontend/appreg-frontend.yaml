@@ -16,5 +16,5 @@ spec:
   values:
     nodejs:
       replicas: 2
-      image: hmctsprod.azurecr.io/appreg/frontend:prod-4dae952-20260320105532 # {"$imagepolicy": "flux-system:appreg-frontend"}
+      image: hmctsprod.azurecr.io/appreg/frontend:prod-ee336ec-20260320110925 # {"$imagepolicy": "flux-system:appreg-frontend"}
       disableTraefikTls: true
