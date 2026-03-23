@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: postgres
+    namespace: cath
+type: Opaque
+stringData:
+    PASSWORD: ENC[AES256_GCM,data:TZkcJMLEI0bJGyPHeSJRrnUQHp3Ix3ZAQHamCX4D8hs=,iv:ZHXfTRB3Bm/UpcthZB+oWKpCVZ8SRjQDYjrDZo02/Ak=,tag:BlP6PeypNmvmzOARg0gyHg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv:
+        - vault_url: https://dtssharedservicesdevkv.vault.azure.net
+          name: sops-key
+          version: 2beba064ddfe454482ad0133af2cf0fd
+          created_at: "2026-03-23T10:35:17Z"
+          enc: gtFqnoOXj6kdSNeKmXiQxmc7Re8OOCk0sNGXK6eZjWfqLp34knMogJzUjzGfridICONUaaNiNVtg8UmtbWyHqfCMoqKogda3GoeiGacFCV3e8S8q7gal58n9VrXeZniJdm6jDW2BureNhRcThqfFSU99MAS90fgCtg9fv7EWtVCiXlpk0zKO7-fOCXfMI9NPoZkmTpSAddNN4PT5MPcNW7OFyESEp_wmy2IGfi1qWRnaFpudKKtb6WSqHO3aTSmpOEJ7U5sNcd04W4y45pt80kyp4TtsBCZ98Hfve_KJrbD2D9g7D8YBGTmJNXTuRYKkENRNOFutAQ_znoGymR41FA
+    hc_vault: []
+    age: []
+    lastmodified: "2026-03-23T10:35:17Z"
+    mac: ENC[AES256_GCM,data:00LiG2oxEVhkqIzALwK/uWzPs7eqXvNBxSuQ7g8UtxNl4QVtV/Z2hdZnuwd0VeUA4bkmxG8/fhFn6fkj4TYA1xgjgG6wOn/sw1UY+pz5bYNJ9jz9An/WiOKrYA77Y7jdwE5XRhqk6GURN6fmL0jytKHqp++QfdG5KOmmpAEfEkI=,iv:/FeZFAQ0/9cbWTgXE75OjSBC/YbT9LuWsjQG1Beu+Qk=,tag:WokBcmWZRh8M449lTtCJfg==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.1
