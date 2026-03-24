@@ -12,7 +12,7 @@ spec:
         pip-ss-kv:
           resourceGroup: pip-ss-test-rg
           secrets:
-            - name: gov-uk-notify-test-api-key
+            - name: gov-uk-notify-api-key
               alias: NOTIFY_API_KEY
             - name: app-pip-publication-services-id
               alias: CLIENT_ID
