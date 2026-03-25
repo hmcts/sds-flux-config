@@ -6,7 +6,7 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/pip/frontend:pr-1607-5c16e34-20260325123653
+      image: hmctsprod.azurecr.io/pip/frontend:pr-1607-b23498b-20260325132425
       keyVaults:
         pip-ss-kv:
           resourceGroup: pip-ss-test-rg
@@ -61,8 +61,6 @@ spec:
               alias: SSO_SG_ADMIN_LOCAL
             - name: sso-sg-system-admin
               alias: SSO_SG_SYSTEM_ADMIN
-            - name: cath-mi-client-id
-              alias: MANAGED_IDENTITY_CLIENT_ID
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
       environment:
@@ -78,6 +76,7 @@ spec:
         SESSION_COOKIE_SAME_SITE: lax
         CRIME_IDAM_URL: https://login.sit.cjscp.org.uk
         THIRD_PARTY_KEY_VAULT: pip-ss-tp-kv-test
+        MANAGED_IDENTITY_CLIENT_ID: 0e0c8682-a038-4aa8-9619-bb88a7ba9357
       autoscaling:
         enabled: true
         cpu:
