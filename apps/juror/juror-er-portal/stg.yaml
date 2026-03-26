@@ -9,4 +9,6 @@ spec:
     nodejs:
       ingressHost: juror-er.staging.apps.hmcts.net
       environment:
-        RESTART: 1
+        API_ENDPOINT: https://juror-api.staging.platform.hmcts.net/api/v1
+        REDIRECT_URI: https://juror-er.staging.apps.hmcts.net/auth/redirect
+        POST_LOGOUT_REDIRECT_URI: https://juror-er.staging.apps.hmcts.net
