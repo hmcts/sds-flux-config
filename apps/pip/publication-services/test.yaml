@@ -7,7 +7,7 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      image: hmctsprod.azurecr.io/pip/publication-services:pr-568-86195f4-20260323161747
+      image: hmctsprod.azurecr.io/pip/publication-services:pr-568-b9f3945-20260325181245
       keyVaults:
         pip-ss-kv:
           resourceGroup: pip-ss-test-rg
@@ -42,8 +42,6 @@ spec:
               alias: XHIBIT_S3_ACCESS_KEY
             - name: xhibit-s3-access-key-secret
               alias: XHIBIT_S3_SECRET_KEY
-            - name: cath-mi-client-id
-              alias: MANAGED_IDENTITY_CLIENT_ID
       replicas: 2
       ingressHost: pip-publication-services.test.platform.hmcts.net
       environment:
@@ -55,6 +53,7 @@ spec:
         NOTIFY_CRIME_SIGN_IN_LINK: https://pip-frontend.test.platform.hmcts.net/crime-login
         XHIBIT_S3_BUCKET_NAME: staging.xhibit.justice.gov.uk
         THIRD_PARTY_KEY_VAULT: pip-ss-tp-kv-test
+        MANAGED_IDENTITY_CLIENT_ID: 0e0c8682-a038-4aa8-9619-bb88a7ba9357
       memoryRequests: 1200Mi
       autoscaling:
         enabled: true
