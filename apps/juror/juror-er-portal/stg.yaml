@@ -8,3 +8,5 @@ spec:
   values:
     nodejs:
       ingressHost: juror-er.staging.apps.hmcts.net
+      environment:
+        RESTART: 1
