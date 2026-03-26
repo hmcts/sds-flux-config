@@ -10,6 +10,7 @@ spec:
     appName: juror-synapse-shir
     namespace: juror
     labels:
+      ignored-by-dynatrace: "true"
       app.kubernetes.io/instance: juror-synapse-shir-deployment
       app.kubernetes.io/name: juror-synapse-shir-deployment
     image: hmctsprod.azurecr.io/mi/adf-integration-runtime:prod-6858f71-20251111140116 #{"$imagepolicy": "flux-system:juror-adf-shir"}
