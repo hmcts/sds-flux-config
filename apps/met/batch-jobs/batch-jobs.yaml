@@ -34,7 +34,7 @@ spec:
   releaseName: libragob-batch-ams-reporting
   interval: 5m
   values:
-    image: hmctsprod.azurecr.io/libragob/ams-reporting:prod-f51647c1-1774337477 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
+    image: hmctsprod.azurecr.io/libragob/ams-reporting:prod-5018f5d7-1774851666 #{"$imagepolicy": "flux-system:libragob-batch-ams-reporting"}
     schedule: "*/1 * * * *"
     suspend: false
     saEnabled: false
