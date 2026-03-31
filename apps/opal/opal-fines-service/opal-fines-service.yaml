@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/opal/fines-service:prod-d03829f-20260331111257 # {"$imagepolicy": "flux-system:opal-fines-service"}
+      image: hmctsprod.azurecr.io/opal/fines-service:prod-bfa67aa-20260331150115 # {"$imagepolicy": "flux-system:opal-fines-service"}
       disableTraefikTls: true
