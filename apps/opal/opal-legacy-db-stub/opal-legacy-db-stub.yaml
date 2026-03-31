@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/opal/legacy-db-stub:prod-5ef2d64-20260331092743 # {"$imagepolicy": "flux-system:opal-legacy-db-stub"}
+      image: hmctsprod.azurecr.io/opal/legacy-db-stub:prod-20a99c4-20260331101736 # {"$imagepolicy": "flux-system:opal-legacy-db-stub"}
       disableTraefikTls: true
