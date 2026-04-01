@@ -7,7 +7,6 @@ spec:
   values:
     java:
       replicas: 2
-      image: hmctsprod.azurecr.io/pip/data-management:pr-864-d1b2c27-20260326170708
       ingressHost: pip-data-management.staging.platform.hmcts.net
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.staging.platform.hmcts.net
