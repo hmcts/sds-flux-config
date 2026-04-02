@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: hmctsprod.azurecr.io/juror/public:prod-d74a258-20260326142113 # {"$imagepolicy": "flux-system:juror-public-pr"}
+      image: hmctsprod.azurecr.io/juror/public:pr-385-fb789d8-20260330143428 # {"$imagepolicy": "flux-system:juror-public-pr"}
       ingressHost: juror-public.test.apps.hmcts.net
       environment:
         DUMMY_ENV_VAR: 1
