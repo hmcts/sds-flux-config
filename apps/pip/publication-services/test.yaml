@@ -7,41 +7,6 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      image: hmctsprod.azurecr.io/pip/publication-services:pr-568-b9f3945-20260325181245
-      keyVaults:
-        pip-ss-kv:
-          resourceGroup: pip-ss-test-rg
-          secrets:
-            - name: gov-uk-notify-api-key
-              alias: NOTIFY_API_KEY
-            - name: app-pip-publication-services-id
-              alias: CLIENT_ID
-            - name: app-pip-publication-services-pwd
-              alias: CLIENT_SECRET
-            - name: app-tenant-id
-              alias: TENANT_ID
-            - name: app-pip-publication-services-scope
-              alias: APP_URI
-            - name: app-pip-data-management-scope
-              alias: DATA_MANAGEMENT_AZ_API
-            - name: app-pip-account-management-scope
-              alias: ACCOUNT_MANAGEMENT_AZ_API
-            - name: pip-team-email
-              alias: PI_TEAM_EMAIL
-            - name: courtel-certificate
-              alias: THIRD_PARTY_CERTIFICATE
-            - name: app-insights-java-connection-string
-              alias: APP_INSIGHTS_CONNECTION_STRING
-            - name: REDIS-V6-HOST
-              alias: REDIS_HOST
-            - name: REDIS-V6-PORT
-              alias: REDIS_PORT
-            - name: REDIS-V6-PASSWORD
-              alias: REDIS_PASSWORD
-            - name: xhibit-s3-access-key
-              alias: XHIBIT_S3_ACCESS_KEY
-            - name: xhibit-s3-access-key-secret
-              alias: XHIBIT_S3_SECRET_KEY
       replicas: 2
       ingressHost: pip-publication-services.test.platform.hmcts.net
       environment:
