@@ -4,7 +4,7 @@ resources:
   - ../../../apps/flux-system/test/base
   - ../../../apps/admin/base/kustomize.yaml
   - ../../../apps/azure-devops/base/kustomize.yaml
-  - ../../../apps/dynatrace/dynatrace-crds/kustomize.yaml
+  - ../../../apps/dynatrace/dynatrace-crds-upgrade/kustomize.yaml
   - ../../../apps/dynatrace/base/kustomize.yaml
   - ../../../apps/dynatrace/dynakube/kustomize.yaml
   - ../../../apps/mi/base/kustomize.yaml
@@ -32,5 +32,4 @@ patches:
   - path: ../../../apps/toffee/test/base/kustomize.yaml
   - path: ../../../apps/admin/test/base/kustomize.yaml
   - path: ../../../apps/neuvector/crds/kustomize.yaml
-  - path: ../../../apps/dynatrace/dynatrace-crds-upgrade/kustomize.yaml
   - path: ../../../apps/neuvector/patching-crds/kustomize.yaml
