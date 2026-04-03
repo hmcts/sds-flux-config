@@ -20,6 +20,9 @@ spec:
         CRIME_IDAM_URL: https://login.cjscp.org.uk
         RETRIGGER_PODS: "true"
         DYNATRACE_LINK: https://js-cdn.dynatrace.com/jstag/17177a07246/bf00910jpo/165456bd422f1a7d_complete.js
+        THIRD_PARTY_KEY_VAULT: pip-ss-tp-kv-prod
+        MANAGED_IDENTITY_CLIENT_ID: a48b526e-e843-4c01-864b-45dcb6b44862
+
       autoscaling:
         enabled: true
         cpu:

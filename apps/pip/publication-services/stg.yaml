@@ -21,6 +21,8 @@ spec:
         HIGH_CAPACITY_MAX_EMAILS: 1000
         NOTIFY_CRIME_SIGN_IN_LINK: https://pip-frontend.staging.platform.hmcts.net/crime-login
         XHIBIT_S3_BUCKET_NAME: staging.xhibit.justice.gov.uk
+        THIRD_PARTY_KEY_VAULT: pip-ss-tp-kv-stg
+        MANAGED_IDENTITY_CLIENT_ID: 8d0ead51-3b31-44df-a78e-ada4eea9fe87
       memoryRequests: 1200Mi
       autoscaling:
         enabled: true
