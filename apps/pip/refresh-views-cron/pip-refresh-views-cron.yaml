@@ -6,7 +6,7 @@ spec:
   releaseName: pip-refresh-views-cron
   values:
     job:
-      image: hmctsprod.azurecr.io/pip/cron-trigger:prod-bc9bd0e-20260409132158 # {"$imagepolicy": "flux-system:pip-data-management-expired-artefacts-cron"}
+      image: hmctsprod.azurecr.io/pip/cron-trigger:prod-db8923a-20260410103847 # {"$imagepolicy": "flux-system:pip-data-management-expired-artefacts-cron"}
       disableTraefikTls: true
   chart:
     spec:
