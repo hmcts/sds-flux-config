@@ -8,7 +8,6 @@ spec:
     nodejs:
       replicas: 2
       ingressHost: pip-frontend.test.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/pip/frontend:pr-1629-321f605-20260227134748
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
@@ -21,6 +20,8 @@ spec:
         B2C_URL: https://sign-in.pip-frontend.test.platform.hmcts.net/pip-frontend.test.platform.hmcts.net
         SESSION_COOKIE_SAME_SITE: lax
         CRIME_IDAM_URL: https://login.sit.cjscp.org.uk
+        THIRD_PARTY_KEY_VAULT: pip-ss-tp-kv-test
+        MANAGED_IDENTITY_CLIENT_ID: 0e0c8682-a038-4aa8-9619-bb88a7ba9357
       autoscaling:
         enabled: true
         cpu:

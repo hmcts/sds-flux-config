@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: juror-synapse-shir-deployment
+  namespace: juror
+spec:
+  releaseName: juror-synapse-shir
+  values:
+    labels:
+      ignored-by-dynatrace: "true"
+      app.kubernetes.io/instance: juror-synapse-shir-deployment
+      app.kubernetes.io/name: juror-synapse-shir-deployment
+    image: hmctsprod.azurecr.io/mi/adf-integration-runtime:prod-6858f71-20251111140116 #{"$imagepolicy": "flux-system:juror-adf-shir"}
+    replicaCount: 1
+    memoryLimits: '4096Mi'
+    environment: "prod"
+    fullKeyVaultName: "baubais-prod-kv"
+    keyVaultName: "baubais-kv"
+    resourceGroup: "baubais-data-factory-rg-prod"
+    subscriptionId: "5ca62022-6aa2-4cee-aaa7-e7536c8d566c"
+    tenantId: "531ff96d-0ae9-462a-8d2d-bec7c0b42082"

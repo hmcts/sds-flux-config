@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: postgres
+  namespace: cath
+type: Opaque
+stringData:
+  PASSWORD: ENC[AES256_GCM,data:lzSgXwSIRJxbhz9zGMumvWkWLX9ldtnyA0tsFljH/Hc=,iv:RFTcyhX/89d7oUTNU+5B27+Eb8vos/BSy4rSmGKkG8A=,tag:udGIv3Wu2iC1yuCnuBB6+A==,type:str]
+  HOST: ENC[AES256_GCM,data:OmEOPFUx5QRX810wwMsec3LRSXYLqQauQejJZCkT5ttOnxES,iv:8F4YwBtF5OlcO/lN7kpSpgCfB0y5maTL3AIx05wOUOQ=,tag:YL9+PS0UKXAySc+lwcwEpQ==,type:str]
+  USER: ENC[AES256_GCM,data:fXwMqxI=,iv:HLanuV1D2vC9DzHOZt+hdhzekMhN3DP92WQ0WL1KK+Q=,tag:rLdJzPQwUTEReklwrm2Bdw==,type:str]
+  PORT: ENC[AES256_GCM,data:vs0Pog==,iv:wj2t70CYAz70KY/sI4WZXRFwOf6ewhdJB+GqRJzwHgM=,tag:cInD85R19d/vTSvRdlmIow==,type:str]
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicesdevkv.vault.azure.net
+      name: sops-key
+      version: 2beba064ddfe454482ad0133af2cf0fd
+      created_at: "2026-03-23T11:30:20Z"
+      enc: Xi_GQWQg5EgQE_W-h6A9Q0468O1esdSClS3pCxiHS_GR5tTCaGC0whtf7-roTr8JFP3CK3hbn3puDRWU1fE5nYmyy_f1zGEIT-lrd5DZo_hLOc5rniT_XhgoSBoQnUJKjn8rJS0G0Dwi50QMIs9Pja7b0-BcVjTHy0sDTmmrBGwRIU_VIDAvrY-6QP1LJ6hhHDf7fNY6h3gwndk7aaI2GpS52tdIQXkMlqRirqH72YhTkziZNnkxlLzFCgZz5kcx6TCVyLiPdS0LOX8kKtr9MYxEqCkiQc7mVvhiBY7JlsujkoDS4iOIoigRhwfHDJmNkdKQfZS7soVpLdhncPA7bQ
+  hc_vault: []
+  age: []
+  lastmodified: "2026-03-23T11:30:20Z"
+  mac: ENC[AES256_GCM,data:VD5aKuKK7I+padIrTIIQvCBj+s0JX6jRrNrAYl1wlk2DTXqIQtK+4mY/DBxOqxxcQA75CqtpF+C9XwXUmZgJGzfUE32sOqzpyYCd8CKNAT8tig5H39N116x/OP7M4naS1oqR/fQHvTZcJhF2mrnAJDUPeS0+rgsKeirxjcd0c7s=,iv:SMxkU/46J2QH7sSKvVefcTn3cUkYuv7xFlnL2MWxjM8=,tag:ThPFV4+jFcVJV6diQEaFFA==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.1

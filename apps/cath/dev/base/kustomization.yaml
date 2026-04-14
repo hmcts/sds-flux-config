@@ -7,7 +7,12 @@ resources:
   - ../../../base/workload-identity
   - ../../../base/slack-provider/dev
   - ../../../azureserviceoperator-system/resources/resource-group.yaml
+  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres.yaml
+  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
+  - ../sops-secrets
+  - ../aso/cath-postgres-extensions.yaml
 namespace: cath
 patches:
   - path: ../../identity/dev.yaml
   - path: ../../serviceaccount/stg.yaml
+  - path: ../aso/cath-postgres.yaml

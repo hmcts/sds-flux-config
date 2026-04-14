@@ -4,6 +4,7 @@ resources:
   - ../../base
   - ../../../base/slack-provider/prod
   - ../../../rbac/db-query-job-role.yaml
+  - ../../juror-eric-shir/juror-adf-shir.yaml
 namespace: juror
 patches:
   - path: ../../juror-scheduler-api/prod.yaml
@@ -13,4 +14,5 @@ patches:
   - path: ../../juror-bureau/prod.yaml
   - path: ../../juror-er-portal/prod.yaml
   - path: ../../juror-api/prod.yaml
+  - path: ../../juror-eric-shir/prod.yaml
   - path: ../../serviceaccount/prod.yaml

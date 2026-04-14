@@ -26,7 +26,7 @@ spec:
     activeDeadlineSeconds: 600
     restartPolicy: Never
     kind: CronJob
-    image: hmctspublic.azurecr.io/imported/bitnami/kubectl:1.33.4
+    image: hmctsprod.azurecr.io/hmcts-kubectl/kubectl:prod-bf4d2b1b-1772541610
     command:
       - /bin/sh
       - -c

@@ -1,0 +1,13 @@
+apiVersion: dbforpostgresql.azure.com/v1api20230601preview
+kind: FlexibleServersConfiguration
+metadata:
+  name: azure-extensions
+  namespace: cath
+  annotations:
+    serviceoperator.azure.com/reconcile-policy: detach-on-delete
+spec:
+  owner:
+    name: cath-dev
+  azureName: azure.extensions
+  source: user-override
+  value: "pgcrypto"
