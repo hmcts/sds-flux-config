@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/pdda/public-display-data-aggregator:prod-c16209d-20260402101507 # {"$imagepolicy": "flux-system:pdda-public-display-data-aggregator"}
+      image: hmctsprod.azurecr.io/pdda/public-display-data-aggregator:prod-1b4cf30-20260410145215 # {"$imagepolicy": "flux-system:pdda-public-display-data-aggregator"}
       disableTraefikTls: true
