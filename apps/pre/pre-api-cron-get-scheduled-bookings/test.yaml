@@ -10,6 +10,6 @@ spec:
     job:
       suspend: true
       schedule: "30 13 * * *"
-      image: sdshmctspublic.azurecr.io/pre/api:pr-1317
+      image: hmctsprod.azurecr.io/pre/api:pr-1317
       environment:
         PLATFORM_ENV_TAG: Testing
