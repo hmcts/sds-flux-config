@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: opal-rm-frontend
+  namespace: opal
+spec:
+  releaseName: opal-rm-frontend
+  values:
+    nodejs:
+      ingressHost: opal-rm-frontend.test.platform.hmcts.net
+      environment:
+        DUMMY_VAR: 0
+        FRONTEND_HOSTNAME: https://opal-rm-frontend.test.platform.hmcts.net
+        OPAL_API_URL: https://opal-fines-service.test.platform.hmcts.net
+        OPAL_FINES_SERVICE_API_URL: https://opal-fines-service.test.platform.hmcts.net
+        OPAL_USER_SERVICE_API_URL: https://opal-user-service.test.platform.hmcts.net
