@@ -7,10 +7,10 @@ spec:
   releaseName: opal-rm-frontend
   values:
     nodejs:
-      ingressHost: opal-rm-frontend.staging.platform.hmcts.net
+      ingressHost: opal-rm-frontend.staging.apps.hmcts.net
       environment:
         DUMMY_VAR: 0
-        FRONTEND_HOSTNAME: https://opal-rm-frontend.staging.platform.hmcts.net
+        FRONTEND_HOSTNAME: https://opal-rm-frontend.staging.apps.hmcts.net
         OPAL_API_URL: https://opal-fines-service.staging.platform.hmcts.net
         OPAL_FINES_SERVICE_API_URL: https://opal-fines-service.staging.platform.hmcts.net
         FEATURES_IP_LOGGING_ENABLED: true
