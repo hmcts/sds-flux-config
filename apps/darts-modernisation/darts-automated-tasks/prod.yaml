@@ -9,7 +9,7 @@ spec:
     java:
       memoryLimits: '6G'
       environment:
-        RESTART_ME: '002'
+        RESTART_ME: '003'
         DARTS_GATEWAY_URL: http://darts-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
         DARTS_LOG_LEVEL: INFO
@@ -27,4 +27,4 @@ spec:
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_RPO_TOTAL_CATCHUP_HOURS: 12
-        ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
+        ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 37

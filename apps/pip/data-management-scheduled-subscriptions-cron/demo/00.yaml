@@ -6,8 +6,8 @@ spec:
   releaseName: pip-data-management-scheduled-subscriptions-cron
   values:
     job:
-      schedule: "30 10 * * 0,2,4,6"
+      schedule: "30 9 * * 0,2,4,6"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.demo.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.demo.platform.hmcts.net
-        TRIGGER_TYPE: SUBSCRIPTIONS
+        TRIGGER_TYPE: SCHEDULED_LIST_TYPE_SUBSCRIPTIONS

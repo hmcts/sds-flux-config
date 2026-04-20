@@ -7,7 +7,7 @@ spec:
   releaseName: darts-automated-tasks
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/api:pr-3169-bd92582-20260325091601 #{"$imagepolicy": "flux-system:darts-api-demo"}
+      image: hmctsprod.azurecr.io/darts/api:pr-3169-52e391e-20260413145149 #{"$imagepolicy": "flux-system:darts-api-demo"}
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.demo.apps.hmcts.net
@@ -20,7 +20,7 @@ spec:
         ARM_RPO_DURATION: 24h
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         RESET_POD: true
-        RESTART: 003
+        RESTART: 004
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         ENABLE_ARM_V5_2_UPGRADE: true
