@@ -21,6 +21,8 @@ spec:
         KV_CONFIG_TREE: /mnt/secrets/libragob-test-kv/
         LOG4J_DEBUG: true
         LOGGING_LEVEL_ROOT: DEBUG
+        THEMIS_GATEWAY_MESSAGEAUDITSUPPRESSION: ON
+        MESSAGE_AUDIT_SUPPRESSION: ON
         TEMP_VAR: 1
         DAC_NUMBER_OF_INSTANCES: 3
       keyVaults:
