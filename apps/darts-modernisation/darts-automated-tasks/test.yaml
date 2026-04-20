@@ -7,12 +7,12 @@ spec:
   releaseName: darts-automated-tasks
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/api:pr-3234-d7407b9-20260415143231 #{"$imagepolicy": "flux-system:darts-api-test"}
+      image: hmctsprod.azurecr.io/darts/api:pr-3233-a0d826c-20260413121650 #{"$imagepolicy": "flux-system:darts-api-test"}
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.test.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART: 003
+        RESTART: 005
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
