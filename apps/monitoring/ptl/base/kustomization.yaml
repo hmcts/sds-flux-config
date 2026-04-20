@@ -8,6 +8,9 @@ resources:
 - ../../version-reporter
 - ../../version-reporter/ptl/version-reporter.enc.yaml
 - ../../version-reporter/ptl/github-token.enc.yaml
+- ../../version-reporter/ptl/rbac-wi.yaml
 - ../../cveinfo
+- ../../../base/workload-identity
 patches:
 - path: ../../version-reporter/ptl/ptl.yaml
+- path: ../../serviceaccount/ptl.yaml
