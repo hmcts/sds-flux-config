@@ -9,6 +9,7 @@ resources:
   - ../../opal-file-handler/opal-file-handler.yaml
   - ../../opal-external-api/opal-external-api.yaml
   - ../../opal-frontend/opal-frontend.yaml
+  - ../../opal-rm-frontend/opal-rm-frontend.yaml
   - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
   - ../../opal-log-audit-service/opal-log-audit-service.yaml
   - ../../opal-service-auth-provider-app/opal-service-auth-provider-app.yaml
@@ -23,6 +24,7 @@ patches:
   - path: ../../opal-file-handler/stg.yaml
   - path: ../../opal-external-api/stg.yaml
   - path: ../../opal-frontend/stg.yaml
+  - path: ../../opal-rm-frontend/stg.yaml
   - path: ../../opal-legacy-db-stub/stg.yaml
   - path: ../../opal-log-audit-service/stg.yaml
   - path: ../../opal-service-auth-provider-app/stg.yaml
