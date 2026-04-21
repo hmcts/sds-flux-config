@@ -1,19 +1,19 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: opal-logging-service
+  name: opal-rm-frontend
   namespace: opal
 spec:
-  releaseName: opal-logging-service
+  releaseName: opal-rm-frontend
   chart:
     spec:
-      chart: ./stable/opal-logging-service
+      chart: ./stable/opal-rm-frontend
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
         namespace: flux-system
       interval: 1m
   values:
-    java:
-      image: hmctsprod.azurecr.io/opal/logging-service:prod-511c0e2-20260421080431 # {"$imagepolicy": "flux-system:opal-logging-service"}
+    nodejs:
+      image: hmctsprod.azurecr.io/opal/rm-frontend:prod-9dae7d9-20260416141118 # {"$imagepolicy": "flux-system:opal-rm-frontend"}
       disableTraefikTls: true
