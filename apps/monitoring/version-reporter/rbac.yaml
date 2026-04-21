@@ -10,6 +10,9 @@ subjects:
   - kind: ServiceAccount
     name: version-reporter-service-sa
     namespace: monitoring
+  - kind: ServiceAccount
+    name: monitoring
+    namespace: monitoring
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1

@@ -9,5 +9,5 @@ spec:
     java:
       ingressHost: opal-user-service.staging.platform.hmcts.net
       environment:
-        RESTART_FLAG: 1
-        OPAL_FRONTEND_URL: https://opal-frontend.staging.platform.hmcts.net
+        DUMMY_VAR: 0
+        OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net

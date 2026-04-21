@@ -7,9 +7,9 @@ spec:
   releaseName: opal-frontend-test
   values:
     nodejs:
-      ingressHost: opal-frontend-test.staging.platform.hmcts.net
+      ingressHost: opal-frontend-test.staging.apps.hmcts.net
       environment:
         DUMMY_VAR: 0
-        FRONTEND_HOSTNAME: https://opal-frontend-test.staging.platform.hmcts.net
+        FRONTEND_HOSTNAME: https://opal-frontend-test.staging.apps.hmcts.net
         OPAL_API_URL: https://opal-fines-service.staging.platform.hmcts.net
         OPAL_FINES_SERVICE_API_URL: https://opal-fines-service.staging.platform.hmcts.net

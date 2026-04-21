@@ -7,10 +7,10 @@ spec:
   releaseName: opal-frontend
   values:
     nodejs:
-      ingressHost: opal-frontend.demo.platform.hmcts.net
+      ingressHost: opal-frontend.demo.apps.hmcts.net
       environment:
         DUMMY_VAR: 0
-        FRONTEND_HOSTNAME: https://opal-frontend.demo.platform.hmcts.net
+        FRONTEND_HOSTNAME: https://opal-frontend.demo.apps.hmcts.net
         OPAL_API_URL: https://opal-fines-service.demo.platform.hmcts.net
         OPAL_FINES_SERVICE_API_URL: https://opal-fines-service.demo.platform.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
