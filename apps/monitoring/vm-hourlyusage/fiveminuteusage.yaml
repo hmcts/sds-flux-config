@@ -27,33 +27,17 @@ spec:
     successfulJobsHistoryLimit: 5
     backoffLimit: 3
     restartPolicy: Never
-    serviceAccountName: version-reporter-service-sa
+    serviceAccountName: monitoring
     kind: CronJob
     image: hmctsprod.azurecr.io/version-reporter-service/hourlyusage:prod-f3f157f-20260421134808 #{"$imagepolicy": "flux-system:vm-hourlyusage"}
     imagePullPolicy: Always
     environment:
-      CLUSTER_NAME: ss-prod-00-aks
+      CLUSTER_NAME: ss-${ENVIRONMENT}-${CLUSTER}-aks
       AZURE_STORAGE_CONTAINER: hmctsfiveminutedatasource
       AZURE_STORAGE_URL: https://finopsdataptlsa.blob.core.windows.net
       COSMOS_DB_URI: https://sds-platform-version-reporter.documents.azure.com:443/
       COSMOS_DB_NAME: reports
       COSMOS_DB_CONTAINER: hourlyusage
-    secrets:
-      COSMOS_KEY:
-        secretRef: version-reporter
-        key: cosmos_key
-      AZURE_TENANT_ID:
-        secretRef: version-reporter
-        key: tenant_id
-      AZURE_CLIENT_ID:
-        secretRef: version-reporter
-        key: client_id
-      AZURE_CLIENT_SECRET:
-        secretRef: version-reporter
-        key: client_secret
-      AZURE_STORAGE_ACCESS_KEY:
-        secretRef: vm-hourlyusage
-        key: access_key
     nodeSelector:
       kubernetes.io/os: linux
     tolerations:
