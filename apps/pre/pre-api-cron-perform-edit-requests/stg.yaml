@@ -11,5 +11,6 @@ spec:
       suspend: false
       schedule: "*/5 * * * *" # every 5 mins
       image: hmctsprod.azurecr.io/pre/api:prod-22b4a04-20260420162526 # {"$imagepolicy": "flux-system:pre-api"}
+      environment:
         PLATFORM_ENV_TAG: Staging
         ENABLE_NEW_EMAIL_SERVICE: true
