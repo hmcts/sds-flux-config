@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/juror/public:prod-b4705cb-20260416140518 # {"$imagepolicy": "flux-system:juror-public"}
+      image: hmctsprod.azurecr.io/juror/public:prod-82f74ec-20260423132028 # {"$imagepolicy": "flux-system:juror-public"}
       startupPeriod: 30
       memoryRequests: '1Gi'
       cpuRequests: '500m'
