@@ -16,7 +16,7 @@ spec:
       triggerPodIdentityIdentityId: "e5cc98d4-6190-430d-8904-6f74b731e5ad" # keda-ptl-mi
     memoryLimits: 7Gi
     cpuRequests: 500m
-    cpuLimits: 4
+    cpuLimits: 6
     triggers:
       - type: azure-pipelines
         poolID: "45"
