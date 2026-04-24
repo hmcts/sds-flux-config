@@ -8,7 +8,7 @@ resources:
   - ../../../apps/dynatrace/base/kustomize.yaml
   - ../../../apps/dynatrace/dynakube/kustomize.yaml
   - ../../../apps/mi/base/kustomize.yaml
-#  - ../../../apps/neuvector/crds/kustomize.yaml
+#  - ../../../apps/neuvector/neuvector-crds/kustomize.yaml
   - ../../../apps/neuvector/base/kustomize.yaml
   - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/kube-system/base/kustomize.yaml
@@ -33,4 +33,3 @@ patches:
   - path: ../../../apps/toffee/test/base/kustomize.yaml
   - path: ../../../apps/admin/test/base/kustomize.yaml
 #  - path: ../../../apps/neuvector/crds/kustomize.yaml
-#  - path: ../../../apps/neuvector/patching-crds/kustomize.yaml

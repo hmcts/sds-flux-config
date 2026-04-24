@@ -9,7 +9,7 @@ resources:
   - ../../../apps/mi/base/kustomize.yaml
   - ../../../apps/azure-devops/base/kustomize.yaml
   - ../../../apps/admin/base/kustomize.yaml
-#  - ../../../apps/neuvector/crds/kustomize.yaml
+#  - ../../../apps/neuvector/neuvector-crds/kustomize.yaml
   - ../../../apps/neuvector/base/kustomize.yaml
   - ../../../apps/pip/base/kustomize.yaml
   - ../../../apps/cath/base/kustomize.yaml
@@ -34,5 +34,5 @@ patches:
       annotationSelector: hmcts.github.com/kustomize-defaults != disabled
   - path: ../../../apps/toffee/stg/base/kustomize.yaml
   - path: ../../../apps/admin/stg/base/kustomize.yaml
-#  - path: ../../../apps/neuvector/crds/kustomize.yaml
-#  - path: ../../../apps/neuvector/patching-crds/kustomize.yaml
+#  - path: ../../../apps/neuvector/neuvector-crds/kustomize.yaml
+
