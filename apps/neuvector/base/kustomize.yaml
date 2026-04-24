@@ -16,8 +16,6 @@ metadata:
   namespace: flux-system
 spec:
   path: ./apps/neuvector/${ENVIRONMENT}/${CLUSTER}
-  dependsOn:
-    - name: neuvector-crds
   postBuild:
     substitute:
       NAMESPACE: "neuvector"
