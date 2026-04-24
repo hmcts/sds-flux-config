@@ -5,5 +5,5 @@ resources:
   - fluentbit-log.enc.yaml
   - nv-storage-secret.enc.yaml
 patches:
-  - path: ../../neuvector/prod/prod.yaml
+#  - path: ../../neuvector/prod/prod.yaml
   - path: ../../serviceaccount/prod.yaml
