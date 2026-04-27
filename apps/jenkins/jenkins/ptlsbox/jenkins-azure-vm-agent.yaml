@@ -103,7 +103,7 @@ spec:
                             galleryResourceGroup: "hmcts-image-gallery-rg"
                             gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                             galleryImageDefinition: "jenkins-ubuntu-v2"
-                            galleryImageVersion: "24.04.78"
+                            galleryImageVersion: "24.04.79"
                         <<: *vm_template_values_anchor
                       - templateName: "cnp-jenkins-build-only-builders"
                         templateDesc: "Jenkins build-only build agents for HMCTS"
@@ -118,7 +118,7 @@ spec:
                             galleryResourceGroup: "hmcts-image-gallery-rg"
                             gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                             galleryImageDefinition: "jenkins-ubuntu-v2"
-                            galleryImageVersion: "24.04.78"
+                            galleryImageVersion: "24.04.79"
                         <<: *vm_template_values_anchor
                       - templateName: "cnp-jenkins-builders-sbox"
                         templateDesc: "Jenkins build agents for SDS sbox environment"
@@ -133,7 +133,7 @@ spec:
                             galleryResourceGroup: "hmcts-image-gallery-rg"
                             gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                             galleryImageDefinition: "jenkins-ubuntu-v2"
-                            galleryImageVersion: "24.04.78"
+                            galleryImageVersion: "24.04.79"
                         <<: *vm_template_values_anchor
                       - templateName: "cnp-jenkins-builders-ptlsbox"
                         templateDesc: "Jenkins build agents for SDS ptlsbox environment"
@@ -148,5 +148,5 @@ spec:
                             galleryResourceGroup: "hmcts-image-gallery-rg"
                             gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                             galleryImageDefinition: "jenkins-ubuntu-v2"
-                            galleryImageVersion: "24.04.78"
+                            galleryImageVersion: "24.04.79"
                         <<: *vm_template_values_anchor
