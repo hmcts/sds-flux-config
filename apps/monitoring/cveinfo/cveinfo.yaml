@@ -34,7 +34,7 @@ spec:
     restartPolicy: Never
     serviceAccountName: version-reporter-service-sa
     kind: CronJob
-    image: hmctsprod.azurecr.io/version-reporter-service/cveinfo:prod-3db07bd-20260420070800 #{"$imagepolicy": "flux-system:cveinfo"}
+    image: hmctsprod.azurecr.io/version-reporter-service/cveinfo:prod-f6a0995-20260427070802 #{"$imagepolicy": "flux-system:cveinfo"}
     imagePullPolicy: Always
     environment:
       MAX_BATCH_SIZE: 1000
