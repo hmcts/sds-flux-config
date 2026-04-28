@@ -7,6 +7,7 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
+      image: sdshmctspublic.azurecr.io/darts/portal:pr-2330
       ingressHost: darts.ithc.apps.hmcts.net
       environment:
         RESTART_ME: '001'
