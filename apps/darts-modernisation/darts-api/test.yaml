@@ -41,6 +41,7 @@ spec:
         ARM_RPO_TOTAL_CATCHUP_HOURS: 12
         ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
         RUN_DB_MIGRATION_ON_STARTUP: false
+        ARM_DOWN_FOR_MAINTENANCE: false
     function:
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
@@ -50,3 +51,4 @@ spec:
         ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
+        ARM_DOWN_FOR_MAINTENANCE: false
