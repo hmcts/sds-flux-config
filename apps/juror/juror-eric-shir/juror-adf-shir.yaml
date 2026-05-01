@@ -14,7 +14,7 @@ spec:
       ignored-by-dynatrace: "true"
       app.kubernetes.io/instance: juror-synapse-shir-deployment
       app.kubernetes.io/name: juror-synapse-shir-deployment
-    image: hmctsprod.azurecr.io/mi/adf-integration-runtime:prod-6858f71-20251111140116 #{"$imagepolicy": "flux-system:juror-adf-shir"}
+    image: hmctsprod.azurecr.io/mi/adf-integration-runtime:prod-c06a1c9-20260501114016 #{"$imagepolicy": "flux-system:juror-adf-shir"}
     additionalEnv:
       AUTH_KEY_SECRET_NAME: juror-shir-key
     keyVaultSecrets:
