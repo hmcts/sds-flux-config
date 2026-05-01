@@ -118,8 +118,8 @@ spec:
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                      uamiID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/managed-identities-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-dev-mi
                       <<: *vm_template_values_anchor
+                      uamiID: /subscriptions/867a878b-cb68-4de5-9741-361ac9e178b6/resourceGroups/managed-identities-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-dev-mi
                     - templateName: "cnp-jenkins-builders-stg"
                       templateDesc: "Jenkins build agents for SDS stg environment"
                       labels: "ubuntu-stg"
@@ -135,8 +135,8 @@ spec:
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                      uamiID: /subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/managed-identities-stg-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-stg-mi
                       <<: *vm_template_values_anchor
+                      uamiID: /subscriptions/74dacd4f-a248-45bb-a2f0-af700dc4cf68/resourceGroups/managed-identities-stg-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-stg-mi
                     - templateName: "cnp-jenkins-builders-ithc"
                       templateDesc: "Jenkins build agents for SDS ithc environment"
                       labels: "ubuntu-ithc"
@@ -152,8 +152,8 @@ spec:
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                      uamiID: /subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourceGroups/managed-identities-ithc-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ithc-mi
                       <<: *vm_template_values_anchor
+                      uamiID: /subscriptions/ba71a911-e0d6-4776-a1a6-079af1df7139/resourceGroups/managed-identities-ithc-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ithc-mi
                     - templateName: "cnp-jenkins-builders-test"
                       templateDesc: "Jenkins build agents for SDS test environment"
                       labels: "ubuntu-test"
@@ -169,8 +169,8 @@ spec:
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                      uamiID: /subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/managed-identities-test-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-test-mi
                       <<: *vm_template_values_anchor
+                      uamiID: /subscriptions/3eec5bde-7feb-4566-bfb6-805df6e10b90/resourceGroups/managed-identities-test-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-test-mi
                     - templateName: "cnp-jenkins-builders-demo"
                       templateDesc: "Jenkins build agents for SDS demo environment"
                       labels: "ubuntu-demo"
@@ -186,8 +186,8 @@ spec:
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                      uamiID: /subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/managed-identities-demo-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-demo-mi
                       <<: *vm_template_values_anchor
+                      uamiID: /subscriptions/c68a4bed-4c3d-4956-af51-4ae164c1957c/resourceGroups/managed-identities-demo-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-demo-mi
                     - templateName: "cnp-jenkins-builders-prod"
                       templateDesc: "Jenkins build agents for SDS prod environment"
                       labels: "ubuntu-prod"
@@ -203,8 +203,8 @@ spec:
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
-                      uamiID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/managed-identities-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-prod-mi
                       <<: *vm_template_values_anchor
+                      uamiID: /subscriptions/5ca62022-6aa2-4cee-aaa7-e7536c8d566c/resourceGroups/managed-identities-prod-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-prod-mi
                     - templateName: "cnp-jenkins-builders-ptl"
                       templateDesc: "Jenkins build agents for SDS ptl environment"
                       labels: "ubuntu-ptl"
