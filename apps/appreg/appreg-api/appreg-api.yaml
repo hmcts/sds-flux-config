@@ -16,5 +16,5 @@ spec:
   values:
     java:
       replicas: 2
-      image: hmctsprod.azurecr.io/appreg/api:prod-2fd762a-20260507152815 # {"$imagepolicy": "flux-system:appreg-api"}
+      image: hmctsprod.azurecr.io/appreg/api:prod-42f7b6b-20260507160258 # {"$imagepolicy": "flux-system:appreg-api"}
       disableTraefikTls: true
