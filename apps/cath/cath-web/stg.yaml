@@ -4,3 +4,6 @@ metadata:
   name: cath-web
 spec:
   releaseName: cath-web
+  values:
+    nodejs:
+      ingressHost: cath-web.staging.platform.hmcts.net
