@@ -7,3 +7,5 @@ spec:
   values:
     nodejs:
       ingressHost: cath-web.staging.platform.hmcts.net
+      environment:
+        BASE_URL: https://cath-web.staging.platform.hmcts.net
