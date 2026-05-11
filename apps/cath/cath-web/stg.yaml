@@ -2,6 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: cath-web
+  namespace: cath
 spec:
   releaseName: cath-web
   values:
