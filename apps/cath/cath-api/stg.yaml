@@ -6,7 +6,6 @@ spec:
   releaseName: cath-api
   values:
     nodejs:
-      ingressHost: cath-web.staging.platform.hmcts.net
+      ingressHost: cath-api.staging.platform.hmcts.net
       environment:
-        BASE_URL: https://cath-web.staging.platform.hmcts.net
         ENABLE_TEST_SUPPORT: "true"
