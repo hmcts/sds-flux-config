@@ -10,12 +10,13 @@ spec:
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/cath-postgres
+      chart: cath-postgres
+      version: ">=0.0.1-0"
       sourceRef:
-        kind: GitRepository
-        name: hmcts-charts
+        kind: HelmRepository
+        name: hmctspublic-oci
         namespace: flux-system
-      interval: 5m
+      interval: 1m
   install:
     disableWait: true
   upgrade:
