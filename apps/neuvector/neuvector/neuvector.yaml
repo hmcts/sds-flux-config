@@ -182,67 +182,66 @@ spec:
           schedule: "0 0 * * *"
       groups:
         defaultGroups:
-        - name: allnamespaces
-          criteria:
-            - key: namespace
-              op: =
-              value: '*'
-        - name: nv.kube-dns.kube-system
-          criteria:
-            - key: domain
-              op: =
-              value: kube-system
-        - name: appinsights-endpoints
-          criteria:
-            - key: address
-              op: =
-              value: dc.services.visualstudio.com
-            - key: address
-              op: =
-              value: rt.services.visualstudio.com
-            - key: address
-              op: =
-              value: dc.applicationinsights.microsoft.com
-            - key: address
-              op: =
-              value: euw.rt.prod.applicationinsights.trafficmanager.net
-        - name: azurepostgres-endpoint
-          criteria:
-            - key: address
-              op: =
-              value: '*.postgres.database.azure.com'
-        - name: servicebus-endpoint
-          criteria:
-            - key: address
-              op: =
-              value: '*.servicebus.windows.net'
-        - name: govuknotify-api
-          criteria:
-            - key: address
-              op: =
-              value: api.notifications.service.gov.uk
-        - name: govukpay-api
-          criteria:
-            - key: address
-              op: =
-              value: publicapi.payments.service.gov.uk
-        - name: mta-reform-endpoint
-          criteria:
-            - key: address
-              op: =
-              value: mta.reform.hmcts.net
-        - name: cnp-idam-api
-          criteria:
-            - key: address
-              op: =
-              value: idam-api.platform.hmcts.net
-        - name: crime-idam-namespace
-          criteria:
-            - key: namespace
-              op: =
-              value: crime-idam
-      customGroups: []          
-
+          - name: allnamespaces
+            criteria:
+              - key: namespace
+                op: =
+                value: '*'
+          - name: nv.kube-dns.kube-system
+            criteria:
+              - key: domain
+                op: =
+                value: kube-system
+          - name: appinsights-endpoints
+            criteria:
+              - key: address
+                op: =
+                value: dc.services.visualstudio.com
+              - key: address
+                op: =
+                value: rt.services.visualstudio.com
+              - key: address
+                op: =
+                value: dc.applicationinsights.microsoft.com
+              - key: address
+                op: =
+                value: euw.rt.prod.applicationinsights.trafficmanager.net
+          - name: azurepostgres-endpoint
+            criteria:
+              - key: address
+                op: =
+                value: '*.postgres.database.azure.com'
+          - name: servicebus-endpoint
+            criteria:
+              - key: address
+                op: =
+                value: '*.servicebus.windows.net'
+          - name: govuknotify-api
+            criteria:
+              - key: address
+                op: =
+                value: api.notifications.service.gov.uk
+          - name: govukpay-api
+            criteria:
+              - key: address
+                op: =
+                value: publicapi.payments.service.gov.uk
+          - name: mta-reform-endpoint
+            criteria:
+              - key: address
+                op: =
+                value: mta.reform.hmcts.net
+          - name: cnp-idam-api
+            criteria:
+              - key: address
+                op: =
+                value: idam-api.platform.hmcts.net
+          - name: crime-idam-namespace
+            criteria:
+              - key: namespace
+                op: =
+                value: crime-idam
+        customGroups: []
   chart:
     spec:
       chart: neuvector-azure-keyvault
