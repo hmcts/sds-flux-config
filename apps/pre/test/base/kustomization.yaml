@@ -18,6 +18,7 @@ resources:
   - ../../pre-api-cron-cleanup-b2c-alternative-emails/pre-api-cron-cleanup-b2c-alternative-emails.yaml
   - ../../pre-api-cron-vodafone-mk-import/pre-api-cron-vodafone-mk-import.yaml
   - ../../pre-api-cron-update-alt-email-field/pre-api-cron-update-alt-email-field.yaml
+  - ../../pre-api-cron-re-encode-recordings/pre-api-cron-re-encode-recordings.yaml
   - ../../../rbac/nonprod-role.yaml
   - ../../../base/slack-provider/test
 namespace: pre
@@ -41,4 +42,5 @@ patches:
   - path: ../../pre-api-cron-cleanup-b2c-alternative-emails/test.yaml
   - path: ../../pre-api-cron-vodafone-mk-import/test.yaml
   - path: ../../pre-api-cron-update-alt-email-field/test.yaml
+  - path: ../../pre-api-cron-re-encode-recordings/test.yaml
   - path: ../../serviceaccount/test.yaml
