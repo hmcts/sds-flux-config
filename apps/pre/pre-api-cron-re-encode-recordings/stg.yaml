@@ -8,11 +8,11 @@ spec:
     global:
       jobKind: CronJob
     job:
-      schedule: "0 13 12 5 *" # 2pm BST - 12 May
+      schedule: "0 11 13 5 *" # 12pm BST - 13 May
       suspend: false
       memoryRequests: "1Gi"
       memoryLimits: "2Gi"
-      image: hmctsprod.azurecr.io/pre/api:staging-2b95268-20260512110318 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:staging-4d3957a-20260513090617 # {"$imagepolicy": "flux-system:stg-pre-api"}
       environment:
         PLATFORM_ENV_TAG: Staging
         REENCODE_RECORDINGS_FORCE: "false"
