@@ -9,6 +9,6 @@ spec:
       jobKind: CronJob
     job:
       schedule: "15 19 * * *" # 7:15 PM UTC
-      image: hmctsprod.azurecr.io/pre/api:staging-2b95268-20260512110318 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:staging-4d3957a-20260513090617 # {"$imagepolicy": "flux-system:stg-pre-api"}
       environment:
         PLATFORM_ENV_TAG: Staging
