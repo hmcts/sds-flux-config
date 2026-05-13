@@ -11,3 +11,4 @@ spec:
       environment:
         RESTART_FLAG: 1
         OPAL_LOGGING_TEST_SUPPORT_ENABLED: true
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg

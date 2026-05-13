@@ -12,4 +12,4 @@ spec:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
         OPAL_LEGACY_GATEWAY_URL: https://cloudgobgateway.test.platform.hmcts.net/opal
-        FLYWAY_LOCATIONS: classpath:db/migration/allEnvs, classpath:db/migration/stgOnly
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg

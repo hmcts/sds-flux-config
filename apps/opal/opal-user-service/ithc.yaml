@@ -11,3 +11,4 @@ spec:
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/ithc
