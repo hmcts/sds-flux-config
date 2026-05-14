@@ -23,6 +23,6 @@ spec:
             - name: opal-CONSOLIDATED-POSTGRES-USER-DATABASE
               alias: OPAL_USER_DB_NAME
       environment:
-        DUMMY_VAR: 0
+        DUMMY_VAR: 1
         OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
