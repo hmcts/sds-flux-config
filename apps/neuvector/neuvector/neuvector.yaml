@@ -12,7 +12,28 @@ spec:
       autoScan: true
     rules:
       admission:
-        enable: false
+        enable: true
+        mode: "monitor" # one of: monitor, protect
+        defaultRules:
+          - action: allow
+            comment: Allow admin namespaces
+            criteria:
+              - name: namespace
+                op: containsAny
+                value: knode-system,monitoring,flux-system,dynatrace,azureserviceoperator-system,cert-manager,keda,admin,kured,artifactory,pact-broker
+          - action: allow
+            comment: Allow HMCTS registries
+            criteria:
+              - name: imageRegistry
+                op: containsAny
+                value: https://hmctsprod.azurecr.io/,https://hmctssbox.azurecr.io/,https://hmctspublic.azurecr.io/,https://hmctsprivate.azurecr.io/,https://sdshmctspublic.azurecr.io/
+          - action: deny
+            comment: Default deny
+            criteria:
+              - name: imageRegistry
+                op: containsAny
+                value: https://localhost/,https://*.*/
+        customRules: []
       response:
         policies:
           - name: admission-control-denied
@@ -159,13 +180,75 @@ spec:
           # If false, cve updater will not be installed
           enabled: true
           schedule: "0 0 * * *"
+      groups:
+        defaultGroups:
+          - name: allnamespaces
+            criteria:
+              - key: namespace
+                op: =
+                value: '*'
+          - name: nv.kube-dns.kube-system
+            criteria:
+              - key: domain
+                op: =
+                value: kube-system
+          - name: appinsights-endpoints
+            criteria:
+              - key: address
+                op: =
+                value: dc.services.visualstudio.com
+              - key: address
+                op: =
+                value: rt.services.visualstudio.com
+              - key: address
+                op: =
+                value: dc.applicationinsights.microsoft.com
+              - key: address
+                op: =
+                value: euw.rt.prod.applicationinsights.trafficmanager.net
+          - name: azurepostgres-endpoint
+            criteria:
+              - key: address
+                op: =
+                value: '*.postgres.database.azure.com'
+          - name: servicebus-endpoint
+            criteria:
+              - key: address
+                op: =
+                value: '*.servicebus.windows.net'
+          - name: govuknotify-api
+            criteria:
+              - key: address
+                op: =
+                value: api.notifications.service.gov.uk
+          - name: govukpay-api
+            criteria:
+              - key: address
+                op: =
+                value: publicapi.payments.service.gov.uk
+          - name: mta-reform-endpoint
+            criteria:
+              - key: address
+                op: =
+                value: mta.reform.hmcts.net
+          - name: cnp-idam-api
+            criteria:
+              - key: address
+                op: =
+                value: idam-api.platform.hmcts.net
+          - name: crime-idam-namespace
+            criteria:
+              - key: namespace
+                op: =
+                value: crime-idam
+        customGroups: []
   chart:
     spec:
       chart: neuvector-azure-keyvault
       # Make sure to update the CRDS when you change the version if required
       # https://github.com/hmcts/sds-flux-config/blob/master/apps/neuvector/neuvector-crds/kustomization.yaml
       # see the versioned folders at https://github.com/neuvector/manifests/blob/main/kubernetes/
-      version: 1.6.7
+      version: 1.6.13
       sourceRef:
         kind: HelmRepository
         name: hmctsprod-oci
