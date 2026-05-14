@@ -6,7 +6,7 @@ spec:
   releaseName: cath-postgres
   values:
     nodejs:
-      image: hmctspublic.azurecr.io/cath/cath-postgres:prod-0000000-00000000000000 # {"$imagepolicy": "flux-system:cath-postgres"}
+      image: hmctspublic.azurecr.io/cath/cath-postgres:prod-7b0d3ba-20260514133106 # {"$imagepolicy": "flux-system:cath-postgres"}
       disableTraefikTls: true
   chart:
     spec:
@@ -14,7 +14,7 @@ spec:
       version: ">=0.0.1-0"
       sourceRef:
         kind: HelmRepository
-        name: hmctsprod-oci     # correct
+        name: hmctsprod-oci # correct
         namespace: flux-system
       interval: 1m
   install:

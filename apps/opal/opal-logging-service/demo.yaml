@@ -8,3 +8,19 @@ spec:
   values:
     java:
       ingressHost: opal-logging-service.demo.platform.hmcts.net
+      image: hmctsprod.azurecr.io/opal/logging-service:pr-157
+      keyVaults:
+        opal:
+          secrets:
+            - name: opal-CONSOLIDATED-POSTGRES-HOST
+              alias: OPAL_LOGGING_DB_HOST
+            - name: opal-CONSOLIDATED-POSTGRES-PASS
+              alias: OPAL_LOGGING_DB_PASSWORD
+            - name: opal-CONSOLIDATED-POSTGRES-PORT
+              alias: OPAL_LOGGING_DB_PORT
+            - name: opal-CONSOLIDATED-POSTGRES-USER
+              alias: OPAL_LOGGING_DB_USERNAME
+            - name: opal-CONSOLIDATED-POSTGRES-LOGGING-DATABASE
+              alias: OPAL_LOGGING_DB_NAME
+      environment:
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo

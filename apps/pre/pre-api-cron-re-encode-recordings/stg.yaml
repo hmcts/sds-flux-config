@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pre-api-cron-re-encode-recordings
+  namespace: pre
+spec:
+  values:
+    global:
+      jobKind: CronJob
+    job:
+      schedule: "30 10 14 5 *" # 11.30pm BST - 14 May
+      suspend: false
+      memoryRequests: "1Gi"
+      memoryLimits: "2Gi"
+      image: hmctsprod.azurecr.io/pre/api:staging-1b879b3-20260514085957 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      environment:
+        PLATFORM_ENV_TAG: Staging
+        REENCODE_RECORDINGS_FORCE: "false"

@@ -8,7 +8,21 @@ spec:
   values:
     java:
       ingressHost: opal-fines-service.demo.platform.hmcts.net
+      image: hmctsprod.azurecr.io/opal/fines-service:pr-1772
+      keyVaults:
+        opal:
+          secrets:
+            - name: opal-CONSOLIDATED-POSTGRES-HOST
+              alias: OPAL_FINES_DB_HOST
+            - name: opal-CONSOLIDATED-POSTGRES-PASS
+              alias: OPAL_FINES_DB_PASSWORD
+            - name: opal-CONSOLIDATED-POSTGRES-PORT
+              alias: OPAL_FINES_DB_PORT
+            - name: opal-CONSOLIDATED-POSTGRES-USER
+              alias: OPAL_FINES_DB_USERNAME
+            - name: opal-CONSOLIDATED-POSTGRES-FINES-DATABASE
+              alias: OPAL_FINES_DB_NAME
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
-        FLYWAY_LOCATIONS: classpath:db/migration/allEnvs, classpath:db/migration/demoOnly
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo

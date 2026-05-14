@@ -8,6 +8,7 @@ resources:
   - ../../pre-api-cron-check-for-missing-recordings/pre-api-cron-check-for-missing-recordings.yaml
   - ../../pre-api-cron-get-scheduled-bookings/pre-api-cron-get-scheduled-bookings.yaml
   - ../../pre-api-cron-perform-edit-requests/pre-api-cron-perform-edit-requests.yaml
+  - ../../pre-api-cron-perform-re-encode-requests/pre-api-cron-perform-re-encode-requests.yaml
   - ../../pre-api-cron-process-capture-sessions/pre-api-cron-process-capture-sessions.yaml
   - ../../pre-api-cron-start-live-events/pre-api-cron-start-live-events.yaml
   - ../../pre-api-cron-vodafone-etl-fetch-data/pre-api-cron-vodafone-etl-fetch-data.yaml
@@ -18,6 +19,7 @@ resources:
   - ../../pre-api-cron-cleanup-b2c-alternative-emails/pre-api-cron-cleanup-b2c-alternative-emails.yaml
   - ../../pre-api-cron-vodafone-mk-import/pre-api-cron-vodafone-mk-import.yaml
   - ../../pre-api-cron-update-alt-email-field/pre-api-cron-update-alt-email-field.yaml
+  - ../../pre-api-cron-re-encode-recordings/pre-api-cron-re-encode-recordings.yaml
   - ../../../rbac/nonprod-role.yaml
   - ../../../base/slack-provider/test
 namespace: pre
@@ -31,6 +33,7 @@ patches:
   - path: ../../pre-api-cron-check-for-missing-recordings/test.yaml
   - path: ../../pre-api-cron-get-scheduled-bookings/test.yaml
   - path: ../../pre-api-cron-perform-edit-requests/test.yaml
+  - path: ../../pre-api-cron-perform-re-encode-requests/test.yaml
   - path: ../../pre-api-cron-process-capture-sessions/test.yaml
   - path: ../../pre-api-cron-start-live-events/test.yaml
   - path: ../../pre-api-cron-vodafone-etl-fetch-data/prod.yaml
@@ -41,4 +44,5 @@ patches:
   - path: ../../pre-api-cron-cleanup-b2c-alternative-emails/test.yaml
   - path: ../../pre-api-cron-vodafone-mk-import/test.yaml
   - path: ../../pre-api-cron-update-alt-email-field/test.yaml
+  - path: ../../pre-api-cron-re-encode-recordings/test.yaml
   - path: ../../serviceaccount/test.yaml

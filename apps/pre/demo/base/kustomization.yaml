@@ -10,6 +10,7 @@ resources:
   - ../../pre-api-cron-check-for-missing-recordings/pre-api-cron-check-for-missing-recordings.yaml
   - ../../pre-api-cron-get-scheduled-bookings/pre-api-cron-get-scheduled-bookings.yaml
   - ../../pre-api-cron-perform-edit-requests/pre-api-cron-perform-edit-requests.yaml
+  - ../../pre-api-cron-perform-re-encode-requests/pre-api-cron-perform-re-encode-requests.yaml
   - ../../pre-api-cron-process-capture-sessions/pre-api-cron-process-capture-sessions.yaml
   - ../../pre-api-cron-start-live-events/pre-api-cron-start-live-events.yaml
   - ../../pre-api-cron-vodafone-etl-fetch-data/pre-api-cron-vodafone-etl-fetch-data.yaml
@@ -21,6 +22,7 @@ resources:
   - ../../pre-api-cron-vodafone-mk-import/pre-api-cron-vodafone-mk-import.yaml
   - ../../pre-api-cron-capture-session-status-correction/pre-api-cron-capture-session-status-correction.yaml
   - ../../pre-api-cron-update-alt-email-field/pre-api-cron-update-alt-email-field.yaml
+  - ../../pre-api-cron-re-encode-recordings/pre-api-cron-re-encode-recordings.yaml
 
 namespace: pre
 patches:
@@ -33,6 +35,7 @@ patches:
   - path: ../../pre-api-cron-check-for-missing-recordings/demo.yaml
   - path: ../../pre-api-cron-get-scheduled-bookings/demo.yaml
   - path: ../../pre-api-cron-perform-edit-requests/demo.yaml
+  - path: ../../pre-api-cron-perform-re-encode-requests/demo.yaml
   - path: ../../pre-api-cron-start-live-events/demo.yaml
   - path: ../../pre-api-cron-vodafone-etl-fetch-data/demo.yaml
   - path: ../../pre-api-cron-vodafone-etl-migrate-resolved/demo.yaml
@@ -44,4 +47,5 @@ patches:
   - path: ../../pre-api-cron-vodafone-mk-import/demo.yaml
   - path: ../../pre-api-cron-capture-session-status-correction/demo.yaml
   - path: ../../pre-api-cron-update-alt-email-field/demo.yaml
+  - path: ../../pre-api-cron-re-encode-recordings/demo.yaml
   - path: ../../serviceaccount/demo.yaml
