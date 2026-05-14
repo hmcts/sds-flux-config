@@ -10,7 +10,7 @@ spec:
     job:
       suspend: true
       schedule: "0 19 * * *"
-      image: hmctsprod.azurecr.io/pre/api:pr-1440
+      image: hmctsprod.azurecr.io/pre/api:prod-36d92e3-20260513131910 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Testing
         ENABLE_NULL_DURATION_UPSERT: false
