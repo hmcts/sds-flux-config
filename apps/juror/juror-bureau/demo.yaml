@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: hmctsprod.azurecr.io/juror/bureau:pr-1163-702ca55-20260513105750 # {"$imagepolicy": "flux-system:juror-bureau-demo"}
+      image: hmctsprod.azurecr.io/juror/bureau:pr-1163-dc6dc26-20260514090225 # {"$imagepolicy": "flux-system:juror-bureau-demo"}
       ingressHost: juror.demo.apps.hmcts.net
       environment:
         SKIP_SSO: true
