@@ -22,6 +22,24 @@ spec:
               alias: OPAL_USER_DB_USERNAME
             - name: opal-CONSOLIDATED-POSTGRES-USER-DATABASE
               alias: OPAL_USER_DB_NAME
+            - name: app-insights-connection-string
+              alias: app-insights-connection-string
+            - name: AzureADTenantId
+              alias: AAD_TENANT_ID
+            - name: AzureADClientId
+              alias: AAD_CLIENT_ID
+            - name: AzureADClientSecret
+              alias: AAD_CLIENT_SECRET
+            - name: OpalTestUserPassword
+              alias: OPAL_TEST_USER_PASSWORD
+            - name: role-mapping-storage-container-name
+              alias: ROLE_MAPPING_STORAGE_CONTAINER_NAME
+            - name: storage-connection-string
+              alias: AZURE_STORAGE_CONNECTION_STRING
+            - name: storage-account-name
+              alias: AZURE_STORAGE_ACCOUNT_NAME
+            - name: redis-connection-string
+              alias: REDIS_CONNECTION_STRING
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
