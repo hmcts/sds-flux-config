@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: opal-user-service.demo.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/opal/user-service:pr-551
+      image: hmctsprod.azurecr.io/opal/user-service:pr-551
       keyVaults:
         opal:
           secrets:

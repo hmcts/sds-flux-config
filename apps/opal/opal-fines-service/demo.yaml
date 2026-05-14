@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: opal-fines-service.demo.platform.hmcts.net
-      image: sdshmctspublic.azurecr.io/opal/fines-service:pr-1772
+      image: hmctsprod.azurecr.io/opal/fines-service:pr-1772
       keyVaults:
         opal:
           secrets:
