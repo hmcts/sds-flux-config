@@ -8,6 +8,8 @@ spec:
   values:
     java:
       ingressHost: opal-user-service.test.platform.hmcts.net
+      image: hmctsprod.azurecr.io/opal/user-service:pr-551
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.test.apps.hmcts.net
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/perfTest
