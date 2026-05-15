@@ -8,7 +8,6 @@ spec:
   values:
     java:
       ingressHost: opal-user-service.staging.platform.hmcts.net
-      image: hmctsprod.azurecr.io/opal/user-service:pr-551
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net

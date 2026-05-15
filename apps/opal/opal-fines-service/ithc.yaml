@@ -8,7 +8,6 @@ spec:
   values:
     java:
       ingressHost: opal-fines-service.ithc.platform.hmcts.net
-      image: hmctsprod.azurecr.io/opal/fines-service:pr-1772
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
