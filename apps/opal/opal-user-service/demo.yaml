@@ -9,19 +9,6 @@ spec:
     java:
       ingressHost: opal-user-service.demo.platform.hmcts.net
       image: hmctsprod.azurecr.io/opal/user-service:pr-551
-      keyVaults:
-        opal:
-          secrets:
-            - name: opal-CONSOLIDATED-POSTGRES-HOST
-              alias: OPAL_USER_DB_HOST
-            - name: opal-CONSOLIDATED-POSTGRES-PASS
-              alias: OPAL_USER_DB_PASSWORD
-            - name: opal-CONSOLIDATED-POSTGRES-PORT
-              alias: OPAL_USER_DB_PORT
-            - name: opal-CONSOLIDATED-POSTGRES-USER
-              alias: OPAL_USER_DB_USERNAME
-            - name: opal-CONSOLIDATED-POSTGRES-USER-DATABASE
-              alias: OPAL_USER_DB_NAME
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
