@@ -10,5 +10,6 @@ spec:
       ingressHost: opal-log-audit-service.staging.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg
       pdb:
         enabled: false

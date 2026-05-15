@@ -8,7 +8,6 @@ spec:
   values:
     java:
       ingressHost: opal-logging-service.staging.platform.hmcts.net
-      image: hmctsprod.azurecr.io/opal/logging-service:pr-157
       environment:
         RESTART_FLAG: 0
         OPAL_LOGGING_TEST_SUPPORT_ENABLED: true
