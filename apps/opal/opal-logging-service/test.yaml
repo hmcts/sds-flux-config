@@ -8,3 +8,6 @@ spec:
   values:
     java:
       ingressHost: opal-logging-service.test.platform.hmcts.net
+      image: hmctsprod.azurecr.io/opal/logging-service:pr-157
+      environment:
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg
