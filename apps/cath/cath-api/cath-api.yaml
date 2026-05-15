@@ -6,7 +6,7 @@ spec:
   releaseName: cath-api
   values:
     nodejs:
-      image: hmctspublic.azurecr.io/cath/cath-api:prod-0000000-00000000000000 # {"$imagepolicy": "flux-system:cath-api"}
+      image: hmctspublic.azurecr.io/cath/cath-api:prod-59c1011-20260514160513 # {"$imagepolicy": "flux-system:cath-api"}
       disableTraefikTls: true
   chart:
     spec:
@@ -14,7 +14,7 @@ spec:
       version: ">=0.0.1-0"
       sourceRef:
         kind: HelmRepository
-        name: hmctsprod-oci     # correct
+        name: hmctsprod-oci # correct
         namespace: flux-system
       interval: 1m
   install:
