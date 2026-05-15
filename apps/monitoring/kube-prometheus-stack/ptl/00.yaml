@@ -72,3 +72,12 @@ spec:
           type: camptocamp-prometheus-alertmanager-datasource
           url: https://sds-alertmanager-01.platform.hmcts.net
           access: proxy
+
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      version: 85.0.3
+      sourceRef:
+        kind: HelmRepository
+        name: prometheus
+        namespace: monitoring
