@@ -10,6 +10,6 @@ spec:
       ingressHost: opal-user-service.staging.platform.hmcts.net
       image: hmctsprod.azurecr.io/opal/user-service:pr-551
       environment:
-        DUMMY_VAR: 0
+        DUMMY_VAR: 1
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg
