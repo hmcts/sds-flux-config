@@ -8,8 +8,8 @@ spec:
     global:
       jobKind: CronJob
     job:
-      schedule: "0 13 12 5 *" # 2pm BST - 12 May
-      suspend: true
+      schedule: "30 * * * *" # Run every hour on the half hour
+      suspend: false
       disableActiveClusterCheck: true
       memoryRequests: "1Gi"
       memoryLimits: "2Gi"
