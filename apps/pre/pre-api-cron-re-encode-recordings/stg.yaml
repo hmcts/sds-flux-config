@@ -10,6 +10,7 @@ spec:
     job:
       schedule: "30 10 14 5 *" # 11.30pm BST - 14 May
       suspend: false
+      disableActiveClusterCheck: false
       memoryRequests: "1Gi"
       memoryLimits: "2Gi"
       image: hmctsprod.azurecr.io/pre/api:staging-834b01b-20260518135319 # {"$imagepolicy": "flux-system:stg-pre-api"}
