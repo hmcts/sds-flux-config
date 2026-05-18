@@ -10,6 +10,6 @@ spec:
     job:
       suspend: false
       schedule: "0 8-19 * * 1-5"
-      image: hmctsprod.azurecr.io/pre/api:staging-04b6ae7-20260518122109 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:staging-834b01b-20260518135319 # {"$imagepolicy": "flux-system:stg-pre-api"}
       environment:
         PLATFORM_ENV_TAG: Staging
