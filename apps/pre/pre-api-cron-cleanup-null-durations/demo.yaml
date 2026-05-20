@@ -10,7 +10,7 @@ spec:
     job:
       suspend: false
       schedule: "50 15 * * Thu" # 4:50 BST, Thursday
-      image: hmctsprod.azurecr.io/pre/api:prod-c38e39b-20260519150538 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-ad85b5a-20260520110421 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Demo
         ENABLE_NULL_DURATION_UPSERT: true
