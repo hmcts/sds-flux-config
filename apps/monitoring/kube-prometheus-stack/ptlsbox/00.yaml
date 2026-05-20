@@ -13,7 +13,6 @@ spec:
         tls:
           - hosts:
               - sds-prometheus-00-ptl.sandbox.platform.hmcts.net
-
     alertmanager:
       ingress:
         hosts:
@@ -56,4 +55,3 @@ spec:
           type: camptocamp-prometheus-alertmanager-datasource
           url: https://sds-alertmanager-01.sandbox.platform.hmcts.net
           access: proxy
-
