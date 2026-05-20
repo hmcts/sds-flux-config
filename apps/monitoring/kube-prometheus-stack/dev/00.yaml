@@ -120,11 +120,3 @@ spec:
                 text: "{{ range .Alerts }}{{ .Annotations.message }}\n{{ end }}"
           - name: "null"
 
-  chart:
-    spec:
-      chart: kube-prometheus-stack
-      version: 85.0.3
-      sourceRef:
-        kind: HelmRepository
-        name: prometheus
-        namespace: monitoring
