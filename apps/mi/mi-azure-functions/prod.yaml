@@ -8,8 +8,10 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: hmctsprod.azurecr.io/mi/azure-functions:prod-40efb4a-20260327150914 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: hmctsprod.azurecr.io/mi/azure-functions:prod-c7ae692-20260521085224 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     replicaCount: 4
+    memoryLimits: '16384Mi'
+    cpuLimits: '8000m'
     env:
       ADF_RESOURCEGROUP: mi-ingestion-prod-rg
       ADF_NAME: mi-ingestion-adf-prod
