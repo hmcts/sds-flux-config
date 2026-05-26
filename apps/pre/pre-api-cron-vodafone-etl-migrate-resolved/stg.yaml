@@ -12,7 +12,7 @@ spec:
       suspend: true
       memoryRequests: '1Gi'
       memoryLimits: '2Gi'
-      image: hmctsprod.azurecr.io/pre/api:staging-ad3e8c6-20260526132647 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:staging-271497c-20260526145404 # {"$imagepolicy": "flux-system:stg-pre-api"}
       environment:
         PLATFORM_ENV_TAG: Staging
         ENABLE_NEW_EMAIL_SERVICE: true
