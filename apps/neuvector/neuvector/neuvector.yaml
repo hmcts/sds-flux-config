@@ -10,9 +10,6 @@ spec:
   chart:
     spec:
       chart: neuvector-azure-keyvault
-      # Make sure to update the CRDS when you change the version if required
-      # https://github.com/hmcts/sds-flux-config/blob/master/apps/neuvector/neuvector-crds/kustomization.yaml
-      # see the versioned folders at https://github.com/neuvector/manifests/blob/main/kubernetes/
       version: 1.6.13
       sourceRef:
         kind: HelmRepository
@@ -50,6 +47,104 @@ spec:
   values:
     config:
       autoScan: true
+    neuvector:
+      serviceAccount: neuvector
+      containerd:
+        enabled: false
+      internal:
+        autoGenerateCert: true  # controller spawns cert-upgrader job on fresh install to create neuvector-internal-certs
+        autoRotateCert: false   # cert-upgrader CronJob has no schedule (suspended); keep false to prevent accidental rotation on schedule change
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "2Gi"
+        limits:
+          cpu: 1
+          memory: 5Gi
+      controller:
+        replicas: 3
+        azureFileShare:
+          enabled: true
+          secretName: nv-storage-secret
+        ingress:
+          path: "/"
+          enabled: true
+          annotations:
+            kubernetes.io/ingress.class: traefik
+            traefik.ingress.kubernetes.io/router.tls: "true"
+        configmap:
+          enabled: true
+          data:
+            sysinitcfg.yaml: |
+              New_Service_Policy_Mode: Discover
+              Syslog_ip: fluentbit-log
+              Syslog_IP_Proto: 6
+              Syslog_Port: 5140
+              Syslog_Level: Warning
+              Syslog_status: true
+              Syslog_in_json: true
+              Syslog_Categories:
+                - event
+                - security-event
+                - audit
+              Syslog_In_Json: false
+              Scan_Config:
+                Auto_Scan: true
+              Cluster_Name: ${NV_CLUSTER_NAME}
+        affinity:
+          podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 100
+                podAffinityTerm:
+                  labelSelector:
+                    matchExpressions:
+                      - key: app
+                        operator: In
+                        values:
+                          - neuvector-controller-pod
+                  topologyKey: "kubernetes.io/hostname"
+      manager:
+        env:
+          ssl: false
+        ingress:
+          enabled: true
+          httpredirect: false
+          annotations:
+            kubernetes.io/ingress.class: traefik
+            traefik.ingress.kubernetes.io/router.tls: "false"
+        affinity:
+          podAntiAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 100
+                podAffinityTerm:
+                  labelSelector:
+                    matchExpressions:
+                      - key: app
+                        operator: In
+                        values:
+                          - neuvector-manager-pod
+                  topologyKey: "kubernetes.io/hostname"
+      cve:
+        scanner:
+          affinity:
+            podAntiAffinity:
+              preferredDuringSchedulingIgnoredDuringExecution:
+                - weight: 100
+                  podAffinityTerm:
+                    labelSelector:
+                      matchExpressions:
+                        - key: app
+                          operator: In
+                          values:
+                            - neuvector-scanner-pod
+                    topologyKey: "kubernetes.io/hostname"
+        updater:
+          # If false, cve updater will not be installed
+          enabled: true
+          schedule: "0 0 * * *"
+    groups:
+      defaultGroups: []
+      customGroups: []
     rules:
       admission:
         enable: true
@@ -254,96 +349,3 @@ spec:
                     op: =
                     value: '*'
         customRules: []
-    groups:
-      defaultGroups: []
-      customGroups: []
-    neuvector:
-      serviceAccount: neuvector
-      resources:
-        requests:
-          cpu: "100m"
-          memory: "2Gi"
-        limits:
-          cpu: 1
-          memory: 5Gi
-      controller:
-        ingress:
-          path: "/"
-          enabled: true
-          annotations:
-            kubernetes.io/ingress.class: traefik
-            traefik.ingress.kubernetes.io/router.tls: "true"
-        affinity:
-          podAntiAffinity:
-            preferredDuringSchedulingIgnoredDuringExecution:
-              - weight: 100
-                podAffinityTerm:
-                  labelSelector:
-                    matchExpressions:
-                      - key: app
-                        operator: In
-                        values:
-                          - neuvector-controller-pod
-                  topologyKey: "kubernetes.io/hostname"
-        replicas: 3
-        azureFileShare:
-          enabled: true
-          secretName: nv-storage-secret
-        configmap:
-          enabled: true
-          data:
-            sysinitcfg.yaml: |
-              New_Service_Policy_Mode: Discover
-              Syslog_ip: fluentbit-log
-              Syslog_IP_Proto: 6
-              Syslog_Port: 5140
-              Syslog_Level: Warning
-              Syslog_status: true
-              Syslog_in_json: true
-              Syslog_Categories:
-                - event
-                - security-event
-                - audit
-              Syslog_In_Json: false
-              Scan_Config:
-                Auto_Scan: true
-              Cluster_Name: ${NV_CLUSTER_NAME}
-      manager:
-        affinity:
-          podAntiAffinity:
-            preferredDuringSchedulingIgnoredDuringExecution:
-              - weight: 100
-                podAffinityTerm:
-                  labelSelector:
-                    matchExpressions:
-                      - key: app
-                        operator: In
-                        values:
-                          - neuvector-manager-pod
-                  topologyKey: "kubernetes.io/hostname"
-        env:
-          ssl: false
-        ingress:
-          enabled: true
-          httpredirect: false
-          annotations:
-            kubernetes.io/ingress.class: traefik
-            traefik.ingress.kubernetes.io/router.tls: "false"
-      cve:
-        scanner:
-          affinity:
-            podAntiAffinity:
-              preferredDuringSchedulingIgnoredDuringExecution:
-                - weight: 100
-                  podAffinityTerm:
-                    labelSelector:
-                      matchExpressions:
-                        - key: app
-                          operator: In
-                          values:
-                            - neuvector-scanner-pod
-                    topologyKey: "kubernetes.io/hostname"
-        updater:
-          # If false, cve updater will not be installed
-          enabled: true
-          schedule: "0 0 * * *"
