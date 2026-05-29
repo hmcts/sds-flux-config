@@ -33,6 +33,9 @@ spec:
             tag: 1.30.9
       JCasC:
         configScripts:
+          jobs: |
+            jobs:
+              - url: https://raw.githubusercontent.com/hmcts/sds-jenkins-config/feat/DTSPO-30152-update-dsl-job/jobdsl/organisations-beta.groovy
           welcome-message: |
             jenkins:
               systemMessage: >-
