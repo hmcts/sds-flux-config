@@ -8,7 +8,7 @@ spec:
   values:
     java:
       ingressHost: appreg-api.ithc.platform.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/api:prod-30283bd-20260601103431 # {"$imagepolicy": "flux-system:appreg-api"}
+      image: hmctsprod.azurecr.io/appreg/api:prod-cb56538-20260601120043 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "ITHC"
         LOG_LEVEL: "DEBUG"
