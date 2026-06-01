@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - github-app-credentials.enc.yaml
-  - ../../base/gotk-components.yaml
+  - gotk-components.yaml
   - ../../workload-identity
 patches:
   - path: ../../serviceaccount/prod.yaml
