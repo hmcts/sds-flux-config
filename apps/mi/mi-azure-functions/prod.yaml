@@ -8,7 +8,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-azure-functions-deployment
       app.kubernetes.io/name: mi-azure-functions-deployment
-    image: hmctsprod.azurecr.io/mi/azure-functions:prod-575cbdd-20260602195633 #{"$imagepolicy": "flux-system:mi-azure-functions"}
+    image: hmctsprod.azurecr.io/mi/azure-functions:prod-df46f08-20260602200439 #{"$imagepolicy": "flux-system:mi-azure-functions"}
     replicaCount: 4
     memoryLimits: '16384Mi'
     cpuLimits: '8000m'
