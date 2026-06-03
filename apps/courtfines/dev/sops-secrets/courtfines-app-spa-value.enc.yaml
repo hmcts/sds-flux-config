@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+    SPA_ACCESS_KEY: ENC[AES256_GCM,data:zjPVqQNkIL6EuupFKVpm59BS98wxjafJCU2leXP4,iv:9TQw0RPTSpXsp27dlWSe3tqCGvbVR7LDlfTFDAuYcE0=,tag:Kxx0m15nZeAYdkzHdpTwHQ==,type:str]
+    SPA_SECRET_KEY: ENC[AES256_GCM,data:3/jjZAIWg/SNwnEO9dnGvLOBRwad6qy39hhjV68P,iv:cccZpjU1a3d9FZY7LtPAgocDYCewrnltVtLiC6RiVGo=,tag:KLSnWnPu0V3btEaOugZdAg==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: spa
+    namespace: courtfines
+type: Opaque
+sops:
+    azure_kv:
+        - created_at: "2026-06-03T13:30:12Z"
+          enc: eXedVVHBG_T19WA6TdBiwAK8iZDSCx7mrMydcPa8CEucQ14Tr_YjRqdLGEkRhZNcb-BaOJbSmU428Y-NQpeWPq-q53C1o3BMlcVEqDMtUOkdARjE1r_pPWuz1IaiSlbHxX7izOn6c816j504btY5DMln-AAsc1xlonrd4m1iYEemGddJVObBfIQ3OFs30XM_cQmU31Q30oEmapXCKjN_L6DKjiedRTcx3NfUqFtYu_IjjEJJ7msTxnEFqG0EKqQpj9_Y3fBBN_p3Fc4I-c10an3O7smJtYyg-05pGHs_thdoAuvQPRsw4VE5d0I4ESebXWaIaT0WkDwfPeL0s_e83g
+          name: sops-key
+          vault_url: https://dtssharedservicesdevkv.vault.azure.net
+          version: 2beba064ddfe454482ad0133af2cf0fd
+    encrypted_regex: ^(data|stringData)$
+    lastmodified: "2026-06-03T13:30:17Z"
+    mac: ENC[AES256_GCM,data:FuuDREAVUnVbDp7izPjIoRGcN51ZlGs1wfmUnkUJeTXmapUGLiCs+AYwgAAM9oPVphao07Cs50aWYCyuhNsNfXBwm1sRuJ1Hxo34hOSuVvRozNhQJqFl7qO6baX5g9itv4sm3pQ0rCXuxh4HBDe0Q6+jlSIR6+DU7MArcUexuNE=,iv:WTyNoFnryNhRoL4aFOYwvGOfPWoWnW7MddwSGBWYd9I=,tag:qarSPgM5f3Yq3vZwzd+olA==,type:str]
+    version: 3.13.1
