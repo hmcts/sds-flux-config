@@ -5,6 +5,7 @@ metadata:
   namespace: dynatrace
 spec:
   apiUrl: https://yrk32651.live.dynatrace.com/api
+  dynatraceApiRequestThreshold: 7
   oneAgent:
     cloudNativeFullStack:
       annotations:
