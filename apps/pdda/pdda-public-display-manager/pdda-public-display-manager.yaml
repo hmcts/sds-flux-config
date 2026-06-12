@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/pdda/public-display-manager:prod-e7932b9-20260610124831 # {"$imagepolicy": "flux-system:pdda-public-display-manager"}
+      image: hmctsprod.azurecr.io/pdda/public-display-manager:prod-db60d53-20260612041007 # {"$imagepolicy": "flux-system:pdda-public-display-manager"}
       disableTraefikTls: true
