@@ -8,7 +8,7 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: hmctsprod.azurecr.io/juror/pnc:pr-231-8b87ade-20260611073412 # {"$imagepolicy": "flux-system:juror-pnc-pr"}
+      # image: hmctsprod.azurecr.io/juror/pnc:pr-231-5ee4c13-20260611091839 # {"$imagepolicy": "flux-system:juror-pnc-pr"}
       ingressHost: juror-pnc.ithc.platform.hmcts.net
       environment:
         PNC_SERVICE_PNC_TRAN_CODE: '#L0'
