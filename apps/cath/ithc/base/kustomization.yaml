@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ../../cath-web/cath-web.yaml
+  - ../../cath-api/cath-api.yaml
+  - ../../cath-crons/cath-crons.yaml
+  - ../../cath-postgres/cath-postgres.yaml
+  - ../../../base/slack-provider/stg
+namespace: cath
+patches:
+  - path: ../../identity/ithc.yaml
+  - path: ../../cath-web/ithc.yaml
+  - path: ../../cath-api/ithc.yaml
+  - path: ../../cath-crons/ithc.yaml
+  - path: ../../cath-postgres/ithc.yaml
+  - path: ../../serviceaccount/ithc.yaml

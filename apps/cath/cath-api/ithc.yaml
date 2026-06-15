@@ -1,0 +1,11 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cath-api
+spec:
+  releaseName: cath-api
+  values:
+    nodejs:
+      ingressHost: cath-api.ithc.platform.hmcts.net
+      environment:
+        ENABLE_TEST_SUPPORT: "true"

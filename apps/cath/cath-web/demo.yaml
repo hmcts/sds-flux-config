@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cath-web
+spec:
+  releaseName: cath-web
+  values:
+    nodejs:
+      ingressHost: cath-web.demo.platform.hmcts.net
+      environment:
+        BASE_URL: https://cath-web.demo.platform.hmcts.net
+        ENABLE_TEST_SUPPORT: "true"
