@@ -7,9 +7,9 @@ metadata:
 spec:
   imageRepositoryRef:
     name: opal-user-service
-#  filterTags:
-#    extract: $ts
-#    pattern: '^pr-1917-[a-f0-9]+-(?P<ts>[0-9]+)'
-#  policy:
-#    alphabetical:
-#      order: asc
+  filterTags:
+    extract: $ts
+    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'
+  policy:
+    alphabetical:
+      order: asc
