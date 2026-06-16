@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../opal-fines-service/image-repo.yaml
   - ../opal-fines-service/image-policy.yaml
+  - ../opal-fines-service/pr-image-policy.yaml
   - ../opal-logging-service/image-repo.yaml
   - ../opal-logging-service/image-policy.yaml
   - ../opal-frontend/image-repo.yaml
