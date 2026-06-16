@@ -11,8 +11,7 @@ spec:
       ingressHost: opal-frontend.test.apps.hmcts.net
       environment:
         DUMMY_VAR: 0
-        FRONTEND_HOSTNAME: failingHostname
-        #FRONTEND_HOSTNAME: https://opal-frontend.test.apps.hmcts.net
+        FRONTEND_HOSTNAME: https://opal-frontend.test.apps.hmcts.net
         OPAL_API_URL: https://opal-fines-service.test.platform.hmcts.net
         OPAL_FINES_SERVICE_API_URL: https://opal-fines-service.test.platform.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.test.platform.hmcts.net
