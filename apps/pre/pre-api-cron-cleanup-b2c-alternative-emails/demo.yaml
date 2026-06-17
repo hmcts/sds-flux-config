@@ -10,7 +10,7 @@ spec:
     job:
       suspend: false
       schedule: "0 20 * * *" # 8 pm, every day
-      image: hmctsprod.azurecr.io/pre/api:prod-33e6ead-20260610105225 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-510db7f-20260617111051 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Demo
         PORTAL_URL: https://pre-portal.demo.platform.hmcts.net/
