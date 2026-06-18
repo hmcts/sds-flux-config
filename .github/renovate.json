@@ -3,13 +3,5 @@
   "extends": [
     "local>hmcts/.github:renovate-config",
     "local>hmcts/.github//renovate/flux"
-  ],
-  "packageRules": [
-    {
-      "description": "TEMPORARY (jenkins-packer PR #302 / DTSPO-31776): freeze the ptlsbox agent image while testing uv on PR image 302.0.0 — remove this rule once testing is done and #302 is merged",
-      "matchFileNames": ["apps/jenkins/jenkins/ptlsbox/jenkins-azure-vm-agent.yaml"],
-      "matchPackageNames": ["hmcts/jenkins-packer"],
-      "enabled": false
-    }
   ]
 }
