@@ -11,7 +11,7 @@ spec:
       suspend: false
       disableActiveClusterCheck: true
       schedule: "2-59/5 * * * *" # every 5 mins, offset by 2 minutes
-      image: hmctsprod.azurecr.io/pre/api:prod-510db7f-20260617111051 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-1fcf612-20260618120812 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Production
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/
