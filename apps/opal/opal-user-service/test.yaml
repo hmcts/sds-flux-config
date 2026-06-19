@@ -7,7 +7,7 @@ spec:
   releaseName: opal-user-service
   values:
     java:
-      image: hmctsprod.azurecr.io/opal/user-service:pr-614-33c08f4-20260619123714 # {"$imagepolicy": "flux-system:opal-user-service-pr"}
+      image: hmctsprod.azurecr.io/opal/user-service:pr-614-529d5d7-20260619132830 # {"$imagepolicy": "flux-system:opal-user-service-pr"}
       ingressHost: opal-user-service.test.platform.hmcts.net
       environment:
         DUMMY_VAR: 1
