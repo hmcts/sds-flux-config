@@ -9,7 +9,7 @@ spec:
     name: opal-frontend
   filterTags:
     extract: $ts
-    pattern: '^prod-[a-f0-9]+-(?P<ts>[0-9]+)'
+    pattern: '^pr-2733-[a-f0-9]+-(?P<ts>[0-9]+)'
   policy:
     alphabetical:
       order: asc

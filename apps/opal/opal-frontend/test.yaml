@@ -7,6 +7,7 @@ spec:
   releaseName: opal-frontend
   values:
     nodejs:
+      image: hmctsprod.azurecr.io/opal/user-service:pr-614-fe0ce2d-20260618122820
       enabled: false
       ingressHost: opal-frontend.test.apps.hmcts.net
       environment:
