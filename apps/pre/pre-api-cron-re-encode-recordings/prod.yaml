@@ -8,7 +8,7 @@ spec:
     global:
       jobKind: CronJob
     job:
-      schedule: "30 * * * *" # Run hourly
+      schedule: "15 * * * *" # Run hourly
       suspend: false
       disableActiveClusterCheck: false
       memoryRequests: "1Gi"
