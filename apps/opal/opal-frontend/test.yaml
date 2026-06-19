@@ -7,10 +7,11 @@ spec:
   releaseName: opal-frontend
   values:
     nodejs:
+      image: hmctsprod.azurecr.io/opal/user-service:pr-614-fe0ce2d-20260618122820
       enabled: false
       ingressHost: opal-frontend.test.apps.hmcts.net
       environment:
-        DUMMY_VAR: 0
+        DUMMY_VAR: 1
         FRONTEND_HOSTNAME: https://opal-frontend.test.apps.hmcts.net
         OPAL_API_URL: https://opal-fines-service.test.platform.hmcts.net
         OPAL_FINES_SERVICE_API_URL: https://opal-fines-service.test.platform.hmcts.net
