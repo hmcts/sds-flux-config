@@ -8,12 +8,12 @@ spec:
     global:
       jobKind: CronJob
     job:
-      schedule: "30 * * * *" # Run hourly
+      schedule: "15 * * * *" # Run hourly
       suspend: false
       disableActiveClusterCheck: false
       memoryRequests: "1Gi"
       memoryLimits: "2Gi"
-      image: hmctsprod.azurecr.io/pre/api:prod-510db7f-20260617111051 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-1fcf612-20260618120812 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Production
         REENCODE_RECORDINGS_FORCE: "false"
