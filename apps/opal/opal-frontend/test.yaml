@@ -7,7 +7,6 @@ spec:
   releaseName: opal-frontend
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/opal/opal-frontend:pr-2733-3f06b8a-20260617145312 # {"$imagepolicy": "flux-system:opal-frontend"}
       enabled: false
       ingressHost: opal-frontend.test.apps.hmcts.net
       environment:
@@ -16,6 +15,3 @@ spec:
         OPAL_API_URL: https://opal-fines-service.test.platform.hmcts.net
         OPAL_FINES_SERVICE_API_URL: https://opal-fines-service.test.platform.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.test.platform.hmcts.net
-        AZURE_AD_CLIENT_ID: FAIL
-        AZURE_AD_CLIENT_SECRET: FAIL
-        AZURE_AD_TENANT_ID: FAIL
