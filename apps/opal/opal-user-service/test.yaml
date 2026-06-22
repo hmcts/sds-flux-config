@@ -7,9 +7,12 @@ spec:
   releaseName: opal-user-service
   values:
     java:
+      autoscaling:
+        enabled: true
       image: hmctsprod.azurecr.io/opal/user-service:pr-614-529d5d7-20260619132830 # {"$imagepolicy": "flux-system:opal-user-service-pr"}
       ingressHost: opal-user-service.test.platform.hmcts.net
       environment:
         DUMMY_VAR: 1
         OPAL_FRONTEND_URL: https://opal-frontend.test.apps.hmcts.net
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/perfTest
+        OPAL_LEGACY_GATEWAY_URL: FAIL
