@@ -8,6 +8,8 @@ spec:
   values:
     replicaCount: 0
     java:
+      autoscaling:
+        enabled: false
       enabled: false
       image: hmctsprod.azurecr.io/opal/user-service:pr-614-529d5d7-20260619132830 # {"$imagepolicy": "flux-system:opal-user-service-pr"}
       ingressHost: opal-user-service.test.platform.hmcts.net
