@@ -9,6 +9,7 @@ spec:
     replicaCount: 0
     java:
       autoscaling:
+        minReplicas: 0
         enabled: false
       enabled: false
       image: hmctsprod.azurecr.io/opal/user-service:pr-614-529d5d7-20260619132830 # {"$imagepolicy": "flux-system:opal-user-service-pr"}
