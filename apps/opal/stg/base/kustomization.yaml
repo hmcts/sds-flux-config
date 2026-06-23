@@ -6,7 +6,7 @@ resources:
   - ../../opal-fines-service/opal-fines-service.yaml
   - ../../opal-logging-service/opal-logging-service.yaml
   - ../../opal-user-service/opal-user-service.yaml
-  - ../../opal-file-handler/opal-file-handler.yaml
+  - ../../opal-file-handler-service/opal-file-handler-service.yaml
   - ../../opal-external-api/opal-external-api.yaml
   - ../../opal-frontend/opal-frontend.yaml
   - ../../opal-rm-frontend/opal-rm-frontend.yaml
@@ -22,7 +22,7 @@ patches:
   - path: ../../opal-fines-service/stg.yaml
   - path: ../../opal-logging-service/stg.yaml
   - path: ../../opal-user-service/stg.yaml
-  - path: ../../opal-file-handler/stg.yaml
+  - path: ../../opal-file-handler-service/stg.yaml
   - path: ../../opal-external-api/stg.yaml
   - path: ../../opal-frontend/stg.yaml
   - path: ../../opal-rm-frontend/stg.yaml
