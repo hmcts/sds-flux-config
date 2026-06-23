@@ -1,14 +1,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: opal-file-handler
+  name: opal-file-handler-service
   namespace: opal
 spec:
-  releaseName: opal-file-handler
+  releaseName: opal-file-handler-service
   values:
     java:
-      ingressHost: opal-file-handler.demo.platform.hmcts.net
+      ingressHost: opal-file-handler-service.test.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
-        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        OPAL_FRONTEND_URL: https://opal-frontend.test.apps.hmcts.net
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
