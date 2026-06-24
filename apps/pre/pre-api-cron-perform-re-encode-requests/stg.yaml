@@ -11,7 +11,7 @@ spec:
       suspend: false
       disableActiveClusterCheck: true
       schedule: "2-59/5 * * * *" # every 5 mins, offset from regular edit processing
-      image: hmctsprod.azurecr.io/pre/api:staging-b65f2d0-20260623151227 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:staging-ba91ca6-20260624144434 # {"$imagepolicy": "flux-system:stg-pre-api"}
       environment:
         PLATFORM_ENV_TAG: Staging
         ENABLE_NEW_EMAIL_SERVICE: true
