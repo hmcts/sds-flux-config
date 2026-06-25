@@ -8,9 +8,6 @@ spec:
   values:
     java:
       ingressHost: darts-api.platform.hmcts.net
-      replicas: 0
-      autoscaling:
-        enabled: false
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
