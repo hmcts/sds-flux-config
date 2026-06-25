@@ -13,7 +13,7 @@ spec:
       disableActiveClusterCheck: false
       memoryRequests: "1Gi"
       memoryLimits: "2Gi"
-      image: hmctsprod.azurecr.io/pre/api:staging-ba91ca6-20260624144434 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:staging-cb95f3a-20260625124548 # {"$imagepolicy": "flux-system:stg-pre-api"}
       environment:
         PLATFORM_ENV_TAG: Staging
         REENCODE_RECORDINGS_FORCE: "false"
