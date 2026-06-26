@@ -2,8 +2,6 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: cath-web
-  annotations:
-    reconcile.fluxcd.io/requestedAt: "2026-06-26T15:00:00Z" # add this line
 spec:
   releaseName: cath-web
   values:
