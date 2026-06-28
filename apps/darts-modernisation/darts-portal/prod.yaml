@@ -7,9 +7,6 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
-      replicas: 0
-      autoscaling:
-        enabled: false
       ingressHost: darts.apps.hmcts.net
       environment:
         DARTS_API_URL: https://darts-api.platform.hmcts.net

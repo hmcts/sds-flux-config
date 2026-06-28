@@ -8,9 +8,6 @@ spec:
   values:
     java:
       memoryLimits: '6G'
-      replicas: 0
-      autoscaling:
-        enabled: false
       environment:
         RESTART_ME: '004'
         DARTS_GATEWAY_URL: http://darts-gateway.platform.hmcts.net
