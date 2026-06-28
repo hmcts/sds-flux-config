@@ -5,10 +5,6 @@ metadata:
   namespace: darts-modernisation
 spec:
   releaseName: darts-api
-  install:
-    disableWait: true
-  upgrade:
-    disableWait: true
   values:
     java:
       ingressHost: darts-api.platform.hmcts.net
