@@ -10,7 +10,7 @@ spec:
     job:
       suspend: false
       schedule: "00 13 * * *"
-      image: hmctsprod.azurecr.io/pre/api:prod-73b2545-20260626141146 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-775dc1c-20260629151700 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Testing
         PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
