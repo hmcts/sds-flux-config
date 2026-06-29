@@ -5,10 +5,17 @@ metadata:
   namespace: darts-modernisation
 spec:
   releaseName: darts-api
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true
   values:
     java:
       image: hmctsprod.azurecr.io/darts/api:prod-b2be29f-20260625120853 # {"$imagepolicy": "flux-system:darts-api"}
       ingressHost: darts-api.ithc.platform.hmcts.net
+      replicas: 0
+      autoscaling:
+        enabled: false
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.ithc.platform.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
@@ -39,6 +46,13 @@ spec:
         ARM_DOWN_FOR_MAINTENANCE: false
     function:
       image: hmctsprod.azurecr.io/darts/api:prod-b2be29f-20260625120853 # {"$imagepolicy": "flux-system:darts-api"}
+      minReplicaCount: 0
+      maxReplicaCount: 1
+      triggers:
+        - type: postgres
+          connectionFromEnv: DARTS_API_DB_CONNECTION_STRING
+          query: "SELECT 1 WHERE FALSE;"
+          targetQueryValue: "0.9"
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
