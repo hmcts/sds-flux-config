@@ -9,9 +9,6 @@ spec:
     java:
       ingressHost: darts-gateway.ithc.platform.hmcts.net
       additionalIngressHosts: ["darts-proxy.ithc.platform.hmcts.net"]
-      replicas: 0
-      autoscaling:
-        enabled: false
       environment:
         DARTS_LOG_LEVEL: INFO
         DARTS_SOAP_REQUEST_LOG_LEVEL: TRACE
