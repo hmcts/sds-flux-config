@@ -6,7 +6,7 @@ spec:
   releaseName: cath-postgres
   values:
     nodejs:
-      image: hmctspublic.azurecr.io/cath/cath-postgres:prod-f247aa2-20260703144145 # {"$imagepolicy": "flux-system:cath-postgres"}
+      image: hmctspublic.azurecr.io/cath/cath-postgres:prod-d3f0540-20260703145826 # {"$imagepolicy": "flux-system:cath-postgres"}
       disableTraefikTls: true
   chart:
     spec:
