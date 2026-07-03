@@ -9,7 +9,7 @@ spec:
       jobKind: CronJob
     job:
       schedule: "0 * * * *"
-      image: hmctsprod.azurecr.io/pre/api:prod-1563244-20260702122725 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-d17f0be-20260703130658 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Testing
         PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
