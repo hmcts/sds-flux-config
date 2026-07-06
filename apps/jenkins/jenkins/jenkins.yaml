@@ -54,10 +54,10 @@ spec:
       resources:
         requests:
           cpu: "2000m"
-          memory: "4096Mi"
+          memory: "8192Mi"
         limits:
           cpu: "2000m"
-          memory: "4096Mi"
+          memory: "8192Mi"
       javaOpts: >-
         -XX:InitialRAMPercentage=30.0
         -XX:MaxRAMPercentage=65.0
@@ -162,7 +162,7 @@ spec:
           pipeline-config: |
             unclassified:
               globalDefaultFlowDurabilityLevel:
-                durabilityHint: PERFORMANCE_OPTIMIZED
+                durabilityHint: MAX_SURVIVABILITY
           sonar: |
             unclassified:
               sonarGlobalConfiguration:
