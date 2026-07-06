@@ -1,13 +1,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: opal-logging-service
+  name: opal-file-handler-service
   namespace: opal
 spec:
-  releaseName: opal-logging-service
+  releaseName: opal-file-handler-service
   values:
     java:
-      ingressHost: opal-logging-service.demo.platform.hmcts.net
+      ingressHost: opal-file-handler-service.ithc.platform.hmcts.net
       environment:
+        DUMMY_VAR: 0
+        OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
-        OPAL_LOGGING_TEST_SUPPORT_ENABLED: true

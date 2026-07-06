@@ -11,6 +11,6 @@ spec:
       suspend: false
       disableActiveClusterCheck: true
       schedule: "0 * * * *"
-      image: hmctsprod.azurecr.io/pre/api:prod-1fcf612-20260618120812 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-d17f0be-20260703130658 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PORTAL_URL: https://portal.pre-recorded-evidence.justice.gov.uk/

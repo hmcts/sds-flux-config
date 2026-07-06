@@ -10,7 +10,7 @@ spec:
       ingressHost: pre-api.staging.platform.hmcts.net
       memoryRequests: '3Gi'
       memoryLimits: '3Gi'
-      image: hmctsprod.azurecr.io/pre/api:staging-1fcf612-20260618120812 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:staging-d17f0be-20260703130658 # {"$imagepolicy": "flux-system:stg-pre-api"}
       environment:
         AZURE_RESOURCE_GROUP: pre-stg
         PLATFORM_ENV_TAG: Staging
@@ -25,4 +25,4 @@ spec:
         HIKARI_POOL_SIZE: 25
         TESTING_SUPPORT_ENDPOINTS_ENABLED: true
         MEDIA_KIND_STREAMING_ENDPOINT_ADVANCED_SETTINGS_NAME: ap-jitp-hmcts-disable-edge-buffer
-        TRIGGER_VAR: 1
+        TRIGGER_RESTART: 1

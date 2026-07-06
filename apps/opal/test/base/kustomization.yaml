@@ -7,7 +7,7 @@ resources:
   - ../../opal-rm-frontend/opal-rm-frontend.yaml
   - ../../opal-fines-service/opal-fines-service.yaml
   - ../../opal-logging-service/opal-logging-service.yaml
-  # - ../../opal-file-handler/opal-file-handler.yaml
+  - ../../opal-file-handler-service/opal-file-handler-service.yaml
   - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
   - ../../opal-user-service/opal-user-service.yaml
 namespace: opal
@@ -17,6 +17,6 @@ patches:
   - path: ../../opal-rm-frontend/test.yaml
   - path: ../../opal-fines-service/test.yaml
   - path: ../../opal-logging-service/test.yaml
-  # - path: ../../opal-file-handler/test.yaml
+  - path: ../../opal-file-handler-service/test.yaml
   - path: ../../opal-legacy-db-stub/test.yaml
   - path: ../../opal-user-service/test.yaml
