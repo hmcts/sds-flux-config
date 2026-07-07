@@ -10,7 +10,7 @@ spec:
     job:
       suspend: true
       schedule: "*/5 * * * *" # every 5 mins
-      image: hmctsprod.azurecr.io/pre/api:prod-d17f0be-20260703130658 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-97ef79a-20260707144126 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Test
         PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
