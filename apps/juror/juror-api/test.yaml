@@ -8,7 +8,7 @@ spec:
   values:
     java:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: hmctsprod.azurecr.io/juror/api:pr-1183-665619a-20260703113555 # {"$imagepolicy": "flux-system:juror-api-pr"}
+      image: hmctsprod.azurecr.io/juror/api:pr-1183-5b48c4b-20260706153200 # {"$imagepolicy": "flux-system:juror-api-pr"}
       ingressHost: juror-api.test.platform.hmcts.net
       environment:
         RUN_DB_MIGRATION_ON_STARTUP: true
