@@ -6,7 +6,7 @@ spec:
   releaseName: cath-crons
   values:
     job:
-      image: hmctspublic.azurecr.io/cath/cath-crons:prod-b5b6c81-20260708080832 # {"$imagepolicy": "flux-system:cath-crons"}
+      image: hmctspublic.azurecr.io/cath/cath-crons:prod-a17d282-20260708091621 # {"$imagepolicy": "flux-system:cath-crons"}
       disableTraefikTls: true
   chart:
     spec:
