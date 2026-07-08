@@ -6,7 +6,7 @@ spec:
   releaseName: cath-web
   values:
     nodejs:
-      image: hmctspublic.azurecr.io/cath/cath-web:prod-e8f4130-20260708125039 # {"$imagepolicy": "flux-system:cath-web"}
+      image: hmctspublic.azurecr.io/cath/cath-web:prod-034725c-20260708131312 # {"$imagepolicy": "flux-system:cath-web"}
       disableTraefikTls: true
   chart:
     spec:
