@@ -7,7 +7,7 @@ spec:
   releaseName: opal-frontend
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/opal/frontend:pr-2733-ab9f701-20260624074956 # {"$imagepolicy": "flux-system:opal-frontend-pr"}
+      image: hmctsprod.azurecr.io/opal/frontend:pr-2733-9aeb56e-20260709083204 # {"$imagepolicy": "flux-system:opal-frontend-pr"}
       enabled: true
       ingressHost: opal-frontend.test.apps.hmcts.net
       environment:
