@@ -4,3 +4,7 @@ resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
 namespace: appreg
+patches:
+  - path: ../../serviceaccount/test.yaml
+  - path: ../../appreg-api/test.yaml
+  - path: ../../appreg-frontend/test.yaml
