@@ -6,16 +6,17 @@ spec:
   releaseName: cath-crons
   values:
     job:
-      image: hmctspublic.azurecr.io/cath/cath-crons:prod-0000000-00000000000000 # {"$imagepolicy": "flux-system:cath-crons"}
+      image: hmctspublic.azurecr.io/cath/cath-crons:prod-4f4935a-20260713082249 # {"$imagepolicy": "flux-system:cath-crons"}
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/cath-crons
+      chart: cath-crons
+      version: ">=0.0.1-0"
       sourceRef:
-        kind: GitRepository
-        name: hmcts-charts
+        kind: HelmRepository
+        name: hmctsprod-oci # correct
         namespace: flux-system
-      interval: 5m
+      interval: 1m
   install:
     disableWait: true
   upgrade:

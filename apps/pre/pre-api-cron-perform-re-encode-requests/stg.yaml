@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pre-api-cron-perform-re-encode-requests
+  namespace: pre
+spec:
+  values:
+    global:
+      jobKind: CronJob
+    job:
+      suspend: false
+      disableActiveClusterCheck: true
+      schedule: "2-59/5 * * * *" # every 5 mins, offset from regular edit processing
+      image: hmctsprod.azurecr.io/pre/api:staging-94dc361-20260708155821 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      environment:
+        PLATFORM_ENV_TAG: Staging
+        ENABLE_NEW_EMAIL_SERVICE: true

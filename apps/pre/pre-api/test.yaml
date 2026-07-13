@@ -8,7 +8,6 @@ spec:
   values:
     java:
       ingressHost: pre-api.test.platform.hmcts.net
-      image: hmctsprod.azurecr.io/pre/api:pr-1317
       memoryRequests: '3Gi'
       memoryLimits: '3Gi'
       environment:
@@ -22,3 +21,4 @@ spec:
         HIKARI_POOL_SIZE: 25
         PORTAL_URL: https://pre-portal.test.platform.hmcts.net/
         TESTING_SUPPORT_ENDPOINTS_ENABLED: true
+        TRIGGER_RESTART: 1

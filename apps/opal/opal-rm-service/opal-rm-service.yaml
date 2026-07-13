@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: opal-file-handler
+  name: opal-rm-service
   namespace: opal
 spec:
-  releaseName: opal-file-handler
+  releaseName: opal-rm-service
   chart:
     spec:
-      chart: ./stable/opal-file-handler
+      chart: ./stable/opal-rm-service
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: sdshmctspublic.azurecr.io/opal/file-handler
+      image: hmctsprod.azurecr.io/opal/rm-service:prod-32b3c83-20260617145127 # {"$imagepolicy": "flux-system:opal-rm-service"}
       disableTraefikTls: true

@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: jenkins
-      version: 5.9.4
+      version: 5.9.18
       sourceRef:
         kind: HelmRepository
         name: jenkins
@@ -54,10 +54,10 @@ spec:
       resources:
         requests:
           cpu: "2000m"
-          memory: "4096Mi"
+          memory: "8192Mi"
         limits:
           cpu: "2000m"
-          memory: "4096Mi"
+          memory: "8192Mi"
       javaOpts: >-
         -XX:InitialRAMPercentage=30.0
         -XX:MaxRAMPercentage=65.0
@@ -162,7 +162,7 @@ spec:
           pipeline-config: |
             unclassified:
               globalDefaultFlowDurabilityLevel:
-                durabilityHint: PERFORMANCE_OPTIMIZED
+                durabilityHint: MAX_SURVIVABILITY
           sonar: |
             unclassified:
               sonarGlobalConfiguration:
@@ -257,13 +257,34 @@ spec:
           jobs: |
             jobs:
               - url: https://raw.githubusercontent.com/hmcts/sds-jenkins-config/master/jobdsl/organisations.groovy
+              - script: >
+                  pipelineJob('Seed Job') {
+                    triggers {
+                      cron('H 8,11,14,17 * * 1-5')
+                    }
+                    definition {
+                      cpsScm {
+                        scm {
+                          git {
+                            remote {
+                              github('hmcts/sds-jenkins-config')
+                              credentials('hmcts-jenkins-cnp')
+                            }
+                            branch('master')
+                          }
+                        }
+                        scriptPath('jobdsl/Jenkinsfile_seed')
+                        lightweight(true)
+                      }
+                    }
+                  }
 
       sidecars:
         configAutoReload:
           image:
             registry: hmctsprod.azurecr.io
             repository: imported/kiwigrid/k8s-sidecar
-            tag: 1.27.4
+            tag: 1.30.9
           # If enabled: true, Jenkins Configuration as Code will be reloaded on-the-fly without a reboot.  If false or not-specified,
           # jcasc changes will cause a reboot and will only be applied at the subsequent start-up.  Auto-reload uses the Jenkins CLI
           # over SSH to reapply config when changes to the configScripts are detected.  The admin user (or account you specify in

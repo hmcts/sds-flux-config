@@ -11,7 +11,7 @@ spec:
       autoscaling:
         enabled: false
         maxReplicas: 4
-      image: hmctsprod.azurecr.io/darts/api:pr-3233-285bb91-20260427091054 #{"$imagepolicy": "flux-system:darts-api-test"}
+      image: hmctsprod.azurecr.io/darts/api:pr-3291-2eb6b40-20260701122913 #{"$imagepolicy": "flux-system:darts-api-test"}
       ingressHost: darts-api.test.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
@@ -32,7 +32,7 @@ spec:
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
-        RESTART_ME: '016'
+        RESTART_ME: '026'
         ENABLE_ARM_V5_2_UPGRADE: true
         ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
@@ -40,8 +40,8 @@ spec:
         SHEDLOCK_LOG_LEVEL: DEBUG
         ARM_RPO_TOTAL_CATCHUP_HOURS: 12
         ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
-        RUN_DB_MIGRATION_ON_STARTUP: false
-        ARM_DOWN_FOR_MAINTENANCE: false
+        RUN_DB_MIGRATION_ON_STARTUP: true
+        ARM_DOWN_FOR_MAINTENANCE: true
     function:
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
@@ -51,4 +51,4 @@ spec:
         ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
-        ARM_DOWN_FOR_MAINTENANCE: false
+        ARM_DOWN_FOR_MAINTENANCE: true

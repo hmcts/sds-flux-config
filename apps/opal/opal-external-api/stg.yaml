@@ -11,3 +11,4 @@ spec:
       environment:
         DUMMY_VAR: 0
         OPAL_FINES_S2S_URL: https://opal-fines-service.staging.platform.hmcts.net
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg

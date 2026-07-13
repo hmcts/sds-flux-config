@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: appreg-api
+  namespace: appreg
+spec:
+  releaseName: appreg-api
+  values:
+    java:
+      ingressHost: appreg-api.perftest.platform.hmcts.net
+      image: hmctsprod.azurecr.io/appreg/api:prod-9aef11b-20260710111513 # {"$imagepolicy": "flux-system:appreg-api"}
+      environment:
+        ENV_NAME: "PERFTEST"
+        LOG_LEVEL: "DEBUG"
