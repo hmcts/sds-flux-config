@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: appreg.test.apps.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/frontend:prod-bd1b48a-20260710134840 # {"$imagepolicy": "flux-system:appreg-frontend"}
+      image: hmctsprod.azurecr.io/appreg/frontend:prod-f64cfee-20260710222019 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "PERFTEST"
         LOG_LEVEL: "DEBUG"
