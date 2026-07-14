@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ../../../base/slack-provider/stg
+namespace: hmi
+patches:
+  - path: ../../serviceaccount/stg.yaml
