@@ -7,7 +7,7 @@ spec:
   releaseName: opal-logging-service
   values:
     java:
-      image: hmctsprod.azurecr.io/opal/logging-service:pr-200-33f3f54-20260629095636 # {"$imagepolicy": "flux-system:opal-logging-service-pr"}
+      image: hmctsprod.azurecr.io/opal/logging-service:pr-200-f581e5c-20260709103342 # {"$imagepolicy": "flux-system:opal-logging-service-pr"}
       ingressHost: opal-logging-service.test.platform.hmcts.net
       environment:
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/perfTest

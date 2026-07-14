@@ -5,16 +5,10 @@ metadata:
   namespace: appreg
 spec:
   releaseName: appreg-api
-  chart:
-    spec:
-      chart: ./stable/appreg-api
-      sourceRef:
-        kind: GitRepository
-        name: hmcts-charts
-        namespace: flux-system
-      interval: 1m
   values:
     java:
-      replicas: 2
+      ingressHost: appreg-api.perftest.platform.hmcts.net
       image: hmctsprod.azurecr.io/appreg/api:prod-90bb373-20260714095029 # {"$imagepolicy": "flux-system:appreg-api"}
-      disableTraefikTls: true
+      environment:
+        ENV_NAME: "PERFTEST"
+        LOG_LEVEL: "DEBUG"
