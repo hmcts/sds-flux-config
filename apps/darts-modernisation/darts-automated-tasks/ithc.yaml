@@ -8,9 +8,6 @@ spec:
   values:
     java:
       image: hmctsprod.azurecr.io/darts/api:prod-6ba0005-20260706100324 # {"$imagepolicy": "flux-system:darts-api"}
-      replicas: 0
-      autoscaling:
-        enabled: false
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.ithc.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.ithc.apps.hmcts.net
