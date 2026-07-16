@@ -1,0 +1,83 @@
+# promtool unit test for the FailingDeployment / FailedPDB alerts defined in
+#   rules/monitoring-alerts.yaml
+#
+# Run with:  ./extract-and-test.sh
+#
+# The `rule_files` path below is the EXTRACTED native rules file that
+# extract-and-test.sh generates from the PrometheusRule CRD. promtool cannot
+# read the CRD directly, so we point at the extracted artifact.
+rule_files:
+  - ../.generated/monitoring-alerts.rules.yaml
+
+# evaluation_interval controls how often promtool evaluates the rules against
+# the synthetic series below.
+evaluation_interval: 1m
+
+tests:
+  # ---------------------------------------------------------------------------
+  # Case 1: FailingDeployment SHOULD fire.
+  # A deployment with unavailable replicas held above 0 for longer than the
+  # rule's `for: 5m` window must produce a firing critical alert.
+  # ---------------------------------------------------------------------------
+  - interval: 1m
+    input_series:
+      - series: 'kube_deployment_status_replicas_unavailable{namespace="ccd", deployment="ccd-data-store-api"}'
+        # 7 minutes of "2 unavailable replicas" - exceeds the 5m `for:` window.
+        values: '2 2 2 2 2 2 2 2'
+    alert_rule_test:
+      - eval_time: 6m
+        alertname: FailingDeployment
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              namespace: ccd
+              deployment: ccd-data-store-api
+            exp_annotations:
+              description: 'Deployment ccd/ccd-data-store-api has unavailable replicas.'
+
+  # ---------------------------------------------------------------------------
+  # Case 2: FailingDeployment SHOULD NOT fire.
+  # A healthy deployment (0 unavailable replicas) must never alert. This guards
+  # against a threshold regression (e.g. someone flipping `> 0` to `>= 0`).
+  # ---------------------------------------------------------------------------
+  - interval: 1m
+    input_series:
+      - series: 'kube_deployment_status_replicas_unavailable{namespace="ccd", deployment="ccd-data-store-api"}'
+        values: '0 0 0 0 0 0 0 0'
+    alert_rule_test:
+      - eval_time: 6m
+        alertname: FailingDeployment
+        exp_alerts: []
+
+  # ---------------------------------------------------------------------------
+  # Case 3: `for:` duration is respected - alert is PENDING, not FIRING, before
+  # the 5m window elapses. At 3m the series has been unavailable for only 3m, so
+  # no alert should have fired yet.
+  # ---------------------------------------------------------------------------
+  - interval: 1m
+    input_series:
+      - series: 'kube_deployment_status_replicas_unavailable{namespace="ccd", deployment="ccd-data-store-api"}'
+        values: '2 2 2 2 2 2 2 2'
+    alert_rule_test:
+      - eval_time: 3m
+        alertname: FailingDeployment
+        exp_alerts: []
+
+  # ---------------------------------------------------------------------------
+  # Case 4: FailedPDB fires when a PodDisruptionBudget reports zero healthy
+  # disruptions for longer than its 5m window.
+  # ---------------------------------------------------------------------------
+  - interval: 1m
+    input_series:
+      - series: 'kube_pod_disruption_budget_status_disruptions_healthy{namespace="ccd", poddisruptionbudget="ccd-data-store-api"}'
+        values: '0 0 0 0 0 0 0 0'
+    alert_rule_test:
+      - eval_time: 6m
+        alertname: FailedPDB
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+              namespace: ccd
+              poddisruptionbudget: ccd-data-store-api
+            exp_annotations:
+              description: 'PodDisruptionBudget ccd/ccd-data-store-api has no healthy disruptions.'

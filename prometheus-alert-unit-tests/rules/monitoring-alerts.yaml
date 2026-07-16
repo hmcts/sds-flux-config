@@ -1,0 +1,36 @@
+# Copied verbatim from:
+#   sds-flux-config/apps/monitoring/kube-prometheus-stack/dev/prometheus-rules.yaml
+# This is a PrometheusRule CRD (monitoring.coreos.com/v1), NOT a native
+# Prometheus rules file. promtool cannot read this directly - see
+# extract-and-test.sh for the extraction shim that bridges the two formats.
+#
+# NOTE: this is a per-environment (dev) rule file, deliberately chosen because
+# it is NOT one of the shared root-level files that apply to every environment
+# including prod.
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: monitoring-alerts
+  labels:
+    app: kube-prometheus-stack
+    release: kube-prometheus-stack
+spec:
+  groups:
+  - name: PodDisruptionBudgets
+    rules:
+    - alert: FailedPDB
+      expr: kube_pod_disruption_budget_status_disruptions_healthy == 0
+      for: 5m
+      labels:
+        severity: warning
+      annotations:
+        description: 'PodDisruptionBudget {{ $labels.namespace }}/{{ $labels.poddisruptionbudget }} has no healthy disruptions.'
+  - name: Deployments
+    rules:
+    - alert: FailingDeployment
+      expr: kube_deployment_status_replicas_unavailable > 0
+      for: 5m
+      labels:
+        severity: critical
+      annotations:
+        description: 'Deployment {{ $labels.namespace }}/{{ $labels.deployment }} has unavailable replicas.'
