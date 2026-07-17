@@ -12,6 +12,7 @@ spec:
       environment:
         ENV_NAME: "PERFTEST"
       keyVaults:
+        appreg: null
         appreg-kv:
           secrets:
             - name: AppInsightsInstrumentationKey
