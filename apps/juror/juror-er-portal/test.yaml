@@ -7,7 +7,7 @@ spec:
   releaseName: juror-er-portal
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/juror/er-portal:pr-213-7ba5c72-20260713092739 # {"$imagepolicy": "flux-system:juror-er-portal-pr"}
+      image: hmctsprod.azurecr.io/juror/er-portal:pr-224-0a74e3b-20260716135316 # {"$imagepolicy": "flux-system:juror-er-portal-pr"}
       ingressHost: juror-er.test.apps.hmcts.net
       environment:
         SKIP_SSO: true
