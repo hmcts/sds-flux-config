@@ -11,7 +11,6 @@ spec:
       image: hmctsprod.azurecr.io/appreg/api:prod-ecfb387-20260716122438 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "PERFTEST"
-        LOG_LEVEL: "DEBUG"
       keyVaults:
         appreg-kv:
           secrets:
