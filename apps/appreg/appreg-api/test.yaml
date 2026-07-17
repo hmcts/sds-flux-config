@@ -7,7 +7,7 @@ spec:
   releaseName: appreg-api
   values:
     java:
-      ingressHost: appreg-api.perftest.platform.hmcts.net
+      ingressHost: appreg-api.test.platform.hmcts.net
       image: hmctsprod.azurecr.io/appreg/api:prod-ecfb387-20260716122438 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "PERFTEST"
