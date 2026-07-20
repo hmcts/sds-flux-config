@@ -9,7 +9,7 @@ spec:
       ignored-by-dynatrace: "true"
       app.kubernetes.io/instance: mi-adf-shir-deployment-2
       app.kubernetes.io/name: mi-adf-shir-deployment-2
-    image: hmctsprod.azurecr.io/mi/adf-integration-runtime:prod-c981061-20260717204743 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: hmctsprod.azurecr.io/mi/adf-integration-runtime:prod-1ca4865-20260717171544 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     replicaCount: 2
     memoryLimits: '12288Mi'
     memoryRequests: '8192Mi'
