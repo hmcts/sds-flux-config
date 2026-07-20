@@ -10,7 +10,7 @@ spec:
     labels:
       app.kubernetes.io/instance: mi-adf-shir-deployment
       app.kubernetes.io/name: mi-adf-shir-deployment
-    image: hmctsprod.azurecr.io/mi/adf-integration-runtime:prod-1ca4865-20260717171544 #{"$imagepolicy": "flux-system:mi-adf-shir"}
+    image: hmctsprod.azurecr.io/mi/adf-integration-runtime:prod-c981061-20260717204743 #{"$imagepolicy": "flux-system:mi-adf-shir"}
     additionalEnv:
       TZ: UTC
     keyVaultSecrets:
