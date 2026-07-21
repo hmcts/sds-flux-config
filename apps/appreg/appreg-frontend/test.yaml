@@ -8,7 +8,34 @@ spec:
   values:
     nodejs:
       ingressHost: appreg.test.apps.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/frontend:prod-dee8814-20260709000922 # {"$imagepolicy": "flux-system:appreg-frontend"}
+      image: hmctsprod.azurecr.io/appreg/frontend:prod-a308209-20260721094158 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "PERFTEST"
-        LOG_LEVEL: "DEBUG"
+      keyVaults:
+        appreg: null
+        appreg-kv:
+          secrets:
+            - name: app-insights-connection-string
+              alias: app-insights-connection-string-fe
+            - name: azure-tenant-id
+              alias: azure-tenant-id-fe
+            - name: azure-client-secret
+              alias: azure-client-secret-fe
+            - name: azure-app-id
+              alias: azure-app-id-fe
+            - name: managed-redis-connection-string
+              alias: redis-connection-string
+            - name: test-user1-email
+              alias: TEST-USER1-EMAIL
+            - name: test-user2-email
+              alias: TEST-USER2-EMAIL
+            - name: test-user3-email
+              alias: TEST-USER3-EMAIL
+            - name: test-admin1-email
+              alias: TEST-ADMIN1-EMAIL
+            - name: test-admin2-email
+              alias: TEST-ADMIN2-EMAIL
+            - name: test-admin3-email
+              alias: TEST-ADMIN3-EMAIL
+            - name: test-users-password
+              alias: TEST-USERS-PASSWORD

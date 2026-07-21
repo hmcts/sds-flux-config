@@ -7,8 +7,35 @@ spec:
   releaseName: appreg-api
   values:
     java:
-      ingressHost: appreg-api.perftest.platform.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/api:prod-cbc1a7b-20260709090548 # {"$imagepolicy": "flux-system:appreg-api"}
+      ingressHost: appreg-api.test.platform.hmcts.net
+      image: hmctsprod.azurecr.io/appreg/api:prod-0566ec7-20260721144931 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "PERFTEST"
-        LOG_LEVEL: "DEBUG"
+      keyVaults:
+        appreg: null
+        appreg-kv:
+          secrets:
+            - name: AppInsightsInstrumentationKey
+              alias: APP_INSIGHTS_INSTRUMENTATION_KEY
+            - name: app-insights-connection-string
+              alias: app-insights-connection-string
+            - name: POSTGRES-USER
+              alias: POSTGRES_USER
+            - name: POSTGRES-PASS
+              alias: POSTGRES_PASS
+            - name: POSTGRES-HOST
+              alias: POSTGRES_HOST
+            - name: POSTGRES-PORT
+              alias: POSTGRES_PORT
+            - name: POSTGRES-DATABASE
+              alias: POSTGRES_DATABASE
+            - name: azure-tenant-id
+              alias: AZURE_TENANT_ID
+            - name: azure-client-secret
+              alias: azure-client-secret
+            - name: azure-app-id
+              alias: AZURE_AUDIENCE_ID
+            - name: CSDS-KEY-1
+              alias: CSDS_KEY_1
+            - name: CSDS-KEY-2
+              alias: CSDS_KEY_2
