@@ -16,7 +16,6 @@ resources:
   - ../../../apps/toffee/base/kustomize.yaml
   # error looking up service account darts-modernisation/darts-portal-nodejs: serviceaccount "darts-portal-nodejs" not found (stopping AKS version upgrade)
   - ../../../apps/darts-modernisation/base/kustomize.yaml
-  - ../../../apps/hmi/base/kustomize.yaml
   - ../../../apps/monitoring/base/kustomize.yaml
   - ../../../apps/azureserviceoperator-system/base/kustomize.yaml
   - ../../../apps/keda/base/kustomize.yaml
@@ -25,6 +24,7 @@ resources:
   - ../../../apps/courtfines/base/kustomize.yaml
   - ../../../apps/opal/base/kustomize.yaml
   - ../../../apps/rota/base/kustomize.yaml
+  - ../../../apps/appreg/base/kustomize.yaml
 patches:
   - path: ../../../apps/base/kustomize.yaml
     target:

@@ -16,7 +16,7 @@ spec:
   values:
     java:
       ingressHost: darts-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
-      image: hmctsprod.azurecr.io/darts/api:prod-c6734e0-20260520154700 # {"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-446c6dc-20260720152223 # {"$imagepolicy": "flux-system:darts-api"}
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
@@ -31,11 +31,11 @@ spec:
         NOTIFICATION_SCHEDULER_ENABLED: false
         NOTIFICATION_SCHEDULER_CRON: '-'
     function:
-      image: hmctsprod.azurecr.io/darts/api:prod-c6734e0-20260520154700 # {"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-446c6dc-20260720152223 # {"$imagepolicy": "flux-system:darts-api"}
       minReplicaCount: 0
-      maxReplicaCount: 0
+      maxReplicaCount: 1
       # only poll every 24 hours, to prevent DB sessions
-      # it is set to 0 max replicas anyway
+      # kept effectively idle via minReplicaCount: 0; maxReplicaCount must be >=1 per KEDA CRD
       pollingInterval: 86400
     darts-portal:
       enabled: false

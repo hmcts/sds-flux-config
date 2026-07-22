@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  SPA_ACCESS_KEY: ENC[AES256_GCM,data:L0aEV/5f+L59/x6Z4RmE2pJzR1TUZsrf33pijUuhrExYu9hI,iv:Akedu4LtHDJ4WnTAPo82OVtUgGkpfKo0Q73A7+XxYSQ=,tag:zYjL9vZdcYlgtIeNc7d+ig==,type:str]
+  SPA_SECRET_KEY: ENC[AES256_GCM,data:Gb4AkTiNHcKDvQRbRvlm75ocYhe8c76ULuniwgLZOLUIy3M7vrCom0LExSAUmqmxuiYJauI4JRQ=,iv:LXPSqjm2n8BK4AGe3IgIiXxpm13VIv15ViWPp5E1oRw=,tag:Ml0FpQWhtDOD2TkjC+fLeQ==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: spa
+  namespace: courtfines
+type: Opaque
+sops:
+  azure_kv:
+    - created_at: "2026-06-04T08:46:43Z"
+      enc: Msy-9AsOcPYQdu0GeMQV6rWd84H4DrKddQrtRIKi-7dCwnfF_y_HZ-Sp1YCTaZdHemUwU3lkJYaud05qwUacH869WiDk6xiIGQCeldcn1bnYnmIv2btBV9usPb9HqCnfpPpzwgtmJO4lk0HWokQgA3Fgw4PDT2ln3E2oC-T3FBK-uQ6_lndw7qw8JG_JkcSkTK2YJ_EQAEewIWWZDLoVp_t813uawhk1kDea5rt6WykZakyVCWFINtNgjHOQIEb3_a1pwCdbgm450aU4z5jpGNSP22il0UdTUotDkCNRabiTM7-K2LWRdukCdQ9DhFKWEwHc6u2ngnBhldE0Gq5d8Q
+      name: sops-key
+      vault_url: https://dtssharedservicesdevkv.vault.azure.net
+      version: 2beba064ddfe454482ad0133af2cf0fd
+  encrypted_regex: ^(data|stringData)$
+  lastmodified: "2026-06-04T08:46:45Z"
+  mac: ENC[AES256_GCM,data:fsINtYb+5XqeZ/22GGMz2CsBmuY/e7a0RcKCtu7R4clsHLdq8z9ZJVQSH5qZ9ivrxqtGKMh2lwL+ACe6UCVqWKQfanl8xgsAFDqdKIbn0HKw7+XmGkE+CPFBx17iKkz+bfQvfnBdQ1sRazdKN6DwuEJ8hVRlQOugaOxG5V0aGvY=,iv:Sq+3ENMYhPIjUBqSHOUYT1kZRQGTG8LwDRBaJlmmTw8=,tag:4FwuYabcP3KqnzAi1T6VGA==,type:str]
+  version: 3.13.1

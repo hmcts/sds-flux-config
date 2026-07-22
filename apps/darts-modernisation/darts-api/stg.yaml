@@ -12,7 +12,7 @@ spec:
         DARTS_GATEWAY_URL: http://darts-gateway.staging.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.staging.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART_ME: '011'
+        RESTART_ME: '012'
         ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
         ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
@@ -36,7 +36,7 @@ spec:
         ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
         ARM_DOWN_FOR_MAINTENANCE: false
     function:
-      image: hmctsprod.azurecr.io/darts/api:prod-c6734e0-20260520154700 # {"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-446c6dc-20260720152223 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
         ARM_API_URL: https://darts-stub-services.staging.platform.hmcts.net

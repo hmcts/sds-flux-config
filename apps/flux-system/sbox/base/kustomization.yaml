@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - ../../base/gotk-components.yaml
+  - gotk-components.yaml
   - github-app-credentials.enc.yaml
   - ../../workload-identity
   - aso-controller-settings-patch.yaml
@@ -11,6 +11,7 @@ patches:
   - path: ../../serviceaccount/sbox-source-controller.yaml
   - path: ../../base/patches/workload-identity-deployment.yaml
   - path: ../../base/patches/workload-identity-source-controller-patch.yaml
+  - path: ../../base/patches/helm-controller-helm3-defaults-patch.yaml
   - patch: |-
       - op: add
         path: /spec/template/spec/containers/0/args/-
