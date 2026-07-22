@@ -4,3 +4,7 @@ metadata:
   name: cath-postgres
 spec:
   releaseName: cath-postgres
+  values:
+    nodejs:
+      environment:
+        RETRIGGER_PODS: "true"
