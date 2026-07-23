@@ -12,7 +12,8 @@ spec:
       environment:
         ENV_NAME: "PERFTEST"
       keyVaults:
-        appreg: null
+        appreg:
+          disabled: true
         appreg-kv:
           secrets:
             - name: app-insights-connection-string
