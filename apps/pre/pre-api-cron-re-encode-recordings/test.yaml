@@ -13,7 +13,7 @@ spec:
       disableActiveClusterCheck: false
       memoryRequests: "1Gi"
       memoryLimits: "2Gi"
-      image: hmctsprod.azurecr.io/pre/api:prod-c2bf036-20260715095846 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-389cd73-20260722110012 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         PLATFORM_ENV_TAG: Testing
         REENCODE_RECORDINGS_FORCE: "false"

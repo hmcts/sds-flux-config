@@ -9,7 +9,7 @@ spec:
     java:
       replicas: 2
       ingressHost: pre-api.demo.platform.hmcts.net
-      image: hmctsprod.azurecr.io/pre/api:prod-c2bf036-20260715095846 # {"$imagepolicy": "flux-system:pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:prod-389cd73-20260722110012 # {"$imagepolicy": "flux-system:pre-api"}
       environment:
         AZURE_RESOURCE_GROUP: pre-demo
         PLATFORM_ENV_TAG: Demo
@@ -23,3 +23,4 @@ spec:
         MEDIA_KIND_STREAMING_ENDPOINT_ADVANCED_SETTINGS_NAME: ap-jitp-hmcts-disable-edge-buffer
         RTMPS_SUFFIX_ENABLED: false
         TRIGGER_RESTART: 1
+        ENABLE_TERMS_AND_CONDITIONS: true
