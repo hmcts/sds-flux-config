@@ -5,6 +5,3 @@ resources:
 - ../../base
 - prometheus-values.yaml
 - prometheus-values.enc.yaml
-
-patches:
-- path: ../../kube-prometheus-stack/prod/mailrelay-alerts-rules.yaml
