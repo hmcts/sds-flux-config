@@ -15,6 +15,7 @@ spec:
         appreg:
           disabled: true
         appreg-kv:
+          mountPath: /mnt/secrets/appreg
           secrets:
             - name: app-insights-connection-string
               alias: app-insights-connection-string-fe

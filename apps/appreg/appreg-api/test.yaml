@@ -15,6 +15,7 @@ spec:
         appreg:
           disabled: true
         appreg-kv:
+          mountPath: /mnt/secrets/appreg
           secrets:
             - name: AppInsightsInstrumentationKey
               alias: APP_INSIGHTS_INSTRUMENTATION_KEY
