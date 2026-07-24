@@ -209,8 +209,11 @@ spec:
                       templateDesc: "Jenkins build agents for SDS ptl environment"
                       labels: "ubuntu-ptl"
                       retentionStrategy:
-                        azureVMCloudRetentionStrategy:
-                          idleTerminationMinutes: 5
+                        azureVMCloudPool:
+                          dynamicBufferEnabled: true
+                          bufferPercentage: 10
+                          maximumBuffer: 5
+                          poolSize: 2
                       maxVirtualMachinesLimit: 10
                       usageMode: "EXCLUSIVE"
                       virtualMachineSize: "Standard_D4ds_v5"
