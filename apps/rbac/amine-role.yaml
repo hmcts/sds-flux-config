@@ -97,6 +97,10 @@ rules:
       - securityexceptions
     verbs: ["get", "list", "watch"]
 
+  - apiGroups: ["hostdata.kubescape.cloud"]
+    resources: ["*"]
+    verbs: ["get", "list", "watch"]
+
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
