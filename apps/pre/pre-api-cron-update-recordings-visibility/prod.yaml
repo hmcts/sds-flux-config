@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pre-api-cron-cleanup-null-durations
+  name: pre-api-cron-update-recordings-visibility
   namespace: pre
 spec:
   values:
