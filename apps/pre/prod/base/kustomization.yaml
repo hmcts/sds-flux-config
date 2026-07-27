@@ -23,6 +23,7 @@ resources:
   - ../../pre-api-cron-re-encode-recordings/pre-api-cron-re-encode-recordings.yaml
   - ../../../base/slack-provider/prod
   - ../../../rbac/db-query-job-role.yaml
+  - ../../pre-api-cron-update-recordings-visibility/pre-api-cron-update-recordings-visibility.yaml
 namespace: pre
 patches:
   - path: ../../identity/prod.yaml
@@ -48,3 +49,4 @@ patches:
   - path: ../../pre-api-cron-capture-session-status-correction/prod.yaml
   - path: ../../pre-api-cron-re-encode-recordings/prod.yaml
   - path: ../../serviceaccount/prod.yaml
+  - path: ../../pre-api-cron-update-recordings-visibility/prod.yaml
