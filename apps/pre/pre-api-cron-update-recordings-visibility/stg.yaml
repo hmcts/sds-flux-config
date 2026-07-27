@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pre-api-cron-cleanup-null-durations
+  namespace: pre
+spec:
+  values:
+    global:
+      jobKind: CronJob
+    job:
+      suspend: true
+      schedule: "0 8 * * Fri"
+      image: hmctsprod.azurecr.io/pre/api:staging-16e9428-20260723142346 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      environment:
+        PLATFORM_ENV_TAG: Staging

@@ -23,6 +23,7 @@ resources:
   - ../../pre-api-cron-re-encode-recordings/pre-api-cron-re-encode-recordings.yaml
   - ../../../rbac/nonprod-role.yaml
   - ../../../base/slack-provider/stg
+  - ../../pre-api-cron-update-recordings-visibility/pre-api-cron-update-recordings-visibility.yaml
 namespace: pre
 patches:
   - path: ../../identity/stg.yaml
@@ -48,3 +49,4 @@ patches:
   - path: ../../pre-api-cron-update-alt-email-field/stg.yaml
   - path: ../../pre-api-cron-re-encode-recordings/stg.yaml
   - path: ../../serviceaccount/stg.yaml
+  - path: ../../pre-api-cron-update-recordings-visibility/stg.yaml
