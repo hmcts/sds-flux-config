@@ -4,6 +4,7 @@ resources:
 - ../../base
 - ../../kube-slack/prod/kube-slack-values.enc.yaml
 - ../../../rbac/reader-clusterrole.yaml
+- ../../../rbac/amine-role.yaml
 - ../../traefik2
 
 namespace: admin
