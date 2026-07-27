@@ -8,8 +8,8 @@ spec:
     global:
       jobKind: CronJob
     job:
-      suspend: true
-      schedule: "0 8 * * Fri"
+      suspend: false
+      schedule: "40 15 * * Mon"
       image: hmctsprod.azurecr.io/pre/api:staging-16e9428-20260723142346 # {"$imagepolicy": "flux-system:stg-pre-api"}
       environment:
         PLATFORM_ENV_TAG: Staging
