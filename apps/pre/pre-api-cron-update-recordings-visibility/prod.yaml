@@ -9,5 +9,5 @@ spec:
       jobKind: CronJob
     job:
       suspend: false
-      schedule: "25 16 * * Tue"
+      schedule: "20 16 * * Tue"
       image: hmctsprod.azurecr.io/pre/api:prod-389cd73-20260722110012 # {"$imagepolicy": "flux-system:pre-api"}
