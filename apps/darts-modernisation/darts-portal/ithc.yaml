@@ -15,3 +15,12 @@ spec:
         DARTS_PORTAL_ALLOW_STUB_DATA: true
         MANUAL_DELETION_ENABLED: true
         EVENT_OBFUSCATION_ENABLED: true
+      keyVaults:
+        darts:
+          secrets:
+            - name: AppInsightsInstrumentationKey
+              alias: AppInsightsInstrumentationKey
+            - name: managed-redis-connection-string
+              alias: redis-connection-string
+            - name: darts-portal-session-secret
+              alias: darts-portal-session-secret
