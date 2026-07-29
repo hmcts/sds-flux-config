@@ -7,14 +7,15 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
-      # image: hmctsprod.azurecr.io/darts/portal:pr-2330-379f670-20260515074225 # {"$imagepolicy": "flux-system:darts-portal-ithc"}
+      image: hmctsprod.azurecr.io/darts/portal:pr-2399-cd488a8-20260729121815 # {"$imagepolicy": "flux-system:darts-portal-ithc"}
       ingressHost: darts.ithc.apps.hmcts.net
       environment:
-        RESTART_ME: '002'
+        RESTART_ME: '001'
         DARTS_AZUREAD_B2C_ORIGIN_HOST: https://hmctsithcextid.b2clogin.com
         DARTS_PORTAL_ALLOW_STUB_DATA: true
         MANUAL_DELETION_ENABLED: true
         EVENT_OBFUSCATION_ENABLED: true
+        DARTS_SESSION_REDIS_CLUSTER_ENABLED: true
       keyVaults:
         darts:
           secrets:
