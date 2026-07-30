@@ -8,7 +8,10 @@ spec:
   values:
     nodejs:
       ingressHost: courtfines-app.staging.platform.hmcts.net
-      image: hmctsprod.azurecr.io/courtfines/app:prod-c21c526-20260723133850 # {"$imagepolicy": "flux-system:courtfines-app"}
+      image: hmctsprod.azurecr.io/courtfines/app:prod-cd0ea6c-20260724095723 # {"$imagepolicy": "flux-system:courtfines-app"}
       environment:
         ENV_NAME: "STAGING"
         LOG_LEVEL: "DEBUG"
+        MAINTENANCE_BANNER_ENABLED: "false"
+        MAINTENANCE_BANNER_MESSAGE: "The HMCTS Online payments service will be unavailable from 10pm on Friday 31 July to 8am on Saturday 1 August for an essential upgrade."
+        PAYMENTS_PAUSED: "false"

@@ -35,7 +35,7 @@ spec:
         name: "dev-in"
         objectName: "dev-in-mailrelay-platform-hmcts-net"
     volumeClaim:
-      storageClass: "managed"
+      storageClass: "managed-zrs-tagged"
       storageSize: 64Gi
     global:
       environment: dev
