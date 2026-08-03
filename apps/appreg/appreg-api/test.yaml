@@ -12,6 +12,9 @@ spec:
       environment:
         ENV_NAME: "PERFTEST"
         RESTART_ME: "002"
+        LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY: "DEBUG"
+        LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY_OAUTH2: "DEBUG"
+        LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY_OAUTH2_JWT: "DEBUG"
       keyVaults:
         appreg:
           disabled: true
