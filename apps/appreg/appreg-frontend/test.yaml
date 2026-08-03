@@ -11,7 +11,7 @@ spec:
       image: hmctsprod.azurecr.io/appreg/frontend:prod-a4cd51b-20260731131444 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "PERFTEST"
-        RESTART_ME: "001"
+        RESTART_ME: "002"
       keyVaults:
         appreg:
           disabled: true
