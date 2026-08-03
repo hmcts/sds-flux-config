@@ -11,7 +11,7 @@ spec:
       image: hmctsprod.azurecr.io/appreg/api:prod-273770c-20260731153829 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "PERFTEST"
-        RESTART_ME: "001"
+        RESTART_ME: "002"
       keyVaults:
         appreg:
           disabled: true
