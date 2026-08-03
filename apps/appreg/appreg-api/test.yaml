@@ -12,6 +12,7 @@ spec:
       environment:
         ENV_NAME: "PERFTEST"
         RESTART_ME: "002"
+        AZURE_ISSUER: "https://login.microsoftonline.com/e575f663-b30a-4786-89ad-319842dfe853/v2.0"
       keyVaults:
         appreg:
           disabled: true
