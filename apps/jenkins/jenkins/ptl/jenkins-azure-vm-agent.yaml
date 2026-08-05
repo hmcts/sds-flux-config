@@ -124,9 +124,13 @@ spec:
                       templateDesc: "Jenkins build agents for SDS stg environment"
                       labels: "ubuntu-stg"
                       retentionStrategy:
-                        azureVMCloudRetentionStrategy:
-                          idleTerminationMinutes: 5
-                      maxVirtualMachinesLimit: 10
+                        azureVMCloudPool:
+                          retentionInHours: 1
+                          dynamicBufferEnabled: true
+                          bufferPercentage: 10
+                          maximumBuffer: 5
+                          poolSize: 3
+                      maxVirtualMachinesLimit: 20
                       usageMode: "EXCLUSIVE"
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
