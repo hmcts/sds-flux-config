@@ -17,7 +17,7 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
-  name: juror-er-portal-pr
+  name: juror-er-portal-ithc
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
@@ -33,7 +33,7 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
-  name: juror-er-portal-pr-2
+  name: juror-er-portal-demo
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
@@ -41,7 +41,23 @@ spec:
     name: juror-er-portal
   filterTags:
     extract: $ts
-    pattern: '^pr-206-[a-f0-9]+-(?P<ts>[0-9]+)'
+    pattern: '^pr-224-[a-f0-9]+-(?P<ts>[0-9]+)'
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: juror-er-portal-test
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+spec:
+  imageRepositoryRef:
+    name: juror-er-portal
+  filterTags:
+    extract: $ts
+    pattern: '^pr-230-[a-f0-9]+-(?P<ts>[0-9]+)'
   policy:
     alphabetical:
       order: asc
