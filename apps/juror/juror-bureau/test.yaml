@@ -8,8 +8,35 @@ spec:
   values:
     nodejs:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: hmctsprod.azurecr.io/juror/bureau:pr-1231-46daf46-20260806081510 # {"$imagepolicy": "flux-system:juror-bureau-test"}
+      image: hmctsprod.azurecr.io/juror/bureau:pr-1241-7bcb783-20260806115147 # {"$imagepolicy": "flux-system:juror-bureau-test"}
       ingressHost: juror.test.apps.hmcts.net
+      keyVaults:
+        juror:
+          secrets:
+            - name: bureau-sessionsecret
+              alias: bureau-sessionsecret
+            - name: bureau-jwtKey
+              alias: bureau-jwtKey
+            - name: bureau-jwtNoAuthKey
+              alias: bureau-jwtNoAuthKey
+            - name: bureau-jwtTTL
+              alias: bureau-jwtTTL
+            - name: bureau-smartSurveyToken
+              alias: bureau-smartSurveyToken
+            - name: bureau-smartSurveyTokenSecret
+              alias: bureau-smartSurveyTokenSecret
+            - name: bureau-redisConnection
+              alias: bureau-managedRedisConnection
+            - name: launchDarklyKey
+              alias: launchDarklyKey
+            - name: app-insights-connection-string
+              alias: app-insights-connection-string
+            - name: azure-app-id
+              alias: azure-app-id
+            - name: azure-tenant-id
+              alias: azure-tenant-id
+            - name: azure-client-secret
+              alias: azure-client-secret
       environment:
         SKIP_SSO: true
         LOG_SANITISATION_DISABLED: true
