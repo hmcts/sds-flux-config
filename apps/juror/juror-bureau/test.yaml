@@ -13,8 +13,8 @@ spec:
       keyVaults:
         juror:
           secrets:
-            - name: bureau-sessionsecret
-              alias: bureau-sessionsecret
+            - name: bureau-sessionSecret
+              alias: bureau-sessionSecret
             - name: bureau-jwtKey
               alias: bureau-jwtKey
             - name: bureau-jwtNoAuthKey
@@ -40,4 +40,4 @@ spec:
       environment:
         SKIP_SSO: true
         LOG_SANITISATION_DISABLED: true
-        RESTART: 2
+        RESTART: 1
