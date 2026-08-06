@@ -12,6 +12,6 @@ spec:
       environment:
         ENV_NAME: "STAGING"
         LOG_LEVEL: "DEBUG"
-        MAINTENANCE_BANNER_ENABLED: "false"
-        MAINTENANCE_BANNER_MESSAGE: "The HMCTS Online payments service will be unavailable from 10pm on Friday 31 July to 8am on Saturday 1 August for an essential upgrade."
+        MAINTENANCE_BANNER_ENABLED: "true"
+        MAINTENANCE_BANNER_MESSAGE: "The HMCTS Online payments service will be unavailable from 10pm on Friday 7 August to 8am on Saturday 8 August for an essential upgrade."
         PAYMENTS_PAUSED: "false"

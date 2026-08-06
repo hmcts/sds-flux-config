@@ -1,0 +1,42 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: jenkins
+  namespace: jenkins
+spec:
+  values:
+    controller:
+      prometheus:
+        enabled: true
+        serviceMonitorAdditionalLabels:
+          release: kube-prometheus-stack
+      JCasC:
+        configScripts:
+          prometheus: |
+            unclassified:
+              prometheusConfiguration:
+                path: "prometheus"
+                defaultNamespace: "default"
+                useAuthenticatedEndpoint: false
+                collectingMetricsPeriodInSeconds: 120
+                collectNodeStatus: true
+                # Per-job/per-stage build metrics are served by the CosmosDB ->
+                # dtsse-dashboard-ingestion -> Postgres pipeline; exposing them
+                # here would explode series cardinality on instances with many
+                # pipelines. Keep this endpoint to controller health only.
+                collectDiskUsage: false
+                countSuccessfulBuilds: false
+                countUnstableBuilds: false
+                countFailedBuilds: false
+                countNotBuiltBuilds: false
+                countAbortedBuilds: false
+                fetchTestResults: false
+                perBuildMetrics: false
+                appendParamLabel: false
+                appendStatusLabel: false
+                processingDisabledBuilds: false
+                disabledMetricConfig:
+                  entries:
+                  - regexDisabledMetric:
+                      regex: "default_jenkins_builds_.*"
