@@ -25,12 +25,12 @@ spec:
               alias: public-jwtTTL
             - name: public-pcqTokenKey
               alias: public-pcqTokenKey
-            - name: public-redisConnection
-              alias: public-managedRedisConnection
+            - name: public-managedRedisConnection
+              alias: public-redisConnection
             - name: public-dynatraceScriptUrl
               alias: public-dynatraceScriptUrl
             - name: app-insights-connection-string
               alias: app-insights-connection-string
       environment:
-        DUMMY_ENV_VAR: 1
+        DUMMY_ENV_VAR: 2
         LOG_SANITISATION_DISABLED: true
