@@ -37,6 +37,8 @@ spec:
                         value: ptl
                       - key: JENKINS_SUBSCRIPTION_NAME
                         value: DTS-SHAREDSERVICESPTL
+                      - key: JENKINS_SUBSCRIPTION_ID
+                        value: 6c4d2513-a873-41b4-afdd-b05a33206631
                       - key: JAVA_OPTS
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: GRADLE_OPTS
