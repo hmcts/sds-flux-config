@@ -223,6 +223,13 @@ spec:
                           password: "$${OWASPDb-Password}"
                           scope: GLOBAL
                           username: "owasp_administrator"
+                      - azureStorageAccount:
+                          blobEndpointURL: "https://blob.core.windows.net/"
+                          description: "Storage account for Jenkins job caches"
+                          id: "job-cache-storage-account"
+                          scope: GLOBAL
+                          storageAccountName: "sdsjenkinsafact$${INFRA_VAULT_NAME}"
+                          storageKey: "$${jenkins-job-cache-key}"
                       - sauce:
                           apiKey: "$${sauce-access-key}"
                           description: "Sauce Labs Reform Key"
