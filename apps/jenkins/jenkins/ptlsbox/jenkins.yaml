@@ -23,6 +23,8 @@ spec:
       containerEnv:
         - name: ENVIRONMENT
           value: "sandbox"
+        - name: INFRA_VAULT_NAME
+          value: "ptlsbox"
         - name: AZURE_KEYVAULT_URL
           value: https://ptlsbox.vault.azure.net
       sidecars:
