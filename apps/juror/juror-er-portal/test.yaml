@@ -7,33 +7,9 @@ spec:
   releaseName: juror-er-portal
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/juror/er-portal:pr-230-905f96c-20260806132343 # {"$imagepolicy": "flux-system:juror-er-portal-test"}
+      # image: hmctsprod.azurecr.io/juror/er-portal:pr-230-905f96c-20260806132343 # {"$imagepolicy": "flux-system:juror-er-portal-test"}
       ingressHost: juror-er.test.apps.hmcts.net
-      keyVaults:
-        juror:
-          secrets:
-            - name: er-portal-sessionSecret
-              alias: er-portal-sessionsecret
-            - name: er-portal-jwtKey
-              alias: er-portal-jwtKey
-            - name: er-portal-jwtNoAuthKey
-              alias: er-portal-jwtNoAuthKey
-            - name: er-portal-jwtTTL
-              alias: er-portal-jwtTTL
-            - name: app-insights-connection-string
-              alias: app-insights-connection-string
-            - name: er-portal-managedRedisConnection
-              alias: er-portal-redisConnection
-            - name: er-portal-storage-connection-string
-              alias: er-portal-storage-connection-string
-            - name: er-portal-azure-tenant-id
-              alias: er-portal-azure-tenant-id
-            - name: er-portal-azure-app-id
-              alias: er-portal-azure-app-id
-            - name: er-portal-azure-client-secret
-              alias: er-portal-azure-client-secret
       environment:
         SKIP_SSO: true
         LOG_SANITISATION_DISABLED: true
         RESTART: 1
-        REDIS_CLUSTER_ENABLED: true

@@ -8,30 +8,8 @@ spec:
   values:
     nodejs:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: hmctsprod.azurecr.io/juror/public:pr-441-1c47532-20260806132248 # {"$imagepolicy": "flux-system:juror-public-test"}
+      # image: hmctsprod.azurecr.io/juror/public:pr-441-1c47532-20260806132248 # {"$imagepolicy": "flux-system:juror-public-test"}
       ingressHost: juror-public.test.apps.hmcts.net
-      keyVaults:
-        juror:
-          secrets:
-            - name: public-sessionsecret
-              alias: public-sessionsecret
-            - name: public-jwtKey
-              alias: public-jwtKey
-            - name: public-jwtNoAuthKey
-              alias: public-jwtNoAuthKey
-            - name: public-jwtKeyBureau
-              alias: public-jwtKeyBureau
-            - name: public-jwtTTL
-              alias: public-jwtTTL
-            - name: public-pcqTokenKey
-              alias: public-pcqTokenKey
-            - name: public-managedRedisConnection
-              alias: public-redisConnection
-            - name: public-dynatraceScriptUrl
-              alias: public-dynatraceScriptUrl
-            - name: app-insights-connection-string
-              alias: app-insights-connection-string
       environment:
         DUMMY_ENV_VAR: 2
         LOG_SANITISATION_DISABLED: true
-        REDIS_CLUSTER_ENABLED: true
