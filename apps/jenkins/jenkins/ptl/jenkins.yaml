@@ -15,6 +15,8 @@ spec:
       containerEnv:
         - name: ENVIRONMENT
           value: "production"
+        - name: INFRA_VAULT_NAME
+          value: "ptl"
         - name: AZURE_KEYVAULT_URL
           value: https://ptl.vault.azure.net
       JCasC:
@@ -262,6 +264,13 @@ spec:
               azureKeyVault:
                 keyVaultURL: https://ptl.vault.azure.net
                 credentialID: jenkins-managed-identity
+          job-cache-storage: |
+            unclassified:
+              globalItemStorage:
+                storage:
+                  azure:
+                    containerName: "job-cache"
+                    credentialsId: "job-cache-storage-account"
           kubernetes-agent: |
             jenkins:
               clouds:
