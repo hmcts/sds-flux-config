@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e1dedb2-20260811085049 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0d7e29-20260811143322 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
       disableTraefikTls: true
