@@ -7,7 +7,7 @@ spec:
   releaseName: opal-fines-service
   values:
     java:
-      image: hmctsprod.azurecr.io/opal/fines-service:pr-1917-95cc966-20260812140631 # {"$imagepolicy": "flux-system:opal-fines-service-pr"}
+      image: hmctsprod.azurecr.io/opal/fines-service:pr-1917-6b0ae4c-20260812153005 # {"$imagepolicy": "flux-system:opal-fines-service-pr"}
       ingressHost: opal-fines-service.test.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
