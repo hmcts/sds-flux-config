@@ -11,5 +11,6 @@ spec:
       image: hmctsprod.azurecr.io/appreg/frontend:prod-9931892-20260812133432 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "STAGING"
+        RESTART_ME: "001"
         LOG_LEVEL: "DEBUG"
         APPREG_API_BASE_URL: https://appreg-api.staging.platform.hmcts.net
