@@ -11,4 +11,5 @@ spec:
       image: hmctsprod.azurecr.io/appreg/frontend:prod-9931892-20260812133432 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "DEMO"
+        RESTART_ME: "001"
         LOG_LEVEL: "DEBUG"
