@@ -11,4 +11,5 @@ spec:
       image: hmctsprod.azurecr.io/appreg/api:prod-e1fed9a-20260813121151 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "DEMO"
+        RESTART_ME: "001"
         LOG_LEVEL: "DEBUG"
