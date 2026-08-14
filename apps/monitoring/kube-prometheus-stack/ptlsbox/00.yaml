@@ -11,11 +11,11 @@ spec:
         hosts:
           - sds-prometheus-00-ptl.sandbox.platform.hmcts.net
           # DTSPO-33801: palo frontend for the aat Managed Grafana datasource
-          - firewall-nonprodi-palo-grafanasdsprom.uksouth.cloudapp.azure.com
+          - firewall-sbox-int-palo-grafanasdsprom.uksouth.cloudapp.azure.com
         tls:
           - hosts:
               - sds-prometheus-00-ptl.sandbox.platform.hmcts.net
-              - firewall-nonprodi-palo-grafanasdsprom.uksouth.cloudapp.azure.com
+              - firewall-sbox-int-palo-grafanasdsprom.uksouth.cloudapp.azure.com
     alertmanager:
       ingress:
         hosts:
