@@ -21,22 +21,35 @@ spec:
                 useAuthenticatedEndpoint: false
                 collectingMetricsPeriodInSeconds: 120
                 collectNodeStatus: true
-                # Per-job/per-stage build metrics are served by the CosmosDB ->
-                # dtsse-dashboard-ingestion -> Postgres pipeline; exposing them
-                # here would explode series cardinality on instances with many
-                # pipelines. Keep this endpoint to controller health only.
+                # SANDBOX DISCOVERY MODE (DTSPO-34168/34169): all build metric
+                # families are exposed so the team can browse what is available
+                # in Prometheus and pick a keep-list. Re-introduce a
+                # disabledMetricConfig trim before enabling any of this on prod
+                # — series cost scrape/storage whether queried or not.
+                # Full unbounded per-build history remains in the CosmosDB ->
+                # dtsse-dashboard-ingestion -> Postgres pipeline.
+                #
+                # collectDiskUsage stays false: the plugin docs warn against
+                # walking disk usage on cloud storage; PVC usage already comes
+                # from kubelet metrics.
                 collectDiskUsage: false
-                countSuccessfulBuilds: false
-                countUnstableBuilds: false
-                countFailedBuilds: false
-                countNotBuiltBuilds: false
-                countAbortedBuilds: false
-                fetchTestResults: false
-                perBuildMetrics: false
+                # The count* flags gate which build RESULTS are observed by the
+                # duration/count metrics (Runs.includeBuildInMetrics) — they
+                # must be true for duration metrics to populate at all.
+                countSuccessfulBuilds: true
+                countUnstableBuilds: true
+                countFailedBuilds: true
+                countNotBuiltBuilds: true
+                countAbortedBuilds: true
+                fetchTestResults: true
+                # Per-run metrics: adds the `number` (build number) label to the
+                # plain build_*/stage_* families — this is what provides
+                # per-run stage timings (DTSPO-34168) and per-run total runtime
+                # (DTSPO-34169). Bounded to the last 10 builds per job AND max
+                # 72h old (the stricter limit wins) to keep cardinality sane.
+                perBuildMetrics: true
+                perBuildMetricsMaxBuilds: 10
+                perBuildMetricsMaxAgeInHours: 72
                 appendParamLabel: false
                 appendStatusLabel: false
                 processingDisabledBuilds: false
-                disabledMetricConfig:
-                  entries:
-                  - regexDisabledMetric:
-                      regex: "default_jenkins_builds_.*"
