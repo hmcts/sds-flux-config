@@ -532,6 +532,392 @@
           "refId": "A"
         }
       ],
+      "title": "Jobs and pipelines",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "uid": "$datasource"
+      },
+      "description": "Ten jobs with the lowest Jenkins health score.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 50
+              },
+              {
+                "color": "green",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 9
+      },
+      "id": 17,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "expr": "bottomk(10, avg by (jenkins_job) ({__name__=~\"$prefix\\\\_?jenkins_builds_health_score\", job=~\"$job\", instance=~\"$instance\", jenkins_job=~\"$pipeline\", repo=~\"$repo\"}))",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "{{jenkins_job}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Least healthy jobs",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "uid": "$datasource"
+      },
+      "description": "Ten longest latest builds, grouped by Jenkins job.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "min": 0,
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 9
+      },
+      "id": 18,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "expr": "topk(10, max by (jenkins_job) ({__name__=~\"$prefix\\\\_?jenkins_builds_last_build_duration_milliseconds\", job=~\"$job\", instance=~\"$instance\", jenkins_job=~\"$pipeline\", repo=~\"$repo\"}))",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "{{jenkins_job}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Latest build duration by job",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "uid": "$datasource"
+      },
+      "description": "Longest recent pipeline runs from the bounded 10-build, 72-hour Prometheus window.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "min": 0,
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 17
+      },
+      "id": 19,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "expr": "topk(20, max by (jenkins_job, number) ({__name__=~\"$prefix\\\\_?jenkins_builds_build_duration_milliseconds\", job=~\"$job\", instance=~\"$instance\", jenkins_job=~\"$pipeline\", repo=~\"$repo\"}))",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "{{jenkins_job}} #{{number}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Recent pipeline runtime by build",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "uid": "$datasource"
+      },
+      "description": "Longest successful or unstable stages from recent pipeline runs; failed stages are not observed by the plugin's duration summary.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "min": 0,
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 17
+      },
+      "id": 20,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "expr": "topk(20, max by (jenkins_job, number, stage) ({__name__=~\"$prefix\\\\_?jenkins_builds_stage_duration_milliseconds_summary_sum\", job=~\"$job\", instance=~\"$instance\", jenkins_job=~\"$pipeline\", repo=~\"$repo\"}))",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "{{jenkins_job}} #{{number}} · {{stage}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Recent stage duration by build",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "uid": "$datasource"
+      },
+      "description": "Initial Jenkins queue wait before a run starts. Mid-stage agent allocation wait is not exported by this metric.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "min": 0,
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 25
+      },
+      "id": 21,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "expr": "topk(20, max by (jenkins_job, number) ({__name__=~\"$prefix\\\\_?jenkins_builds_build_waiting_milliseconds\", job=~\"$job\", instance=~\"$instance\", jenkins_job=~\"$pipeline\", repo=~\"$repo\"}))",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "{{jenkins_job}} #{{number}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Initial queue wait by build",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "uid": "$datasource"
+      },
+      "description": "Largest Jenkins job disk consumers. This is job storage, not agent compute cost.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "min": 0,
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 25
+      },
+      "id": 22,
+      "options": {
+        "displayMode": "gradient",
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "expr": "topk(20, max by (jobName) ({__name__=~\"$prefix\\\\_?jenkins_job_usage_bytes\", job=~\"$job\", instance=~\"$instance\"}))",
+          "format": "time_series",
+          "instant": true,
+          "legendFormat": "{{jobName}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Job disk usage",
+      "type": "bargauge"
+    },
+    {
+      "collapsed": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "$datasource"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 33
+      },
+      "id": 23,
+      "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "$datasource"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Queue",
       "type": "row"
     },
@@ -598,9 +984,9 @@
       },
       "gridPos": {
         "h": 7,
-        "w": 4,
-        "x": 20,
-        "y": 9
+        "w": 24,
+        "x": 0,
+        "y": 34
       },
       "id": 11,
       "options": {
@@ -667,7 +1053,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 41
       },
       "id": 16,
       "panels": [],
@@ -747,7 +1133,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 17
+        "y": 42
       },
       "id": 12,
       "options": {
@@ -883,7 +1269,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 17
+        "y": 42
       },
       "id": 13,
       "options": {
@@ -1006,6 +1392,62 @@
         "useTags": false
       },
       {
+        "allValue": ".+",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$datasource"
+        },
+        "definition": "label_values(default_jenkins_builds_health_score{job=~\"$job\", instance=~\"$instance\"}, jenkins_job)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Pipeline",
+        "multi": true,
+        "name": "pipeline",
+        "options": [],
+        "query": "label_values(default_jenkins_builds_health_score{job=~\"$job\", instance=~\"$instance\"}, jenkins_job)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": ".+",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$datasource"
+        },
+        "definition": "label_values(default_jenkins_builds_health_score{job=~\"$job\", instance=~\"$instance\", jenkins_job=~\"$pipeline\"}, repo)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Repository",
+        "multi": true,
+        "name": "repo",
+        "options": [],
+        "query": "label_values(default_jenkins_builds_health_score{job=~\"$job\", instance=~\"$instance\", jenkins_job=~\"$pipeline\"}, repo)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
         "current": {
           "selected": false,
           "text": "",
@@ -1028,7 +1470,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -1057,9 +1499,9 @@
     ]
   },
   "timezone": "browser",
-  "title": "Jenkins Controller Health",
+  "title": "Jenkins Overview",
   "uid": "jenkins-controller-health",
-  "version": 4,
+  "version": 5,
   "weekStart": "",
-  "description": "PTLSBOX Jenkins controller health. Adapted from the Grafana Labs Jenkins mixin at commit 362e410def34e9ea5a690f38d37b59b45557daa8; job-detail panels are omitted because default_jenkins_builds_* metrics are intentionally disabled."
+  "description": "PTLSBOX Jenkins controller, job and bounded recent-run metrics. Adapted from the Grafana Labs Jenkins mixin at commit 362e410def34e9ea5a690f38d37b59b45557daa8. Pipeline and stage panels cover at most 10 builds per job and 72 hours; queue wait covers initial scheduling only. Agent cost and mid-stage allocation wait are not exported by these metrics."
 }

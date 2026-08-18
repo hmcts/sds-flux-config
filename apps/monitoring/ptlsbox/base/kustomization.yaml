@@ -7,7 +7,7 @@ resources:
 - prometheus-values.enc.yaml
 
 # Adapted from grafana/jsonnet-libs jenkins-mixin at commit 362e410def34.
-# Pipeline and stage panels remain separate from this controller-health view.
+# Extended with PTLSBOX job and bounded recent-run panels.
 configMapGenerator:
 - name: jenkins-grafana-dashboard
   files:

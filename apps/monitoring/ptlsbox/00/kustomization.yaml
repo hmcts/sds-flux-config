@@ -9,6 +9,6 @@ patches:
     kind: HelmRelease
     name: kube-prometheus-stack
   patch: |-
-    # Replaced by the PTLSBOX-scoped, controller-health dashboard ConfigMap.
+    # Replaced by the PTLSBOX-scoped Jenkins overview dashboard ConfigMap.
     - op: remove
       path: /spec/values/grafana/dashboards/default/Jenkins
