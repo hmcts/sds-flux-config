@@ -21,22 +21,25 @@ spec:
                 useAuthenticatedEndpoint: false
                 collectingMetricsPeriodInSeconds: 120
                 collectNodeStatus: true
-                # Per-job/per-stage build metrics are served by the CosmosDB ->
-                # dtsse-dashboard-ingestion -> Postgres pipeline; exposing them
-                # here would explode series cardinality on instances with many
-                # pipelines. Keep this endpoint to controller health only.
-                collectDiskUsage: false
-                countSuccessfulBuilds: false
-                countUnstableBuilds: false
-                countFailedBuilds: false
+                # Full per-build history remains in the CosmosDB ->
+                # dtsse-dashboard-ingestion -> Postgres pipeline. Here we expose
+                # the plugin's per-job metrics for runtime, per-stage duration,
+                # pass/fail counts and disk usage, plus a bounded window of
+                # per-run history (perBuildMetrics + max-builds/max-age caps
+                # below) for recent-build trend visibility in Grafana.
+                collectDiskUsage: true
+                countSuccessfulBuilds: true
+                countUnstableBuilds: true
+                countFailedBuilds: true
                 countNotBuiltBuilds: false
-                countAbortedBuilds: false
+                countAbortedBuilds: true
                 fetchTestResults: false
-                perBuildMetrics: false
+                # Adds the `number` (build number) label to build_*/stage_*
+                # metrics. Bounded to the last 10 builds per job AND max 72h
+                # old (the stricter limit wins) to keep series cardinality sane.
+                perBuildMetrics: true
+                perBuildMetricsMaxBuilds: 10
+                perBuildMetricsMaxAgeInHours: 72
                 appendParamLabel: false
                 appendStatusLabel: false
                 processingDisabledBuilds: false
-                disabledMetricConfig:
-                  entries:
-                  - regexDisabledMetric:
-                      regex: "default_jenkins_builds_.*"
