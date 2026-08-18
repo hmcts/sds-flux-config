@@ -21,22 +21,20 @@ spec:
                 useAuthenticatedEndpoint: false
                 collectingMetricsPeriodInSeconds: 120
                 collectNodeStatus: true
-                # Per-job/per-stage build metrics are served by the CosmosDB ->
-                # dtsse-dashboard-ingestion -> Postgres pipeline; exposing them
-                # here would explode series cardinality on instances with many
-                # pipelines. Keep this endpoint to controller health only.
-                collectDiskUsage: false
-                countSuccessfulBuilds: false
-                countUnstableBuilds: false
-                countFailedBuilds: false
+                # Full per-build history remains in the CosmosDB ->
+                # dtsse-dashboard-ingestion -> Postgres pipeline. Here we expose
+                # the plugin's per-job "last build" metrics (bounded by number
+                # of jobs x stages, not by build history) for runtime, per-stage
+                # duration, pass/fail counts and disk usage. perBuildMetrics
+                # stays disabled to avoid per-build-history cardinality blow-up.
+                collectDiskUsage: true
+                countSuccessfulBuilds: true
+                countUnstableBuilds: true
+                countFailedBuilds: true
                 countNotBuiltBuilds: false
-                countAbortedBuilds: false
+                countAbortedBuilds: true
                 fetchTestResults: false
                 perBuildMetrics: false
                 appendParamLabel: false
                 appendStatusLabel: false
                 processingDisabledBuilds: false
-                disabledMetricConfig:
-                  entries:
-                  - regexDisabledMetric:
-                      regex: "default_jenkins_builds_.*"
