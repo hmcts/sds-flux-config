@@ -5,3 +5,15 @@ resources:
 - ../../base
 - prometheus-values.yaml
 - prometheus-values.enc.yaml
+
+# Adapted from grafana/jsonnet-libs jenkins-mixin at commit 362e410def34.
+# Pipeline and stage panels remain separate from this controller-health view.
+configMapGenerator:
+- name: jenkins-grafana-dashboard
+  files:
+  - dashboards/jenkins.json
+  options:
+    labels:
+      grafana_dashboard: "1"
+      app.kubernetes.io/part-of: jenkins
+      app.kubernetes.io/component: monitoring

@@ -5,3 +5,10 @@ resources:
 
 patches:
 - path: ../../kube-prometheus-stack/ptlsbox/00.yaml
+- target:
+    kind: HelmRelease
+    name: kube-prometheus-stack
+  patch: |-
+    # Replaced by the PTLSBOX-scoped, controller-health dashboard ConfigMap.
+    - op: remove
+      path: /spec/values/grafana/dashboards/default/Jenkins
