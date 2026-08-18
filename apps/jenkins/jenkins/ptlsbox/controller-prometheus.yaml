@@ -43,3 +43,10 @@ spec:
                 appendParamLabel: false
                 appendStatusLabel: false
                 processingDisabledBuilds: false
+                # Must be declared EXPLICITLY EMPTY: JCasC does not reset
+                # attributes that are simply removed from the YAML, and the
+                # previous trim regex (default_jenkins_builds_.*) is persisted
+                # in the controller's config XML — without this block it stays
+                # active and keeps suppressing all builds_* metrics.
+                disabledMetricConfig:
+                  entries: []
