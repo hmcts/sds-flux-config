@@ -9,6 +9,7 @@ spec:
     java:
       ingressHost: opal-fines-service.platform.hmcts.net
       environment:
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs
         OPAL_FRONTEND_URL: https://opal-frontend.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.platform.hmcts.net
         OPAL_LEGACY_GATEWAY_URL: https://cloudgobgateway.platform.hmcts.net/opal

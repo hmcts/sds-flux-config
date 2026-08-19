@@ -8,3 +8,5 @@ spec:
   values:
     java:
       ingressHost: opal-log-audit-service.platform.hmcts.net
+      environment:
+        FLYWAY_LOCATIONS: classpath:db/migration
