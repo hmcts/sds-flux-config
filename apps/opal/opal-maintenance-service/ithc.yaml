@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: opal-maintenance-service
+  namespace: opal
+spec:
+  releaseName: opal-maintenance-service
+  values:
+    java:
+      ingressHost: opal-maintenance-service.ithc.platform.hmcts.net
