@@ -22,6 +22,7 @@ spec:
         CRIME_IDAM_URL: https://login.sit.cjscp.org.uk
         THIRD_PARTY_KEY_VAULT: pip-ss-tp-kv-test
         MANAGED_IDENTITY_CLIENT_ID: 0e0c8682-a038-4aa8-9619-bb88a7ba9357
+        RETRIGGER_PODS: true
       autoscaling:
         enabled: true
         cpu:
