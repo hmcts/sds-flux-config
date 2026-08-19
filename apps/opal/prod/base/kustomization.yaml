@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+  - ../../opal-fines-service/opal-fines-service.yaml
+  - ../../opal-logging-service/opal-logging-service.yaml
+  - ../../opal-user-service/opal-user-service.yaml
+  - ../../opal-file-handler-service/opal-file-handler-service.yaml
+  - ../../opal-external-api/opal-external-api.yaml
+  - ../../opal-frontend/opal-frontend.yaml
+  - ../../opal-rm-frontend/opal-rm-frontend.yaml
+  - ../../opal-log-audit-service/opal-log-audit-service.yaml
+  - ../../opal-rm-service/opal-rm-service.yaml
+  - ../../../base/slack-provider/prod
+namespace: opal
+patches:
+  - path: ../../serviceaccount/prod.yaml
+  - path: ../../opal-fines-service/prod.yaml
+  - path: ../../opal-logging-service/prod.yaml
+  - path: ../../opal-user-service/prod.yaml
+  - path: ../../opal-file-handler-service/prod.yaml
+  - path: ../../opal-external-api/prod.yaml
+  - path: ../../opal-frontend/prod.yaml
+  - path: ../../opal-rm-frontend/prod.yaml
+  - path: ../../opal-log-audit-service/prod.yaml
+  - path: ../../opal-rm-service/prod.yaml

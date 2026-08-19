@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: opal-user-service
+  namespace: opal
+spec:
+  releaseName: opal-user-service
+  values:
+    java:
+      ingressHost: opal-user-service.platform.hmcts.net
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.apps.hmcts.net
+        OPAL_LEGACY_GATEWAY_URL: https://cloudgobgateway.platform.hmcts.net/opal
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
