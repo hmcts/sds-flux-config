@@ -9,7 +9,7 @@ spec:
     java:
       autoscaling:
         enabled: true
-      image: hmctsprod.azurecr.io/opal/user-service:pr-614-f6f7ed2-20260811083838 # {"$imagepolicy": "flux-system:opal-user-service-pr"}
+      image: hmctsprod.azurecr.io/opal/user-service:pr-614-0df1b8e-20260813134631 # {"$imagepolicy": "flux-system:opal-user-service-pr"}
       ingressHost: opal-user-service.test.platform.hmcts.net
       environment:
         DUMMY_VAR: 1

@@ -7,7 +7,7 @@ spec:
   releaseName: darts-api
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/api:prod-6a43cbb-20260811131221 #{"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-a783fea-20260819153040 #{"$imagepolicy": "flux-system:darts-api"}
       ingressHost: darts-api.demo.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
@@ -27,7 +27,7 @@ spec:
         ARM_RPO_DURATION: 24h
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         RESET_POD: true
-        RESTART: 016
+        RESTART: 018
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         ENABLE_ARM_V5_2_UPGRADE: true
@@ -36,9 +36,9 @@ spec:
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_RPO_TOTAL_CATCHUP_HOURS: 25
         ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
-        ARM_DOWN_FOR_MAINTENANCE: false
+        ARM_DOWN_FOR_MAINTENANCE: true
     function:
-      image: hmctsprod.azurecr.io/darts/api:prod-6a43cbb-20260811131221 # {"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-a783fea-20260819153040 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
@@ -48,4 +48,4 @@ spec:
         ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
-        ARM_DOWN_FOR_MAINTENANCE: false
+        ARM_DOWN_FOR_MAINTENANCE: true
