@@ -9,8 +9,6 @@ resources:
   - ../../opal-external-api/opal-external-api.yaml
   - ../../opal-frontend/opal-frontend.yaml
   - ../../opal-rm-frontend/opal-rm-frontend.yaml
-  - ../../opal-log-audit-service/opal-log-audit-service.yaml
-  - ../../opal-rm-service/opal-rm-service.yaml
   - ../../../base/slack-provider/prod
 namespace: opal
 patches:
@@ -22,5 +20,3 @@ patches:
   - path: ../../opal-external-api/prod.yaml
   - path: ../../opal-frontend/prod.yaml
   - path: ../../opal-rm-frontend/prod.yaml
-  - path: ../../opal-log-audit-service/prod.yaml
-  - path: ../../opal-rm-service/prod.yaml
