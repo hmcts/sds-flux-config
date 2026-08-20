@@ -10,6 +10,7 @@ resources:
   - ../../opal-file-handler-service/opal-file-handler-service.yaml
   - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
   - ../../opal-user-service/opal-user-service.yaml
+  - ../../opal-maintenance-service/opal-maintenance-service.yaml
 namespace: opal
 patches:
   - path: ../../serviceaccount/demo.yaml
@@ -20,3 +21,4 @@ patches:
   - path: ../../opal-file-handler-service/demo.yaml
   - path: ../../opal-legacy-db-stub/demo.yaml
   - path: ../../opal-user-service/demo.yaml
+  - path: ../../opal-maintenance-service/demo.yaml
