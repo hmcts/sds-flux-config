@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: opal-maintenance-service
+  namespace: opal
+spec:
+  releaseName: opal-maintenance-service
+  values:
+    java:
+      ingressHost: opal-maintenance-service.demo.platform.hmcts.net
+      environment:
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
