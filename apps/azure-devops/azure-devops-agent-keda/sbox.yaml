@@ -15,6 +15,6 @@ spec:
       triggerPodIdentityIdentityId: "298b0553-025a-4f8d-966b-e3028892de63" # keda-sbox-mi
     triggers:
       - type: azure-pipelines
-        poolID: "40"
+        poolID: "62"
         organizationURLFromEnv: "AZP_URL"
         personalAccessTokenFromEnv: "AZP_TOKEN"
