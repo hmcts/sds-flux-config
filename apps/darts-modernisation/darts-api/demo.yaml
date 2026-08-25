@@ -7,7 +7,7 @@ spec:
   releaseName: darts-api
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/api:prod-cca2c82-20260825110039 #{"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:pr-3260-cca2c82-20260825110039 #{"$imagepolicy": "flux-system:darts-api-demo"}
       ingressHost: darts-api.demo.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
@@ -36,7 +36,7 @@ spec:
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_RPO_TOTAL_CATCHUP_HOURS: 25
         ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
-        ARM_DOWN_FOR_MAINTENANCE: false
+        ARM_DOWN_FOR_MAINTENANCE: true
     function:
       image: hmctsprod.azurecr.io/darts/api:prod-cca2c82-20260825110039 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
@@ -48,4 +48,4 @@ spec:
         ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
-        ARM_DOWN_FOR_MAINTENANCE: false
+        ARM_DOWN_FOR_MAINTENANCE: true
