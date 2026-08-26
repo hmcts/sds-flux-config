@@ -6,7 +6,7 @@ spec:
   releaseName: pip-publication-services
   values:
     java:
-      image: hmctsprod.azurecr.io/pip/publication-services:prod-ce764bd-20260814161035 # {"$imagepolicy": "flux-system:pip-publication-services"}
+      image: hmctsprod.azurecr.io/pip/publication-services:prod-6b8488a-20260826152436 # {"$imagepolicy": "flux-system:pip-publication-services"}
       disableTraefikTls: true
   chart:
     spec:
