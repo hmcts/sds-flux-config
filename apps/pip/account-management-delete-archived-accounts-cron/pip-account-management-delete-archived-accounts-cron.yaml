@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pip-account-management-delete-archived-accounts-cron
+spec:
+  releaseName: pip-account-management-delete-archived-accounts-cron
+  values:
+    job:
+      image: hmctsprod.azurecr.io/pip/cron-trigger:prod-c431713-20260814164025 # {"$imagepolicy": "flux-system:pip-account-management-delete-archived-accounts-cron"}
+      disableTraefikTls: true
+  chart:
+    spec:
+      chart: ./stable/pip-cron-trigger
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true
