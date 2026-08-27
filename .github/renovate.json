@@ -3,5 +3,13 @@
   "extends": [
     "local>hmcts/.github:renovate-config",
     "local>hmcts/.github//renovate/flux"
+  ],
+  "packageRules": [
+    {
+      "description": "Temporary jenkins-packer PR 315 image test",
+      "matchFileNames": ["apps/jenkins/jenkins/ptlsbox/jenkins-azure-vm-agent.yaml"],
+      "matchPackageNames": ["hmcts/jenkins-packer"],
+      "enabled": false
+    }
   ]
 }
