@@ -15,3 +15,4 @@ spec:
         FLYWAY_LOC_OVERRIDE: db/migrationv2
         TOKEN_EXPIRY: 12h
         RESTART: 002
+        RUN_DB_MIGRATION_ON_STARTUP: true
