@@ -7,7 +7,7 @@ spec:
   releaseName: darts-api
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/api:pr-3260-ee4af7a-20260827143634 #{"$imagepolicy": "flux-system:darts-api-demo"}
+      image: hmctsprod.azurecr.io/darts/api:pr-3260-fa9899c-20260828122630 #{"$imagepolicy": "flux-system:darts-api-demo"}
       ingressHost: darts-api.demo.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
