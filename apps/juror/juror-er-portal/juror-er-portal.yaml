@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/juror/er-portal:prod-d3f41e1-20260827132129 # {"$imagepolicy": "flux-system:juror-er-portal"}
+      image: hmctsprod.azurecr.io/juror/er-portal:prod-b364f14-20260901131655 # {"$imagepolicy": "flux-system:juror-er-portal"}
       startupPeriod: 30
       memoryRequests: '1Gi'
       cpuRequests: '500m'
