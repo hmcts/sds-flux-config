@@ -15,5 +15,5 @@ spec:
   values:
     nodejs:
       replicas: 2
-      image: hmctsprod.azurecr.io/darts/portal:prod-e75ae28-20260901075614 # {"$imagepolicy": "flux-system:darts-portal"}
+      image: hmctsprod.azurecr.io/darts/portal:prod-ba3e2dd-20260901075827 # {"$imagepolicy": "flux-system:darts-portal"}
       disableTraefikTls: true
