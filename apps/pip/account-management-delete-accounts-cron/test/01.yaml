@@ -1,9 +1,9 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pip-account-management-delete-archived-accounts-cron
+  name: pip-account-management-delete-accounts-cron
 spec:
-  releaseName: pip-account-management-delete-archived-accounts-cron
+  releaseName: pip-account-management-delete-accounts-cron
   values:
     job:
       image: hmctsprod.azurecr.io/pip/cron-trigger:pr-254-3d775eb-20260827084007
