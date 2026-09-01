@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - ../../../rbac/nonprod-role.yaml
+  - ../../../rbac/ben-edwards-cronjob-role.yaml
   - ../../opal-fines-service/opal-fines-service.yaml
   - ../../opal-logging-service/opal-logging-service.yaml
   - ../../opal-user-service/opal-user-service.yaml
