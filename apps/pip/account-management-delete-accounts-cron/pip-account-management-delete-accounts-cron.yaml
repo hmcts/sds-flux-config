@@ -1,16 +1,16 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pip-frontend
+  name: pip-account-management-delete-accounts-cron
 spec:
-  releaseName: pip-frontend
+  releaseName: pip-account-management-delete-accounts-cron
   values:
-    nodejs:
-      image: hmctsprod.azurecr.io/pip/frontend:prod-fccaa10-20260827102831 # {"$imagepolicy": "flux-system:pip-frontend"}
+    job:
+      image: hmctsprod.azurecr.io/pip/cron-trigger:prod-c431713-20260814164025
       disableTraefikTls: true
   chart:
     spec:
-      chart: ./stable/pip-frontend
+      chart: ./stable/pip-cron-trigger
       sourceRef:
         kind: GitRepository
         name: hmcts-charts
