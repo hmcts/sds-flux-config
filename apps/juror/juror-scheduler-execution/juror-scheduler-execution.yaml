@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/juror/scheduler-execution:prod-42c532b-20260818152646 # {"$imagepolicy": "flux-system:juror-scheduler-execution"}
+      image: hmctsprod.azurecr.io/juror/scheduler-execution:prod-97787f2-20260901134936 # {"$imagepolicy": "flux-system:juror-scheduler-execution"}
       memoryRequests: '1Gi'
       cpuRequests: '500m'
       memoryLimits: '2Gi'
