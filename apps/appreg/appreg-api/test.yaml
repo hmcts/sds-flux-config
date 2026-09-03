@@ -8,10 +8,10 @@ spec:
   values:
     java:
       ingressHost: appreg-api.test.platform.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/api:prod-158d209-20260820081632 # {"$imagepolicy": "flux-system:appreg-api"}
+      image: hmctsprod.azurecr.io/appreg/api:prod-21636fe-20260902144922 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "PERFTEST"
-        RESTART_ME: "004"
+        RESTART_ME: "005"
         AZURE_ISSUER: "https://login.microsoftonline.com/e575f663-b30a-4786-89ad-319842dfe853/v2.0"
       keyVaults:
         appreg:
