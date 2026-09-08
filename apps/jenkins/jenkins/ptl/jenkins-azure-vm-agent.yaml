@@ -230,7 +230,6 @@ spec:
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                       uamiID: /subscriptions/6c4d2513-a873-41b4-afdd-b05a33206631/resourceGroups/managed-identities-ptl-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/jenkins-ptl-mi
                       <<: *vm_template_values_anchor
-
                     - templateName: "cnp-jenkins-builders-stg-nightly"
                       templateDesc: "Jenkins nightly build agents for SDS stg environment"
                       labels: "ubuntu-stg nightly"
