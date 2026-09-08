@@ -12,3 +12,53 @@ spec:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+    bt-eckoh-report:
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+    caps-report:
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+    natwest-transfer:
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+    allpay-file-transfer:
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+    barclaycard-transfer:
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+    bt-eckoh-transfer:
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+    dwp-transfer:
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+    jacobs-transfer:
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+    cder-transfer:
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+    marston-transfer:
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
