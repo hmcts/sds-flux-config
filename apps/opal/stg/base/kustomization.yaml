@@ -11,7 +11,6 @@ resources:
   - ../../opal-frontend/opal-frontend.yaml
   - ../../opal-rm-frontend/opal-rm-frontend.yaml
   - ../../opal-legacy-db-stub/opal-legacy-db-stub.yaml
-  - ../../opal-log-audit-service/opal-log-audit-service.yaml
   - ../../opal-frontend-test/opal-frontend-test.yaml
   - ../../../base/slack-provider/stg
   - ../../opal-maintenance-service/opal-maintenance-service.yaml
@@ -26,6 +25,5 @@ patches:
   - path: ../../opal-frontend/stg.yaml
   - path: ../../opal-rm-frontend/stg.yaml
   - path: ../../opal-legacy-db-stub/stg.yaml
-  - path: ../../opal-log-audit-service/stg.yaml
   - path: ../../opal-frontend-test/stg.yaml
   - path: ../../opal-maintenance-service/stg.yaml
