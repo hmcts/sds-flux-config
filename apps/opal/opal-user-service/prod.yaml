@@ -8,6 +8,37 @@ spec:
   values:
     java:
       ingressHost: opal-user-service.platform.hmcts.net
+      keyVaults:
+        opal:
+          secrets:
+            - name: app-insights-connection-string
+              alias: app-insights-connection-string
+            - name: user-service-POSTGRES-HOST
+              alias: OPAL_USER_DB_HOST
+            - name: user-service-POSTGRES-PASS
+              alias: OPAL_USER_DB_PASSWORD
+            - name: user-service-POSTGRES-PORT
+              alias: OPAL_USER_DB_PORT
+            - name: user-service-POSTGRES-USER
+              alias: OPAL_USER_DB_USERNAME
+            - name: user-service-POSTGRES-DATABASE
+              alias: OPAL_USER_DB_NAME
+            - name: AzureADTenantId
+              alias: AAD_TENANT_ID
+            - name: AzureADClientId
+              alias: AAD_CLIENT_ID
+            - name: AzureADClientSecret
+              alias: AAD_CLIENT_SECRET
+            - name: OpalTestUserPassword
+              alias: OPAL_TEST_USER_PASSWORD
+            - name: role-mapping-storage-container-name
+              alias: ROLE_MAPPING_STORAGE_CONTAINER_NAME
+            - name: storage-connection-string
+              alias: AZURE_STORAGE_CONNECTION_STRING
+            - name: managed-redis-connection-string
+              alias: REDIS_CONNECTION_STRING
+            - name: launch-darkly-sdk-key
+              alias: LAUNCH_DARKLY_SDK_KEY
       environment:
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs
         OPAL_FRONTEND_URL: https://opal-frontend.apps.hmcts.net

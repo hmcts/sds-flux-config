@@ -7,6 +7,7 @@ spec:
   releaseName: opal-external-api
   values:
     java:
+      enabled: false
       ingressHost: opal-external-api.platform.hmcts.net
       environment:
         OPAL_FINES_S2S_URL: https://opal-fines-service.platform.hmcts.net

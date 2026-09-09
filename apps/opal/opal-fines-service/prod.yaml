@@ -8,6 +8,58 @@ spec:
   values:
     java:
       ingressHost: opal-fines-service.platform.hmcts.net
+  keyVaults:
+    opal:
+      secrets:
+        - name: app-insights-connection-string
+          alias: app-insights-connection-string
+        - name: launch-darkly-sdk-key
+          alias: LAUNCH_DARKLY_SDK_KEY
+        - name: fines-service-POSTGRES-HOST
+          alias: OPAL_FINES_DB_HOST
+        - name: fines-service-POSTGRES-PASS
+          alias: OPAL_FINES_DB_PASSWORD
+        - name: fines-service-POSTGRES-PORT
+          alias: OPAL_FINES_DB_PORT
+        - name: fines-service-POSTGRES-USER
+          alias: OPAL_FINES_DB_USERNAME
+        - name: fines-service-POSTGRES-DATABASE
+          alias: OPAL_FINES_DB_NAME
+        - name: AzureADTenantId
+          alias: AAD_TENANT_ID
+        - name: AzureADClientId
+          alias: AAD_CLIENT_ID
+        - name: AzureADClientSecret
+          alias: AAD_CLIENT_SECRET
+        - name: OpalTestUserPassword
+          alias: OPAL_TEST_USER_PASSWORD
+        - name: OpalLegacyGatewayUsername
+          alias: OPAL_LEGACY_GATEWAY_USERNAME
+        - name: OpalLegacyGatewayPassword
+          alias: OPAL_LEGACY_GATEWAY_PASSWORD
+        - name: servicebus-connection-string
+          alias: SERVICEBUS_CONNECTION_STRING
+        - name: servicebus-shared-access-key
+          alias: SERVICEBUS_SHARED_ACCESS_KEY
+        - name: servicebus-logging-pdpl-queue-name
+          alias: SERVICEBUS_LOGGING_PDPL_QUEUE_NAME
+        - name: servicebus-report-queue-name
+          alias: SERVICEBUS_REPORT_QUEUE_NAME
+        - name: servicebus-auto-payments-process-interface-files-queue-name
+          alias: SERVICEBUS_INTERFACE_JOBS_QUEUE_NAME
+        - name: storage-connection-string
+          alias: AZURE_STORAGE_CONNECTION_STRING
+        - name: reports-storage-container-name
+          alias: REPORTS_AZURE_STORAGE_CONTAINER
+        - name: managed-redis-connection-string
+          alias: REDIS_CONNECTION_STRING
+# Disabled as they are not required for R1a
+#        - name: opal-hmrc-auth-client-id
+#          alias: OPAL_HMRC_AUTH_CLIENT_ID
+#        - name: opal-hmrc-auth-client-secret
+#          alias: OPAL_HMRC_AUTH_CLIENT_SECRET
+#        - name: opal-hmrc-url
+#          alias: OPAL_HMRC_URL
       environment:
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs
         OPAL_FRONTEND_URL: https://opal-frontend.apps.hmcts.net
