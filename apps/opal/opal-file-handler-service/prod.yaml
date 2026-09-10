@@ -7,6 +7,7 @@ spec:
   releaseName: opal-file-handler-service
   values:
     java:
+      enabled: false
       ingressHost: opal-file-handler-service.platform.hmcts.net
       environment:
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs

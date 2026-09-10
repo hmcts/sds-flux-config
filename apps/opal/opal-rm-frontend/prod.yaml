@@ -7,6 +7,7 @@ spec:
   releaseName: opal-rm-frontend
   values:
     nodejs:
+      enabled: false
       ingressHost: opal-rm-frontend.apps.hmcts.net
       environment:
         FRONTEND_HOSTNAME: https://opal-rm-frontend.apps.hmcts.net
