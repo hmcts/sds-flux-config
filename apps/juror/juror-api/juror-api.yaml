@@ -31,3 +31,5 @@ spec:
           enabled: true
           averageUtilization: 80
       disableTraefikTls: true
+      environment:
+        PUBLIC_HOST: juror-public.{{ .Values.global.environment }}.apps.hmcts.net
