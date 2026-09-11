@@ -15,25 +15,25 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
       disableTraefikTls: true
     bt-eckoh-report:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
     caps-report:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
     natwest-transfer:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
     allpay-file-transfer:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
     barclaycard-transfer:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
     bt-eckoh-transfer:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
     dwp-transfer:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
     jacobs-transfer:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
     cder-transfer:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
     marston-transfer:
-      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-ca5d396-20260911122721 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
+      image: hmctsprod.azurecr.io/opal/file-handler-service:prod-e0ca7d9-20260911132502 # {"$imagepolicy": "flux-system:opal-file-handler-service"}
