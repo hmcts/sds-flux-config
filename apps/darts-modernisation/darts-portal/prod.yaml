@@ -8,9 +8,6 @@ spec:
   values:
     nodejs:
       ingressHost: darts.apps.hmcts.net
-      replicas: 0
-      autoscaling:
-        enabled: false
       environment:
         DARTS_API_URL: https://darts-api.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.apps.hmcts.net
