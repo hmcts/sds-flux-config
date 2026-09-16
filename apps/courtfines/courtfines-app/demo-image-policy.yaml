@@ -8,7 +8,7 @@ spec:
   imageRepositoryRef:
     name: courtfines-app
   filterTags:
-    pattern: "^pr-236-[a-f0-9]+-(?P<ts>[0-9]+)$"
+    pattern: "^pr-276-[a-f0-9]+-(?P<ts>[0-9]+)$"
     extract: "$ts"
   policy:
     alphabetical:

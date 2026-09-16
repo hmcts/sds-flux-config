@@ -8,6 +8,18 @@ spec:
   values:
     nodejs:
       ingressHost: opal-frontend.apps.hmcts.net
+      keyVaults:
+        opal:
+          secrets:
+            - app-insights-connection-string
+            - managed-redis-connection-string
+            - opal-frontend-session-secret
+            - opal-frontend-cookie-secret
+            - opal-frontend-csrf-secret
+            - launch-darkly-client-id
+            - AzureADClientId
+            - AzureADClientSecret
+            - AzureADTenantId
       environment:
         FRONTEND_HOSTNAME: https://opal-frontend.apps.hmcts.net
         OPAL_API_URL: https://opal-fines-service.platform.hmcts.net
