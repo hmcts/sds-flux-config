@@ -8,14 +8,14 @@ spec:
   values:
     nodejs:
       ingressHost: 'cloudgobgateway.platform.hmcts.net'
-      image: 'hmctsprod.azurecr.io/themis/themis_sb_azure:1.19.1'
+      image: 'hmctsprod.azurecr.io/themis/themis_sb_azure:1.27.0'
       replicas: 10
       autoscaling:
         enabled: false
       environment:
         KV_CONFIG_TREE: /mnt/secrets/libragob-prod-kv/
         LOG4J_DEBUG: true
-        TEMP_VAR: 0
+        TEMP_VAR: 1
         DAC_NUMBER_OF_INSTANCES: 3
       keyVaults:
         libragob-prod-kv:
