@@ -13,51 +13,61 @@ spec:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
     bt-eckoh-report:
+      enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: falseithc
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/ithc
     caps-report:
+      enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: falseithc
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/ithc
     natwest-transfer:
+      enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: falseithc
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/ithc
     allpay-file-transfer:
+      enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: falseithc
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/ithc
     barclaycard-transfer:
+      enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: falseithc
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/ithc
     bt-eckoh-transfer:
+      enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: falseithc
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/ithc
     dwp-transfer:
+      enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: falseithc
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/ithc
     jacobs-transfer:
+      enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: falseithc
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/ithc
     cder-transfer:
+      enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: falseithc
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/ithc
     marston-transfer:
+      enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.ithc.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: falseithc
