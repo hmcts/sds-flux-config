@@ -39,6 +39,7 @@ spec:
         ARM_RPO_TOTAL_CATCHUP_HOURS: 12
         ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 37
         ARM_DOWN_FOR_MAINTENANCE: false
+        ARM_API_VERSION: v5_2
     function:
       image: hmctsprod.azurecr.io/darts/api:prod-ed4c55f-20260910074408 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
@@ -51,3 +52,4 @@ spec:
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_DOWN_FOR_MAINTENANCE: false
+        ARM_API_VERSION: v5_2
