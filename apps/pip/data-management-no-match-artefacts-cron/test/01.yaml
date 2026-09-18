@@ -6,7 +6,8 @@ spec:
   releaseName: pip-data-management-no-match-artefacts-cron
   values:
     job:
-      schedule: "15 12 * * 1,3,5"
+      image: hmctsprod.azurecr.io/pip/cron-trigger:pr-255-cafb712-20260904140648
+      schedule: "30 12 * * 1,3,5"
       environment:
         DATA_MANAGEMENT_URL: https://pip-data-management.test.platform.hmcts.net
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.test.platform.hmcts.net
