@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/opal/frontend:prod-e2a7c79-20260917123225 # {"$imagepolicy": "flux-system:opal-frontend-test"}
+      image: hmctsprod.azurecr.io/opal/frontend:prod-3a6f56b-20260917174727 # {"$imagepolicy": "flux-system:opal-frontend-test"}
       disableTraefikTls: true
