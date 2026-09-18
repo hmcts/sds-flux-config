@@ -7,7 +7,6 @@ spec:
   releaseName: opal-file-handler-service
   values:
     java:
-      ingressHost: opal-file-handler-service.staging.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
