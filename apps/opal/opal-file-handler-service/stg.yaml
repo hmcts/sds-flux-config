@@ -7,6 +7,7 @@ spec:
   releaseName: opal-file-handler-service
   values:
     java:
+      ingressHost: opal-file-handler-service.staging.platform.hmcts.net
       environment:
         DUMMY_VAR: 0
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
@@ -14,7 +15,6 @@ spec:
         TESTING_SUPPORT_ENDPOINTS_ENABLED: true
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg
     bt-eckoh-report:
-      image: 'hmctsprod.azurecr.io/opal/file-handler-service:pr-233'
       enabled: true
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
