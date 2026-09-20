@@ -38,6 +38,7 @@ spec:
             - name: launch-darkly-sdk-key
               alias: LAUNCH_DARKLY_SDK_KEY
       environment:
+        DUMMY_VAR: 1
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs
         OPAL_FRONTEND_URL: https://opal-frontend.apps.hmcts.net
         OPAL_LEGACY_GATEWAY_URL: https://cloudgobgateway.platform.hmcts.net/opal
