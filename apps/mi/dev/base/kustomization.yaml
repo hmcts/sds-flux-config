@@ -6,7 +6,7 @@ resources:
   - mi-adf-auth-values.enc.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy.yaml
   - ../../mi-reverse-proxy/mi-reverse-proxy-secret-provider.yaml
-  - ../../../rbac/dev-role.yaml
+  - ../../base/mi-developer-rbac.yaml
   - ../../mi-sftp-server/mi-sftp-server.yaml
   - ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
   - ../../../base/slack-provider/dev
