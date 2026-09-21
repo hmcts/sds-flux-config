@@ -37,8 +37,9 @@ spec:
         ARM_RPO_TOTAL_CATCHUP_HOURS: 25
         ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
         ARM_DOWN_FOR_MAINTENANCE: false
+        ARM_API_VERSION: v5_2
     function:
-      image: hmctsprod.azurecr.io/darts/api:pr-3396-3805d3b-20260910080732 #{"$imagepolicy": "flux-system:darts-api-demo"}
+      # image: hmctsprod.azurecr.io/darts/api:pr-3260-3d56a4e-20260901130056 #{"$imagepolicy": "flux-system:darts-api-demo"}
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
@@ -49,3 +50,4 @@ spec:
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
         ARM_DOWN_FOR_MAINTENANCE: false
+        ARM_API_VERSION: v5_2
