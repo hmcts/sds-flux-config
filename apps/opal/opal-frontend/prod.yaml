@@ -21,9 +21,33 @@ spec:
             - AzureADClientSecret
             - AzureADTenantId
       environment:
+        DUMMY_VAR: 1
         FRONTEND_HOSTNAME: https://opal-frontend.apps.hmcts.net
         OPAL_API_URL: https://opal-fines-service.platform.hmcts.net
         OPAL_FINES_SERVICE_API_URL: https://opal-fines-service.platform.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.platform.hmcts.net
         ALLOW_CONFIG_MUTATIONS: false
         FEATURES_IP_LOGGING_ENABLED: true
+        RELEASE_1B_ENABLED: false
+        RELEASE_1C_ADMINISTRATION_ENABLED: false
+        RELEASE_1C_WRITE_OFF_ENABLED: false
+        RELEASE_1C_AUTO_ENFORCEMENT_ENABLED: false
+        RELEASE_1D_DATA_RETENTION_ENABLED: false
+        RELEASE_1D_AUTO_ENFORCEMENT_CONFIG_ENABLED: false
+        RELEASE_1C_RM_FINANCIAL_MOVEMENTS_ENABLED: false
+        RELEASE_1C_RM_FINANCIAL_CHECKS_ENABLED: false
+        RELEASE_1C_RM_SUSPENSE_ENABLED: false
+        RELEASE_1C_RM_PAYMENT_ENABLED: false
+        RELEASE_1C_RM_ADMIN_REPORTS_ENABLED: false
+        RELEASE_1C_RM_ACCOUNT_ACTIONS_ENABLED: false
+        RELEASE_1C_FINANCIAL_MOVEMENTS_ENABLED: false
+        RELEASE_1C_CHECKS_ENABLED: false
+        RELEASE_1C_SUSPENSE_ENABLED: false
+        RELEASE_1C_PAYMENT_ENABLED: false
+        RELEASE_1C_R1A_TIDY_UP_ENABLED: false
+        RELEASE_1C_REFERENCE_DATA_ENABLED: false
+        RELEASE_1C_BANKING_INTERFACES_ENABLED: false
+        RELEASE_1C_CPP_ENFORCEMENT_ENABLED: false
+        RELEASE_1C_CPP_ENABLED: false
+        RELEASE_1C_PRINTING_ENABLED: false
+        RELEASE_1C_ENFORCEMENT_OPERATIONAL_REPORTING_ENABLED: false

@@ -7,11 +7,11 @@ spec:
   releaseName: opal-frontend
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/opal/frontend:pr-2733-57b36c9-20260904081006 # {"$imagepolicy": "flux-system:opal-frontend-pr"}
+      image: hmctsprod.azurecr.io/opal/frontend:pr-2733-a4d884e-20260921102816 # {"$imagepolicy": "flux-system:opal-frontend-pr"}
       enabled: true
       ingressHost: opal-frontend.test.apps.hmcts.net
       environment:
-        DUMMY_VAR: 1
+        DUMMY_VAR: 2
         FRONTEND_HOSTNAME: https://opal-frontend.test.apps.hmcts.net
         OPAL_API_URL: https://opal-fines-service.test.platform.hmcts.net
         OPAL_FINES_SERVICE_API_URL: https://opal-fines-service.test.platform.hmcts.net
