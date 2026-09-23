@@ -16,7 +16,7 @@ spec:
   values:
     java:
       replicas: 2
-      image: hmctsprod.azurecr.io/darts/gateway:prod-5bc3849-20260923122233 # {"$imagepolicy": "flux-system:darts-gateway"}
+      image: hmctsprod.azurecr.io/darts/gateway:prod-80225a0-20260923140114 # {"$imagepolicy": "flux-system:darts-gateway"}
       memoryRequests: '2G'
       memoryLimits: '3G'
       cpuRequests: '500m'
