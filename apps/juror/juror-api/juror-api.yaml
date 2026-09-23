@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/juror/api:prod-4050f6f-20260901132631 # {"$imagepolicy": "flux-system:juror-api"}
+      image: hmctsprod.azurecr.io/juror/api:prod-d3246f0-20260917130636 # {"$imagepolicy": "flux-system:juror-api"}
       memoryRequests: '2Gi'
       cpuRequests: '500m'
       memoryLimits: '4Gi'
@@ -31,3 +31,5 @@ spec:
           enabled: true
           averageUtilization: 80
       disableTraefikTls: true
+      environment:
+        PUBLIC_HOST: juror-public.{{ .Values.global.environment }}.apps.hmcts.net

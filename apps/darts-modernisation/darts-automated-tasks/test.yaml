@@ -12,7 +12,7 @@ spec:
         DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.test.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        RESTART: 015
+        RESTART: 016
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
@@ -27,3 +27,4 @@ spec:
         ARM_RPO_TOTAL_CATCHUP_HOURS: 12
         ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
         ARM_DOWN_FOR_MAINTENANCE: true
+        ARM_API_VERSION: v5_2
