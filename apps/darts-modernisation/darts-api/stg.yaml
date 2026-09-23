@@ -37,7 +37,7 @@ spec:
         ARM_DOWN_FOR_MAINTENANCE: false
         ARM_API_VERSION: v5_2
     function:
-      image: hmctsprod.azurecr.io/darts/api:prod-cac9570-20260923142151 # {"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-c0c5e57-20260923153921 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: http://darts-stub-services.staging.platform.hmcts.net
         ARM_API_URL: https://darts-stub-services.staging.platform.hmcts.net
