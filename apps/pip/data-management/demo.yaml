@@ -6,7 +6,7 @@ spec:
   releaseName: pip-data-management
   values:
     java:
-      image: hmctsprod.azurecr.io/pip/data-management:pr-931-5da5217-20260914131832
+      image: hmctsprod.azurecr.io/pip/data-management:pr-922-266d06f-20260923165211
       ingressHost: pip-data-management.demo.platform.hmcts.net
       environment:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.demo.platform.hmcts.net
