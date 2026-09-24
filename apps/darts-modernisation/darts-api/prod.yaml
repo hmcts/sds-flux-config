@@ -41,7 +41,7 @@ spec:
         ARM_DOWN_FOR_MAINTENANCE: false
         ARM_API_VERSION: v5_2
     function:
-      image: hmctsprod.azurecr.io/darts/api:prod-c0c5e57-20260923153921 # {"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-bfb285a-20260924072654 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         ARM_URL: https://www.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.court-tribunal-records-archive.service.justice.gov.uk
