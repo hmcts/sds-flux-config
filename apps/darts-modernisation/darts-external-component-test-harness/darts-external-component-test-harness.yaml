@@ -15,6 +15,6 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/external-component-test-harness:prod-5eca58c-20260924064234 # {"$imagepolicy": "flux-system:darts-external-component-test-harness"}
+      image: hmctsprod.azurecr.io/darts/external-component-test-harness:prod-440d08b-20260924065527 # {"$imagepolicy": "flux-system:darts-external-component-test-harness"}
       disableTraefikTls: true
       replicas: 0
