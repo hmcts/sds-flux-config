@@ -20,7 +20,7 @@ spec:
     spec:
       initContainers:
         - name: install
-          image: busybox
+          image: busybox:1.38.0
           command: ["/bin/sh", "-c", "printf '%s:%s:1000::/files/' $(cat /kvmnt/sftp-remote-user) $(cat /kvmnt/sftp-remote-password) > /sftp-config/users.conf"]
           volumeMounts:
             - name: azurekeyvault
