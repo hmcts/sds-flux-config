@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: mi-reverse-proxy
-          image: linuxserver/openssh-server:version-10.3_p1-r1
+          image: linuxserver/openssh-server
           ports:
             - name: ssh
               containerPort: 2222
