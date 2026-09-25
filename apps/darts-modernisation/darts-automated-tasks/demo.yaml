@@ -7,7 +7,7 @@ spec:
   releaseName: darts-automated-tasks
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/api:pr-3397-f1fd5c9-20260924094847 #{"$imagepolicy": "flux-system:darts-api-demo"}
+      image: hmctsprod.azurecr.io/darts/api:pr-3397-53f0987-20260925101854 #{"$imagepolicy": "flux-system:darts-api-demo"}
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.demo.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.demo.apps.hmcts.net
