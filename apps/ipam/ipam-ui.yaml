@@ -18,7 +18,7 @@ spec:
         app: ipam-ui
     spec:
       containers:
-      - image: azureipam.azurecr.io/ipam-ui:latest
+      - image: azureipam.azurecr.io/ipam-ui:3.6.0
         name: ipam-ui
         env:
         - name: VITE_UI_ID
