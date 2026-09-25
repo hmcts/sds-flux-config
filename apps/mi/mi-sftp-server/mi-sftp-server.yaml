@@ -20,7 +20,7 @@ spec:
     spec:
       initContainers:
         - name: install
-          image: busybox
+          image: busybox:1.38.0
           command: ["/bin/sh", "-c", "printf '%s:%s:1000::/files/' $(cat /kvmnt/sftp-remote-user) $(cat /kvmnt/sftp-remote-password) > /sftp-config/users.conf"]
           volumeMounts:
             - name: azurekeyvault
@@ -30,11 +30,8 @@ spec:
               mountPath: /sftp-config
       containers:
         - name: mi-sftp-server
-          image: sdshmctspublic.azurecr.io/mi/sftp:1.0.0-release
+          image: hmctsprod.azurecr.io/mi/sftp:1.0.0-release
           imagePullPolicy: Always
-          securityContext:
-            capabilities:
-              add: ["SYS_ADMIN"]
           volumeMounts:
             - name: azurekeyvault
               mountPath: /kvmnt
