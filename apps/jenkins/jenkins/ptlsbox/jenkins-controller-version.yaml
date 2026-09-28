@@ -8,4 +8,7 @@ spec:
   values:
     controller:
       image:
-        tag: 2.580-1166
+        # Before upgrading > 2.578-1158 check that Tim's PR: https://github.com/jenkinsci/sauce-ondemand-plugin/pull/269/change has been merged
+        # Jenkins removed Apache Commons Lang 2 from 2.579 and this plugin needs to be updated to support this
+        # CNP Jenkins Library uses this plugin for Sauce Labs cross browser tests
+        tag: 2.578-1158
