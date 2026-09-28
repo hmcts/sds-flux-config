@@ -18,7 +18,7 @@ spec:
         app: ipam-engine
     spec:
       containers:
-      - image: azureipam.azurecr.io/ipam-engine:latest
+      - image: azureipam.azurecr.io/ipam-engine:3.6.0
         name: ipam-engine
         env:
         - name: COSMOS_KEY
