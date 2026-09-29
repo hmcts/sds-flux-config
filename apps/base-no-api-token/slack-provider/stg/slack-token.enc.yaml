@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+  token: ENC[AES256_GCM,data:AGV/6byKAxF8qkJgzl8Kx0gXfaqvd2b4n674X+vbGD95j8pjXCudqLBDx80ce4gsUtnkG6Ipc0/XbA769LQrLR4NB1vfUARRAO8KRg==,iv:Bee9YTrhT3M0aH3cAjhaogYEI1MD4RLeXmD62beOgpM=,tag:vxLyVQZBF4FU1LhJdW4pIA==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: slack-token
+  namespace: ${NAMESPACE}
+type: Opaque
+sops:
+  kms: []
+  gcp_kms: []
+  azure_kv:
+    - vault_url: https://dtssharedservicesstgkv.vault.azure.net
+      name: sops-key
+      version: b63a642ce6b14537bcc33a500f90b0e9
+      created_at: "2024-07-26T12:59:31Z"
+      enc: EaoqGiih534VQkSma1P4uk5x81dtK2aVub6DhVXaseyYrnSNOqU7Z92Qodvnq-cpixpl3TmtOfn4iRcuZXr9AtXMt79_NNmezXXtf07WjH0xgOWw90YB77zRD9N0RpEPNYerQw3oOu6iHPO0Nr7W8C6mc56BtU3PC6Gp7AY4QF-lcFW4Kf9xrBGR7fwTS2JK8AwoF7l_SaQs5xeWILB_TmHAbSBHD9QnRuMlCtqDW1TaPSOcoetI1LLqqtob913LcOSmQGNwV4o9fJw68x0UwBnFpXWsOmPAUmEpE5Wy3VgIawd1FrszJOOXlQ-954DRgt0e1VSGf3orDTBLM8W_tw
+  hc_vault: []
+  age: []
+  lastmodified: "2024-07-26T12:59:32Z"
+  mac: ENC[AES256_GCM,data:Uiq0/M9HrKkTjnFY+0qIDj21hM47d43tBCgHTymZQjcbtQtf6RrNskk/bJcNYP0L4IlkCYjPiWk1J0EnccxUPT2ss1ghClThLfZAvLiORbboGgqqbh+c+GLKuI8GnP7YCe7f5iKuVaUH2N4AsxAFXrSiyM1MpC51IVi33H+yeHw=,iv:KE5rG4OKrUnu/YGQWAkppJwc3fWT8uMbh0OgBrE/WNY=,tag:hOTDZKP9rjI0Te0+QzrGTg==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.7.3
