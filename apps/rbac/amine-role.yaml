@@ -98,7 +98,7 @@ rules:
     verbs: ["get", "list", "watch"]
 
   - apiGroups: ["hostdata.kubescape.cloud"]
-    resources: ["*"]
+    resources:  ["*"]
     verbs: ["get", "list", "watch"]
 
 ---
