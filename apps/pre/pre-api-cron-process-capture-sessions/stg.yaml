@@ -10,7 +10,7 @@ spec:
     job:
       suspend: false
       schedule: "* * * * *" # every min to speed up testing efforts
-      image: hmctsprod.azurecr.io/pre/api:staging-eabc9be-20260925132829 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:staging-ece9b2e-20260930101708 # {"$imagepolicy": "flux-system:stg-pre-api"}
       environment:
         PLATFORM_ENV_TAG: Staging
         ENABLE_ENHANCED_PROCESSING: true
