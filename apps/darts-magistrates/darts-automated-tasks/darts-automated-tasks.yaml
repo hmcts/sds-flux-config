@@ -1,0 +1,45 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: darts-automated-tasks
+  namespace: darts-magistrates
+spec:
+  releaseName: darts-automated-tasks
+  chart:
+    spec:
+      chart: ./stable/darts-api
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
+  values:
+    java:
+      ingressHost: darts-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
+      image: hmctsprod.azurecr.io/darts/api:prod-30887b0-20260930182054 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
+      disableTraefikTls: true
+      memoryRequests: '3G'
+      memoryLimits: '4G'
+      cpuRequests: '2000m'
+      cpuLimits: '6000m'
+      terminationGracePeriodSeconds: 300
+      environment:
+        AUTOMATED_TASK_MODE: true
+        API_MODE: false
+        GRACEFUL_SHUTDOWN_TIMEOUT: 2m
+        # disable notification scheduler on automated tasks pod
+        NOTIFICATION_SCHEDULER_ENABLED: false
+        NOTIFICATION_SCHEDULER_CRON: '-'
+    function:
+      image: hmctsprod.azurecr.io/darts/api:prod-30887b0-20260930182054 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
+      minReplicaCount: 0
+      maxReplicaCount: 1
+      # only poll every 24 hours, to prevent DB sessions
+      # kept effectively idle via minReplicaCount: 0; maxReplicaCount must be >=1 per KEDA CRD
+      pollingInterval: 86400
+    darts-portal:
+      enabled: false
+      ingressHost: darts-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
+      replicas: 0
+      autoscaling:
+        enabled: false
