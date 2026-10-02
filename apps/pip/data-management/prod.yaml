@@ -7,7 +7,6 @@ spec:
   values:
     java:
       replicas: 2
-      image: hmctsprod.azurecr.io/pip/data-management:prod-c671521-20260923154122
       ingressHost: pip-data-management.platform.hmcts.net
       environment:
         ACCOUNT_MANAGEMENT_URL: https://pip-account-management.platform.hmcts.net

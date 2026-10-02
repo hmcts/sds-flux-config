@@ -8,7 +8,6 @@ spec:
   values:
     java:
       replicas: 2
-      image: hmctsprod.azurecr.io/pip/account-management:prod-dccbda8-20260923162935
       ingressHost: pip-account-management.platform.hmcts.net
       environment:
         PUBLICATION_SERVICES_URL: https://pip-publication-services.platform.hmcts.net

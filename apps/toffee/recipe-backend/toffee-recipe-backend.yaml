@@ -1,4 +1,3 @@
----
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -9,7 +8,7 @@ spec:
   values:
     java:
       memoryRequests: "1Gi"
-      image: hmctsprod.azurecr.io/toffee/recipe-backend:prod-991e7bf-20260924061619 # {"$imagepolicy": "flux-system:toffee-recipe-backend"}
+      image: hmctsprod.azurecr.io/toffee/recipe-backend:prod-2f7e0d3-20261002100453 # {"$imagepolicy": "flux-system:toffee-recipe-backend"}
       disableTraefikTls: true
   chart:
     spec:
