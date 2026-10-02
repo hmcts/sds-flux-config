@@ -15,5 +15,5 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/opal/maintenance-service:prod-7b4ae80-20260925113935 # {"$imagepolicy": "flux-system:opal-maintenance-service"}
+      image: hmctsprod.azurecr.io/opal/maintenance-service:prod-5a6ce62-20261001095435 # {"$imagepolicy": "flux-system:opal-maintenance-service"}
       disableTraefikTls: true
