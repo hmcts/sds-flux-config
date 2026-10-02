@@ -32,9 +32,6 @@ spec:
         - name: mi-sftp-server
           image: hmctsprod.azurecr.io/mi/sftp:1.0.0-release
           imagePullPolicy: Always
-          securityContext:
-            capabilities:
-              add: ["SYS_ADMIN"]
           volumeMounts:
             - name: azurekeyvault
               mountPath: /kvmnt
