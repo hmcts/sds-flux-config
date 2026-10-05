@@ -8,7 +8,7 @@ rules:
   verbs: ['delete']
 - apiGroups: ['']
   resources: ['secrets']
-  verbs: ['*']
+  verbs: ['get', 'list', 'watch', 'create', 'update', 'patch', 'delete', 'deletecollection']
 - apiGroups: ['helm.toolkit.fluxcd.io']
   resources: ['helmreleases']
   verbs: ['delete']
