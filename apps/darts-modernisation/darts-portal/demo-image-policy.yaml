@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
-  name: darts-portal-ithc
+  name: darts-portal-demo
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:

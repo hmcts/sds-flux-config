@@ -1,15 +1,15 @@
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
-  name: darts-portal-ithc
+  name: darts-gateway-ithc
   annotations:
     hmcts.github.com/prod-automated: disabled
 spec:
   imageRepositoryRef:
-    name: darts-portal
+    name: darts-gateway
   filterTags:
     extract: $ts
-    pattern: '^pr-2460-[a-f0-9]+-(?P<ts>[0-9]+)'
+    pattern: '^pr-1005-[a-f0-9]+-(?P<ts>[0-9]+)'
   policy:
     alphabetical:
       order: asc
