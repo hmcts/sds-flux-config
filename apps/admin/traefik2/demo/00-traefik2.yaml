@@ -11,7 +11,8 @@ spec:
           default: false
           internal: true
     service:
-      loadBalancerIP: "10.51.79.250"
+      spec:
+        loadBalancerIP: "10.51.79.250"
       additionalServices:
         internal:
           type: ClusterIP
