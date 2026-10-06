@@ -140,7 +140,7 @@ spec:
             jobs:
               - url: https://raw.githubusercontent.com/hmcts/sds-jenkins-config/org-seed-jobs/jobdsl/organisations.groovy
               - script: |
-                  ['A-C': '8,11,14,17', 'D-I': '9,12,15,18', 'J-Z': '10,13,16,19'].each { group, hours ->
+                  ['A-C': '0', 'D-I': '20', 'J-Z': '40'].each { group, minute ->
                     pipelineJob('Seed Job ' + group) {
                       parameters {
                         stringParam('ORG_GROUP', group, 'Organisation group to seed')
@@ -149,7 +149,7 @@ spec:
                         disableConcurrentBuilds()
                       }
                       triggers {
-                        cron('0 ' + hours + ' * * 1-5')
+                        cron(minute + ' 8,11,14,17 * * 1-5')
                       }
                       definition {
                         cpsScm {
