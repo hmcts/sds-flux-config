@@ -136,6 +136,38 @@ spec:
                     name: Legacy
                     recurse: true
                     title: DTS Legacy Apps
+          jobs: |
+            jobs:
+              - url: https://raw.githubusercontent.com/hmcts/sds-jenkins-config/org-seed-jobs/jobdsl/organisations.groovy
+              - script: |
+                  ['A-C': '0', 'D-I': '20', 'J-Z': '40'].each { group, minute ->
+                    pipelineJob('Seed Job ' + group) {
+                      parameters {
+                        stringParam('ORG_GROUP', group, 'Organisation group to seed')
+                      }
+                      properties {
+                        disableConcurrentBuilds()
+                      }
+                      triggers {
+                        cron(minute + ' 8,11,14,17 * * 1-5')
+                      }
+                      definition {
+                        cpsScm {
+                          scm {
+                            git {
+                              remote {
+                                github('hmcts/sds-jenkins-config')
+                                credentials('hmcts-jenkins-cnp')
+                              }
+                              branch('master') // set to your test branch while testing
+                            }
+                          }
+                          scriptPath('jobdsl/Jenkinsfile_seed')
+                          lightweight(true)
+                        }
+                      }
+                    }
+                  }
           authentication: |
             jenkins:
               securityRealm:
