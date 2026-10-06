@@ -159,7 +159,7 @@ spec:
                                 github('hmcts/sds-jenkins-config')
                                 credentials('hmcts-jenkins-cnp')
                               }
-                              branch('master') // set to your test branch while testing
+                              branch('org-seed-jobs') // set to your test branch while testing
                             }
                           }
                           scriptPath('jobdsl/Jenkinsfile_seed')
