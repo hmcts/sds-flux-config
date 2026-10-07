@@ -12,8 +12,6 @@ spec:
       environment:
         DARTS_GATEWAY_URL: http://darts-magistrates-gateway.demo.platform.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
-        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
-        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
         APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
@@ -26,17 +24,9 @@ spec:
         PROCESS_E2E_ARM_RPO: true
         ARM_RPO_DURATION: 24h
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
-        RESET_POD: true
-        RESTART: 018
-        AZCOPY_LOG_LEVEL: "--log-level=ERROR"
-        AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         ENABLE_ARM_V5_2_UPGRADE: true
         ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
-        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
-        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_RPO_TOTAL_CATCHUP_HOURS: 25
-        ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
-        ARM_DOWN_FOR_MAINTENANCE: false
         ARM_API_VERSION: v5_2
     function:
       image: hmctsprod.azurecr.io/darts/api:pr-3397-a16abb3-20260929172656
@@ -44,7 +34,6 @@ spec:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
-        ENABLE_ARM_V5_2_UPGRADE: true
         FEIGN_LOG_LEVEL: full
         ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
