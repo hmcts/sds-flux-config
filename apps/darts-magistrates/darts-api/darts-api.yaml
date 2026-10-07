@@ -32,7 +32,7 @@ spec:
       cpuLimits: 4
     darts-portal:
       enabled: false
-      ingressHost: darts-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
+      ingressHost: darts-magistrates-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
       replicas: 0
       autoscaling:
         enabled: false

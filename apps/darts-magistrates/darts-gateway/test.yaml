@@ -7,7 +7,7 @@ spec:
   releaseName: darts-gateway
   values:
     java:
-      ingressHost: darts-gateway.test.platform.hmcts.net
+      ingressHost: darts-magistrates-gateway.test.platform.hmcts.net
       environment:
         DARTS_LOG_LEVEL: INFO
         DARTS_SOAP_REQUEST_LOG_LEVEL: TRACE

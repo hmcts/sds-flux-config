@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     java:
-      ingressHost: darts-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
+      ingressHost: darts-magistrates-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
       image: hmctsprod.azurecr.io/darts/api:prod-30887b0-20260930182054 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
       disableTraefikTls: true
       memoryRequests: '3G'
@@ -39,7 +39,7 @@ spec:
       pollingInterval: 86400
     darts-portal:
       enabled: false
-      ingressHost: darts-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
+      ingressHost: darts-magistrates-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
       replicas: 0
       autoscaling:
         enabled: false

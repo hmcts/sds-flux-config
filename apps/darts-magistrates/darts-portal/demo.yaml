@@ -7,7 +7,7 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
-      ingressHost: darts.demo.apps.hmcts.net
+      ingressHost: darts-magistrates.demo.apps.hmcts.net
       environment:
         RESTART_ME: '001'
         DARTS_AZUREAD_B2C_ORIGIN_HOST: https://hmctsstgextid.b2clogin.com
