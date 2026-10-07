@@ -17,3 +17,7 @@ spec:
       replicas: 2
       image: hmctsprod.azurecr.io/darts/portal:prod-11a0301-20260930123923 # {"$imagepolicy": "flux-system:darts-magistrates-portal"}
       disableTraefikTls: true
+      environment:
+        DARTS_API_URL: https://darts-magistrates-api.{{ .Values.global.environment }}.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts-magistrates.{{ .Values.global.environment }}.apps.hmcts.net
+        DARTS_AZUREAD_B2C_HOSTNAME: https://darts-magistrates.{{ .Values.global.environment }}.apps.hmcts.net
