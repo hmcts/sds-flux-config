@@ -9,8 +9,8 @@ spec:
     java:
       image: hmctsprod.azurecr.io/darts/api:prod-30887b0-20260930182054 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
       environment:
-        DARTS_GATEWAY_URL: http://darts-gateway.ithc.platform.hmcts.net
-        DARTS_PORTAL_URL: https://darts.ithc.apps.hmcts.net
+        DARTS_GATEWAY_URL: http://darts-magistrates-gateway.ithc.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts-magistrates.ithc.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk

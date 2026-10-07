@@ -9,8 +9,8 @@ spec:
     java:
       # image: hmctsprod.azurecr.io/darts/api:pr-3291-dad792e-20260715093936
       environment:
-        DARTS_GATEWAY_URL: http://darts-gateway.test.platform.hmcts.net
-        DARTS_PORTAL_URL: https://darts.test.apps.hmcts.net
+        DARTS_GATEWAY_URL: http://darts-magistrates-gateway.test.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts-magistrates.test.apps.hmcts.net
         DARTS_LOG_LEVEL: DEBUG
         RESTART: 016
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
