@@ -22,3 +22,5 @@ spec:
       cpuRequests: '500m'
       cpuLimits: '2000m'
       disableTraefikTls: true
+      environment:
+        DARTS_API_URL: https://darts-magistrates-api.{{ .Values.global.environment }}.platform.hmcts.net

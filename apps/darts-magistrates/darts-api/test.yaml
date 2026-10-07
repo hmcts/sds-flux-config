@@ -30,16 +30,9 @@ spec:
         PROCESS_E2E_ARM_RPO: true
         MODERNISED_DARTS_START_DATE: '2024-10-01'
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
-        AZCOPY_LOG_LEVEL: "--log-level=ERROR"
-        AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
-        RESTART_ME: '027'
         ENABLE_ARM_V5_2_UPGRADE: true
-        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
-        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
-        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
         SHEDLOCK_LOG_LEVEL: DEBUG
         ARM_RPO_TOTAL_CATCHUP_HOURS: 12
-        ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
         RUN_DB_MIGRATION_ON_STARTUP: true
         ARM_DOWN_FOR_MAINTENANCE: true
         ARM_API_VERSION: v5_2
@@ -48,9 +41,5 @@ spec:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
-        ENABLE_ARM_V5_2_UPGRADE: true
-        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: false
-        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
-        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_DOWN_FOR_MAINTENANCE: true
         ARM_API_VERSION: v5_2
