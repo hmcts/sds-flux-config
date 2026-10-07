@@ -31,6 +31,8 @@ spec:
         NOTIFICATION_SCHEDULER_ENABLED: false
         NOTIFICATION_SCHEDULER_CRON: '-'
     function:
+      environment:
+        DARTS_GATEWAY_URL: http://darts-magistrates-gateway.{{ .Values.global.environment }}.platform.hmcts.net
       image: hmctsprod.azurecr.io/darts/api:prod-30887b0-20260930182054 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
       minReplicaCount: 0
       maxReplicaCount: 1

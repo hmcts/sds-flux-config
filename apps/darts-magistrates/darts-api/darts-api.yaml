@@ -22,6 +22,8 @@ spec:
       memoryLimits: '4G'
       cpuRequests: '2000m'
       cpuLimits: '3000m'
+      environment:
+        DARTS_PORTAL_URL: https://darts-magistrates.{{ .Values.global.environment }}.apps.hmcts.net
     function:
       job:
         activeDeadlineSeconds: 7200
@@ -30,6 +32,8 @@ spec:
       cpuRequests: 500m
       memoryLimits: 4Gi
       cpuLimits: 4
+      environment:
+        DARTS_GATEWAY_URL: http://darts-magistrates-gateway.{{ .Values.global.environment }}.platform.hmcts.net
     darts-portal:
       enabled: false
       ingressHost: darts-magistrates-portal-nodejs.{{ .Values.global.environment }}.apps.hmcts.net
