@@ -87,6 +87,8 @@ spec:
                         value: a8140a9e-f1b0-481f-a4de-09e2ee23f7ab
                       - key: PIPELINE_METRICS_URL
                         value: https://sandbox-pipeline-metrics.documents.azure.com/
+                      - key: PIPELINE_METRICS_DATABASE
+                        value: sds-jenkins
                       - key: TF_STATE_STORAGE_TEMPLATE
                         value: sdsstate
                       - key: TF_STATE_RG_TEMPLATE
