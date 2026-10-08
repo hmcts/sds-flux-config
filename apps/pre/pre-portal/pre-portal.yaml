@@ -15,7 +15,7 @@ spec:
   values:
     nodejs:
       replicas: 2
-      image: hmctsprod.azurecr.io/pre/portal:prod-b029a18-20261007130727 # {"$imagepolicy": "flux-system:pre-portal"}
+      image: hmctsprod.azurecr.io/pre/portal:prod-bfbef0b-20261008083153 # {"$imagepolicy": "flux-system:pre-portal"}
       disableTraefikTls: true
       cpuRequests: '50m'
       cpuLimits: '500m'
