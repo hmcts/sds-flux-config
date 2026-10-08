@@ -8,3 +8,4 @@ spec:
   postBuild:
     substitute:
       WORKLOAD_IDENTITY_ID: "ba6224de-74d1-466d-9308-dc8d6ba58217"
+      POSTGRES_VERSION: "17"
