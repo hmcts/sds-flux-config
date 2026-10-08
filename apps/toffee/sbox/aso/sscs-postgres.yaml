@@ -4,7 +4,7 @@ metadata:
  name: ${NAMESPACE}-${ENVIRONMENT}
  namespace: ${NAMESPACE}
 spec:
- version: "${POSTGRES_VERSION:-16}"
+ version: "${POSTGRES_VERSION:-17}"
  sku:
   name: Standard_D2ds_v5
   tier: GeneralPurpose
