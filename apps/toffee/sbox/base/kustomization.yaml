@@ -5,7 +5,7 @@ resources:
   - ../../base
   - ../../identity/apple-azure-identity.yaml
   - ../../../azureserviceoperator-system/resources/resource-group.yaml
-  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres.yaml
+  - ../aso/sscs-postgres.yaml
   - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
 namespace: toffee
 patches:
@@ -15,4 +15,3 @@ patches:
   - path: ../../recipe-receiver/sbox.yaml
   - path: workload-identity.yaml
   - path: ../../serviceaccount/sbox.yaml
-  - path: ../aso/sscs-postgres.yaml
