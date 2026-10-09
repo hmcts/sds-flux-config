@@ -7,6 +7,7 @@ resources:
   - ../../../azureserviceoperator-system/resources/resource-group.yaml
   - ../aso/toffee-postgres.yaml
   - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
+  - ../aso/toffee-postgres-upgrade.yaml
   - ../sops-secrets
 namespace: toffee
 patches:
