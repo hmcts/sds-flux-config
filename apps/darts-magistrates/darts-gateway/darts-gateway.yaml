@@ -1,0 +1,26 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: darts-gateway
+  namespace: darts-magistrates
+spec:
+  releaseName: darts-gateway
+  chart:
+    spec:
+      chart: ./stable/darts-gateway
+      sourceRef:
+        kind: GitRepository
+        name: hmcts-charts
+        namespace: flux-system
+      interval: 1m
+  values:
+    java:
+      replicas: 2
+      image: hmctsprod.azurecr.io/darts/gateway:prod-1d9214b-20260925084222 # {"$imagepolicy": "flux-system:darts-magistrates-gateway"}
+      memoryRequests: '2G'
+      memoryLimits: '3G'
+      cpuRequests: '500m'
+      cpuLimits: '2000m'
+      disableTraefikTls: true
+      environment:
+        DARTS_API_URL: https://darts-magistrates-api.{{ .Values.global.environment }}.platform.hmcts.net

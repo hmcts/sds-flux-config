@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: darts-gateway
+  namespace: darts-magistrates
+spec:
+  releaseName: darts-gateway
+  values:
+    java:
+      ingressHost: darts-magistrates-gateway.demo.platform.hmcts.net
+      additionalIngressHosts: ["darts-magistrates-proxy.demo.platform.hmcts.net"]
+      environment:
+        DARTS_LOG_LEVEL: INFO
+        DARTS_SOAP_REQUEST_LOG_LEVEL: TRACE
+        DAR_NOTIFY_ENABLED: true
+        APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
+        FORCE_CHECKSUM_FAILURE: false
+        MAX_FILE_UPLOAD_DURATION: 1440m

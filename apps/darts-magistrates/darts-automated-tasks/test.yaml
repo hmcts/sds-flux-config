@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: darts-automated-tasks
+  namespace: darts-magistrates
+spec:
+  releaseName: darts-automated-tasks
+  values:
+    java:
+      # image: hmctsprod.azurecr.io/darts/api:pr-3291-dad792e-20260715093936
+      environment:
+        DARTS_GATEWAY_URL: http://darts-magistrates-gateway.test.platform.hmcts.net
+        DARTS_PORTAL_URL: https://darts-magistrates.test.apps.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
+        IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
+        ENABLE_ARM_V5_2_UPGRADE: true
+        ARM_RPO_TOTAL_CATCHUP_HOURS: 12
+        ARM_DOWN_FOR_MAINTENANCE: true
+        ARM_API_VERSION: v5_2

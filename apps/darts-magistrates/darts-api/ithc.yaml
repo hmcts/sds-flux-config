@@ -1,0 +1,44 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: darts-api
+  namespace: darts-magistrates
+spec:
+  releaseName: darts-api
+  values:
+    java:
+      image: hmctsprod.azurecr.io/darts/api:prod-30887b0-20260930182054 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
+      ingressHost: darts-magistrates-api.ithc.platform.hmcts.net
+      environment:
+        DARTS_GATEWAY_URL: http://darts-magistrates-gateway.ithc.platform.hmcts.net
+        DARTS_LOG_LEVEL: DEBUG
+        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsithcextid.b2clogin.com
+        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsithcextid.b2clogin.com/hmctsithcextid.onmicrosoft.com
+        APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL: ALL
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
+        AUDIO_LINKING_TASK_PRE_AMBLE_DURATION: '0m'
+        AUDIO_LINKING_TASK_POST_AMBLE_DURATION: '0m'
+        FEIGN_LOG_LEVEL: full
+        CASE_EXPIRY_DELETION_ENABLED: true
+        MANUAL_DELETION_ENABLED: true
+        PROCESS_E2E_ARM_RPO: true
+        ARM_RPO_DURATION: 24h
+        IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
+        ENABLE_ARM_V5_2_UPGRADE: true
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
+        ARM_RPO_TOTAL_CATCHUP_HOURS: 12
+        ARM_API_VERSION: v5_2
+    function:
+      image: hmctsprod.azurecr.io/darts/api:prod-30887b0-20260930182054 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
+      environment:
+        ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
+        ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
+        FEIGN_LOG_LEVEL: full
+        ARM_RPO_FEATURE_FLAG_LOGS_ENABLED: true
+        DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: true
+        ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: true
+        ARM_DOWN_FOR_MAINTENANCE: false
+        ARM_API_VERSION: v5_2
