@@ -11,6 +11,14 @@ resources:
 namespace: toffee
 patches:
   - path: ../aso/toffee-postgres.yaml
+  - target:
+      group: dbforpostgresql.azure.com
+      version: v1api20230601preview
+      kind: FlexibleServer
+    patch: |-
+      - op: replace
+        path: /apiVersion
+        value: dbforpostgresql.azure.com/v20250801
   - path: ../../identity/sbox.yaml
   - path: ../../frontend/sbox.yaml
   - path: ../../recipe-backend/sbox.yaml
