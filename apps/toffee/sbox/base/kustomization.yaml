@@ -5,7 +5,7 @@ resources:
   - ../../base
   - ../../identity/apple-azure-identity.yaml
   - ../../../azureserviceoperator-system/resources/resource-group.yaml
-  - ../../../azureserviceoperator-system/resources/flexibleserver-postgres.yaml
+  - ../aso/toffee-postgres.yaml
   - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
   - ../aso/toffee-postgres-upgrade.yaml
   - ../sops-secrets
@@ -17,13 +17,3 @@ patches:
   - path: ../../recipe-receiver/sbox.yaml
   - path: workload-identity.yaml
   - path: ../../serviceaccount/sbox.yaml
-  - path: ../aso/toffee-postgres.yaml
-  - target:
-      group: dbforpostgresql.azure.com
-      version: v1api20230601preview
-      kind: FlexibleServer
-      name: '\$\{NAMESPACE\}-\$\{ENVIRONMENT\}'
-    patch: |-
-      - op: replace
-        path: /apiVersion
-        value: dbforpostgresql.azure.com/v20250801
