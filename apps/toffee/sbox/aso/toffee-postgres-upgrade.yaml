@@ -1,4 +1,4 @@
-apiVersion: dbforpostgresql.azure.com/v202508999
+apiVersion: dbforpostgresql.azure.com/v20250801
 kind: FlexibleServer
 metadata:
   name: ${NAMESPACE}-upgrade-${ENVIRONMENT}
