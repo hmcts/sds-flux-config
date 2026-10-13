@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: courtfines-app.demo.platform.hmcts.net
-      image: hmctsprod.azurecr.io/courtfines/app:prod-9422014-20261007131907 #{"$imagepolicy": "flux-system:courtfines-app"}
+      image: hmctsprod.azurecr.io/courtfines/app:prod-96aa1e8-20261013090331 #{"$imagepolicy": "flux-system:courtfines-app"}
       environment:
         ENV_NAME: "DEMO"
         LOG_LEVEL: "DEBUG"
