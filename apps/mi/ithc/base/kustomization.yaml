@@ -18,12 +18,6 @@ patches:
       group: secrets-store.csi.x-k8s.io
       kind: SecretProviderClass
       name: mi-sftp-server-secret-provider
-  - path: ../../mi-sftp-server/ithc-sftp-server-patch.yaml
-    target:
-      group: apps
-      version: v1
-      kind: Deployment
-      name: mi-sftp-server
   - path: ../../identity/mi-azure-functions-identity-ithc.yaml
   - path: ../../identity/mi-house-keeping-service-identity-ithc.yaml
   - path: ../../identity/mi-integration-service-identity-ithc.yaml
