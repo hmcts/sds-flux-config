@@ -37,7 +37,7 @@ spec:
         runAsUser: 0
         runAsGroup: 0
         readOnlyRootFilesystem: false
-        allowPrivilegeEscalation: true
+        allowPrivilegeEscalation: false
       podSecurityContextOverride:
         runAsUser: 0
       imagePullPolicy: "IfNotPresent"

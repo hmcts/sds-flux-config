@@ -6,6 +6,12 @@ metadata:
 spec:
   timeout: 20m
   values:
+    fluentbit:
+      securityContext:
+        allowPrivilegeEscalation: false
+    eximexporter:
+      securityContext:
+        allowPrivilegeEscalation: false
     smtp:
       relayHostNameKeyVaultSecretName: relayHostname-v1
     workload: StatefulSet
