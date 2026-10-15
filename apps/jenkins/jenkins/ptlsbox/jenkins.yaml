@@ -117,30 +117,6 @@ spec:
                         value: sds-jenkins-config
                       - key: BUSINESS_AREA_TAG
                         value: Cross-Cutting
-          jobs: |
-            jobs:
-              - url: https://raw.githubusercontent.com/hmcts/sds-jenkins-config/DTSPO-35800/reduce-builds-on-index/jobdsl/organisations.groovy
-              - script: >
-                  pipelineJob('Seed Job') {
-                    triggers {
-                      cron('H 8,11,14,17 * * 1-5')
-                    }
-                    definition {
-                      cpsScm {
-                        scm {
-                          git {
-                            remote {
-                              github('hmcts/sds-jenkins-config')
-                              credentials('hmcts-jenkins-cnp')
-                            }
-                            branch('DTSPO-35800/reduce-builds-on-index')
-                          }
-                        }
-                        scriptPath('jobdsl/Jenkinsfile_seed')
-                        lightweight(true)
-                      }
-                    }
-                  }
           views: |
             jenkins:
               views:
