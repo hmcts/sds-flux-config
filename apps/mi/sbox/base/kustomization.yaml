@@ -9,6 +9,7 @@ resources:
   - ../../mi-sftp-server/mi-sftp-server-secret-provider.yaml
   - ../../../base/slack-provider/sbox
 patches:
+  - path: ../../serviceaccount/sbox.yaml
   - path: ../../mi-azure-functions/sbox.yaml
   - path: ../../mi-adf-shir/sbox.yaml
   - path: ../../mi-adf-shir-2/sbox.yaml

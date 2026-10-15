@@ -6,6 +6,22 @@
 
 Please follow [cnp-flux-config](https://github.com/hmcts/cnp-flux-config) for documentation as both repos use `Flux` tool.
 
+## Service account API token automounting
+
+Applications inheriting `apps/base` disable API token automounting through
+environment-specific patches in `apps/<application>/serviceaccount/`, referenced
+by their environment Kustomizations. This rollout covers non-production
+environments, including `ptlsbox`, but excludes `prod` and `ptl`.
+
+Namespaces excluded by the `mg:HMCTS` and SDS `DTS-SHAREDSERVICES*` assignments of
+[`assign.aks.disable_automount_creds.json`](https://github.com/search?q=repo%3Ahmcts%2Fazure-policy+assign.aks.disable_automount_creds.json&type=code)
+are left unchanged, including existing explicit `true` opt-ins. CFT subscription
+exclusions are not used for this repository.
+
+The shared `apps/base/service-account.yaml` remains unchanged during the staged
+rollout. When its default is eventually set to `false`, explicit `true` patches
+will take precedence and redundant `false` patches can be removed.
+
 ## Encrypting Secrets With Sops
 
 Secrets can be stored in this repository but they must be encrypted using the SOPS tool.
