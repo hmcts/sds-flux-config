@@ -14,7 +14,7 @@ spec:
         runAsUser: 0
         runAsGroup: 0
         readOnlyRootFilesystem: false
-        allowPrivilegeEscalation: true
+        allowPrivilegeEscalation: false
       image:
         registry: hmctsprod.azurecr.io
         repository: jenkins/jenkins
