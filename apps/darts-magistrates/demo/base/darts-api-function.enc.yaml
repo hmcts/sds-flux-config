@@ -1,20 +1,20 @@
 apiVersion: v1
 data:
-    DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:7IxHdk0E3v3u0fF3FW9Uh/NrFasDfVvQlnElYP5ewC3wuG98xLoQvbC9G89ELPMDr+inY/MFY/7KBaAFid9Gdxs/SDlQr8uUoBV8uF4COx9fM2Jns7YK2VC1cfYK2Q4YpgQVsWku475ZyOeoMxegr604nPC3Rl+u0t6geBLZZraEPQxot3Xdg+dPT6U=,iv:wAhp3g+JL+QW3KDK9cN6cZaBejHI8WEg75B4aHfkPUE=,tag:5PAVVYMX+U6D0XtIqXZD5w==,type:str]
+  DARTS_API_DB_CONNECTION_STRING: ENC[AES256_GCM,data:7IxHdk0E3v3u0fF3FW9Uh/NrFasDfVvQlnElYP5ewC3wuG98xLoQvbC9G89ELPMDr+inY/MFY/7KBaAFid9Gdxs/SDlQr8uUoBV8uF4COx9fM2Jns7YK2VC1cfYK2Q4YpgQVsWku475ZyOeoMxegr604nPC3Rl+u0t6geBLZZraEPQxot3Xdg+dPT6U=,iv:wAhp3g+JL+QW3KDK9cN6cZaBejHI8WEg75B4aHfkPUE=,tag:5PAVVYMX+U6D0XtIqXZD5w==,type:str]
 kind: Secret
 metadata:
-    creationTimestamp: null
-    name: darts-api-function-values
-    namespace: darts-magistrates
+  creationTimestamp: null
+  name: darts-api-function-values
+  namespace: darts-magistrates
 type: Opaque
 sops:
-    azure_kv:
-        - created_at: "2026-10-15T09:08:31Z"
-          enc: mNCyNu2I_VABOoFEtglyavDF7B5nL8OmqCoOqu_NeaGeXjQeXV0eCnGxkNok_JQo2RDxeHmgJT52o2GA7Omw_-ivBHewFM5hbo5ViHyVmwBNzURpUqhdLBfXv8RyvJbP6N-vT-IbJbepeB0NJP52MVpd4v4shM9Xs_J-332yZMCDPnNPwb93PVl43nU89EZuWXG3hjD_Z0qfB_noZ6sQFJ0VooRdutgBJ15Ohv1-lT5w4NTe7hAe4c7EVICEvFdMyb-0K425pPoeafsdh4n75HrhcnTGmpsz5LI7x-Sw2dNN51doR4gPg-WOgkP8iTgfbDKsGRP0TQFgfUdv2a6ABw
-          name: sops-key
-          vault_url: https://dtssharedservicesdemokv.vault.azure.net
-          version: 0657d01a616f4a0abb44e8b4ff26ac71
-    encrypted_regex: ^(data|stringData)$
-    lastmodified: "2026-10-15T09:08:33Z"
-    mac: ENC[AES256_GCM,data:wt/VWBe1OUtq/DhFYvj6qrf3Ahmd0Jr8NQuuyu117SWHRBtk7xHPg4i/8MjjmpaaaMLdT7zg24bu3FHaQI9pDF8CkB7B3juZ2txMRq/5fXkN+MhRucP4TrbUjctE9rul6HF+nUFxVCTmjoVYJC4yMggTs4kr/JAbV/EOY3ASCj8=,iv:Deh0NYwoMenaoXiAspWZCOsu7LCUVhwzqVcDP5FT8O8=,tag:u48LZUNi3B4x7WaY8CL8DA==,type:str]
-    version: 3.13.3
+  azure_kv:
+    - created_at: "2026-10-15T09:08:31Z"
+      enc: mNCyNu2I_VABOoFEtglyavDF7B5nL8OmqCoOqu_NeaGeXjQeXV0eCnGxkNok_JQo2RDxeHmgJT52o2GA7Omw_-ivBHewFM5hbo5ViHyVmwBNzURpUqhdLBfXv8RyvJbP6N-vT-IbJbepeB0NJP52MVpd4v4shM9Xs_J-332yZMCDPnNPwb93PVl43nU89EZuWXG3hjD_Z0qfB_noZ6sQFJ0VooRdutgBJ15Ohv1-lT5w4NTe7hAe4c7EVICEvFdMyb-0K425pPoeafsdh4n75HrhcnTGmpsz5LI7x-Sw2dNN51doR4gPg-WOgkP8iTgfbDKsGRP0TQFgfUdv2a6ABw
+      name: sops-key
+      vault_url: https://dtssharedservicesdemokv.vault.azure.net
+      version: 0657d01a616f4a0abb44e8b4ff26ac71
+  encrypted_regex: ^(data|stringData)$
+  lastmodified: "2026-10-15T09:08:33Z"
+  mac: ENC[AES256_GCM,data:wt/VWBe1OUtq/DhFYvj6qrf3Ahmd0Jr8NQuuyu117SWHRBtk7xHPg4i/8MjjmpaaaMLdT7zg24bu3FHaQI9pDF8CkB7B3juZ2txMRq/5fXkN+MhRucP4TrbUjctE9rul6HF+nUFxVCTmjoVYJC4yMggTs4kr/JAbV/EOY3ASCj8=,iv:Deh0NYwoMenaoXiAspWZCOsu7LCUVhwzqVcDP5FT8O8=,tag:u48LZUNi3B4x7WaY8CL8DA==,type:str]
+  version: 3.13.3
