@@ -1,10 +1,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: darts-portal
+  name: darts-magistrates-portal
   namespace: darts-magistrates
 spec:
-  releaseName: darts-portal
+  releaseName: darts-magistrates-portal
   values:
     nodejs:
       ingressHost: darts-magistrates.test.apps.hmcts.net
