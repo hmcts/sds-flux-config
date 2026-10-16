@@ -8,6 +8,43 @@ spec:
   values:
     java:
       ingressHost: darts-gateway.test.platform.hmcts.net
+      keyVaults:
+        "darts":
+          secrets:
+            - name: AzureStorageConnectionString
+              alias: AZURE_STORAGE_CONNECTION_STRING
+            - name: AzureAdB2CFuncTestROPCClientId
+              alias: AAD_B2C_ROPC_CLIENT_ID
+            - name: AzureAdB2CClientId
+              alias: AAD_B2C_CLIENT_ID
+            - name: app-insights-connection-string
+              alias: app-insights-connection-string
+            - name: MaxFileUploadSizeInMegabytes
+              alias: MAX_FILE_UPLOAD_SIZE_MEGABYTES
+            - name: managed-redis-connection-string
+              alias: REDIS_CONNECTION_STRING
+            - name: AzureAdB2CTenantId
+              alias: AAD_B2C_TENANT_ID
+            - name: ViQExternalUserName
+              alias: VIQ_EXTERNAL_USER_NAME
+            - name: ViQExternalPassword
+              alias: VIQ_EXTERNAL_PASSWORD
+            - name: ViQInternalPassword
+              alias: VIQ_INTERNAL_PASSWORD
+            - name: XhibitExternalUserName
+              alias: XHIBIT_EXTERNAL_USER_NAME
+            - name: XhibitExternalPassword
+              alias: XHIBIT_EXTERNAL_PASSWORD
+            - name: XhibitInternalPassword
+              alias: XHIBIT_INTERNAL_PASSWORD
+            - name: CPExternalUserName
+              alias: CP_EXTERNAL_USER_NAME
+            - name: CPExternalPassword
+              alias: CP_EXTERNAL_PASSWORD
+            - name: CPInternalPassword
+              alias: CP_INTERNAL_PASSWORD
+            - name: ExternalServiceBasicAuthorisationWhitelist
+              alias: EXTERNAL_SERVICE_BASIC_AUTHORISATION_WHITELIST
       environment:
         DARTS_LOG_LEVEL: INFO
         DARTS_SOAP_REQUEST_LOG_LEVEL: TRACE
