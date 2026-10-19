@@ -61,7 +61,7 @@ spec:
               osType: "Linux"
               retentionStrategy:
                 azureVMCloudRetentionStrategy:
-                  idleTerminationMinutes: 2
+                  idleTerminationMinutes: 60
               storageAccountNameReferenceType: "existing"
               storageAccountType: "Standard_LRS"
               subnetName: "iaas"
