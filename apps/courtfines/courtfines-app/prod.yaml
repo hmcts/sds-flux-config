@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: courtfines.justice.gov.uk
-      image: hmctsprod.azurecr.io/courtfines/app:prod-c3c6d83-20261016091639 # {"$imagepolicy": "flux-system:courtfines-app"}
+      image: hmctsprod.azurecr.io/courtfines/app:prod-0a6ff07-20261019133959 # {"$imagepolicy": "flux-system:courtfines-app"}
       environment:
         ENV_NAME: "PRODUCTION"
         LOG_LEVEL: "INFO"
