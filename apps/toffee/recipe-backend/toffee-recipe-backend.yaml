@@ -8,7 +8,7 @@ spec:
   values:
     java:
       memoryRequests: "1Gi"
-      image: hmctsprod.azurecr.io/toffee/recipe-backend:prod-92e2cdd-20261019074537 # {"$imagepolicy": "flux-system:toffee-recipe-backend"}
+      image: hmctsprod.azurecr.io/toffee/recipe-backend:prod-d0b7b05-20261019074826 # {"$imagepolicy": "flux-system:toffee-recipe-backend"}
       disableTraefikTls: true
   chart:
     spec:
