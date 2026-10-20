@@ -137,7 +137,6 @@ spec:
         ARM_API_VERSION: v5_2
     function:
       # image: hmctsprod.azurecr.io/darts/api:pr-3377-fe9f157-20261016153533 # {"$imagepolicy": "flux-system:darts-api-ithc"}
-      environment:
       keyVaults:
         "darts":
           secrets:
@@ -231,6 +230,7 @@ spec:
               alias: ARM_SERVICE_ENTITLEMENT
             - name: ArmStorageAccountName
               alias: ARM_STORAGE_ACCOUNT_NAME
+      environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
