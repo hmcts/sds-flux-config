@@ -7,11 +7,21 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/darts/portal:pr-2460-a025ccf-20261019084232 # {"$imagepolicy": "flux-system:darts-portal-ithc"}
+      image: hmctsprod.azurecr.io/darts/portal:pr-2399-db90ff3-20261013133917
       ingressHost: darts.ithc.apps.hmcts.net
+      keyVaults:
+        darts:
+          secrets:
+            - name: AppInsightsInstrumentationKey
+              alias: AppInsightsInstrumentationKey
+            - name: managed-redis-connection-string
+              alias: redis-connection-string
+            - name: darts-portal-session-secret
+              alias: darts-portal-session-secret
       environment:
         RESTART_ME: '001'
         DARTS_AZUREAD_B2C_ORIGIN_HOST: https://hmctsithcextid.b2clogin.com
         DARTS_PORTAL_ALLOW_STUB_DATA: true
         MANUAL_DELETION_ENABLED: true
         EVENT_OBFUSCATION_ENABLED: true
+        DARTS_SESSION_REDIS_CLUSTER_ENABLED: true
