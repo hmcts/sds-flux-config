@@ -7,7 +7,7 @@ spec:
   releaseName: darts-magistrates-automated-tasks
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/api:pr-3397-a16abb3-20260929172656
+      # image: hmctsprod.azurecr.io/darts/api:pr-3397-a16abb3-20260929172656
       environment:
         DARTS_GATEWAY_URL: http://darts-magistrates-gateway.demo.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts-magistrates.demo.apps.hmcts.net
