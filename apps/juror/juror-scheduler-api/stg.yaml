@@ -8,3 +8,5 @@ spec:
   values:
     java:
       ingressHost: juror-scheduler-api.staging.platform.hmcts.net
+      environment:
+        RESTART: 001
