@@ -8,16 +8,6 @@ spec:
   values:
     nodejs:
       ingressHost: darts.test.apps.hmcts.net
-      image: hmctsprod.azurecr.io/darts/portal:pr-2399-db90ff3-20261013133917
-      keyVaults:
-        darts:
-          secrets:
-            - name: AppInsightsInstrumentationKey
-              alias: AppInsightsInstrumentationKey
-            - name: managed-redis-connection-string
-              alias: redis-connection-string
-            - name: darts-portal-session-secret
-              alias: darts-portal-session-secret
       environment:
         RESTART_ME: '002'
         DARTS_AZUREAD_B2C_ORIGIN_HOST: https://hmctstestextid.b2clogin.com
