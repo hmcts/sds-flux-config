@@ -7,7 +7,7 @@ spec:
   releaseName: darts-magistrates-api
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/api:pr-3397-a16abb3-20260929172656
+      # image: hmctsprod.azurecr.io/darts/api:pr-3397-a16abb3-20260929172656
       ingressHost: darts-magistrates-api.demo.platform.hmcts.net
       environment:
         DARTS_GATEWAY_URL: http://darts-magistrates-gateway.demo.platform.hmcts.net
@@ -29,7 +29,7 @@ spec:
         ARM_RPO_TOTAL_CATCHUP_HOURS: 25
         ARM_API_VERSION: v5_2
     function:
-      image: hmctsprod.azurecr.io/darts/api:pr-3397-a16abb3-20260929172656
+      # image: hmctsprod.azurecr.io/darts/api:pr-3397-a16abb3-20260929172656
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
