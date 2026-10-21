@@ -6,7 +6,7 @@ patches:
   - patch: |-
       - op: add
         path: /spec/template/spec/containers/0/args/-
-        value: --crd-pattern=managedidentity.azure.com/*;servicebus.azure.com/*;resources.azure.com/*;managedidentity.azure.com/*;storage.azure.com/*;dbforpostgresql.azure.com/*;documentdb.azure.com/*
+        value: --crd-pattern=managedidentity.azure.com/*;servicebus.azure.com/*;resources.azure.com/*;storage.azure.com/*;dbforpostgresql.azure.com/*;documentdb.azure.com/*
     target:
       kind: Deployment
   - patch: |-
@@ -32,3 +32,13 @@ patches:
         strategy:
           type: Recreate
           rollingUpdate: null
+        template:
+          spec:
+            topologySpreadConstraints:
+              - maxSkew: 1
+                topologyKey: kubernetes.io/hostname
+                whenUnsatisfiable: DoNotSchedule
+                nodeTaintsPolicy: Honor
+                labelSelector:
+                  matchLabels:
+                    control-plane: controller-manager
