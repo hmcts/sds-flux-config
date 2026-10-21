@@ -7,11 +7,3 @@ spec:
   postBuild:
     substitute:
       WORKLOAD_IDENTITY_ID: "e0249e73-2805-48a3-99c8-1ecdce3c4dce"
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: traefik-crd
-  namespace: flux-system
-spec:
-  path: ./apps/admin/traefik-crds-v42

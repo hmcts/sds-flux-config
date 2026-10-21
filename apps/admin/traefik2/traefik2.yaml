@@ -12,7 +12,7 @@ spec:
     spec:
       chart: traefik
       # update the crd version in traefik-crds when updating this
-      version: 40.2.0
+      version: 42.0.0
       sourceRef:
         kind: HelmRepository
         name: traefik
@@ -28,8 +28,8 @@ spec:
   values:
     image:
       registry: hmctsprod.azurecr.io
-      # Image Tag defaults to AppVersion
       repository: imported/traefik
+      tag: v3.7.15
     providers:
       kubernetesIngress:
         publishedService:
@@ -55,9 +55,8 @@ spec:
     service:
       annotations:
         service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-    logs:
-      access:
-        enabled: true
+    accessLog:
+      enabled: true
     rbac:
       enabled: true
     autoscaling:
