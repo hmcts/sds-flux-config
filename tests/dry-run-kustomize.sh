@@ -15,7 +15,7 @@ CURRENT_DIRECTORY=$(pwd)
 ASO_KUSTOMIZATION="apps/azureserviceoperator-system/aso/kustomization.yaml"
 case "$ENVIRONMENT" in
     sbox|demo|dev|ithc|ptl|test|ptlsbox|stg)
-        ASO_KUSTOMIZATION="apps/azureserviceoperator-system/aso-v2.21.1/kustomization.yaml"
+        ASO_KUSTOMIZATION="apps/azureserviceoperator-system/aso-v2.21.1-dev/kustomization.yaml"
         ;;
 esac
 ASO_RESOURCE_URL=$(yq eval '.resources[0]' "$ASO_KUSTOMIZATION")
