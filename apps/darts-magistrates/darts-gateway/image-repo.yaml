@@ -1,0 +1,8 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageRepository
+metadata:
+  name: darts-magistrates-gateway
+  annotations:
+    hmcts.github.com/image-registry: hmctsprod
+spec:
+  image: hmctsprod.azurecr.io/darts/gateway
