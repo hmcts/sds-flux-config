@@ -17,6 +17,8 @@ spec:
       labels:
         app: ipam-ui
     spec:
+      serviceAccountName: ipam
+      automountServiceAccountToken: false
       containers:
       - image: azureipam.azurecr.io/ipam-ui:3.6.0
         name: ipam-ui
