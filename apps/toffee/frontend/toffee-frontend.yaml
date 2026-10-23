@@ -16,5 +16,5 @@ spec:
   values:
     nodejs:
       memoryRequests: "512Mi"
-      image: hmctsprod.azurecr.io/toffee/frontend:prod-728f36f-20261023094946 #{"$imagepolicy": "flux-system:toffee-frontend"}
+      image: hmctsprod.azurecr.io/toffee/frontend:prod-fd0893d-20261023101647 #{"$imagepolicy": "flux-system:toffee-frontend"}
       disableTraefikTls: true
