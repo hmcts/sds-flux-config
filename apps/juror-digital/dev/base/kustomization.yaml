@@ -6,4 +6,5 @@ resources:
   - ../../../base/slack-provider/dev
 namespace: jd
 patches:
+  - path: ../../serviceaccount/dev.yaml
   - path: ../../identity/dev.yaml

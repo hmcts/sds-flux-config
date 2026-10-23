@@ -1,12 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - https://github.com/Azure/azure-service-operator/releases/download/v2.17.0/azureserviceoperator_v2.17.0.yaml
+  - https://github.com/Azure/azure-service-operator/releases/download/v2.21.1/azureserviceoperator_v2.21.1.yaml
 patches:
   - patch: |-
       - op: add
         path: /spec/template/spec/containers/0/args/-
-        value: --crd-pattern=managedidentity.azure.com/*;servicebus.azure.com/*;resources.azure.com/*;managedidentity.azure.com/*;storage.azure.com/*;dbforpostgresql.azure.com/*;documentdb.azure.com/*
+        value: --crd-pattern=managedidentity.azure.com/*;servicebus.azure.com/*;resources.azure.com/*;storage.azure.com/*;dbforpostgresql.azure.com/*;documentdb.azure.com/*
     target:
       kind: Deployment
   - patch: |-
@@ -18,6 +18,7 @@ patches:
       kind: Deployment
   - target:
       kind: Deployment
+      name: azureserviceoperator-controller-manager
     path: toleration_patch.yaml
   - target:
       kind: Deployment
@@ -29,7 +30,15 @@ patches:
         name: azureserviceoperator-controller-manager
       spec:
         strategy:
-          type: RollingUpdate
-          rollingUpdate:
-            maxUnavailable: 1
-            maxSurge: 0
+          type: Recreate
+          rollingUpdate: null
+        template:
+          spec:
+            topologySpreadConstraints:
+              - maxSkew: 1
+                topologyKey: kubernetes.io/hostname
+                whenUnsatisfiable: DoNotSchedule
+                nodeTaintsPolicy: Honor
+                labelSelector:
+                  matchLabels:
+                    control-plane: controller-manager

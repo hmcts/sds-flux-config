@@ -5,3 +5,5 @@ resources:
   - ../../../rbac/dev-role.yaml
   - ../../../base/slack-provider/dev
 namespace: pdm
+patches:
+  - path: ../../serviceaccount/dev.yaml
