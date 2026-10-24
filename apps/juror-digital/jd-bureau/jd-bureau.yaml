@@ -11,9 +11,9 @@ spec:
     nodejs:
       ingressHost: 'jdbureau.dev.platform.hmcts.net'
       image: hmctsprod.azurecr.io/jd/juror_digital_bureau_portal:3.5.61
-      replicas: 2
+      replicas: 0
       autoscaling:
-        enabled: true
+        enabled: false
         maxReplicas: 2
         targetCPUUtilizationPercentage: 80
   chart:

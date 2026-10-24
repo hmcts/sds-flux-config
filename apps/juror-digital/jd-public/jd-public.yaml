@@ -11,13 +11,13 @@ spec:
     nodejs:
       ingressHost: 'jdfrontend.dev.platform.hmcts.net'
       image: sdshmctspublic.azurecr.io/jd/juror_digital_public_portal:3.5.61
-      replicas: "2"
+      replicas: "0"
       memoryRequests: "248Mi"
       cpuRequests: "200m"
       memoryLimits: "1Gi"
       cpuLimits: "1"
       autoscaling:
-        enabled: true
+        enabled: false
         maxReplicas: 2
         targetCPUUtilizationPercentage: 80
   chart:
