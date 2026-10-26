@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     java:
-      image: hmctsprod.azurecr.io/opal/user-service:prod-7e40afa-20261026090231 # {"$imagepolicy": "flux-system:opal-user-service"}
+      image: hmctsprod.azurecr.io/opal/user-service:prod-0c053fe-20261026093549 # {"$imagepolicy": "flux-system:opal-user-service"}
       disableTraefikTls: true
     user-role-mapping-refresh:
-      image: hmctsprod.azurecr.io/opal/user-service:prod-7e40afa-20261026090231 # {"$imagepolicy": "flux-system:opal-user-service"}
+      image: hmctsprod.azurecr.io/opal/user-service:prod-0c053fe-20261026093549 # {"$imagepolicy": "flux-system:opal-user-service"}
