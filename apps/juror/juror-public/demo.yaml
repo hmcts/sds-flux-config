@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       # Uncomment and edit the line below to fix the environment at a specific image
-      image: hmctsprod.azurecr.io/juror/public:pr-520-551a773-20261023111728 # {"$imagepolicy": "flux-system:juror-public-demo"}
+      image: hmctsprod.azurecr.io/juror/public:pr-520-a6d0bfb-20261026093532 # {"$imagepolicy": "flux-system:juror-public-demo"}
       ingressHost: juror-public.demo.apps.hmcts.net
       environment:
         DIGITAL_BY_DEFAULT: true
