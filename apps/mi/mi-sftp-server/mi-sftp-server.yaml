@@ -19,7 +19,6 @@ spec:
         aadpodidbinding: mi-azure-functions
     spec:
       serviceAccountName: mi
-      automountServiceAccountToken: false
       initContainers:
         - name: install
           image: busybox:1.38.0
