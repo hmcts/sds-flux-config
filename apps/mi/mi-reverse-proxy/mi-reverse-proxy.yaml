@@ -18,6 +18,8 @@ spec:
         app: mi-reverse-proxy
         aadpodidbinding: mi-azure-functions
     spec:
+      serviceAccountName: mi
+      automountServiceAccountToken: false
       containers:
         - name: mi-reverse-proxy
           image: linuxserver/openssh-server:version-10.3_p1-r1
