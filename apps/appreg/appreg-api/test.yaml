@@ -4,6 +4,8 @@ metadata:
   name: appreg-api
   namespace: appreg
 spec:
+  # Freeze Helm deployments during performance testing; existing pods remain running.
+  suspend: true
   releaseName: appreg-api
   values:
     java:
