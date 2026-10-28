@@ -15,7 +15,8 @@ spec:
         loadBalancerIP: "10.51.95.250"
       additionalServices:
         internal:
-          type: ClusterIP
+          spec:
+            type: ClusterIP
           labels:
             traefik-service-label: internal
     deployment:

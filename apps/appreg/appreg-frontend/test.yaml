@@ -4,14 +4,20 @@ metadata:
   name: appreg-frontend
   namespace: appreg
 spec:
+  # Freeze Helm deployments during performance testing; existing pods remain running.
+  suspend: true
   releaseName: appreg-frontend
   values:
     nodejs:
+      # Keep capacity fixed during performance testing.
+      autoscaling:
+        enabled: false
+      replicas: 4
       ingressHost: appreg.test.apps.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/frontend:prod-18affd0-20261014120524 # {"$imagepolicy": "flux-system:appreg-frontend"}
+      image: hmctsprod.azurecr.io/appreg/frontend:prod-033987d-20261028123929 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "PERFTEST"
-        RESTART_ME: "008"
+        RESTART_ME: "009"
       keyVaults:
         appreg:
           disabled: true
