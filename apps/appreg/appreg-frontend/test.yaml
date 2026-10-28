@@ -9,11 +9,15 @@ spec:
   releaseName: appreg-frontend
   values:
     nodejs:
+      # Keep capacity fixed during performance testing.
+      autoscaling:
+        enabled: false
+      replicas: 4
       ingressHost: appreg.test.apps.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/frontend:prod-7868e9b-20261026133504 # {"$imagepolicy": "flux-system:appreg-frontend"}
+      image: hmctsprod.azurecr.io/appreg/frontend:prod-b5b59af-20261028111745 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "PERFTEST"
-        RESTART_ME: "008"
+        RESTART_ME: "009"
       keyVaults:
         appreg:
           disabled: true
