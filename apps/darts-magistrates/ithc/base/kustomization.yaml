@@ -14,3 +14,15 @@ patches:
   - path: ../../darts-gateway/ithc.yaml
   - path: ../../identity/ithc.yaml
   - path: ../../serviceaccount/ithc.yaml
+  - path: ../../static-auth/api-keyvaults.yaml
+    target:
+      group: helm.toolkit.fluxcd.io
+      version: v2
+      kind: HelmRelease
+      name: darts-magistrates-(api|automated-tasks)
+  - path: ../../static-auth/gateway-keyvaults.yaml
+    target:
+      group: helm.toolkit.fluxcd.io
+      version: v2
+      kind: HelmRelease
+      name: darts-magistrates-gateway
