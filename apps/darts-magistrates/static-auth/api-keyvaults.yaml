@@ -12,7 +12,7 @@
         alias: DARTS_API_DB_PASSWORD
       - name: api-POSTGRES-HOST
         alias: DARTS_API_DB_HOST
-      - name: api-POSTGRES-DATABASE
+      - name: magsapi-POSTGRES-DATABASE
         alias: DARTS_API_DB_NAME
       - name: api-POSTGRES-SCHEMA
         alias: DARTS_API_DB_SCHEMA
@@ -38,7 +38,7 @@
         alias: AAD_B2C_ROPC_CLIENT_SECRET
       - name: AzureStorageConnectionString
         alias: AZURE_STORAGE_CONNECTION_STRING
-      - name: api-POSTGRES-CONNECTION-STRING
+      - name: magsapi-POSTGRES-CONNECTION-STRING
         alias: DARTS_API_DB_CONNECTION_STRING
       - name: AzureADTenantId
         alias: AAD_TENANT_ID
@@ -111,7 +111,7 @@
         alias: DARTS_API_DB_PASSWORD
       - name: api-POSTGRES-HOST
         alias: DARTS_API_DB_HOST
-      - name: api-POSTGRES-DATABASE
+      - name: magsapi-POSTGRES-DATABASE
         alias: DARTS_API_DB_NAME
       - name: api-POSTGRES-SCHEMA
         alias: DARTS_API_DB_SCHEMA
@@ -137,7 +137,7 @@
         alias: AAD_B2C_ROPC_CLIENT_SECRET
       - name: AzureStorageConnectionString
         alias: AZURE_STORAGE_CONNECTION_STRING
-      - name: api-POSTGRES-CONNECTION-STRING
+      - name: magsapi-POSTGRES-CONNECTION-STRING
         alias: DARTS_API_DB_CONNECTION_STRING
       - name: AzureADTenantId
         alias: AAD_TENANT_ID
