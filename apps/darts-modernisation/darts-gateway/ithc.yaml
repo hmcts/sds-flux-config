@@ -7,7 +7,7 @@ spec:
   releaseName: darts-gateway
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/gateway:pr-1005-89060f1-20261022111220 #{"$imagepolicy": "flux-system:darts-gateway-ithc"}
+      image: hmctsprod.azurecr.io/darts/gateway:pr-1005-92d04c8-20261026100152 #{"$imagepolicy": "flux-system:darts-gateway-ithc"}
       ingressHost: darts-gateway.ithc.platform.hmcts.net
       additionalIngressHosts: ["darts-proxy.ithc.platform.hmcts.net"]
       environment:

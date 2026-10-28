@@ -4,14 +4,20 @@ metadata:
   name: appreg-api
   namespace: appreg
 spec:
+  # Freeze Helm deployments during performance testing; existing pods remain running.
+  suspend: true
   releaseName: appreg-api
   values:
     java:
+      # Keep capacity fixed during performance testing.
+      autoscaling:
+        enabled: false
+      replicas: 4
       ingressHost: appreg-api.test.platform.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/api:prod-1c5097e-20261023161654 # {"$imagepolicy": "flux-system:appreg-api"}
+      image: hmctsprod.azurecr.io/appreg/api:prod-25964d5-20261028093629 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "PERFTEST"
-        RESTART_ME: "005"
+        RESTART_ME: "006"
         AZURE_ISSUER: "https://login.microsoftonline.com/e575f663-b30a-4786-89ad-319842dfe853/v2.0"
       keyVaults:
         appreg:
