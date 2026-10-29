@@ -7,7 +7,6 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/darts/portal:pr-2460-a025ccf-20261019084232 # {"$imagepolicy": "flux-system:darts-portal-ithc"}
       ingressHost: darts.ithc.apps.hmcts.net
       environment:
         RESTART_ME: '001'
