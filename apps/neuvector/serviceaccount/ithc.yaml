@@ -5,3 +5,4 @@ metadata:
   namespace: ${NAMESPACE}
   annotations:
     azure.workload.identity/client-id: "ecf49b6a-f257-44d7-b96e-1434314a82bc"
+automountServiceAccountToken: true

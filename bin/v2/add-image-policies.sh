@@ -29,7 +29,7 @@ fi
 
 (
 cat <<EOF
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
   name: ${PRODUCT}-${COMPONENT}
@@ -43,7 +43,7 @@ if [[ ${ACR} == "hmctsprod" ]]
 then
 (
 cat <<EOF
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: ${PRODUCT}-${COMPONENT}
@@ -55,7 +55,7 @@ elif [[ ${ACR} == "hmctssbox" ]]
 then
 (
 cat <<EOF
-apiVersion: image.toolkit.fluxcd.io/v1beta2
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
   name: ${PRODUCT}-${COMPONENT}

@@ -1,9 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../../base
-  - ../jd-bureau/jd-bureau.yaml
-  - ../jd-public/jd-public.yaml
-  - ../moj-reverse-proxy/moj-reverse-proxy.yaml
-  - ../identity/juror-digital-azure-identity.yaml
-namespace: jd

@@ -18,6 +18,7 @@ spec:
         app: mi-sftp-server
         aadpodidbinding: mi-azure-functions
     spec:
+      serviceAccountName: mi
       initContainers:
         - name: install
           image: busybox:1.38.0

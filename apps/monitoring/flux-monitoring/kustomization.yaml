@@ -10,6 +10,8 @@ configMapGenerator:
       - dashboards/cluster.json
       - dashboards/logs.json
     options:
+      annotations:
+        kustomize.toolkit.fluxcd.io/substitute: disabled
       labels:
         grafana_dashboard: "1"
         app.kubernetes.io/part-of: flux

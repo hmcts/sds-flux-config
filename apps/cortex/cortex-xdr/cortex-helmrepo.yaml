@@ -1,8 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: cortex-xdr
-  namespace: cortex
-spec:
-  url: https://paloaltonetworks.github.io/cortex-helm
-  interval: 10m

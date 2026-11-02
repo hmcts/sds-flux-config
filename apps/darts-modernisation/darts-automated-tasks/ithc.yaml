@@ -7,7 +7,7 @@ spec:
   releaseName: darts-automated-tasks
   values:
     java:
-      image: hmctsprod.azurecr.io/darts/api:prod-51d18d1-20261008110723 # {"$imagepolicy": "flux-system:darts-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-a9b5c4d-20261102083059 # {"$imagepolicy": "flux-system:darts-api"}
       environment:
         DARTS_GATEWAY_URL: http://darts-gateway.ithc.platform.hmcts.net
         DARTS_PORTAL_URL: https://darts.ithc.apps.hmcts.net
@@ -20,7 +20,7 @@ spec:
         ARM_RPO_DURATION: 24h
         IS_MOCK_ARM_RPO_DOWNLOAD_CSV: false
         RESET_POD: true
-        RESTART: 004
+        RESTART: 006
         AZCOPY_LOG_LEVEL: "--log-level=ERROR"
         AZCOPY_OUTPUT_LEVEL: "--output-level=essential"
         ENABLE_ARM_V5_2_UPGRADE: true
@@ -28,6 +28,6 @@ spec:
         DETS_TO_ARM_PUSH_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_PULL_FEATURE_FLAG_LOGS_ENABLED: false
         ARM_RPO_TOTAL_CATCHUP_HOURS: 12
-        ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 50
+        ARM_RPO_TOTAL_CATCHUP_MAX_HOURS_ENDING_POINT: 24
         ARM_DOWN_FOR_MAINTENANCE: false
         ARM_API_VERSION: v5_2

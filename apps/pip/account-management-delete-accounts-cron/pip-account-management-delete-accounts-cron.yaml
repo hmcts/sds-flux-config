@@ -6,7 +6,7 @@ spec:
   releaseName: pip-account-management-delete-accounts-cron
   values:
     job:
-      image: hmctsprod.azurecr.io/pip/cron-trigger:prod-fb23109-20260923163003 # {"$imagepolicy": "flux-system:pip-account-management-delete-accounts-cron"}
+      image: hmctsprod.azurecr.io/pip/cron-trigger:prod-ffbb741-20261028172603 # {"$imagepolicy": "flux-system:pip-account-management-delete-accounts-cron"}
       disableTraefikTls: true
   chart:
     spec:

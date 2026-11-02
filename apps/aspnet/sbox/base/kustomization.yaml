@@ -5,3 +5,5 @@ resources:
   - ../../../rbac/nonprod-role.yaml
   # - ../../dotnet48/dotnet48.yaml
 namespace: aspnet
+patches:
+  - path: ../../serviceaccount/sbox.yaml
