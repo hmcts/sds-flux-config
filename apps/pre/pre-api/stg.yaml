@@ -10,7 +10,7 @@ spec:
       ingressHost: pre-api.staging.platform.hmcts.net
       memoryRequests: '3Gi'
       memoryLimits: '3Gi'
-      image: hmctsprod.azurecr.io/pre/api:staging-f8827d0-20261103142539 # {"$imagepolicy": "flux-system:stg-pre-api"}
+      image: hmctsprod.azurecr.io/pre/api:staging-305816d-20261103150735 # {"$imagepolicy": "flux-system:stg-pre-api"}
       environment:
         AZURE_RESOURCE_GROUP: pre-stg
         PLATFORM_ENV_TAG: Staging
