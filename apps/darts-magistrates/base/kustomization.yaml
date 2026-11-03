@@ -8,5 +8,7 @@ resources:
   - ../darts-external-component-test-harness/darts-external-component-test-harness.yaml
   - ../darts-portal/darts-portal.yaml
   - ../darts-gateway/darts-gateway.yaml
-  - ../../base/workload-identity
+  - ../../base/workload-identity/workload-identity-rg.yaml
+  - ../../base/workload-identity/workload-identity-ua-identity.yaml
+  - ../identity/federated-credential.yaml
 namespace: darts-magistrates

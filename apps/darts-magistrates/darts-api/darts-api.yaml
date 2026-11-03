@@ -16,18 +16,19 @@ spec:
   values:
     java:
       replicas: 2
-      image: hmctsprod.azurecr.io/darts/api:prod-a51d5e6-20261029095949 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-e8f6a8b-20261103072232 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
       cpuRequests: '2000m'
       cpuLimits: '3000m'
       environment:
+        RUN_DB_MIGRATION_ON_STARTUP: true
         DARTS_PORTAL_URL: https://darts-magistrates.{{ .Values.global.environment }}.apps.hmcts.net
     function:
       job:
         activeDeadlineSeconds: 7200
-      image: hmctsprod.azurecr.io/darts/api:prod-a51d5e6-20261029095949 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-e8f6a8b-20261103072232 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
       memoryRequests: 500Mi
       cpuRequests: 500m
       memoryLimits: 4Gi
