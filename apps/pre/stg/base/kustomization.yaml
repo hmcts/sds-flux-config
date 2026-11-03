@@ -24,6 +24,7 @@ resources:
   - ../../../rbac/nonprod-role.yaml
   - ../../../base/slack-provider/stg
   - ../../pre-api-cron-update-recordings-visibility/pre-api-cron-update-recordings-visibility.yaml
+  - ../../pre-api-health-monitor/pre-api.yaml
 namespace: pre
 patches:
   - path: ../../identity/stg.yaml
@@ -50,3 +51,4 @@ patches:
   - path: ../../pre-api-cron-re-encode-recordings/stg.yaml
   - path: ../../serviceaccount/stg.yaml
   - path: ../../pre-api-cron-update-recordings-visibility/stg.yaml
+  - path: ../../pre-api-health-monitor/stg.yaml
