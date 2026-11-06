@@ -4,6 +4,8 @@ metadata:
   name: appreg-frontend
   namespace: appreg
 spec:
+  # Freeze Helm deployments during UAT; existing pods remain running.
+  suspend: true
   releaseName: appreg-frontend
   values:
     nodejs:
