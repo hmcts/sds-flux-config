@@ -32,3 +32,5 @@ spec:
           enabled: true
           averageUtilization: 80
       disableTraefikTls: true
+      environment:
+        DIGITAL_BY_DEFAULT: true
