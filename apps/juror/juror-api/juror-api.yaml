@@ -33,3 +33,4 @@ spec:
       disableTraefikTls: true
       environment:
         PUBLIC_HOST: juror-public.{{ .Values.global.environment }}.apps.hmcts.net
+        DIGITAL_BY_DEFAULT: true
