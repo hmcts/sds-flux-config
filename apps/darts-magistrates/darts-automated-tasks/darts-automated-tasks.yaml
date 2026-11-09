@@ -16,7 +16,7 @@ spec:
   values:
     java:
       ingressHost: darts-magistrates-automated-tasks.{{ .Values.global.environment }}.platform.hmcts.net
-      image: hmctsprod.azurecr.io/darts/api:prod-e8f6a8b-20261103072232 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-ce4d24b-20261109174723 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
@@ -33,7 +33,7 @@ spec:
     function:
       environment:
         DARTS_GATEWAY_URL: http://darts-magistrates-gateway.{{ .Values.global.environment }}.platform.hmcts.net
-      image: hmctsprod.azurecr.io/darts/api:prod-e8f6a8b-20261103072232 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-ce4d24b-20261109174723 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
       minReplicaCount: 0
       maxReplicaCount: 1
       # only poll every 24 hours, to prevent DB sessions
