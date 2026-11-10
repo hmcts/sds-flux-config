@@ -16,7 +16,7 @@ spec:
   values:
     nodejs:
       replicas: 2
-      image: hmctsprod.azurecr.io/darts/portal:prod-6f054a1-20261110125100 # {"$imagepolicy": "flux-system:darts-magistrates-portal"}
+      image: hmctsprod.azurecr.io/darts/portal:prod-d387715-20261110143726 # {"$imagepolicy": "flux-system:darts-magistrates-portal"}
       disableTraefikTls: true
       environment:
         DARTS_API_URL: https://darts-magistrates-api.{{ .Values.global.environment }}.platform.hmcts.net
