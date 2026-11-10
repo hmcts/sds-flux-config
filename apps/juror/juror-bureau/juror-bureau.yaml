@@ -15,7 +15,7 @@ spec:
       interval: 1m
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/juror/bureau:prod-acdd028-20261023152947 # {"$imagepolicy": "flux-system:juror-bureau"}
+      image: hmctsprod.azurecr.io/juror/bureau:prod-a7d1690-20261103163701 # {"$imagepolicy": "flux-system:juror-bureau"}
       startupPeriod: 30
       memoryRequests: '1Gi'
       cpuRequests: '500m'
@@ -32,3 +32,5 @@ spec:
           enabled: true
           averageUtilization: 80
       disableTraefikTls: true
+      environment:
+        DIGITAL_BY_DEFAULT: true
