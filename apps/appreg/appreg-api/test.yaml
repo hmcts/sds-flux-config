@@ -14,7 +14,7 @@ spec:
         enabled: false
       replicas: 4
       ingressHost: appreg-api.test.platform.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/api:prod-1a85bf1-20261109164808 # {"$imagepolicy": "flux-system:appreg-api"}
+      image: hmctsprod.azurecr.io/appreg/api:prod-4e3f614-20261110093454 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "PERFTEST"
         RESTART_ME: "006"
