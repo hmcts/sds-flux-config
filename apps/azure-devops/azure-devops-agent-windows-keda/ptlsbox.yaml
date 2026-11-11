@@ -7,6 +7,8 @@ metadata:
 spec:
   values:
     minReplicaCount: 1
+    cpuRequests: "2"
+    memoryRequests: 3Gi
     environment:
       AZP_POOL: hmcts-sds-ptlsbox-windows
     triggerAuth:
