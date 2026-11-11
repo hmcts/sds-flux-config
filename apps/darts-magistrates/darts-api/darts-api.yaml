@@ -16,7 +16,7 @@ spec:
   values:
     java:
       replicas: 2
-      image: hmctsprod.azurecr.io/darts/api:prod-4ab3c35-20261110152926 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-5a81a09-20261111104535 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
       disableTraefikTls: true
       memoryRequests: '3G'
       memoryLimits: '4G'
@@ -28,7 +28,7 @@ spec:
     function:
       job:
         activeDeadlineSeconds: 7200
-      image: hmctsprod.azurecr.io/darts/api:prod-4ab3c35-20261110152926 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
+      image: hmctsprod.azurecr.io/darts/api:prod-5a81a09-20261111104535 # {"$imagepolicy": "flux-system:darts-magistrates-api"}
       memoryRequests: 500Mi
       cpuRequests: 500m
       memoryLimits: 4Gi
