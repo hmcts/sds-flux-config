@@ -46,6 +46,15 @@ spec:
                 ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
                 ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
                 chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/known_hosts
+                apt_log=/home/jenkinsssh/apt-update.log
+                if apt-get update >"$apt_log" 2>&1; then
+                  echo "apt-get update succeeded" >>"$apt_log"
+                else
+                  apt_status=$?
+                  echo "apt-get update failed with exit code $apt_status" >>"$apt_log"
+                fi
+                chown jenkinsssh:jenkinsssh "$apt_log"
+                chmod 0644 "$apt_log"
               installDocker: false
               installGit: false
               installMaven: false
