@@ -21,3 +21,4 @@ spec:
         PNC_SERVICE_PORT: 443
         PNC_SERVICE_PATH: ei-int1/person-services/v1/ei
         RESTART: 000
+        JDK_JAVA_OPTIONS: '-Djavax.net.debug=ssl,handshake,keymanager'
