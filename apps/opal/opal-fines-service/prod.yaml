@@ -67,3 +67,17 @@ spec:
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         RELEASE_1C_ENFORCEMENT_OPERATIONAL_REPORTING_ENABLED: false
         REPORT_CONSUMER_ENABLED: false
+        SERVER_TOMCAT_ACCESSLOG_ENABLED: "true"
+        SERVER_TOMCAT_ACCESSLOG_DIRECTORY: "/dev"
+        SERVER_TOMCAT_ACCESSLOG_PREFIX: "stdout"
+        SERVER_TOMCAT_ACCESSLOG_SUFFIX: ""
+        SERVER_TOMCAT_ACCESSLOG_ROTATE: "false"
+        SERVER_TOMCAT_ACCESSLOG_BUFFERED: "false"
+        SERVER_TOMCAT_ACCESSLOG_PATTERN: >-
+        opal_http method=%m path=%U status=%s duration_us=%D
+        request_if_match="%{If-Match}i"
+        request_etag="%{ETag}i"
+        request_content_digest="%{Content-Digest}i"
+        request_want_digest="%{Want-Content-Digest}i"
+        response_etag="%{ETag}o"
+        response_content_digest="%{Content-Digest}o"
