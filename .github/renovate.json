@@ -3,5 +3,13 @@
   "extends": [
     "local>hmcts/.github:renovate-config",
     "local>hmcts/.github//renovate/flux"
+  ],
+  "packageRules": [
+    {
+      "description": "TEMPORARY (jenkins-packer PR #332 / DTSPO-31776): freeze the SDS Sandbox agent image while testing PR image 332.0.0 — remove this rule once testing is done",
+      "matchFileNames": ["apps/jenkins/jenkins/ptlsbox/jenkins-azure-vm-agent.yaml"],
+      "matchPackageNames": ["hmcts/jenkins-packer"],
+      "enabled": false
+    }
   ]
 }

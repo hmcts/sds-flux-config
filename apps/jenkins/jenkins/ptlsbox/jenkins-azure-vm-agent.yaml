@@ -30,9 +30,9 @@ spec:
                 mount /dev/sdb1 /opt/jenkins
                 chown -R jenkinsssh:jenkinsssh /opt/jenkins
                 set -e
-                cp /opt/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-                chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-                chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+                # cp /opt/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+                # chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+                # chmod 0600 /home/jenkinsssh/.ssh/id_rsa
                 mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' > /opt/jenkins/.gradle/gradle.properties
                 cat > /etc/security/limits.d/30-jenkins.conf<<EOF
                 jenkinsssh soft nofile 40960
@@ -103,7 +103,7 @@ spec:
                             galleryResourceGroup: "hmcts-image-gallery-rg"
                             gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                             galleryImageDefinition: "jenkins-ubuntu-v2"
-                            galleryImageVersion: "24.04.131"
+                            galleryImageVersion: "332.0.0"
                         <<: *vm_template_values_anchor
                       - templateName: "cnp-jenkins-build-only-builders"
                         templateDesc: "Jenkins build-only build agents for HMCTS"
