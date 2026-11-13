@@ -16,8 +16,7 @@ spec:
       triggerPodIdentityProvider: "azure-workload"
       triggerPodIdentityIdentityId: "e5cc98d4-6190-430d-8904-6f74b731e5ad" # keda-ptl-mi
     memoryLimits: 5Gi
-    memoryRequests: 5Gi
-    cpuRequests: 3000m
+    cpuRequests: 500m
     cpuLimits: 3000m
     triggers:
       - type: azure-pipelines
