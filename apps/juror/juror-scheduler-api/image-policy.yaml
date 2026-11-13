@@ -25,6 +25,22 @@ spec:
     name: juror-scheduler-api
   filterTags:
     extract: $ts
+    pattern: '^pr-342-[a-f0-9]+-(?P<ts>[0-9]+)'
+  policy:
+    alphabetical:
+      order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: juror-scheduler-api-pr-test
+  annotations:
+    hmcts.github.com/prod-automated: disabled
+spec:
+  imageRepositoryRef:
+    name: juror-scheduler-api
+  filterTags:
+    extract: $ts
     pattern: '^pr-345-[a-f0-9]+-(?P<ts>[0-9]+)'
   policy:
     alphabetical:

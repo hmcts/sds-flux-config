@@ -10,3 +10,4 @@ spec:
       # Uncomment and edit the line below to fix the environment at a specific image
       image: hmctsprod.azurecr.io/juror/scheduler-api:pr-345-3d29294-20261112161226 # {"$imagepolicy": "flux-system:juror-scheduler-api-pr"}
       ingressHost: juror-scheduler-api.ithc.platform.hmcts.net
+      restart: 000
