@@ -20,6 +20,11 @@ patches:
       group: secrets-store.csi.x-k8s.io
       kind: SecretProviderClass
       name: mi-reverse-proxy-secret-provider
+  - path: ../../mi-sftp-server/dev-deployment-patch.yaml
+    target:
+      group: apps
+      kind: Deployment
+      name: mi-sftp-server
   - path: ../../mi-sftp-server/dev-secret-provider-patch.yaml
     target:
       group: secrets-store.csi.x-k8s.io
