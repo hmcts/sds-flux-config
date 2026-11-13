@@ -6,7 +6,6 @@ spec:
   releaseName: pip-frontend
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/pip/frontend:prod-6fe219b-20261110164657
       replicas: 2
       ingressHost: www.court-tribunal-hearings.service.gov.uk
       environment:
