@@ -30,9 +30,9 @@ spec:
                 mount /dev/sdb1 /opt/jenkins
                 chown -R jenkinsssh:jenkinsssh /opt/jenkins
                 set -e
-                cp /opt/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
-                chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
-                chmod 0600 /home/jenkinsssh/.ssh/id_rsa
+                # cp /opt/jenkinsssh_id_rsa /home/jenkinsssh/.ssh/id_rsa
+                # chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/id_rsa
+                # chmod 0600 /home/jenkinsssh/.ssh/id_rsa
                 mkdir /opt/jenkins/.gradle && echo 'org.gradle.daemon=false' > /opt/jenkins/.gradle/gradle.properties
                 cat > /etc/security/limits.d/30-jenkins.conf<<EOF
                 jenkinsssh soft nofile 40960
