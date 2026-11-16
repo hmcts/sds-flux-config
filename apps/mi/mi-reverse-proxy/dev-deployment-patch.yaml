@@ -1,0 +1,7 @@
+- op: remove
+  path: /spec/selector/matchLabels/aadpodidbinding
+- op: remove
+  path: /spec/template/metadata/labels/aadpodidbinding
+- op: add
+  path: /spec/template/metadata/labels/azure.workload.identity~1use
+  value: "true"
