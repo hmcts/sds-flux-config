@@ -46,14 +46,6 @@ spec:
                 ssh-keyscan github.com github.com >> /home/jenkinsssh/.ssh/known_hosts
                 ssh-keygen -F github.com -f /home/jenkinsssh/.ssh/known_hosts # verifies key is correctly installed
                 chown jenkinsssh:jenkinsssh /home/jenkinsssh/.ssh/known_hosts
-                for f in /etc/apt/sources.list /etc/apt/sources.list.d/*; do
-                  [ -f "$f" ] || continue
-                  if grep -q "packages.microsoft.com/ubuntu/24.04/prod" "$f" \
-                     && grep -q "microsoft-archive-keyring.gpg" "$f"; then
-                    rm -f "$f"
-                  fi
-                done
-                apt-get update
               installDocker: false
               installGit: false
               installMaven: false
@@ -106,7 +98,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -122,7 +114,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -143,7 +135,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -160,7 +152,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -177,7 +169,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -194,7 +186,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -211,7 +203,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -232,7 +224,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -253,7 +245,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -270,7 +262,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -287,7 +279,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -304,7 +296,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
@@ -325,7 +317,7 @@ spec:
                       virtualMachineSize: "Standard_D4ds_v5"
                       imageReference:
                         galleryImageDefinition: "jenkins-ubuntu-v2"
-                        galleryImageVersion: "24.04.131"
+                        galleryImageVersion: "24.04.132"
                         galleryName: "hmcts"
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"

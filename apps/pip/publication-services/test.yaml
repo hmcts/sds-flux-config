@@ -19,6 +19,7 @@ spec:
         XHIBIT_S3_BUCKET_NAME: staging.xhibit.justice.gov.uk
         THIRD_PARTY_KEY_VAULT: pip-ss-tp-kv-test
         MANAGED_IDENTITY_CLIENT_ID: 0e0c8682-a038-4aa8-9619-bb88a7ba9357
+        RETRIGGER_PODS: true
       memoryRequests: 1200Mi
       autoscaling:
         enabled: true
