@@ -11,12 +11,11 @@ spec:
   selector:
     matchLabels:
       app: mi-reverse-proxy
-      aadpodidbinding: mi-azure-functions
   template:
     metadata:
       labels:
         app: mi-reverse-proxy
-        aadpodidbinding: mi-azure-functions
+        azure.workload.identity/use: "true"
     spec:
       serviceAccountName: mi
       containers:
