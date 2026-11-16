@@ -15,6 +15,11 @@ patches:
   - path: ../../mi-adf-shir/test.yaml
   - path: ../../mi-adf-shir-2/test.yaml
   - path: ../../mi-house-keeping-service/test.yaml
+  - path: ../../mi-reverse-proxy/test-deployment-patch.yaml
+    target:
+      group: apps
+      kind: Deployment
+      name: mi-reverse-proxy
   - path: ../../mi-reverse-proxy/test-secret-provider-patch.yaml
     target:
       group: secrets-store.csi.x-k8s.io
