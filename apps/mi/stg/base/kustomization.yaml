@@ -13,11 +13,6 @@ patches:
   - path: ../../mi-adf-shir/stg.yaml
   - path: ../../mi-adf-shir-2/stg.yaml
   - path: ../../mi-house-keeping-service/stg.yaml
-  - path: ../../mi-sftp-server/stg-deployment-patch.yaml
-    target:
-      group: apps
-      kind: Deployment
-      name: mi-sftp-server
   - path: ../../mi-sftp-server/stg-secret-provider-patch.yaml
     target:
       group: secrets-store.csi.x-k8s.io
