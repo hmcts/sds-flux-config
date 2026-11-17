@@ -74,3 +74,9 @@ spec:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg
+    allpay-file-generation:
+      enabled: true
+      environment:
+        OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
+        TESTING_SUPPORT_ENDPOINTS_ENABLED: false
+        FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg
