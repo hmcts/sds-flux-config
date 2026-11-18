@@ -7,6 +7,8 @@ BusyBox image from the existing HMCTS registry. The container only sleeps:
 it does not start Themis,
 connect to databases, consume Service Bus queues, or read/log secret contents.
 HTTP probes, application ingress and Helm tests are disabled.
+The pod also disables automatic Kubernetes API token mounting to satisfy the
+sandbox admission policy; the idle container does not use the Kubernetes API.
 
 The archived chart still generates the CSI provider and pod mounts. A Helm
 post-renderer replaces the container command and removes probes. Successful pod
@@ -80,6 +82,7 @@ kubectl --context="$CTX" -n met get deployment met-themis-fe-nodejs -o json |
   jq '{replicas:.spec.replicas,ready:.status.readyReplicas,
        labels:.spec.template.metadata.labels,
        account:.spec.template.spec.serviceAccountName,
+       automountServiceAccountToken:.spec.template.spec.automountServiceAccountToken,
        containers:[.spec.template.spec.containers[] |
          {image,command,args,startupProbe,livenessProbe,readinessProbe}]}'
 kubectl --context="$CTX" -n met get pods \
@@ -96,6 +99,8 @@ Baseline pass: the source and release are Ready; the sole fresh pod runs only
 the idle command; all 20 expected secret objects are mounted; account is
 `met-themis-fe-nodejs`; CSI uses pod identity. Record the pod UID and source
 revision. Inspect status and object metadata only, never mounted file contents.
+The pod must explicitly set `automountServiceAccountToken: false`; otherwise
+sandbox Gatekeeper rejects pod creation before scheduling or CSI mounting.
 
 This proves only the old chart's CSI authentication path. It does not validate
 Themis startup, databases, Service Bus, WSDL, ingress, sticky sessions, JVM
