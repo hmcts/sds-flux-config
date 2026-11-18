@@ -82,10 +82,7 @@ kubectl --context="$CTX" -n met get deployment met-themis-fe-nodejs -o json |
   jq '{replicas:.spec.replicas,ready:.status.readyReplicas,
        labels:.spec.template.metadata.labels,
        account:.spec.template.spec.serviceAccountName,
-<<<<<<< HEAD
        automountServiceAccountToken:.spec.template.spec.automountServiceAccountToken,
-=======
->>>>>>> master
        containers:[.spec.template.spec.containers[] |
          {image,command,args,startupProbe,livenessProbe,readinessProbe}]}'
 kubectl --context="$CTX" -n met get pods \
@@ -102,11 +99,8 @@ Baseline pass: the source and release are Ready; the sole fresh pod runs only
 the idle command; all 20 expected secret objects are mounted; account is
 `met-themis-fe-nodejs`; CSI uses pod identity. Record the pod UID and source
 revision. Inspect status and object metadata only, never mounted file contents.
-<<<<<<< HEAD
 The pod must explicitly set `automountServiceAccountToken: false`; otherwise
 sandbox Gatekeeper rejects pod creation before scheduling or CSI mounting.
-=======
->>>>>>> master
 
 This proves only the old chart's CSI authentication path. It does not validate
 Themis startup, databases, Service Bus, WSDL, ingress, sticky sessions, JVM
