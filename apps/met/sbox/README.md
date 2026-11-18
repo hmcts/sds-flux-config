@@ -15,7 +15,7 @@ or its WSDL is healthy.
 
 ## Scope and wiring
 
-- Only `clusters/sbox/00` includes `met-schema`.
+- Only `clusters/sbox/01` includes `met-schema`.
 - Its path resolves to `apps/met/sbox/base`, using the existing
   `sds-helm-charts` GitRepository and chart path `./charts/met` (parent `0.1.3`,
   nodejs `2.4.5`). That shared source follows the archived repository's
@@ -27,8 +27,8 @@ or its WSDL is healthy.
   this sandbox configuration.
 - There is no separate chart source, upgrade overlay, federated credential or
   patch that converts `nodejs` values to `java`.
-- Batch jobs and the nightly pod-delete CronJob are not included. Test,
-  production and sandbox/01 compositions are unchanged.
+- Batch jobs and the nightly pod-delete CronJob are not included. Test and
+  production compositions are unchanged; sandbox/00 does not include Themis.
 - Common application resources receive namespace `met` through the existing
   Flux substitutions.
 
@@ -43,9 +43,7 @@ or its WSDL is healthy.
 
 ## Prerequisites
 
-1. Make the sandbox/00 cluster reachable.
-   The discovery request on 2026-11-18 failed because the kubeconfig API hostname
-   did not resolve; this is a live-validation blocker, not proof of inactivity.
+1. Use the existing sandbox/01 cluster and confirm API connectivity.
 2. Ensure namespace `met` is available for this test and no existing release or
    resources with these names would be taken over.
 3. Ensure sandbox Flux follows the Git branch containing these changes. Merely
@@ -67,14 +65,14 @@ editing these files locally.
 
 ## Deployment and checks
 
-Deploy this branch through the sandbox/00 GitOps source using the normal review
+Deploy this branch through the sandbox/01 GitOps source using the normal review
 process. The cluster composition already includes the baseline. Do not apply
 the raw application Kustomize output without Flux substitutions/defaults.
 
 Use explicit context for read-only checks:
 
 ```bash
-CTX=ss-sbox-00-aks
+CTX=ss-sbox-01-aks
 kubectl --context="$CTX" -n flux-system get gitrepository sds-helm-charts
 kubectl --context="$CTX" -n flux-system get kustomization met-schema
 kubectl --context="$CTX" -n met get helmrelease themis-fe
@@ -112,6 +110,6 @@ preconfigured upgrade stage or values-conversion patch.
 
 ## Cleanup
 
-After testing, remove the sandbox/00 wiring and sandbox-only resources through
+After testing, remove the sandbox/01 wiring and sandbox-only resources through
 a reviewed Git change. Do not remove the shared chart source, test managed
 identity, platform components or test/production Themis deployments.

@@ -2,15 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../base
-  - ../../../apps/met/base/kustomize.yaml
 
 patches:
   - path: ../../../apps/flux-system/sbox/00/kustomize.yaml
-  - path: ../../../apps/base/kustomize.yaml
-    target:
-      kind: Kustomization
-      name: met-schema
-  - path: ../../../apps/base/java4shell-mitigation-patch.yaml
-    target:
-      kind: Kustomization
-      name: met-schema
