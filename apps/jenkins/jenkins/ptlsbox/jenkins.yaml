@@ -31,6 +31,9 @@ spec:
       secondaryingress:
         hostName: static-sds-sandbox-build.hmcts.net
       containerEnv:
+        # CVE-2026-114938: temporary mitigation until patched JDK images are deployed.
+        - name: JDK_JAVA_OPTIONS
+          value: "-XX:-UseBASE64Intrinsics"
         - name: ENVIRONMENT
           value: "sandbox"
         - name: INFRA_VAULT_NAME
@@ -67,6 +70,8 @@ spec:
                         value: 64b1c6d6-1481-44ad-b620-d8fe26a2c768
                       - key: JAVA_OPTS
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+                      - key: JDK_JAVA_OPTIONS
+                        value: "-XX:-UseBASE64Intrinsics"
                       - key: GRADLE_OPTS
                         value: -Xmx2g -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
                       - key: REGISTRY_NAME
@@ -197,6 +202,10 @@ spec:
                         alwaysPullImage: true
                         command: "/tini --"
                         image: "hmctsprod.azurecr.io/jenkins/k8s-agent:latest"
+                        envVars:
+                        - envVar:
+                            key: "JDK_JAVA_OPTIONS"
+                            value: "-XX:-UseBASE64Intrinsics"
                         livenessProbe:
                           failureThreshold: 3
                           initialDelaySeconds: 150
@@ -219,6 +228,10 @@ spec:
                           successThreshold: 1
                           timeoutSeconds: 5
                         name: "jnlp"
+                        envVars:
+                        - envVar:
+                            key: "JDK_JAVA_OPTIONS"
+                            value: "-XX:-UseBASE64Intrinsics"
                         resourceLimitCpu: "2000m"
                         resourceLimitMemory: "6Gi"
                         resourceRequestCpu: "1000m"
