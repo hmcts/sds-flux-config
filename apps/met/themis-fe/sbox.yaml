@@ -73,6 +73,7 @@ spec:
               spec:
                 template:
                   spec:
+                    automountServiceAccountToken: false
                     containers:
                       - name: met-themis-fe-nodejs
                         command:
