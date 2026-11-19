@@ -1,13 +1,24 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: themis-fe
+  name: met-themis-chart-migration
   namespace: met
 spec:
+  interval: 5m
+  releaseName: met-themis-chart-migration
+  chart:
+    spec:
+      chart: ./charts/met
+      sourceRef:
+        kind: GitRepository
+        name: sds-helm-charts
+        namespace: flux-system
+      interval: 1m
   test:
     enable: false
   values:
     nodejs:
+      aadIdentityName: met-themis-chart-migration
       livenessDelay: 180
       startupDelay: 90
       startupPeriodSeconds: 10
@@ -64,18 +75,18 @@ spec:
               group: apps
               version: v1
               kind: Deployment
-              name: met-themis-fe-nodejs
+              name: met-themis-chart-migration-nodejs
             patch: |-
               apiVersion: apps/v1
               kind: Deployment
               metadata:
-                name: met-themis-fe-nodejs
+                name: met-themis-chart-migration-nodejs
               spec:
                 template:
                   spec:
                     automountServiceAccountToken: false
                     containers:
-                      - name: met-themis-fe-nodejs
+                      - name: met-themis-chart-migration-nodejs
                         command:
                           - /bin/sh
                           - -c
