@@ -8,17 +8,29 @@ spec:
   releaseName: met-themis-chart-migration
   chart:
     spec:
-      chart: ./charts/met
+      chart: ./
+      reconcileStrategy: Revision
       sourceRef:
         kind: GitRepository
-        name: sds-helm-charts
+        name: met-themis-chart-migration
         namespace: flux-system
       interval: 1m
   test:
     enable: false
   values:
-    nodejs:
-      aadIdentityName: met-themis-chart-migration
+    java:
+      useWorkloadIdentity: true
+      saEnabled: true
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - met-themis-chart-migration-nodejs
+              topologyKey: kubernetes.io/hostname
       livenessDelay: 180
       startupDelay: 90
       startupPeriodSeconds: 10

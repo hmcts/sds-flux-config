@@ -1,4 +1,4 @@
-# Themis test/00 CSI baseline
+# Themis test/00 Workload Identity CSI check
 
 This is a Key Vault authentication smoke test, not a Themis application
 deployment. It runs in `ss-test-00-aks`, namespace `met`, beside the existing
@@ -11,21 +11,28 @@ the production tag convention so BusyBox can remain pinned by digest.
 ## Isolation and wiring
 
 - Only [clusters/test/00](../../../../clusters/test/00/kustomization.yaml)
-  includes Flux Kustomization `met-themis-chart-migration`.
-- [kustomize.yaml](kustomize.yaml) depends on the existing `met-schema`
-  Kustomization for namespace/platform prerequisites. It does not change it.
-- [base/kustomization.yaml](base/kustomization.yaml) owns only its HelmRelease,
-  AzureIdentity and AzureIdentityBinding. It does not own the shared namespace,
-  namespace ServiceAccount, alerts, jobs or federation.
+  includes Flux Kustomization and GitRepository `met-themis-chart-migration`.
+- [kustomize.yaml](kustomize.yaml) reconciles independently of `met-schema`.
+- [base/kustomization.yaml](base/kustomization.yaml) owns only its HelmRelease.
+  It does not own the shared namespace, namespace ServiceAccount, alerts, jobs
+  or federation. The migration's former AzureIdentity and AzureIdentityBinding
+  are removed through Flux pruning; the existing `met-schema` objects remain.
 - [base/helmrelease.yaml](base/helmrelease.yaml) uses HelmRelease/release
   `met-themis-chart-migration`. Chart resource names use the `met-themis-chart-migration-nodejs` prefix,
   distinct from the existing `met-themis-fe-nodejs` resources and selectors.
   The existing nightly deletion job selects only `met-themis-fe-nodejs`.
-- [base/identity.yaml](base/identity.yaml) uses separate Kubernetes identity
-  objects and selector `met-themis-chart-migration`, referencing the existing
-  `libragob-test-mi` Azure managed identity. It does not change Azure permissions.
-- The archived `sds-helm-charts` GitRepository supplies `./charts/met`
-  (parent `0.1.3`, nodejs `2.4.5`). Record its actual artifact revision.
+- The new chart selects existing ServiceAccount `met` in namespace `met`,
+  annotated with test client ID `f50fe277-9215-4519-a1d4-8b88e8f7cb92`.
+  It reuses `libragob-test-mi` and federated credential `libragob-test-00-fic`
+  with subject `system:serviceaccount:met:met`. Neither is modified here.
+- [gitrepo.yaml](gitrepo.yaml) supplies the root chart from
+  `hmcts/chart-libragob-frontend`, branch `main`
+  (parent `0.3.0`, Java `6.1.1`). The Helm chart follows source revisions;
+  record the deployed artifact revision.
+- Values now use `java`, with Workload Identity enabled. The parent preserves
+  the `<release>-nodejs` resource names. The smoke-test anti-affinity selector
+  is overridden to match only `met-themis-chart-migration-nodejs`, not the
+  original Themis deployment.
 - The configuration is independent of test application values. It retains all
   20 `libragob-test-kv` secret definitions for comparison.
 - There is one idle replica, no application ingress or HTTP probes, no
@@ -39,18 +46,29 @@ the production tag convention so BusyBox can remain pinned by digest.
 
 The shared namespace, cluster capacity and managed identity are still shared
 dependencies. Unique names prevent resource takeover; they do not provide
-complete runtime isolation.
+complete runtime isolation. ServiceAccount `met` and its federation are also
+shared prerequisites, not migration-owned resources.
+
+## Accepted AAD Pod Identity baseline
+
+On 2026-11-19, the old parent `0.1.3` with nodejs `2.4.5` mounted all 20 objects
+using AAD Pod Identity. The user confirmed the mounted files were populated.
+The read-only status check reported `mounted: true` and object count `20` for
+pod `met-themis-chart-migration-nodejs-7b74b5785f-9d76s`.
+This is the comparison baseline, not proof of Workload Identity authentication.
 
 ## Prerequisites and deployment
 
 1. Confirm this branch has passed review and is selected by the test/00 Flux
    source. Local edits do not deploy anything.
-2. Confirm `met-schema` and `sds-helm-charts` are Ready and the new resource
-   names do not already belong to another workload.
-3. Confirm AAD Pod Identity MIC/NMI and the legacy CSI API work on test/00.
-   MIC must be able to assign `libragob-test-mi` to the test node VM scale set.
-   The former sandbox run failed with `LinkedAuthorizationFailed` on this
-   identity; being in test alone does not prove assignment permission.
+2. Confirm namespace `met` exists and the original `themis-fe` release is
+   healthy. After applying this change, require GitRepository
+   `met-themis-chart-migration` to be Ready at the intended chart revision.
+3. Confirm ServiceAccount `met` retains the test client-ID annotation and
+   `libragob-test-00-fic` is Ready for the test/00 issuer and subject
+   `system:serviceaccount:met:met`. The Java library performs a live
+   ServiceAccount lookup when rendering CSI configuration. If that lookup
+   fails, it can fall back to pod identity; reject that result.
 4. Reuse the identity's existing secret-read access to `libragob-test-kv`.
    Do not grant broad Contributor permissions.
 5. Deploy through the normal GitOps review process. Do not apply raw application
@@ -61,8 +79,14 @@ complete runtime isolation.
 ```bash
 CTX=ss-test-00-aks
 kubectl --context="$CTX" -n flux-system get gitrepository sds-helm-charts
+kubectl --context="$CTX" -n flux-system get gitrepository met-themis-chart-migration
 kubectl --context="$CTX" -n flux-system get kustomization met-schema met-themis-chart-migration
 kubectl --context="$CTX" -n met get helmrelease themis-fe met-themis-chart-migration
+kubectl --context="$CTX" -n met get serviceaccount met -o json |
+  jq '{name:.metadata.name,clientID:.metadata.annotations["azure.workload.identity/client-id"]}'
+kubectl --context="$CTX" -n met get federatedidentitycredential libragob-test-00-fic -o json |
+  jq '{issuer:.spec.issuer,subject:.spec.subject,audiences:.spec.audiences,
+       conditions:.status.conditions}'
 kubectl --context="$CTX" -n met get deployment met-themis-chart-migration-nodejs -o json |
   jq '{replicas:.spec.replicas,ready:.status.readyReplicas,
        labels:.spec.template.metadata.labels,
@@ -74,7 +98,7 @@ kubectl --context="$CTX" -n met get pods \
   -l app.kubernetes.io/name=met-themis-chart-migration-nodejs \
   -o 'custom-columns=NAME:.metadata.name,UID:.metadata.uid,READY:.status.containerStatuses[*].ready,CREATED:.metadata.creationTimestamp'
 kubectl --context="$CTX" -n met get secretproviderclass met-themis-chart-migration-nodejs-libragob-test-kv -o json |
-  jq '{apiVersion,parameters:(.spec.parameters | {keyvaultName,usePodIdentity})}'
+  jq '{apiVersion,parameters:(.spec.parameters | {keyvaultName,clientID,usePodIdentity})}'
 kubectl --context="$CTX" -n met get secretproviderclasspodstatuses -o json |
   jq '[.items[] |
        select(.status.secretProviderClassName == "met-themis-chart-migration-nodejs-libragob-test-kv") |
@@ -82,21 +106,24 @@ kubectl --context="$CTX" -n met get secretproviderclasspodstatuses -o json |
         objectCount:((.status.objects // []) | length)}]'
 ```
 
-Baseline pass: source and smoke-test release are Ready; the sole fresh pod runs
-only the idle command with token automount disabled; its ServiceAccount is
-`met-themis-chart-migration-nodejs`; CSI uses pod identity; all 20 expected objects are
-mounted. Record the pod UID, chart source revision, mounted object metadata and
-the existing Themis release's health. Inspect metadata only, never mounted file
-contents. Readiness does not validate Themis or any downstream integration.
+Workload Identity pass: source and smoke-test release are Ready; the sole fresh
+pod runs only the idle command with API-token automount disabled and
+ServiceAccount `met`; its label `azure.workload.identity/use` is `"true"` and
+it has no `aadpodidbinding` label. CSI uses the test `clientID`, with
+`usePodIdentity` absent or `"false"`, and all 20 expected objects are mounted.
+The Workload Identity webhook may inject its own projected token; that is
+separate from automatic Kubernetes API token mounting.
 
-## Later migration and cleanup
+Record a new pod UID, chart source revision, mounted object metadata and the
+existing Themis release's health. Require a pod created after the upgrade;
+the old pod's mounted files do not prove Workload Identity works. Inspect
+metadata only, never mounted file contents. Readiness does not validate Themis
+or any downstream integration.
 
-Only after the AAD Pod Identity baseline passes, make a separate reviewed
-change to this same smoke test: select the Java chart, convert `nodejs` values
-to `java`, and configure Workload Identity with the correct ServiceAccount and
-federated credential. Keep BusyBox and the same secret list for comparison.
-No Workload Identity stage or federation is provisioned here.
+## Cleanup
 
 After both checks, remove only `met-themis-chart-migration` wiring and its owned resources
 through reviewed GitOps cleanup. Do not remove the shared namespace, original
-Themis release, chart source, test managed identity or existing identity binding.
+Themis release, shared chart sources, test managed identity, ServiceAccount
+`met`, its federated credential or existing identity binding. The dedicated
+migration GitRepository can be removed with the migration wiring.

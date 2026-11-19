@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - ../base
 - ../../../apps/met/themis-chart-migration/kustomize.yaml
+- ../../../apps/met/themis-chart-migration/gitrepo.yaml
 
 patches:
 - path: ../../../apps/flux-system/test/00/kustomize.yaml
