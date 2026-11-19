@@ -9,5 +9,7 @@ resources:
   - ../sops-secrets
 namespace: appreg
 patches:
+  - path: ../../appreg-api/dev.yaml
+  - path: ../../appreg-frontend/dev.yaml
   - path: ../aso/appreg-postgres.yaml
   - path: ../../serviceaccount/stg.yaml
