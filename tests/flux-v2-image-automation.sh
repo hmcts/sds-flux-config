@@ -4,6 +4,7 @@
 EXCLUSIONS_LIST=(
     apps/flux-system/*
     apps/met/themis-fe/prod.yaml
+    '^apps/met/themis-chart-migration/base/helmrelease\.yaml$'
     apps/aspnet/dotnet48/dotnet48.yaml
     apps/hmi/hmi-rota-dtu/hmi-rota-dtu.yaml
     apps/jenkins/jenkins/*

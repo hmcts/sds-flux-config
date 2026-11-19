@@ -5,6 +5,8 @@ deployment. It runs in `ss-test-00-aks`, namespace `met`, beside the existing
 test deployment. A digest-pinned BusyBox container only sleeps. It does not
 start Themis, connect to databases, consume Service Bus queues, or read/log
 secret contents. The CSI provider must contact Key Vault to mount secrets.
+The image-automation CI check excludes only this migration HelmRelease from
+the production tag convention so BusyBox can remain pinned by digest.
 
 ## Isolation and wiring
 
