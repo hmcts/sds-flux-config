@@ -1,7 +1,7 @@
 apiVersion: aadpodidentity.k8s.io/v1
 kind: AzureIdentity
 metadata:
-  name: met-schema
+  name: met-themis-chart-migration
   namespace: met
 spec:
   type: 0
@@ -11,8 +11,8 @@ spec:
 apiVersion: aadpodidentity.k8s.io/v1
 kind: AzureIdentityBinding
 metadata:
-  name: met-schema
+  name: met-themis-chart-migration
   namespace: met
 spec:
-  azureIdentity: met-schema
-  selector: met-schema
+  azureIdentity: met-themis-chart-migration
+  selector: met-themis-chart-migration
