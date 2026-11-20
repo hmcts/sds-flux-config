@@ -18,7 +18,8 @@ the production tag convention so BusyBox can remain pinned by digest.
   or federation. The migration's former AzureIdentity and AzureIdentityBinding
   are removed through Flux pruning; the existing `met-schema` objects remain.
 - [base/helmrelease.yaml](base/helmrelease.yaml) uses HelmRelease/release
-  `met-themis-chart-migration`. Chart resource names use the `met-themis-chart-migration-nodejs` prefix,
+  `met-themis-chart-migration`. Chart resource names use the
+  `met-themis-chart-migration-java` prefix,
   distinct from the existing `met-themis-fe-nodejs` resources and selectors.
   The existing nightly deletion job selects only `met-themis-fe-nodejs`.
 - The new chart selects existing ServiceAccount `met` in namespace `met`,
@@ -29,10 +30,9 @@ the production tag convention so BusyBox can remain pinned by digest.
   `hmcts/chart-libragob-frontend`, branch `main`
   (parent `0.3.0`, Java `6.1.1`). The Helm chart follows source revisions;
   record the deployed artifact revision.
-- Values now use `java`, with Workload Identity enabled. The parent preserves
-  the `<release>-nodejs` resource names. The smoke-test anti-affinity selector
-  is overridden to match only `met-themis-chart-migration-nodejs`, not the
-  original Themis deployment.
+- Values use `java`, with Workload Identity enabled. The chart's default name
+  is `<release>-java`. The smoke-test anti-affinity selector matches only
+  `met-themis-chart-migration-java`, not the original Themis deployment.
 - The configuration is independent of test application values. It retains all
   20 `libragob-test-kv` secret definitions for comparison.
 - There is one idle replica, no application ingress or HTTP probes, no
@@ -56,11 +56,18 @@ using AAD Pod Identity. The user confirmed the mounted files were populated.
 The read-only status check reported `mounted: true` and object count `20` for
 pod `met-themis-chart-migration-nodejs-7b74b5785f-9d76s`.
 This is the comparison baseline, not proof of Workload Identity authentication.
+Changing the smoke-test resource prefix from `-nodejs` to `-java` replaces its
+previous Deployment, Service, PDB and CSI class on Helm upgrade. It creates a
+new pod and leaves the existing `met-themis-fe-nodejs` deployment unchanged.
 
 ## Prerequisites and deployment
 
 1. Confirm this branch has passed review and is selected by the test/00 Flux
    source. Local edits do not deploy anything.
+   The parent chart change removing `releaseNameOverride` must be merged to
+   `main` and its source artifact reconciled before deploying this change.
+   Otherwise the chart still renders `-nodejs` resources, and the `-java`
+   post-renderer does not apply the idle command or token-automount setting.
 2. Confirm namespace `met` exists and the original `themis-fe` release is
    healthy. After applying this change, require GitRepository
    `met-themis-chart-migration` to be Ready at the intended chart revision.
@@ -87,7 +94,7 @@ kubectl --context="$CTX" -n met get serviceaccount met -o json |
 kubectl --context="$CTX" -n met get federatedidentitycredential libragob-test-00-fic -o json |
   jq '{issuer:.spec.issuer,subject:.spec.subject,audiences:.spec.audiences,
        conditions:.status.conditions}'
-kubectl --context="$CTX" -n met get deployment met-themis-chart-migration-nodejs -o json |
+kubectl --context="$CTX" -n met get deployment met-themis-chart-migration-java -o json |
   jq '{replicas:.spec.replicas,ready:.status.readyReplicas,
        labels:.spec.template.metadata.labels,
        account:.spec.template.spec.serviceAccountName,
@@ -95,13 +102,13 @@ kubectl --context="$CTX" -n met get deployment met-themis-chart-migration-nodejs
        containers:[.spec.template.spec.containers[] |
          {image,command,args,startupProbe,livenessProbe,readinessProbe}]}'
 kubectl --context="$CTX" -n met get pods \
-  -l app.kubernetes.io/name=met-themis-chart-migration-nodejs \
+  -l app.kubernetes.io/name=met-themis-chart-migration-java \
   -o 'custom-columns=NAME:.metadata.name,UID:.metadata.uid,READY:.status.containerStatuses[*].ready,CREATED:.metadata.creationTimestamp'
-kubectl --context="$CTX" -n met get secretproviderclass met-themis-chart-migration-nodejs-libragob-test-kv -o json |
+kubectl --context="$CTX" -n met get secretproviderclass met-themis-chart-migration-java-libragob-test-kv -o json |
   jq '{apiVersion,parameters:(.spec.parameters | {keyvaultName,clientID,usePodIdentity})}'
 kubectl --context="$CTX" -n met get secretproviderclasspodstatuses -o json |
   jq '[.items[] |
-       select(.status.secretProviderClassName == "met-themis-chart-migration-nodejs-libragob-test-kv") |
+       select(.status.secretProviderClassName == "met-themis-chart-migration-java-libragob-test-kv") |
        {pod:.status.podName,mounted:.status.mounted,
         objectCount:((.status.objects // []) | length)}]'
 ```
