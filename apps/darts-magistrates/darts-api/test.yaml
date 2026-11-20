@@ -36,6 +36,7 @@ spec:
         RUN_DB_MIGRATION_ON_STARTUP: true
         ARM_DOWN_FOR_MAINTENANCE: true
         ARM_API_VERSION: v5_2
+        RESTART: 001
     function:
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
