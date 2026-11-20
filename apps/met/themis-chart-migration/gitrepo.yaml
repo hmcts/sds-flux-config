@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: met-themis-chart-migration
+  namespace: flux-system
+spec:
+  interval: 5m
+  url: https://github.com/hmcts/chart-libragob-frontend
+  ref:
+    branch: main
+  provider: github
+  secretRef:
+    name: github-app-credentials
