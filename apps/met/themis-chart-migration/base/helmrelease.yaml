@@ -29,7 +29,7 @@ spec:
                   - key: app.kubernetes.io/name
                     operator: In
                     values:
-                      - met-themis-chart-migration-nodejs
+                      - met-themis-chart-migration-java
               topologyKey: kubernetes.io/hostname
       livenessDelay: 180
       startupDelay: 90
@@ -87,18 +87,18 @@ spec:
               group: apps
               version: v1
               kind: Deployment
-              name: met-themis-chart-migration-nodejs
+              name: met-themis-chart-migration-java
             patch: |-
               apiVersion: apps/v1
               kind: Deployment
               metadata:
-                name: met-themis-chart-migration-nodejs
+                name: met-themis-chart-migration-java
               spec:
                 template:
                   spec:
                     automountServiceAccountToken: false
                     containers:
-                      - name: met-themis-chart-migration-nodejs
+                      - name: met-themis-chart-migration-java
                         command:
                           - /bin/sh
                           - -c
