@@ -16,6 +16,7 @@ spec:
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg
     bt-eckoh-report:
       enabled: true
+      schedule: '*/3 * * * *'
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
