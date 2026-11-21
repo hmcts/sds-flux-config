@@ -13,6 +13,9 @@ spec:
         OPAL_FRONTEND_URL: https://opal-frontend.demo.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+        LAUNCH_DARKLY_ENABLED: true
+        OPAL_REDIS_ENABLED: true
+        SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     bt-eckoh-report:
       enabled: true
       environment:
@@ -20,6 +23,9 @@ spec:
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+        LAUNCH_DARKLY_ENABLED: true
+        OPAL_REDIS_ENABLED: true
+        SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     caps-report:
       enabled: true
       environment:
@@ -27,6 +33,9 @@ spec:
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+        LAUNCH_DARKLY_ENABLED: true
+        OPAL_REDIS_ENABLED: true
+        SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     natwest-transfer:
       enabled: true
       environment:
@@ -34,6 +43,9 @@ spec:
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+        LAUNCH_DARKLY_ENABLED: true
+        OPAL_REDIS_ENABLED: true
+        SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     allpay-file-transfer:
       enabled: true
       environment:
@@ -41,6 +53,9 @@ spec:
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+        LAUNCH_DARKLY_ENABLED: true
+        OPAL_REDIS_ENABLED: true
+        SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     barclaycard-transfer:
       enabled: true
       environment:
@@ -48,6 +63,9 @@ spec:
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+        LAUNCH_DARKLY_ENABLED: true
+        OPAL_REDIS_ENABLED: true
+        SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     bt-eckoh-transfer:
       enabled: true
       environment:
@@ -55,6 +73,9 @@ spec:
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+        LAUNCH_DARKLY_ENABLED: true
+        OPAL_REDIS_ENABLED: true
+        SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     dwp-transfer:
       enabled: true
       environment:
@@ -62,6 +83,9 @@ spec:
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+        LAUNCH_DARKLY_ENABLED: true
+        OPAL_REDIS_ENABLED: true
+        SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     jacobs-transfer:
       enabled: true
       environment:
@@ -76,6 +100,9 @@ spec:
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+        LAUNCH_DARKLY_ENABLED: true
+        OPAL_REDIS_ENABLED: true
+        SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     marston-transfer:
       enabled: true
       environment:
@@ -83,3 +110,6 @@ spec:
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.demo.platform.hmcts.net
         TESTING_SUPPORT_ENDPOINTS_ENABLED: false
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/demo
+        LAUNCH_DARKLY_ENABLED: true
+        OPAL_REDIS_ENABLED: true
+        SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
