@@ -17,8 +17,8 @@ spec:
         DARTS_GATEWAY_URL: http://darts-magistrates-gateway.test.platform.hmcts.net
         DARTS_LOG_LEVEL: INFO
         FEIGN_LOG_LEVEL: basic
-        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctstestextid.b2clogin.com
-        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctstestextid.b2clogin.com/hmctstestextid.onmicrosoft.com
+        ACTIVE_DIRECTORY_B2C_BASE_URI: https://hmctsstgextid.b2clogin.com
+        ACTIVE_DIRECTORY_B2C_AUTH_URI: https://hmctsstgextid.b2clogin.com/hmctsstgextid.onmicrosoft.com
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_API_URL: https://api.test.court-tribunal-records-archive.service.justice.gov.uk
         ARM_AUTH_URL: https://auth.test.court-tribunal-records-archive.service.justice.gov.uk
@@ -36,6 +36,7 @@ spec:
         RUN_DB_MIGRATION_ON_STARTUP: true
         ARM_DOWN_FOR_MAINTENANCE: true
         ARM_API_VERSION: v5_2
+        RESTART: 001
     function:
       environment:
         ARM_URL: https://www.test.court-tribunal-records-archive.service.justice.gov.uk

@@ -4,13 +4,12 @@ metadata:
   name: appreg-frontend
   namespace: appreg
 spec:
-  # Freeze Helm deployments during UAT; existing pods remain running.
-  suspend: true
+  suspend: false
   releaseName: appreg-frontend
   values:
     nodejs:
       ingressHost: appreg.demo.apps.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/frontend:prod-85c7c2a-20261120095331 # {"$imagepolicy": "flux-system:appreg-frontend"}
+      image: hmctsprod.azurecr.io/appreg/frontend:prod-d27a70c-20261123133907 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "DEMO"
         RESTART_ME: "001"

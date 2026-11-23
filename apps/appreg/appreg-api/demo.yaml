@@ -4,13 +4,12 @@ metadata:
   name: appreg-api
   namespace: appreg
 spec:
-  # Freeze Helm deployments during UAT; existing pods remain running.
-  suspend: true
+  suspend: false
   releaseName: appreg-api
   values:
     java:
       ingressHost: appreg-api.demo.platform.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/api:prod-b8f4096-20261120092355 # {"$imagepolicy": "flux-system:appreg-api"}
+      image: hmctsprod.azurecr.io/appreg/api:prod-b118a7d-20261120105511 # {"$imagepolicy": "flux-system:appreg-api"}
       environment:
         ENV_NAME: "DEMO"
         RESTART_ME: "001"
