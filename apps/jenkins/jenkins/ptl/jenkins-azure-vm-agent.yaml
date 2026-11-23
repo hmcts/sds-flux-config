@@ -103,6 +103,43 @@ spec:
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                       <<: *vm_template_values_anchor
+                    - templateName: "courtfines-private-config"
+                      templateDesc: "Agent for trusted Court Fines PR database initialisation"
+                      labels: "courtfines-private-config"
+                      templateDisabled: true
+                      maxVirtualMachinesLimit: 1
+                      retentionStrategy:
+                        azureVMCloudRetentionStrategy:
+                          idleTerminationMinutes: 5
+                      usageMode: "EXCLUSIVE"
+                      virtualMachineSize: "Standard_D4ds_v5"
+                      imageReference:
+                        galleryImageDefinition: "jenkins-ubuntu-v2"
+                        galleryImageVersion: "24.04.133"
+                        galleryName: "hmcts"
+                        galleryResourceGroup: "hmcts-image-gallery-rg"
+                        gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
+                      <<: *vm_template_values_anchor
+                      # Do not inherit the shared PTL or development identity.
+                      enableUAMI: false
+                      enableMSI: false
+                      uamiID: ""
+                      # Override the shared initialisation, which copies an SSH
+                      # private key and grants Docker membership.
+                      initScript: |
+                        #!/usr/bin/env bash
+                        set -euo pipefail
+                        umount /mnt/resource
+                        mkdir -p /opt/jenkins
+                        mount /dev/sdb1 /opt/jenkins
+                        chown jenkinsssh:jenkinsssh /opt/jenkins
+                        chmod 0700 /opt/jenkins
+                        for tool in git python3 psql kubectl az kubelogin base64; do
+                          if ! command -v "$tool" >/dev/null 2>&1; then
+                            echo "Required Court Fines agent tool is unavailable: $tool" >&2
+                            exit 1
+                          fi
+                        done
                     - templateName: "cnp-jenkins-builders-dev"
                       templateDesc: "Jenkins build agents for SDS dev environment"
                       labels: "ubuntu-dev"
