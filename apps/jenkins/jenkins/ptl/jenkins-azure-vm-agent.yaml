@@ -120,6 +120,13 @@ spec:
                         galleryResourceGroup: "hmcts-image-gallery-rg"
                         gallerySubscriptionId: "2b1afc19-5ca9-4796-a56f-574a58670244"
                       <<: *vm_template_values_anchor
+                      nodeProperties:
+                        - jobRestrictionProperty:
+                            jobRestriction:
+                              regexNameRestriction:
+                                # Pipeline node tasks add a suffix to the owning job path.
+                                regexExpression: "^CourtFinesPrivateConfig/initialise-pr-database(?:/.*)?$"
+                                checkShortName: false
                       # Do not inherit the shared PTL or development identity.
                       enableUAMI: false
                       enableMSI: false
@@ -140,6 +147,60 @@ spec:
                             exit 1
                           fi
                         done
+                        # Complete only after the dedicated identity is provisioned.
+                        managed_identity_client_id=""
+                        if [[ ! "$managed_identity_client_id" =~ ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$ ]]; then
+                          echo 'Configure the approved dedicated managed identity client UUID before activation.' >&2
+                          exit 1
+                        fi
+                        runuser -u jenkinsssh -- env HOME=/home/jenkinsssh /bin/bash -s -- "$managed_identity_client_id" <<'COURTFINES_AGENT_SETUP'
+                        set -euo pipefail
+                        set +x
+                        umask 077
+                        identity_client_id="$1"
+                        export AZURE_CONFIG_DIR
+                        AZURE_CONFIG_DIR="$(mktemp -d)"
+                        trap 'rm -rf "$AZURE_CONFIG_DIR"' EXIT
+                        export KUBECONFIG="$HOME/.kube/config"
+                        if [[ -e "$KUBECONFIG" || -L "$KUBECONFIG" ]]; then
+                          echo 'Refusing to overwrite an existing kubeconfig on the dedicated agent.' >&2
+                          exit 1
+                        fi
+                        mkdir -p "$HOME/.kube"
+                        chmod 0700 "$HOME/.kube"
+                        az login --identity --client-id "$identity_client_id" --allow-no-subscriptions --output none
+                        az aks get-credentials \
+                          --subscription 867a878b-cb68-4de5-9741-361ac9e178b6 \
+                          --resource-group ss-dev-00-rg --name ss-dev-00-aks \
+                          --context ss-dev-00-aks --file "$KUBECONFIG" --output none
+                        kubelogin convert-kubeconfig --kubeconfig "$KUBECONFIG" \
+                          --login msi --client-id "$identity_client_id"
+                        chmod 0600 "$KUBECONFIG"
+                        check_access() {
+                          local expected="$1"
+                          shift
+                          local answer
+                          local status=0
+                          answer="$(kubectl --context ss-dev-00-aks --namespace courtfines \
+                            auth can-i "$@" --request-timeout=15s 2>/dev/null)" || status=$?
+                          if [[ "$answer" != "$expected" ]] ||
+                             [[ "$expected" == yes && "$status" -ne 0 ]] ||
+                             [[ "$expected" == no && "$status" -ne 1 ]]; then
+                            echo 'Unexpected dedicated-agent authorization result or permission-check failure.' >&2
+                            exit 1
+                          fi
+                        }
+                        check_access yes get secret/postgres
+                        check_access no get secret/courtfines-unrelated-access-probe
+                        check_access no list secrets
+                        check_access no watch secrets
+                        check_access no create secrets
+                        check_access no update secret/postgres
+                        check_access no delete secret/postgres
+                        check_access no get secret/postgres --namespace default
+                        check_access no list secrets --all-namespaces
+                        echo 'Dedicated agent authorization checks passed; no Secret values read.'
+                        COURTFINES_AGENT_SETUP
                     - templateName: "cnp-jenkins-builders-dev"
                       templateDesc: "Jenkins build agents for SDS dev environment"
                       labels: "ubuntu-dev"
