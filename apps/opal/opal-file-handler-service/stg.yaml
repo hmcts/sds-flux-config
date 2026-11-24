@@ -16,7 +16,6 @@ spec:
         FLYWAY_LOCATIONS: classpath:db/migration/ddl, classpath:db/migration/data/allEnvs, classpath:db/migration/data/nle, classpath:db/migration/data/stg
     bt-eckoh-report:
       enabled: true
-      schedule: '*/3 * * * *'
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
@@ -39,7 +38,6 @@ spec:
         SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     natwest-transfer:
       enabled: true
-      schedule: '*/3 * * * *'
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
@@ -51,7 +49,6 @@ spec:
         SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     allpay-file-transfer:
       enabled: true
-      schedule: '*/3 * * * *'
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
@@ -63,7 +60,6 @@ spec:
         SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     barclaycard-transfer:
       enabled: true
-      schedule: '*/3 * * * *'
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
@@ -75,7 +71,6 @@ spec:
         SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     bt-eckoh-transfer:
       enabled: true
-      schedule: '*/3 * * * *'
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
@@ -87,7 +82,6 @@ spec:
         SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     dwp-transfer:
       enabled: true
-      schedule: '*/3 * * * *'
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
@@ -99,7 +93,6 @@ spec:
         SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     jacobs-transfer:
       enabled: true
-      schedule: '*/3 * * * *'
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
@@ -111,7 +104,6 @@ spec:
         SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     cder-transfer:
       enabled: true
-      schedule: '*/3 * * * *'
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
@@ -123,7 +115,6 @@ spec:
         SERVICEBUS_LOGGING_PDPL_PROTOCOL: amqps
     marston-transfer:
       enabled: true
-      schedule: '*/3 * * * *'
       environment:
         OPAL_FRONTEND_URL: https://opal-frontend.staging.apps.hmcts.net
         OPAL_USER_SERVICE_API_URL: https://opal-user-service.staging.platform.hmcts.net
