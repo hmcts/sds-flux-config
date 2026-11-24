@@ -8,7 +8,7 @@ spec:
   values:
     nodejs:
       ingressHost: appreg.apps.hmcts.net
-      image: hmctsprod.azurecr.io/appreg/frontend:prod-d27a70c-20261123133907 # {"$imagepolicy": "flux-system:appreg-frontend"}
+      image: hmctsprod.azurecr.io/appreg/frontend:prod-26e129c-20261124131007 # {"$imagepolicy": "flux-system:appreg-frontend"}
       environment:
         ENV_NAME: "PRODUCTION"
         LOG_LEVEL: "INFO"
