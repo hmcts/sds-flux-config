@@ -35,6 +35,10 @@ spec:
             unclassified:
               resourceRoot:
                 url: "https://static-sds-build.hmcts.net/"
+          content-security-policy: |
+            security:
+              contentSecurityPolicy:
+                enforce: false
           env-vars: |
             jenkins:
               globalNodeProperties:
