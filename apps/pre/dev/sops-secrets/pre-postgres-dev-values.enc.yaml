@@ -1,0 +1,20 @@
+apiVersion: v1
+data:
+  PASSWORD: ENC[AES256_GCM,data:NmRjsNVvSRQyL5UjK5/pTEtUvROh7xHT,iv:0fOfWp1ktFMyZYzEnCU4uDMf9uhkzLUY3GDmHeuQF6U=,tag:xBiTbsmDP9WOPyqb4yn7fA==,type:str]
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: postgres
+  namespace: pre
+type: Opaque
+sops:
+  azure_kv:
+    - created_at: "2026-11-23T13:54:02Z"
+      enc: UZ8olBanBvCW9twBFFC8XVAYmqk1XkQy4LhuwQYORhElhEJA7b7S4Gf5HT7FszvX3mbdsHqr1taU3vRYcyve2F6UkDjkbil2bwGyUXa7FzsxKgDM6ot_GDVayExfOc05IBl5dP14WwKVVDoKMw8LJMER52pgleMhAMp3Zg2oQkuhDIgzMrzd5Pe4JHVMSzUkgAPTkVqZqKOoTMbIjPhqkLFK0EBSktP82PVgJtT69uovlyDh_Twk0ewh6U-8k3mw41mxZaKx0LjgQO8VfJZg5n1AdgAVGLqvIhew8rzUXzxyFLFilwtQBItcTEfpmLKo5CvVhftFA4xIukEhKMRgGw
+      name: sops-key
+      vault_url: https://dtssharedservicesdevkv.vault.azure.net
+      version: 2beba064ddfe454482ad0133af2cf0fd
+  encrypted_regex: ^(data|stringData)$
+  lastmodified: "2026-11-23T13:54:02Z"
+  mac: ENC[AES256_GCM,data:wrNZQLuerohepnmaWq4Ao/AAFjn+dznG0aSk1B/imC6oH67dVvvajX8e99Lw/LBmyFLTDMEhU4a20kKm2eongel6JXtWRWPGBGgRHyRgVFtDsqfjI+qQmB5et4CL6CmIfJTuciSfNSPK7chdtocz5epiMXu0TIAhze45l46xJ54=,iv:4WrJN2jmGKbp2GuscZClJtRg18hCh/++Thikw1cl5vk=,tag:tiXnFflUYH0yVp3hHkYT5g==,type:str]
+  version: 3.13.3
