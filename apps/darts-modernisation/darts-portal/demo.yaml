@@ -7,7 +7,7 @@ spec:
   releaseName: darts-portal
   values:
     nodejs:
-      image: hmctsprod.azurecr.io/darts/portal:prod-88bd0a2-20261126145341 # {"$imagepolicy": "flux-system:darts-portal"}
+      image: hmctsprod.azurecr.io/darts/portal:prod-5739cb3-20261126151934 # {"$imagepolicy": "flux-system:darts-portal"}
       ingressHost: darts.demo.apps.hmcts.net
       environment:
         RESTART_ME: '001'
