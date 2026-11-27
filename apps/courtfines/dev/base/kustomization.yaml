@@ -7,6 +7,7 @@ resources:
   - ../../../azureserviceoperator-system/resources/flexibleserver-postgres.yaml
   - ../../../azureserviceoperator-system/resources/flexibleserver-postgres-config.yaml
   - ../sops-secrets
+  - ../rbac/private-config-secret-reader.yaml
 namespace: courtfines
 patches:
   - path: ../aso/courtfines-postgres.yaml
