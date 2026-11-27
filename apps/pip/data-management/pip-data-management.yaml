@@ -6,7 +6,7 @@ spec:
   releaseName: pip-data-management
   values:
     java:
-      image: hmctsprod.azurecr.io/pip/data-management:prod-acba22d-20261123111635 # {"$imagepolicy": "flux-system:pip-data-management"}
+      image: hmctsprod.azurecr.io/pip/data-management:prod-fbb0b85-20261127141656 # {"$imagepolicy": "flux-system:pip-data-management"}
       disableTraefikTls: true
   chart:
     spec:
