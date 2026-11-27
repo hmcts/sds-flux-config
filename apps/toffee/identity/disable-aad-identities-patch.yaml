@@ -1,0 +1,64 @@
+- op: add
+  path: /spec/patches/-
+  value:
+    patch: |-
+      $patch: delete
+      apiVersion: aadpodidentity.k8s.io/v1
+      kind: AzureIdentity
+      metadata:
+        name: apple
+        namespace: toffee
+    target:
+      group: aadpodidentity.k8s.io
+      kind: AzureIdentity
+      name: apple
+      namespace: toffee
+      version: v1
+- op: add
+  path: /spec/patches/-
+  value:
+    patch: |-
+      $patch: delete
+      apiVersion: aadpodidentity.k8s.io/v1
+      kind: AzureIdentity
+      metadata:
+        name: toffee
+        namespace: toffee
+    target:
+      group: aadpodidentity.k8s.io
+      kind: AzureIdentity
+      name: toffee
+      namespace: toffee
+      version: v1
+- op: add
+  path: /spec/patches/-
+  value:
+    patch: |-
+      $patch: delete
+      apiVersion: aadpodidentity.k8s.io/v1
+      kind: AzureIdentityBinding
+      metadata:
+        name: apple-binding
+        namespace: toffee
+    target:
+      group: aadpodidentity.k8s.io
+      kind: AzureIdentityBinding
+      name: apple-binding
+      namespace: toffee
+      version: v1
+- op: add
+  path: /spec/patches/-
+  value:
+    patch: |-
+      $patch: delete
+      apiVersion: aadpodidentity.k8s.io/v1
+      kind: AzureIdentityBinding
+      metadata:
+        name: toffee-binding
+        namespace: toffee
+    target:
+      group: aadpodidentity.k8s.io
+      kind: AzureIdentityBinding
+      name: toffee-binding
+      namespace: toffee
+      version: v1

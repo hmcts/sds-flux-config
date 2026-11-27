@@ -1,0 +1,16 @@
+- op: add
+  path: /spec/patches/-
+  value:
+    patch: |-
+      $patch: delete
+      apiVersion: aadpodidentity.k8s.io/v1
+      kind: AzurePodIdentityException
+      metadata:
+        name: aks-addon-exception
+        namespace: kube-system
+    target:
+      group: aadpodidentity.k8s.io
+      kind: AzurePodIdentityException
+      name: aks-addon-exception
+      namespace: kube-system
+      version: v1
