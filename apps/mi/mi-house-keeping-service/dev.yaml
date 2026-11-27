@@ -6,6 +6,9 @@ metadata:
 spec:
   releaseName: mi-house-keeping-service-job
   values:
+    environment:
+      # CVE-2026-114938 (Java4Shell) mitigation - RMI-4154
+      JDK_JAVA_OPTIONS: "-XX:-UseBASE64Intrinsics"
     kind: CronJob
     schedule: "45 * * * *"
     image: hmctsprod.azurecr.io/mi-house-keeping-service:prod-090f520-20250613094733 #{"$imagepolicy": "flux-system:mi-house-keeping-service"}
