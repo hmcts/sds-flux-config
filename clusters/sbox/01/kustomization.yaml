@@ -5,3 +5,14 @@ resources:
 
 patches:
   - path: ../../../apps/flux-system/sbox/01/kustomize.yaml
+  - path: ../../../apps/admin/aad-pod-identity/disable-infrastructure-patch.yaml
+  - path: ../../../apps/kube-system/aad-pod-identity/disable-exception-patch.yaml
+    target:
+      group: kustomize.toolkit.fluxcd.io
+      kind: Kustomization
+      name: kube-system
+  - path: ../../../apps/toffee/identity/disable-aad-identities-patch.yaml
+    target:
+      group: kustomize.toolkit.fluxcd.io
+      kind: Kustomization
+      name: toffee
